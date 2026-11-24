@@ -1,6 +1,6 @@
-# Cloudflare Worker that sends the daily-task reminders. Deployed by .github/workflows/remind.yml
+# Cloudflare Worker that sends the daily-task reminders (code in remind/). Cloudflare builds it from this repo on every push to main.
 name = "wt-remind"
-main = "worker.js"
+main = "remind/worker.js"
 compatibility_date = "2026-11-01"
 workers_dev = true
 
