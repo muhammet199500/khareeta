@@ -514,7 +514,7 @@ TS = {
     sub='واجب صغير كل يوم. اضغط «أنهيتُ» حين تنتهي منه، ويصلك تذكير كل ساعتين نهارًا حتى تضغطه.',
     backHome='الرجوع إلى الصفحة الرئيسية', today='واجب اليوم', week='واجب الأسبوع', openWeek='افتح الواجب', all='كل واجبات الأسبوع', none='لا واجب اليوم.',
     empty='لم تُنشر واجبات هذا الأسبوع بعد.', open='افتح', doneOff='أنهيتُ الواجب', doneOn='✓ أنهيتَ الواجب',
-    rT='التذكير', rOn='فعّل التذكير', rOff='أوقف التذكير', rIsOn='✓ التذكير مفعّل على هذا الجهاز.',
+    rT='التذكير بالواجب', rOn='🔔 فعّل التذكير', askQ='هل تريد أن نذكّرك بواجب الغد؟', askNo='لا، شكرًا', rOff='أوقف التذكير', rIsOn='✓ التذكير مفعّل على هذا الجهاز.',
     rHelp='يصلك إشعار كل ساعتين من ١٠ صباحًا إلى ١٠ ليلًا، ويتوقف في اليوم الذي تضغط فيه «أنهيتُ».',
     rIos='على iPhone: ثبّت الموقع أولًا (زر المشاركة ← «إضافة إلى الشاشة الرئيسية»)، ثم افتحه من الشاشة الرئيسية واضغط «فعّل التذكير».',
     rNo='متصفحك لا يدعم الإشعارات. جرّب Chrome على Android، أو ثبّت الموقع على iPhone.',
@@ -532,7 +532,7 @@ TS = {
     sub='Her gün küçük bir ödev. Bitirdiğinizde «Bitirdim»e dokunun; dokunana kadar gündüz iki saatte bir hatırlatma gelir.',
     backHome='Ana sayfaya dön', today='Bugünün ödevi', week='Haftanın ödevi', openWeek='Ödevi aç', all='Haftanın bütün ödevleri', none='Bugün ödev yok.',
     empty='Bu haftanın ödevleri henüz yayımlanmadı.', open='Aç', doneOff='Ödevi bitirdim', doneOn='✓ Ödevi bitirdiniz',
-    rT='Hatırlatma', rOn='Hatırlatmayı aç', rOff='Hatırlatmayı kapat', rIsOn='✓ Bu cihazda hatırlatma açık.',
+    rT='Ödev hatırlatması', rOn='🔔 Hatırlatmayı aç', askQ='Yarının ödevini sana hatırlatalım mı?', askNo='Hayır, teşekkürler', rOff='Hatırlatmayı kapat', rIsOn='✓ Bu cihazda hatırlatma açık.',
     rHelp='Sabah 10’dan gece 10’a kadar iki saatte bir bildirim gelir; «Bitirdim»e dokunduğunuz gün durur.',
     rIos='iPhone’da: Önce siteyi yükleyin (Paylaş ← «Ana Ekrana Ekle»), sonra ana ekrandan açıp «Hatırlatmayı aç»a dokunun.',
     rNo='Tarayıcınız bildirimleri desteklemiyor. Android’de Chrome’u deneyin ya da iPhone’da siteyi yükleyin.',
@@ -566,7 +566,7 @@ def page_tasks(lang):
 </div></section>
 <section class="band"><div class="wrap">
   <div id="wkIntro"></div>
-  <div class="remind" id="remindBox"><div><h2>{E(t['rT'])}</h2><p class="rstate" id="rState">{E(t['rHelp'])}</p></div><button class="btn" type="button" id="rBtn">{E(t['rOn'])}</button></div>
+  <div class="rcard" data-rcard="page" hidden></div>
   <div id="wkHead"></div>
   <ol class="tlist" id="taskList"></ol>
   <div id="wkFinal"></div>
@@ -583,6 +583,7 @@ def today_band(lang):
     t = TS[lang]
     return f'''<section class="band" id="todayBand" hidden {tasks_attrs(lang)}><div class="wrap">
   <div class="today"><span class="ic">{I['quiz']}</span><div><p class="where" id="todayWhere">{E(t['today'])}</p><p class="tseg" id="todaySeg"></p><p class="ttext" id="todayText"></p><a class="btn tgo" href="tasks.html">{E(t['all'])}</a></div><button class="donebtn" type="button" id="todayDone"></button></div>
+  <div class="rcard" data-rcard="home" hidden></div>
 </div></section>
 '''
 

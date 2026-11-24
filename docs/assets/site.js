@@ -565,22 +565,16 @@
     setTimeout(() => tabs[start].scrollIntoView({ block: 'nearest', inline: 'center' }), 50);
   }
 
-  /* reminders: ask permission, subscribe, tell the reminder service */
+  /* reminders: ask permission, subscribe, tell the reminder service.
+     Browsers never allow notifications without the student's own tap, so we make that tap easy:
+     a card with one big button (home + task page) until it is on, and one offer after the first «I finished». */
   const ios = /iphone|ipad|ipod/i.test(navigator.userAgent), standalone = matchMedia('(display-mode: standalone)').matches || navigator.standalone;
   const can = 'serviceWorker' in navigator && 'PushManager' in window && 'Notification' in window;
-  const rBtn = $('#rBtn'), rState = $('#rState');
   const b64 = s => { const p = '='.repeat((4 - s.length % 4) % 4), r = atob((s + p).replace(/-/g, '+').replace(/_/g, '/')); return Uint8Array.from(r, c => c.charCodeAt(0)); };
   async function current() { if (!can) return null; const reg = await navigator.serviceWorker.ready; return reg.pushManager.getSubscription(); }
-  async function paintR() {
-    if (!rBtn) return;
-    if (!can) { rState.textContent = ios && !standalone ? T('rIos') : T('rNo'); rBtn.hidden = true; return; }
-    if (Notification.permission === 'denied') { rState.textContent = T('rDenied'); rBtn.hidden = true; return; }
-    const sub = await current(), on = !!(sub && ls.get(IDKEY, null));
-    rBtn.hidden = false; rBtn.textContent = on ? T('rOff') : T('rOn'); rBtn.classList.toggle('line', on);
-    rState.textContent = on ? T('rIsOn') + ' ' + T('rHelp') : T('rHelp');
-  }
+  async function isOn() { return !!((await current()) && ls.get(IDKEY, null)); }
   async function enable() {
-    if ((await Notification.requestPermission()) !== 'granted') return paintR();
+    if ((await Notification.requestPermission()) !== 'granted') return false;
     const reg = await navigator.serviceWorker.ready;
     const key = (await (await fetch(API + '/key')).json()).key;
     let sub = await reg.pushManager.getSubscription();
@@ -589,7 +583,7 @@
     if (!r.id) throw new Error('no id');
     ls.set(IDKEY, r.id);
     if (ls.get(DKEY, {})[TODAY]) post('/done', { id: r.id, date: TODAY }).catch(() => {});
-    await writeSW();
+    await writeSW(); return true;
   }
   async function disable() {
     const sub = await current(); if (sub) await sub.unsubscribe().catch(() => {});
@@ -597,11 +591,54 @@
     try { localStorage.removeItem(IDKEY); } catch (e) {}
     await writeSW({ id: null });
   }
-  if (rBtn) rBtn.addEventListener('click', async () => {
-    rBtn.disabled = true;
-    try { if ((await current()) && ls.get(IDKEY, null)) await disable(); else await enable(); }
-    catch (e) { rState.textContent = T('rErr'); rBtn.disabled = false; return; }
-    rBtn.disabled = false; paintR();
+  const BELL = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 8-3 8h18s-3-1-3-8"/><path d="M13.7 20a2 2 0 0 1-3.4 0"/></svg>';
+  async function paintCards() {
+    const on = await isOn().catch(() => false);
+    document.querySelectorAll('[data-rcard]').forEach(card => {
+      const home = card.dataset.rcard === 'home'; card.innerHTML = ''; card.className = 'rcard';
+      if (on) {
+        if (home) { card.hidden = true; return; }
+        card.classList.add('on'); card.hidden = false;
+        const p = el('p', 'ron', T('rIsOn')); const off = el('button', 'linkbtn', T('rOff')); off.type = 'button';
+        off.addEventListener('click', async () => { off.disabled = true; await disable().catch(() => {}); paintCards(); });
+        card.append(p, off); return;
+      }
+      if (!can) {
+        if (!(ios && !standalone)) { card.hidden = home; if (!home) card.append(el('p', 'rmsg', T('rNo'))); return; }
+        card.hidden = false; card.classList.add('hint');
+        const ic = el('span', 'ric'); ic.innerHTML = BELL; card.append(ic, el('div', null)); card.lastChild.append(el('h3', null, T('rT')), el('p', 'rmsg', T('rIos'))); return;
+      }
+      if (Notification.permission === 'denied') { card.hidden = home; if (!home) card.append(el('p', 'rmsg', T('rDenied'))); return; }
+      card.hidden = false;
+      const ic = el('span', 'ric'); ic.innerHTML = BELL;
+      const txt = el('div'); txt.append(el('h3', null, T('rT')), el('p', 'rmsg', T('rHelp')));
+      const btn = el('button', 'btn rbig', T('rOn')); btn.type = 'button';
+      btn.addEventListener('click', async () => {
+        btn.disabled = true;
+        try { await enable(); } catch (e) { txt.lastChild.textContent = T('rErr'); btn.disabled = false; return; }
+        paintCards();
+      });
+      card.append(ic, txt, btn);
+    });
+  }
+  /* one gentle offer after the first «I finished» */
+  async function offerOnce() {
+    if (!can || Notification.permission !== 'default' || ls.get('wt.remind.asked', false) || await isOn().catch(() => true)) return;
+    ls.set('wt.remind.asked', true);
+    const t = el('div', 'rtoast'); t.setAttribute('role', 'dialog');
+    const ic = el('span', 'ric'); ic.innerHTML = BELL;
+    const yes = el('button', 'btn', T('rOn')), no = el('button', 'linkbtn', T('askNo')); yes.type = no.type = 'button';
+    const row = el('div', 'rtrow'); row.append(yes, no);
+    const body = el('div'); body.append(el('p', 'rtq', T('askQ')), row);
+    t.append(ic, body); document.body.append(t);
+    requestAnimationFrame(() => t.classList.add('show'));
+    const close = () => { t.classList.remove('show'); setTimeout(() => t.remove(), 300); };
+    no.addEventListener('click', close);
+    yes.addEventListener('click', async () => { yes.disabled = true; try { await enable(); } catch (e) {} close(); paintCards(); });
+  }
+  document.addEventListener('click', e => {
+    const b = e.target.closest('#todayDone, .tday .donebtn');
+    if (b) setTimeout(() => { if (b.classList.contains('on')) offerOnce(); }, 0);
   });
-  load(); paintR(); writeSW();
+  load(); paintCards(); writeSW();
 })();
