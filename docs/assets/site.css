@@ -538,3 +538,17 @@ html[lang=ar] .scard h3 { word-spacing: .22em; }
 .rtrow { display: flex; gap: 14px; align-items: center; flex-wrap: wrap; }
 .rtoast .linkbtn { color: var(--mint); }
 @media (prefers-reduced-motion: reduce) { .rtoast { transition: none; } }
+
+/* past days not recorded, and the light-green «send» tab */
+.daytabs button.missed:not(.done)::after { content: "!"; position: absolute; top: -7px; inset-inline-end: -5px; width: 22px; height: 22px; border-radius: 50%; background: #E67E22; color: #fff; font-size: 14px; font-weight: 800; display: grid; place-items: center; box-shadow: 0 0 0 2px var(--parch); }
+.daytabs button.send { background: #DDF3E4; border: 2px solid #2E8B57; }
+.daytabs button.send b { color: #1F6B42; }
+.daytabs button.send span { font-size: 15px; }
+.daytabs button.send.on { background: #2E8B57; border-color: #2E8B57; }
+.daytabs button.send.on b { color: #fff; }
+.missed { background: #FFF3E6; border: 1.5px solid #F0B27A; border-radius: 12px; padding: 8px 14px; display: grid; gap: 4px; }
+.missed[hidden] { display: none; }
+.missed p { margin: 0; display: flex; justify-content: space-between; align-items: center; gap: 10px; flex-wrap: wrap; font-family: var(--uf); font-size: 14.5px; color: #8A4B10; font-weight: 600; }
+.missed .linkbtn { color: #B9590E; font-weight: 700; font-size: 14.5px; }
+.sendpanel[hidden] { display: none; }
+.sendpanel .sendbox { margin-top: 12px; }

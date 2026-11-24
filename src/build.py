@@ -525,7 +525,7 @@ TS = {
     yes='نعم', no='لا', why='سبب الإخفاق إن وقع', whyPh='اكتب السبب باختصار…', counterT='عدد الألفاظ اليوم',
     cmp='يوم الاثنين: {a} · اليوم: {b}', todayTag='اليوم', pledgeT='تعهّد', pledgeOn='✓ تعهّدتُ', pledgeOff='أتعهّد',
     notePh='اكتب هنا…', private='ما تكتبه هنا يُحفظ على جهازك فقط، ولا يراه أحد إلا إذا أرسلته أنت.',
-    sendT='أرسِل واجبك للمعلّم', sendHelp='يتحوّل واجب الأسبوع كاملًا إلى ملف PDF باسمك، ترسله للمعلّم بواتساب أو تيليجرام.',
+    sendT='أرسِل واجبك للمعلّم', sendTab='أرسِل الواجب', missed='واجب {d} لم يُسجَّل بعد', missedBtn='سجّله الآن', sendHelp='يتحوّل واجب الأسبوع كاملًا إلى ملف PDF باسمك، ترسله للمعلّم بواتساب أو تيليجرام.',
     nameL='اسمك', namePh='اكتب اسمك', sendBtn='أرسِل واجبي', saveBtn='حفظ الملف', noName='اكتب اسمك أولًا.',
     imgDone='أنهى الواجب', imgNot='لم يُنهِ', imgNA='—', imgName='الاسم', imgWeek='من {a} إلى {b}', imgFile='واجبي'),
  'tr': dict(nav='Ödevler', title='Haftanın ödevleri',
@@ -543,7 +543,7 @@ TS = {
     yes='Evet', no='Hayır', why='Aksama olduysa sebebi', whyPh='Sebebi kısaca yaz…', counterT='Bugünkü söz sayısı',
     cmp='Pazartesi: {a} · Bugün: {b}', todayTag='Bugün', pledgeT='Söz', pledgeOn='✓ Söz verdim', pledgeOff='Söz veriyorum',
     notePh='Buraya yaz…', private='Buraya yazdıkların yalnızca cihazında saklanır; sen göndermedikçe kimse görmez.',
-    sendT='Ödevini hocana gönder', sendHelp='Haftanın ödevinin tamamı adınla bir PDF dosyasına dönüşür; onu WhatsApp ya da Telegram ile hocana gönderirsin.',
+    sendT='Ödevini hocana gönder', sendTab='Ödevi gönder', missed='{d} ödevi henüz kaydedilmedi', missedBtn='Şimdi kaydet', sendHelp='Haftanın ödevinin tamamı adınla bir PDF dosyasına dönüşür; onu WhatsApp ya da Telegram ile hocana gönderirsin.',
     nameL='Adın', namePh='Adını yaz', sendBtn='Ödevimi gönder', saveBtn='Dosyayı kaydet', noName='Önce adını yaz.',
     imgDone='Ödevi bitirdi', imgNot='Bitirmedi', imgNA='—', imgName='Ad', imgWeek='{a} – {b}', imgFile='odevim'),
 }

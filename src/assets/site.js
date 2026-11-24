@@ -376,7 +376,6 @@
       b.addEventListener('click', () => { log.set(k, { pledge: !log.get(k).pledge }); paint(); }); paint();
       p.append(b); c.append(p);
     }
-    c.append(sendBox(week));   /* «send my task» lives only in the final review */
     host.append(c);
   }
 
@@ -531,34 +530,60 @@
     days.forEach((d, i) => list.append(renderDay(week, d, days[0], i === days.length - 1)));
     renderFinal(week);
     dayTabs(days, week);
-    if (!week.final) $('#taskList').parentNode.insertBefore(sendBox(week), $('#wkFinal').nextSibling);
+
   }
 
-  /* one day at a time: a row of day buttons above the list; opens on today */
+  /* one day at a time: a row of day buttons above the list; opens on today.
+     Past days stay open; a day not marked «I finished» gets an orange «!», and today's page lists them.
+     The last button (light green) holds «send my task». */
   function dayTabs(days, week) {
     const items = [...document.querySelectorAll('#taskList > .tday')], fin = document.querySelector('#wkFinal .final');
-    const panels = items.concat(fin ? [fin] : []); if (panels.length < 2) return;
+    const send = el('section', 'sendpanel'); send.append(sendBox(week)); document.querySelector('#wkFinal').append(send);
+    const panels = items.concat(fin ? [fin] : [], [send]);
     const wd = new Intl.DateTimeFormat(AR ? 'ar' : 'tr-TR', { weekday: 'long' });
     const dm = new Intl.DateTimeFormat(AR ? 'ar-u-nu-arab' : 'tr-TR', { day: 'numeric', month: 'long' });
+    const dt = s => { const [y, m, d] = s.split('-').map(Number); return new Date(y, m - 1, d); };
     const bar = el('div', 'daytabs'); bar.setAttribute('role', 'tablist');
     const tabs = panels.map((p, i) => {
       const b = el('button'); b.type = 'button'; b.setAttribute('role', 'tab');
       if (i < days.length) {
-        const [y, m, dd] = days[i].date.split('-').map(Number), dt = new Date(y, m - 1, dd);
-        b.append(el('b', null, wd.format(dt)), el('span', null, dm.format(dt)));
+        b.append(el('b', null, wd.format(dt(days[i].date))), el('span', null, dm.format(dt(days[i].date))));
         if (days[i].date === TODAY) b.classList.add('today');
         b.dataset.date = days[i].date;
-      } else { b.append(el('b', null, L(week.final.title)), el('span', null, '✦')); b.classList.add('fin'); }
+      } else if (p === fin) { b.append(el('b', null, L(week.final.title)), el('span', null, '✦')); b.classList.add('fin'); }
+      else { b.append(el('b', null, T('sendTab')), el('span', null, '📤')); b.classList.add('send'); }
       b.addEventListener('click', () => show(i, true)); bar.append(b); return b;
     });
-    const mark = () => { const dn = ls.get(DKEY, {}); tabs.forEach(b => { if (b.dataset.date) b.classList.toggle('done', !!dn[b.dataset.date]); }); };
+    /* «not recorded yet» notes: on today's page and on the send page */
+    const notes = [];
+    const ti = days.findIndex(d => d.date === TODAY);
+    const addNote = panel => { const n = el('div', 'missed'); n.hidden = true; panel.prepend(n); notes.push(n); };
+    if (ti >= 0) addNote(items[ti]);
+    addNote(send);
+    const mark = () => {
+      const dn = ls.get(DKEY, {}), missed = [];
+      tabs.forEach((b, i) => {
+        if (!b.dataset.date) return;
+        const done = !!dn[b.dataset.date], past = b.dataset.date < TODAY;
+        b.classList.toggle('done', done); b.classList.toggle('missed', past && !done);
+        if (past && !done) missed.push(i);
+      });
+      notes.forEach(n => {
+        n.innerHTML = ''; n.hidden = !missed.length;
+        missed.forEach(i => {
+          const row = el('p'); row.append(el('span', null, '⚠ ' + T('missed').replace('{d}', wd.format(dt(days[i].date)))));
+          const go = el('button', 'linkbtn', T('missedBtn')); go.type = 'button';
+          go.addEventListener('click', () => { show(i, true); tabs[i].parentNode.scrollIntoView({ block: 'start', behavior: 'smooth' }); });
+          row.append(go); n.append(row);
+        });
+      });
+    };
     function show(i, focus) {
       panels.forEach((p, j) => { p.hidden = j !== i; });
       tabs.forEach((b, j) => { b.classList.toggle('on', j === i); b.setAttribute('aria-selected', j === i); });
       if (focus) tabs[i].scrollIntoView({ block: 'nearest', inline: 'nearest', behavior: 'smooth' });
     }
-    const ti = days.findIndex(d => d.date === TODAY);
-    const start = ti >= 0 ? ti : (TODAY < days[0].date ? 0 : (fin ? panels.length - 1 : days.length - 1));
+    const start = ti >= 0 ? ti : (TODAY < days[0].date ? 0 : (fin ? panels.indexOf(fin) : days.length - 1));
     document.querySelector('#taskList').before(bar);
     document.querySelector('#taskList').addEventListener('click', e => { if (e.target.closest('.donebtn')) setTimeout(mark, 0); });
     mark(); show(start, false);
