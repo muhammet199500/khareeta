@@ -350,7 +350,7 @@ window.LESSON2 = {
               card: { tag: "Uyarı", title: "İstenen terk kalıcıdır",
                 body: "Sözlükte terk, bağlama göre geçici de kalıcı da olabilir. Bu bapta istenen terk ise kalıcıdır; Müslüman Allah'tan başkasına ibadeti bir süre bırakıp sonra ona dönmez." } },
             { id: "b2c2", label: "Sevap kazandıran bir amel",
-              card: { tag: "Öğretmene not", title: "Terk, kastedilen bir ibadettir",
+              card: { tag: "Not", title: "Terk, kastedilen bir ibadettir",
                 body: "Müslüman, Allah'ın emrine uymak niyetiyle terk ettiğinde sevap kazanır; fiilin hayatında hiç bulunmaması ya da aklına gelmemesi bu değildir." } }
           ] }
       ]
