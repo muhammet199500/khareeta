@@ -552,3 +552,11 @@ html[lang=ar] .scard h3 { word-spacing: .22em; }
 .missed .linkbtn { color: #B9590E; font-weight: 700; font-size: 14.5px; }
 .sendpanel[hidden] { display: none; }
 .sendpanel .sendbox { margin-top: 12px; }
+
+/* reminder: light green, eye-catching */
+.rcard:not(.on) { background: #E8F6EC; border-color: #2E8B57; }
+.rcard .ric, .rtoast .ric { background: #2E8B57; color: #fff; }
+.rcard .rbig, .rtoast .btn { background: #2E8B57; border-color: #2E8B57; color: #fff; box-shadow: 0 0 0 0 rgba(46,139,87,.55); animation: rpulse 2.2s ease-out infinite; }
+.rcard .rbig:hover, .rtoast .btn:hover { background: #26794B; border-color: #26794B; }
+@keyframes rpulse { 0% { box-shadow: 0 0 0 0 rgba(46,139,87,.5); } 70% { box-shadow: 0 0 0 12px rgba(46,139,87,0); } 100% { box-shadow: 0 0 0 0 rgba(46,139,87,0); } }
+@media (prefers-reduced-motion: reduce) { .rcard .rbig, .rtoast .btn { animation: none; } }
