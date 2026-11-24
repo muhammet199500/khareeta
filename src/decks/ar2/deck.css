@@ -114,22 +114,25 @@ p { font-size: 28px; line-height: 1.75; }
   flex-direction: column;
   gap: 12px;
   background: #FCFAF4;
-  border-top: 6px solid #85601C;
-  border-radius: 10px;
-  padding: 36px 40px;
+  border: 1px solid #E6DCC8;
+  border-radius: 12px;
+  padding: 38px 40px 36px;
+  position: relative;
   box-shadow: 0 6px 18px rgba(15, 46, 42, 0.07);
   animation: rise 0.6s ease-out both;
   animation-delay: calc(var(--i, 0) * 120ms);
 }
 .alt .card { background: #FBF8F0; }
-.card.ink { background: #0F2E2A; border-top-color: #D9B26A; }
+.card.ink { background: #0F2E2A; border-color: #0F2E2A; }
+.card.ink::before { background: #D9B26A; }
 .card.ink h3 { color: #F7F3EA; }
 .card.ink .txt { color: #C6D6D0; }
 .card.ink .ayah { color: #F1E3C0; }
 .card.ink .ref { color: #D9B26A; }
 .card.ink .tag { color: #D9B26A; }
 
-.dark .card { background: #173D38; border-top-color: #D9B26A; box-shadow: none; }
+.dark .card { background: #173D38; border-color: rgba(217,178,106,.22); box-shadow: none; }
+.dark .card::before { background: #D9B26A; }
 .dark .card .txt { color: #C6D6D0; }
 
 .txt { font-size: 28px; line-height: 1.7; color: #3B4A46; }
@@ -249,9 +252,11 @@ p { font-size: 28px; line-height: 1.75; }
   gap: 8px;
   background: #FCFAF4;
   border-radius: 12px;
-  border-right: 8px solid #85601C;
+  border: 1px solid #E6DCC8;
+  position: relative;
   padding: 32px 44px;
 }
+.vbox::before { content: ""; position: absolute; right: -1px; top: 22px; bottom: 22px; width: 7px; border-radius: 7px 0 0 7px; background: #85601C; }
 .alt .vbox { background: #FBF8F0; }
 
 /* Table */
@@ -304,10 +309,14 @@ p { font-size: 28px; line-height: 1.75; }
   flex-direction: column;
   gap: 6px;
   background: #FCFAF4;
-  border-radius: 10px;
-  border-top: 5px solid #85601C;
-  padding: 26px 30px;
+  border-radius: 12px;
+  border: 1px solid #E6DCC8;
+  padding: 28px 30px 26px;
+  position: relative;
 }
+/* gold accent bar set inside the top edge, so the rounded corners stay clean */
+.card::before, .tile::before { content: ""; position: absolute; top: -1px; inset-inline: 40px; height: 6px; border-radius: 0 0 6px 6px; background: #85601C; }
+.tile::before { inset-inline: 30px; height: 5px; }
 .notlist {
   display: flex;
   flex-direction: column;
