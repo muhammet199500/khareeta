@@ -59,7 +59,8 @@ self.addEventListener('push', e => {
     const body = day ? [pick(day.segment), day[lang] || day.ar].filter(Boolean).join('\n') : (lang === 'tr' ? 'Bugünün ödevine göz atın.' : 'افتح واجب اليوم.');
     await self.registration.showNotification(s.title || 'واجب اليوم · وتواصوا بالحق', {
       body, tag: 'wt-task', renotify: true, requireInteraction: true,
-      vibrate: [900, 300, 900, 300, 900],   // three long vibrations (Android; iPhone uses its own) lang, dir: lang === 'ar' ? 'rtl' : 'ltr',
+      vibrate: [900, 300, 900, 300, 900], /* three long vibrations (Android; iPhone uses its own) */
+      lang, dir: lang === 'ar' ? 'rtl' : 'ltr',
       icon: new URL('media/icon-192.png', self.registration.scope).href,
       badge: new URL('media/icon-192.png', self.registration.scope).href,
       data: { page: s.page || self.registration.scope, date: today },
