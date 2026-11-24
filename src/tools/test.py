@@ -7,7 +7,7 @@ import asyncio, sys, os, re, urllib.parse
 from playwright.async_api import async_playwright
 
 BASE = sys.argv[1] if len(sys.argv) > 1 else 'http://localhost:8765/'
-PAGES = ['index.html', 'la-ilaha.html', 'tr/la-ilaha.html', 'map.html', 'l1/index.html', 'l1/text.html', 'l1/slides.html', 'l1/qa.html', 'l1/quiz.html', 'l1/summary.html',
+PAGES = ['index.html', 'la-ilaha.html', 'tr/la-ilaha.html', 'tasks.html', 'tr/tasks.html', 'map.html', 'l1/index.html', 'l1/text.html', 'l1/slides.html', 'l1/qa.html', 'l1/quiz.html', 'l1/summary.html',
          'l2/index.html', 'l2/text.html', 'l2/slides.html', 'l2/qa.html', 'l2/quiz.html', 'l2/summary.html',
          'tr/index.html', 'tr/map.html', 'tr/l1/index.html', 'tr/l1/text.html', 'tr/l1/slides.html', 'tr/l1/qa.html', 'tr/l1/quiz.html', 'tr/l1/summary.html',
          'tr/l2/index.html', 'tr/l2/text.html', 'tr/l2/slides.html', 'tr/l2/qa.html', 'tr/l2/quiz.html', 'tr/l2/summary.html']

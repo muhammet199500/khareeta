@@ -58,7 +58,7 @@
       e.innerHTML = (l.lesson ? `<span class="lesson-ok">${TP.complete}</span>` : '') +
         (c ? `<span class="pbar"><i style="width:${100 * c / TOOLS.length}%"></i></span><span>${(e.classList.contains('lprog') ? TP.short : TP.done)(c, TOOLS.length)}</span>` : '');
     });
-    $$('.donebtn').forEach(b => {
+    $$('.donebtn[data-done]').forEach(b => {
       const [n, k] = b.dataset.done.split(':'), on = !!(o[n] || {})[k];
       b.classList.toggle('on', on); b.setAttribute('aria-pressed', on); b.textContent = on ? b.dataset.on : b.dataset.off;
     });
@@ -66,7 +66,7 @@
     const r = $('#progReset'); if (r) r.hidden = !Object.keys(o).length;
   }
   /* the student presses «I finished» themselves; pressing again undoes it */
-  $$('.donebtn').forEach(b => b.addEventListener('click', () => {
+  $$('.donebtn[data-done]').forEach(b => b.addEventListener('click', () => {
     const [n, k] = b.dataset.done.split(':');
     if ((P.get()[n] || {})[k]) P.unmark(n, k); else P.mark(n, k);
     paint();
@@ -250,4 +250,116 @@
     cat = b.dataset.cat; $$('.cats button').forEach(x => x.classList.toggle('on', x === b)); apply();
   }));
   q.addEventListener('input', apply);
+})();
+
+/* ---- weekly tasks: today's task, «I finished», and reminders that repeat until the student presses it ---- */
+(function () {
+  const box = document.querySelector('[data-remind]'); if (!box) return;
+  const $ = s => document.querySelector(s);
+  const AR = document.documentElement.lang === 'ar', LANG = AR ? 'ar' : 'tr';
+  const T = k => box.dataset['t' + k.charAt(0).toUpperCase() + k.slice(1).toLowerCase()] || '';
+  const API = box.dataset.remind, TASKS = new URL(box.dataset.tasks, location.href).href;
+  const ROOT = TASKS.replace(/tasks\.json$/, ''), SETTINGS = ROOT + '__wt_settings.json';
+  const DKEY = 'wt.tasks.v1', IDKEY = 'wt.remind.id';
+  const pad = n => String(n).padStart(2, '0');
+  const iso = d => d.getFullYear() + '-' + pad(d.getMonth() + 1) + '-' + pad(d.getDate());
+  const TODAY = iso(new Date());
+  const ls = { get(k, f) { try { const v = localStorage.getItem(k); return v === null ? f : JSON.parse(v); } catch (e) { return f; } },
+               set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) {} } };
+  const post = (path, body) => fetch(API + path, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) }).then(r => r.json());
+
+  /* settings shared with the service worker (it cannot read localStorage) */
+  async function readSW() { try { const c = await caches.open('wt-settings'); const r = await c.match(SETTINGS); return r ? await r.json() : {}; } catch (e) { return {}; } }
+  async function writeSW(extra) {
+    try {
+      const cur = await readSW();
+      const v = Object.assign(cur, { lang: LANG, api: API, page: ROOT + (AR ? '' : 'tr/') + 'tasks.html', title: T('nTitle'), doneLabel: T('nDone'), id: ls.get(IDKEY, null), done: ls.get(DKEY, {}) }, extra || {});
+      const c = await caches.open('wt-settings'); await c.put(SETTINGS, new Response(JSON.stringify(v), { headers: { 'Content-Type': 'application/json' } }));
+    } catch (e) {}
+  }
+  /* «I finished» pressed on a notification is saved by the service worker; bring it back here */
+  async function mergeFromSW() { const v = await readSW(); if (v.done) { const d = Object.assign(ls.get(DKEY, {}), v.done); ls.set(DKEY, d); } }
+
+  function setDone(date, on) {
+    const d = ls.get(DKEY, {}); if (on) d[date] = 1; else delete d[date]; ls.set(DKEY, d);
+    const id = ls.get(IDKEY, null);
+    if (id && date === TODAY) post(on ? '/done' : '/undone', { id, date }).catch(() => {});
+    writeSW();
+  }
+  const fmt = new Intl.DateTimeFormat(AR ? 'ar-u-nu-arab' : 'tr-TR', { weekday: 'long', day: 'numeric', month: 'long' });
+  const dayName = s => { const [y, m, d] = s.split('-').map(Number); return fmt.format(new Date(y, m - 1, d)); };
+  function doneBtn(btn, date) {
+    const paint = () => { const on = !!ls.get(DKEY, {})[date]; btn.classList.toggle('on', on); btn.setAttribute('aria-pressed', on); btn.textContent = on ? T('doneOn') : T('doneOff'); };
+    btn.addEventListener('click', () => { setDone(date, !ls.get(DKEY, {})[date]); paint(); });
+    paint();
+  }
+  const link = (href, label) => { const a = document.createElement('a'); a.className = 'go'; a.href = ROOT + (AR ? '' : 'tr/') + href; a.textContent = label; return a; };
+
+  async function load() {
+    await mergeFromSW();
+    let data; try { data = await (await fetch(TASKS, { cache: 'no-cache' })).json(); } catch (e) { data = { weeks: [] }; }
+    const weeks = (data.weeks || []).filter(w => (w.days || []).length);
+    const all = weeks.flatMap(w => w.days.map(d => Object.assign({ week: w }, d)));
+    const today = all.find(d => d.date === TODAY);
+    /* home: today's card */
+    if ($('#todayBand') && today) {
+      $('#todayText').textContent = today[LANG] || today.ar;
+      if (today.href) $('#todayText').after(link(today.href, T('open') + (AR ? ' ←' : ' →')));
+      doneBtn($('#todayDone'), TODAY); $('#todayBand').hidden = false;
+    }
+    /* tasks page: the current week (the one holding today, else the latest started one) */
+    const list = $('#taskList'); if (!list) return;
+    const started = weeks.filter(w => w.days.some(d => d.date <= TODAY));
+    const week = weeks.find(w => w.days.some(d => d.date === TODAY)) || started[started.length - 1] || weeks[0];
+    if (!week) { $('#taskEmpty').hidden = false; return; }
+    if (week.title) { $('#wkT').textContent = week.title[LANG] || week.title.ar || ''; $('#wkT').hidden = !$('#wkT').textContent; }
+    week.days.slice().sort((a, b) => a.date < b.date ? -1 : 1).forEach(d => {
+      const li = document.createElement('li'); li.className = 'tday' + (d.date === TODAY ? ' now' : d.date > TODAY ? ' later' : '');
+      const h = document.createElement('p'); h.className = 'tdate'; h.textContent = dayName(d.date); li.appendChild(h);
+      const p = document.createElement('p'); p.className = 'ttext'; p.textContent = d[LANG] || d.ar; li.appendChild(p);
+      if (d.href) li.appendChild(link(d.href, T('open') + (AR ? ' ←' : ' →')));
+      if (d.date <= TODAY) { const b = document.createElement('button'); b.type = 'button'; b.className = 'donebtn'; li.appendChild(b); doneBtn(b, d.date); }
+      list.appendChild(li);
+    });
+  }
+
+  /* reminders: ask permission, subscribe, tell the reminder service */
+  const ios = /iphone|ipad|ipod/i.test(navigator.userAgent), standalone = matchMedia('(display-mode: standalone)').matches || navigator.standalone;
+  const can = 'serviceWorker' in navigator && 'PushManager' in window && 'Notification' in window;
+  const rBtn = $('#rBtn'), rState = $('#rState');
+  const b64 = s => { const p = '='.repeat((4 - s.length % 4) % 4), r = atob((s + p).replace(/-/g, '+').replace(/_/g, '/')); return Uint8Array.from(r, c => c.charCodeAt(0)); };
+  async function current() { if (!can) return null; const reg = await navigator.serviceWorker.ready; return reg.pushManager.getSubscription(); }
+  async function paintR() {
+    if (!rBtn) return;
+    if (!can) { rState.textContent = ios && !standalone ? T('rIos') : T('rNo'); rBtn.hidden = true; return; }
+    if (Notification.permission === 'denied') { rState.textContent = T('rDenied'); rBtn.hidden = true; return; }
+    const sub = await current(), on = !!(sub && ls.get(IDKEY, null));
+    rBtn.hidden = false; rBtn.textContent = on ? T('rOff') : T('rOn'); rBtn.classList.toggle('line', on);
+    rState.textContent = on ? T('rIsOn') + ' ' + T('rHelp') : T('rHelp');
+  }
+  async function enable() {
+    if ((await Notification.requestPermission()) !== 'granted') return paintR();
+    const reg = await navigator.serviceWorker.ready;
+    const key = (await (await fetch(API + '/key')).json()).key;
+    let sub = await reg.pushManager.getSubscription();
+    if (!sub) sub = await reg.pushManager.subscribe({ userVisibleOnly: true, applicationServerKey: b64(key) });
+    const r = await post('/subscribe', { subscription: sub.toJSON(), id: ls.get(IDKEY, null), tz: Intl.DateTimeFormat().resolvedOptions().timeZone, lang: LANG });
+    if (!r.id) throw new Error('no id');
+    ls.set(IDKEY, r.id);
+    if (ls.get(DKEY, {})[TODAY]) post('/done', { id: r.id, date: TODAY }).catch(() => {});
+    await writeSW();
+  }
+  async function disable() {
+    const sub = await current(); if (sub) await sub.unsubscribe().catch(() => {});
+    const id = ls.get(IDKEY, null); if (id) post('/unsubscribe', { id }).catch(() => {});
+    try { localStorage.removeItem(IDKEY); } catch (e) {}
+    await writeSW({ id: null });
+  }
+  if (rBtn) rBtn.addEventListener('click', async () => {
+    rBtn.disabled = true;
+    try { if ((await current()) && ls.get(IDKEY, null)) await disable(); else await enable(); }
+    catch (e) { rState.textContent = T('rErr'); rBtn.disabled = false; return; }
+    rBtn.disabled = false; paintR();
+  });
+  load(); paintR(); writeSW();
 })();

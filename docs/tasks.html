@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>واجبات الأسبوع · وتواصوا بالحق</title>
+<meta name="description" content="واجب صغير كل يوم. اضغط «أنهيتُ» حين تنتهي منه، ويصلك تذكير كل ساعتين نهارًا حتى تضغطه.">
+<meta property="og:title" content="واجبات الأسبوع · وتواصوا بالحق">
+<meta property="og:description" content="واجب صغير كل يوم. اضغط «أنهيتُ» حين تنتهي منه، ويصلك تذكير كل ساعتين نهارًا حتى تضغطه.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="وتواصوا بالحق">
+<meta property="og:locale" content="ar_AR">
+<meta property="og:image" content="https://muhammet199500.github.io/khareeta/media/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0F2E2A">
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="وتواصوا بالحق">
+<script>if ('serviceWorker' in navigator) addEventListener('load', () => navigator.serviceWorker.register('sw.js').catch(() => {}));</script>
+<link rel="icon" href="media/logo.webp" type="image/webp">
+<link rel="apple-touch-icon" href="media/apple-touch-icon.png">
+<link rel="preload" href="assets/fonts/noto-naskh-arabic-arabic-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/reem-kufi-arabic-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/fonts.css">
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">تخطَّ إلى المحتوى</a>
+<header class="bar"><div class="wrap">
+  <a class="brand" href="index.html"><img src="media/logo.webp" alt="وتواصوا بالحق"><span>وتواصوا بالحق</span></a>
+  <nav aria-label="الرئيسية"><a class="hide-s" href="index.html">الرئيسية</a><a class="hide-s" href="index.html#series">السلاسل</a><a class="lang" lang="tr" hreflang="tr" href="tr/tasks.html">Türkçe</a></nav>
+</div></header>
+<main id="main" class="tasks-page" data-remind="https://khareeta.wtawasaw.workers.dev" data-tasks="tasks.json" data-t-doneoff="أنهيتُ الواجب" data-t-doneon="✓ أنهيتَ الواجب" data-t-none="لا واجب اليوم." data-t-empty="لم تُنشر واجبات هذا الأسبوع بعد." data-t-open="افتح" data-t-ron="فعّل التذكير" data-t-roff="أوقف التذكير" data-t-rison="✓ التذكير مفعّل على هذا الجهاز." data-t-rhelp="يصلك إشعار كل ساعتين من ١٠ صباحًا إلى ١٠ ليلًا، ويتوقف في اليوم الذي تضغط فيه «أنهيتُ»." data-t-rios="على iPhone: ثبّت الموقع أولًا (زر المشاركة ← «إضافة إلى الشاشة الرئيسية»)، ثم افتحه من الشاشة الرئيسية واضغط «فعّل التذكير»." data-t-rno="متصفحك لا يدعم الإشعارات. جرّب Chrome على Android، أو ثبّت الموقع على iPhone." data-t-rdenied="الإشعارات ممنوعة لهذا الموقع في إعدادات المتصفح. اسمح بها ثم أعد المحاولة." data-t-rerr="تعذّر تفعيل التذكير الآن. تأكد من الاتصال بالإنترنت وحاول مرة أخرى." data-t-ntitle="واجب اليوم · وتواصوا بالحق" data-t-ndone="أنهيتُ">
+<section class="phead"><div class="wrap">
+  <nav class="crumbs" aria-label="breadcrumb"><a href="index.html">الرئيسية</a><span class="sep">›</span><span>واجبات الأسبوع</span></nav>
+  <h1>واجبات الأسبوع</h1><p>واجب صغير كل يوم. اضغط «أنهيتُ» حين تنتهي منه، ويصلك تذكير كل ساعتين نهارًا حتى تضغطه.</p>
+</div></section>
+<section class="band"><div class="wrap">
+  <div class="remind" id="remindBox"><div><h2>التذكير</h2><p class="rstate" id="rState">يصلك إشعار كل ساعتين من ١٠ صباحًا إلى ١٠ ليلًا، ويتوقف في اليوم الذي تضغط فيه «أنهيتُ».</p></div><button class="btn" type="button" id="rBtn">فعّل التذكير</button></div>
+  <h2 class="wkT" id="wkT" hidden></h2>
+  <ol class="tlist" id="taskList"></ol>
+  <p class="noresult" id="taskEmpty" hidden>لم تُنشر واجبات هذا الأسبوع بعد.</p>
+</div></section>
+</main>
+<footer><div class="wrap"><div class="f1"><img src="media/logo.webp" alt=""><span>وتواصوا بالحق · نسأل الله العلم النافع والعمل الصالح.</span></div><a href="index.html">مكتبة الدروس</a></div><div class="wrap app-cta" id="appCta" hidden><button class="btn line" id="installBtn" type="button" hidden>ثبّت الموقع على جوالك كتطبيق</button><span id="iosHint" hidden>على iPhone: اضغط زر المشاركة ثم «إضافة إلى الشاشة الرئيسية» ليصير الموقع تطبيقًا يعمل بلا إنترنت.</span></div></footer>
+<script src="assets/site.js"></script>
+</body>
+</html>

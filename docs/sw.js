@@ -2,7 +2,7 @@
    Pages, styles and scripts: network first (so every edit reaches students when they are online),
    falling back to the saved copy when there is no connection.
    Fonts and pictures: saved copy first. Videos are never saved (too large). */
-const VERSION = '29a49f88914a';
+const VERSION = 'ba2273de342b';
 const CACHE = 'wt-' + VERSION;
 const PRECACHE = [
  "./",
@@ -65,6 +65,8 @@ const PRECACHE = [
  "media/poster-teaser.jpg",
  "media/poster1-tr.jpg",
  "media/poster1.jpg",
+ "tasks.html",
+ "tasks.json",
  "tr/data_tr.js",
  "tr/",
  "tr/l1/",
@@ -82,6 +84,7 @@ const PRECACHE = [
  "tr/la-ilaha.html",
  "tr/manifest.webmanifest",
  "tr/map.html",
+ "tr/tasks.html",
  "l1/index.html",
  "l2/index.html",
  "tr/index.html",
@@ -119,4 +122,48 @@ self.addEventListener('fetch', e => {
     return res;
   }).catch(() => caches.match(req, { ignoreSearch: true }).then(hit => hit ||
     (req.mode === 'navigate' ? caches.match(new URL('index.html', self.registration.scope).href) : Response.error()))));
+});
+
+/* ---- daily-task reminders: the push carries no text; today's task is read from tasks.json ---- */
+const SETTINGS_URL = new URL('__wt_settings.json', self.registration.scope).href;
+async function settings() { try { const c = await caches.open('wt-settings'); const r = await c.match(SETTINGS_URL); return r ? await r.json() : {}; } catch (e) { return {}; } }
+async function saveSettings(v) { try { const c = await caches.open('wt-settings'); await c.put(SETTINGS_URL, new Response(JSON.stringify(v), { headers: { 'Content-Type': 'application/json' } })); } catch (e) {} }
+const pad2 = n => String(n).padStart(2, '0');
+const todayISO = () => { const d = new Date(); return d.getFullYear() + '-' + pad2(d.getMonth() + 1) + '-' + pad2(d.getDate()); };
+
+self.addEventListener('push', e => {
+  e.waitUntil((async () => {
+    const s = await settings(), today = todayISO();
+    let tasks = null;
+    const url = new URL('tasks.json', self.registration.scope).href;
+    try { const r = await fetch(url, { cache: 'no-cache' }); if (r.ok) { tasks = await r.clone().json(); caches.open(CACHE).then(c => c.put(url, r)); } } catch (err) {}
+    if (!tasks) { const hit = await caches.match(url, { ignoreSearch: true }); if (hit) tasks = await hit.json(); }
+    const day = tasks && (tasks.weeks || []).flatMap(w => w.days || []).find(d => d.date === today);
+    const lang = s.lang || 'ar';
+    if (day && (s.done || {})[today]) return;          // already finished on this device
+    const body = day ? (day[lang] || day.ar) : (lang === 'tr' ? 'Bugünün ödevine göz atın.' : 'افتح واجب اليوم.');
+    await self.registration.showNotification(s.title || 'واجب اليوم · وتواصوا بالحق', {
+      body, tag: 'wt-task', renotify: true, lang, dir: lang === 'ar' ? 'rtl' : 'ltr',
+      icon: new URL('media/icon-192.png', self.registration.scope).href,
+      badge: new URL('media/icon-192.png', self.registration.scope).href,
+      data: { page: s.page || self.registration.scope, date: today },
+      actions: [{ action: 'done', title: s.doneLabel || 'أنهيتُ' }],
+    });
+  })());
+});
+
+self.addEventListener('notificationclick', e => {
+  e.notification.close();
+  const { page, date } = e.notification.data || {};
+  if (e.action === 'done') {
+    e.waitUntil((async () => {
+      const s = await settings(); s.done = Object.assign(s.done || {}, { [date]: 1 }); await saveSettings(s);
+      if (s.api && s.id) await fetch(s.api + '/done', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ id: s.id, date }) }).catch(() => {});
+    })());
+    return;
+  }
+  e.waitUntil(self.clients.matchAll({ type: 'window', includeUncontrolled: true }).then(list => {
+    for (const c of list) if (c.url.startsWith(page) && 'focus' in c) return c.focus();
+    return self.clients.openWindow(page);
+  }));
 });

@@ -406,3 +406,30 @@ html[lang=ar] .scard h3 { word-spacing: .22em; }
 .squote small { display: block; font-family: var(--uf); font-size: 13px; color: var(--muted); line-height: 1.6; }
 .h3s { font-size: clamp(19px, 1.8vw, 22px); margin: 30px 0 4px; }
 .h3s + .sub { margin-bottom: 16px; }
+
+/* ---- weekly tasks ---- */
+.today { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; gap: 16px; align-items: center; background: var(--ink); color: #F7F3EA; border-radius: 18px; padding: 18px 20px; position: relative; overflow: hidden; }
+.today::before { content: ""; position: absolute; inset: 7px; border: 1px solid rgba(217,178,106,.35); border-radius: 13px; pointer-events: none; }
+.today .ic { width: 48px; height: 48px; border-radius: 12px; background: rgba(217,178,106,.14); display: grid; place-items: center; color: var(--goldl); }
+.today .ic svg { width: 24px; height: 24px; }
+.today .where { color: var(--goldl) !important; }
+.today .ttext { margin: 2px 0 6px; font-size: 18px; line-height: 1.7; color: #F7F3EA; }
+.today .go { color: var(--goldl); font-size: 14px; }
+.today .donebtn { position: relative; }
+@media (max-width: 640px) { .today { grid-template-columns: auto minmax(0, 1fr); } .today .donebtn { grid-column: 1 / -1; } }
+.remind { display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 16px 20px; margin-bottom: 26px; }
+.remind h2 { font-size: 20px; margin: 0 0 2px; }
+.remind .rstate { margin: 0; color: var(--muted); font-family: var(--uf); font-size: 14.5px; line-height: 1.7; max-width: 60ch; }
+.remind .btn[hidden] { display: none; }
+.wkT { font-size: clamp(19px, 1.8vw, 22px); margin: 0 0 12px; }
+.tlist { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; }
+.tday { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 14px 18px; display: grid; gap: 6px; justify-items: start; }
+.tday .tdate { margin: 0; font-family: var(--uf); font-size: 13.5px; color: var(--gold); }
+.tday .ttext { margin: 0; font-size: 17px; line-height: 1.75; }
+.tday.now { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(133,96,28,.15); }
+.tday.later { opacity: .6; }
+.tday .go { font-size: 14px; }
+.today .go { display: inline-block; margin-inline-end: 18px; text-decoration: none; }
+.today .go:hover { text-decoration: underline; }
+.today .donebtn { background: var(--goldl); border-color: var(--goldl); color: var(--ink); }
+.today .donebtn.on { background: #3F8F6A; border-color: #3F8F6A; color: #fff; }

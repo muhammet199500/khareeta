@@ -295,9 +295,13 @@ def bar(lang, depth, other):
     olabel = 'Türkçe' if lang == 'ar' else 'العربية'
     return f'''<header class="bar"><div class="wrap">
   <a class="brand" href="{home_of(lang, depth)}"><img src="{root_up(lang, depth)}media/logo.webp" alt="{E(s['brand'])}"><span>{E(s['brand'])}</span></a>
-  <nav aria-label="{E(s['home'])}"><a class="hide-s" href="{home_of(lang, depth)}">{E(s['home'])}</a><a class="hide-s" href="{home_of(lang, depth)}#series">{E(LIB[lang]['nav'])}</a><a class="lang" lang="{olang}" hreflang="{olang}" href="{other}">{olabel}</a></nav>
+  <nav aria-label="{E(s['home'])}"><a class="hide-s" href="{home_of(lang, depth)}">{E(s['home'])}</a><a class="hide-s" href="{home_of(lang, depth)}#series">{E(LIB[lang]['nav'])}</a>{tasks_link(lang, depth)}<a class="lang" lang="{olang}" hreflang="{olang}" href="{other}">{olabel}</a></nav>
 </div></header>
 '''
+
+def tasks_link(lang, depth):
+    if not HAS_TASKS: return ''
+    return f'<a class="hide-s" href="{home_of(lang, depth)[:-len("index.html")]}tasks.html">{E(TS[lang]["nav"])}</a>'
 
 def root_up(lang, depth):
     return up(depth)
@@ -497,6 +501,69 @@ def page_series(lang):
 </main>
 ''' + footer(lang, depth) + f'<script src="{u}assets/site.js"></script>\n</body>\n</html>\n'
 
+# ------------------------------------------------------------------ weekly tasks (daily task + reminders)
+# src/tasks.json holds the weeks; each day: date (YYYY-MM-DD), ar, tr, and an optional href to a page of the site.
+# The reminder service lives in remind/worker.js (Cloudflare); it reads docs/tasks.json from the live site.
+REMIND_URL = 'https://khareeta.wtawasaw.workers.dev'
+TASKS = json.load(open(f'{ROOT}/tasks.json', encoding='utf-8'))
+HAS_TASKS = any(w.get('days') for w in TASKS.get('weeks', []))
+TS = {
+ 'ar': dict(nav='الواجبات', title='واجبات الأسبوع',
+    sub='واجب صغير كل يوم. اضغط «أنهيتُ» حين تنتهي منه، ويصلك تذكير كل ساعتين نهارًا حتى تضغطه.',
+    today='واجب اليوم', all='كل واجبات الأسبوع', none='لا واجب اليوم.',
+    empty='لم تُنشر واجبات هذا الأسبوع بعد.', open='افتح', doneOff='أنهيتُ الواجب', doneOn='✓ أنهيتَ الواجب',
+    rT='التذكير', rOn='فعّل التذكير', rOff='أوقف التذكير', rIsOn='✓ التذكير مفعّل على هذا الجهاز.',
+    rHelp='يصلك إشعار كل ساعتين من ١٠ صباحًا إلى ١٠ ليلًا، ويتوقف في اليوم الذي تضغط فيه «أنهيتُ».',
+    rIos='على iPhone: ثبّت الموقع أولًا (زر المشاركة ← «إضافة إلى الشاشة الرئيسية»)، ثم افتحه من الشاشة الرئيسية واضغط «فعّل التذكير».',
+    rNo='متصفحك لا يدعم الإشعارات. جرّب Chrome على Android، أو ثبّت الموقع على iPhone.',
+    rDenied='الإشعارات ممنوعة لهذا الموقع في إعدادات المتصفح. اسمح بها ثم أعد المحاولة.',
+    rErr='تعذّر تفعيل التذكير الآن. تأكد من الاتصال بالإنترنت وحاول مرة أخرى.',
+    nTitle='واجب اليوم · وتواصوا بالحق', nDone='أنهيتُ'),
+ 'tr': dict(nav='Ödevler', title='Haftanın ödevleri',
+    sub='Her gün küçük bir ödev. Bitirdiğinizde «Bitirdim»e dokunun; dokunana kadar gündüz iki saatte bir hatırlatma gelir.',
+    today='Bugünün ödevi', all='Haftanın bütün ödevleri', none='Bugün ödev yok.',
+    empty='Bu haftanın ödevleri henüz yayımlanmadı.', open='Aç', doneOff='Ödevi bitirdim', doneOn='✓ Ödevi bitirdiniz',
+    rT='Hatırlatma', rOn='Hatırlatmayı aç', rOff='Hatırlatmayı kapat', rIsOn='✓ Bu cihazda hatırlatma açık.',
+    rHelp='Sabah 10’dan gece 10’a kadar iki saatte bir bildirim gelir; «Bitirdim»e dokunduğunuz gün durur.',
+    rIos='iPhone’da: Önce siteyi yükleyin (Paylaş ← «Ana Ekrana Ekle»), sonra ana ekrandan açıp «Hatırlatmayı aç»a dokunun.',
+    rNo='Tarayıcınız bildirimleri desteklemiyor. Android’de Chrome’u deneyin ya da iPhone’da siteyi yükleyin.',
+    rDenied='Bu site için bildirimler tarayıcı ayarlarında engellenmiş. İzin verip yeniden deneyin.',
+    rErr='Hatırlatma şu an açılamadı. İnternet bağlantınızı kontrol edip yeniden deneyin.',
+    nTitle='Bugünün ödevi · Ve Tevâsav bi’l-Hak', nDone='Bitirdim'),
+}
+TS_KEYS = ['doneOff', 'doneOn', 'none', 'empty', 'open', 'rOn', 'rOff', 'rIsOn', 'rHelp', 'rIos', 'rNo', 'rDenied', 'rErr', 'nTitle', 'nDone']
+
+def tasks_attrs(lang):
+    t = TS[lang]
+    return f'data-remind="{REMIND_URL}" data-tasks="{up(0 if lang == "ar" else 1)}tasks.json" ' + ' '.join(f'data-t-{k.lower()}="{E(t[k])}"' for k in TS_KEYS)
+
+def page_tasks(lang):
+    s, t = S[lang], TS[lang]; depth = 0 if lang == 'ar' else 1; u = up(depth)
+    other = 'tr/tasks.html' if lang == 'ar' else '../tasks.html'
+    crumbs = f'<a href="index.html">{E(s["home"])}</a><span class="sep">›</span><span>{E(t["title"])}</span>'
+    return head(lang, f'{t["title"]} · {s["brand"]}', depth, t['sub']) + bar(lang, depth, other) + f'''<main id="main" class="tasks-page" {tasks_attrs(lang)}>
+<section class="phead">{ORN}<div class="wrap">
+  <nav class="crumbs" aria-label="breadcrumb">{crumbs}</nav>
+  <h1>{E(t['title'])}</h1><p>{E(t['sub'])}</p>
+</div></section>
+<section class="band"><div class="wrap">
+  <div class="remind" id="remindBox"><div><h2>{E(t['rT'])}</h2><p class="rstate" id="rState">{E(t['rHelp'])}</p></div><button class="btn" type="button" id="rBtn">{E(t['rOn'])}</button></div>
+  <h2 class="wkT" id="wkT" hidden></h2>
+  <ol class="tlist" id="taskList"></ol>
+  <p class="noresult" id="taskEmpty" hidden>{E(t['empty'])}</p>
+</div></section>
+</main>
+''' + footer(lang, depth) + f'<script src="{u}assets/site.js"></script>\n</body>\n</html>\n'
+
+def today_band(lang):
+    """card on the home page with today's task (filled by site.js); only when tasks are published"""
+    if not HAS_TASKS: return ''
+    t = TS[lang]
+    return f'''<section class="band" id="todayBand" hidden {tasks_attrs(lang)}><div class="wrap">
+  <div class="today"><span class="ic">{I['quiz']}</span><div><p class="where">{E(t['today'])}</p><p class="ttext" id="todayText"></p><a class="go" href="tasks.html">{E(t['all'])}</a></div><button class="donebtn" type="button" id="todayDone"></button></div>
+</div></section>
+'''
+
 SEARCH_I = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg>'
 
 def page_library(lang):
@@ -543,7 +610,7 @@ def page_library(lang):
   <label class="srch">{SEARCH_I}<input id="libQ" type="search" placeholder="{E(lb['search'])}" aria-label="{E(lb['search'])}" autocomplete="off"></label></div>
 </div></div></section>
 
-<section class="band" id="contBand" hidden><div class="wrap">
+{today_band(lang)}<section class="band" id="contBand" hidden><div class="wrap">
   <h2>{E(lb['contT'])}</h2>
   <div class="cont"><span class="ic">{I['text']}</span><div><p class="where" id="contW"></p><h3 id="contT"></h3><p class="lprog" id="contP" hidden></p></div><a class="btn" id="contA" href="#">{E(lb['contB'])}</a></div>
 </div></section>
@@ -961,6 +1028,8 @@ def build():
     w('map.html', page_map('ar')); w('tr/map.html', page_map('tr'))
     w('index.html', page_library('ar')); w('tr/index.html', page_library('tr'))
     w(MAIN_PAGE, page_series('ar')); w('tr/' + MAIN_PAGE, page_series('tr'))
+    w('tasks.html', page_tasks('ar')); w('tr/tasks.html', page_tasks('tr'))
+    shutil.copy(f'{ROOT}/tasks.json', f'{OUT}/tasks.json')
     for L in LIVE:
         n = L['n']
         for lang, pre in (('ar', ''), ('tr', 'tr/')):
