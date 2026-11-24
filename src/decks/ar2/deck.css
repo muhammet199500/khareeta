@@ -181,7 +181,7 @@ p { font-size: 28px; line-height: 1.75; }
 .dark .foot .ft, .dark .foot .pn { color: #8FA8A0; }
 
 /* Cover & closing */
-#cover.dark, #khatima.dark { background:
+.dark.glow { background:
   radial-gradient(1100px 560px at 22% 32%, rgba(217,178,106,.17), transparent 70%),
   radial-gradient(900px 480px at 92% 112%, rgba(63,143,106,.26), transparent 70%),
   linear-gradient(to right, rgba(15,46,42,0) 0%, rgba(15,46,42,.6) 45%, #0F2E2A 75%),
