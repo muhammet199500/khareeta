@@ -376,6 +376,7 @@
       b.addEventListener('click', () => { log.set(k, { pledge: !log.get(k).pledge }); paint(); }); paint();
       p.append(b); c.append(p);
     }
+    c.append(sendBox(week));   /* «send my task» lives only in the final review */
     host.append(c);
   }
 
@@ -394,8 +395,8 @@
       const name = inp.value.trim(); if (!name) { msg.textContent = T('noName'); inp.focus(); return; }
       msg.textContent = ''; btn.disabled = true;
       try {
-        const blob = await sheetImage(week, name);
-        const file = new File([blob], T('imgFile') + '-' + name.replace(/\s+/g, '-') + '.png', { type: 'image/png' });
+        const blob = await sheetPdf(await sheetImage(week, name));
+        const file = new File([blob], T('imgFile') + '-' + name.replace(/\s+/g, '-') + '.pdf', { type: 'application/pdf' });
         const url = URL.createObjectURL(blob); save.href = url; save.download = file.name; save.hidden = false;
         if (navigator.canShare && navigator.canShare({ files: [file] })) { try { await navigator.share({ files: [file], title: L(week.title) }); } catch (e) {} }
         else save.click();
@@ -475,7 +476,27 @@
     const cv = document.createElement('canvas'); cv.width = W; cv.height = H;
     const ctx = cv.getContext('2d'); ctx.fillStyle = '#FCFAF4'; ctx.fillRect(0, 0, W, H);
     run(ctx, true);
-    return new Promise(res => cv.toBlob(res, 'image/png'));
+    return new Promise(res => cv.toBlob(b => res({ blob: b, w: W, h: H }), 'image/jpeg', 0.9));
+  }
+
+  /* wrap the picture in a one-page PDF (A4 width, page as long as the sheet) */
+  async function sheetPdf(img) {
+    const jpg = new Uint8Array(await img.blob.arrayBuffer());
+    const pw = 595.28, ph = +(pw * img.h / img.w).toFixed(2);
+    const enc = new TextEncoder(), parts = [], offs = [];
+    let len = 0; const push = x => { const b = typeof x === 'string' ? enc.encode(x) : x; parts.push(b); len += b.length; };
+    const obj = (n, body) => { offs[n] = len; push(n + ' 0 obj\n'); body(); push('\nendobj\n'); };
+    push('%PDF-1.4\n%\xE2\xE3\xCF\xD3\n');
+    obj(1, () => push('<< /Type /Catalog /Pages 2 0 R >>'));
+    obj(2, () => push('<< /Type /Pages /Kids [3 0 R] /Count 1 >>'));
+    obj(3, () => push(`<< /Type /Page /Parent 2 0 R /MediaBox [0 0 ${pw} ${ph}] /Resources << /XObject << /Im0 4 0 R >> >> /Contents 5 0 R >>`));
+    obj(4, () => { push(`<< /Type /XObject /Subtype /Image /Width ${img.w} /Height ${img.h} /ColorSpace /DeviceRGB /BitsPerComponent 8 /Filter /DCTDecode /Length ${jpg.length} >>\nstream\n`); push(jpg); push('\nendstream'); });
+    const cs = `q ${pw} 0 0 ${ph} 0 0 cm /Im0 Do Q`;
+    obj(5, () => push(`<< /Length ${cs.length} >>\nstream\n${cs}\nendstream`));
+    const xref = len;
+    push('xref\n0 6\n0000000000 65535 f \n' + [1, 2, 3, 4, 5].map(n => String(offs[n]).padStart(10, '0') + ' 00000 n \n').join(''));
+    push(`trailer\n<< /Size 6 /Root 1 0 R >>\nstartxref\n${xref}\n%%EOF\n`);
+    return new Blob(parts, { type: 'application/pdf' });
   }
 
   async function load() {
@@ -510,7 +531,7 @@
     days.forEach((d, i) => list.append(renderDay(week, d, days[0], i === days.length - 1)));
     renderFinal(week);
     dayTabs(days, week);
-    $('#taskList').parentNode.insertBefore(sendBox(week), $('#wkFinal').nextSibling);
+    if (!week.final) $('#taskList').parentNode.insertBefore(sendBox(week), $('#wkFinal').nextSibling);
   }
 
   /* one day at a time: a row of day buttons above the list; opens on today */

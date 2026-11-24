@@ -515,3 +515,4 @@ html[lang=ar] .scard h3 { word-spacing: .22em; }
 .sendmsg { margin: 0; color: #B03A2E; font-family: var(--uf); font-size: 14px; }
 .sendmsg:empty { display: none; }
 .sendbox { margin-top: 22px; background: var(--card); border: 2px solid #2E8B57; border-radius: 18px; padding: 18px 20px; border-top-style: solid; }
+.final .sendbox { margin-top: 4px; background: #F1F7F3; }
