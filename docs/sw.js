@@ -2,7 +2,7 @@
    Pages, styles and scripts: network first (so every edit reaches students when they are online),
    falling back to the saved copy when there is no connection.
    Fonts and pictures: saved copy first. Videos are never saved (too large). */
-const VERSION = 'ba2273de342b';
+const VERSION = '59584ec4e7b9';
 const CACHE = 'wt-' + VERSION;
 const PRECACHE = [
  "./",
@@ -141,7 +141,8 @@ self.addEventListener('push', e => {
     const day = tasks && (tasks.weeks || []).flatMap(w => w.days || []).find(d => d.date === today);
     const lang = s.lang || 'ar';
     if (day && (s.done || {})[today]) return;          // already finished on this device
-    const body = day ? (day[lang] || day.ar) : (lang === 'tr' ? 'Bugünün ödevine göz atın.' : 'افتح واجب اليوم.');
+    const pick = o => o ? (typeof o === 'string' ? o : (o[lang] || o.ar || '')) : '';
+    const body = day ? [pick(day.segment), day[lang] || day.ar].filter(Boolean).join('\n') : (lang === 'tr' ? 'Bugünün ödevine göz atın.' : 'افتح واجب اليوم.');
     await self.registration.showNotification(s.title || 'واجب اليوم · وتواصوا بالحق', {
       body, tag: 'wt-task', renotify: true, lang, dir: lang === 'ar' ? 'rtl' : 'ltr',
       icon: new URL('media/icon-192.png', self.registration.scope).href,

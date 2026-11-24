@@ -518,7 +518,11 @@ TS = {
     rNo='متصفحك لا يدعم الإشعارات. جرّب Chrome على Android، أو ثبّت الموقع على iPhone.',
     rDenied='الإشعارات ممنوعة لهذا الموقع في إعدادات المتصفح. اسمح بها ثم أعد المحاولة.',
     rErr='تعذّر تفعيل التذكير الآن. تأكد من الاتصال بالإنترنت وحاول مرة أخرى.',
-    nTitle='واجب اليوم · وتواصوا بالحق', nDone='أنهيتُ'),
+    nTitle='واجب اليوم · وتواصوا بالحق', nDone='أنهيتُ',
+    goalT='هدف الواجب', stepsT='طريقة التنفيذ', trackT='متابعة اليوم', tSeg='أتممتُ المقطع', tKept='تركتُ السب والشتم',
+    yes='نعم', no='لا', why='سبب الإخفاق إن وقع', whyPh='اكتب السبب باختصار…', counterT='عدد الألفاظ اليوم',
+    cmp='يوم الاثنين: {a} · اليوم: {b}', todayTag='اليوم', pledgeT='تعهّد', pledgeOn='✓ تعهّدتُ', pledgeOff='أتعهّد',
+    notePh='اكتب هنا…', private='ما تكتبه هنا يُحفظ على جهازك فقط، ولا يراه أحد.'),
  'tr': dict(nav='Ödevler', title='Haftanın ödevleri',
     sub='Her gün küçük bir ödev. Bitirdiğinizde «Bitirdim»e dokunun; dokunana kadar gündüz iki saatte bir hatırlatma gelir.',
     today='Bugünün ödevi', all='Haftanın bütün ödevleri', none='Bugün ödev yok.',
@@ -529,13 +533,17 @@ TS = {
     rNo='Tarayıcınız bildirimleri desteklemiyor. Android’de Chrome’u deneyin ya da iPhone’da siteyi yükleyin.',
     rDenied='Bu site için bildirimler tarayıcı ayarlarında engellenmiş. İzin verip yeniden deneyin.',
     rErr='Hatırlatma şu an açılamadı. İnternet bağlantınızı kontrol edip yeniden deneyin.',
-    nTitle='Bugünün ödevi · Ve Tevâsav bi’l-Hak', nDone='Bitirdim'),
+    nTitle='Bugünün ödevi · Ve Tevâsav bi’l-Hak', nDone='Bitirdim',
+    goalT='Ödevin amacı', stepsT='Nasıl uygulanır', trackT='Günün takibi', tSeg='Bölümü bitirdim', tKept='Sövmeyi ve hakareti bıraktım',
+    yes='Evet', no='Hayır', why='Aksama olduysa sebebi', whyPh='Sebebi kısaca yaz…', counterT='Bugünkü söz sayısı',
+    cmp='Pazartesi: {a} · Bugün: {b}', todayTag='Bugün', pledgeT='Söz', pledgeOn='✓ Söz verdim', pledgeOff='Söz veriyorum',
+    notePh='Buraya yaz…', private='Buraya yazdıkların yalnızca cihazında saklanır; kimse görmez.'),
 }
 TS_KEYS = ['doneOff', 'doneOn', 'none', 'empty', 'open', 'rOn', 'rOff', 'rIsOn', 'rHelp', 'rIos', 'rNo', 'rDenied', 'rErr', 'nTitle', 'nDone']
 
 def tasks_attrs(lang):
     t = TS[lang]
-    return f'data-remind="{REMIND_URL}" data-tasks="{up(0 if lang == "ar" else 1)}tasks.json" ' + ' '.join(f'data-t-{k.lower()}="{E(t[k])}"' for k in TS_KEYS)
+    return f'data-remind="{REMIND_URL}" data-tasks="{up(0 if lang == "ar" else 1)}tasks.json" data-ts="{E(json.dumps(t, ensure_ascii=False))}"'
 
 def page_tasks(lang):
     s, t = S[lang], TS[lang]; depth = 0 if lang == 'ar' else 1; u = up(depth)
@@ -547,9 +555,12 @@ def page_tasks(lang):
   <h1>{E(t['title'])}</h1><p>{E(t['sub'])}</p>
 </div></section>
 <section class="band"><div class="wrap">
+  <div id="wkIntro"></div>
   <div class="remind" id="remindBox"><div><h2>{E(t['rT'])}</h2><p class="rstate" id="rState">{E(t['rHelp'])}</p></div><button class="btn" type="button" id="rBtn">{E(t['rOn'])}</button></div>
-  <h2 class="wkT" id="wkT" hidden></h2>
+  <div id="wkHead"></div>
   <ol class="tlist" id="taskList"></ol>
+  <div id="wkFinal"></div>
+  <p class="tprivate">{E(t['private'])}</p>
   <p class="noresult" id="taskEmpty" hidden>{E(t['empty'])}</p>
 </div></section>
 </main>
@@ -560,7 +571,7 @@ def today_band(lang):
     if not HAS_TASKS: return ''
     t = TS[lang]
     return f'''<section class="band" id="todayBand" hidden {tasks_attrs(lang)}><div class="wrap">
-  <div class="today"><span class="ic">{I['quiz']}</span><div><p class="where">{E(t['today'])}</p><p class="ttext" id="todayText"></p><a class="go" href="tasks.html">{E(t['all'])}</a></div><button class="donebtn" type="button" id="todayDone"></button></div>
+  <div class="today"><span class="ic">{I['quiz']}</span><div><p class="where">{E(t['today'])}</p><p class="tseg" id="todaySeg"></p><p class="ttext" id="todayText"></p><a class="go" href="tasks.html">{E(t['all'])}</a></div><button class="donebtn" type="button" id="todayDone"></button></div>
 </div></section>
 '''
 

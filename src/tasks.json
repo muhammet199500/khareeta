@@ -1,4 +1,55 @@
 {
- "_how": "واجبات الأسبوع. لكل يوم: date بصيغة YYYY-MM-DD، والنص بالعربية ar وبالتركية tr، ورابط اختياري href لصفحة في الموقع (مثل l2/text.html). Daily tasks: one entry per day.",
- "weeks": []
+ "_how": "واجبات الأسبوع. لكل أسبوع: العنوان والمقدمة والهدف وطريقة التنفيذ والمحاسبة الختامية. لكل يوم: date بصيغة YYYY-MM-DD، والمقطع segment، ونص المهمة ar/tr، ورابط اختياري href لصفحة في الموقع. track: جدول متابعة يومي، counter: عدّاد للألفاظ.",
+ "weeks": [
+  {
+   "title": {"ar": "الواجب العملي الأسبوعي", "tr": "Haftalık uygulamalı ödev"},
+   "sub": {"ar": "صفة الكفر بالطاغوت • مجاهدة النفس في ترك السب والشتم", "tr": "Tâğutu inkârın keyfiyeti • Sövmeyi ve hakareti bırakmada nefisle mücahede"},
+   "intro": {
+    "ar": ["أخي الحبيب، إن العلم النافع ما ظهر أثره في الاعتقاد والعمل والأخلاق.", "فاجعل هذا الواجب فرصةً لتحقيق وتطبيق ما تعلّمته، ومجاهدة نفسك على ترك السب والشتم، ومحاسبتها بصدق، سائلًا الله الثبات والتوفيق."],
+    "tr": ["Sevgili kardeşim, faydalı ilim; etkisi itikatta, amelde ve ahlakta görülen ilimdir.", "Bu ödevi, öğrendiğini hayata geçirmek, sövmeyi ve hakareti bırakmak için nefsinle mücahede etmek ve onu dürüstçe hesaba çekmek için bir fırsat yap; Allah’tan sebat ve başarı dile."]
+   },
+   "remember": {"ar": "تذكّر: المقصود ليس إتمام الواجب فحسب، بل إصلاح النفس والعمل بما تعلّمت.", "tr": "Unutma: Amaç yalnızca ödevi tamamlamak değil; nefsi ıslah etmek ve öğrendiğinle amel etmektir."},
+   "goal": {
+    "ar": ["متابعة مقاطع درس صفة الكفر بالطاغوت بحسب ترتيبها.", "محاسبة النفس، والتدرّب يوميًا على ترك السب والشتم، وضبط اللسان عند الغضب والخلاف والمزاح."],
+    "tr": ["Tâğutu inkârın keyfiyeti dersinin bölümlerini sırasıyla takip etmek.", "Nefsi hesaba çekmek; sövmeyi ve hakareti bırakmak, öfke, anlaşmazlık ve şaka anında dili tutmak için her gün alıştırma yapmak."]
+   },
+   "steps": {
+    "ar": ["استمع كل يوم إلى المقطع المحدد، ولا تنتقل إلى المقطع التالي قبل إتمامه.", "نفّذ تدريب ضبط اللسان المذكور لذلك اليوم.", "سجّل التزامك بترك السب والشتم في جدول المتابعة.", "إذا وقع إخفاق، فاكتب سببه باختصار."],
+    "tr": ["Her gün belirlenen bölümü dinle; onu bitirmeden sonrakine geçme.", "O gün için verilen dili tutma alıştırmasını uygula.", "Sövmeyi ve hakareti bırakma konusundaki bağlılığını takip tablosuna kaydet.", "Bir aksama olursa sebebini kısaca yaz."]
+   },
+   "track": true,
+   "counter": true,
+   "days": [
+    {"date": "2026-11-30", "href": "l1/index.html",
+     "segment": {"ar": "المقطع الأول: اعتقاد بطلان عبادة الطاغوت", "tr": "1. bölüm: Tâğuta ibadetin bâtıl olduğuna itikad"},
+     "ar": "راقب ألفاظك طوال اليوم. كلما صدرت منك كلمة سبّ أو شتم أو لفظ جارح، ضع علامة في ورقة أو في هاتفك، واكتب في آخر اليوم عددها.",
+     "tr": "Gün boyunca sözlerini gözet. Ağzından bir sövme, hakaret ya da kırıcı bir söz çıktıkça bir kâğıda veya telefonuna işaret koy; gün sonunda sayısını yaz."},
+    {"date": "2026-12-01", "href": "l2/index.html",
+     "segment": {"ar": "المقطع الثاني: ترك عبادة الطاغوت", "tr": "2. bölüm: Tâğuta ibadeti terk etmek"},
+     "ar": "اختر كلمة واحدة أو كلمتين من أكثر ما لاحظته أمس، واترك كلًّا منها عمدًا، وضع مكانها عبارة هادئة تقولها بدلًا منها، أو اسكت. كما أن ترك الباطل يحتاج إلى عزم، فترك الكلمة المعتادة يحتاج إلى عزم.",
+     "tr": "Dün en çok fark ettiğin bir ya da iki kelimeyi seç; her birini bilerek bırak, yerine sakin bir ifade söyle ya da sus. Bâtılı terk etmek azim istediği gibi, alışılmış bir kelimeyi bırakmak da azim ister."},
+    {"date": "2026-12-02",
+     "segment": {"ar": "المقطع الثالث: بغضها", "tr": "3. bölüm: Ona buğz etmek"},
+     "ar": "عند كل موقف كدت تسبّ فيه أو سببت، اسأل نفسك: ما الذي أثارك؟ شخص معيّن، أو مكان، أو تعب، أو ضغط، أو عادة في الكلام. اكتب الأسباب المتكررة.",
+     "tr": "Sövmeye yaklaştığın ya da sövdüğün her durumda kendine sor: Seni ne tahrik etti? Belli bir kişi mi, bir yer mi, yorgunluk mu, baskı mı, yoksa bir konuşma alışkanlığı mı? Tekrar eden sebepleri yaz."},
+    {"date": "2026-12-03",
+     "segment": {"ar": "المقطع الرابع: عداوتهم", "tr": "4. bölüm: Onlara düşmanlık etmek"},
+     "ar": "في أي نقاش أو خلاف اليوم، ناقش الفكرة أو التصرف دون أن تسبّ الشخص أو تهينه. إذا خشيت أن تفقد ضبطك فأجّل الرد، وقل: «نتكلم في هذا لاحقًا». ثم اكتب موقفًا واحدًا نجحت فيه أو أخفقت.",
+     "tr": "Bugün herhangi bir tartışma ya da anlaşmazlıkta kişiye sövmeden ve onu aşağılamadan fikri ya da davranışı konuş. Kendini kaybetmekten korkarsan cevabı ertele ve «Bunu sonra konuşalım» de. Sonra başardığın ya da aksadığın bir durumu yaz."},
+    {"date": "2026-12-04",
+     "segment": {"ar": "المقطع الخامس: تكفيرهم", "tr": "5. bölüm: Onları tekfir etmek"},
+     "ar": "قارن عدد الألفاظ في آخر يوم بعددها يوم الاثنين، وراجع سلوكك خلال الأسبوع. احذر أن يجري على لسانك قذف أو سب أو طعن.",
+     "tr": "Son gündeki sözlerin sayısını pazartesi günküyle karşılaştır ve hafta boyunca davranışını gözden geçir. Diline iftira, sövme ya da karalama gelmesinden sakın."}
+   ],
+   "final": {
+    "date": "2026-12-04",
+    "title": {"ar": "المحاسبة الختامية", "tr": "Son muhasebe"},
+    "q1": {"ar": "هل التزمت بترك السب والشتم في الأيام الخمسة؟", "tr": "Beş gün boyunca sövmeyi ve hakareti bırakmaya bağlı kaldın mı?"},
+    "q1opts": {"ar": ["نعم", "إلى حدٍّ ما", "لا"], "tr": ["Evet", "Bir dereceye kadar", "Hayır"]},
+    "q2": {"ar": "ما السبب الأبرز الذي كان يدفعني إلى السب أو الشتم؟", "tr": "Beni sövmeye ya da hakarete en çok iten sebep neydi?"},
+    "q3": {"ar": "ما الخطوة التي سألتزم بها لمعالجة هذا السبب؟", "tr": "Bu sebebi gidermek için hangi adıma bağlı kalacağım?"},
+    "pledge": {"ar": "أستعين بالله، وأجاهد نفسي على حفظ لساني، وأبادر إلى التوبة وإصلاح الأذى إن صدر مني.", "tr": "Allah’tan yardım dilerim; dilimi korumak için nefsimle mücahede eder, benden bir eziyet sâdır olursa hemen tövbe edip onu telafi ederim."}
+   }
+  }
+ ]
 }

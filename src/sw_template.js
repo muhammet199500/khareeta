@@ -55,7 +55,8 @@ self.addEventListener('push', e => {
     const day = tasks && (tasks.weeks || []).flatMap(w => w.days || []).find(d => d.date === today);
     const lang = s.lang || 'ar';
     if (day && (s.done || {})[today]) return;          // already finished on this device
-    const body = day ? (day[lang] || day.ar) : (lang === 'tr' ? 'Bugünün ödevine göz atın.' : 'افتح واجب اليوم.');
+    const pick = o => o ? (typeof o === 'string' ? o : (o[lang] || o.ar || '')) : '';
+    const body = day ? [pick(day.segment), day[lang] || day.ar].filter(Boolean).join('\n') : (lang === 'tr' ? 'Bugünün ödevine göz atın.' : 'افتح واجب اليوم.');
     await self.registration.showNotification(s.title || 'واجب اليوم · وتواصوا بالحق', {
       body, tag: 'wt-task', renotify: true, lang, dir: lang === 'ar' ? 'rtl' : 'ltr',
       icon: new URL('media/icon-192.png', self.registration.scope).href,

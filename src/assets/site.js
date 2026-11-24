@@ -252,33 +252,34 @@
   q.addEventListener('input', apply);
 })();
 
-/* ---- weekly tasks: today's task, «I finished», and reminders that repeat until the student presses it ---- */
+/* ---- weekly tasks: today's task, daily check-in, «I finished», and reminders that repeat until the student presses it ---- */
 (function () {
   const box = document.querySelector('[data-remind]'); if (!box) return;
   const $ = s => document.querySelector(s);
   const AR = document.documentElement.lang === 'ar', LANG = AR ? 'ar' : 'tr';
-  const T = k => box.dataset['t' + k.charAt(0).toUpperCase() + k.slice(1).toLowerCase()] || '';
+  const TS = JSON.parse(box.dataset.ts || '{}'), T = k => TS[k] || '';
   const API = box.dataset.remind, TASKS = new URL(box.dataset.tasks, location.href).href;
   const ROOT = TASKS.replace(/tasks\.json$/, ''), SETTINGS = ROOT + '__wt_settings.json';
-  const DKEY = 'wt.tasks.v1', IDKEY = 'wt.remind.id';
+  const DKEY = 'wt.tasks.v1', LKEY = 'wt.tasklog.v1', IDKEY = 'wt.remind.id';
   const pad = n => String(n).padStart(2, '0');
   const iso = d => d.getFullYear() + '-' + pad(d.getMonth() + 1) + '-' + pad(d.getDate());
   const TODAY = iso(new Date());
+  const num = n => AR ? String(n).replace(/\d/g, d => '٠١٢٣٤٥٦٧٨٩'[d]) : String(n);
+  const L = o => o == null ? '' : typeof o === 'string' ? o : (o[LANG] || o.ar || '');
   const ls = { get(k, f) { try { const v = localStorage.getItem(k); return v === null ? f : JSON.parse(v); } catch (e) { return f; } },
                set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) {} } };
   const post = (path, body) => fetch(API + path, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) }).then(r => r.json());
+  const el = (tag, cls, text) => { const e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; };
 
   /* settings shared with the service worker (it cannot read localStorage) */
   async function readSW() { try { const c = await caches.open('wt-settings'); const r = await c.match(SETTINGS); return r ? await r.json() : {}; } catch (e) { return {}; } }
   async function writeSW(extra) {
     try {
-      const cur = await readSW();
-      const v = Object.assign(cur, { lang: LANG, api: API, page: ROOT + (AR ? '' : 'tr/') + 'tasks.html', title: T('nTitle'), doneLabel: T('nDone'), id: ls.get(IDKEY, null), done: ls.get(DKEY, {}) }, extra || {});
+      const v = Object.assign(await readSW(), { lang: LANG, api: API, page: ROOT + (AR ? '' : 'tr/') + 'tasks.html', title: T('nTitle'), doneLabel: T('nDone'), id: ls.get(IDKEY, null), done: ls.get(DKEY, {}) }, extra || {});
       const c = await caches.open('wt-settings'); await c.put(SETTINGS, new Response(JSON.stringify(v), { headers: { 'Content-Type': 'application/json' } }));
     } catch (e) {}
   }
-  /* «I finished» pressed on a notification is saved by the service worker; bring it back here */
-  async function mergeFromSW() { const v = await readSW(); if (v.done) { const d = Object.assign(ls.get(DKEY, {}), v.done); ls.set(DKEY, d); } }
+  async function mergeFromSW() { const v = await readSW(); if (v.done) ls.set(DKEY, Object.assign(ls.get(DKEY, {}), v.done)); }
 
   function setDone(date, on) {
     const d = ls.get(DKEY, {}); if (on) d[date] = 1; else delete d[date]; ls.set(DKEY, d);
@@ -286,6 +287,7 @@
     if (id && date === TODAY) post(on ? '/done' : '/undone', { id, date }).catch(() => {});
     writeSW();
   }
+  const log = { get: k => (ls.get(LKEY, {})[k] || {}), set(k, patch) { const all = ls.get(LKEY, {}); all[k] = Object.assign(all[k] || {}, patch); ls.set(LKEY, all); } };
   const fmt = new Intl.DateTimeFormat(AR ? 'ar-u-nu-arab' : 'tr-TR', { weekday: 'long', day: 'numeric', month: 'long' });
   const dayName = s => { const [y, m, d] = s.split('-').map(Number); return fmt.format(new Date(y, m - 1, d)); };
   function doneBtn(btn, date) {
@@ -293,7 +295,90 @@
     btn.addEventListener('click', () => { setDone(date, !ls.get(DKEY, {})[date]); paint(); });
     paint();
   }
-  const link = (href, label) => { const a = document.createElement('a'); a.className = 'go'; a.href = ROOT + (AR ? '' : 'tr/') + href; a.textContent = label; return a; };
+  const link = (href, label) => { const a = el('a', 'go', label + (AR ? ' ←' : ' →')); a.href = ROOT + (AR ? '' : 'tr/') + href; return a; };
+
+  /* yes / no pair stored in the day's log */
+  function yesNo(key, field, label, onChange) {
+    const row = el('div', 'yn'), lab = el('span', 'ynl', label), g = el('div', 'yng'); g.setAttribute('role', 'group'); g.setAttribute('aria-label', label);
+    const mk = (v, t) => { const b = el('button', 'ynb', t); b.type = 'button'; b.dataset.v = v; return b; };
+    const by = mk(1, T('yes')), bn = mk(0, T('no'));
+    const paint = () => { const v = log.get(key)[field]; [by, bn].forEach(b => { const on = v === +b.dataset.v; b.classList.toggle('on', on); b.setAttribute('aria-pressed', on); }); };
+    [by, bn].forEach(b => b.addEventListener('click', () => { const cur = log.get(key)[field]; log.set(key, { [field]: cur === +b.dataset.v ? null : +b.dataset.v }); paint(); onChange && onChange(); }));
+    g.append(by, bn); row.append(lab, g); paint(); return row;
+  }
+  function note(key, field, label, ph) {
+    const w = el('label', 'tnote'); w.append(el('span', 'ynl', label));
+    const ta = el('textarea'); ta.rows = 2; ta.placeholder = ph; ta.value = log.get(key)[field] || '';
+    ta.addEventListener('input', () => log.set(key, { [field]: ta.value }));
+    w.append(ta); return w;
+  }
+
+  function renderIntro(week) {
+    const host = $('#wkIntro'); if (!host) return;
+    const h = el('div', 'wkhead'); h.append(el('h2', null, L(week.title))); if (week.sub) h.append(el('p', 'wksub', L(week.sub)));
+    (week.intro && week.intro[LANG] || []).forEach(t => h.append(el('p', 'wkp', t)));
+    if (week.remember) h.append(el('p', 'wkrem', L(week.remember)));
+    host.append(h);
+    [['goal', 'goalT', 'ul'], ['steps', 'stepsT', 'ol']].forEach(([k, t, tag]) => {
+      const items = week[k] && (week[k][LANG] || week[k].ar); if (!items) return;
+      const d = el('details', 'wkdet'); d.append(el('summary', null, T(t)));
+      const list = el(tag); items.forEach(x => list.append(el('li', null, x))); d.append(list); host.append(d);
+    });
+  }
+
+  function renderDay(week, d, first, last) {
+    const li = el('li', 'tday' + (d.date === TODAY ? ' now' : d.date > TODAY ? ' later' : ''));
+    const top = el('p', 'tdate', dayName(d.date)); if (d.date === TODAY) top.append(el('span', 'ttag', T('todayTag'))); li.append(top);
+    if (d.segment) li.append(el('p', 'tseg', L(d.segment)));
+    li.append(el('p', 'ttext', L(d)));
+    if (d.href) li.append(link(d.href, T('open')));
+    if (d.date > TODAY) return li;
+    if (week.track) {
+      const k = d.date, f = el('div', 'track'); f.append(el('p', 'trackT', T('trackT')));
+      const why = note(k, 'why', T('why'), T('whyPh'));
+      const showWhy = () => { const v = log.get(k); why.hidden = !(v.seg === 0 || v.kept === 0 || (v.why || '').trim()); };
+      f.append(yesNo(k, 'seg', T('tSeg'), showWhy), yesNo(k, 'kept', T('tKept'), showWhy), why);
+      if (week.counter) {
+        const row = el('div', 'yn cnt'), g = el('div', 'cntg'), n = el('output', 'cntn');
+        const minus = el('button', 'ynb', '−'), plus = el('button', 'ynb', '+'); minus.type = plus.type = 'button';
+        minus.setAttribute('aria-label', '−1'); plus.setAttribute('aria-label', '+1');
+        const cmp = el('p', 'cmp');
+        const paint = () => {
+          const c = log.get(k).n || 0; n.textContent = num(c);
+          if (last && first && first.date !== d.date) { const a = log.get(first.date).n; cmp.textContent = a == null ? '' : T('cmp').replace('{a}', num(a)).replace('{b}', num(c)); cmp.hidden = a == null; }
+          else cmp.hidden = true;
+        };
+        minus.addEventListener('click', () => { log.set(k, { n: Math.max(0, (log.get(k).n || 0) - 1) }); paint(); });
+        plus.addEventListener('click', () => { log.set(k, { n: (log.get(k).n || 0) + 1 }); paint(); });
+        g.append(minus, n, plus); row.append(el('span', 'ynl', T('counterT')), g); f.append(row, cmp); paint();
+      }
+      showWhy(); li.append(f);
+    }
+    const b = el('button', 'donebtn'); b.type = 'button'; li.append(b); doneBtn(b, d.date);
+    return li;
+  }
+
+  function renderFinal(week) {
+    const F = week.final, host = $('#wkFinal'); if (!F || !host || TODAY < F.date) return;
+    const k = 'final:' + F.date, c = el('section', 'final'); c.append(el('h2', null, L(F.title)));
+    if (F.q1) {
+      const q = el('div', 'fq'); q.append(el('p', 'ynl', L(F.q1)));
+      const g = el('div', 'yng'), opts = F.q1opts && (F.q1opts[LANG] || F.q1opts.ar) || [];
+      const paint = () => [...g.children].forEach((b, i) => { const on = log.get(k).q1 === i; b.classList.toggle('on', on); b.setAttribute('aria-pressed', on); });
+      opts.forEach((t, i) => { const b = el('button', 'ynb', t); b.type = 'button'; b.addEventListener('click', () => { log.set(k, { q1: log.get(k).q1 === i ? null : i }); paint(); }); g.append(b); });
+      q.append(g); c.append(q); paint();
+    }
+    if (F.q2) c.append(note(k, 'q2', L(F.q2), T('notePh')));
+    if (F.q3) c.append(note(k, 'q3', L(F.q3), T('notePh')));
+    if (F.pledge) {
+      const p = el('div', 'pledge'); p.append(el('p', 'ynl', T('pledgeT')), el('p', 'ptext', L(F.pledge)));
+      const b = el('button', 'donebtn'); b.type = 'button';
+      const paint = () => { const on = !!log.get(k).pledge; b.classList.toggle('on', on); b.setAttribute('aria-pressed', on); b.textContent = on ? T('pledgeOn') : T('pledgeOff'); };
+      b.addEventListener('click', () => { log.set(k, { pledge: !log.get(k).pledge }); paint(); }); paint();
+      p.append(b); c.append(p);
+    }
+    host.append(c);
+  }
 
   async function load() {
     await mergeFromSW();
@@ -303,24 +388,20 @@
     const today = all.find(d => d.date === TODAY);
     /* home: today's card */
     if ($('#todayBand') && today) {
-      $('#todayText').textContent = today[LANG] || today.ar;
-      if (today.href) $('#todayText').after(link(today.href, T('open') + (AR ? ' ←' : ' →')));
+      $('#todaySeg').textContent = L(today.segment); $('#todaySeg').hidden = !today.segment;
+      $('#todayText').textContent = L(today);
+      if (today.href) $('#todayText').after(link(today.href, T('open')));
       doneBtn($('#todayDone'), TODAY); $('#todayBand').hidden = false;
     }
-    /* tasks page: the current week (the one holding today, else the latest started one) */
+    /* tasks page: the current week (holding today, else the latest started, else the next one) */
     const list = $('#taskList'); if (!list) return;
     const started = weeks.filter(w => w.days.some(d => d.date <= TODAY));
     const week = weeks.find(w => w.days.some(d => d.date === TODAY)) || started[started.length - 1] || weeks[0];
     if (!week) { $('#taskEmpty').hidden = false; return; }
-    if (week.title) { $('#wkT').textContent = week.title[LANG] || week.title.ar || ''; $('#wkT').hidden = !$('#wkT').textContent; }
-    week.days.slice().sort((a, b) => a.date < b.date ? -1 : 1).forEach(d => {
-      const li = document.createElement('li'); li.className = 'tday' + (d.date === TODAY ? ' now' : d.date > TODAY ? ' later' : '');
-      const h = document.createElement('p'); h.className = 'tdate'; h.textContent = dayName(d.date); li.appendChild(h);
-      const p = document.createElement('p'); p.className = 'ttext'; p.textContent = d[LANG] || d.ar; li.appendChild(p);
-      if (d.href) li.appendChild(link(d.href, T('open') + (AR ? ' ←' : ' →')));
-      if (d.date <= TODAY) { const b = document.createElement('button'); b.type = 'button'; b.className = 'donebtn'; li.appendChild(b); doneBtn(b, d.date); }
-      list.appendChild(li);
-    });
+    renderIntro(week);
+    const days = week.days.slice().sort((a, b) => a.date < b.date ? -1 : 1);
+    days.forEach((d, i) => list.append(renderDay(week, d, days[0], i === days.length - 1)));
+    renderFinal(week);
   }
 
   /* reminders: ask permission, subscribe, tell the reminder service */
