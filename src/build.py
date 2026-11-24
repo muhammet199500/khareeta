@@ -301,7 +301,7 @@ def bar(lang, depth, other):
 
 def tasks_link(lang, depth):
     if not HAS_TASKS: return ''
-    return f'<a class="hide-s" href="{home_of(lang, depth)[:-len("index.html")]}tasks.html">{E(TS[lang]["nav"])}</a>'
+    return f'<a class="tasks-nav" href="{home_of(lang, depth)[:-len("index.html")]}tasks.html">{E(TS[lang]["nav"])}</a>'
 
 def root_up(lang, depth):
     return up(depth)
@@ -510,7 +510,7 @@ HAS_TASKS = any(w.get('days') for w in TASKS.get('weeks', []))
 TS = {
  'ar': dict(nav='الواجبات', title='واجبات الأسبوع',
     sub='واجب صغير كل يوم. اضغط «أنهيتُ» حين تنتهي منه، ويصلك تذكير كل ساعتين نهارًا حتى تضغطه.',
-    today='واجب اليوم', all='كل واجبات الأسبوع', none='لا واجب اليوم.',
+    today='واجب اليوم', week='واجب الأسبوع', openWeek='افتح الواجب', all='كل واجبات الأسبوع', none='لا واجب اليوم.',
     empty='لم تُنشر واجبات هذا الأسبوع بعد.', open='افتح', doneOff='أنهيتُ الواجب', doneOn='✓ أنهيتَ الواجب',
     rT='التذكير', rOn='فعّل التذكير', rOff='أوقف التذكير', rIsOn='✓ التذكير مفعّل على هذا الجهاز.',
     rHelp='يصلك إشعار كل ساعتين من ١٠ صباحًا إلى ١٠ ليلًا، ويتوقف في اليوم الذي تضغط فيه «أنهيتُ».',
@@ -525,7 +525,7 @@ TS = {
     notePh='اكتب هنا…', private='ما تكتبه هنا يُحفظ على جهازك فقط، ولا يراه أحد.'),
  'tr': dict(nav='Ödevler', title='Haftanın ödevleri',
     sub='Her gün küçük bir ödev. Bitirdiğinizde «Bitirdim»e dokunun; dokunana kadar gündüz iki saatte bir hatırlatma gelir.',
-    today='Bugünün ödevi', all='Haftanın bütün ödevleri', none='Bugün ödev yok.',
+    today='Bugünün ödevi', week='Haftanın ödevi', openWeek='Ödevi aç', all='Haftanın bütün ödevleri', none='Bugün ödev yok.',
     empty='Bu haftanın ödevleri henüz yayımlanmadı.', open='Aç', doneOff='Ödevi bitirdim', doneOn='✓ Ödevi bitirdiniz',
     rT='Hatırlatma', rOn='Hatırlatmayı aç', rOff='Hatırlatmayı kapat', rIsOn='✓ Bu cihazda hatırlatma açık.',
     rHelp='Sabah 10’dan gece 10’a kadar iki saatte bir bildirim gelir; «Bitirdim»e dokunduğunuz gün durur.',
@@ -571,7 +571,7 @@ def today_band(lang):
     if not HAS_TASKS: return ''
     t = TS[lang]
     return f'''<section class="band" id="todayBand" hidden {tasks_attrs(lang)}><div class="wrap">
-  <div class="today"><span class="ic">{I['quiz']}</span><div><p class="where">{E(t['today'])}</p><p class="tseg" id="todaySeg"></p><p class="ttext" id="todayText"></p><a class="go" href="tasks.html">{E(t['all'])}</a></div><button class="donebtn" type="button" id="todayDone"></button></div>
+  <div class="today"><span class="ic">{I['quiz']}</span><div><p class="where" id="todayWhere">{E(t['today'])}</p><p class="tseg" id="todaySeg"></p><p class="ttext" id="todayText"></p><a class="go" href="tasks.html">{E(t['all'])}</a></div><button class="donebtn" type="button" id="todayDone"></button></div>
 </div></section>
 '''
 

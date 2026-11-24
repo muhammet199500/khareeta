@@ -392,6 +392,15 @@
       $('#todayText').textContent = L(today);
       if (today.href) $('#todayText').after(link(today.href, T('open')));
       doneBtn($('#todayDone'), TODAY); $('#todayBand').hidden = false;
+    } else if ($('#todayBand')) {
+      /* no task today: point to this week's (or the coming week's) task */
+      const next = weeks.find(w => w.days.some(d => d.date >= TODAY));
+      if (next) {
+        $('#todayWhere').textContent = T('week'); $('#todaySeg').textContent = L(next.title);
+        $('#todayText').textContent = L(next.sub) || ''; $('#todayDone').hidden = true;
+        const a = $('#todayBand .go'); a.textContent = T('openWeek') + (AR ? ' ←' : ' →');
+        $('#todayBand').hidden = false;
+      }
     }
     /* tasks page: the current week (holding today, else the latest started, else the next one) */
     const list = $('#taskList'); if (!list) return;
