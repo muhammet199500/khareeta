@@ -9,13 +9,17 @@
 | الصفحة الرئيسية | `index.html` | `tr/index.html` |
 | الخريطة التفاعلية | `map.html` | `tr/map.html` |
 | صفحة الدرس | `l1/index.html` · `l2/index.html` | `tr/l1/` · `tr/l2/` |
-| الدرس المكتوب | `l1/text.html` · `l2/text.html` | (يُحال إلى العربي) |
+| الدرس المكتوب | `l1/text.html` · `l2/text.html` | `tr/l1/text.html` · `tr/l2/text.html` |
 | عرض الشرائح | `lN/slides.html` | `tr/lN/slides.html` |
 | أسئلة وأجوبة | `lN/qa.html` | `tr/lN/qa.html` |
 | الاختبار | `lN/quiz.html` | `tr/lN/quiz.html` |
 
 بيانات الخريطة والاختبار في `data.js` و`tr/data_tr.js`.
 الروابط القديمة مثل `/khareeta/#l2` تُحوَّل تلقائيًا إلى الخريطة.
+
+## قاعدة الموقع
+
+كل ما يُضاف بالعربية يُضاف مثله بالتركية في `tr/`.
 
 ## رفع الفيديوهات
 

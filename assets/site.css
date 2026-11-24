@@ -253,3 +253,4 @@ dialog .dnote { padding: 10px 16px 14px; color: var(--muted); font-size: 14px; m
 @media (max-width: 600px) { .pager { grid-template-columns: minmax(0, 1fr); } .pager .nx { grid-column: auto; } }
 html[lang=ar] ol { list-style-type: arabic-indic; }
 .quiz .review .ans { color: var(--goldl); }
+html[lang=tr] .prose blockquote .ayah { display: block; text-align: right; margin-bottom: 4px; }
