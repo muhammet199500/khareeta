@@ -427,7 +427,7 @@ html[lang=ar] .scard h3 { word-spacing: .22em; }
 .tday .tdate { margin: 0; font-family: var(--uf); font-size: 13.5px; color: var(--gold); }
 .tday .ttext { margin: 0; font-size: 17px; line-height: 1.75; }
 .tday.now { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(133,96,28,.15); }
-.tday.later { opacity: .6; }
+.tday.later { opacity: 1; }
 .tday .go { font-size: 14px; }
 .today .go { display: inline-block; margin-inline-end: 18px; text-decoration: none; }
 .today .go:hover { text-decoration: underline; }

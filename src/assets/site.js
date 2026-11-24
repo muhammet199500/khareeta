@@ -332,7 +332,6 @@
     if (d.segment) li.append(el('p', 'tseg', L(d.segment)));
     li.append(el('p', 'ttext', L(d)));
     if (d.href) li.append(link(d.href, T('open')));
-    if (d.date > TODAY) return li;
     if (week.track) {
       const k = d.date, f = el('div', 'track'); f.append(el('p', 'trackT', T('trackT')));
       const why = note(k, 'why', T('why'), T('whyPh'));
@@ -359,7 +358,7 @@
   }
 
   function renderFinal(week) {
-    const F = week.final, host = $('#wkFinal'); if (!F || !host || TODAY < F.date) return;
+    const F = week.final, host = $('#wkFinal'); if (!F || !host) return;
     const k = 'final:' + F.date, c = el('section', 'final'); c.append(el('h2', null, L(F.title)));
     if (F.q1) {
       const q = el('div', 'fq'); q.append(el('p', 'ynl', L(F.q1)));
