@@ -560,3 +560,17 @@ html[lang=ar] .scard h3 { word-spacing: .22em; }
 .rcard .rbig:hover, .rtoast .btn:hover { background: #26794B; border-color: #26794B; }
 @keyframes rpulse { 0% { box-shadow: 0 0 0 0 rgba(46,139,87,.5); } 70% { box-shadow: 0 0 0 12px rgba(46,139,87,0); } 100% { box-shadow: 0 0 0 0 rgba(46,139,87,0); } }
 @media (prefers-reduced-motion: reduce) { .rcard .rbig, .rtoast .btn { animation: none; } }
+
+/* the weekly-task card stands apart from the rest of the site: green instead of the dark ink */
+.today, .wkhead { background: linear-gradient(135deg, #1E7046 0%, #2E8B57 60%, #3A9C63 100%); }
+.today::before, .wkhead::before { border-color: rgba(255,255,255,.35); }
+.today .ic { background: rgba(255,255,255,.18); color: #fff; }
+.today .where { color: #FFE9B0 !important; font-weight: 700; }
+.today .tseg, .wkhead .wksub { color: #FFE9B0; }
+.today .ttext, .wkhead .wkp { color: #fff; }
+.wkhead h2 { color: #fff; }
+.wkhead .wkrem { border-color: #FFE9B0; color: #FFF6DC; }
+.today .tgo { background: #FFE9B0; border-color: #FFE9B0; color: #14482E; }
+.today .go { color: #FFE9B0; }
+.today .donebtn { background: #fff; border-color: #fff; color: #1E7046; }
+.today .donebtn.on { background: #14482E; border-color: #14482E; color: #fff; }
