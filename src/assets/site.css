@@ -574,3 +574,9 @@ html[lang=ar] .scard h3 { word-spacing: .22em; }
 .today .go { color: #FFE9B0; }
 .today .donebtn { background: #fff; border-color: #fff; color: #1E7046; }
 .today .donebtn.on { background: #14482E; border-color: #14482E; color: #fff; }
+
+/* chosen: maroon for the weekly-task card and the task page header */
+.today, .wkhead { background: linear-gradient(135deg, #5E1624 0%, #7A1F30 60%, #8E2A3C 100%); }
+.today .donebtn { color: #7A1F30; }
+.today .donebtn.on { background: #2E8B57; border-color: #2E8B57; color: #fff; }
+.today .tgo { color: #5E1624; }
