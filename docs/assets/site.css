@@ -113,7 +113,9 @@ h2 { font-family: var(--hf); font-weight: 700; font-size: clamp(23px, 3vw, 32px)
 @media (max-width: 640px) { .lrow { grid-template-columns: auto minmax(0, 1fr); } .lrow .pill { grid-column: 2; justify-self: start; } }
 
 /* open lesson panel */
-.open { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); gap: 22px; background: var(--card); border: 1px solid var(--line); border-top: 6px solid var(--gold); border-radius: 18px; padding: clamp(14px, 2vw, 22px); box-shadow: 0 14px 40px rgba(15,46,42,.08); }
+.open { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); gap: 22px; background: var(--card); border: 1px solid var(--line); border-radius: 18px; padding: clamp(14px, 2vw, 22px); box-shadow: 0 14px 40px rgba(15,46,42,.08); position: relative; }
+/* gold accent: a bar set inside the top edge, so the rounded corners stay clean */
+.open::before { content: ""; position: absolute; top: -1px; inset-inline: 32px; height: 4px; border-radius: 0 0 4px 4px; background: linear-gradient(90deg, var(--goldl), var(--gold), var(--goldl)); }
 .open .num { display: inline-block; font-family: var(--uf); font-weight: 700; background: var(--ink); color: var(--goldl); border-radius: 30px; padding: 2px 14px; font-size: 14px; }
 .open h3 { font-family: var(--hf); font-weight: 700; font-size: clamp(23px, 2.6vw, 31px); line-height: 1.25; margin: 10px 0 6px; }
 .open h3 a { text-decoration: none; }
