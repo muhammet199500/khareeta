@@ -253,7 +253,7 @@ dialog img { display: block; width: 100%; height: auto; }
 dialog .dnote { padding: 10px 16px 14px; color: var(--muted); font-size: 14px; margin: 0; display: flex; justify-content: space-between; gap: 10px; flex-wrap: wrap; align-items: center; }
 
 @media print {
-  .bar, footer, .toc, .endcta, .crumbs, .skip { display: none !important; }
+  .bar, body > footer, .toc, .endcta, .crumbs, .skip { display: none !important; }
   .phead { background: none; color: #000; padding: 0 0 10px; }
   .phead .orn { display: none; }
   .phead p, .phead .eb { color: #444; }
