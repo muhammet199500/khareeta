@@ -10,11 +10,17 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Ve Tevâsav bi’l-Hak">
 <meta property="og:locale" content="tr_TR">
-<meta property="og:image" content="https://muhammet199500.github.io/khareeta/media/og.jpg">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta name="twitter:card" content="summary_large_image">
+<meta property="og:image" content="https://muhammet199500.github.io/khareeta/media/share-l1-tr.jpg">
+<meta property="og:image:width" content="1080">
+<meta property="og:image:height" content="1080">
+<meta name="twitter:card" content="summary">
 <meta name="theme-color" content="#0F2E2A">
+<link rel="manifest" href="../../tr/manifest.webmanifest">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Ve Tevâsav bi’l-Hak">
+<script>if ('serviceWorker' in navigator) addEventListener('load', () => navigator.serviceWorker.register('../../sw.js').catch(() => {}));</script>
 <link rel="icon" href="../../media/logo.webp" type="image/webp">
 <link rel="apple-touch-icon" href="../../media/apple-touch-icon.png">
 <link rel="preload" href="../../assets/fonts/source-sans-3-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
@@ -28,7 +34,7 @@
   <a class="brand" href="../index.html"><img src="../../media/logo.webp" alt="Ve Tevâsav bi’l-Hak"><span>Ve Tevâsav bi’l-Hak</span></a>
   <nav aria-label="Ana sayfa"><a class="hide-s" href="../index.html">Ana sayfa</a><a class="hide-s" href="../index.html#lessons">Dersler</a><a class="lang" lang="ar" hreflang="ar" href="../../l1/qa.html">العربية</a></nav>
 </div></header>
-<main id="main">
+<main id="main" data-lesson="1" data-page="qa">
 <section class="phead"><div class="wrap">
   <nav class="crumbs" aria-label="breadcrumb"><a href="../index.html">Ana sayfa</a><span class="sep">›</span><a href="index.html">Ders 1</a><span class="sep">›</span><span>Soru-cevap</span></nav>
   <p class="eb">Ders 1 · Birinci husus · Tâğutu inkârın keyfiyeti</p><h1>Soru-cevap</h1><p>Tâğuta İbadetin Bâtıl Olduğuna İtikad · Önce cevabı düşünün, sonra karşılaştırmak için «Cevabı göster»e basın.</p>
@@ -36,7 +42,7 @@
 
 <section class="band"><div class="wrap narrow">
   <p class="hint">Tekrar yöntemi: Soruyu okuyun, içinizden ya da sesli cevaplayın, sonra cevabı açın. «Doğru mu, yanlış mı?» sorularında tek kelimeyle yetinmeyip gerekçe gösterin.</p>
-  <div class="qa-tools"><span class="count">16 soru</span><button class="btn line" id="qaAll" type="button">Bütün cevapları göster</button></div>
+  <div class="qa-tools"><div class="fs-ctl" role="group" aria-label="Yazı boyutu"><button type="button" data-fs="-1" aria-label="Yazıyı küçült" title="Yazıyı küçült">A<small>−</small></button><button type="button" data-fs="1" aria-label="Yazıyı büyüt" title="Yazıyı büyüt">A<small>+</small></button></div><span class="count">16 soru</span><button class="btn line" id="qaAll" type="button">Bütün cevapları göster</button></div>
   <section class="qgroup"><h2>Tekrar soruları</h2><ol class="qlist"><li class="qcard"><span class="qn">1</span><div><p class="qq">Allah’tan başkasına ibadetin bâtıl olduğunu bilip kalben tasdik etmemek yeterli midir?</p></div><button class="rev" type="button" aria-expanded="false">Cevabı göster</button><p class="qa-a">Hayır; kastedilen kesin kalbî itikaddır, ifadeyi bilmek değil.</p></li>
 <li class="qcard"><span class="qn">2</span><div><p class="qq">«Zannediyorum ki…» ile «Kesin olarak inanıyorum ki…» arasındaki fark nedir?</p></div><button class="rev" type="button" aria-expanded="false">Cevabı göster</button><p class="qa-a">Birincisi karşıt ihtimali kaldırmayan tercih, ikincisi kesinlik ve kalbî tasdiktir.</p></li>
 <li class="qcard"><span class="qn">3</span><div><p class="qq">Her kesin itikad doğru mudur?</p></div><button class="rev" type="button" aria-expanded="false">Cevabı göster</button><p class="qa-a">Hayır; insan bâtıl bir şeye de kesin inanabilir. İstenen, hakka uygun kesin itikaddır.</p></li>
@@ -55,7 +61,7 @@
   <div class="endcta"><p>Tâğuta İbadetin Bâtıl Olduğuna İtikad</p><div style="display:flex;gap:8px;flex-wrap:wrap"><a class="btn" href="quiz.html">Kendini dene</a><a class="btn ghost" href="index.html">Ders sayfasına dön</a></div></div>
 </div></section>
 </main>
-<footer><div class="wrap"><div class="f1"><img src="../../media/logo.webp" alt=""><span>Ve Tevâsav bi’l-Hak · Allah’tan faydalı ilim ve salih amel dileriz.</span></div><a href="../index.html">Tâğutu İnkârın Keyfiyeti Serisi</a></div></footer>
+<footer><div class="wrap"><div class="f1"><img src="../../media/logo.webp" alt=""><span>Ve Tevâsav bi’l-Hak · Allah’tan faydalı ilim ve salih amel dileriz.</span></div><a href="../index.html">Tâğutu İnkârın Keyfiyeti Serisi</a></div><div class="wrap app-cta" id="appCta" hidden><button class="btn line" id="installBtn" type="button" hidden>Siteyi telefonunuza uygulama olarak yükleyin</button><span id="iosHint" hidden>iPhone’da: Paylaş düğmesine, ardından «Ana Ekrana Ekle»ye dokunun; site internetsiz de çalışan bir uygulama olur.</span></div></footer>
 <script src="../../assets/site.js"></script>
 </body>
 </html>

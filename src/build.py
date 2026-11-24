@@ -64,6 +64,9 @@ S = {
     tMap=('الخريطة التفاعلية', 'سِر في الدرس فرعًا فرعًا'),
     tQA=('أسئلة وأجوبة', 'أسئلة المراجعة مع أجوبتها'),
     tQuiz=('اختبر فهمك', 'اختبار باختيارات متعددة وتصحيح فوري'),
+    progReset='مسح تقدّمي المحفوظ على هذا الجهاز', install='ثبّت الموقع على جوالك كتطبيق',
+    iosHint='على iPhone: اضغط زر المشاركة ثم «إضافة إلى الشاشة الرئيسية» ليصير الموقع تطبيقًا يعمل بلا إنترنت.',
+    fsDown='تصغير الخط', fsUp='تكبير الخط', fsLabel='حجم الخط', tShare=('صورة للمشاركة', 'صورة الدرس لواتساب وتيليجرام، فيها رمز يفتحه'),
     tSum=('ملخص الدرس للطباعة', 'صفحة واحدة برمز QR يفتح الدرس'),
     chipSum='الملخص', sumPrint='اطبع', sumPdf='تنزيل PDF', sumImg='تنزيل صورة',
     sumHelp='مقاس A4. امسح الرمز بكاميرا الجوال لتفتح صفحة الدرس.',
@@ -108,6 +111,9 @@ S = {
     tMap=('Etkileşimli harita', 'Dersi dal dal izleyin'),
     tQA=('Soru-cevap', 'Tekrar soruları ve cevapları'),
     tQuiz=('Kendini dene', 'Çoktan seçmeli test, anında düzeltme'),
+    progReset='Bu cihazda kayıtlı ilerlememi sil', install='Siteyi telefonunuza uygulama olarak yükleyin',
+    iosHint='iPhone’da: Paylaş düğmesine, ardından «Ana Ekrana Ekle»ye dokunun; site internetsiz de çalışan bir uygulama olur.',
+    fsDown='Yazıyı küçült', fsUp='Yazıyı büyüt', fsLabel='Yazı boyutu', tShare=('Paylaşım görseli', 'WhatsApp ve Telegram için dersi açan QR kodlu görsel'),
     tSum=('Yazdırılabilir ders özeti', 'Dersi açan QR kodlu tek sayfa'),
     chipSum='Özet', sumPrint='Yazdır', sumPdf='PDF indir', sumImg='Görsel indir',
     sumHelp='A4 boyutunda. Ders sayfasını açmak için kodu telefon kamerasıyla okutun.',
@@ -150,6 +156,7 @@ I = {
  'qa': '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8 8 0 0 1-11.8 7L4 20l1.1-4.6A8 8 0 1 1 21 12z"/><path d="M9.6 9.3a2.5 2.5 0 0 1 4.8.9c0 1.6-2.4 2.1-2.4 3.3M12 16.5h.01"/></svg>',
  'quiz': '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l3 3 5-6"/></svg>',
  'sum': '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M7 3h7l5 5v13H7z"/><path d="M14 3v5h5M10 13h6M10 17h6"/></svg>',
+ 'share': '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.6 13.5l6.8 4M15.4 6.5l-6.8 4"/></svg>',
  'video': '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="M10 9l5 3-5 3z" fill="currentColor"/></svg>',
 }
 
@@ -161,18 +168,29 @@ def preload(lang, u):
 
 def up(depth): return '../' * depth
 
-def og_tags(lang, title, desc):
+def og_tags(lang, title, desc, image=None):
+    img, w, h = (SITE + 'media/' + image, 1080, 1080) if image else (SITE + 'media/og.jpg', 1200, 630)
     return f'''<meta property="og:title" content="{E(title)}">
 <meta property="og:description" content="{E(desc)}">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="{E(S[lang]['brand'])}">
 <meta property="og:locale" content="{'ar_AR' if lang == 'ar' else 'tr_TR'}">
-<meta property="og:image" content="https://muhammet199500.github.io/khareeta/media/og.jpg">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta name="twitter:card" content="summary_large_image">'''
+<meta property="og:image" content="{img}">
+<meta property="og:image:width" content="{w}">
+<meta property="og:image:height" content="{h}">
+<meta name="twitter:card" content="{'summary' if image else 'summary_large_image'}">'''
 
-def head(lang, title, depth, desc='', extra=''):
+def app_tags(lang, root):
+    """Installable app (manifest) and offline support (service worker) for every page."""
+    man = f'{root}manifest.webmanifest' if lang == 'ar' else f'{root}tr/manifest.webmanifest'
+    return f'''<link rel="manifest" href="{man}">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="{E(S[lang]['brand'])}">
+<script>if ('serviceWorker' in navigator) addEventListener('load', () => navigator.serviceWorker.register('{root}sw.js').catch(() => {{}}));</script>'''
+
+def head(lang, title, depth, desc='', extra='', image=None):
     d = 'rtl' if lang == 'ar' else 'ltr'
     u = up(depth)
     return f'''<!DOCTYPE html>
@@ -182,8 +200,9 @@ def head(lang, title, depth, desc='', extra=''):
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>{E(title)}</title>
 <meta name="description" content="{E(desc or S[lang]['lead'])}">
-{og_tags(lang, title, desc or S[lang]['lead'])}
+{og_tags(lang, title, desc or S[lang]['lead'], image)}
 <meta name="theme-color" content="#0F2E2A">
+{app_tags(lang, u)}
 <link rel="icon" href="{u}media/logo.webp" type="image/webp">
 <link rel="apple-touch-icon" href="{u}media/apple-touch-icon.png">
 {preload(lang, u)}
@@ -213,7 +232,7 @@ def home_of(lang, depth):
 
 def footer(lang, depth):
     s, u = S[lang], up(depth)
-    return f'''<footer><div class="wrap"><div class="f1"><img src="{u}media/logo.webp" alt=""><span>{E(s['foot'])}</span></div><a href="{home_of(lang, depth)}">{E(s['series'])}</a></div></footer>
+    return f'''<footer><div class="wrap"><div class="f1"><img src="{u}media/logo.webp" alt=""><span>{E(s['foot'])}</span></div><a href="{home_of(lang, depth)}">{E(s['series'])}</a></div><div class="wrap app-cta" id="appCta" hidden><button class="btn line" id="installBtn" type="button" hidden>{E(s['install'])}</button><span id="iosHint" hidden>{E(s['iosHint'])}</span></div></footer>
 '''
 
 def dialog(lang):
@@ -224,6 +243,10 @@ def dialog(lang):
   <p class="dnote"><span>{E(s['sumNote'])}</span><a class="btn line" id="dlgDl" href="#" download>{E(s['download'])}</a></p>
 </dialog>
 '''
+
+def fs_ctl(lang):
+    s = S[lang]; a = 'أ' if lang == 'ar' else 'A'
+    return f'<div class="fs-ctl" role="group" aria-label="{E(s["fsLabel"])}"><button type="button" data-fs="-1" aria-label="{E(s["fsDown"])}" title="{E(s["fsDown"])}">{a}<small>−</small></button><button type="button" data-fs="1" aria-label="{E(s["fsUp"])}" title="{E(s["fsUp"])}">{a}<small>+</small></button></div>'
 
 def tool(icon, label, href, primary=False, data_img=None, title=None):
     b, sm = label
@@ -334,7 +357,7 @@ def page_home(lang):
             chips += [(I['slides'], s['chipSlides'], f'{b}slides.html'), (I['map'], s['chipMap'], f'map.html#l{L["n"]}'), (I['qa'], s['chipQA'], f'{b}qa.html'), (I['quiz'], s['chipQuiz'], f'{b}quiz.html')]
             if (L['n'], lang) in SUM: chips.append((I['sum'], s['chipSum'], f'{b}summary.html'))
             ch = ''.join(f'<a class="chip" href="{h}">{ic}{E(t)}</a>' for ic, t, h in chips)
-            rows.append(f'''<li class="lrow live"><span class="n">{n}</span><div><h3><a href="{b}index.html">{E(L[lang])}</a></h3><p>{E(L["descAr"] if lang == "ar" else L["descTr"])}</p><div class="chips">{ch}</div></div><a class="pill" href="{b}index.html">{E(s["open"])}</a></li>''')
+            rows.append(f'''<li class="lrow live"><span class="n">{n}</span><div><h3><a href="{b}index.html">{E(L[lang])}</a></h3><p>{E(L["descAr"] if lang == "ar" else L["descTr"])}</p><div class="chips">{ch}</div><p class="lprog" data-lesson="{L['n']}" hidden></p></div><a class="pill" href="{b}index.html">{E(s["open"])}</a></li>''')
         else:
             rows.append(f'''<li class="lrow"><span class="n">{n}</span><div><h3>{E(L[lang])}</h3><p>{E(s["lesson"])} {n}</p></div><span class="pill">{E(s["soon"])}</span></li>''')
     b = f'l{latest["n"]}/'
@@ -373,6 +396,7 @@ def page_home(lang):
 <section class="band tight" id="lessons"><div class="wrap">
   <h2>{E(s['listT'])}</h2><p class="sub">{E(s['listS'])}</p>
   <ol class="list">{''.join(rows)}</ol>
+  <p class="reset-wrap"><button class="linkbtn" id="progReset" type="button" hidden>{E(s['progReset'])}</button></p>
 </div></section>
 
 <section class="band tight"><div class="wrap">
@@ -419,6 +443,9 @@ def page_hub(lang, L):
     tools += [tool('slides', s['tSlides'], P['slides']), tool('map', s['tMap'], P['map']), tool('qa', s['tQA'], P['qa']), tool('quiz', s['tQuiz'], P['quiz'])]
     if (L['n'], lang) in SUM:
         tools.append(tool('sum', s['tSum'], 'summary.html'))
+    sh = share_img(lang, L)
+    if sh:
+        tools.append(tool('share', s['tShare'], f'{P["media"]}{sh}').replace('<a class="tool" href=', '<a class="tool" download href=', 1))
     meal = f'<p class="meal">{E(L["verseTr"])}</p>' if lang == 'tr' else ''
     path = ''.join(f'<li>{E(x)}</li>' for x in s['path'])
     idx = LIVE.index(L)
@@ -427,7 +454,7 @@ def page_hub(lang, L):
         pv = LIVE[idx-1]; pager += f'<a href="../l{pv["n"]}/index.html"><small>{E(s["prev"])}</small><b>{E(pv[lang])}</b></a>'
     if idx < len(LIVE) - 1:
         nx = LIVE[idx+1]; pager += f'<a class="nx" href="../l{nx["n"]}/index.html"><small>{E(s["next"])}</small><b>{E(nx[lang])}</b></a>'
-    return head(lang, f'{L[lang]} · {s["series"]}', depth, L['descAr'] if lang == 'ar' else L['descTr']) + bar(lang, depth, P['other']('index.html')) + '<main id="main">\n' + phead(lang, L, L[lang], L['descAr'] if lang == 'ar' else L['descTr']) + f'''
+    return head(lang, f'{L[lang]} · {s["series"]}', depth, L['descAr'] if lang == 'ar' else L['descTr'], image=share_img(lang, L)) + bar(lang, depth, P['other']('index.html')) + '<main id="main">\n' + phead(lang, L, L[lang], L['descAr'] if lang == 'ar' else L['descTr']) + f'''
 <section class="band"><div class="wrap">
   <article class="open">
     {player(lang, L, P['media'][:-6])}
@@ -441,6 +468,7 @@ def page_hub(lang, L):
 
 <section class="band tight"><div class="wrap">
   <h2>{E(s['toolsT'])}</h2>
+  <p class="prog" data-lesson="{n}" hidden></p>
   <div class="tools grid">{''.join(tools)}</div>
 </div></section>
 {f'<section class="band tight"><div class="wrap"><nav class="pager">{pager}</nav></div></section>' if pager else ''}
@@ -462,9 +490,9 @@ def page_text(lang, L):
     body = ayahify(body)
     if lang == 'tr': body = arabify(body)
     tocl = ''.join(f'<li><a href="#{i}">{E(t)}</a></li>' for i, t in toc)
-    return head(lang, f'{L[lang]} · {s["tText"][0]}', depth, L['descAr'] if lang == 'ar' else L['descTr']) + bar(lang, depth, P['other']('text.html')) + '<main id="main">\n' + phead(lang, L, L[lang], s['textSub'], s['tText'][0]) + f'''
+    return head(lang, f'{L[lang]} · {s["tText"][0]}', depth, L['descAr'] if lang == 'ar' else L['descTr'], image=share_img(lang, L)) + bar(lang, depth, P['other']('text.html')) + f'<main id="main" data-lesson="{n}" data-page="text">\n' + phead(lang, L, L[lang], s['textSub'], s['tText'][0]) + f'''
 <section class="band"><div class="wrap"><div class="doc">
-  <article class="prose">{body}
+  <article class="prose">{fs_ctl(lang)}{body}
     <div class="endcta"><p>{E(s['textEnd'])}</p><div style="display:flex;gap:8px;flex-wrap:wrap"><a class="btn" href="qa.html">{E(s['tQA'][0])}</a><a class="btn ghost" href="quiz.html">{E(s['tQuiz'][0])}</a></div></div>
   </article>
   <aside class="toc"><details open><summary>{E(s['toc'])} <span aria-hidden="true">▾</span></summary><ol>{tocl}</ol></details></aside>
@@ -483,10 +511,10 @@ def page_qa(lang, L):
         g2 = [dict(q=q, a=a, tf=tf) for q, a, tf in DQ[L['n']]]
         total += len(g2)
         groups += f'<section class="qgroup"><h2>{E(s["qaG2"])}</h2><ol class="qlist">{qa_cards(lang, g2, len(g1) + 1)}</ol></section>'
-    return head(lang, f'{s["qaT"]} · {L[lang]}', depth) + bar(lang, depth, P['other']('qa.html')) + '<main id="main">\n' + phead(lang, L, s['qaT'], f'{L[lang]} · ' + s['qaS'], s['qaT']) + f'''
+    return head(lang, f'{s["qaT"]} · {L[lang]}', depth, image=share_img(lang, L)) + bar(lang, depth, P['other']('qa.html')) + f'<main id="main" data-lesson="{L["n"]}" data-page="qa">\n' + phead(lang, L, s['qaT'], f'{L[lang]} · ' + s['qaS'], s['qaT']) + f'''
 <section class="band"><div class="wrap narrow">
   <p class="hint">{E(s['qaHint'])}</p>
-  <div class="qa-tools"><span class="count">{E(s['qaCount'].format(n=DIG(lang, total)))}</span><button class="btn line" id="qaAll" type="button">{E(s['qaAll'])}</button></div>
+  <div class="qa-tools">{fs_ctl(lang)}<span class="count">{E(s['qaCount'].format(n=DIG(lang, total)))}</span><button class="btn line" id="qaAll" type="button">{E(s['qaAll'])}</button></div>
   {groups}
   <div class="endcta"><p>{E(L[lang])}</p><div style="display:flex;gap:8px;flex-wrap:wrap"><a class="btn" href="quiz.html">{E(s['tQuiz'][0])}</a><a class="btn ghost" href="index.html">{E(s['backLesson'])}</a></div></div>
 </div></section>
@@ -496,7 +524,7 @@ def page_qa(lang, L):
 def page_quiz(lang, L):
     s = S[lang]; P = lesson_paths(lang, L); depth = 1 if lang == 'ar' else 2
     data = '../data.js' if lang == 'ar' else '../data_tr.js'
-    return head(lang, f'{s["quizT"]} · {L[lang]}', depth) + bar(lang, depth, P['other']('quiz.html')) + '<main id="main">\n' + phead(lang, L, s['quizT'], f'{L[lang]} · ' + s['quizS'], s['quizT']) + f'''
+    return head(lang, f'{s["quizT"]} · {L[lang]}', depth, image=share_img(lang, L)) + bar(lang, depth, P['other']('quiz.html')) + f'<main id="main" data-lesson="{L["n"]}" data-page="quiz">\n' + phead(lang, L, s['quizT'], f'{L[lang]} · ' + s['quizS'], s['quizT']) + f'''
 <section class="band"><div class="wrap narrow">
   <div class="quiz" id="quiz" data-lesson="{L['n']}" aria-live="polite">
     <div id="qcard">
@@ -540,8 +568,9 @@ def page_slides(lang, L):
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>{E(s['slidesT'])} · {E(L[lang])}</title>
-{og_tags(lang, s['slidesT'] + ' · ' + L[lang], L['descAr'] if lang == 'ar' else L['descTr'])}
+{og_tags(lang, s['slidesT'] + ' · ' + L[lang], L['descAr'] if lang == 'ar' else L['descTr'], share_img(lang, L))}
 <meta name="theme-color" content="#0F2E2A">
+{app_tags(lang, P['assets'][:-7])}
 <link rel="icon" href="{P['media']}logo.webp" type="image/webp">
 {preload(lang, P['assets'][:-7])}
 <link rel="stylesheet" href="{P['assets']}fonts.css">
@@ -550,7 +579,7 @@ def page_slides(lang, L):
 <link rel="stylesheet" href="{P['assets']}slides.css">
 </head>
 <body>
-<div class="sv">
+<div class="sv" data-lesson="{L['n']}">
   <div class="sv-top">
     <div class="g"><a href="index.html" aria-label="{E(s['backLesson'])}"><span aria-hidden="true">{'→' if lang == 'ar' else '←'}</span> <span class="lbl">{E(s['lesson'])} {DIG(lang, L['n'])}</span></a><img src="{P['media']}logo.webp" alt=""></div>
     <div class="t">{E(L[lang])}</div>
@@ -577,6 +606,9 @@ def page_slides(lang, L):
 '''
 
 # ------------------------------------------------------------------ printable summary
+def share_img(lang, L):
+    return f'share-l{L["n"]}-{lang}.jpg' if os.path.exists(f'{ROOT}/media/share-l{L["n"]}-{lang}.jpg') else None
+
 def lesson_url(lang, L):
     return SITE + ('' if lang == 'ar' else 'tr/') + f'l{L["n"]}/'
 
@@ -608,7 +640,7 @@ def sheet(lang, L, media):
 def page_summary(lang, L):
     s = S[lang]; P = lesson_paths(lang, L); depth = 1 if lang == 'ar' else 2; n = L['n']
     base = f'summary-l{n}-{lang}'
-    return head(lang, f'{s["tSum"][0]} · {L[lang]}', depth, L['descAr'] if lang == 'ar' else L['descTr'], extra=f'\n<link rel="stylesheet" href="{P["assets"]}summary.css">') + bar(lang, depth, P['other']('summary.html')) + '<main id="main">\n' + phead(lang, L, s['tSum'][0], L[lang], s['tSum'][0]) + f'''
+    return head(lang, f'{s["tSum"][0]} · {L[lang]}', depth, L['descAr'] if lang == 'ar' else L['descTr'], extra=f'\n<link rel="stylesheet" href="{P["assets"]}summary.css">', image=share_img(lang, L)) + bar(lang, depth, P['other']('summary.html')) + '<main id="main">\n' + phead(lang, L, s['tSum'][0], L[lang], s['tSum'][0]) + f'''
 <section class="band sum-band"><div class="wrap">
   <div class="sum-tools"><button class="btn" type="button" onclick="print()">{E(s['sumPrint'])}</button><a class="btn line" href="{P['media']}{base}.pdf" download>{E(s['sumPdf'])}</a><a class="btn line" href="{P['media']}{base}.jpg" download>{E(s['sumImg'])}</a><p class="note">{E(s['sumHelp'])}</p></div>
   <div class="sheet-wrap" id="sheetWrap">{sheet(lang, L, P['media'])}</div>
@@ -639,11 +671,11 @@ def page_map(lang):
     if lang == 'ar':
         t = t.replace('data-base="tr/" href="tr/"', 'data-base="tr/map.html" href="tr/map.html"')
         home, more, quizL, allL, resetL, homeL, pinch = 'index.html', 'المزيد', 'اختبر فهمك', 'الخريطة كاملة', 'من البداية', 'صفحة السلسلة', 'كبّر بإصبعين لقراءة الفروع'
-        t = t.replace('<title>خريطة دروس صفة الكفر بالطاغوت</title>', '<title>الخريطة التفاعلية · صفة الكفر بالطاغوت</title>\n' + og_tags('ar', 'الخريطة التفاعلية · صفة الكفر بالطاغوت', S['ar']['lead']) + '\n<link rel="icon" href="media/logo.webp" type="image/webp">\n<meta name="theme-color" content="#0F2E2A">')
+        t = t.replace('<title>خريطة دروس صفة الكفر بالطاغوت</title>', '<title>الخريطة التفاعلية · صفة الكفر بالطاغوت</title>\n' + og_tags('ar', 'الخريطة التفاعلية · صفة الكفر بالطاغوت', S['ar']['lead']) + '\n<link rel="icon" href="media/logo.webp" type="image/webp">\n<meta name="theme-color" content="#0F2E2A">\n' + app_tags('ar', ''))
     else:
         t = t.replace('data-base="../" href="../"', 'data-base="../map.html" href="../map.html"')
         home, more, quizL, allL, resetL, homeL, pinch = 'index.html', 'Diğer', 'Kendini dene', 'Haritanın tamamı', 'Baştan', 'Seri sayfası', 'Dalları okumak için iki parmakla yakınlaştırın'
-        t = t.replace('<title>Tâğutu İnkârın Keyfiyeti · Ders Haritası</title>', '<title>Tâğutu İnkârın Keyfiyeti · Ders Haritası</title>\n' + og_tags('tr', 'Tâğutu İnkârın Keyfiyeti · Ders Haritası', S['tr']['lead']) + '\n<link rel="icon" href="../media/logo.webp" type="image/webp">\n<meta name="theme-color" content="#0F2E2A">')
+        t = t.replace('<title>Tâğutu İnkârın Keyfiyeti · Ders Haritası</title>', '<title>Tâğutu İnkârın Keyfiyeti · Ders Haritası</title>\n' + og_tags('tr', 'Tâğutu İnkârın Keyfiyeti · Ders Haritası', S['tr']['lead']) + '\n<link rel="icon" href="../media/logo.webp" type="image/webp">\n<meta name="theme-color" content="#0F2E2A">\n' + app_tags('tr', '../'))
     # brand → link home
     t = re.sub(r'<div id="brand">(.*?)</div></div>', lambda m: f'<a id="brand" href="{home}" title="{homeL}">{m.group(1)}</a></div>', t, count=1, flags=re.S)
     css = f'''
@@ -679,10 +711,47 @@ html[lang=ar] body {{ word-spacing: .14em; }}
   addEventListener('click', e => { if (!mm.hidden && !e.target.closest('#moreMenu')) { mm.hidden = true; mb.setAttribute('aria-expanded', false); } });
   let tt; const toast = () => { if (!narrow()) return; const t = $('toast'); t.hidden = false; t.style.opacity = 1; clearTimeout(tt); tt = setTimeout(() => { t.style.opacity = 0; setTimeout(() => { t.hidden = true; }, 400); }, 3200); };
   $('all').addEventListener('click', toast); $('explore').addEventListener('click', toast);
+  /* progress: the lesson's map counts as seen once the student starts it (kept on this device only) */
+  const markMap = () => { try { const k = 'wt.progress.v1', o = JSON.parse(localStorage.getItem(k)) || {}; (o[LI + 1] = o[LI + 1] || {}).map = 1; localStorage.setItem(k, JSON.stringify(o)); } catch (e) {} };
+  $('start').addEventListener('click', markMap); $('explore').addEventListener('click', markMap);
 '''
     t = t.replace("  $('jamiaText').textContent = L.jamia;", js + "\n  $('jamiaText').textContent = L.jamia;", 1)
     assert 'id="more"' in t and 'moreMenu' in t and 'class="home"' in t and 'id="brand" href' in t, 'map patch failed'
     return t
+
+def write_app_files():
+    """manifest for each language, and the service worker with the list of files saved for offline use."""
+    import hashlib
+    for lang, pre in (('ar', ''), ('tr', 'tr/')):
+        s = S[lang]
+        icons = '../media/' if lang == 'tr' else 'media/'
+        man = {
+            'id': './', 'name': f"{s['brand']} · {s['seriesShort']}", 'short_name': s['brand'],
+            'description': s['lead'], 'lang': lang, 'dir': 'rtl' if lang == 'ar' else 'ltr',
+            'start_url': './', 'scope': '../' if lang == 'tr' else './', 'display': 'standalone',
+            'background_color': '#0F2E2A', 'theme_color': '#0F2E2A',
+            'icons': [
+                {'src': icons + 'icon-192.png', 'sizes': '192x192', 'type': 'image/png'},
+                {'src': icons + 'icon-512.png', 'sizes': '512x512', 'type': 'image/png'},
+                {'src': icons + 'icon-maskable-512.png', 'sizes': '512x512', 'type': 'image/png', 'purpose': 'maskable'},
+            ],
+        }
+        w(pre + 'manifest.webmanifest', json.dumps(man, ensure_ascii=False, indent=1))
+    keep_media = {'logo.webp', 'icon-192.png', 'apple-touch-icon.png', 'poster1.jpg', 'poster1-tr.jpg', 'poster-teaser.jpg'}
+    files = []
+    for dp, dn, fn in os.walk(OUT):
+        for f in fn:
+            rel = os.path.relpath(os.path.join(dp, f), OUT).replace(os.sep, '/')
+            if rel.startswith('media/') and rel[6:] not in keep_media: continue
+            if rel in ('sw.js', '404.html', '.nojekyll') or rel.startswith('.'): continue
+            files.append(rel)
+    files.sort()
+    h = hashlib.sha1()
+    for rel in files: h.update(rel.encode()); h.update(open(os.path.join(OUT, rel), 'rb').read())
+    urls = ['./'] + [f[:-len('index.html')] if f.endswith('/index.html') else f for f in files if f != 'index.html']
+    urls += [f for f in files if f.endswith('/index.html')]
+    sw = open(f'{ROOT}/sw_template.js', encoding='utf-8').read()
+    w('sw.js', sw.replace('__VERSION__', h.hexdigest()[:12]).replace('__PRECACHE__', json.dumps(urls, ensure_ascii=False, indent=1)))
 
 def page_404():
     h = head('ar', 'الصفحة غير موجودة · Sayfa bulunamadı', 0).replace('<meta charset="utf-8">', '<meta charset="utf-8">\n<base href="/khareeta/">')
@@ -726,6 +795,7 @@ def build():
             if (n, lang) in SUM: w(f'{pre}l{n}/summary.html', page_summary(lang, L))
             w(f'{pre}l{n}/text.html', page_text(lang, L))
     w('404.html', page_404())
+    write_app_files()
     w('.nojekyll', '')
     print('built', OUT)
 

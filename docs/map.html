@@ -15,6 +15,12 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="media/logo.webp" type="image/webp">
 <meta name="theme-color" content="#0F2E2A">
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="وتواصوا بالحق">
+<script>if ('serviceWorker' in navigator) addEventListener('load', () => navigator.serviceWorker.register('sw.js').catch(() => {}));</script>
 <link rel="preload" href="assets/fonts/noto-naskh-arabic-arabic-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/reem-kufi-arabic-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="assets/fonts.css">
@@ -617,6 +623,9 @@ html[lang=ar] body { word-spacing: .14em; }
   addEventListener('click', e => { if (!mm.hidden && !e.target.closest('#moreMenu')) { mm.hidden = true; mb.setAttribute('aria-expanded', false); } });
   let tt; const toast = () => { if (!narrow()) return; const t = $('toast'); t.hidden = false; t.style.opacity = 1; clearTimeout(tt); tt = setTimeout(() => { t.style.opacity = 0; setTimeout(() => { t.hidden = true; }, 400); }, 3200); };
   $('all').addEventListener('click', toast); $('explore').addEventListener('click', toast);
+  /* progress: the lesson's map counts as seen once the student starts it (kept on this device only) */
+  const markMap = () => { try { const k = 'wt.progress.v1', o = JSON.parse(localStorage.getItem(k)) || {}; (o[LI + 1] = o[LI + 1] || {}).map = 1; localStorage.setItem(k, JSON.stringify(o)); } catch (e) {} };
+  $('start').addEventListener('click', markMap); $('explore').addEventListener('click', markMap);
 
   $('jamiaText').textContent = L.jamia;
   $('closeText').textContent = L.closing;

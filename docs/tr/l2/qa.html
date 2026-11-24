@@ -10,11 +10,17 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Ve Tevâsav bi’l-Hak">
 <meta property="og:locale" content="tr_TR">
-<meta property="og:image" content="https://muhammet199500.github.io/khareeta/media/og.jpg">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta name="twitter:card" content="summary_large_image">
+<meta property="og:image" content="https://muhammet199500.github.io/khareeta/media/share-l2-tr.jpg">
+<meta property="og:image:width" content="1080">
+<meta property="og:image:height" content="1080">
+<meta name="twitter:card" content="summary">
 <meta name="theme-color" content="#0F2E2A">
+<link rel="manifest" href="../../tr/manifest.webmanifest">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Ve Tevâsav bi’l-Hak">
+<script>if ('serviceWorker' in navigator) addEventListener('load', () => navigator.serviceWorker.register('../../sw.js').catch(() => {}));</script>
 <link rel="icon" href="../../media/logo.webp" type="image/webp">
 <link rel="apple-touch-icon" href="../../media/apple-touch-icon.png">
 <link rel="preload" href="../../assets/fonts/source-sans-3-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
@@ -28,7 +34,7 @@
   <a class="brand" href="../index.html"><img src="../../media/logo.webp" alt="Ve Tevâsav bi’l-Hak"><span>Ve Tevâsav bi’l-Hak</span></a>
   <nav aria-label="Ana sayfa"><a class="hide-s" href="../index.html">Ana sayfa</a><a class="hide-s" href="../index.html#lessons">Dersler</a><a class="lang" lang="ar" hreflang="ar" href="../../l2/qa.html">العربية</a></nav>
 </div></header>
-<main id="main">
+<main id="main" data-lesson="2" data-page="qa">
 <section class="phead"><div class="wrap">
   <nav class="crumbs" aria-label="breadcrumb"><a href="../index.html">Ana sayfa</a><span class="sep">›</span><a href="index.html">Ders 2</a><span class="sep">›</span><span>Soru-cevap</span></nav>
   <p class="eb">Ders 2 · İkinci husus · Tâğutu inkârın keyfiyeti</p><h1>Soru-cevap</h1><p>Tâğuta İbadeti Terk Etmek · Önce cevabı düşünün, sonra karşılaştırmak için «Cevabı göster»e basın.</p>
@@ -36,7 +42,7 @@
 
 <section class="band"><div class="wrap narrow">
   <p class="hint">Tekrar yöntemi: Soruyu okuyun, içinizden ya da sesli cevaplayın, sonra cevabı açın. «Doğru mu, yanlış mı?» sorularında tek kelimeyle yetinmeyip gerekçe gösterin.</p>
-  <div class="qa-tools"><span class="count">22 soru</span><button class="btn line" id="qaAll" type="button">Bütün cevapları göster</button></div>
+  <div class="qa-tools"><div class="fs-ctl" role="group" aria-label="Yazı boyutu"><button type="button" data-fs="-1" aria-label="Yazıyı küçült" title="Yazıyı küçült">A<small>−</small></button><button type="button" data-fs="1" aria-label="Yazıyı büyüt" title="Yazıyı büyüt">A<small>+</small></button></div><span class="count">22 soru</span><button class="btn line" id="qaAll" type="button">Bütün cevapları göster</button></div>
   <section class="qgroup"><h2>Tekrar soruları</h2><ol class="qlist"><li class="qcard"><span class="qn">1</span><div><p class="qq">Tâğuta ibadeti terk etmek ne demektir?</p></div><button class="rev" type="button" aria-expanded="false">Cevabı göster</button><p class="qa-a">Müslümanın Allah’tan başkasına hiçbir ibadet türünü yöneltmemesi, ona götüren şeylerden kaçınması ve bunda sebat etmesidir.</p></li>
 <li class="qcard"><span class="qn">2</span><div><p class="qq">Terk ile ictinab arasındaki fark nedir?</p></div><button class="rev" type="button" aria-expanded="false">Cevabı göster</button><p class="qa-a">İctinab daha kapsamlıdır: fiili bırakmayı ve onun vasıtalarından, mekânlarından uzak durmayı içerir.</p></li>
 <li class="qcard"><span class="qn">3</span><div><p class="qq">Tâğuta ibadetin bâtıllığına itikad ile onu terk arasındaki ilişki nedir?</p></div><button class="rev" type="button" aria-expanded="false">Cevabı göster</button><p class="qa-a">İtikad kalbî asıldır; terk onun amelî gereği ve doğruluğunun delilidir.</p></li>
@@ -61,7 +67,7 @@
   <div class="endcta"><p>Tâğuta İbadeti Terk Etmek</p><div style="display:flex;gap:8px;flex-wrap:wrap"><a class="btn" href="quiz.html">Kendini dene</a><a class="btn ghost" href="index.html">Ders sayfasına dön</a></div></div>
 </div></section>
 </main>
-<footer><div class="wrap"><div class="f1"><img src="../../media/logo.webp" alt=""><span>Ve Tevâsav bi’l-Hak · Allah’tan faydalı ilim ve salih amel dileriz.</span></div><a href="../index.html">Tâğutu İnkârın Keyfiyeti Serisi</a></div></footer>
+<footer><div class="wrap"><div class="f1"><img src="../../media/logo.webp" alt=""><span>Ve Tevâsav bi’l-Hak · Allah’tan faydalı ilim ve salih amel dileriz.</span></div><a href="../index.html">Tâğutu İnkârın Keyfiyeti Serisi</a></div><div class="wrap app-cta" id="appCta" hidden><button class="btn line" id="installBtn" type="button" hidden>Siteyi telefonunuza uygulama olarak yükleyin</button><span id="iosHint" hidden>iPhone’da: Paylaş düğmesine, ardından «Ana Ekrana Ekle»ye dokunun; site internetsiz de çalışan bir uygulama olur.</span></div></footer>
 <script src="../../assets/site.js"></script>
 </body>
 </html>

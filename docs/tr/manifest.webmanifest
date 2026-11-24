@@ -1,0 +1,31 @@
+{
+ "id": "./",
+ "name": "Ve Tevâsav bi’l-Hak · Tâğutu inkârın keyfiyeti",
+ "short_name": "Ve Tevâsav bi’l-Hak",
+ "description": "Şeyh Muhammed b. Abdülvehhab’ın (rahimehullah) tâğutu inkârın keyfiyeti hakkındaki sözü üzerine beş ders. Her ders için: video, yazılı ders, sunum, etkileşimli harita, soru-cevap ve anladığını ölçen bir test.",
+ "lang": "tr",
+ "dir": "ltr",
+ "start_url": "./",
+ "scope": "../",
+ "display": "standalone",
+ "background_color": "#0F2E2A",
+ "theme_color": "#0F2E2A",
+ "icons": [
+  {
+   "src": "../media/icon-192.png",
+   "sizes": "192x192",
+   "type": "image/png"
+  },
+  {
+   "src": "../media/icon-512.png",
+   "sizes": "512x512",
+   "type": "image/png"
+  },
+  {
+   "src": "../media/icon-maskable-512.png",
+   "sizes": "512x512",
+   "type": "image/png",
+   "purpose": "maskable"
+  }
+ ]
+}

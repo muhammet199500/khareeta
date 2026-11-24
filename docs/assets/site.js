@@ -14,6 +14,93 @@
     qOf: (i, n) => 'Soru ' + i + ' / ' + n
   };
 
+  /* ---- progress, kept on this device only ---- */
+  const PKEY = 'wt.progress.v1', TOOLS = ['text', 'slides', 'map', 'qa', 'quiz'];
+  const P = {
+    get() { try { return JSON.parse(localStorage.getItem(PKEY)) || {}; } catch (e) { return {}; } },
+    set(o) { try { localStorage.setItem(PKEY, JSON.stringify(o)); } catch (e) {} },
+    mark(n, k, extra) { const o = P.get(), l = o[n] = o[n] || {}; l[k] = 1; if (extra) Object.assign(l, extra); P.set(o); }
+  };
+  const TP = AR ? {
+    done: (c, n) => 'أنجزت ' + num(c) + ' من ' + num(n) + ' أدوات في هذا الدرس',
+    short: (c, n) => 'أنجزت ' + num(c) + ' من ' + num(n),
+    best: (s, t) => 'أفضل نتيجة: ' + num(s) + ' من ' + num(t),
+    resetQ: 'هل تريد مسح تقدّمك المحفوظ على هذا الجهاز؟'
+  } : {
+    done: (c, n) => 'Bu derste ' + n + ' araçtan ' + c + ' tanesi tamamlandı',
+    short: (c, n) => c + '/' + n + ' tamamlandı',
+    best: (s, t) => 'En iyi sonuç: ' + s + '/' + t,
+    resetQ: 'Bu cihazda kayıtlı ilerlemeniz silinsin mi?'
+  };
+  const toolOf = a => {
+    const u = new URL(a.getAttribute('href'), location.href);
+    let m = /\/l(\d+)\/(text|slides|qa|quiz)\.html$/.exec(u.pathname); if (m) return [m[1], m[2]];
+    m = /map\.html$/.test(u.pathname) && /^#l(\d+)$/.exec(u.hash); return m ? [m[1], 'map'] : null;
+  };
+  function paint() {
+    const o = P.get();
+    $$('a.chip, a.tool').forEach(a => {
+      const k = toolOf(a); if (!k) return;
+      const l = o[k[0]] || {};
+      a.classList.toggle('done', !!l[k[1]]);
+      if (k[1] === 'quiz' && a.classList.contains('tool')) {
+        let b = a.querySelector('.best');
+        if (l.best) { if (!b) { b = document.createElement('span'); b.className = 'best'; a.lastElementChild.appendChild(b); } b.textContent = TP.best(l.best[0], l.best[1]); }
+        else if (b) b.remove();
+      }
+    });
+    $$('.lprog[data-lesson], .prog[data-lesson]').forEach(e => {
+      const l = o[e.dataset.lesson] || {}, c = TOOLS.filter(k => l[k]).length;
+      e.hidden = !c;
+      e.innerHTML = c ? `<span class="pbar"><i style="width:${100 * c / TOOLS.length}%"></i></span><span>${(e.classList.contains('lprog') ? TP.short : TP.done)(c, TOOLS.length)}</span>` : '';
+    });
+    const r = $('#progReset'); if (r) r.hidden = !Object.keys(o).length;
+  }
+  const main = $('main[data-page]');
+  if (main) {
+    const n = main.dataset.lesson, pg = main.dataset.page;
+    if (pg === 'qa') P.mark(n, 'qa');
+    if (pg === 'text') {
+      const end = $('.endcta');
+      if (end && 'IntersectionObserver' in window) {
+        const io = new IntersectionObserver(es => { if (es.some(e => e.isIntersecting)) { P.mark(n, 'text'); io.disconnect(); } });
+        io.observe(end);
+      }
+    }
+  }
+  paint();
+  addEventListener('pageshow', paint);
+  const rb = $('#progReset');
+  if (rb) rb.addEventListener('click', () => { if (confirm(TP.resetQ)) { try { localStorage.removeItem(PKEY); } catch (e) {} paint(); } });
+
+  /* ---- font size for reading, remembered ---- */
+  const FS = [.9, 1, 1.12, 1.25, 1.4];
+  if ($('.fs-ctl')) {
+    let i = 1; try { const v = localStorage.getItem('wt.fs'); if (v !== null && FS[+v]) i = +v; } catch (e) {}
+    const apply = () => {
+      document.documentElement.style.setProperty('--fs', FS[i]);
+      $$('.fs-ctl [data-fs]').forEach(b => { b.disabled = +b.dataset.fs < 0 ? i === 0 : i === FS.length - 1; });
+    };
+    apply();
+    $$('.fs-ctl').forEach(c => c.addEventListener('click', e => {
+      const b = e.target.closest('[data-fs]'); if (!b) return;
+      i = Math.max(0, Math.min(FS.length - 1, i + +b.dataset.fs));
+      try { localStorage.setItem('wt.fs', i); } catch (err) {}
+      apply();
+    }));
+  }
+
+  /* ---- install as an app ---- */
+  const cta = $('#appCta');
+  const standalone = matchMedia('(display-mode: standalone)').matches || navigator.standalone;
+  if (cta && !standalone) {
+    let ev = null;
+    addEventListener('beforeinstallprompt', e => { e.preventDefault(); ev = e; cta.hidden = false; $('#installBtn').hidden = false; });
+    $('#installBtn').addEventListener('click', async () => { if (!ev) return; ev.prompt(); try { await ev.userChoice; } catch (e) {} ev = null; cta.hidden = true; });
+    addEventListener('appinstalled', () => { cta.hidden = true; });
+    if (/iphone|ipad|ipod/i.test(navigator.userAgent) && !/crios|fxios/i.test(navigator.userAgent)) { cta.hidden = false; $('#iosHint').hidden = false; }
+  }
+
   /* ---- video: show a calm placeholder when the file is not uploaded yet ---- */
   $$('.player video').forEach(v => {
     const fail = () => {
@@ -107,6 +194,8 @@
       $('#qmsg').textContent = score === Q.length ? U.great : score >= Q.length - 2 ? U.good : U.review;
       $('#qwrong').innerHTML = wrong.map(k => `<li><b>${U.digits(k + 1)}.</b> ${Q[k].q}<br><span class="ans">✓ ${Q[k].o[Q[k].a]}</span></li>`).join('');
       $('#qwrongT').hidden = !wrong.length;
+      const n = qz.dataset.lesson, prev = (P.get()[n] || {}).best;
+      P.mark(n, 'quiz', (!prev || score / Q.length >= prev[0] / prev[1]) ? { best: [score, Q.length] } : null);
       res.querySelector('button, a').focus();
     }
     $('#qretry').onclick = () => { qi = 0; score = 0; wrong = []; render(); };

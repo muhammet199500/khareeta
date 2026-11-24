@@ -17,12 +17,18 @@
     canvas.style.left = (r.width / 2) + 'px'; canvas.style.top = (r.height / 2) + 'px';
     canvas.style.transform = `translate(-${960 * z}px, -${540 * z}px) scale(${z})`;
   }
+  /* progress: the deck counts as seen once its last slide is reached (kept on this device only) */
+  function markDone() {
+    const n = document.querySelector('.sv').dataset.lesson; if (!n) return;
+    try { const k = 'wt.progress.v1', o = JSON.parse(localStorage.getItem(k)) || {}; (o[n] = o[n] || {}).slides = 1; localStorage.setItem(k, JSON.stringify(o)); } catch (e) {}
+  }
   function show(i, st, fromBack) {
     i = Math.max(0, Math.min(N - 1, i));
     const changed = i !== cur || !slides[i].classList.contains('cur');
     slides.forEach((s, k) => s.classList.toggle('cur', k === i));
     if (changed) { slides[i].classList.remove('fade'); void slides[i].offsetWidth; slides[i].classList.add('fade'); }
     cur = i;
+    if (i === N - 1) markDone();
     const f = frags(slides[i]);
     step = st === undefined ? 0 : Math.max(0, Math.min(f.length, st));
     if (fromBack) step = f.length;

@@ -16,6 +16,12 @@
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0F2E2A">
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="وتواصوا بالحق">
+<script>if ('serviceWorker' in navigator) addEventListener('load', () => navigator.serviceWorker.register('sw.js').catch(() => {}));</script>
 <link rel="icon" href="media/logo.webp" type="image/webp">
 <link rel="apple-touch-icon" href="media/apple-touch-icon.png">
 <link rel="preload" href="assets/fonts/noto-naskh-arabic-arabic-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
@@ -36,6 +42,6 @@
 </div></section>
 <section class="band"><div class="wrap" style="display:flex;gap:10px;flex-wrap:wrap"><a class="btn" href="index.html">الصفحة الرئيسية</a><a class="btn ghost" lang="tr" href="tr/index.html">Ana sayfa</a></div></section>
 </main>
-<footer><div class="wrap"><div class="f1"><img src="media/logo.webp" alt=""><span>وتواصوا بالحق · نسأل الله العلم النافع والعمل الصالح.</span></div><a href="index.html">سلسلة صفة الكفر بالطاغوت</a></div></footer>
+<footer><div class="wrap"><div class="f1"><img src="media/logo.webp" alt=""><span>وتواصوا بالحق · نسأل الله العلم النافع والعمل الصالح.</span></div><a href="index.html">سلسلة صفة الكفر بالطاغوت</a></div><div class="wrap app-cta" id="appCta" hidden><button class="btn line" id="installBtn" type="button" hidden>ثبّت الموقع على جوالك كتطبيق</button><span id="iosHint" hidden>على iPhone: اضغط زر المشاركة ثم «إضافة إلى الشاشة الرئيسية» ليصير الموقع تطبيقًا يعمل بلا إنترنت.</span></div></footer>
 </body>
 </html>
