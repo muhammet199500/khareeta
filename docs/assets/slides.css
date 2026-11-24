@@ -52,3 +52,6 @@ body { font-family: var(--sv-bf); }
   .sv-frag { top: 6px; }
 }
 :fullscreen .sv-top { display: none; }
+
+.sv-done { min-height: 40px; padding: 0 16px; border-radius: 30px; border: 2px solid #3F8F6A; background: transparent; color: #8FE0B5; font-family: var(--sv-bf); font-weight: 700; font-size: 14px; }
+.sv-done.on { background: #3F8F6A; color: #fff; }

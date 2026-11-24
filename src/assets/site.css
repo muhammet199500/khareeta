@@ -324,3 +324,15 @@ html[dir=ltr] .hero, html[dir=ltr] .phead { --gx: 15%; --gy: 92%; --fade: to rig
 .app-cta { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; padding-top: 14px; color: #A9BDB6; font-size: 13.5px; }
 .app-cta[hidden], .app-cta [hidden] { display: none; }
 .app-cta .btn.line { color: #F7F3EA; border-color: rgba(217,178,106,.6); min-height: 40px; }
+
+/* «I finished» buttons pressed by the student */
+.donebtn { display: inline-flex; align-items: center; justify-content: center; gap: 6px; min-height: 46px; padding: 0 20px; border-radius: 30px; border: 2px solid #3F8F6A; background: transparent; color: #2E6E50; font-family: var(--uf); font-weight: 700; font-size: 15.5px; }
+.donebtn:hover { background: rgba(63,143,106,.08); }
+.donebtn.on { background: #3F8F6A; color: #fff; }
+.endcta .donebtn, .quiz .donebtn { color: #8FE0B5; border-color: #3F8F6A; }
+.endcta .donebtn.on, .quiz .donebtn.on { color: #fff; }
+.lesson-done { margin-top: 18px; padding: 16px 18px; border-radius: 16px; background: var(--card); border: 1px dashed rgba(63,143,106,.55); display: flex; flex-wrap: wrap; gap: 12px; align-items: center; justify-content: space-between; }
+.lesson-done p { margin: 0; color: var(--muted); font-size: 15px; flex: 1 1 260px; }
+.donebtn.big { min-height: 52px; font-size: 17px; padding: 0 26px; }
+.lrow.complete { border-color: rgba(63,143,106,.55); }
+.lesson-ok { font-weight: 700; color: #2E6E50; }

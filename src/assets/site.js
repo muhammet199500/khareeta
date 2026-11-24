@@ -19,16 +19,19 @@
   const P = {
     get() { try { return JSON.parse(localStorage.getItem(PKEY)) || {}; } catch (e) { return {}; } },
     set(o) { try { localStorage.setItem(PKEY, JSON.stringify(o)); } catch (e) {} },
-    mark(n, k, extra) { const o = P.get(), l = o[n] = o[n] || {}; l[k] = 1; if (extra) Object.assign(l, extra); P.set(o); }
+    mark(n, k, extra) { const o = P.get(), l = o[n] = o[n] || {}; if (k) l[k] = 1; if (extra) Object.assign(l, extra); P.set(o); },
+    unmark(n, k) { const o = P.get(); if (o[n]) { delete o[n][k]; P.set(o); } }
   };
   const TP = AR ? {
     done: (c, n) => 'أنجزت ' + num(c) + ' من ' + num(n) + ' أدوات في هذا الدرس',
     short: (c, n) => 'أنجزت ' + num(c) + ' من ' + num(n),
+    complete: '✓ أتممتَ هذا الدرس',
     best: (s, t) => 'أفضل نتيجة: ' + num(s) + ' من ' + num(t),
     resetQ: 'هل تريد مسح تقدّمك المحفوظ على هذا الجهاز؟'
   } : {
     done: (c, n) => 'Bu derste ' + n + ' araçtan ' + c + ' tanesi tamamlandı',
     short: (c, n) => c + '/' + n + ' tamamlandı',
+    complete: '✓ Bu dersi tamamladınız',
     best: (s, t) => 'En iyi sonuç: ' + s + '/' + t,
     resetQ: 'Bu cihazda kayıtlı ilerlemeniz silinsin mi?'
   };
@@ -51,23 +54,23 @@
     });
     $$('.lprog[data-lesson], .prog[data-lesson]').forEach(e => {
       const l = o[e.dataset.lesson] || {}, c = TOOLS.filter(k => l[k]).length;
-      e.hidden = !c;
-      e.innerHTML = c ? `<span class="pbar"><i style="width:${100 * c / TOOLS.length}%"></i></span><span>${(e.classList.contains('lprog') ? TP.short : TP.done)(c, TOOLS.length)}</span>` : '';
+      e.hidden = !c && !l.lesson;
+      e.innerHTML = (l.lesson ? `<span class="lesson-ok">${TP.complete}</span>` : '') +
+        (c ? `<span class="pbar"><i style="width:${100 * c / TOOLS.length}%"></i></span><span>${(e.classList.contains('lprog') ? TP.short : TP.done)(c, TOOLS.length)}</span>` : '');
     });
+    $$('.donebtn').forEach(b => {
+      const [n, k] = b.dataset.done.split(':'), on = !!(o[n] || {})[k];
+      b.classList.toggle('on', on); b.setAttribute('aria-pressed', on); b.textContent = on ? b.dataset.on : b.dataset.off;
+    });
+    $$('.lrow').forEach(r => { const p = r.querySelector('.lprog'); r.classList.toggle('complete', !!(p && (o[p.dataset.lesson] || {}).lesson)); });
     const r = $('#progReset'); if (r) r.hidden = !Object.keys(o).length;
   }
-  const main = $('main[data-page]');
-  if (main) {
-    const n = main.dataset.lesson, pg = main.dataset.page;
-    if (pg === 'qa') P.mark(n, 'qa');
-    if (pg === 'text') {
-      const end = $('.endcta');
-      if (end && 'IntersectionObserver' in window) {
-        const io = new IntersectionObserver(es => { if (es.some(e => e.isIntersecting)) { P.mark(n, 'text'); io.disconnect(); } });
-        io.observe(end);
-      }
-    }
-  }
+  /* the student presses «I finished» themselves; pressing again undoes it */
+  $$('.donebtn').forEach(b => b.addEventListener('click', () => {
+    const [n, k] = b.dataset.done.split(':');
+    if ((P.get()[n] || {})[k]) P.unmark(n, k); else P.mark(n, k);
+    paint();
+  }));
   paint();
   addEventListener('pageshow', paint);
   const rb = $('#progReset');
@@ -195,7 +198,8 @@
       $('#qwrong').innerHTML = wrong.map(k => `<li><b>${U.digits(k + 1)}.</b> ${Q[k].q}<br><span class="ans">✓ ${Q[k].o[Q[k].a]}</span></li>`).join('');
       $('#qwrongT').hidden = !wrong.length;
       const n = qz.dataset.lesson, prev = (P.get()[n] || {}).best;
-      P.mark(n, 'quiz', (!prev || score / Q.length >= prev[0] / prev[1]) ? { best: [score, Q.length] } : null);
+      if (!prev || score / Q.length >= prev[0] / prev[1]) P.mark(n, null, { best: [score, Q.length] });
+      paint();
       res.querySelector('button, a').focus();
     }
     $('#qretry').onclick = () => { qi = 0; score = 0; wrong = []; render(); };

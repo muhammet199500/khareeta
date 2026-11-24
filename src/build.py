@@ -64,6 +64,8 @@ S = {
     tMap=('الخريطة التفاعلية', 'سِر في الدرس فرعًا فرعًا'),
     tQA=('أسئلة وأجوبة', 'أسئلة المراجعة مع أجوبتها'),
     tQuiz=('اختبر فهمك', 'اختبار باختيارات متعددة وتصحيح فوري'),
+    doneWhat=dict(text='الدرس المكتوب', slides='الشرائح', map='الخريطة', qa='الأسئلة والأجوبة', quiz='الاختبار', lesson='هذا الدرس'),
+    doneOff='أنهيتُ {x}', doneOn='✓ أنهيتَ {x}', doneUndo='اضغط مرة أخرى للتراجع', doneHint='عندما تنتهي من كل أدوات الدرس، اضغط هنا لتسجّل أنك أتممته.',
     progReset='مسح تقدّمي المحفوظ على هذا الجهاز', install='ثبّت الموقع على جوالك كتطبيق',
     iosHint='على iPhone: اضغط زر المشاركة ثم «إضافة إلى الشاشة الرئيسية» ليصير الموقع تطبيقًا يعمل بلا إنترنت.',
     fsDown='تصغير الخط', fsUp='تكبير الخط', fsLabel='حجم الخط', tShare=('صورة للمشاركة', 'صورة الدرس لواتساب وتيليجرام، فيها رمز يفتحه'),
@@ -111,6 +113,8 @@ S = {
     tMap=('Etkileşimli harita', 'Dersi dal dal izleyin'),
     tQA=('Soru-cevap', 'Tekrar soruları ve cevapları'),
     tQuiz=('Kendini dene', 'Çoktan seçmeli test, anında düzeltme'),
+    doneWhat=dict(text='Yazılı dersi', slides='Sunumu', map='Haritayı', qa='Soru-cevabı', quiz='Testi', lesson='Bu dersi'),
+    doneOff='{x} bitirdim', doneOn='✓ {x} bitirdiniz', doneUndo='Geri almak için tekrar dokunun', doneHint='Dersin bütün araçlarını bitirdiğinizde, dersi tamamladığınızı kaydetmek için buraya dokunun.',
     progReset='Bu cihazda kayıtlı ilerlememi sil', install='Siteyi telefonunuza uygulama olarak yükleyin',
     iosHint='iPhone’da: Paylaş düğmesine, ardından «Ana Ekrana Ekle»ye dokunun; site internetsiz de çalışan bir uygulama olur.',
     fsDown='Yazıyı küçült', fsUp='Yazıyı büyüt', fsLabel='Yazı boyutu', tShare=('Paylaşım görseli', 'WhatsApp ve Telegram için dersi açan QR kodlu görsel'),
@@ -243,6 +247,12 @@ def dialog(lang):
   <p class="dnote"><span>{E(s['sumNote'])}</span><a class="btn line" id="dlgDl" href="#" download>{E(s['download'])}</a></p>
 </dialog>
 '''
+
+def done_btn(lang, n, k, cls='donebtn'):
+    """A button the student presses to record that they finished a tool (or the whole lesson)."""
+    s = S[lang]; x = s['doneWhat'][k]
+    off, on = s['doneOff'].format(x=x), s['doneOn'].format(x=x)
+    return f'<button class="{cls}" type="button" data-done="{n}:{k}" data-off="{E(off)}" data-on="{E(on)}" title="{E(s["doneUndo"])}" aria-pressed="false">{E(off)}</button>'
 
 def fs_ctl(lang):
     s = S[lang]; a = 'أ' if lang == 'ar' else 'A'
@@ -470,6 +480,7 @@ def page_hub(lang, L):
   <h2>{E(s['toolsT'])}</h2>
   <p class="prog" data-lesson="{n}" hidden></p>
   <div class="tools grid">{''.join(tools)}</div>
+  <div class="lesson-done"><p>{E(s['doneHint'])}</p>{done_btn(lang, n, 'lesson', 'donebtn big')}</div>
 </div></section>
 {f'<section class="band tight"><div class="wrap"><nav class="pager">{pager}</nav></div></section>' if pager else ''}
 </main>
@@ -493,7 +504,7 @@ def page_text(lang, L):
     return head(lang, f'{L[lang]} · {s["tText"][0]}', depth, L['descAr'] if lang == 'ar' else L['descTr'], image=share_img(lang, L)) + bar(lang, depth, P['other']('text.html')) + f'<main id="main" data-lesson="{n}" data-page="text">\n' + phead(lang, L, L[lang], s['textSub'], s['tText'][0]) + f'''
 <section class="band"><div class="wrap"><div class="doc">
   <article class="prose">{fs_ctl(lang)}{body}
-    <div class="endcta"><p>{E(s['textEnd'])}</p><div style="display:flex;gap:8px;flex-wrap:wrap"><a class="btn" href="qa.html">{E(s['tQA'][0])}</a><a class="btn ghost" href="quiz.html">{E(s['tQuiz'][0])}</a></div></div>
+    <div class="endcta"><p>{E(s['textEnd'])}</p><div style="display:flex;gap:8px;flex-wrap:wrap">{done_btn(lang, n, 'text')}<a class="btn" href="qa.html">{E(s['tQA'][0])}</a><a class="btn ghost" href="quiz.html">{E(s['tQuiz'][0])}</a></div></div>
   </article>
   <aside class="toc"><details open><summary>{E(s['toc'])} <span aria-hidden="true">▾</span></summary><ol>{tocl}</ol></details></aside>
 </div></div></section>
@@ -516,7 +527,7 @@ def page_qa(lang, L):
   <p class="hint">{E(s['qaHint'])}</p>
   <div class="qa-tools">{fs_ctl(lang)}<span class="count">{E(s['qaCount'].format(n=DIG(lang, total)))}</span><button class="btn line" id="qaAll" type="button">{E(s['qaAll'])}</button></div>
   {groups}
-  <div class="endcta"><p>{E(L[lang])}</p><div style="display:flex;gap:8px;flex-wrap:wrap"><a class="btn" href="quiz.html">{E(s['tQuiz'][0])}</a><a class="btn ghost" href="index.html">{E(s['backLesson'])}</a></div></div>
+  <div class="endcta"><p>{E(L[lang])}</p><div style="display:flex;gap:8px;flex-wrap:wrap">{done_btn(lang, L['n'], 'qa')}<a class="btn" href="quiz.html">{E(s['tQuiz'][0])}</a><a class="btn ghost" href="index.html">{E(s['backLesson'])}</a></div></div>
 </div></section>
 </main>
 ''' + footer(lang, depth) + f'<script src="{P["assets"]}site.js"></script>\n</body>\n</html>\n'
@@ -541,7 +552,7 @@ def page_quiz(lang, L):
       <p id="qmsg" style="color:var(--mint);margin:0"></p>
       <p id="qwrongT" style="margin:18px 0 0;font-family:var(--hf);color:var(--goldl)">{E(s['wrongT'])}</p>
       <ul class="review" id="qwrong"></ul>
-      <div class="acts"><button class="btn" id="qretry">{E(s['retry'])}</button><a class="btn ghost" href="qa.html">{E(s['toQA'])}</a><a class="btn ghost" href="index.html">{E(s['backLesson'])}</a></div>
+      <div class="acts">{done_btn(lang, L['n'], 'quiz')}<button class="btn" id="qretry">{E(s['retry'])}</button><a class="btn ghost" href="qa.html">{E(s['toQA'])}</a><a class="btn ghost" href="index.html">{E(s['backLesson'])}</a></div>
     </div>
   </div>
 </div></section>
@@ -598,6 +609,7 @@ def page_slides(lang, L):
     <button id="svPrev">{E(s['prevS'])}</button>
     <span class="cnt" id="svCnt"></span>
     <button id="svNext" class="nx">{E(s['nextS'])}</button>
+    {done_btn(lang, L['n'], 'slides', 'sv-done')}
   </div>
 </div>
 <script src="{P['assets']}slides.js"></script>
@@ -668,6 +680,10 @@ def page_map(lang):
     t = re.sub(r'<link rel="stylesheet" href="https://fonts.googleapis.com/[^"]*">', f'{preload(lang, fu)}\n<link rel="stylesheet" href="{fu}assets/fonts.css">', t)
     assert 'googleapis' not in t
     t = t.replace('<script src="logo.js"></script>\n', '').replace('<script src="../logo.js"></script>\n', '')
+    s_ = S[lang]
+    mb = f'<button class="mapdone" type="button" data-off="{E(s_["doneOff"])}" data-on="{E(s_["doneOn"])}" data-x="{E(s_["doneWhat"]["map"])}" title="{E(s_["doneUndo"])}"></button>'
+    t = re.sub(r'(<div id="close" class="ov">.*?<div class="acts">)', lambda m: m.group(1) + mb, t, count=1, flags=re.S)
+    assert 'class="mapdone"' in t
     if lang == 'ar':
         t = t.replace('data-base="tr/" href="tr/"', 'data-base="tr/map.html" href="tr/map.html"')
         home, more, quizL, allL, resetL, homeL, pinch = 'index.html', 'المزيد', 'اختبر فهمك', 'الخريطة كاملة', 'من البداية', 'صفحة السلسلة', 'كبّر بإصبعين لقراءة الفروع'
@@ -681,6 +697,8 @@ def page_map(lang):
     css = f'''
 /* site integration + phone fixes */
 html[lang=ar] body {{ word-spacing: .14em; }}
+.ov .acts button.mapdone {{ background: transparent; color: #8FE0B5; border-color: #3F8F6A; }}
+.ov .acts button.mapdone.on {{ background: #3F8F6A; color: #fff; }}
 #brand {{ pointer-events: auto; text-decoration: none; }}
 #brand:hover span {{ color: var(--ink); }}
 #bar .m-only {{ display: none; }}
@@ -712,8 +730,13 @@ html[lang=ar] body {{ word-spacing: .14em; }}
   let tt; const toast = () => { if (!narrow()) return; const t = $('toast'); t.hidden = false; t.style.opacity = 1; clearTimeout(tt); tt = setTimeout(() => { t.style.opacity = 0; setTimeout(() => { t.hidden = true; }, 400); }, 3200); };
   $('all').addEventListener('click', toast); $('explore').addEventListener('click', toast);
   /* progress: the lesson's map counts as seen once the student starts it (kept on this device only) */
-  const markMap = () => { try { const k = 'wt.progress.v1', o = JSON.parse(localStorage.getItem(k)) || {}; (o[LI + 1] = o[LI + 1] || {}).map = 1; localStorage.setItem(k, JSON.stringify(o)); } catch (e) {} };
-  $('start').addEventListener('click', markMap); $('explore').addEventListener('click', markMap);
+  const db = document.querySelector('#close .mapdone');
+  if (db) {
+    const K = 'wt.progress.v1', rd = () => { try { return JSON.parse(localStorage.getItem(K)) || {}; } catch (e) { return {}; } };
+    const paintDone = () => { const on = !!(rd()[LI + 1] || {}).map; db.textContent = on ? db.dataset.on.replace('{x}', db.dataset.x) : db.dataset.off.replace('{x}', db.dataset.x); db.classList.toggle('on', on); db.setAttribute('aria-pressed', on); };
+    db.onclick = () => { const o = rd(), l = o[LI + 1] = o[LI + 1] || {}; if (l.map) delete l.map; else l.map = 1; try { localStorage.setItem(K, JSON.stringify(o)); } catch (e) {} paintDone(); };
+    paintDone();
+  }
 '''
     t = t.replace("  $('jamiaText').textContent = L.jamia;", js + "\n  $('jamiaText').textContent = L.jamia;", 1)
     assert 'id="more"' in t and 'moreMenu' in t and 'class="home"' in t and 'id="brand" href' in t, 'map patch failed'

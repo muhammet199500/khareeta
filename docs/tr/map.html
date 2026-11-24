@@ -189,6 +189,8 @@ button:focus-visible { outline: 3px solid var(--goldl); outline-offset: 2px; }
 
 /* site integration + phone fixes */
 html[lang=ar] body { word-spacing: .14em; }
+.ov .acts button.mapdone { background: transparent; color: #8FE0B5; border-color: #3F8F6A; }
+.ov .acts button.mapdone.on { background: #3F8F6A; color: #fff; }
 #brand { pointer-events: auto; text-decoration: none; }
 #brand:hover span { color: var(--ink); }
 #bar .m-only { display: none; }
@@ -281,7 +283,7 @@ html[lang=ar] body { word-spacing: .14em; }
   <p class="big" id="closeText"></p>
   <div class="gl"></div>
   <p class="lead">Hamd, âlemlerin Rabbi Allah’a mahsustur.</p>
-  <div class="acts"><button data-go="map">Haritanın tamamını göster</button><button class="ghost" data-go="restart">Baştan başla</button></div>
+  <div class="acts"><button class="mapdone" type="button" data-off="{x} bitirdim" data-on="✓ {x} bitirdiniz" data-x="Haritayı" title="Geri almak için tekrar dokunun"></button><button data-go="map">Haritanın tamamını göster</button><button class="ghost" data-go="restart">Baştan başla</button></div>
 </div></div>
 
 <script src="data_tr.js"></script>
@@ -629,8 +631,13 @@ html[lang=ar] body { word-spacing: .14em; }
   let tt; const toast = () => { if (!narrow()) return; const t = $('toast'); t.hidden = false; t.style.opacity = 1; clearTimeout(tt); tt = setTimeout(() => { t.style.opacity = 0; setTimeout(() => { t.hidden = true; }, 400); }, 3200); };
   $('all').addEventListener('click', toast); $('explore').addEventListener('click', toast);
   /* progress: the lesson's map counts as seen once the student starts it (kept on this device only) */
-  const markMap = () => { try { const k = 'wt.progress.v1', o = JSON.parse(localStorage.getItem(k)) || {}; (o[LI + 1] = o[LI + 1] || {}).map = 1; localStorage.setItem(k, JSON.stringify(o)); } catch (e) {} };
-  $('start').addEventListener('click', markMap); $('explore').addEventListener('click', markMap);
+  const db = document.querySelector('#close .mapdone');
+  if (db) {
+    const K = 'wt.progress.v1', rd = () => { try { return JSON.parse(localStorage.getItem(K)) || {}; } catch (e) { return {}; } };
+    const paintDone = () => { const on = !!(rd()[LI + 1] || {}).map; db.textContent = on ? db.dataset.on.replace('{x}', db.dataset.x) : db.dataset.off.replace('{x}', db.dataset.x); db.classList.toggle('on', on); db.setAttribute('aria-pressed', on); };
+    db.onclick = () => { const o = rd(), l = o[LI + 1] = o[LI + 1] || {}; if (l.map) delete l.map; else l.map = 1; try { localStorage.setItem(K, JSON.stringify(o)); } catch (e) {} paintDone(); };
+    paintDone();
+  }
 
   $('jamiaText').textContent = L.jamia;
   $('closeText').textContent = L.closing;
