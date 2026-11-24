@@ -1,0 +1,12 @@
+# Cloudflare Worker that sends the daily-task reminders. Deployed by .github/workflows/remind.yml
+name = "wt-remind"
+main = "worker.js"
+compatibility_date = "2026-11-01"
+workers_dev = true
+
+[triggers]
+crons = ["0 * * * *"]
+
+[[kv_namespaces]]
+binding = "REMIND"
+id = "aec7a04b8f564c04bd0acaa8a577da34"
