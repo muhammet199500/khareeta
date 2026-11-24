@@ -1,5 +1,5 @@
 # Cloudflare Worker that sends the daily-task reminders (code in remind/). Cloudflare builds it from this repo on every push to main.
-name = "wt-remind"
+name = "khareeta"   # must match the Worker name in Cloudflare (Workers Builds)
 main = "remind/worker.js"
 compatibility_date = "2026-11-01"
 workers_dev = true
