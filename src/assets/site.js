@@ -410,6 +410,38 @@
     const days = week.days.slice().sort((a, b) => a.date < b.date ? -1 : 1);
     days.forEach((d, i) => list.append(renderDay(week, d, days[0], i === days.length - 1)));
     renderFinal(week);
+    dayTabs(days, week);
+  }
+
+  /* one day at a time: a row of day buttons above the list; opens on today */
+  function dayTabs(days, week) {
+    const items = [...document.querySelectorAll('#taskList > .tday')], fin = document.querySelector('#wkFinal .final');
+    const panels = items.concat(fin ? [fin] : []); if (panels.length < 2) return;
+    const wd = new Intl.DateTimeFormat(AR ? 'ar' : 'tr-TR', { weekday: 'long' });
+    const dm = new Intl.DateTimeFormat(AR ? 'ar-u-nu-arab' : 'tr-TR', { day: 'numeric', month: 'long' });
+    const bar = el('div', 'daytabs'); bar.setAttribute('role', 'tablist');
+    const tabs = panels.map((p, i) => {
+      const b = el('button'); b.type = 'button'; b.setAttribute('role', 'tab');
+      if (i < days.length) {
+        const [y, m, dd] = days[i].date.split('-').map(Number), dt = new Date(y, m - 1, dd);
+        b.append(el('b', null, wd.format(dt)), el('span', null, dm.format(dt)));
+        if (days[i].date === TODAY) b.classList.add('today');
+        b.dataset.date = days[i].date;
+      } else { b.append(el('b', null, L(week.final.title)), el('span', null, '✦')); b.classList.add('fin'); }
+      b.addEventListener('click', () => show(i, true)); bar.append(b); return b;
+    });
+    const mark = () => { const dn = ls.get(DKEY, {}); tabs.forEach(b => { if (b.dataset.date) b.classList.toggle('done', !!dn[b.dataset.date]); }); };
+    function show(i, focus) {
+      panels.forEach((p, j) => { p.hidden = j !== i; });
+      tabs.forEach((b, j) => { b.classList.toggle('on', j === i); b.setAttribute('aria-selected', j === i); });
+      if (focus) tabs[i].scrollIntoView({ block: 'nearest', inline: 'nearest', behavior: 'smooth' });
+    }
+    const ti = days.findIndex(d => d.date === TODAY);
+    const start = ti >= 0 ? ti : (TODAY < days[0].date ? 0 : (fin ? panels.length - 1 : days.length - 1));
+    document.querySelector('#taskList').before(bar);
+    document.querySelector('#taskList').addEventListener('click', e => { if (e.target.closest('.donebtn')) setTimeout(mark, 0); });
+    mark(); show(start, false);
+    setTimeout(() => tabs[start].scrollIntoView({ block: 'nearest', inline: 'center' }), 50);
   }
 
   /* reminders: ask permission, subscribe, tell the reminder service */
