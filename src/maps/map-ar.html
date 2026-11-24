@@ -20,6 +20,8 @@ button:focus-visible { outline: 3px solid var(--goldl); outline-offset: 2px; }
 
 #stage { position: fixed; inset: 0; overflow: hidden; touch-action: none; cursor: grab;
   background:
+    url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2260%22 height=%2230%22 viewBox=%220 0 60 30%22%3E%3Cg fill=%22none%22 stroke=%22%2385601C%22 stroke-width=%221%22 stroke-opacity=%22.34%22%3E%3Cpath d=%22M0 3.5H60M0 26.5H60%22/%3E%3Cpath d=%22M23.31,18.44L18.68,18.68L18.44,23.31L15.00,20.20L11.56,23.31L11.32,18.68L6.69,18.44L9.80,15.00L6.69,11.56L11.32,11.32L11.56,6.69L15.00,9.80L18.44,6.69L18.68,11.32L23.31,11.56L20.20,15.00Z%22/%3E%3Ccircle cx=%2215%22 cy=%2215%22 r=%222%22/%3E%3Cpath d=%22M24 15H36%22/%3E%3Cpath d=%22M45 9.5L50.5 15L45 20.5L39.5 15Z%22/%3E%3Cpath d=%22M54 15H66M-6 15H6%22/%3E%3C/g%3E%3C/svg%3E") center top / 60px 30px repeat-x,
+    url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2260%22 height=%2230%22 viewBox=%220 0 60 30%22%3E%3Cg fill=%22none%22 stroke=%22%2385601C%22 stroke-width=%221%22 stroke-opacity=%22.34%22%3E%3Cpath d=%22M0 3.5H60M0 26.5H60%22/%3E%3Cpath d=%22M23.31,18.44L18.68,18.68L18.44,23.31L15.00,20.20L11.56,23.31L11.32,18.68L6.69,18.44L9.80,15.00L6.69,11.56L11.32,11.32L11.56,6.69L15.00,9.80L18.44,6.69L18.68,11.32L23.31,11.56L20.20,15.00Z%22/%3E%3Ccircle cx=%2215%22 cy=%2215%22 r=%222%22/%3E%3Cpath d=%22M24 15H36%22/%3E%3Cpath d=%22M45 9.5L50.5 15L45 20.5L39.5 15Z%22/%3E%3Cpath d=%22M54 15H66M-6 15H6%22/%3E%3C/g%3E%3C/svg%3E") center bottom / 60px 30px repeat-x,
     radial-gradient(ellipse at 55% 45%, #FAF6EC 0%, rgba(241,234,218,.9) 55%, rgba(230,220,198,.55) 100%),
     radial-gradient(rgba(133,96,28,.18) 1px, transparent 1.4px) 0 0 / 24px 24px, #EEE6D4; }
 #stage.drag { cursor: grabbing; }
@@ -27,7 +29,8 @@ button:focus-visible { outline: 3px solid var(--goldl); outline-offset: 2px; }
 #links { position: absolute; left: 0; top: 0; overflow: visible; pointer-events: none; }
 #links path { fill: none; stroke-linecap: round; transition: stroke-dashoffset .55s ease, opacity .35s; }
 #links path.dim { opacity: .22; }
-#orn { position: absolute; pointer-events: none; }
+#orn { position: absolute; pointer-events: none; width: 1400px; height: 1400px;
+  background: url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22360%22 height=%22520%22 viewBox=%220 0 360 520%22%3E%3Cdefs%3E%3ClinearGradient id=%22f%22 x1=%220%22 y1=%220%22 x2=%220%22 y2=%221%22%3E%3Cstop offset=%22.45%22 stop-color=%22%2385601C%22 stop-opacity=%22.2%22/%3E%3Cstop offset=%221%22 stop-color=%22%2385601C%22 stop-opacity=%220%22/%3E%3C/linearGradient%3E%3C/defs%3E%3Cg fill=%22none%22 stroke=%22url%28%23f%29%22%3E%3Cpath d=%22M10 520V215C10 120 85 52 180 10C275 52 350 120 350 215V520%22 stroke-width=%221.4%22/%3E%3Cpath d=%22M30 520V222C30 136 96 74 180 34C264 74 330 136 330 222V520%22 stroke-width=%22.9%22/%3E%3C/g%3E%3Ccircle cx=%22180%22 cy=%2234%22 r=%223%22 fill=%22%2385601C%22 fill-opacity=%22.22%22/%3E%3C/svg%3E") center 290px / 660px auto no-repeat; }
 
 .node { position: absolute; direction: rtl; text-align: center; white-space: pre-line; line-height: 1.45;
   transform: translate(-50%, -50%) scale(.85); opacity: 0; pointer-events: none; cursor: pointer;
