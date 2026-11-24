@@ -397,7 +397,7 @@
       if (next) {
         $('#todayWhere').textContent = T('week'); $('#todaySeg').textContent = L(next.title);
         $('#todayText').textContent = L(next.sub) || ''; $('#todayDone').hidden = true;
-        const a = $('#todayBand .go'); a.textContent = T('openWeek') + (AR ? ' ←' : ' →');
+        const a = $('#todayBand .tgo'); a.textContent = T('openWeek') + (AR ? ' ←' : ' →');
         $('#todayBand').hidden = false;
       }
     }

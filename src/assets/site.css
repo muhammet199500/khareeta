@@ -474,3 +474,13 @@ html[lang=ar] .scard h3 { word-spacing: .22em; }
 .pledge { background: var(--parch2); border-radius: 14px; padding: 14px 16px; display: grid; gap: 8px; justify-items: start; }
 .pledge .ptext { margin: 0; font-family: var(--af); font-size: 19px; line-height: 1.9; color: var(--ink); }
 .tprivate { margin: 18px 0 0; font-family: var(--uf); font-size: 13.5px; color: var(--muted); }
+
+/* clearer way into the weekly task, and back home from it */
+.bar nav a.tasks-nav { background: var(--goldl); color: var(--ink); font-weight: 700; gap: 6px; }
+.bar nav a.tasks-nav:hover { background: #E6C483; }
+.bar nav a.tasks-nav svg { width: 18px; height: 18px; }
+.today .tgo { margin-top: 8px; min-height: 42px; padding: 0 18px; font-size: 15px; }
+.today .go { display: inline-block; margin: 0 0 4px; margin-inline-end: 18px; }
+.phead .back { margin-top: 16px; min-height: 42px; border-color: rgba(217,178,106,.6); color: #F7F3EA; font-size: 15px; }
+.phead .back:hover { background: rgba(217,178,106,.15); }
+.backrow { margin: 22px 0 0; text-align: center; }
