@@ -1,5 +1,5 @@
 {
- "_how": "واجبات الأسبوع. لكل أسبوع: العنوان والمقدمة والهدف وطريقة التنفيذ والمحاسبة الختامية. لكل يوم: date بصيغة YYYY-MM-DD، والمقطع segment، ونص المهمة ar/tr، ورابط اختياري href لصفحة في الموقع. track: جدول متابعة يومي، counter: عدّاد للألفاظ.",
+ "_how": "واجبات الأسبوع. لكل أسبوع: العنوان والمقدمة والهدف وطريقة التنفيذ والمحاسبة الختامية. لكل يوم: date بصيغة YYYY-MM-DD، والمقطع segment، ونص المهمة ar/tr، ورابط اختياري href لصفحة في الموقع. track: جدول متابعة يومي، counter: عدّاد (مُلغى حاليًا).",
  "weeks": [
   {
    "title": {"ar": "الواجب العملي الأسبوعي", "tr": "Haftalık uygulamalı ödev"},
@@ -18,7 +18,6 @@
     "tr": ["Her gün belirlenen bölümü dinle; onu bitirmeden sonrakine geçme.", "O gün için verilen dili tutma alıştırmasını uygula.", "Sövmeyi ve hakareti bırakma konusundaki bağlılığını takip tablosuna kaydet.", "Bir aksama olursa sebebini kısaca yaz."]
    },
    "track": true,
-   "counter": true,
    "days": [
     {"date": "2026-11-30", "href": "l1/index.html",
      "segment": {"ar": "المقطع الأول: اعتقاد بطلان عبادة الطاغوت", "tr": "1. bölüm: Tâğuta ibadetin bâtıl olduğuna itikad"},

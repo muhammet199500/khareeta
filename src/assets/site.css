@@ -458,7 +458,10 @@ html[lang=ar] .scard h3 { word-spacing: .22em; }
 .ynb { min-width: 64px; min-height: 40px; padding: 0 14px; border-radius: 30px; border: 1.5px solid var(--line); background: #fff; font: inherit; font-family: var(--uf); font-size: 15px; color: var(--body); cursor: pointer; }
 .ynb:hover { border-color: var(--gold); }
 .ynb.on { background: var(--ink); border-color: var(--ink); color: #F7F3EA; }
-.ynb[data-v="0"].on { background: #9A3B1E; border-color: #9A3B1E; }
+.ynb[data-v="1"] { color: #2E6E50; border-color: rgba(63,143,106,.45); }
+.ynb[data-v="1"].on { background: #2E8B57; border-color: #2E8B57; color: #fff; }
+.ynb[data-v="0"] { color: #B03A2E; border-color: rgba(176,58,46,.4); }
+.ynb[data-v="0"].on { background: #C0392B; border-color: #C0392B; color: #fff; }
 .tnote { display: grid; gap: 6px; }
 .tnote[hidden] { display: none; }
 .tnote textarea { width: 100%; box-sizing: border-box; border: 1.5px solid var(--line); border-radius: 12px; padding: 10px 12px; font: inherit; font-size: 16px; background: #fff; color: var(--body); resize: vertical; }
