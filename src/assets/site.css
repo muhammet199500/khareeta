@@ -59,7 +59,6 @@ html[lang=tr] .ayah { direction: rtl; unicode-bidi: isolate; }
 
 /* ---------- hero ---------- */
 .hero { background: var(--ink); color: #F7F3EA; position: relative; overflow: hidden; }
-.hero .orn { position: absolute; inset-inline-start: -120px; top: -140px; width: 620px; height: 620px; opacity: .22; pointer-events: none; }
 .hero .in { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: clamp(20px, 4vw, 48px); align-items: center; padding: clamp(28px, 5vw, 60px) 0 clamp(34px, 5vw, 64px); position: relative; }
 .hero .in > img { width: clamp(120px, 17vw, 200px); height: auto; filter: drop-shadow(0 16px 36px rgba(0,0,0,.45)); }
 .eb { font-family: var(--uf); font-weight: 600; color: var(--gold); font-size: 16px; margin: 0 0 6px; }
@@ -72,7 +71,6 @@ html[lang=tr] .hero .quote { font-family: 'EB Garamond', Georgia, serif; font-si
 
 /* small page head */
 .phead { background: var(--ink); color: #F7F3EA; padding: clamp(22px, 4vw, 40px) 0 clamp(24px, 4vw, 44px); position: relative; overflow: hidden; }
-.phead .orn { position: absolute; inset-inline-end: -160px; top: -200px; width: 560px; height: 560px; opacity: .18; pointer-events: none; }
 .phead .eb { color: var(--goldl); }
 .phead h1 { margin-bottom: 6px; }
 .phead p { margin: 0; color: var(--mint); max-width: 70ch; }
@@ -257,8 +255,7 @@ dialog .dnote { padding: 10px 16px 14px; color: var(--muted); font-size: 14px; m
 @media print {
   .bar, body > footer, .toc, .endcta, .crumbs, .skip { display: none !important; }
   .phead { background: none; color: #000; padding: 0 0 10px; }
-  .phead .orn { display: none; }
-  .phead p, .phead .eb { color: #444; }
+    .phead p, .phead .eb { color: #444; }
   body { background: #fff; font-size: 12pt; }
   .doc { display: block; }
   .prose { font-size: 12pt; }
@@ -269,3 +266,15 @@ html[lang=ar] ol { list-style-type: arabic-indic; }
 .quiz .review .ans { color: var(--goldl); }
 html[lang=tr] .prose blockquote .ayah { display: block; text-align: right; margin-bottom: 4px; }
 html[lang=tr] :is(.prose, .qa-a, .qq) :is(.ar, .ayah) { display: inline-block; max-width: 100%; }
+
+/* Dark bands (home hero, page headers): soft gold light, fine dots fading out, gold edge line */
+.hero, .phead {
+  --dots: radial-gradient(rgba(217,178,106,.24) 1px, transparent 1.4px) 0 0 / 22px 22px;
+  background:
+    radial-gradient(640px 320px at var(--gx, 85%) 28%, rgba(217,178,106,.16), transparent 70%),
+    radial-gradient(560px 300px at var(--gy, 8%) 118%, rgba(63,143,106,.24), transparent 70%),
+    linear-gradient(var(--fade, to left), rgba(15,46,42,0) 0%, rgba(15,46,42,.6) 42%, #0F2E2A 72%),
+    var(--dots), #0F2E2A;
+  box-shadow: inset var(--edge, -4px) 0 0 var(--goldl);
+}
+html[dir=ltr] .hero, html[dir=ltr] .phead { --gx: 15%; --gy: 92%; --fade: to right; --edge: 4px; }

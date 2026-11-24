@@ -31,7 +31,9 @@ button { font: inherit; cursor: pointer; }
 button:focus-visible { outline: 3px solid var(--goldl); outline-offset: 2px; }
 
 #stage { position: fixed; inset: 0; overflow: hidden; touch-action: none; cursor: grab;
-  background: radial-gradient(ellipse at 55% 45%, #FAF6EC 0%, #F1EADA 60%, #E6DCC6 100%); }
+  background:
+    radial-gradient(ellipse at 55% 45%, #FAF6EC 0%, rgba(241,234,218,.9) 55%, rgba(230,220,198,.55) 100%),
+    radial-gradient(rgba(133,96,28,.18) 1px, transparent 1.4px) 0 0 / 24px 24px, #EEE6D4; }
 #stage.drag { cursor: grabbing; }
 #world { position: absolute; left: 0; top: 0; width: 8000px; height: 5000px; transform-origin: 0 0; will-change: transform; }
 #links { position: absolute; left: 0; top: 0; overflow: visible; pointer-events: none; }
@@ -173,6 +175,7 @@ button:focus-visible { outline: 3px solid var(--goldl); outline-offset: 2px; }
 .ov .lang { background: transparent; font-size: 16px; }
 
 /* site integration + phone fixes */
+html[lang=ar] body { word-spacing: .14em; }
 #brand { pointer-events: auto; text-decoration: none; }
 #brand:hover span { color: var(--ink); }
 #bar .m-only { display: none; }
@@ -192,7 +195,7 @@ button:focus-visible { outline: 3px solid var(--goldl); outline-offset: 2px; }
 <body>
 <div id="stage">
   <div id="world">
-    <svg id="orn" width="1400" height="1400" viewBox="0 0 720 720" aria-hidden="true"><g fill="none" stroke="#85601C" stroke-width="1.4" opacity="0.16"><rect x="144" y="144" width="432" height="432"/><rect x="144" y="144" width="432" height="432" transform="rotate(45 360 360)"/><rect x="216" y="216" width="288" height="288"/><rect x="216" y="216" width="288" height="288" transform="rotate(45 360 360)"/><circle cx="360" cy="360" r="320"/><circle cx="360" cy="360" r="108"/></g></svg>
+    <div id="orn" aria-hidden="true"></div>
     <svg id="links" width="8000" height="5000" aria-hidden="true"></svg>
   </div>
 </div>

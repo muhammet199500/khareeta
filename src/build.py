@@ -142,7 +142,7 @@ FONTS = {
  'ar': 'https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Noto+Naskh+Arabic:wght@400..700&family=Reem+Kufi:wght@400..700&display=swap',
  'tr': 'https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=EB+Garamond:wght@500..700&family=Source+Sans+3:wght@400..700&display=swap',
 }
-ORN = '<svg class="orn" viewBox="0 0 720 720" aria-hidden="true"><g fill="none" stroke="#D9B26A" stroke-width="1.6"><rect x="144" y="144" width="432" height="432"/><rect x="144" y="144" width="432" height="432" transform="rotate(45 360 360)"/><rect x="216" y="216" width="288" height="288"/><rect x="216" y="216" width="288" height="288" transform="rotate(45 360 360)"/><circle cx="360" cy="360" r="320"/><circle cx="360" cy="360" r="108"/></g></svg>'
+ORN = ''  # backgrounds of .hero/.phead are drawn in CSS (glow + fine dots)
 I = {
  'text': '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4.5A2.5 2.5 0 0 1 6.5 2H20v17H6.5A2.5 2.5 0 0 0 4 21.5z"/><path d="M4 21.5A2.5 2.5 0 0 1 6.5 19H20v3H6.5"/><path d="M9 7h7M9 11h5"/></svg>',
  'slides': '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M12 16v4M8 20h8"/></svg>',
@@ -647,6 +647,7 @@ def page_map(lang):
     t = re.sub(r'<div id="brand">(.*?)</div></div>', lambda m: f'<a id="brand" href="{home}" title="{homeL}">{m.group(1)}</a></div>', t, count=1, flags=re.S)
     css = f'''
 /* site integration + phone fixes */
+html[lang=ar] body {{ word-spacing: .14em; }}
 #brand {{ pointer-events: auto; text-decoration: none; }}
 #brand:hover span {{ color: var(--ink); }}
 #bar .m-only {{ display: none; }}
