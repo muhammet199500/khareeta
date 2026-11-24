@@ -629,6 +629,7 @@ def page_map(lang):
     t = open(src, encoding='utf-8').read()
     logo = 'media/logo.webp' if lang == 'ar' else '../media/logo.webp'
     t = t.replace('src="" data-logo=""', f'src="{logo}"')
+    t = t.replace('src="" data-wm=""', f'src="{logo}"')
     fu = '' if lang == 'ar' else '../'
     t = re.sub(r'<link rel="preconnect" href="https://fonts.googleapis.com">\n?', '', t)
     t = re.sub(r'<link rel="preconnect" href="https://fonts.gstatic.com"[^>]*>\n?', '', t)
