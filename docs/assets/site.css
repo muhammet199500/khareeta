@@ -60,7 +60,11 @@ html[lang=tr] .ayah { direction: rtl; unicode-bidi: isolate; }
 /* ---------- hero ---------- */
 .hero { background: var(--ink); color: #F7F3EA; position: relative; overflow: hidden; }
 .hero .in { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: clamp(20px, 4vw, 48px); align-items: center; padding: clamp(28px, 5vw, 60px) 0 clamp(34px, 5vw, 64px); position: relative; }
-.hero .in > img { width: clamp(120px, 17vw, 200px); height: auto; filter: drop-shadow(0 16px 36px rgba(0,0,0,.45)); }
+.hero .emblem { position: relative; display: grid; place-items: center; }
+.hero .emblem img { position: relative; width: clamp(120px, 17vw, 200px); height: auto; filter: drop-shadow(0 16px 36px rgba(0,0,0,.45)); }
+/* a fine double arch (mihrab outline) standing behind the logo */
+.hero .emblem::before { content: ""; position: absolute; left: 50%; top: 50%; width: 152%; aspect-ratio: 360 / 520; transform: translate(-50%, -46%); background: url(arch.svg) center top / 100% auto no-repeat; opacity: .32;
+  -webkit-mask-image: linear-gradient(#000 55%, transparent 96%); mask-image: linear-gradient(#000 55%, transparent 96%); pointer-events: none; }
 .eb { font-family: var(--uf); font-weight: 600; color: var(--gold); font-size: 16px; margin: 0 0 6px; }
 .hero .eb { color: var(--goldl); }
 h1 { font-family: var(--hf); font-weight: 700; font-size: clamp(30px, 5vw, 52px); line-height: 1.2; margin: 0 0 12px; text-wrap: balance; }
@@ -280,3 +284,9 @@ html[lang=tr] :is(.prose, .qa-a, .qq) :is(.ar, .ayah) { display: inline-block; m
 }
 html[dir=ltr] .hero, html[dir=ltr] .phead { --gx: 15%; --gy: 92%; --fade: to right; --edge: 4px; }
 .qcard .qa-a::before { content: ""; position: absolute; inset-inline-start: 0; top: 10px; bottom: 10px; width: 4px; border-radius: 4px; background: #3F8F6A; }
+
+/* a thin band of eight-pointed stars along the bottom edge of the dark bands */
+.hero::after, .phead::after { content: ""; position: absolute; inset-inline: 0; bottom: 0; height: 30px; background: url(frieze.svg) center / 60px 30px repeat-x; opacity: .34; pointer-events: none; }
+.hero .in { padding-bottom: calc(clamp(34px, 5vw, 64px) + 18px); }
+.phead { padding-bottom: calc(clamp(24px, 4vw, 44px) + 26px); }
+@media print { .phead::after { display: none; } }

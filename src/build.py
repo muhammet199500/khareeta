@@ -346,7 +346,7 @@ def page_home(lang):
     redirect = '''<script>{ const m = /^#l(\\d+)$/.exec(location.hash); if (m) location.replace('map.html' + location.hash); }</script>'''
     return head(lang, f'{s["brand"]} · {s["series"]}', depth) + redirect + bar(lang, depth, other) + f'''<main id="main">
 <section class="hero">{ORN}<div class="wrap"><div class="in">
-  <img src="{u}media/logo.webp" alt="{E(s['brand'])}">
+  <div class="emblem"><img src="{u}media/logo.webp" alt="{E(s['brand'])}"></div>
   <div><p class="eb">{E(s['eb'])}</p><h1>{E(s['series'])}</h1><p class="lead">{E(s['lead'])}</p>
   <p class="quote">{E(s['quote'])}</p></div>
 </div></div></section>
@@ -377,7 +377,7 @@ def page_home(lang):
 
 <section class="band tight"><div class="wrap">
   <div class="teaser">
-    <div class="vbox player" data-soon="{E(s['tzSoon'])}" data-logo="{u}media/logo.webp"><video controls preload="none" playsinline poster="{u}media/poster-teaser-{lang}.jpg" data-check><source src="{u}media/teaser-{lang}.mp4" type="video/mp4"></video></div>
+    <div class="vbox player" data-soon="{E(s['tzSoon'])}" data-logo="{u}media/logo.webp"><video controls preload="metadata" playsinline poster="{u}media/poster-teaser.jpg" data-check><source src="{u}media/teaser.mp4" type="video/mp4"></video></div>
     <div><h2>{E(s['tzT'])}</h2><p>{E(s['tzD'])}</p></div>
   </div>
 </div></section>
