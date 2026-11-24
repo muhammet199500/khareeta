@@ -206,3 +206,48 @@
     render();
   }
 })();
+
+/* ---- library: remember the last lesson page opened, search, categories ---- */
+(function () {
+  const $ = s => document.querySelector(s), $$ = s => Array.from(document.querySelectorAll(s));
+  const AR = document.documentElement.lang === 'ar', LKEY = 'wt.last.' + (AR ? 'ar' : 'tr');
+  const num = n => AR ? String(n).replace(/\d/g, d => '٠١٢٣٤٥٦٧٨٩'[d]) : String(n);
+  const get = k => { try { return JSON.parse(localStorage.getItem(k)); } catch (e) { return null; } };
+  /* on a lesson page (l1/…, tr/l1/…) note where the student is */
+  const m = /\/l(\d+)\/([\w-]+\.html)?$/.exec(location.pathname);
+  if (m) { try { localStorage.setItem(LKEY, JSON.stringify({ n: m[1], p: 'l' + m[1] + '/' + (m[2] || 'index.html') })); } catch (e) {} }
+  const dataEl = $('#libData'); if (!dataEl) return;
+  const D = JSON.parse(dataEl.textContent), prog = get('wt.progress.v1') || {};
+  const TOOLS = ['text', 'slides', 'map', 'qa', 'quiz'];
+  /* continue where you stopped */
+  const last = get(LKEY);
+  if (last && D[last.n]) {
+    $('#contT').textContent = D[last.n].t; $('#contW').textContent = D[last.n].w;
+    $('#contA').href = last.p; $('#contBand').hidden = false;
+  }
+  /* each series card: how many of its published lessons the student completed */
+  $$('.sprog[data-lessons]').forEach(e => {
+    const ls = e.dataset.lessons.split(','), c = ls.filter(n => (prog[n] || {}).lesson).length;
+    if (!c) return;
+    e.hidden = false;
+    e.innerHTML = `<span class="pbar"><i style="width:${100 * c / ls.length}%"></i></span><span>${AR ? 'أتممتَ ' + num(c) + ' من ' + num(ls.length) : c + '/' + ls.length + ' tamamlandı'}</span>`;
+  });
+  /* search + categories */
+  const norm = s => s.toLowerCase().normalize('NFD').replace(/[̀-ًͯ-ٰٟـ’'ʿ‘]/g, '')
+    .replace(/[أإآٱ]/g, 'ا').replace(/ى/g, 'ي').replace(/ة/g, 'ه').replace(/ı/g, 'i').replace(/\s+/g, ' ').trim();
+  let cat = '';
+  const q = $('#libQ');
+  function apply() {
+    const t = norm(q.value || '');
+    let shown = 0;
+    $$('.scard').forEach(c => { const ok = (!cat || c.dataset.cat === cat) && (!t || norm(c.dataset.q).includes(t)); c.hidden = !ok; if (ok) shown++; });
+    let rowsShown = 0;
+    $$('#latest .lrow').forEach(r => { const ok = !t || norm(r.dataset.q).includes(t); r.hidden = !ok; if (ok) rowsShown++; });
+    $('#latest').hidden = !rowsShown;
+    $('#noResult').hidden = !!(shown || rowsShown);
+  }
+  $$('.cats button').forEach(b => b.addEventListener('click', () => {
+    cat = b.dataset.cat; $$('.cats button').forEach(x => x.classList.toggle('on', x === b)); apply();
+  }));
+  q.addEventListener('input', apply);
+})();

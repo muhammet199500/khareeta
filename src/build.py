@@ -57,7 +57,7 @@ S = {
     home='الرئيسية', lessons='الدروس', lesson='الدرس', point='النقطة', of='من صفة الكفر بالطاغوت',
     pointsT='النقاط الخمس', pointsS='كل نقطة درس مستقل، تُضاف تباعًا. والروابط تبقى صالحة لكل الدروس.',
     latestT='أحدث درس', latestS='ابدأ بالفيديو أو الدرس المكتوب، ثم راجع بالشرائح والخريطة، واختم بالأسئلة والاختبار.',
-    listT='دروس السلسلة', listS='اضغط على الدرس لتفتح صفحته وكل أدواته.',
+    listT='دروس القسم', listS='اضغط على الدرس لتفتح صفحته وكل أدواته.',
     open='افتح الدرس', soon='قريبًا', live='متاح',
     tText=('الدرس المكتوب', 'الشرح كاملًا بأدلته، للقراءة والطباعة'),
     tSlides=('عرض الشرائح', 'بطاقات الدرس شريحةً شريحة'),
@@ -106,7 +106,7 @@ S = {
     home='Ana sayfa', lessons='Dersler', lesson='Ders', point='husus', of='· Tâğutu inkârın keyfiyeti',
     pointsT='Beş husus', pointsS='Her husus ayrı bir derstir ve sırayla eklenir. Bağlantılar bütün dersler için geçerli kalır.',
     latestT='En son ders', latestS='Videoyla başlayın, sunum ve haritayla tekrar edin, soru-cevap ve testle bitirin.',
-    listT='Serinin dersleri', listS='Dersin sayfasını ve bütün araçlarını açmak için tıklayın.',
+    listT='Bölümün dersleri', listS='Dersin sayfasını ve bütün araçlarını açmak için tıklayın.',
     open='Dersi aç', soon='Yakında', live='Yayında',
     tText=('Yazılı ders', 'Delilleriyle tam açıklama; okumak ve basmak için'),
     tSlides=('Sunum', 'Dersin slaytları tek tek'),
@@ -148,6 +148,77 @@ S = {
  ),
 }
 DIG = lambda lang, n: ''.join('٠١٢٣٤٥٦٧٨٩'[int(c)] if c.isdigit() else c for c in str(n)) if lang == 'ar' else str(n)
+
+# ------------------------------------------------------------------ the library: all series
+# A series has sections; a section has lessons. Only «حقيقة لا إله إلا الله» has lessons so far:
+# its section «صفة الكفر بالطاغوت» holds LESSONS (pages l1/ … l5/ stay where they are, so old links keep working).
+# status: 'live' (has lessons) · 'prep' (being prepared) · 'soon' (coming later). To add a series, add a dict here.
+CATS = [('aqeedah', 'العقيدة', 'Akide'), ('fiqh', 'الفقه', 'Fıkıh'), ('hadith', 'الحديث', 'Hadis')]
+SERIES = [
+    dict(slug='la-ilaha', cat='aqeedah', status='live', page='la-ilaha.html',
+         ar='حقيقة لا إله إلا الله', tr='Lâ ilâhe illallah’ın Hakikati', byAr='', byTr='',
+         sections=[
+            dict(key='taghut', ar='صفة الكفر بالطاغوت', tr='Tâğutu İnkârın Keyfiyeti', lessons=LESSONS),
+            dict(key='shurut', ar='شروط لا إله إلا الله', tr='Lâ ilâhe illallah’ın Şartları', lessons=[]),
+            dict(key='arkan', ar='أركان التوحيد', tr='Tevhidin Rükünleri', lessons=[]),
+            dict(key='nawaqid', ar='نواقض التوحيد', tr='Tevhidin Nâkızları', lessons=[]),
+         ]),
+    dict(slug='tawhid', cat='aqeedah', status='prep', ar='شرح كتاب التوحيد', tr='Kitâbu’t-Tevhîd Şerhi',
+         byAr='للشيخ محمد بن عبد الوهاب رحمه الله', byTr='Şeyh Muhammed b. Abdülvehhab'),
+    dict(slug='fiqh-muyassar', cat='fiqh', status='prep', ar='الفقه الميسر', tr='el-Fıkhu’l-Müyesser', byAr='', byTr=''),
+    dict(slug='usul-thalatha', cat='aqeedah', status='prep', ar='الأصول الثلاثة', tr='Üç Esas (el-Usûlu’s-Selâse)',
+         byAr='للشيخ محمد بن عبد الوهاب رحمه الله', byTr='Şeyh Muhammed b. Abdülvehhab'),
+    dict(slug='riyad', cat='hadith', status='soon', ar='رياض الصالحين', tr='Riyâzu’s-Sâlihîn',
+         byAr='للإمام النووي رحمه الله', byTr='İmam Nevevî'),
+    dict(slug='wajeez', cat='aqeedah', status='soon', ar='شرح كتاب الوجيز في عقيدة السلف', tr='el-Vecîz fî Akîdeti’s-Selef Şerhi', byAr='', byTr=''),
+]
+MAIN = SERIES[0]                      # the series the current lessons belong to
+MAIN_PAGE = MAIN['page']
+
+def ar_count(n, one, two, few, many):
+    """Arabic counted noun: ١ درس واحد، درسان، ٣ دروس، ١١ درسًا"""
+    if n == 1: return one
+    if n == 2: return two
+    if 3 <= n <= 10: return f'{DIG("ar", n)} {few}'
+    return f'{DIG("ar", n)} {many}'
+
+LIB = {
+ 'ar': dict(title='مكتبة الدروس', nav='السلاسل',
+    lead='سلاسل علمية في العقيدة والفقه والحديث. لكل درس: فيديو، ودرس مكتوب، وعرض شرائح، وخريطة تفاعلية، وأسئلة وأجوبة، واختبار.',
+    search='ابحث عن سلسلة أو درس…', noResult='لا نتائج. جرّب كلمة أخرى.',
+    contT='تابع من حيث توقفت', contB='أكمِل',
+    seriesT='السلاسل', seriesS='اختر سلسلة لتفتح صفحتها ودروسها.', all='الكل',
+    st=dict(live='متاحة', prep='قيد الإعداد', soon='قريبًا'), stMeta=dict(prep='قيد الإعداد', soon='تبدأ قريبًا'),
+    open='افتح السلسلة', latestT='أحدث الدروس', latestS='آخر ما نُشر من السلاسل.', openL='افتح الدرس',
+    sectionsT='أقسام السلسلة', sectionsS='تُضاف الأقسام والدروس تباعًا.', sectionSoon='قريبًا',
+    sLead='سلسلة في معنى كلمة التوحيد وما يحققها وما ينقضها: صفة الكفر بالطاغوت، وشروط لا إله إلا الله، وأركان التوحيد، ونواقض التوحيد. لكل درس: فيديو، ودرس مكتوب، وعرض شرائح، وخريطة تفاعلية، وأسئلة وأجوبة، واختبار.',
+    sQuote='﴿فَاعْلَمْ أَنَّهُ لَا إِلَٰهَ إِلَّا اللَّهُ﴾', sQuoteMeal='',
+    section='قسم', toSection='إلى القسم',
+ ),
+ 'tr': dict(title='Ders Kütüphanesi', nav='Seriler',
+    lead='Akide, fıkıh ve hadis alanında ilmî seriler. Her derste: video, yazılı ders, sunum, etkileşimli harita, soru-cevap ve test.',
+    search='Seri veya ders ara…', noResult='Sonuç yok. Başka bir kelime deneyin.',
+    contT='Kaldığın yerden devam et', contB='Devam et',
+    seriesT='Seriler', seriesS='Sayfasını ve derslerini açmak için bir seri seçin.', all='Tümü',
+    st=dict(live='Yayında', prep='Hazırlanıyor', soon='Yakında'), stMeta=dict(prep='Hazırlanıyor', soon='Yakında başlıyor'),
+    open='Seriyi aç', latestT='Son dersler', latestS='Serilerden en son yayınlananlar.', openL='Dersi aç',
+    sectionsT='Serinin bölümleri', sectionsS='Bölümler ve dersler sırayla eklenir.', sectionSoon='Yakında',
+    sLead='Tevhid kelimesinin anlamı, onu gerçekleştiren ve bozan şeyler üzerine bir seri: tâğutu inkârın keyfiyeti, lâ ilâhe illallah’ın şartları, tevhidin rükünleri ve tevhidin nâkızları. Her derste: video, yazılı ders, sunum, etkileşimli harita, soru-cevap ve test.',
+    sQuote='<span class="ar" lang="ar" dir="rtl">﴿فَاعْلَمْ أَنَّهُ لَا إِلَٰهَ إِلَّا اللَّهُ﴾</span>', sQuoteMeal='«Bil ki Allah’tan başka hiçbir ilah yoktur.» (Muhammed, 19)',
+    section='Bölüm', toSection='Bölüme git',
+ ),
+}
+
+def lessons_count(lang, n):
+    return ar_count(n, 'درس واحد', 'درسان', 'دروس', 'درسًا') if lang == 'ar' else f'{n} ders'
+
+def published(lang, n):
+    if lang == 'ar': return ar_count(n, 'درس واحد منشور', 'درسان منشوران', 'دروس منشورة', 'درسًا منشورًا')
+    return f'{n} ders yayında'
+
+def sections_count(lang, n):
+    return ar_count(n, 'قسم واحد', 'قسمان', 'أقسام', 'قسمًا') if lang == 'ar' else f'{n} bölüm'
+
 FONTS = {
  'ar': 'https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Noto+Naskh+Arabic:wght@400..700&family=Reem+Kufi:wght@400..700&display=swap',
  'tr': 'https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=EB+Garamond:wght@500..700&family=Source+Sans+3:wght@400..700&display=swap',
@@ -224,7 +295,7 @@ def bar(lang, depth, other):
     olabel = 'Türkçe' if lang == 'ar' else 'العربية'
     return f'''<header class="bar"><div class="wrap">
   <a class="brand" href="{home_of(lang, depth)}"><img src="{root_up(lang, depth)}media/logo.webp" alt="{E(s['brand'])}"><span>{E(s['brand'])}</span></a>
-  <nav aria-label="{E(s['home'])}"><a class="hide-s" href="{home_of(lang, depth)}">{E(s['home'])}</a><a class="hide-s" href="{home_of(lang, depth)}#lessons">{E(s['lessons'])}</a><a class="lang" lang="{olang}" hreflang="{olang}" href="{other}">{olabel}</a></nav>
+  <nav aria-label="{E(s['home'])}"><a class="hide-s" href="{home_of(lang, depth)}">{E(s['home'])}</a><a class="hide-s" href="{home_of(lang, depth)}#series">{E(LIB[lang]['nav'])}</a><a class="lang" lang="{olang}" hreflang="{olang}" href="{other}">{olabel}</a></nav>
 </div></header>
 '''
 
@@ -234,9 +305,13 @@ def root_up(lang, depth):
 def home_of(lang, depth):
     return up(depth - (1 if lang == 'tr' else 0)) + 'index.html'
 
+def series_of(lang, depth):
+    """link to the page of the series the current lessons belong to"""
+    return up(depth - (1 if lang == 'tr' else 0)) + MAIN_PAGE
+
 def footer(lang, depth):
     s, u = S[lang], up(depth)
-    return f'''<footer><div class="wrap"><div class="f1"><img src="{u}media/logo.webp" alt=""><span>{E(s['foot'])}</span></div><a href="{home_of(lang, depth)}">{E(s['series'])}</a></div><div class="wrap app-cta" id="appCta" hidden><button class="btn line" id="installBtn" type="button" hidden>{E(s['install'])}</button><span id="iosHint" hidden>{E(s['iosHint'])}</span></div></footer>
+    return f'''<footer><div class="wrap"><div class="f1"><img src="{u}media/logo.webp" alt=""><span>{E(s['foot'])}</span></div><a href="{home_of(lang, depth)}">{E(LIB[lang]['title'])}</a></div><div class="wrap app-cta" id="appCta" hidden><button class="btn line" id="installBtn" type="button" hidden>{E(s['install'])}</button><span id="iosHint" hidden>{E(s['iosHint'])}</span></div></footer>
 '''
 
 def dialog(lang):
@@ -345,9 +420,11 @@ def qa_cards(lang, items, start=1):
     return '\n'.join(out)
 
 # ------------------------------------------------------------------ pages
-def page_home(lang):
+def page_series(lang):
+    """page of the series «حقيقة لا إله إلا الله»: its sections, then the section «صفة الكفر بالطاغوت» with its lessons"""
     s = S[lang]; depth = 0 if lang == 'ar' else 1; u = up(depth)
-    other = 'tr/index.html' if lang == 'ar' else '../index.html'
+    other = f'tr/{MAIN_PAGE}' if lang == 'ar' else f'../{MAIN_PAGE}'
+    lb = LIB[lang]
     latest = LIVE[-1]
     pts = []
     for i, p in enumerate(POINTS[lang]):
@@ -376,21 +453,32 @@ def page_home(lang):
              tool('qa', s['tQA'], f'{b}qa.html'), tool('quiz', s['tQuiz'], f'{b}quiz.html')]
     if (latest['n'], lang) in SUM: tools.append(tool('sum', s['tSum'], f'{b}summary.html'))
     meal = f'<p class="meal">{E(latest["verseTr"])}</p>' if lang == 'tr' else ''
-    redirect = '''<script>{ const m = /^#l(\\d+)$/.exec(location.hash); if (m) location.replace('map.html' + location.hash); }</script>'''
-    return head(lang, f'{s["brand"]} · {s["series"]}', depth) + redirect + bar(lang, depth, other) + f'''<main id="main">
+    secs = []
+    for sec in MAIN['sections']:
+        ls = sec['lessons']; live = [L for L in ls if L['live']]
+        meta = f'{lessons_count(lang, len(ls))} · {published(lang, len(live))}' if ls else lb['sectionSoon']
+        inner = f'<span class="k">{E(lb["section"])}</span><span class="t">{E(sec[lang])}</span><span class="m">{E(meta)}</span>'
+        secs.append(f'<li class="live"><a href="#{sec["key"]}">{inner}</a></li>' if live else f'<li>{inner}</li>')
+    cat = dict((c, ar if lang == 'ar' else tr) for c, ar, tr in CATS)[MAIN['cat']]
+    smeal = f'<p class="smeal">{E(lb["sQuoteMeal"])}</p>' if lb['sQuoteMeal'] else ''
+    return head(lang, f'{MAIN[lang]} · {s["brand"]}', depth, lb['sLead']) + bar(lang, depth, other) + f'''<main id="main">
 <section class="hero">{ORN}<div class="wrap"><div class="in">
   <div class="emblem"><img src="{u}media/logo.webp" alt="{E(s['brand'])}"></div>
-  <div><p class="eb">{E(s['eb'])}</p><h1>{E(s['series'])}</h1><p class="lead">{E(s['lead'])}</p>
-  <p class="quote">{E(s['quote'])}</p></div>
+  <div><nav class="crumbs hero-crumbs" aria-label="breadcrumb"><a href="index.html">{E(s['home'])}</a><span class="sep">›</span><a href="index.html#series">{E(cat)}</a></nav><h1>{E(MAIN[lang])}</h1><p class="lead">{E(lb['sLead'])}</p>
+  <p class="quote">{lb['sQuote']}</p>{smeal}</div>
 </div></div></section>
 
 <section class="band"><div class="wrap">
-  <h2>{E(s['pointsT'])}</h2><p class="sub">{E(s['pointsS'])}</p>
-  <ol class="points">{''.join(pts)}</ol>
+  <h2>{E(lb['sectionsT'])}</h2><p class="sub">{E(lb['sectionsS'])}</p>
+  <ol class="points secs">{''.join(secs)}</ol>
 </div></section>
 
-<section class="band tight"><div class="wrap">
-  <h2>{E(s['latestT'])}</h2><p class="sub">{E(s['latestS'])}</p>
+<section class="band tight sect" id="taghut"><div class="wrap">
+  <div class="secthead"><p class="eb">{E(lb['section'])}</p><h2>{E(s['seriesShort'] if lang == 'ar' else MAIN['sections'][0]['tr'])}</h2><p class="sub">{E(s['lead'])}</p>
+  <p class="squote">{E(s['quote'])}<small>{E(s['quoteRef'])}</small></p></div>
+  <h3 class="h3s">{E(s['pointsT'])}</h3><p class="sub">{E(s['pointsS'])}</p>
+  <ol class="points">{''.join(pts)}</ol>
+<h3 class="h3s">{E(s['latestT'])}</h3><p class="sub">{E(s['latestS'])}</p>
   <article class="open">
     {player(lang, latest, u)}
     <div>
@@ -401,12 +489,75 @@ def page_home(lang):
       <div class="tools">{''.join(tools)}</div>
     </div>
   </article>
-</div></section>
-
-<section class="band tight" id="lessons"><div class="wrap">
-  <h2>{E(s['listT'])}</h2><p class="sub">{E(s['listS'])}</p>
+  <h3 class="h3s" id="lessons">{E(s['listT'])}</h3><p class="sub">{E(s['listS'])}</p>
   <ol class="list">{''.join(rows)}</ol>
   <p class="reset-wrap"><button class="linkbtn" id="progReset" type="button" hidden>{E(s['progReset'])}</button></p>
+</div></section>
+
+</main>
+''' + footer(lang, depth) + f'<script src="{u}assets/site.js"></script>\n</body>\n</html>\n'
+
+SEARCH_I = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg>'
+
+def page_library(lang):
+    """home page: every series, with search, category filter, «continue where you stopped» and the latest lessons"""
+    s, lb = S[lang], LIB[lang]; depth = 0 if lang == 'ar' else 1; u = up(depth)
+    other = 'tr/index.html' if lang == 'ar' else '../index.html'
+    catname = dict((c, ar if lang == 'ar' else tr) for c, ar, tr in CATS)
+    counts = {c: sum(1 for x in SERIES if x['cat'] == c) for c, _, _ in CATS}
+    cats = f'<li><button type="button" class="on" data-cat="">{E(lb["all"])}<span>{DIG(lang, len(SERIES))}</span></button></li>'
+    cats += ''.join(f'<li><button type="button" data-cat="{c}">{E(catname[c])}<span>{DIG(lang, counts[c])}</span></button></li>' for c, _, _ in CATS if counts[c])
+    cards = []
+    for x in SERIES:
+        by = x['byAr'] if lang == 'ar' else x['byTr']
+        q = ' '.join([x['ar'], x['tr'], by, catname[x['cat']]] + [sec['ar'] + ' ' + sec['tr'] for sec in x.get('sections', [])])
+        if x['status'] == 'live':
+            secs = x['sections']; allL = [L for sec in secs for L in sec['lessons']]; live = [L for L in allL if L['live']]
+            names = ' · '.join(sec[lang] for sec in secs)
+            q += ' ' + ' '.join(L['ar'] + ' ' + L['tr'] for L in live)
+            body = f'''<p class="sec">{I['text']}<span>{E(names)}</span></p><p class="meta">{E(sections_count(lang, len(secs)))} · {E(published(lang, len(live)))}</p>
+<p class="sprog" data-lessons="{','.join(str(L['n']) for L in live)}" hidden></p>
+<div class="ft"><span class="spill">{E(lb['st']['live'])}</span><a class="go" href="{x['page']}">{E(lb['open'])} <span aria-hidden="true">{'←' if lang == 'ar' else '→'}</span></a></div>'''
+            title = f'<a href="{x["page"]}">{E(x[lang])}</a>'
+        else:
+            body = f'<div class="ft"><span class="spill {x["status"]}">{E(lb["st"][x["status"]])}</span></div>'
+            title = E(x[lang])
+        cards.append(f'''<li class="scard {x['cat']} {x['status']}" data-cat="{x['cat']}" data-q="{E(q)}"><div class="cover"><p class="tag">{E(catname[x['cat']])}</p><h3>{title}</h3>{f'<p class="by">{E(by)}</p>' if by else ''}</div>
+<div class="bd">{body}</div></li>''')
+    # latest lessons, newest first, from every live series
+    rows, cont = [], {}
+    for x in SERIES:
+        for sec in x.get('sections', []):
+            for L in sec['lessons']:
+                if not L['live']: continue
+                where = f'{x[lang]} · {sec[lang]}'
+                cont[L['n']] = dict(t=f'{s["lesson"]} {DIG(lang, L["n"])}: {L[lang]}', w=where)
+                rows.append(f'''<li class="lrow live" data-q="{E(L['ar'] + ' ' + L['tr'] + ' ' + x['ar'] + ' ' + x['tr'] + ' ' + sec['ar'] + ' ' + sec['tr'])}"><span class="n">{DIG(lang, L['n'])}</span><div><p class="where">{E(where)}</p><h3><a href="l{L['n']}/index.html">{E(L[lang])}</a></h3><p class="lprog" data-lesson="{L['n']}" hidden></p></div><a class="pill" href="l{L['n']}/index.html">{E(lb['openL'])}</a></li>''')
+    rows.reverse()
+    redirect = f'''<script>{{ const h = location.hash, m = /^#l(\\d+)$/.exec(h); if (m) location.replace('map.html' + h); else if (h === '#lessons') location.replace('{MAIN_PAGE}#lessons'); }}</script>'''
+    data = json.dumps(cont, ensure_ascii=False).replace('</', '<\\/')
+    return head(lang, f'{s["brand"]} · {lb["title"]}', depth, lb['lead']) + redirect + bar(lang, depth, other) + f'''<main id="main" class="lib">
+<section class="hero">{ORN}<div class="wrap"><div class="in">
+  <div class="emblem"><img src="{u}media/logo.webp" alt="{E(s['brand'])}"></div>
+  <div><p class="eb">{E(s['eb'])}</p><h1>{E(lb['title'])}</h1><p class="lead">{E(lb['lead'])}</p>
+  <label class="srch">{SEARCH_I}<input id="libQ" type="search" placeholder="{E(lb['search'])}" aria-label="{E(lb['search'])}" autocomplete="off"></label></div>
+</div></div></section>
+
+<section class="band" id="contBand" hidden><div class="wrap">
+  <h2>{E(lb['contT'])}</h2>
+  <div class="cont"><span class="ic">{I['text']}</span><div><p class="where" id="contW"></p><h3 id="contT"></h3><p class="lprog" id="contP" hidden></p></div><a class="btn" id="contA" href="#">{E(lb['contB'])}</a></div>
+</div></section>
+
+<section class="band" id="series"><div class="wrap">
+  <h2>{E(lb['seriesT'])}</h2><p class="sub">{E(lb['seriesS'])}</p>
+  <ul class="cats" aria-label="{E(lb['seriesT'])}">{cats}</ul>
+  <ul class="sgrid">{''.join(cards)}</ul>
+  <p class="noresult" id="noResult" hidden>{E(lb['noResult'])}</p>
+</div></section>
+
+<section class="band tight" id="latest"><div class="wrap">
+  <h2>{E(lb['latestT'])}</h2><p class="sub">{E(lb['latestS'])}</p>
+  <ol class="list">{''.join(rows)}</ol>
 </div></section>
 
 <section class="band tight"><div class="wrap">
@@ -416,6 +567,7 @@ def page_home(lang):
   </div>
 </div></section>
 </main>
+<script type="application/json" id="libData">{data}</script>
 ''' + footer(lang, depth) + f'<script src="{u}assets/site.js"></script>\n</body>\n</html>\n'
 
 def lesson_paths(lang, L):
@@ -434,7 +586,7 @@ def lesson_paths(lang, L):
 def phead(lang, L, title, sub, crumbs_extra=None):
     s = S[lang]
     eb = f'{s["lesson"]} {DIG(lang, L["n"])} · ' + (f'{s["point"]} {ORD[lang][L["n"]-1]} {s["of"]}' if lang == 'ar' else f'{ORD[lang][L["n"]-1]} {s["point"]} {s["of"]}')
-    cr = f'<a href="../index.html">{E(s["home"])}</a><span class="sep">›</span>'
+    cr = f'<a href="../index.html">{E(s["home"])}</a><span class="sep">›</span><a href="../{MAIN_PAGE}#taghut">{E(MAIN[lang])}</a><span class="sep">›</span>'
     if crumbs_extra:
         cr += f'<a href="index.html">{E(s["lesson"])} {DIG(lang, L["n"])}</a><span class="sep">›</span><span>{E(crumbs_extra)}</span>'
     else:
@@ -686,11 +838,11 @@ def page_map(lang):
     assert 'class="mapdone"' in t
     if lang == 'ar':
         t = t.replace('data-base="tr/" href="tr/"', 'data-base="tr/map.html" href="tr/map.html"')
-        home, more, quizL, allL, resetL, homeL, pinch = 'index.html', 'المزيد', 'اختبر فهمك', 'الخريطة كاملة', 'من البداية', 'صفحة السلسلة', 'كبّر بإصبعين لقراءة الفروع'
+        home, more, quizL, allL, resetL, homeL, pinch = MAIN_PAGE, 'المزيد', 'اختبر فهمك', 'الخريطة كاملة', 'من البداية', 'صفحة السلسلة', 'كبّر بإصبعين لقراءة الفروع'
         t = t.replace('<title>خريطة دروس صفة الكفر بالطاغوت</title>', '<title>الخريطة التفاعلية · صفة الكفر بالطاغوت</title>\n' + og_tags('ar', 'الخريطة التفاعلية · صفة الكفر بالطاغوت', S['ar']['lead']) + '\n<link rel="icon" href="media/logo.webp" type="image/webp">\n<meta name="theme-color" content="#0F2E2A">\n' + app_tags('ar', ''))
     else:
         t = t.replace('data-base="../" href="../"', 'data-base="../map.html" href="../map.html"')
-        home, more, quizL, allL, resetL, homeL, pinch = 'index.html', 'Diğer', 'Kendini dene', 'Haritanın tamamı', 'Baştan', 'Seri sayfası', 'Dalları okumak için iki parmakla yakınlaştırın'
+        home, more, quizL, allL, resetL, homeL, pinch = MAIN_PAGE, 'Diğer', 'Kendini dene', 'Haritanın tamamı', 'Baştan', 'Seri sayfası', 'Dalları okumak için iki parmakla yakınlaştırın'
         t = t.replace('<title>Tâğutu İnkârın Keyfiyeti · Ders Haritası</title>', '<title>Tâğutu İnkârın Keyfiyeti · Ders Haritası</title>\n' + og_tags('tr', 'Tâğutu İnkârın Keyfiyeti · Ders Haritası', S['tr']['lead']) + '\n<link rel="icon" href="../media/logo.webp" type="image/webp">\n<meta name="theme-color" content="#0F2E2A">\n' + app_tags('tr', '../'))
     # brand → link home
     t = re.sub(r'<div id="brand">(.*?)</div></div>', lambda m: f'<a id="brand" href="{home}" title="{homeL}">{m.group(1)}</a></div>', t, count=1, flags=re.S)
@@ -749,8 +901,8 @@ def write_app_files():
         s = S[lang]
         icons = '../media/' if lang == 'tr' else 'media/'
         man = {
-            'id': './', 'name': f"{s['brand']} · {s['seriesShort']}", 'short_name': s['brand'],
-            'description': s['lead'], 'lang': lang, 'dir': 'rtl' if lang == 'ar' else 'ltr',
+            'id': './', 'name': f"{s['brand']} · {LIB[lang]['title']}", 'short_name': s['brand'],
+            'description': LIB[lang]['lead'], 'lang': lang, 'dir': 'rtl' if lang == 'ar' else 'ltr',
             'start_url': './', 'scope': '../' if lang == 'tr' else './', 'display': 'standalone',
             'background_color': '#0F2E2A', 'theme_color': '#0F2E2A',
             'icons': [
@@ -807,7 +959,8 @@ def build():
     os.makedirs(f'{OUT}/tr', exist_ok=True)
     w('tr/data_tr.js', open(f'{ROOT}/maps/data_tr.js', encoding='utf-8').read().replace('tag: "Öğretmene not"', 'tag: "Not"'))
     w('map.html', page_map('ar')); w('tr/map.html', page_map('tr'))
-    w('index.html', page_home('ar')); w('tr/index.html', page_home('tr'))
+    w('index.html', page_library('ar')); w('tr/index.html', page_library('tr'))
+    w(MAIN_PAGE, page_series('ar')); w('tr/' + MAIN_PAGE, page_series('tr'))
     for L in LIVE:
         n = L['n']
         for lang, pre in (('ar', ''), ('tr', 'tr/')):

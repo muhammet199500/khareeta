@@ -1,8 +1,8 @@
 {
  "id": "./",
- "name": "Ve Tevâsav bi’l-Hak · Tâğutu inkârın keyfiyeti",
+ "name": "Ve Tevâsav bi’l-Hak · Ders Kütüphanesi",
  "short_name": "Ve Tevâsav bi’l-Hak",
- "description": "Şeyh Muhammed b. Abdülvehhab’ın (rahimehullah) tâğutu inkârın keyfiyeti hakkındaki sözü üzerine beş ders. Her ders için: video, yazılı ders, sunum, etkileşimli harita, soru-cevap ve anladığını ölçen bir test.",
+ "description": "Akide, fıkıh ve hadis alanında ilmî seriler. Her derste: video, yazılı ders, sunum, etkileşimli harita, soru-cevap ve test.",
  "lang": "tr",
  "dir": "ltr",
  "start_url": "./",
