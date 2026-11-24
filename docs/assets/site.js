@@ -379,6 +379,105 @@
     host.append(c);
   }
 
+  /* «send my task»: the whole week becomes one picture the student shares with the teacher */
+  function sendBox(week) {
+    const w = el('div', 'sendbox');
+    w.append(el('h3', null, T('sendT')), el('p', 'sendhelp', T('sendHelp')));
+    const lab = el('label', 'tnote'); lab.append(el('span', 'ynl', T('nameL')));
+    const inp = el('input'); inp.type = 'text'; inp.placeholder = T('namePh'); inp.autocomplete = 'name'; inp.value = ls.get('wt.name', '');
+    inp.addEventListener('input', () => ls.set('wt.name', inp.value));
+    lab.append(inp); w.append(lab);
+    const row = el('div', 'sendrow'), btn = el('button', 'btn', T('sendBtn')), msg = el('p', 'sendmsg'); btn.type = 'button';
+    const save = el('a', 'btn line', T('saveBtn')); save.hidden = true;
+    row.append(btn, save); w.append(row, msg);
+    btn.addEventListener('click', async () => {
+      const name = inp.value.trim(); if (!name) { msg.textContent = T('noName'); inp.focus(); return; }
+      msg.textContent = ''; btn.disabled = true;
+      try {
+        const blob = await sheetImage(week, name);
+        const file = new File([blob], T('imgFile') + '-' + name.replace(/\s+/g, '-') + '.png', { type: 'image/png' });
+        const url = URL.createObjectURL(blob); save.href = url; save.download = file.name; save.hidden = false;
+        if (navigator.canShare && navigator.canShare({ files: [file] })) { try { await navigator.share({ files: [file], title: L(week.title) }); } catch (e) {} }
+        else save.click();
+      } catch (e) { msg.textContent = T('rErr'); }
+      btn.disabled = false;
+    });
+    return w;
+  }
+
+  async function sheetImage(week, name) {
+    await document.fonts.ready;
+    const W = 1080, M = 64, inner = W - 2 * M, R = AR;
+    const HF = AR ? '"Reem Kufi", "IBM Plex Sans Arabic", sans-serif' : '"EB Garamond", Georgia, serif';
+    const BF = AR ? '"Noto Naskh Arabic", "Amiri", serif' : '"Source Sans 3", Arial, sans-serif';
+    const UF = AR ? '"IBM Plex Sans Arabic", Tahoma, sans-serif' : '"Source Sans 3", Arial, sans-serif';
+    const logo = await new Promise(res => { const i = new Image(); i.onload = () => res(i); i.onerror = () => res(null); i.src = ROOT + 'media/logo.webp'; });
+    const days = week.days.slice().sort((a, b) => a.date < b.date ? -1 : 1), dn = ls.get(DKEY, {});
+    const fin = week.final, fk = fin ? log.get('final:' + fin.date) : {};
+    /* two passes: measure, then draw */
+    const run = (ctx, draw) => {
+      let y = 0; ctx.direction = R ? 'rtl' : 'ltr'; ctx.textBaseline = 'top';
+      const X = R ? W - M : M, align = R ? 'right' : 'left';
+      const wrap = (text, font, size, lh, color, x = X, maxw = inner) => {
+        ctx.font = `${font.w || 400} ${size}px ${font.f}`; ctx.textAlign = align; ctx.fillStyle = color;
+        const words = String(text).split(/\s+/); let line = '';
+        const out = [];
+        for (const wd of words) { const t = line ? line + ' ' + wd : wd; if (ctx.measureText(t).width > maxw && line) { out.push(line); line = wd; } else line = t; }
+        if (line) out.push(line);
+        out.forEach(l => { if (draw) ctx.fillText(l, x, y); y += lh; });
+      };
+      const gap = h => { y += h; };
+      const rule = (c = '#DCD0B6') => { if (draw) { ctx.fillStyle = c; ctx.fillRect(M, y, inner, 2); } y += 2; };
+      /* header */
+      if (draw) { ctx.fillStyle = '#0F2E2A'; ctx.fillRect(0, 0, W, 300); }
+      y = 40;
+      if (logo) { if (draw) ctx.drawImage(logo, W / 2 - 70, y, 140, 140 * logo.height / logo.width); y += 140 * logo.height / logo.width + 18; }
+      ctx.textAlign = 'center';
+      const center = (t, f, size, color) => { ctx.font = `${f.w || 400} ${size}px ${f.f}`; ctx.fillStyle = color; ctx.textAlign = 'center'; if (draw) ctx.fillText(t, W / 2, y); y += size * 1.45; };
+      center(L(week.title), { f: HF, w: 700 }, 46, '#F7EBD0');
+      if (week.sub) center(L(week.sub), { f: UF, w: 600 }, 24, '#D9B26A');
+      y = Math.max(y, 300) + 34;
+      const range = T('imgWeek').replace('{a}', dayName(days[0].date)).replace('{b}', dayName(days[days.length - 1].date));
+      wrap(T('imgName') + ': ' + name, { f: UF, w: 700 }, 32, 46, '#0F2E2A');
+      wrap(range, { f: UF }, 24, 36, '#6F6654'); gap(18); rule('#85601C'); gap(26);
+      /* days */
+      days.forEach(d => {
+        const g = log.get(d.date), done = !!dn[d.date];
+        wrap(dayName(d.date), { f: HF, w: 700 }, 34, 48, '#0F2E2A');
+        if (d.segment) wrap(L(d.segment), { f: UF, w: 600 }, 24, 36, '#85601C');
+        gap(6);
+        const yn = (label, v) => {
+          const mark = v === 1 ? '✓ ' + T('yes') : v === 0 ? '✗ ' + T('no') : T('imgNA');
+          const col = v === 1 ? '#2E8B57' : v === 0 ? '#C0392B' : '#6F6654';
+          ctx.font = `600 26px ${UF}`; const lw = ctx.measureText(label + '  ').width;
+          if (draw) { ctx.fillStyle = '#34433F'; ctx.textAlign = align; ctx.fillText(label, R ? W - M : M, y);
+            ctx.fillStyle = col; ctx.font = `700 26px ${UF}`; ctx.fillText(mark, R ? W - M - lw - 20 : M + lw + 20, y); }
+          y += 40;
+        };
+        if (week.track) { yn(T('tSeg'), g.seg); yn(T('tKept'), g.kept); if ((g.why || '').trim()) wrap(T('why') + ': ' + g.why.trim(), { f: BF }, 24, 38, '#34433F'); }
+        wrap(done ? '✓ ' + T('imgDone') : '○ ' + T('imgNot'), { f: UF, w: 700 }, 24, 38, done ? '#2E8B57' : '#9A8F7A');
+        gap(16); rule(); gap(24);
+      });
+      /* final review */
+      if (fin) {
+        wrap(L(fin.title), { f: HF, w: 700 }, 36, 52, '#85601C'); gap(6);
+        const opts = fin.q1opts && (fin.q1opts[LANG] || fin.q1opts.ar) || [];
+        if (fin.q1) { wrap(L(fin.q1), { f: UF, w: 600 }, 25, 38, '#34433F'); wrap(fk.q1 != null ? '◉ ' + opts[fk.q1] : T('imgNA'), { f: UF, w: 700 }, 26, 42, '#0F2E2A'); gap(8); }
+        [['q2', fin.q2], ['q3', fin.q3]].forEach(([k, q]) => { if (!q) return; wrap(L(q), { f: UF, w: 600 }, 25, 38, '#34433F'); wrap((fk[k] || '').trim() || T('imgNA'), { f: BF }, 26, 42, '#0F2E2A'); gap(8); });
+        if (fin.pledge) { gap(6); wrap(T('pledgeT') + ': ' + L(fin.pledge), { f: BF, w: 600 }, 25, 42, '#0F2E2A'); wrap(fk.pledge ? T('pledgeOn') : T('imgNA'), { f: UF, w: 700 }, 25, 40, fk.pledge ? '#2E8B57' : '#9A8F7A'); }
+      }
+      gap(30);
+      if (draw) { ctx.fillStyle = '#0F2E2A'; ctx.fillRect(0, y, W, 90); ctx.fillStyle = '#D9B26A'; ctx.font = `600 24px ${UF}`; ctx.textAlign = 'center'; ctx.fillText(AR ? 'وتواصوا بالحق' : 'Ve Tevâsav bi’l-Hak', W / 2, y + 32); }
+      return y + 90;
+    };
+    const m = document.createElement('canvas').getContext('2d');
+    const H = Math.ceil(run(m, false));
+    const cv = document.createElement('canvas'); cv.width = W; cv.height = H;
+    const ctx = cv.getContext('2d'); ctx.fillStyle = '#FCFAF4'; ctx.fillRect(0, 0, W, H);
+    run(ctx, true);
+    return new Promise(res => cv.toBlob(res, 'image/png'));
+  }
+
   async function load() {
     await mergeFromSW();
     let data; try { data = await (await fetch(TASKS, { cache: 'no-cache' })).json(); } catch (e) { data = { weeks: [] }; }
@@ -411,6 +510,7 @@
     days.forEach((d, i) => list.append(renderDay(week, d, days[0], i === days.length - 1)));
     renderFinal(week);
     dayTabs(days, week);
+    $('#taskList').parentNode.insertBefore(sendBox(week), $('#wkFinal').nextSibling);
   }
 
   /* one day at a time: a row of day buttons above the list; opens on today */

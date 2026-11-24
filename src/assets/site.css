@@ -505,3 +505,13 @@ html[lang=ar] .scard h3 { word-spacing: .22em; }
 .tlist > .tday { border: 2px solid var(--ink); }
 .tday .tdate { font-family: var(--hf); font-size: 20px; font-weight: 700; color: var(--ink); }
 .final { margin-top: 0; }
+.sendbox { border-top: 2px dashed var(--line); padding-top: 16px; display: grid; gap: 10px; }
+.sendbox h3 { margin: 0; font-size: 20px; }
+.sendhelp { margin: 0; color: var(--muted); font-family: var(--uf); font-size: 14.5px; }
+.sendbox input { width: 100%; box-sizing: border-box; min-height: 48px; border: 1.5px solid var(--line); border-radius: 12px; padding: 0 14px; font: inherit; font-size: 16px; background: #fff; color: var(--body); }
+.sendbox input:focus { outline: none; border-color: var(--gold); }
+.sendrow { display: flex; gap: 10px; flex-wrap: wrap; }
+.sendrow .btn[hidden] { display: none; }
+.sendmsg { margin: 0; color: #B03A2E; font-family: var(--uf); font-size: 14px; }
+.sendmsg:empty { display: none; }
+.sendbox { margin-top: 22px; background: var(--card); border: 2px solid #2E8B57; border-radius: 18px; padding: 18px 20px; border-top-style: solid; }
