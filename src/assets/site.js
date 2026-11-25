@@ -117,9 +117,20 @@
       } else s.innerHTML = '<div>' + (box.dataset.logo ? '<img src="' + box.dataset.logo + '" alt="">' : '') + (box.dataset.soon || T.soon) + '</div>';
       box.appendChild(s); v.hidden = true;
     };
-    v.addEventListener('error', fail, true);
-    const src = v.querySelector('source'); if (src) src.addEventListener('error', fail);
-    if (v.dataset.check !== undefined) fetch(v.currentSrc || v.getAttribute('src') || (src && src.getAttribute('src')), { method: 'HEAD' }).then(r => { if (!r.ok) fail(); }).catch(() => {});
+    const src = v.querySelector('source');
+    const url = () => v.currentSrc || v.getAttribute('src') || (src && src.getAttribute('src'));
+    // "coming soon" only when the file really is not on the site (404); a weak connection must not hide a video that exists
+    const check = () => fetch(url(), { method: 'HEAD', cache: 'no-store' }).then(r => { if (r.status === 404) fail(); }).catch(() => {});
+    let retry = false;
+    const onErr = () => {
+      check();
+      if (retry) return; retry = true;           // try again when the student taps the video or the connection returns
+      const again = () => { removeEventListener('online', again); v.removeEventListener('click', again); retry = false; v.load(); };
+      addEventListener('online', again); v.addEventListener('click', again);
+    };
+    v.addEventListener('error', onErr, true);
+    if (src) src.addEventListener('error', onErr);
+    if (v.dataset.check !== undefined) check();
   });
 
   /* ---- summary image dialog ---- */
