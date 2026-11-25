@@ -706,7 +706,7 @@ def page_hub(lang, L):
         pv = LIVE[idx-1]; pager += f'<a href="../l{pv["n"]}/index.html"><small>{E(s["prev"])}</small><b>{E(pv[lang])}</b></a>'
     if idx < len(LIVE) - 1:
         nx = LIVE[idx+1]; pager += f'<a class="nx" href="../l{nx["n"]}/index.html"><small>{E(s["next"])}</small><b>{E(nx[lang])}</b></a>'
-    return head(lang, f'{L[lang]} · {s["series"]}', depth, L['descAr'] if lang == 'ar' else L['descTr'], image=share_img(lang, L)) + bar(lang, depth, P['other']('index.html')) + '<main id="main">\n' + phead(lang, L, L[lang], L['descAr'] if lang == 'ar' else L['descTr']) + f'''
+    return head(lang, f'{L[lang]} · {MAIN["sections"][0][lang]} · {MAIN[lang]}', depth, L['descAr'] if lang == 'ar' else L['descTr'], image=share_img(lang, L)) + bar(lang, depth, P['other']('index.html')) + '<main id="main">\n' + phead(lang, L, L[lang], L['descAr'] if lang == 'ar' else L['descTr']) + f'''
 <section class="band"><div class="wrap">
   <article class="open">
     {player(lang, L, P['media'][:-6])}
@@ -929,11 +929,11 @@ def page_map(lang):
     if lang == 'ar':
         t = t.replace('data-base="tr/" href="tr/"', 'data-base="tr/map.html" href="tr/map.html"')
         home, more, quizL, allL, resetL, homeL, pinch = MAIN_PAGE, 'المزيد', 'اختبر فهمك', 'الخريطة كاملة', 'من البداية', 'صفحة السلسلة', 'كبّر بإصبعين لقراءة الفروع'
-        t = t.replace('<title>خريطة دروس صفة الكفر بالطاغوت</title>', '<title>الخريطة التفاعلية · صفة الكفر بالطاغوت</title>\n' + og_tags('ar', 'الخريطة التفاعلية · صفة الكفر بالطاغوت', S['ar']['lead']) + '\n<link rel="icon" href="media/logo.webp" type="image/webp">\n<meta name="theme-color" content="#0F2E2A">\n' + app_tags('ar', ''))
+        t = t.replace('<title>خريطة دروس صفة الكفر بالطاغوت</title>', '<title>الخريطة التفاعلية · صفة الكفر بالطاغوت · حقيقة لا إله إلا الله</title>\n' + og_tags('ar', 'الخريطة التفاعلية · صفة الكفر بالطاغوت · حقيقة لا إله إلا الله', S['ar']['lead']) + '\n<link rel="icon" href="media/logo.webp" type="image/webp">\n<meta name="theme-color" content="#0F2E2A">\n' + app_tags('ar', ''))
     else:
         t = t.replace('data-base="../" href="../"', 'data-base="../map.html" href="../map.html"')
         home, more, quizL, allL, resetL, homeL, pinch = MAIN_PAGE, 'Diğer', 'Kendini dene', 'Haritanın tamamı', 'Baştan', 'Seri sayfası', 'Dalları okumak için iki parmakla yakınlaştırın'
-        t = t.replace('<title>Tâğutu İnkârın Keyfiyeti · Ders Haritası</title>', '<title>Tâğutu İnkârın Keyfiyeti · Ders Haritası</title>\n' + og_tags('tr', 'Tâğutu İnkârın Keyfiyeti · Ders Haritası', S['tr']['lead']) + '\n<link rel="icon" href="../media/logo.webp" type="image/webp">\n<meta name="theme-color" content="#0F2E2A">\n' + app_tags('tr', '../'))
+        t = t.replace('<title>Tâğutu İnkârın Keyfiyeti · Ders Haritası</title>', '<title>Ders Haritası · Tâğutu İnkârın Keyfiyeti · Lâ ilâhe illallah’ın Hakikati</title>\n' + og_tags('tr', 'Ders Haritası · Tâğutu İnkârın Keyfiyeti · Lâ ilâhe illallah’ın Hakikati', S['tr']['lead']) + '\n<link rel="icon" href="../media/logo.webp" type="image/webp">\n<meta name="theme-color" content="#0F2E2A">\n' + app_tags('tr', '../'))
     # brand → link home
     t = re.sub(r'<div id="brand">(.*?)</div></div>', lambda m: f'<a id="brand" href="{home}" title="{homeL}">{m.group(1)}</a></div>', t, count=1, flags=re.S)
     css = f'''
@@ -942,6 +942,10 @@ html[lang=ar] body {{ word-spacing: .14em; }}
 .ov .acts button.mapdone {{ background: transparent; color: #8FE0B5; border-color: #3F8F6A; }}
 .ov .acts button.mapdone.on {{ background: #3F8F6A; color: #fff; }}
 #brand {{ pointer-events: auto; text-decoration: none; }}
+.tasksl {{ pointer-events: auto; display: inline-flex; align-items: center; gap: 6px; min-height: 38px; padding: 0 14px; border-radius: 30px; background: #D9B26A; color: #0F2E2A; font-weight: 700; font-size: 14.5px; text-decoration: none; white-space: nowrap; }}
+.tasksl svg {{ width: 17px; height: 17px; }}
+.tasksl:hover {{ background: #E6C483; }}
+@media (max-width: 760px) {{ .tasksl {{ padding: 0 10px; min-height: 36px; }} .tasksl span {{ display: none; }} .tasksl svg {{ width: 20px; height: 20px; }} }}
 #brand:hover span {{ color: var(--ink); }}
 #bar .m-only {{ display: none; }}
 #moreMenu {{ position: fixed; bottom: 76px; left: 50%; transform: translateX(-50%); z-index: 6; background: rgba(15,46,42,.98); border-radius: 18px; padding: 8px; display: grid; gap: 4px; min-width: 220px; box-shadow: 0 14px 40px rgba(15,46,42,.4); }}
@@ -981,6 +985,10 @@ html[lang=ar] body {{ word-spacing: .14em; }}
   }
 '''
     t = t.replace("  $('jamiaText').textContent = L.jamia;", js + "\n  $('jamiaText').textContent = L.jamia;", 1)
+    if HAS_TASKS:   # the gold «tasks» button, as on every other page
+        tl = f'<a class="tasksl" href="tasks.html" aria-label="{E(TS[lang]["nav"])}" title="{E(TS[lang]["nav"])}">{TASK_I}<span>{E(TS[lang]["nav"])}</span></a>'
+        t = t.replace('<div id="crumb"></div></div><a id="brand"', tl + '<div id="crumb"></div></div><a id="brand"', 1)
+        assert 'class="tasksl"' in t, 'map tasks button failed'
     assert 'id="more"' in t and 'moreMenu' in t and 'class="home"' in t and 'id="brand" href' in t, 'map patch failed'
     return t
 
