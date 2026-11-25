@@ -2,7 +2,7 @@
    Pages, styles and scripts: network first (so every edit reaches students when they are online),
    falling back to the saved copy when there is no connection.
    Fonts and pictures: saved copy first. Videos are never saved (too large). */
-const VERSION = '60135d335c07';
+const VERSION = '388a0154c715';
 const CACHE = 'wt-' + VERSION;
 const PRECACHE = [
  "./",
@@ -56,6 +56,12 @@ const PRECACHE = [
  "l2/slides.html",
  "l2/summary.html",
  "l2/text.html",
+ "l3/",
+ "l3/qa.html",
+ "l3/quiz.html",
+ "l3/slides.html",
+ "l3/summary.html",
+ "l3/text.html",
  "la-ilaha.html",
  "manifest.webmanifest",
  "map.html",
@@ -82,6 +88,12 @@ const PRECACHE = [
  "tr/l2/slides.html",
  "tr/l2/summary.html",
  "tr/l2/text.html",
+ "tr/l3/",
+ "tr/l3/qa.html",
+ "tr/l3/quiz.html",
+ "tr/l3/slides.html",
+ "tr/l3/summary.html",
+ "tr/l3/text.html",
  "tr/la-ilaha.html",
  "tr/manifest.webmanifest",
  "tr/map.html",
@@ -89,9 +101,11 @@ const PRECACHE = [
  "tr/tasks.html",
  "l1/index.html",
  "l2/index.html",
+ "l3/index.html",
  "tr/index.html",
  "tr/l1/index.html",
- "tr/l2/index.html"
+ "tr/l2/index.html",
+ "tr/l3/index.html"
 ];
 
 self.addEventListener('install', e => {

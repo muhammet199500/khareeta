@@ -145,4 +145,74 @@ SUM = {
   jamia='Tâğuta ibadeti terk etmek; Müslümanın Allah’tan başkasına hiçbir ibadeti kalbiyle, diliyle ve azalarıyla yöneltmemesi, buna götüren şeylerden kaçınması, bunu Allah’ın emrine uymak için yapması ve insanlar muhalefet etse de bunda sebat etmesidir.',
   src='Kaynaklar: Ayetler Mushaf’tan (Hafs rivayeti); Şeyhin sözü «Ma‘ne’t-Tâğût ve Ruûsu Envâih» risalesinden; «Lâ ilâhe illallah» hadisi Müslim, Îmân 23; Buvâne hadisi Ebû Dâvûd ve Beyhakî. Meal ifadeleri hazırlayana aittir.',
  ),
+ (3, 'ar'): dict(
+  eb='صفة الكفر بالطاغوت · النقطة الثالثة · ملخص الدرس',
+  sub='الخريطة الكاملة للدرس في صفحة واحدة',
+  blocks=[
+   dict(t='أصل الدرس', p=['قال الشيخ محمد بن عبد الوهاب: صفة الكفر بالطاغوت <b>«أن تعتقد بطلان عبادة غير الله، وتتركها، وتبغضها، وتكفّر أهلها، وتعاديهم»</b>.'],
+        chips=['الاعتقاد', 'الترك', 'البغض ← درسنا', 'التكفير', 'المعاداة'], on=2),
+   dict(t='معنى البغض', p=['<b>لغةً:</b> ضد الحب، والبغضاء شدة البغض <i>[الصحاح]</i>: ﴿وَبَدَا بَيْنَنَا وَبَيْنَكُمُ الْعَدَاوَةُ وَالْبَغْضَاءُ أَبَدًا﴾ <i>[الممتحنة: ٤]</i>.', '<b>اصطلاحًا:</b> أن يبغض المسلم بقلبه عبادة غير الله، والطاغوت، وأهل عبادته، بغضًا في الله، فلا يرضى بها ولا يوادّهم عليها. وهو عبادة قلبية.']),
+   dict(t='ما يتعلق به البغض', bullets=[
+        '<b>عبادة غير الله:</b> يكرهها كما يكره أن يُلقى في النار.',
+        '<b>الطاغوت:</b> رؤوسه خمسة: إبليس، ومن عُبد وهو راضٍ، ومن دعا إلى عبادة نفسه، ومن ادعى علم الغيب، ومن حكم بغير ما أنزل الله <i>[ثلاثة الأصول]</i>.',
+        '<b>أهلها:</b> لا يوادّهم ولو كانوا أقرب قريب <i>[المجادلة: ٢٢]</i>، ﴿حَتَّى تُؤْمِنُوا بِاللَّهِ وَحْدَهُ﴾.'],
+        chips=['القلب', 'اللسان', 'الجوارح'], chipsLabel='صور البغض:'),
+   dict(t='البغض والاعتقاد والترك', table=[['ترك بلا بغض', 'قلبه يميل إليها أو يحب أهلها؛ خلل في الكفر بالطاغوت'], ['اعتقاد بلا بغض', 'يعلم بطلانها ولا يبغضها ولا يبغض أهلها؛ لم يحقق النقطة'], ['اعتقاد وترك وبغض', 'يبغضها ويبغض الطاغوت وأهله؛ هو المطلوب']],
+        note='الاعتقاد أصل، والترك ثمرته في الجوارح، والبغض ثمرته في عاطفة القلب.'),
+   dict(t='البغض وكلمة التوحيد', bullets=[
+        '<b>النفي «لا إله»:</b> اعتقاد البطلان، والترك، و<b>البغض</b>.',
+        '<b>الإثبات «إلا الله»:</b> محبة الله ومحبة أهل توحيده.',
+        '﴿وَالَّذِينَ آمَنُوا أَشَدُّ حُبًّا لِلَّهِ﴾ <i>[البقرة: ١٦٥]</i>'],
+        note='وعكسه قلب المشرك: ينفر من التوحيد ويفرح بالشرك <i>[الزمر: ٤٥]</i>.'),
+   dict(t='الأدلة الشرعية', bullets=[
+        '﴿إِنَّا بُرَآءُ مِنْكُمْ وَمِمَّا تَعْبُدُونَ مِنْ دُونِ اللَّهِ﴾ <i>[الممتحنة: ٤]</i>',
+        '﴿لَا تَجِدُ قَوْمًا يُؤْمِنُونَ بِاللَّهِ وَالْيَوْمِ الْآخِرِ يُوَادُّونَ مَنْ حَادَّ اللَّهَ وَرَسُولَهُ﴾ <i>[المجادلة: ٢٢]</i>',
+        '﴿فَإِنَّهُمْ عَدُوٌّ لِي إِلَّا رَبَّ الْعَالَمِينَ﴾ <i>[الشعراء: ٧٧]</i>، ﴿وَكَرَّهَ إِلَيْكُمُ الْكُفْرَ﴾ <i>[الحجرات: ٧]</i>',
+        '«وَأَنْ يَكْرَهَ أَنْ يَعُودَ فِي الْكُفْرِ...» <i>[متفق عليه]</i>، «مَنْ أَحَبَّ لِلَّهِ، وَأَبْغَضَ لِلَّهِ...» <i>[أبو داود]</i>',
+        '«فَإِنْ لَمْ يَسْتَطِعْ فَبِقَلْبِهِ، وَذَلِكَ أَضْعَفُ الْإِيمَانِ» <i>[مسلم]</i>']),
+   dict(t='تنبيهات من النصوص وثمرات', wide=True, bullets=[
+        '<b>من عُبد وهو غير راضٍ لا يُبغض:</b> كعيسى عليه السلام والملائكة والصالحين <i>[المائدة: ١١٧]</i>.',
+        '<b>لا يُسقط البرّ بالوالدين</b> <i>[لقمان: ١٥]</i>، <b>ولا يُسقط العدل</b> <i>[المائدة: ٨]</i>.',
+        '<b>التكفير والمعاداة نقطتان مستقلتان</b> في الدرسين القادمين.',
+        '<b>الثمرات:</b> حلاوة الإيمان، واستكماله، والرشد، والاقتداء بإبراهيم، وكتابة الإيمان في القلب والتأييد.']),
+  ],
+  jamiaT='الخلاصة',
+  jamia='البغض في هذه النقطة هو أن يبغض المسلم بقلبه عبادة غير الله، والطاغوت الذي يُعبد من دون الله وهو راضٍ، وأهل عبادته، بغضًا في الله، فلا يرضى بالشرك ولا يحبه، ولا يوادّ أهله ولو كانوا أقرب قريب، ويظهر أثر ذلك في لسانه وجوارحه.',
+  src='المصادر: الآيات من المصحف الشريف (رواية حفص)؛ عبارة الشيخ من رسالته «معنى الطاغوت ورؤوس أنواعه»، ورؤوس الطواغيت وعدم موالاة من حادّ الله من «ثلاثة الأصول»؛ معنى البغض من «الصحاح» للجوهري؛ حديث «ثلاث من كن فيه» متفق عليه من حديث أنس؛ حديث «من أحب لله» رواه أبو داود من حديث أبي أمامة؛ حديث «من رأى منكم منكرًا» رواه مسلم من حديث أبي سعيد.',
+ ),
+ (3, 'tr'): dict(
+  eb='Tâğutu inkârın keyfiyeti · Üçüncü husus · Ders özeti',
+  sub='Dersin tam haritası tek sayfada',
+  blocks=[
+   dict(t='Dersin Esası', p=['Şeyh Muhammed b. Abdülvehhab’a göre tâğutu inkârın keyfiyeti beş husustur:'],
+        chips=['İtikad', 'Terk', 'Buğz ← dersimiz', 'Tekfir', 'Düşmanlık'], on=2),
+   dict(t='Buğzun Anlamı', p=['<b>Sözlükte:</b> sevginin zıddı; bağzâ şiddetli buğzdur <i>(es-Sıhâh; Mümtehine, 4)</i>.', '<b>Terim olarak:</b> Kalbiyle Allah’tan başkasına ibadete, tâğuta ve ehline Allah yolunda buğz etmek; ona razı olmamak, ehliyle sevgi bağı kurmamak. Kalbî bir ibadettir.']),
+   dict(t='Buğzun İlgili Olduğu Şeyler', bullets=[
+        '<b>Allah’tan başkasına ibadet:</b> ateşe atılmaktan hoşlanmadığı gibi.',
+        '<b>Tâğut:</b> başları beştir <i>(Üç Esas)</i>: İblis, razı olan mabud, kendisine çağıran, gaybı iddia eden, Allah’ın indirdiğiyle hükmetmeyen.',
+        '<b>Ehli:</b> en yakın akraba olsalar bile sevgi bağı kurulmaz <i>(Mücâdele, 22)</i>; «Allah’a iman edinceye kadar».'],
+        chips=['Kalp', 'Dil', 'Azalar'], chipsLabel='Buğzun şekilleri:'),
+   dict(t='Buğz, İtikad ve Terk', table=[['Buğzsuz terk', 'Kalbi ona meyleder ya da ehlini sever; kusur'], ['Buğzsuz itikad', 'Bilir, ama ona da ehline de buğz etmez; gerçekleştirmemiş'], ['İtikad, terk ve buğz', 'Ona, tâğuta ve ehline buğz eder; istenen budur']],
+        note='İtikad asıldır; terk azalardaki, buğz kalbin duygusundaki meyvesidir.'),
+   dict(t='Buğz ve Tevhid Kelimesi', bullets=[
+        '<b>Nefy «Lâ ilâhe»:</b> bâtıllığa itikad, terk ve <b>buğz</b>.',
+        '<b>İsbat «illallah»:</b> Allah’ı ve tevhid ehlini sevmek.',
+        '«İman edenlerin Allah’a sevgisi daha güçlüdür.» <i>(Bakara, 165)</i>'],
+        note='Müşrikin kalbi tersidir <i>(Zümer, 45)</i>.'),
+   dict(t='Şer’î Deliller', bullets=[
+        '«Biz sizden ve ibadet ettiklerinizden uzağız…» <i>(Mümtehine, 4)</i>',
+        '«…karşı gelenlerle sevgi bağı kurduğunu göremezsin.» <i>(Mücâdele, 22)</i>',
+        '«İşte onlar benim düşmanımdır…» <i>(Şuarâ, 77)</i>; «Küfrü size çirkin gösterdi.» <i>(Hucurât, 7)</i>',
+        '«…küfre dönmekten hoşlanmaması.» <i>(Buhârî, Müslim)</i>; «Kim Allah için sever, Allah için buğz eder…» <i>(Ebû Dâvûd)</i>',
+        '«…gücü yetmezse kalbiyle.» <i>(Müslim)</i>']),
+   dict(t='Nasslardan Uyarılar ve Meyveler', wide=True, bullets=[
+        '<b>Razı olmadan kendisine ibadet edilene buğz edilmez:</b> İsa, melekler, salihler <i>(Mâide, 117)</i>.',
+        '<b>Anne babaya iyiliği</b> <i>(Lokmân, 15)</i> <b>ve adaleti düşürmez</b> <i>(Mâide, 8)</i>. <b>Tekfir ve düşmanlık</b> gelecek iki derste.',
+        '<b>Meyveleri:</b> imanın tadı ve kemali, doğru yol, İbrahim’e uymak, imanın kalbe yazılması ve destek.']),
+  ],
+  jamiaT='Özet',
+  jamia='Müslümanın kalbiyle Allah’tan başkasına ibadete, razı olan tâğuta ve ona ibadet edenlere Allah yolunda buğz etmesidir. Şirke razı olmaz; en yakın akraba olsalar bile ehliyle sevgi bağı kurmaz; etkisi dilinde ve azalarında görünür.',
+  src='Kaynaklar: Ayetler Mushaf’tan (Hafs); Şeyhin sözleri «Ma‘ne’t-Tâğût» ve «Üç Esas»tan; «es-Sıhâh»; hadisler Buhârî, Müslim ve Ebû Dâvûd’dan. Mealler hazırlayana aittir.',
+ ),
 }
+

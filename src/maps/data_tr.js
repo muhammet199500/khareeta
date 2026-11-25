@@ -627,4 +627,277 @@ window.LESSON2 = {
       x: "«Onlardan ve Allah'ı bırakıp ibadet ettiklerinden uzaklaşınca, ona İshak'ı ve Yakub'u bağışladık» (Meryem, 49)." }
   ]
 };
-window.LESSONS = [window.LESSON, window.LESSON2];
+window.LESSON3 = {
+  title: "Tâğuta, İbadetine ve Ehline Buğz",
+  short: "3 · Buğz",
+  eb: "Tâğutu inkârın keyfiyeti · Üçüncü husus",
+  h1: "Tâğuta, İbadetine ve Ehline Buğz",
+  lead: "Dersin etkileşimli haritası: buğzun anlamından, ilgili olduğu şeylere, şekillerine ve itikad ve terk ile ilişkisine, oradan delillerine ve meselelerine kadar.",
+  root: { id: "root", label: "Tâğuta, İbadetine\nve Ehline Buğz" },
+  branches: [
+    {
+      id: "b1", label: "Dersin Esası",
+      children: [
+        { id: "b1a", label: "Şeyh Muhammed b. Abdülvehhab'ın sözü",
+          card: { tag: "Dersin esası", title: "Tâğutu inkârın keyfiyeti",
+            verse: "«أن تعتقد بطلان عبادة غير الله، وتتركها، وتبغضها، وتكفّر أهلها، وتعاديهم»",
+            ref: "«Allah'tan başkasına yapılan ibadetin bâtıl olduğuna inanman, onu terk etmen, ona buğz etmen, ehlini tekfir etmen ve onlara düşmanlık etmendir.» — Şeyh Muhammed b. Abdülvehhab (rahimehullah)",
+            body: "Önceki iki derste itikadı (kalbin tasdiki) ve terki (azaların ameli) işledik. Bu derste üçüncüsünü ele alıyoruz: buğz; bu da kalbin amellerindendir." },
+          children: [
+            { id: "b1a1", label: "1 · İtikad ← birinci ders" },
+            { id: "b1a2", label: "2 · Terk ← ikinci ders" },
+            { id: "b1a3", label: "3 · Buğz ← dersimiz", hot: true },
+            { id: "b1a4", label: "4 · Tekfir" },
+            { id: "b1a5", label: "5 · Düşmanlık" }
+          ] },
+        { id: "b1b", label: "Dersin amacı",
+          card: { tag: "Dersin amacı", title: "Allah'ın buğz ettiğine buğz eden bir kalp",
+            body: "Kalbin bilmesi ve tasdik etmesi yetmez; Allah'ın sevdiğini sevmesi, Allah'ın buğz ettiğine de buğz etmesi gerekir. Mümin, Allah'tan başkasına ibadete, Allah'ı bırakıp ibadet edilen tâğuta ve ona ibadet edenlere buğz eder; tıpkı İbrahim (aleyhisselâm) ve onunla birlikte olanlar gibi." } }
+      ]
+    },
+    {
+      id: "b2", label: "Buğzun Anlamı",
+      children: [
+        { id: "b2a", label: "Sözlükte: sevginin zıddı",
+          card: { tag: "Buğzun sözlük anlamı", big: "البُغْض",
+            verse: "«البُغْضُ: ضدُّ الحبِّ... والبَغْضاءُ: شدّة البُغْضِ»", ref: "Cevherî, es-Sıhâh, «b-ğ-d» maddesi",
+            body: "«Buğz, sevginin zıddıdır… Bağzâ ise şiddetli buğzdur.»" },
+          children: [
+            { id: "b2a1", label: "Bağzâ: şiddetli buğz",
+              card: { tag: "Kur'an'dan şahit", title: "Bağzâ",
+                verse: "﴿وَبَدَا بَيْنَنَا وَبَيْنَكُمُ الْعَدَاوَةُ وَالْبَغْضَاءُ أَبَدًا﴾", ref: "Mümtehine, 4",
+                body: "«Bizimle sizin aranızda ebedî bir düşmanlık ve buğz başlamıştır.» İbrahim (aleyhisselâm) ve beraberindekiler bunu kavimlerine söylemişlerdi." } }
+          ] },
+        { id: "b2b", label: "Kerâhiyet: yakın bir lafız",
+          card: { tag: "Buğz ve kerâhiyet", title: "Kur'an ve Sünnet onu da kullanır",
+            verse: "﴿وَكَرَّهَ إِلَيْكُمُ الْكُفْرَ﴾", ref: "Hucurât, 7",
+            body: "«Küfrü size çirkin gösterdi.» Hadiste de: «Küfre dönmekten hoşlanmaması.» Kerâhiyet bu bapta buğza yakın bir lafızdır." } },
+        { id: "b2c", label: "Istılahta", hot: true,
+          card: { tag: "Bu baptaki buğz", title: "Tanım",
+            body: "Müslümanın kalbiyle Allah'tan başkasına ibadete, Allah'ı bırakıp ibadet edilen tâğuta ve ona ibadet edenlere Allah için ve Allah yolunda buğz etmesidir; o ibadete razı olmaz, onu sevmez ve onun üzerinde olanlarla sevgi bağı kurmaz." },
+          children: [
+            { id: "b2c1", label: "Kalbî bir ibadet",
+              card: { tag: "Uyarı", title: "Buradaki buğz kalbî bir ibadettir",
+                body: "Müslüman onunla Allah'a yaklaşır; çünkü Allah'ın buğz ettiğine ve Allah'ın buğz ettiği kimseye buğzdur. Bu, imanın en sağlam kulplarındandır." } }
+          ] }
+      ]
+    },
+    {
+      id: "b3", label: "Buğzun İlgili Olduğu Şeyler",
+      children: [
+        { id: "b3a", label: "1 · Allah'tan başkasına ibadete buğz",
+          card: { tag: "Buğz üç şeyle ilgilidir · Birincisi", title: "Allah'tan başkasına ibadete buğz",
+            body: "Müslümanın şirke ve Allah'tan başkasına yöneltilen her ibadete buğz etmesidir: Allah'tan başkasına dua etmek, onun için kurban kesmek, ona adak adamak, ona secde etmek, ölülerden medet istemek ve benzerleri. Ateşe atılmaktan hoşlanmadığı gibi ondan hoşlanmaz; isimlerle, mevsimlerle ve kutlamalarla süslense bile ona razı olmaz ve onu güzel bulmaz." } },
+        { id: "b3b", label: "2 · Tâğuta buğz", hot: true,
+          card: { tag: "İkincisi", title: "Tâğuta buğz",
+            body: "Şeyh Muhammed b. Abdülvehhab (rahimehullah) «Üç Esas» risalesinde şöyle der: «Tâğutlar çoktur; başları beştir: Allah'ın lânet ettiği İblis, kendisine ibadet edilen ve buna razı olan, insanları kendisine ibadete çağıran, gaybı bildiğini iddia eden ve Allah'ın indirdiğinden başkasıyla hükmeden.» Mümin bunlara buğz eder; çünkü onlar Allah'ın hakkında O'na ortaklık iddia etmiş ve insanları O'ndan başkasına ibadete çağırmışlardır." },
+          children: [
+            { id: "b3b1", label: "Allah'ın lânet ettiği İblis" },
+            { id: "b3b2", label: "Kendisine ibadet edilen ve buna razı olan" },
+            { id: "b3b3", label: "İnsanları kendisine ibadete çağıran" },
+            { id: "b3b4", label: "Gaybı bildiğini iddia eden" },
+            { id: "b3b5", label: "Allah'ın indirdiğinden başkasıyla hükmeden" },
+            { id: "b3b6", label: "Uyarı: razı olmayan",
+              card: { tag: "Uyarı", title: "Kendisine ibadet edilen ve buna razı olmayana buğz edilmez",
+                verse: "﴿مَا قُلْتُ لَهُمْ إِلَّا مَا أَمَرْتَنِي بِهِ أَنِ اعْبُدُوا اللَّهَ رَبِّي وَرَبَّكُمْ﴾", ref: "Mâide, 117",
+                body: "«Ben onlara ancak bana emrettiğini söyledim: Benim de Rabbim, sizin de Rabbiniz olan Allah'a ibadet edin.» İsa (aleyhisselâm), melekler ve salihler gibi razı olmayanlar tâğut değildir ve onlara buğz edilmez; aksine sevilir ve dost edinilir. Buğz edilen, onlara Allah'tan başka ibadet edilmesidir." } }
+          ] },
+        { id: "b3c", label: "3 · Ona ibadet edenlere buğz", hot: true,
+          card: { tag: "Üçüncüsü", title: "Ehline buğz",
+            verse: "﴿لَا تَجِدُ قَوْمًا يُؤْمِنُونَ بِاللَّهِ وَالْيَوْمِ الْآخِرِ يُوَادُّونَ مَنْ حَادَّ اللَّهَ وَرَسُولَهُ وَلَوْ كَانُوا آبَاءَهُمْ أَوْ أَبْنَاءَهُمْ أَوْ إِخْوَانَهُمْ أَوْ عَشِيرَتَهُمْ﴾", ref: "Mücâdele, 22",
+            body: "«Allah'a ve ahiret gününe iman eden bir topluluğun, babaları, oğulları, kardeşleri ya da akrabaları olsalar bile, Allah'a ve Rasûlü'ne karşı gelenlerle sevgi bağı kurduğunu göremezsin.» Müslüman, Allah'tan başkasına ibadet edenlere şirkleri ve küfürleri sebebiyle buğz eder; en yakın akrabası olsalar bile onları sevmez ve onlarla sevgi bağı kurmaz." },
+          children: [
+            { id: "b3c1", label: "Şeyh'in «Üç Esas»taki sözü",
+              card: { tag: "Şeyh'in sözünden", title: "En yakın akrabası olsa bile",
+                body: "«Rasûle itaat eden ve Allah'ı birleyen kimsenin, en yakın akrabası olsa bile, Allah'a ve Rasûlü'ne karşı gelen kimseyi dost edinmesi caiz değildir.» — Şeyh Muhammed b. Abdülvehhab (rahimehullah), «Üç Esas»" } },
+            { id: "b3c2", label: "Tevhidle kalkan bir buğz",
+              card: { tag: "Buğzun sınırı", title: "Bir olan Allah'a iman edinceye kadar",
+                verse: "﴿حَتَّى تُؤْمِنُوا بِاللَّهِ وَحْدَهُ﴾", ref: "Mümtehine, 4",
+                body: "Onlara üzerinde bulundukları şirk sebebiyle buğz eder; şirki bırakıp Allah'ı birlediklerinde buğz da kalkar." } }
+          ] }
+      ]
+    },
+    {
+      id: "b4", label: "Buğzun Şekilleri",
+      children: [
+        { id: "b4a", label: "Kalpte: buğzun aslı", hot: true,
+          card: { tag: "Birinci şekil · Kalpte", title: "Buğzun aslı budur",
+            body: "Allah'tan başkasına ibadetten hoşlanmamak ve ondan nefret etmek, kalbinde ona karşı bir meyil bulmamak; ona razı olmamak ve onu güzel görmemek; onu gördüğünde Allah için üzülmek ve kıskanmak, ortadan kalkmasını istemek; tâğutu ve ona ibadet edenleri sevmemek, onlarla sevgi bağı kurmamak." } },
+        { id: "b4b", label: "Dilde",
+          card: { tag: "İkinci şekil · Dilde", title: "Ondan ve ehlinden beri olmak",
+            verse: "﴿إِنَّا بُرَآءُ مِنْكُمْ وَمِمَّا تَعْبُدُونَ مِنْ دُونِ اللَّهِ﴾", ref: "Mümtehine, 4",
+            body: "«Biz sizden ve Allah'ı bırakıp ibadet ettiklerinizden uzağız.» Şirki ve ehlini övmemek, onların üzerinde bulunduğu şeyi güzel göstermemek; onun bâtıllığını açıklamak ve ondan ve ehlinden beri olduğunu söylemek." } },
+        { id: "b4c", label: "Azalarda",
+          card: { tag: "Üçüncü şekil · Azalarda", title: "Şirk mekânlarında bulunmamak",
+            body: "Şirk mekânlarında ve mevsimlerinde hoşlanarak ya da seyirci olarak bulunmamak; gücü yettiğince şirki eliyle, diliyle ya da kalbiyle reddetmek." } }
+      ]
+    },
+    {
+      id: "b5", label: "Buğz, İtikad ve Terk",
+      children: [
+        { id: "b5a", label: "İtikad asıl; terk ve buğz meyvesi",
+          card: { tag: "Üç hususun birlikteliği", title: "Bir asıl ve iki meyve",
+            body: "İtikad kalpteki asıldır, terk onun azalardaki meyvesidir, buğz ise kalbin duygusundaki meyvesidir." } },
+        { id: "b5b", label: "Buğzsuz terk: kusur",
+          card: { tag: "Birinci durum · Tâğutu inkârda bir kusur", title: "Buğzsuz terk",
+            body: "Bir adam Allah'tan başkası için kurban kesmez ve kabirleri tavaf etmez; fakat insanları şirk mevsimlerinde gördüğünde buna sevinir, havasını sever ve ehlini över. Azalarıyla terk etmiştir, fakat kalbi Allah'ın buğz ettiğine buğz etmemiştir. Bir şeyi güzel bulan kalp, onu yapmaya yakındır." } },
+        { id: "b5c", label: "Buğzsuz itikad: gerçekleştirmemiş",
+          card: { tag: "İkinci durum · Bu hususu gerçekleştirmemiştir", title: "Buğzsuz itikad",
+            body: "Bir adam «Ölülere dua etmenin şirk olduğunu biliyorum» der; fakat bunu yapan birini gördüğünde kalbinde hiçbir şey kıpırdamaz, onu yapanlarla sevgi bağı kurar ve «Herkes ibadetinde özgürdür» der. Müslüman, tevhid ile şirk arasında da, tevhid ehli ile şirk ehli arasında da tarafsız olmaz." } },
+        { id: "b5d", label: "İtikad, terk ve buğz: istenen", hot: true,
+          card: { tag: "Üçüncü durum", title: "Muvahhidin hâli",
+            body: "Kalbi, Allah'tan başkasına ibadetin bâtıl olduğuna kesin olarak inanır; azalarıyla onu terk eder; ona buğz eder, tâğuta ve ehline de Allah yolunda buğz eder; tıpkı İbrahim (aleyhisselâm) ve onunla birlikte olanlar gibi." } }
+      ]
+    },
+    {
+      id: "b6", label: "Şer'î Deliller",
+      children: [
+        { id: "b6a", label: "Birinci delil · Mümtehine, 4", hot: true,
+          card: { tag: "Birinci delil · İbrahim ve beraberindekilerin örnekliği",
+            verse: "﴿قَدْ كَانَتْ لَكُمْ أُسْوَةٌ حَسَنَةٌ فِي إِبْرَاهِيمَ وَالَّذِينَ مَعَهُ إِذْ قَالُوا لِقَوْمِهِمْ إِنَّا بُرَآءُ مِنْكُمْ وَمِمَّا تَعْبُدُونَ مِنْ دُونِ اللَّهِ كَفَرْنَا بِكُمْ وَبَدَا بَيْنَنَا وَبَيْنَكُمُ الْعَدَاوَةُ وَالْبَغْضَاءُ أَبَدًا حَتَّى تُؤْمِنُوا بِاللَّهِ وَحْدَهُ﴾", ref: "Mümtehine, 4",
+            body: "«İbrahim'de ve onunla birlikte olanlarda sizin için güzel bir örnek vardır…» Delil yönü: Kavimlerinden ve Allah'ı bırakıp ibadet ettikleri şeylerden beri olduklarını söylediler, müşrik kavimleriyle aralarındaki buğzu açıkça ilan ettiler; Allah bunu müminler için güzel örnek kıldı. Ayet bâtıl mabudlara ve onlara ibadet edenlere buğza delildir; sınırı «bir olan Allah'a iman edinceye kadar»dır." } },
+        { id: "b6b", label: "İkinci delil · Mücâdele, 22", hot: true,
+          card: { tag: "İkinci delil · Karşı gelenlerle sevgi bağının nefyi",
+            verse: "﴿لَا تَجِدُ قَوْمًا يُؤْمِنُونَ بِاللَّهِ وَالْيَوْمِ الْآخِرِ يُوَادُّونَ مَنْ حَادَّ اللَّهَ وَرَسُولَهُ وَلَوْ كَانُوا آبَاءَهُمْ أَوْ أَبْنَاءَهُمْ أَوْ إِخْوَانَهُمْ أَوْ عَشِيرَتَهُمْ﴾", ref: "Mücâdele, 22",
+            body: "Delil yönü: Allah, insanların kendisine en yakını olsa bile, Allah'a ve Rasûlü'ne karşı gelenle sevgi bağı kuran kimseden imanı nefyetmiştir. Meveddet kalbin sevgisidir; mümin şirk ehlini sevmez, aksine onlara Allah yolunda buğz eder." } },
+        { id: "b6c", label: "Üçüncü delil · Şuarâ, 75–77",
+          card: { tag: "Üçüncü delil · İbrahim'in düşmanlığı",
+            verse: "﴿قَالَ أَفَرَأَيْتُمْ مَا كُنْتُمْ تَعْبُدُونَ ۝ أَنْتُمْ وَآبَاؤُكُمُ الْأَقْدَمُونَ ۝ فَإِنَّهُمْ عَدُوٌّ لِي إِلَّا رَبَّ الْعَالَمِينَ﴾", ref: "Şuarâ, 75–77",
+            body: "«Gördünüz mü neye ibadet ediyormuşsunuz; siz ve eski atalarınız? İşte onlar benim düşmanımdır; ancak âlemlerin Rabbi müstesna.» Delil yönü: Ataların mabudu olsa bile Allah'ı bırakıp ibadet edilen her şeye düşmanlığını ilan etti, yalnız âlemlerin Rabbini istisna etti; sözünde nefy ile isbat bir araya geldi." } },
+        { id: "b6d", label: "Dördüncü delil · Hucurât, 7",
+          card: { tag: "Dördüncü delil · Küfür müminlere çirkin gösterilmiştir",
+            verse: "﴿وَلَكِنَّ اللَّهَ حَبَّبَ إِلَيْكُمُ الْإِيمَانَ وَزَيَّنَهُ فِي قُلُوبِكُمْ وَكَرَّهَ إِلَيْكُمُ الْكُفْرَ وَالْفُسُوقَ وَالْعِصْيَانَ أُولَئِكَ هُمُ الرَّاشِدُونَ﴾", ref: "Hucurât, 7",
+            body: "«Fakat Allah size imanı sevdirdi, onu kalplerinizde süsledi; küfrü, fıskı ve isyanı size çirkin gösterdi. İşte doğru yolda olanlar onlardır.» Delil yönü: Küfre karşı hoşnutsuzluğu müminlere nimet saydı ve onları bununla «doğru yolda olanlar» diye niteledi. Allah'tan başkasına ibadet küfrün en büyüğüdür." } },
+        { id: "b6e", label: "Beşinci delil · İmanın tadı hadisi",
+          card: { tag: "Beşinci delil · Buhârî ve Müslim; lafız Buhârî'nin",
+            verse: "«ثَلَاثٌ مَنْ كُنَّ فِيهِ وَجَدَ حَلَاوَةَ الْإِيمَانِ: أَنْ يَكُونَ اللَّهُ وَرَسُولُهُ أَحَبَّ إِلَيْهِ مِمَّا سِوَاهُمَا، وَأَنْ يُحِبَّ الْمَرْءَ لَا يُحِبُّهُ إِلَّا لِلَّهِ، وَأَنْ يَكْرَهَ أَنْ يَعُودَ فِي الْكُفْرِ كَمَا يَكْرَهُ أَنْ يُقْذَفَ فِي النَّارِ»",
+            ref: "Enes b. Mâlik (radıyallâhu anh)'tan",
+            body: "«Üç şey kimde bulunursa imanın tadını bulur: Allah ve Rasûlü'nün ona her şeyden sevgili olması, bir kimseyi yalnız Allah için sevmesi ve ateşe atılmaktan hoşlanmadığı gibi küfre dönmekten hoşlanmaması.» Delil yönü: Küfürden hoşlanmamayı iman hasletlerinden saydı ve onu ateşe atılmaktan hoşlanmamaya benzetti." } },
+        { id: "b6f", label: "Altıncı delil · Allah için sevmek ve buğz etmek",
+          card: { tag: "Altıncı delil · Ebû Dâvûd rivayet etmiştir",
+            verse: "«مَنْ أَحَبَّ لِلَّهِ، وَأَبْغَضَ لِلَّهِ، وَأَعْطَى لِلَّهِ، وَمَنَعَ لِلَّهِ، فَقَدِ اسْتَكْمَلَ الْإِيمَانَ»",
+            ref: "Ebû Ümâme (radıyallâhu anh)'dan",
+            body: "«Kim Allah için sever, Allah için buğz eder, Allah için verir ve Allah için vermezse imanını kemale erdirmiş olur.» Delil yönü: Allah için buğz etmeyi imanı kemale erdirmekten saydı. Allah için buğz edilen şeylerin en büyüğü şirk ve ehlidir." } },
+        { id: "b6g", label: "Yedinci delil · Kalple reddetmek",
+          card: { tag: "Yedinci delil · Müslim rivayet etmiştir",
+            verse: "«مَنْ رَأَى مِنْكُمْ مُنْكَرًا فَلْيُغَيِّرْهُ بِيَدِهِ، فَإِنْ لَمْ يَسْتَطِعْ فَبِلِسَانِهِ، فَإِنْ لَمْ يَسْتَطِعْ فَبِقَلْبِهِ، وَذَلِكَ أَضْعَفُ الْإِيمَانِ»",
+            ref: "Ebû Saîd el-Hudrî (radıyallâhu anh)'tan",
+            body: "«Sizden kim bir münker görürse onu eliyle değiştirsin; gücü yetmezse diliyle; buna da gücü yetmezse kalbiyle. Bu da imanın en zayıfıdır.» Delil yönü: Kalple reddetmek, yani kalbin münkere buğz etmesi, kimseden düşmez. Allah'tan başkasına ibadet münkerlerin en büyüğüdür; ona kalben buğz her Müslümana her hâlde vaciptir." } }
+      ]
+    },
+    {
+      id: "b7", label: "Buğz ve Tevhid Kelimesi",
+      children: [
+        { id: "b7a", label: "Lâ ilâhe illallah",
+          card: { tag: "Lâ ilâhe illallah", title: "Nefy ve isbat",
+            body: "Her birinin kalpte bir gereği vardır: bilgi ve tasdik, sevgi ve buğz. Nefy «Lâ ilâhe», kalbin duygusunda Allah'tan başkasına ibadete, tâğuta ve ehline buğzu gerektirir. İsbat «illallah» ise Allah'ı ve tevhid ehlini sevmeyi gerektirir." },
+          children: [
+            { id: "b7a1", label: "Lâ ilâhe ← nefy ← ibadete, tâğuta ve ehline buğz", hot: true },
+            { id: "b7a2", label: "illallah ← isbat ← Allah'ı ve tevhid ehlini sevmek" }
+          ] },
+        { id: "b7b", label: "Müminlerin Allah sevgisi daha güçlüdür",
+          card: { tag: "Sevgi ve buğz birbirinden ayrılmaz",
+            verse: "﴿وَمِنَ النَّاسِ مَنْ يَتَّخِذُ مِنْ دُونِ اللَّهِ أَنْدَادًا يُحِبُّونَهُمْ كَحُبِّ اللَّهِ وَالَّذِينَ آمَنُوا أَشَدُّ حُبًّا لِلَّهِ﴾", ref: "Bakara, 165",
+            body: "«İnsanlardan bazıları Allah'tan başkasını O'na denk tutar, onları Allah'ı sever gibi severler. İman edenlerin Allah'a sevgisi ise daha güçlüdür.» Allah'ı gerçekten seven, Allah'ın buğz ettiğine ve buğz ettiği kimseye buğz eder." } },
+        { id: "b7c", label: "Müşriklerin hâli bunun tersidir",
+          card: { tag: "Müşrikin kalbi",
+            verse: "﴿وَإِذَا ذُكِرَ اللَّهُ وَحْدَهُ اشْمَأَزَّتْ قُلُوبُ الَّذِينَ لَا يُؤْمِنُونَ بِالْآخِرَةِ وَإِذَا ذُكِرَ الَّذِينَ مِنْ دُونِهِ إِذَا هُمْ يَسْتَبْشِرُونَ﴾", ref: "Zümer, 45",
+            body: "«Allah tek olarak anıldığında ahirete inanmayanların kalpleri daralır; O'ndan başkaları anıldığında ise hemen sevinirler.» Onların kalpleri tevhidden nefret eder ve şirke sevinir; muvahhidin kalbi ise tevhide sevinir ve şirkten nefret eder." } }
+      ]
+    },
+    {
+      id: "b8", label: "Uygulamalı Meseleler",
+      children: [
+        { id: "b8a", label: "Uygulamalı örnekler",
+          children: [
+            { id: "b8a1", label: "Mevsimler: sevinmez, ehlini tebrik etmez" },
+            { id: "b8a2", label: "Şirki ve ehlini övmez" },
+            { id: "b8a3", label: "Akrabalık: şirki üzerine sevgi bağı kurmaz",
+              card: { tag: "Örnek", title: "Akrabalık",
+                body: "Akrabaları arasında Allah'tan başkasına ibadet eden biri varsa, onun üzerinde bulunduğu şirke buğz eder, bu hâli üzerine onunla sevgi bağı kurmaz; akrabalık onu, onun şirkine razı olmaya sürüklemez." } },
+            { id: "b8a4", label: "Miras âdetler: ataların âdeti olsa da buğz eder" },
+            { id: "b8a5", label: "Kalbi muhasebe",
+              card: { tag: "Örnek", title: "Kalbi muhasebe etmek",
+                body: "Kalbinde bunlardan birine bir meyil ya da ehline bir sevgi bulursa, bunu tevhid ilmiyle ve Allah'a, imanı kendisine sevdirmesi ve küfrü çirkin göstermesi için dua ederek tedavi eder." } }
+          ] },
+        { id: "b8b", label: "Nasslardan uyarılar",
+          children: [
+            { id: "b8b1", label: "Razı olmayana buğz edilmez",
+              card: { tag: "Uyarı", title: "Kendisine ibadet edilen ve buna razı olmayana buğz edilmez",
+                body: "İsa (aleyhisselâm), melekler ve salihler gibi; buğz edilen, onlara Allah'tan başka ibadet edilmesidir, kendileri değil (Mâide, 117)." } },
+            { id: "b8b2", label: "Anne babaya iyiliği düşürmez",
+              card: { tag: "Uyarı", title: "Allah için buğz, Allah'ın emrettiği anne babaya iyiliği düşürmez",
+                verse: "﴿وَإِنْ جَاهَدَاكَ عَلَى أَنْ تُشْرِكَ بِي مَا لَيْسَ لَكَ بِهِ عِلْمٌ فَلَا تُطِعْهُمَا وَصَاحِبْهُمَا فِي الدُّنْيَا مَعْرُوفًا﴾", ref: "Lokmân, 15",
+                body: "«Eğer onlar, hakkında bilgin olmayan bir şeyi bana ortak koşman için seninle uğraşırlarsa, onlara itaat etme; dünyada onlarla iyi geçin.»" } },
+            { id: "b8b3", label: "Buğz adaleti düşürmez",
+              card: { tag: "Uyarı", title: "Buğz adaleti düşürmez",
+                verse: "﴿وَلَا يَجْرِمَنَّكُمْ شَنَآنُ قَوْمٍ عَلَى أَلَّا تَعْدِلُوا اعْدِلُوا هُوَ أَقْرَبُ لِلتَّقْوَى﴾", ref: "Mâide, 8",
+                body: "«Bir topluluğa olan buğzunuz sizi adaletsizliğe sürüklemesin. Adaletli olun; bu, takvaya daha yakındır.»" } },
+            { id: "b8b4", label: "Tekfir ve düşmanlık: gelecek iki ders" }
+          ] },
+        { id: "b8c", label: "Meyveler",
+          children: [
+            { id: "b8c1", label: "İmanın tadı" },
+            { id: "b8c2", label: "İmanı kemale erdirmek" },
+            { id: "b8c3", label: "Doğru yolda olmak" },
+            { id: "b8c4", label: "İbrahim ve beraberindekilere uymak" },
+            { id: "b8c5", label: "İmanın kalbe yazılması ve destek",
+              card: { tag: "Meyve", title: "İmanın kalbe yazılması ve Allah'ın desteği",
+                verse: "﴿أُولَئِكَ كَتَبَ فِي قُلُوبِهِمُ الْإِيمَانَ وَأَيَّدَهُمْ بِرُوحٍ مِنْهُ﴾", ref: "Mücâdele, 22",
+                body: "«İşte Allah onların kalplerine imanı yazmış ve onları kendi katından bir ruhla desteklemiştir.»" } }
+          ] }
+      ]
+    }
+  ],
+  jamia: "Bu husustaki buğz; Müslümanın kalbiyle Allah'tan başkasına ibadete, Allah'ı bırakıp kendisine ibadet edilen ve buna razı olan tâğuta ve ona ibadet edenlere Allah yolunda buğz etmesidir. Şirke razı olmaz ve onu sevmez; en yakın akrabası olsalar bile ehliyle sevgi bağı kurmaz. Bunun etkisi dilinde ve azalarında görünür.",
+  closing: "Allah Teâlâ'dan imanı bize sevdirmesini ve kalplerimizde süslemesini, küfrü, fıskı ve isyanı bize çirkin göstermesini, bizi doğru yolda olanlardan kılmasını ve O'na kavuşuncaya kadar bizi tevhid üzere sabit kılmasını dileriz.",
+  ui: window.LESSON.ui,
+  quiz: [
+    { q: "Buğzun sözlük anlamı nedir?",
+      o: ["Sevginin zıddı", "Geçici öfke", "Korku", "Konuşmaktan yüz çevirmek"], a: 0,
+      x: "Cevherî: «Buğz, sevginin zıddıdır… Bağzâ ise şiddetli buğzdur.»" },
+    { q: "Bu husustaki buğzun ilgili olduğu üç şey nedir?",
+      o: ["Şirk, bidat ve günah", "Allah'tan başkasına ibadet, tâğut ve ehli", "Kâfirler, münafıklar ve fasıklar", "Kalp, dil ve azalar"], a: 1,
+      x: "Bu husustaki buğz üç şeyle ilgilidir: Allah'tan başkasına ibadete buğz, tâğuta buğz ve ona ibadet edenlere buğz." },
+    { q: "Şeyh'in «Üç Esas»ta saydığı tâğutların beş başından hangisi değildir?",
+      o: ["Allah'ın lânet ettiği İblis", "Gaybı bildiğini iddia eden", "Kendisine ibadet edilen ve buna razı olmayan", "Allah'ın indirdiğinden başkasıyla hükmeden"], a: 2,
+      x: "Başları beştir: İblis, kendisine ibadet edilen ve buna razı olan, insanları kendisine ibadete çağıran, gaybı bildiğini iddia eden ve Allah'ın indirdiğinden başkasıyla hükmeden. Razı olmayan ise tâğut değildir." },
+    { q: "Hristiyanlar İsa (aleyhisselâm)'a ibadet ettiler. Ona karşı tutum nedir?",
+      o: ["İbadet edildiği için ona buğz edilir", "Hakkında susulur", "O da ona ibadet edenler de buğz edilir", "Sevilir ve dost edinilir; buğz edilen ona Allah'tan başka ibadet edilmesidir"], a: 3,
+      x: "Razı olmadan kendisine ibadet edilen tâğut değildir ve ona buğz edilmez: «Ben onlara ancak bana emrettiğini söyledim: Benim de Rabbim, sizin de Rabbiniz olan Allah'a ibadet edin.» (Mâide, 117)" },
+    { q: "Mücâdele ayetinde Allah, karşı gelenlerle sevgi bağı kurandan neyi nefyetmiştir?",
+      o: ["İmanı", "İlmi", "Sabrı", "Rızkı"], a: 0,
+      x: "«Allah'a ve ahiret gününe iman eden bir topluluğun… karşı gelenlerle sevgi bağı kurduğunu göremezsin.» (Mücâdele, 22); meveddet kalbin sevgisidir." },
+    { q: "Akrabalık, şirk ehline Allah için buğz etmeye engel midir?",
+      o: ["Evet, akraba istisnadır", "Hayır; «babaları, oğulları, kardeşleri ya da akrabaları olsalar bile»", "Evet, anne baba ise", "Bu konuda hüküm yoktur"], a: 1,
+      x: "Şeyh «Üç Esas»ta şöyle der: «En yakın akrabası olsa bile, Allah'a ve Rasûlü'ne karşı gelen kimseyi dost edinmesi caiz değildir.»" },
+    { q: "İbrahim ve beraberindekilerin sözündeki buğzun sınırı nedir?",
+      o: ["Kavim zengin olduğu sürece", "Memleketten gidinceye kadar", "Hiçbir sınırı yoktur", "«Bir olan Allah'a iman edinceye kadar»"], a: 3,
+      x: "Onlara şirkleri sebebiyle buğz eder; şirki bırakıp Allah'ı birlediklerinde buğz da kalkar." },
+    { q: "Buğzun aslı nerededir?",
+      o: ["Dilde", "Azalarda", "Kalpte", "Görünüşte"], a: 2,
+      x: "Buğzun şekilleri kalpte, dilde ve azalardadır; buğzun aslı kalptir." },
+    { q: "Bir adam Allah'tan başkası için kurban kesmiyor, fakat şirk mevsimlerine seviniyor ve ehlini övüyor. Hâli nedir?",
+      o: ["Yapmadığı sürece hâli tamdır", "Buğzsuz terk; tâğutu inkârda bir kusur", "Terksiz itikad", "Kalbe hiç bakılmaz"], a: 1,
+      x: "Azalarıyla terk etmiştir, fakat kalbi Allah'ın buğz ettiğine buğz etmemiştir; bir şeyi güzel bulan kalp onu yapmaya yakındır." },
+    { q: "Bir adam «Ölülere duanın şirk olduğunu biliyorum, ama herkes ibadetinde özgürdür» diyor ve ehliyle sevgi bağı kuruyor. Hâlinin hükmü nedir?",
+      o: ["Bu hususu gerçekleştirmemiştir", "Kusur yok; hükmü bilmiştir", "Bütün hususları gerçekleştirmiştir", "Yapmaması yeterlidir"], a: 0,
+      x: "Bu, buğzsuz itikaddır; Müslüman tevhid ile şirk arasında da, tevhid ehli ile şirk ehli arasında da tarafsız olmaz." },
+    { q: "Peygamber (s.a.v.) imanın tadı hadisinde küfre dönmekten hoşlanmamayı neye benzetti?",
+      o: ["Fakirlikten hoşlanmamaya", "Hastalıktan hoşlanmamaya", "Ateşe atılmaktan hoşlanmamaya", "Yolculuktan hoşlanmamaya"], a: 2,
+      x: "«…ateşe atılmaktan hoşlanmadığı gibi küfre dönmekten hoşlanmaması.» (Buhârî ve Müslim)" },
+    { q: "Ebû Ümâme hadisinde Peygamber (s.a.v.) Allah için buğzu neyden saydı?",
+      o: ["Yalnız müstehap amellerden", "Âdetlerden", "Mekruh şeylerden", "İmanı kemale erdirmekten"], a: 3,
+      x: "«Kim Allah için sever, Allah için buğz eder, Allah için verir ve Allah için vermezse imanını kemale erdirmiş olur.» (Ebû Dâvûd)" },
+    { q: "Allah için buğz, müşrik anne babaya iyiliği düşürür mü?",
+      o: ["Hayır; «Onlara itaat etme; dünyada onlarla iyi geçin»", "Evet, düşürür", "Evet, şirke çağırırlarsa", "Her konuda onlara itaat eder"], a: 0,
+      x: "Allah için buğz, Allah'ın emrettiği anne babaya iyiliği düşürmez (Lokmân, 15)." },
+    { q: "Buğz adaleti düşürür mü?",
+      o: ["Evet, mutlak olarak", "Hayır; «Bir topluluğa olan buğzunuz sizi adaletsizliğe sürüklemesin»", "Evet, güçlülerse", "Bu konuda hüküm yoktur"], a: 1,
+      x: "«Bir topluluğa olan buğzunuz sizi adaletsizliğe sürüklemesin. Adaletli olun; bu, takvaya daha yakındır.» (Mâide, 8)" },
+    { q: "«Lâ ilâhe» nefyinin kalbin duygusundaki gereği nedir?",
+      o: ["Yalnız Allah'ı sevmek", "Allah'tan başkasına ibadeti terk", "Allah'tan başkasına ibadete, tâğuta ve ehline buğz", "Onun bâtıllığına itikad"], a: 2,
+      x: "Nefyin kalbin tasdikindeki gereği bâtıllığına itikad, ameldeki gereği terk, kalbin duygusundaki gereği ise buğzdur." }
+  ]
+};
+window.LESSONS = [window.LESSON, window.LESSON2, window.LESSON3];

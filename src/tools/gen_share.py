@@ -43,6 +43,7 @@ h1 { position: relative; margin: 10px 60px 0; font: 600 76px/1.25 var(--hf); wor
 .foot span { display: block; margin-top: 6px; font: 500 26px/1.4 var(--uf); color: #C6D6D0; }
 .foot .url { direction: ltr; unicode-bidi: isolate; font: 600 24px/1.3 'Source Sans 3', sans-serif; color: #F7F3EA; }
 html[lang=tr] h1 { font-size: 74px; line-height: 1.15; word-spacing: normal; }
+html[lang=tr] h1.long { font-size: 60px; }
 """
 
 TXT = {
@@ -64,7 +65,7 @@ def page(lang, L):
   <img class="arch" src="assets/arch.svg" alt="">
   <img class="logo" src="media/logo.webp" alt="">
   <p class="eb">{E(t['eb'](L))}</p>
-  <h1>{E(L[lang])}</h1>
+  <h1{' class="long"' if lang == 'tr' and len(L[lang]) > 26 else ''}>{E(L[lang])}</h1>
   <p class="vs">{E(L["verse"])}</p>{meal}
   <div class="foot"><div class="qr">{qr}</div><div><b>{E(t['scan'])}</b><span>{E(t['tools'])}</span><span class="url">{E(url.replace('https://', ''))}</span></div></div>
 </div></body></html>'''
