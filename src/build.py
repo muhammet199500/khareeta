@@ -1038,7 +1038,12 @@ def page_404():
 ''' + footer('ar', 0) + '</body>\n</html>\n'
 
 # ------------------------------------------------------------------ write
+# Cloudflare Web Analytics: visit counts for the teacher only; no cookies, no tracking of individual students
+ANALYTICS = '<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon=\'{"token": "dda53286faab4be6aca43215f29dc4b7"}\'></script>'
+
 def w(path, text):
+    if path.endswith('.html') and '</head>' in text and 'cloudflareinsights' not in text:
+        text = text.replace('</head>', ANALYTICS + '\n</head>', 1)
     p = os.path.join(OUT, path); os.makedirs(os.path.dirname(p), exist_ok=True)
     open(p, 'w', encoding='utf-8').write(text)
 

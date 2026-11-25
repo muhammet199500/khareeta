@@ -26,7 +26,7 @@ async def main():
                 pg.on('console', lambda m, errs=errs: errs.append(m.text) if m.type == 'error' else None)
                 pg.on('pageerror', lambda e, errs=errs: errs.append('PAGEERR ' + str(e)))
                 failed = []
-                pg.on('requestfailed', lambda r, failed=failed: failed.append(r.url))
+                pg.on('requestfailed', lambda r, failed=failed: failed.append(r.url) if 'cloudflareinsights' not in r.url else None)
                 pg.on('response', lambda r, failed=failed: failed.append(f'{r.status} {r.url}') if r.status >= 400 and 'localhost' in r.url else None)
                 await pg.goto(BASE + path, wait_until='networkidle')
                 await pg.wait_for_timeout(400)

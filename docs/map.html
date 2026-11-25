@@ -208,6 +208,7 @@ html[lang=ar] body { word-spacing: .14em; }
   #brand img { width: 40px; height: 40px; }
 }
 </style>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "dda53286faab4be6aca43215f29dc4b7"}'></script>
 </head>
 <body>
 <div id="stage">
@@ -612,7 +613,7 @@ html[lang=ar] body { word-spacing: .14em; }
   if (L.lead) $('introLead').textContent = L.lead;
   $('brandT').textContent = L.title;
   document.title = 'خريطة درس ' + L.title;
-  const goLesson = i => { if (i === LI) return; location.hash = 'l' + (i + 1); location.reload(); };
+  const goLesson = i => { if (i === LI) return; history.replaceState(null, '', '#l' + (i + 1)); location.reload(); };
   ['lsw', 'lswIntro'].forEach(id => {
     const box = $(id); if (LS.length < 2) { box.hidden = true; return; }
     box.innerHTML = LS.map((l, i) => `<button data-l="${i}" aria-pressed="${i === LI}">${l.short || l.title}</button>`).join('');

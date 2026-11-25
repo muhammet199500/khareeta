@@ -667,3 +667,19 @@
   });
   load(); paintCards(); writeSW();
 })();
+
+/* ---- links inside the same page (contents, sections, «skip to content») move without adding to the history,
+        so the Back button leaves the page instead of stepping through every place visited in it ---- */
+document.addEventListener('click', e => {
+  const a = e.target.closest && e.target.closest('a[href]');
+  if (!a || e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || a.target) return;
+  const u = new URL(a.getAttribute('href'), location.href);
+  if (u.origin !== location.origin || u.pathname !== location.pathname || u.search !== location.search || !u.hash) return;
+  const t = document.getElementById(decodeURIComponent(u.hash.slice(1)));
+  if (!t) return;
+  e.preventDefault();
+  try { history.replaceState(history.state, '', u.hash); } catch (err) {}
+  t.scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'start' });
+  if (!/^(A|BUTTON|INPUT|TEXTAREA|SELECT|SUMMARY)$/.test(t.tagName) && !t.hasAttribute('tabindex')) t.setAttribute('tabindex', '-1');
+  try { t.focus({ preventScroll: true }); } catch (err) {}
+});
