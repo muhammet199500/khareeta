@@ -32,16 +32,27 @@ self.addEventListener('fetch', e => {
   }
 
   const nav = req.mode === 'navigate';
-  e.respondWith(fetch(req).then(res => {
+  const fallback = () => caches.match(req, { ignoreSearch: true }).then(hit => hit ||
+      (nav ? caches.match(new URL('index.html', self.registration.scope).href) : null))
+    .catch(() => null)
+    .then(hit => hit || (nav ? offlinePage(url) : Response.error()));
+  const net = fetch(req).then(res => {
     if (res.ok && res.type === 'basic') { const copy = res.clone(); caches.open(CACHE).then(c => c.put(req, copy)); }
     // a page reached through a redirect cannot be handed back as is: the browser would show an error
     if (nav && res.redirected) return res.blob().then(b => new Response(b, { status: res.status, statusText: res.statusText, headers: res.headers }));
     return res;
-  }).catch(() => caches.match(req, { ignoreSearch: true }).then(hit => hit ||
-    (nav ? caches.match(new URL('index.html', self.registration.scope).href) : null))
-    .catch(() => null)
-    .then(hit => hit || (nav ? offlinePage(url) : Response.error()))));
+  });
+  e.waitUntil(net.catch(() => {}));   // let the saved copy be refreshed even when it was not waited for
+  // Network first, but on a slow connection do not keep the student waiting:
+  // after WAIT ms the saved copy is shown, and the fresh one is saved for next time.
+  e.respondWith(new Promise(resolve => {
+    let done = false;
+    const finish = r => { if (!done) { done = true; resolve(r); } };
+    const timer = setTimeout(() => caches.match(req, { ignoreSearch: true }).then(hit => { if (hit) finish(hit); }).catch(() => {}), WAIT);
+    net.then(r => { clearTimeout(timer); finish(r); }, () => { clearTimeout(timer); fallback().then(finish); });
+  }));
 });
+const WAIT = 2500;
 
 /* shown instead of the browser's grey error page when there is no connection and no saved copy */
 function offlinePage(url) {
