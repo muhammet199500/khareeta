@@ -10,7 +10,7 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from docqa_tr import DOCQA_TR
 from summaries import SUM
 import io, segno
-SITE = 'https://muhammet199500.github.io/khareeta/'
+SITE = 'https://tevhidim.com/'
 
 ROOT = os.path.dirname(os.path.abspath(__file__))           # src/
 OUT = os.path.abspath(sys.argv[1]) if len(sys.argv) > 1 else os.path.join(ROOT, '..', 'docs')
@@ -1065,6 +1065,12 @@ def build():
     w('404.html', page_404())
     write_app_files()
     w('.nojekyll', '')
+    # custom domain for GitHub Pages, and files for search engines
+    w('CNAME', 'tevhidim.com\n')
+    pages = sorted(os.path.relpath(os.path.join(dp, f), OUT).replace(os.sep, '/') for dp, dn, fn in os.walk(OUT) for f in fn if f.endswith('.html') and f not in ('404.html',) and not f.startswith('_'))
+    urls = ''.join(f'  <url><loc>{SITE}{p[:-10] if p.endswith("index.html") else p}</loc></url>\n' for p in pages)
+    w('sitemap.xml', f'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n{urls}</urlset>\n')
+    w('robots.txt', f'User-agent: *\nAllow: /\nSitemap: {SITE}sitemap.xml\n')
     print('built', OUT)
 
 if __name__ == '__main__':

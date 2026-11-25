@@ -12,8 +12,8 @@
  *   s:<id>          → value: the push subscription; metadata: { tz, lang, done: 'YYYY-MM-DD' | '' }
  * The cron runs once an hour, so each device gets at most one reminder per listed hour.
  */
-const SITE = 'https://muhammet199500.github.io/khareeta/';
-const ORIGINS = ['https://muhammet199500.github.io'];
+const SITE = 'https://tevhidim.com/';
+const ORIGINS = ['https://tevhidim.com', 'https://www.tevhidim.com', 'https://muhammet199500.github.io'];
 const HOURS = [10, 12, 14, 16, 18, 20, 22];          // reminder hours, on the student's clock
 
 const cors = origin => ({
@@ -87,6 +87,9 @@ async function remindAll(env, now = new Date()) {
   return { sent, removed };
 }
 
+/* only the browsers' own push services: Google (Chrome, Edge on Android…), Mozilla, Apple, Microsoft */
+const PUSH_HOSTS = [/^fcm\.googleapis\.com$/, /^android\.googleapis\.com$/, /(^|\.)push\.services\.mozilla\.com$/, /(^|\.)push\.apple\.com$/, /(^|\.)notify\.windows\.com$/];
+const pushHost = e => { try { const u = new URL(e); return u.protocol === 'https:' && PUSH_HOSTS.some(r => r.test(u.hostname)); } catch (x) { return false; } };
 const validId = id => typeof id === 'string' && /^[A-Za-z0-9_-]{16,64}$/.test(id);
 const validDate = d => typeof d === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(d);
 
@@ -102,7 +105,7 @@ export default {
 
     if (url.pathname === '/subscribe') {
       const s = b.subscription;
-      if (!s || typeof s.endpoint !== 'string' || !/^https:\/\//.test(s.endpoint) || JSON.stringify(s).length > 4000) return json({ error: 'bad subscription' }, origin, 400);
+      if (!s || typeof s.endpoint !== 'string' || !pushHost(s.endpoint) || JSON.stringify(s).length > 4000) return json({ error: 'bad subscription' }, origin, 400);
       const id = validId(b.id) ? b.id : b64u(crypto.getRandomValues(new Uint8Array(18)));
       const old = await env.REMIND.getWithMetadata('s:' + id, 'json');
       const meta = { tz: String(b.tz || 'Europe/Istanbul').slice(0, 64), lang: b.lang === 'tr' ? 'tr' : 'ar', done: (old.metadata || {}).done || '' };
