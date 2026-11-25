@@ -168,9 +168,10 @@ button:focus-visible { outline: 3px solid var(--goldl); outline-offset: 2px; }
   filter: grayscale(1) sepia(1) saturate(1.5) brightness(.92); }
 #world { z-index: 1; }
 @media (max-width: 760px) { .wm { bottom: 104px; inset-inline-start: 16px; width: 34vmin; opacity: .13; } }
+body:focus{outline:none}
 </style>
 </head>
-<body>
+<body tabindex="-1">
 <div id="stage">
   <img class="wm" src="" data-wm="" alt="" aria-hidden="true">
   <div id="world">

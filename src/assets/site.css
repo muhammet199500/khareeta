@@ -585,3 +585,6 @@ footer .flinks { display: inline-flex; gap: 18px; flex-wrap: wrap; }
 .policy .upd { color: var(--muted); font-family: var(--uf); font-size: 14px; margin: 0 0 6px; }
 .policy h2 { font-size: clamp(20px, 2.2vw, 24px); margin-top: 1.6em; }
 .policy p { margin: 0 0 .7em; }
+
+/* body has tabindex=-1 so Chrome's tap-to-search does not open on plain text; no ring when it takes focus */
+body:focus { outline: none; }

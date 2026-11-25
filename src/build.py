@@ -284,7 +284,7 @@ def head(lang, title, depth, desc='', extra='', image=None):
 <link rel="stylesheet" href="{u}assets/fonts.css">
 <link rel="stylesheet" href="{u}assets/site.css">{extra}
 </head>
-<body>
+<body tabindex="-1">
 <a class="skip" href="#main">{S[lang]['skip']}</a>
 '''
 
@@ -831,7 +831,7 @@ def page_slides(lang, L):
 <style>:root {{ --sv-hf: {hf}; --sv-bf: {bf}; }}</style>
 <link rel="stylesheet" href="{P['assets']}slides.css">
 </head>
-<body>
+<body tabindex="-1">
 <div class="sv" data-lesson="{L['n']}">
   <div class="sv-top">
     <div class="g"><a href="index.html" aria-label="{E(s['backLesson'])}"><span aria-hidden="true">{'→' if lang == 'ar' else '←'}</span> <span class="lbl">{E(s['lesson'])} {DIG(lang, L['n'])}</span></a><img src="{P['media']}logo.webp" alt=""></div>
