@@ -317,7 +317,7 @@ def series_of(lang, depth):
 
 def footer(lang, depth):
     s, u = S[lang], up(depth)
-    return f'''<footer><div class="wrap"><div class="f1"><img src="{u}media/logo.webp" alt=""><span>{E(s['foot'])}</span></div><a href="{home_of(lang, depth)}">{E(LIB[lang]['title'])}</a></div><div class="wrap app-cta" id="appCta" hidden><button class="btn line" id="installBtn" type="button" hidden>{E(s['install'])}</button><span id="iosHint" hidden>{E(s['iosHint'])}</span></div></footer>
+    return f'''<footer><div class="wrap"><div class="f1"><img src="{u}media/logo.webp" alt=""><span>{E(s['foot'])}</span></div><span class="flinks"><a href="{home_of(lang, depth)}">{E(LIB[lang]['title'])}</a><a href="{home_of(lang, depth)[:-len('index.html')]}privacy.html">{'سياسة الخصوصية' if lang == 'ar' else 'Gizlilik Politikası'}</a></span></div><div class="wrap app-cta" id="appCta" hidden><button class="btn line" id="installBtn" type="button" hidden>{E(s['install'])}</button><span id="iosHint" hidden>{E(s['iosHint'])}</span></div></footer>
 '''
 
 def dialog(lang):
@@ -1026,6 +1026,24 @@ def write_app_files():
     sw = open(f'{ROOT}/sw_template.js', encoding='utf-8').read()
     w('sw.js', sw.replace('__VERSION__', h.hexdigest()[:12]).replace('__PRECACHE__', json.dumps(urls, ensure_ascii=False, indent=1)))
 
+from privacy import PRIVACY, UPDATED as PRIV_UPDATED
+
+def page_privacy(lang):
+    s, P = S[lang], PRIVACY[lang]; depth = 0 if lang == 'ar' else 1; u = up(depth)
+    other = 'tr/privacy.html' if lang == 'ar' else '../privacy.html'
+    body = ''.join(f'<h2>{E(h)}</h2>' + ''.join(f'<p>{E(x)}</p>' for x in paras) for h, paras in P['body'])
+    return head(lang, f'{P["title"]} · {s["brand"]}', depth, P['sub']) + bar(lang, depth, other) + f'''<main id="main">
+<section class="phead">{ORN}<div class="wrap">
+  <nav class="crumbs" aria-label="breadcrumb"><a href="index.html">{E(s['home'])}</a><span class="sep">›</span><span>{E(P['title'])}</span></nav>
+  <h1>{E(P['title'])}</h1><p>{E(P['sub'])}</p>
+</div></section>
+<section class="band"><div class="wrap"><article class="prose policy">
+  <p class="upd">{E(P['updated'])}: {E(PRIV_UPDATED[lang])}</p>
+  {body}
+</article></div></section>
+</main>
+''' + footer(lang, depth) + f'<script src="{u}assets/site.js"></script>\n</body>\n</html>\n'
+
 def page_404():
     h = head('ar', 'الصفحة غير موجودة · Sayfa bulunamadı', 0).replace('<meta charset="utf-8">', '<meta charset="utf-8">\n<base href="/khareeta/">')
     return h + bar('ar', 0, 'tr/index.html') + f'''<main id="main">
@@ -1065,6 +1083,7 @@ def build():
     w('index.html', page_library('ar')); w('tr/index.html', page_library('tr'))
     w(MAIN_PAGE, page_series('ar')); w('tr/' + MAIN_PAGE, page_series('tr'))
     w('tasks.html', page_tasks('ar')); w('tr/tasks.html', page_tasks('tr'))
+    w('privacy.html', page_privacy('ar')); w('tr/privacy.html', page_privacy('tr'))
     shutil.copy(f'{ROOT}/tasks.json', f'{OUT}/tasks.json')
     for L in LIVE:
         n = L['n']

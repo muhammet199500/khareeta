@@ -580,3 +580,8 @@ html[lang=ar] .scard h3 { word-spacing: .22em; }
 .today .donebtn { color: #7A1F30; }
 .today .donebtn.on { background: #2E8B57; border-color: #2E8B57; color: #fff; }
 .today .tgo { color: #5E1624; }
+footer .flinks { display: inline-flex; gap: 18px; flex-wrap: wrap; }
+.policy { max-width: 760px; }
+.policy .upd { color: var(--muted); font-family: var(--uf); font-size: 14px; margin: 0 0 6px; }
+.policy h2 { font-size: clamp(20px, 2.2vw, 24px); margin-top: 1.6em; }
+.policy p { margin: 0 0 .7em; }
