@@ -31,12 +31,32 @@ self.addEventListener('fetch', e => {
     return;
   }
 
+  const nav = req.mode === 'navigate';
   e.respondWith(fetch(req).then(res => {
     if (res.ok && res.type === 'basic') { const copy = res.clone(); caches.open(CACHE).then(c => c.put(req, copy)); }
+    // a page reached through a redirect cannot be handed back as is: the browser would show an error
+    if (nav && res.redirected) return res.blob().then(b => new Response(b, { status: res.status, statusText: res.statusText, headers: res.headers }));
     return res;
   }).catch(() => caches.match(req, { ignoreSearch: true }).then(hit => hit ||
-    (req.mode === 'navigate' ? caches.match(new URL('index.html', self.registration.scope).href) : Response.error()))));
+    (nav ? caches.match(new URL('index.html', self.registration.scope).href) : null))
+    .catch(() => null)
+    .then(hit => hit || (nav ? offlinePage(url) : Response.error()))));
 });
+
+/* shown instead of the browser's grey error page when there is no connection and no saved copy */
+function offlinePage(url) {
+  const tr = /\/tr\//.test(url.pathname);
+  const t = tr
+    ? { lang: 'tr', dir: 'ltr', h: 'İnternet bağlantısı yok', p: 'Bu sayfa şu anda açılamadı. Bağlantınızı kontrol edip tekrar deneyin.', b: 'Tekrar dene', home: 'Ders Kütüphanesi', name: 'Ve Tevâsav bi’l-Hak' }
+    : { lang: 'ar', dir: 'rtl', h: 'لا يوجد اتصال بالإنترنت', p: 'تعذّر فتح هذه الصفحة الآن. تأكّد من اتصالك ثم حاول مرة أخرى.', b: 'حاول مرة أخرى', home: 'مكتبة الدروس', name: 'وتواصوا بالحق' };
+  const root = self.registration.scope + (tr ? 'tr/' : '');
+  const html = `<!doctype html><html lang="${t.lang}" dir="${t.dir}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${t.name}</title>
+<style>body{margin:0;min-height:100vh;display:flex;align-items:center;justify-content:center;background:#0F2E2A;color:#C6D6D0;font-family:'IBM Plex Sans Arabic','Source Sans 3',Tahoma,sans-serif;text-align:center}
+main{padding:32px 24px;max-width:420px}img{width:120px;height:auto;margin-bottom:12px}h1{color:#F3DFA8;font-size:24px;margin:0 0 10px}p{font-size:17px;line-height:1.7;margin:0 0 26px}
+button{font:inherit;font-size:17px;font-weight:600;background:#D9B26A;color:#0F2E2A;border:0;border-radius:30px;padding:12px 30px;cursor:pointer}a{display:block;margin-top:18px;color:#D9B26A;font-size:15px}</style></head>
+<body><main><img src="${self.registration.scope}media/logo.webp" alt=""><h1>${t.h}</h1><p>${t.p}</p><button onclick="location.reload()">${t.b}</button><a href="${root}index.html">${t.home}</a></main></body></html>`;
+  return new Response(html, { status: 503, headers: { 'Content-Type': 'text/html; charset=utf-8' } });
+}
 
 /* ---- daily-task reminders: the push carries no text; today's task is read from tasks.json ---- */
 const SETTINGS_URL = new URL('__wt_settings.json', self.registration.scope).href;
