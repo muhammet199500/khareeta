@@ -17,18 +17,18 @@ PRIVACY = {
   'تستطيع حذف ذلك كله في أي وقت بمسح بيانات الموقع من إعدادات المتصفح، أو بزر «مسح تقدّمي المحفوظ على هذا الجهاز».',
  ]),
  ('إرسال الواجب', [
-  'عند ضغط «أرسِل واجبي» يُصنع ملف PDF على جهازك، وأنت تختار التطبيق الذي ترسله به (مثل واتساب أو تيليجرام) والشخص الذي يصله. لا يمرّ الملف بخوادمنا.',
+  'عند ضغط «أرسِل واجبي» يُصنع ملف PDF على جهازك، وأنت تختار التطبيق الذي ترسله به والشخص الذي يصله. لا يمرّ الملف بخوادمنا.',
  ]),
  ('التذكير بالواجب (اختياري)', [
-  'إن ضغطت «فعّل التذكير» وسمحت بالإشعارات، نحفظ لدى خدمتنا على Cloudflare: عنوان الإشعارات الذي يعطيه متصفحك لهذا الغرض، ومنطقتك الزمنية، ولغة الموقع، وتاريخ آخر يوم ضغطت فيه «أنهيتُ»، ورقمًا عشوائيًا يميّز جهازك.',
+  'إن ضغطت «فعّل التذكير» وسمحت بالإشعارات، نحفظ لدى خدمة التذكير الخاصة بنا: عنوان الإشعارات الذي يعطيه متصفحك لهذا الغرض، ومنطقتك الزمنية، ولغة الموقع، وتاريخ آخر يوم ضغطت فيه «أنهيتُ»، ورقمًا عشوائيًا يميّز جهازك.',
   'لا نعرف من هذه البيانات اسمك ولا هويتك، ونستعملها لإرسال التذكير في وقته وإيقافه حين تنهي واجبك فقط.',
   'تُحذف حين تضغط «أوقِف التذكير»، أو حين تمنع الإشعارات من إعدادات جهازك.',
  ]),
  ('إحصاءات الزيارات', [
-  'نستعمل Cloudflare Web Analytics لمعرفة أعداد الزيارات العامة والصفحات الأكثر قراءة. لا يستعمل ملفات تعريف الارتباط، ولا يتتبّع الزائر من موقع إلى آخر، ولا يعرّفنا بأي زائر بعينه.',
+  'نستعمل خدمة إحصاءات لمعرفة أعداد الزيارات العامة والصفحات الأكثر قراءة. لا تستعمل ملفات تعريف الارتباط، ولا تتتبّع الزائر من موقع إلى آخر، ولا تعرّفنا بأي زائر بعينه.',
  ]),
  ('الاستضافة', [
-  'يُستضاف الموقع على GitHub Pages، ويمرّ نطاقه عبر Cloudflare. هذه الخدمات تعالج بيانات تقنية لازمة لإيصال الصفحات إليك، مثل عنوان IP، بحسب سياسات الخصوصية الخاصة بها.',
+  'يُستضاف الموقع لدى مزوّدي استضافة وتوصيل، وهؤلاء يعالجون بيانات تقنية لازمة لإيصال الصفحات إليك، مثل عنوان IP، بحسب سياسات الخصوصية الخاصة بهم.',
  ]),
  ('الأطفال', [
   'الدروس موجّهة للعامة، ولا نجمع عمدًا بيانات شخصية من أحد، صغيرًا كان أو كبيرًا.',
@@ -51,18 +51,18 @@ PRIVACY = {
   'Bunların hepsini istediğiniz zaman tarayıcı ayarlarından site verilerini silerek ya da «Bu cihazda kayıtlı ilerlememi sil» düğmesiyle silebilirsiniz.',
  ]),
  ('Ödevin gönderilmesi', [
-  '«Ödevimi gönder»e dokunduğunuzda cihazınızda bir PDF dosyası oluşturulur; onu hangi uygulamayla (WhatsApp, Telegram gibi) ve kime göndereceğinizi siz seçersiniz. Dosya sunucularımızdan geçmez.',
+  '«Ödevimi gönder»e dokunduğunuzda cihazınızda bir PDF dosyası oluşturulur; onu hangi uygulamayla ve kime göndereceğinizi siz seçersiniz. Dosya sunucularımızdan geçmez.',
  ]),
  ('Ödev hatırlatması (isteğe bağlı)', [
-  '«Hatırlatmayı aç»a dokunup bildirimlere izin verirseniz, Cloudflare üzerindeki hizmetimizde şunlar saklanır: tarayıcınızın bu amaçla verdiği bildirim adresi, saat diliminiz, site dili, en son «Bitirdim» dediğiniz günün tarihi ve cihazınızı ayırt eden rastgele bir numara.',
+  '«Hatırlatmayı aç»a dokunup bildirimlere izin verirseniz, hatırlatma hizmetimizde şunlar saklanır: tarayıcınızın bu amaçla verdiği bildirim adresi, saat diliminiz, site dili, en son «Bitirdim» dediğiniz günün tarihi ve cihazınızı ayırt eden rastgele bir numara.',
   'Bu bilgilerden adınızı ya da kimliğinizi öğrenemeyiz; yalnızca hatırlatmayı zamanında göndermek ve ödevinizi bitirdiğinizde durdurmak için kullanırız.',
   '«Hatırlatmayı kapat»a dokunduğunuzda ya da cihaz ayarlarından bildirimleri engellediğinizde silinir.',
  ]),
  ('Ziyaret istatistikleri', [
-  'Genel ziyaret sayılarını ve en çok okunan sayfaları görmek için Cloudflare Web Analytics kullanırız. Çerez kullanmaz, ziyaretçiyi siteden siteye takip etmez ve bize hiçbir ziyaretçiyi tek tek tanıtmaz.',
+  'Genel ziyaret sayılarını ve en çok okunan sayfaları görmek için bir istatistik hizmeti kullanırız. Çerez kullanmaz, ziyaretçiyi siteden siteye takip etmez ve bize hiçbir ziyaretçiyi tek tek tanıtmaz.',
  ]),
  ('Barındırma', [
-  'Site GitHub Pages üzerinde barındırılır ve alan adı Cloudflare üzerinden geçer. Bu hizmetler, sayfaları size ulaştırmak için gerekli teknik verileri (IP adresi gibi) kendi gizlilik politikalarına göre işler.',
+  'Site, barındırma ve iletim hizmeti sağlayıcıları üzerinden yayınlanır. Bu sağlayıcılar, sayfaları size ulaştırmak için gerekli teknik verileri (IP adresi gibi) kendi gizlilik politikalarına göre işler.',
  ]),
  ('Çocuklar', [
   'Dersler herkese yöneliktir; küçük ya da büyük, kimseden bilerek kişisel veri toplamayız.',
