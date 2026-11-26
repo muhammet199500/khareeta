@@ -1066,7 +1066,7 @@ def page_privacy(lang):
 ''' + footer(lang, depth) + f'<script src="{u}assets/site.js"></script>\n</body>\n</html>\n'
 
 def page_404():
-    h = head('ar', 'الصفحة غير موجودة · Sayfa bulunamadı', 0).replace('<meta charset="utf-8">', '<meta charset="utf-8">\n<base href="/khareeta/">')
+    h = head('ar', 'الصفحة غير موجودة · Sayfa bulunamadı', 0).replace('<meta charset="utf-8">', '<meta charset="utf-8">\n<base href="/">')
     return h + bar('ar', 0, 'tr/index.html') + f'''<main id="main">
 <section class="phead">{ORN}<div class="wrap">
   <p class="eb">٤٠٤</p><h1>الصفحة غير موجودة</h1><p>ربما تغيّر الرابط. ابدأ من الصفحة الرئيسية لتجد الدرس الذي تبحث عنه.</p>
