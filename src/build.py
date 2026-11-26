@@ -1059,7 +1059,7 @@ html[lang=ar] body {{ word-spacing: .14em; }}
 @media (max-width: 760px) {{
   #tools {{ display: none; }}
   #bar .m-only {{ display: inline-flex; align-items: center; justify-content: center; font-size: 22px; padding: 0 14px; }}
-  #top {{ background: linear-gradient(var(--parch) 72%, rgba(244,238,225,0)); height: 66px; }}
+  #top {{ background: linear-gradient(var(--parch) 72%, rgba(244,238,225,0)); height: calc(66px + env(safe-area-inset-top)); }}
   #brand img {{ width: 40px; height: 40px; }}
 }}
 </style>'''

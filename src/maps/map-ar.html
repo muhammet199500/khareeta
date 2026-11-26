@@ -56,8 +56,8 @@ button:focus-visible { outline: 3px solid var(--goldl); outline-offset: 2px; }
   background: var(--goldl); border: 3px solid var(--parch); }
 
 /* top bar */
-#top { position: fixed; top: 0; left: 0; right: 0; height: 60px; display: flex; align-items: center; justify-content: space-between;
-  gap: 12px; padding: 0 18px; pointer-events: none; }
+#top { position: fixed; top: 0; left: 0; right: 0; height: calc(60px + env(safe-area-inset-top)); box-sizing: border-box; display: flex; align-items: center; justify-content: space-between;
+  gap: 12px; padding: env(safe-area-inset-top) max(18px, env(safe-area-inset-right)) 0 max(18px, env(safe-area-inset-left)); pointer-events: none; }
 #brand { font-family: 'Reem Kufi', sans-serif; font-size: 18px; color: var(--muted); }
 #brand { display: flex; align-items: center; gap: 10px; }
 #brand img { width: 46px; height: 46px; object-fit: contain; filter: drop-shadow(0 2px 4px rgba(15,46,42,.25)); }
@@ -67,7 +67,7 @@ button:focus-visible { outline: 3px solid var(--goldl); outline-offset: 2px; }
 #crumb:empty { display: none; }
 
 /* card */
-#card { position: fixed; left: 20px; top: 72px; bottom: 96px; width: clamp(300px, 38vw, 600px); display: flex; align-items: center;
+#card { position: fixed; left: 20px; top: calc(72px + env(safe-area-inset-top)); bottom: 96px; width: clamp(300px, 38vw, 600px); display: flex; align-items: center;
   pointer-events: none; opacity: 0; transform: translateX(-24px); transition: opacity .35s, transform .35s; }
 #card.open { opacity: 1; transform: none; }
 #card .in { pointer-events: auto; width: 100%; max-height: 100%; overflow: auto; background: var(--card); border: 1px solid var(--cline);
@@ -145,7 +145,7 @@ button:focus-visible { outline: 3px solid var(--goldl); outline-offset: 2px; }
   #brand span { display: none; }
   #card { left: 8px; right: 8px; width: auto; top: auto; bottom: 74px; height: 48vh; align-items: flex-end; transform: translateY(24px); }
   #bar button.opt { display: none; }
-  #tools { bottom: auto; top: 64px; left: 8px; }
+  #tools { bottom: auto; top: calc(64px + env(safe-area-inset-top)); left: 8px; }
 }
 @media (prefers-reduced-motion: reduce) {
   .node, #links path, #card, .ov.show { transition: none !important; animation: none !important; }
