@@ -501,7 +501,7 @@ def page_series(lang):
         if L['live']:
             pts.append(f'<li class="live"><a href="l{L["n"]}/index.html">{inner}</a></li>')
         else:
-            pts.append(f'<li>{inner}</li>')
+            pts.append(f'<li>{inner}<span class="m">{E(s["soon"])}</span></li>')
     rows = []
     for L in LESSONS:
         n = DIG(lang, L['n'])
@@ -516,10 +516,6 @@ def page_series(lang):
         else:
             rows.append(f'''<li class="lrow"><span class="n">{n}</span><div><h3>{E(L[lang])}</h3><p>{E(s["lesson"])} {n}</p></div><span class="pill">{E(s["soon"])}</span></li>''')
     b = f'l{latest["n"]}/'
-    tools = [tool('text', s['tText'], f'{b}text.html', True),
-             tool('slides', s['tSlides'], f'{b}slides.html'), tool('map', s['tMap'], f'map.html#l{latest["n"]}'),
-             tool('qa', s['tQA'], f'{b}qa.html'), tool('quiz', s['tQuiz'], f'{b}quiz.html')]
-    if (latest['n'], lang) in SUM: tools.append(tool('sum', s['tSum'], f'{b}summary.html'))
     meal = f'<p class="meal">{E(latest["verseTr"])}</p>' if lang == 'tr' else ''
     secs = []
     for sec in MAIN['sections']:
@@ -547,14 +543,13 @@ def page_series(lang):
   <h3 class="h3s">{E(s['pointsT'])}</h3><p class="sub">{E(s['pointsS'])}</p>
   <ol class="points">{''.join(pts)}</ol>
 <h3 class="h3s">{E(s['latestT'])}</h3><p class="sub">{E(s['latestS'])}</p>
-  <article class="open">
-    {player(lang, latest, u)}
+  <article class="open brief">
     <div>
       <span class="num">{E(s['lesson'])} {DIG(lang, latest['n'])}</span>
       <h3><a href="{b}index.html">{E(latest[lang])}</a></h3>
       <p>{E(latest['descAr'] if lang == 'ar' else latest['descTr'])}</p>
       <p class="verse" lang="ar" dir="rtl">{E(latest['verse'])}</p>{meal}
-      <div class="tools">{''.join(tools)}</div>
+      <a class="btn" href="{b}index.html">{E(s['open'])} <span aria-hidden="true">{'←' if lang == 'ar' else '→'}</span></a>
     </div>
   </article>
   <h3 class="h3s" id="lessons">{E(s['listT'])}</h3><p class="sub">{E(s['listS'])}</p>
@@ -676,8 +671,9 @@ def page_library(lang):
 <div class="ft"><span class="spill">{E(lb['st']['live'])}</span><a class="go" href="{x['page']}">{E(lb['open'])} <span aria-hidden="true">{'←' if lang == 'ar' else '→'}</span></a></div>'''
             title = f'<a href="{x["page"]}">{E(x[lang])}</a>'
         else:
-            body = f'<div class="ft"><span class="spill {x["status"]}">{E(lb["st"][x["status"]])}</span></div>'
-            title = E(x[lang])
+            # not available yet: one short card (title + state), so the student reaches the lessons sooner
+            cards.append(f'''<li class="scard mini {x['cat']} {x['status']}" data-cat="{x['cat']}" data-q="{E(q)}"><div class="cover"><div class="top"><p class="tag">{E(catname[x['cat']])}</p><span class="spill {x["status"]}">{E(lb["st"][x["status"]])}</span></div><h3>{E(x[lang])}</h3>{f'<p class="by">{E(by)}</p>' if by else ''}</div></li>''')
+            continue
         cards.append(f'''<li class="scard {x['cat']} {x['status']}" data-cat="{x['cat']}" data-q="{E(q)}"><div class="cover"><p class="tag">{E(catname[x['cat']])}</p><h3>{title}</h3>{f'<p class="by">{E(by)}</p>' if by else ''}</div>
 <div class="bd">{body}</div></li>''')
     # latest lessons, newest first, from every live series
@@ -689,7 +685,7 @@ def page_library(lang):
                 where = f'{x[lang]} · {sec[lang]}'
                 cont[L['n']] = dict(t=f'{s["lesson"]} {DIG(lang, L["n"])}: {L[lang]}', w=where)
                 rows.append(f'''<li class="lrow live" data-q="{E(L['ar'] + ' ' + L['tr'] + ' ' + x['ar'] + ' ' + x['tr'] + ' ' + sec['ar'] + ' ' + sec['tr'])}"><span class="n">{DIG(lang, L['n'])}</span><div><p class="where">{E(where)}</p><h3><a href="l{L['n']}/index.html">{E(L[lang])}</a></h3><p class="lprog" data-lesson="{L['n']}" hidden></p></div><a class="pill" href="l{L['n']}/index.html">{E(lb['openL'])}</a></li>''')
-    rows.reverse()
+    rows.reverse(); rows = rows[:5]
     redirect = f'''<script>{{ const h = location.hash, m = /^#l(\\d+)$/.exec(h); if (m) location.replace('map.html' + h); else if (h === '#lessons') location.replace('{MAIN_PAGE}#lessons'); }}</script>'''
     data = json.dumps(cont, ensure_ascii=False).replace('</', '<\\/')
     return head(lang, f'{s["brand"]} · {lb["title"]}', depth, lb['lead']) + redirect + bar(lang, depth, other) + f'''<main id="main" class="lib">
@@ -714,16 +710,16 @@ def page_library(lang):
   <p><button class="btn line" id="inMore" type="button" hidden>{E(lb['inMore'])}</button></p>
 </div></section>
 
+<section class="band tight" id="latest"><div class="wrap">
+  <h2>{E(lb['latestT'])}</h2><p class="sub">{E(lb['latestS'])}</p>
+  <ol class="list">{''.join(rows)}</ol>
+</div></section>
+
 <section class="band" id="series"><div class="wrap">
   <h2>{E(lb['seriesT'])}</h2><p class="sub">{E(lb['seriesS'])}</p>
   <ul class="cats" aria-label="{E(lb['seriesT'])}">{cats}</ul>
   <ul class="sgrid">{''.join(cards)}</ul>
   <p class="noresult" id="noResult" hidden>{E(lb['noResult'])}</p>
-</div></section>
-
-<section class="band tight" id="latest"><div class="wrap">
-  <h2>{E(lb['latestT'])}</h2><p class="sub">{E(lb['latestS'])}</p>
-  <ol class="list">{''.join(rows)}</ol>
 </div></section>
 
 <section class="band tight"><div class="wrap">
