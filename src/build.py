@@ -75,7 +75,13 @@ S = {
     doneWhat=dict(text='الدرس المكتوب', slides='الشرائح', map='الخريطة', qa='الأسئلة والأجوبة', quiz='الاختبار', lesson='هذا الدرس'),
     doneOff='أنهيتُ {x}', doneOn='✓ أنهيتَ {x}', doneUndo='اضغط مرة أخرى للتراجع', doneHint='عندما تنتهي من كل أدوات الدرس، اضغط هنا لتسجّل أنك أتممته.',
     progReset='مسح تقدّمي المحفوظ على هذا الجهاز', install='ثبّت الموقع على جوالك كتطبيق',
-    iosHint='على iPhone: اضغط زر المشاركة ثم «إضافة إلى الشاشة الرئيسية» ليصير الموقع تطبيقًا يعمل بلا إنترنت.',
+    iosT='تثبيت الموقع على الآيفون',
+    iosIntro='على iPhone وiPad يتم التثبيت من Safari بثلاث خطوات:',
+    ios1='اضغط زر المشاركة في شريط Safari.',
+    ios2='انزل في القائمة واختر «إضافة إلى الشاشة الرئيسية».',
+    ios3='اضغط «إضافة»، وستجد الموقع بأيقونته بين تطبيقاتك: يفتح بملء الشاشة ويعمل بلا إنترنت.',
+    iosSafari='إن كان الموقع مفتوحًا في متصفح آخر فافتحه في Safari أولًا.',
+    themeDark='الوضع الليلي', themeLight='الوضع النهاري',
     fsDown='تصغير الخط', fsUp='تكبير الخط', fsLabel='حجم الخط', tShare=('صورة للمشاركة', 'صورة الدرس لواتساب وتيليجرام، فيها رمز يفتحه'),
     tSum=('ملخص الدرس للطباعة', 'صفحة واحدة برمز QR يفتح الدرس'),
     chipSum='الملخص', sumPrint='اطبع', sumPdf='تنزيل PDF', sumImg='تنزيل صورة',
@@ -124,7 +130,13 @@ S = {
     doneWhat=dict(text='Yazılı dersi', slides='Sunumu', map='Haritayı', qa='Soru-cevabı', quiz='Testi', lesson='Bu dersi'),
     doneOff='{x} bitirdim', doneOn='✓ {x} bitirdiniz', doneUndo='Geri almak için tekrar dokunun', doneHint='Dersin bütün araçlarını bitirdiğinizde, dersi tamamladığınızı kaydetmek için buraya dokunun.',
     progReset='Bu cihazda kayıtlı ilerlememi sil', install='Siteyi telefonunuza uygulama olarak yükleyin',
-    iosHint='iPhone’da: Paylaş düğmesine, ardından «Ana Ekrana Ekle»ye dokunun; site internetsiz de çalışan bir uygulama olur.',
+    iosT='iPhone’a yükleme',
+    iosIntro='iPhone ve iPad’de yükleme Safari’den üç adımla yapılır:',
+    ios1='Safari’nin Paylaş düğmesine dokunun.',
+    ios2='Listeden «Ana Ekrana Ekle»yi seçin.',
+    ios3='«Ekle»ye dokunun; site simgesiyle uygulamalarınız arasına eklenir, tam ekran açılır ve internetsiz çalışır.',
+    iosSafari='Site başka bir tarayıcıda açıksa önce Safari’de açın.',
+    themeDark='Gece modu', themeLight='Gündüz modu',
     fsDown='Yazıyı küçült', fsUp='Yazıyı büyüt', fsLabel='Yazı boyutu', tShare=('Paylaşım görseli', 'WhatsApp ve Telegram için dersi açan QR kodlu görsel'),
     tSum=('Yazdırılabilir ders özeti', 'Dersi açan QR kodlu tek sayfa'),
     chipSum='Özet', sumPrint='Yazdır', sumPdf='PDF indir', sumImg='Görsel indir',
@@ -193,7 +205,8 @@ def ar_count(n, one, two, few, many):
 LIB = {
  'ar': dict(title='مكتبة الدروس', nav='السلاسل',
     lead='سلاسل علمية في العقيدة والفقه والحديث. لكل درس: فيديو، ودرس مكتوب، وعرض شرائح، وخريطة تفاعلية، وأسئلة وأجوبة، واختبار.',
-    search='ابحث عن سلسلة أو درس…', noResult='لا نتائج. جرّب كلمة أخرى.',
+    search='ابحث في الدروس: كلمة أو عبارة…', noResult='لا نتائج. جرّب كلمة أخرى.',
+    inT='نتائج داخل الدروس', inMore='عرض نتائج أكثر', inCount='{n} موضعًا',
     contT='تابع من حيث توقفت', contB='أكمِل',
     seriesT='السلاسل', seriesS='اختر سلسلة لتفتح صفحتها ودروسها.', all='الكل',
     st=dict(live='متاحة', prep='قيد الإعداد', soon='قريبًا'), stMeta=dict(prep='قيد الإعداد', soon='تبدأ قريبًا'),
@@ -205,7 +218,8 @@ LIB = {
  ),
  'tr': dict(title='Ders Kütüphanesi', nav='Seriler',
     lead='Akide, fıkıh ve hadis alanında ilmî seriler. Her derste: video, yazılı ders, sunum, etkileşimli harita, soru-cevap ve test.',
-    search='Seri veya ders ara…', noResult='Sonuç yok. Başka bir kelime deneyin.',
+    search='Derslerde ara: kelime veya ifade…', noResult='Sonuç yok. Başka bir kelime deneyin.',
+    inT='Derslerin içinden sonuçlar', inMore='Daha fazla sonuç göster', inCount='{n} yer',
     contT='Kaldığın yerden devam et', contB='Devam et',
     seriesT='Seriler', seriesS='Sayfasını ve derslerini açmak için bir seri seçin.', all='Tümü',
     st=dict(live='Yayında', prep='Hazırlanıyor', soon='Yakında'), stMeta=dict(prep='Hazırlanıyor', soon='Yakında başlıyor'),
@@ -273,6 +287,16 @@ def app_tags(lang, root):
 <meta name="apple-mobile-web-app-title" content="{E(S[lang]['brand'])}">
 <script>if ('serviceWorker' in navigator) addEventListener('load', () => navigator.serviceWorker.register('{root}sw.js').catch(() => {{}}));</script>'''
 
+# applies the student's saved day/night choice before first paint, so the page never flashes the other scheme
+THEME_BOOT = "<script>try{var t=localStorage.getItem('wt.theme');if(t==='dark'||t==='light')document.documentElement.dataset.theme=t}catch(e){}</script>"
+
+THEME_I = ('<svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>'
+           '<svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>')
+
+def theme_btn(lang):
+    s = S[lang]
+    return f'<button class="tbtn" id="themeBtn" type="button" aria-label="{E(s["themeDark"])}" title="{E(s["themeDark"])}" data-dark="{E(s["themeDark"])}" data-light="{E(s["themeLight"])}">{THEME_I}</button>'
+
 def head(lang, title, depth, desc='', extra='', image=None):
     d = 'rtl' if lang == 'ar' else 'ltr'
     u = up(depth)
@@ -281,6 +305,7 @@ def head(lang, title, depth, desc='', extra='', image=None):
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+{THEME_BOOT}
 <title>{E(title)}</title>
 <meta name="description" content="{E(desc or S[lang]['lead'])}">
 {og_tags(lang, title, desc or S[lang]['lead'], image)}
@@ -303,7 +328,7 @@ def bar(lang, depth, other):
     olabel = 'Türkçe' if lang == 'ar' else 'العربية'
     return f'''<header class="bar"><div class="wrap">
   <a class="brand" href="{home_of(lang, depth)}"><img src="{root_up(lang, depth)}media/logo.webp" alt="{E(s['brand'])}"><span>{E(s['brand'])}</span></a>
-  <nav aria-label="{E(s['home'])}"><a class="hide-s" href="{home_of(lang, depth)}">{E(s['home'])}</a><a class="hide-s" href="{home_of(lang, depth)}#series">{E(LIB[lang]['nav'])}</a>{tasks_link(lang, depth)}<a class="lang" lang="{olang}" hreflang="{olang}" href="{other}">{olabel}</a></nav>
+  <nav aria-label="{E(s['home'])}"><a class="hide-s" href="{home_of(lang, depth)}">{E(s['home'])}</a><a class="hide-s" href="{home_of(lang, depth)}#series">{E(LIB[lang]['nav'])}</a>{tasks_link(lang, depth)}{theme_btn(lang)}<a class="lang" lang="{olang}" hreflang="{olang}" href="{other}">{olabel}</a></nav>
 </div></header>
 '''
 
@@ -325,7 +350,23 @@ def series_of(lang, depth):
 
 def footer(lang, depth):
     s, u = S[lang], up(depth)
-    return f'''<footer><div class="wrap"><div class="f1"><img src="{u}media/logo.webp" alt=""><span>{E(s['foot'])}</span></div><span class="flinks"><a href="{home_of(lang, depth)}">{E(LIB[lang]['title'])}</a><a href="{home_of(lang, depth)[:-len('index.html')]}privacy.html">{'سياسة الخصوصية' if lang == 'ar' else 'Gizlilik Politikası'}</a></span></div><div class="wrap app-cta" id="appCta" hidden><button class="btn line" id="installBtn" type="button" hidden>{E(s['install'])}</button><span id="iosHint" hidden>{E(s['iosHint'])}</span></div></footer>
+    return f'''<footer><div class="wrap"><div class="f1"><img src="{u}media/logo.webp" alt=""><span>{E(s['foot'])}</span></div><span class="flinks"><a href="{home_of(lang, depth)}">{E(LIB[lang]['title'])}</a><a href="{home_of(lang, depth)[:-len('index.html')]}privacy.html">{'سياسة الخصوصية' if lang == 'ar' else 'Gizlilik Politikası'}</a></span></div><div class="wrap app-cta" id="appCta" hidden><button class="btn line" id="installBtn" type="button" hidden>{E(s['install'])}</button><button class="btn line" id="iosBtn" type="button" hidden>{E(s['install'])}</button></div>{ios_dialog(lang)}</footer>
+'''
+
+IOS_I = dict(
+    share='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 14V3M8.5 6.5 12 3l3.5 3.5"/><path d="M5 10v9a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-9"/></svg>',
+    add='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="4"/><path d="M12 9v6M9 12h6"/></svg>',
+    ok='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg>')
+
+def ios_dialog(lang):
+    """Illustrated add-to-home-screen steps for iPhone/iPad, opened from the footer install button."""
+    s = S[lang]
+    steps = ''.join(f'<li><span class="ic">{IOS_I[i]}</span><span>{E(s[k])}</span></li>'
+                    for i, k in (('share', 'ios1'), ('add', 'ios2'), ('ok', 'ios3')))
+    return f'''<dialog id="iosDlg" aria-labelledby="iosDlgT">
+  <div class="dbar"><span id="iosDlgT">{E(s['iosT'])}</span><button id="iosDlgX" aria-label="×">×</button></div>
+  <div class="ios-in"><p>{E(s['iosIntro'])}</p><ol class="ios-steps">{steps}</ol><p class="ios-note">{E(s['iosSafari'])}</p></div>
+</dialog>
 '''
 
 def dialog(lang):
@@ -518,6 +559,10 @@ def page_series(lang):
   </article>
   <h3 class="h3s" id="lessons">{E(s['listT'])}</h3><p class="sub">{E(s['listS'])}</p>
   <ol class="list">{''.join(rows)}</ol>
+  <div class="tools grid" style="margin-top:18px">
+    {tool('quiz', (QALL[lang]['btn'], QALL[lang]['btnS']), 'quiz-all.html')}
+    {tool('qa', (CARDS[lang]['title'], CARDS[lang]['sub']), 'cards.html')}
+  </div>
   <p class="reset-wrap"><button class="linkbtn" id="progReset" type="button" hidden>{E(s['progReset'])}</button></p>
 </div></section>
 
@@ -654,9 +699,19 @@ def page_library(lang):
   <label class="srch">{SEARCH_I}<input id="libQ" type="search" placeholder="{E(lb['search'])}" aria-label="{E(lb['search'])}" autocomplete="off"></label></div>
 </div></div></section>
 
-{today_band(lang)}<section class="band" id="contBand" hidden><div class="wrap">
+{today_band(lang)}<section class="band tight" id="cardBand" data-due="{E(CARDS[lang]['homeDue'])}" data-none="{E(CARDS[lang]['homeNone'])}" hidden><div class="wrap">
+  <div class="cont cardcont"><span class="ic">{I['quiz']}</span><div><p class="where">{E(CARDS[lang]['homeT'])}</p><h3 id="cardMsg"></h3></div><a class="btn" href="cards.html">{E(CARDS[lang]['homeB'])}</a></div>
+</div></section>
+
+<section class="band" id="contBand" hidden><div class="wrap">
   <h2>{E(lb['contT'])}</h2>
   <div class="cont"><span class="ic">{I['text']}</span><div><p class="where" id="contW"></p><h3 id="contT"></h3><p class="lprog" id="contP" hidden></p></div><a class="btn" id="contA" href="#">{E(lb['contB'])}</a></div>
+</div></section>
+
+<section class="band tight" id="inBand" hidden><div class="wrap">
+  <h2>{E(lb['inT'])}</h2><p class="sub" id="inCount"></p>
+  <ol class="hits" id="inHits"></ol>
+  <p><button class="btn line" id="inMore" type="button" hidden>{E(lb['inMore'])}</button></p>
 </div></section>
 
 <section class="band" id="series"><div class="wrap">
@@ -749,8 +804,9 @@ def page_hub(lang, L):
 </main>
 ''' + footer(lang, depth) + dialog(lang) + f'<script src="{P["assets"]}site.js"></script>\n</body>\n</html>\n'
 
-def page_text(lang, L):
-    s = S[lang]; P = lesson_paths(lang, L); n = L['n']; depth = 1 if lang == 'ar' else 2
+def lesson_doc(lang, n):
+    """The written lesson: markdown → (html body, its table of contents).
+       Used by the lesson page and by the search index, so both always see the same headings and ids."""
     md = open(f'{ROOT}/content/lesson{n}-{lang}.md', encoding='utf-8').read()
     body = markdown.markdown(md, extensions=['tables', 'sane_lists'])
     body = re.sub(r'<table>', '<div class="tbl"><table>', body); body = body.replace('</table>', '</table></div>')
@@ -763,6 +819,32 @@ def page_text(lang, L):
     body = re.sub(r'<(h[23])>(.*?)</\1>', hid, body)
     body = ayahify(body)
     if lang == 'tr': body = arabify(body)
+    return body, toc
+
+def plain(h):
+    """html → the words in it, one space between them (for the search index)"""
+    return re.sub(r'\s+', ' ', html.unescape(re.sub(r'<[^>]+>', ' ', h))).strip()
+
+def search_index(lang):
+    """What the search on the home page looks in: every section of every written lesson, and every question.
+       Each entry: [lesson number, where it is, link, text]. The file is saved for offline use with the rest."""
+    out = []
+    for L in LIVE:
+        n = L['n']
+        body, _ = lesson_doc(lang, n)
+        # split the lesson at its main headings: one entry per section, linking to that heading
+        parts = re.split(r'<h2 id="(s\d+)">(.*?)</h2>', body)
+        for k in range(1, len(parts), 3):
+            sid, hd, txt = parts[k], plain(parts[k + 1]), plain(parts[k + 2])
+            if txt: out.append([n, hd, f'l{n}/text.html#{sid}', txt])
+        DQ = DOCQA if lang == 'ar' else DOCQA_TR
+        for q, a, _tf in DQ.get(n, []):
+            out.append([n, S[lang]['qaT'], f'l{n}/qa.html', plain(q) + ' — ' + plain(a)])
+    return out
+
+def page_text(lang, L):
+    s = S[lang]; P = lesson_paths(lang, L); n = L['n']; depth = 1 if lang == 'ar' else 2
+    body, toc = lesson_doc(lang, n)
     tocl = ''.join(f'<li><a href="#{i}">{E(t)}</a></li>' for i, t in toc)
     return head(lang, f'{L[lang]} · {s["tText"][0]}', depth, L['descAr'] if lang == 'ar' else L['descTr'], image=share_img(lang, L)) + bar(lang, depth, P['other']('text.html')) + f'<main id="main" data-lesson="{n}" data-page="text">\n' + phead(lang, L, L[lang], s['textSub'], s['tText'][0]) + f'''
 <section class="band"><div class="wrap"><div class="doc">
@@ -1066,7 +1148,7 @@ def page_privacy(lang):
 ''' + footer(lang, depth) + f'<script src="{u}assets/site.js"></script>\n</body>\n</html>\n'
 
 def page_404():
-    h = head('ar', 'الصفحة غير موجودة · Sayfa bulunamadı', 0).replace('<meta charset="utf-8">', '<meta charset="utf-8">\n<base href="/khareeta/">')
+    h = head('ar', 'الصفحة غير موجودة · Sayfa bulunamadı', 0).replace('<meta charset="utf-8">', '<meta charset="utf-8">\n<base href="/">')
     return h + bar('ar', 0, 'tr/index.html') + f'''<main id="main">
 <section class="phead">{ORN}<div class="wrap">
   <p class="eb">٤٠٤</p><h1>الصفحة غير موجودة</h1><p>ربما تغيّر الرابط. ابدأ من الصفحة الرئيسية لتجد الدرس الذي تبحث عنه.</p>
@@ -1075,6 +1157,132 @@ def page_404():
 <section class="band"><div class="wrap" style="display:flex;gap:10px;flex-wrap:wrap"><a class="btn" href="index.html">الصفحة الرئيسية</a><a class="btn ghost" lang="tr" href="tr/index.html">Ana sayfa</a></div></section>
 </main>
 ''' + footer('ar', 0) + '</body>\n</html>\n'
+
+# ------------------------------------------------------------------ memory cards, and the section's whole-quiz
+# بطاقات الحفظ: كل بطاقة سؤال ووجهه الآخر جوابه. ما يذكره الطالب يبتعد موعده، وما ينساه يعود قريبًا.
+# المواعيد تُحفظ على جهاز الطالب وحده (كبقية تقدّمه)، والبطاقات تُبنى من أسئلة المراجعة ومن العبارة الجامعة لكل درس.
+CARDS = {
+ 'ar': dict(nav='بطاقات الحفظ', title='بطاقات الحفظ',
+    sub='بطاقات تعود إليك على فترات متباعدة حتى يرسخ المحفوظ: ما أتقنتَه يبتعد موعده، وما نسيتَه يعود قريبًا.',
+    show='أظهر الجواب', ok='أذكرها', again='لم أذكرها', left='بقي {n}',
+    doneT='انتهت بطاقات اليوم', doneS='أحسنت. البطاقات تعود في مواعيدها، فعُد غدًا.',
+    noneT='لا بطاقات مستحقة اليوم', noneS='كل بطاقاتك في مواعيد لاحقة. ويمكنك أن تراجع قبل الموعد إن شئت.',
+    ahead='راجع قبل الموعد', restart='ابدأ من جديد',
+    statNew='جديدة', statLearn='قيد الحفظ', statKnown='راسخة',
+    jamiaTag='العبارة الجامعة', jamiaQ='ما العبارة الجامعة لهذا الدرس؟', qaTag='سؤال مراجعة',
+    homeT='بطاقات المراجعة', homeDue='عندك {n} مستحقة اليوم', homeNone='لا بطاقات مستحقة اليوم',
+    homeB='ابدأ المراجعة', backHome='الرجوع إلى الصفحة الرئيسية',
+    priv='مواعيد بطاقاتك تُحفظ على هذا الجهاز وحده: لا حساب، ولا إرسال لأي بيانات.'),
+ 'tr': dict(nav='Ezber kartları', title='Ezber kartları',
+    sub='Kartlar giderek artan aralıklarla geri döner: iyi bildiğin uzaklaşır, unuttuğun yakında tekrar gelir.',
+    show='Cevabı göster', ok='Biliyorum', again='Bilmiyorum', left='{n} kaldı',
+    doneT='Bugünün kartları bitti', doneS='Tebrikler. Kartlar vakti gelince döner; yarın tekrar uğrayın.',
+    noneT='Bugün vakti gelen kart yok', noneS='Bütün kartlarınız ileri bir tarihte. İsterseniz vaktinden önce de çalışabilirsiniz.',
+    ahead='Vaktinden önce çalış', restart='Yeniden başla',
+    statNew='yeni', statLearn='öğreniliyor', statKnown='pekişti',
+    jamiaTag='Toparlayıcı ifade', jamiaQ='Bu dersin toparlayıcı ifadesi nedir?', qaTag='Tekrar sorusu',
+    homeT='Tekrar kartları', homeDue='Bugün {n} kart sizi bekliyor', homeNone='Bugün vakti gelen kart yok',
+    homeB='Tekrara başla', backHome='Ana sayfaya dön',
+    priv='Kart tarihleriniz yalnızca bu cihazda saklanır: hesap yok, hiçbir veri gönderilmez.'),
+}
+QALL = {
+ 'ar': dict(nav='اختبار القسم', title='اختبار القسم الجامع',
+    sub='أسئلة مخلوطة من كل دروس القسم المنشورة، تكشف ما رسخ منها وما يحتاج إعادة.',
+    btn='اختبار القسم الجامع', btnS='أسئلة من كل الدروس مخلوطة', backHome='الرجوع إلى الصفحة الرئيسية'),
+ 'tr': dict(nav='Bölüm testi', title='Bölümün genel testi',
+    sub='Bölümün yayımlanmış bütün derslerinden karışık sorular: neyin pekiştiğini, neyin tekrara muhtaç olduğunu gösterir.',
+    btn='Bölümün genel testi', btnS='Bütün derslerden karışık sorular', backHome='Ana sayfaya dön'),
+}
+
+def card_data(lang):
+    """The cards built at build time: the review questions of every published lesson.
+       The lesson's gathering sentence is added in the page itself, from the map's data file."""
+    DQ = DOCQA if lang == 'ar' else DOCQA_TR
+    fx = (lambda h: arabify(ayahify(h))) if lang == 'tr' else ayahify
+    out = []
+    for L in LIVE:
+        n = L['n']
+        for k, (q, a, _tf) in enumerate(DQ.get(n, [])):
+            out.append(dict(id=f'q{n}-{k}', n=n, q=fx(q), a=fx(a)))
+    return out
+
+def page_cards(lang):
+    s, c = S[lang], CARDS[lang]; depth = 0 if lang == 'ar' else 1
+    other = 'tr/cards.html' if lang == 'ar' else '../cards.html'
+    data = json.dumps(dict(cards=card_data(lang),
+                           lessons={L['n']: f'{s["lesson"]} {DIG(lang, L["n"])}: {L[lang]}' for L in LIVE},
+                           t=c), ensure_ascii=False).replace('</', '<\\/')
+    crumbs = f'<a href="index.html">{E(s["home"])}</a><span class="sep">›</span><span>{E(c["title"])}</span>'
+    back = ('→ ' if lang == 'ar' else '← ') + E(c['backHome'])
+    return head(lang, f'{c["title"]} · {s["brand"]}', depth, c['sub']) + bar(lang, depth, other) + f'''<main id="main">
+<section class="phead">{ORN}<div class="wrap">
+  <nav class="crumbs" aria-label="breadcrumb">{crumbs}</nav>
+  <h1>{E(c['title'])}</h1><p>{E(c['sub'])}</p>
+  <a class="btn ghost back" href="index.html">{back}</a>
+</div></section>
+<section class="band"><div class="wrap narrow">
+  <p class="cstat" id="cStat" hidden></p>
+  <div class="quiz" id="cards" aria-live="polite">
+    <div id="cBox" hidden>
+      <p class="qprog"><span id="cProg"></span><span id="cLeft"></span></p>
+      <div class="bar2"><i id="cBar"></i></div>
+      <p class="ctag" id="cTag"></p>
+      <p class="qtext" id="cQ"></p>
+      <div class="ca" id="cA" hidden></div>
+      <div class="acts">
+        <button class="btn" id="cShow" type="button">{E(c['show'])}</button>
+        <button class="btn" id="cOk" type="button" hidden>✓ {E(c['ok'])}</button>
+        <button class="btn ghost" id="cAgain" type="button" hidden>↻ {E(c['again'])}</button>
+      </div>
+    </div>
+    <div id="cDone" hidden>
+      <p class="score" id="cDoneT"></p>
+      <p id="cDoneS" style="color:var(--mint);margin:0 0 4px"></p>
+      <div class="acts"><button class="btn" id="cAhead" type="button" hidden>{E(c['ahead'])}</button><a class="btn ghost" href="index.html">{E(c['backHome'])}</a></div>
+    </div>
+  </div>
+  <p class="note" style="margin-top:14px">{E(c['priv'])}</p>
+</div></section>
+</main>
+<script type="application/json" id="cardData">{data}</script>
+''' + footer(lang, depth) + f'<script src="{"data.js" if lang == "ar" else "data_tr.js"}"></script>\n<script src="{up(depth)}assets/site.js"></script>\n</body>\n</html>\n'
+
+def page_quiz_all(lang):
+    s, qa = S[lang], QALL[lang]; depth = 0 if lang == 'ar' else 1
+    other = 'tr/quiz-all.html' if lang == 'ar' else '../quiz-all.html'
+    crumbs = f'<a href="index.html">{E(s["home"])}</a><span class="sep">›</span><a href="{MAIN_PAGE}#taghut">{E(MAIN[lang])}</a><span class="sep">›</span><span>{E(qa["title"])}</span>'
+    back = ('→ ' if lang == 'ar' else '← ') + E(qa['backHome'])
+    return head(lang, f'{qa["title"]} · {s["brand"]}', depth, qa['sub']) + bar(lang, depth, other) + f'''<main id="main">
+<section class="phead">{ORN}<div class="wrap">
+  <nav class="crumbs" aria-label="breadcrumb">{crumbs}</nav>
+  <h1>{E(qa['title'])}</h1><p>{E(qa['sub'])}</p>
+  <a class="btn ghost back" href="{MAIN_PAGE}#lessons">{back}</a>
+</div></section>
+<section class="band"><div class="wrap narrow">
+  <div class="quiz" id="quiz" data-lesson="all" data-count="15" aria-live="polite">
+    <div id="qcard">
+      <p class="qprog"><span id="qprog"></span><span id="qscoreNow"></span></p>
+      <div class="bar2"><i id="qbar"></i></div>
+      <p class="qtext" id="qtext"></p>
+      <div class="qopts" id="qopts"></div>
+      <div class="qfb" id="qfb"></div>
+      <div class="acts"><button class="btn" id="qnext" hidden></button></div>
+    </div>
+    <div id="qres" hidden>
+      <svg class="ring" id="qring" viewBox="0 0 120 120" aria-hidden="true"></svg>
+      <p class="score" id="qscore"></p>
+      <p id="qmsg" style="color:var(--mint);margin:0"></p>
+      <p id="qwrongT" style="margin:18px 0 0;font-family:var(--hf);color:var(--goldl)">{E(s['wrongT'])}</p>
+      <ul class="review" id="qwrong"></ul>
+      <div class="acts"><button class="btn" id="qretry">{E(s['retry'])}</button><a class="btn ghost" href="{MAIN_PAGE}#lessons">{E(qa['backHome'])}</a></div>
+    </div>
+  </div>
+</div></section>
+</main>
+''' + footer(lang, depth) + f'<script src="{"data.js" if lang == "ar" else "data_tr.js"}"></script>\n<script src="{up(depth)}assets/site.js"></script>\n</body>\n</html>\n'
+
+# بصمة SHA-256 لمفتاح توقيع تطبيق Google Play، مثل '14:6D:E9:...' — تُستخرج كما في guide/android-play.md
+PLAY_SHA256 = ''
 
 # ------------------------------------------------------------------ write
 # Cloudflare Web Analytics: visit counts for the teacher only; no cookies, no tracking of individual students
@@ -1105,6 +1313,8 @@ def build():
     w(MAIN_PAGE, page_series('ar')); w('tr/' + MAIN_PAGE, page_series('tr'))
     w('tasks.html', page_tasks('ar')); w('tr/tasks.html', page_tasks('tr'))
     w('privacy.html', page_privacy('ar')); w('tr/privacy.html', page_privacy('tr'))
+    w('cards.html', page_cards('ar')); w('tr/cards.html', page_cards('tr'))
+    w('quiz-all.html', page_quiz_all('ar')); w('tr/quiz-all.html', page_quiz_all('tr'))
     shutil.copy(f'{ROOT}/tasks.json', f'{OUT}/tasks.json')
     for L in LIVE:
         n = L['n']
@@ -1116,10 +1326,19 @@ def build():
             if (n, lang) in SUM: w(f'{pre}l{n}/summary.html', page_summary(lang, L))
             w(f'{pre}l{n}/text.html', page_text(lang, L))
     w('404.html', page_404())
+    # what the home-page search looks in; saved for offline use like the rest of the site
+    w('search.json', json.dumps(search_index('ar'), ensure_ascii=False))
+    w('tr/search.json', json.dumps(search_index('tr'), ensure_ascii=False))
     write_app_files()
     w('.nojekyll', '')
     # custom domain for GitHub Pages, and files for search engines
     w('CNAME', 'tevhidim.com\n')
+    # تطبيق Google Play: بعد إنشاء مفتاح التوقيع (الدليل في guide/android-play.md) توضع بصمته في PLAY_SHA256
+    # فيُنشر الملف الذي يثبت أن التطبيق لهذا الموقع، ويفتح التطبيق بلا شريط متصفح
+    if PLAY_SHA256:
+        w('.well-known/assetlinks.json', '[{"relation": ["delegate_permission/common.handle_all_urls"], '
+          '"target": {"namespace": "android_app", "package_name": "com.tevhidim.app", '
+          '"sha256_cert_fingerprints": ["' + PLAY_SHA256 + '"]}}]\n')
     pages = sorted(os.path.relpath(os.path.join(dp, f), OUT).replace(os.sep, '/') for dp, dn, fn in os.walk(OUT) for f in fn if f.endswith('.html') and f not in ('404.html',) and not f.startswith('_'))
     urls = ''.join(f'  <url><loc>{SITE}{p[:-10] if p.endswith("index.html") else p}</loc></url>\n' for p in pages)
     w('sitemap.xml', f'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n{urls}</urlset>\n')

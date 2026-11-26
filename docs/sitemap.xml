@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://tevhidim.com/cards.html</loc></url>
   <url><loc>https://tevhidim.com/</loc></url>
   <url><loc>https://tevhidim.com/l1/</loc></url>
   <url><loc>https://tevhidim.com/l1/qa.html</loc></url>
@@ -22,7 +23,9 @@
   <url><loc>https://tevhidim.com/la-ilaha.html</loc></url>
   <url><loc>https://tevhidim.com/map.html</loc></url>
   <url><loc>https://tevhidim.com/privacy.html</loc></url>
+  <url><loc>https://tevhidim.com/quiz-all.html</loc></url>
   <url><loc>https://tevhidim.com/tasks.html</loc></url>
+  <url><loc>https://tevhidim.com/tr/cards.html</loc></url>
   <url><loc>https://tevhidim.com/tr/</loc></url>
   <url><loc>https://tevhidim.com/tr/l1/</loc></url>
   <url><loc>https://tevhidim.com/tr/l1/qa.html</loc></url>
@@ -45,5 +48,6 @@
   <url><loc>https://tevhidim.com/tr/la-ilaha.html</loc></url>
   <url><loc>https://tevhidim.com/tr/map.html</loc></url>
   <url><loc>https://tevhidim.com/tr/privacy.html</loc></url>
+  <url><loc>https://tevhidim.com/tr/quiz-all.html</loc></url>
   <url><loc>https://tevhidim.com/tr/tasks.html</loc></url>
 </urlset>

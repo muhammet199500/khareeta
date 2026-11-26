@@ -101,7 +101,14 @@
     addEventListener('beforeinstallprompt', e => { e.preventDefault(); ev = e; cta.hidden = false; $('#installBtn').hidden = false; });
     $('#installBtn').addEventListener('click', async () => { if (!ev) return; ev.prompt(); try { await ev.userChoice; } catch (e) {} ev = null; cta.hidden = true; });
     addEventListener('appinstalled', () => { cta.hidden = true; });
-    if (/iphone|ipad|ipod/i.test(navigator.userAgent) && !/crios|fxios/i.test(navigator.userAgent)) { cta.hidden = false; $('#iosHint').hidden = false; }
+    if (/iphone|ipad|ipod/i.test(navigator.userAgent) && !/crios|fxios/i.test(navigator.userAgent)) {
+      const b = $('#iosBtn'), d = $('#iosDlg');
+      if (b && d) {
+        cta.hidden = false; b.hidden = false;
+        b.addEventListener('click', () => d.showModal());
+        $('#iosDlgX').addEventListener('click', () => d.close());
+      }
+    }
   }
 
   /* ---- video: show a calm placeholder when the file is not uploaded yet ---- */
@@ -177,7 +184,16 @@
   /* ---- standalone quiz ---- */
   const qz = $('#quiz');
   if (qz && window.LESSONS) {
-    const L = window.LESSONS[+qz.dataset.lesson - 1], U = L.ui, Q = L.quiz, LET = U.letters || ['A', 'B', 'C', 'D'];
+    /* one lesson's quiz, or — on the section's whole quiz — questions drawn from every published lesson, shuffled */
+    const ALL = qz.dataset.lesson === 'all';
+    const L = ALL ? window.LESSONS[0] : window.LESSONS[+qz.dataset.lesson - 1], U = L.ui;
+    const pick = () => {
+      const pool = window.LESSONS.reduce((a, x) => a.concat(x.quiz || []), []);
+      for (let i = pool.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [pool[i], pool[j]] = [pool[j], pool[i]]; }
+      return pool.slice(0, Math.min(+qz.dataset.count || 15, pool.length));
+    };
+    let Q = ALL ? pick() : L.quiz;
+    const LET = U.letters || ['A', 'B', 'C', 'D'];
     let qi = 0, score = 0, wrong = [], done = false;
     const card = $('#qcard'), res = $('#qres');
     function render() {
@@ -213,7 +229,7 @@
       paint();
       res.querySelector('button, a').focus();
     }
-    $('#qretry').onclick = () => { qi = 0; score = 0; wrong = []; render(); };
+    $('#qretry').onclick = () => { if (ALL) Q = pick(); qi = 0; score = 0; wrong = []; render(); };
     render();
   }
 })();
@@ -246,6 +262,77 @@
   /* search + categories */
   const norm = s => s.toLowerCase().normalize('NFD').replace(/[̀-ًͯ-ٰٟـ’'ʿ‘]/g, '')
     .replace(/[أإآٱ]/g, 'ا').replace(/ى/g, 'ي').replace(/ة/g, 'ه').replace(/ı/g, 'i').replace(/\s+/g, ' ').trim();
+
+  /* ---- searching inside the lessons themselves ----
+     The same normalising as above, but one character at a time, keeping for each normalised character
+     the place it came from. So a word is found however it is written (with the marks above the letters
+     or without them), while the snippet is still shown as the lesson writes it. */
+  const normChar = c => c.toLowerCase().normalize('NFD').replace(/[̀-ًͯ-ٰٟـ’'ʿ‘]/g, '')
+    .replace(/[أإآٱ]/g, 'ا').replace(/ى/g, 'ي').replace(/ة/g, 'ه').replace(/ı/g, 'i');
+  function normMap(s) {
+    let out = '', map = [];
+    for (let i = 0; i < s.length; i++) { const c = normChar(s[i]); for (const ch of c) { out += ch; map.push(i); } }
+    return [out, map];
+  }
+  const esc = s => s.replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+  const SHOW = 8;                                        /* hits shown before «show more» */
+  let IDX = null, idxTried = false, hits = [], hshown = SHOW;
+  const inBand = $('#inBand'), hitsEl = $('#inHits'), moreB = $('#inMore'), countEl = $('#inCount');
+  async function loadIndex() {
+    if (IDX || idxTried) return IDX;
+    idxTried = true;
+    try { IDX = await (await fetch('search.json')).json(); } catch (e) { IDX = null; }
+    return IDX;
+  }
+  /* A passage is a hit when every word of the query is in it, in any order.
+     Each of those words is then highlighted in the piece of the passage shown. */
+  function spansOf(nt, map, words) {
+    const spans = [];
+    for (const w of words) {
+      let at = nt.indexOf(w), n = 0;
+      if (at < 0) return null;
+      while (at >= 0 && n < 12) {
+        const last = map[at + w.length - 1];
+        spans.push([map[at], (last == null ? map[at] : last) + 1, w.length]);
+        n++; at = nt.indexOf(w, at + w.length);
+      }
+    }
+    return spans.sort((a, b) => a[0] - b[0]);
+  }
+  function snippet(text, spans) {
+    const main = spans.reduce((a, b) => (b[2] > a[2] ? b : a), spans[0]);   /* show around the longest word */
+    const from = Math.max(0, main[0] - 70), to = Math.min(text.length, main[0] + 190);
+    let out = '', at = from;
+    for (const sp of spans) {
+      if (sp[1] <= from || sp[0] >= to || sp[0] < at || sp[1] > to) continue;   /* never highlight half a word at the edge */
+      out += esc(text.slice(at, sp[0])) + '<mark>' + esc(text.slice(sp[0], Math.min(sp[1], to))) + '</mark>';
+      at = Math.min(sp[1], to);
+    }
+    return (from ? '…' : '') + out + esc(text.slice(at, to)) + (to < text.length ? '…' : '');
+  }
+  function paintHits() {
+    hitsEl.innerHTML = hits.slice(0, hshown).map(h =>
+      `<li class="hit"><a href="${h.u}"><span class="hw">${esc(h.w)}</span><span class="hs">${h.s}</span></a></li>`).join('');
+    moreB.hidden = hits.length <= hshown;
+  }
+  function searchIn(t) {
+    hits = []; hshown = SHOW;
+    const words = t.split(' ').filter(w => w.length >= 2);
+    if (IDX && words.length) {
+      for (const row of IDX) {
+        const n = row[0], where = row[1], url = row[2], text = row[3];
+        const nm = normMap(text), spans = spansOf(nm[0], nm[1], words);
+        if (!spans) continue;
+        hits.push({ u: url, w: ((D[n] && D[n].t) || '') + (where ? ' · ' + where : ''), s: snippet(text, spans) });
+      }
+    }
+    if (inBand) {
+      inBand.hidden = !hits.length;
+      if (hits.length) { countEl.textContent = AR ? num(hits.length) + ' موضعًا' : hits.length + ' yer'; paintHits(); }
+    }
+    return hits.length;
+  }
+  if (moreB) moreB.addEventListener('click', () => { hshown += SHOW * 2; paintHits(); });
   let cat = '';
   const q = $('#libQ');
   function apply() {
@@ -255,7 +342,9 @@
     let rowsShown = 0;
     $$('#latest .lrow').forEach(r => { const ok = !t || norm(r.dataset.q).includes(t); r.hidden = !ok; if (ok) rowsShown++; });
     $('#latest').hidden = !rowsShown;
-    $('#noResult').hidden = !!(shown || rowsShown);
+    const inside = searchIn(t);
+    $('#noResult').hidden = !!(shown || rowsShown || inside);
+    if (t.length >= 2 && !IDX) loadIndex().then(ix => { if (ix && norm(q.value || '') === t) apply(); });
   }
   $$('.cats button').forEach(b => b.addEventListener('click', () => {
     cat = b.dataset.cat; $$('.cats button').forEach(x => x.classList.toggle('on', x === b)); apply();
@@ -694,3 +783,126 @@ document.addEventListener('click', e => {
   if (!/^(A|BUTTON|INPUT|TEXTAREA|SELECT|SUMMARY)$/.test(t.tagName) && !t.hasAttribute('tabindex')) t.setAttribute('tabindex', '-1');
   try { t.focus({ preventScroll: true }); } catch (err) {}
 });
+
+/* ---- day / night choice (saved on the student's device, like the font size) ---- */
+(function () {
+  const b = document.getElementById('themeBtn'); if (!b) return;
+  const mq = matchMedia('(prefers-color-scheme: dark)');
+  const cur = () => document.documentElement.dataset.theme || (mq.matches ? 'dark' : 'light');
+  const label = () => { const t = cur() === 'dark' ? b.dataset.light : b.dataset.dark; b.setAttribute('aria-label', t); b.title = t; };
+  b.addEventListener('click', () => {
+    const next = cur() === 'dark' ? 'light' : 'dark';
+    document.documentElement.dataset.theme = next;
+    try { localStorage.setItem('wt.theme', next); } catch (e) {}
+    label();
+  });
+  if (mq.addEventListener) mq.addEventListener('change', label);
+  label();
+})();
+
+/* ---- memory cards: every card comes back at its own time ----
+   Leitner boxes: a card the student remembers moves up a box and comes back later;
+   one they forget drops to the first box and comes back today. Everything is kept on
+   the student's own device, like the rest of their progress: no account, nothing sent. */
+(function () {
+  const el = document.getElementById('cardData'); if (!el) return;
+  const $ = s => document.querySelector(s);
+  const AR = document.documentElement.lang === 'ar';
+  const num = n => AR ? String(n).replace(/\d/g, d => '٠١٢٣٤٥٦٧٨٩'[d]) : String(n);
+  const D = JSON.parse(el.textContent), T = D.t, KEY = 'wt.cards.v1';
+  const DAYS = [0, 1, 3, 7, 16, 35];                   /* how long each box waits, in days */
+  const pad = n => String(n).padStart(2, '0');
+  const iso = d => d.getFullYear() + '-' + pad(d.getMonth() + 1) + '-' + pad(d.getDate());
+  const TODAY = iso(new Date());
+  const plus = n => { const d = new Date(); d.setDate(d.getDate() + n); return iso(d); };
+  const ls = { get() { try { return JSON.parse(localStorage.getItem(KEY)) || {}; } catch (e) { return {}; } },
+               set(o) { try { localStorage.setItem(KEY, JSON.stringify(o)); } catch (e) {} } };
+
+  /* the review questions come with the page; the gathering sentence comes from the map's data file */
+  const all = D.cards.slice();
+  (window.LESSONS || []).forEach((L, i) => {
+    const n = i + 1;
+    if (L && L.jamia && D.lessons[n]) all.push({ id: 'j' + n, n: n, q: T.jamiaQ, a: L.jamia, j: 1 });
+  });
+
+  const box = id => (ls.get()[id] || [0, TODAY])[0];
+  const due = c => { const r = ls.get()[c.id]; return !r || r[1] <= TODAY; };
+  const shuffle = a => { for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; };
+
+  const bStat = $('#cStat'), bBox = $('#cBox'), bDone = $('#cDone');
+  let queue = [], total = 0, seen = 0;
+
+  function stats() {
+    const rec = ls.get();
+    let nw = 0, learn = 0, known = 0;
+    all.forEach(c => { const b = (rec[c.id] || [0])[0]; if (!b) nw++; else if (b < 3) learn++; else known++; });
+    bStat.hidden = false;
+    bStat.textContent = `${T.statKnown}: ${num(known)} · ${T.statLearn}: ${num(learn)} · ${T.statNew}: ${num(nw)}`;
+  }
+  function start(ahead) {
+    queue = shuffle(all.filter(c => ahead || due(c)));
+    total = queue.length; seen = 0;
+    if (!queue.length) return finish(true);
+    bDone.hidden = true; bBox.hidden = false;
+    render();
+  }
+  function render() {
+    const c = queue[0];
+    $('#cProg').textContent = `${num(Math.min(seen + 1, total))} / ${num(total)}`;
+    $('#cLeft').textContent = T.left.replace('{n}', num(queue.length));
+    $('#cBar').style.width = (100 * seen / total) + '%';
+    $('#cTag').textContent = (D.lessons[c.n] || '') + ' · ' + (c.j ? T.jamiaTag : T.qaTag);
+    $('#cQ').innerHTML = c.q;
+    $('#cA').innerHTML = c.a; $('#cA').hidden = true;
+    $('#cShow').hidden = false; $('#cOk').hidden = true; $('#cAgain').hidden = true;
+    $('#cShow').focus();
+  }
+  function reveal() {
+    $('#cA').hidden = false;
+    $('#cShow').hidden = true; $('#cOk').hidden = false; $('#cAgain').hidden = false;
+    $('#cOk').focus();
+  }
+  function answer(ok) {
+    const c = queue.shift(), rec = ls.get(), b = (rec[c.id] || [0])[0];
+    if (ok) { const nb = Math.min(b + 1, 5); rec[c.id] = [nb, plus(DAYS[nb])]; seen++; }
+    else { rec[c.id] = [1, TODAY]; queue.push(c); }      /* forgotten: comes back at the end of this round */
+    ls.set(rec); stats();
+    if (!queue.length) finish(false); else render();
+  }
+  function finish(nothingDue) {
+    bBox.hidden = true; bDone.hidden = false;
+    $('#cDoneT').textContent = nothingDue ? T.noneT : T.doneT;
+    $('#cDoneS').textContent = nothingDue ? T.noneS : T.doneS;
+    const a = $('#cAhead');
+    a.hidden = !nothingDue && !all.some(c => !due(c));
+    a.textContent = nothingDue ? T.ahead : T.ahead;
+    stats();
+  }
+  $('#cShow').addEventListener('click', reveal);
+  $('#cOk').addEventListener('click', () => answer(true));
+  $('#cAgain').addEventListener('click', () => answer(false));
+  $('#cAhead').addEventListener('click', () => start(true));
+  addEventListener('keydown', e => {
+    if (bBox.hidden) return;
+    if (e.key === ' ' || e.key === 'Enter') { if (!$('#cShow').hidden) { e.preventDefault(); reveal(); } }
+    else if (e.key === '1' && !$('#cAgain').hidden) answer(false);
+    else if (e.key === '2' && !$('#cOk').hidden) answer(true);
+  });
+  stats(); start(false);
+})();
+
+/* ---- home page: how many cards are due today ---- */
+(function () {
+  const band = document.getElementById('cardBand'); if (!band) return;
+  const AR = document.documentElement.lang === 'ar';
+  const num = n => AR ? String(n).replace(/\d/g, d => '٠١٢٣٤٥٦٧٨٩'[d]) : String(n);
+  const pad = n => String(n).padStart(2, '0');
+  const d = new Date(), TODAY = d.getFullYear() + '-' + pad(d.getMonth() + 1) + '-' + pad(d.getDate());
+  let rec = {}; try { rec = JSON.parse(localStorage.getItem('wt.cards.v1')) || {}; } catch (e) {}
+  const started = Object.keys(rec).length;
+  if (!started) return;                                  /* the band appears once the student has begun */
+  const n = Object.values(rec).filter(r => r[1] <= TODAY).length;
+  const t = band.dataset;
+  document.getElementById('cardMsg').textContent = n ? (t.due || '').replace('{n}', num(n)) : (t.none || '');
+  band.hidden = false;
+})();

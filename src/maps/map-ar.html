@@ -6,13 +6,17 @@
 <title>خريطة دروس صفة الكفر بالطاغوت</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Noto+Naskh+Arabic:wght@400..700&family=Reem+Kufi:wght@400..700&display=swap">
+<script>try{var t=localStorage.getItem('wt.theme');if(t==='dark'||t==='light')document.documentElement.dataset.theme=t}catch(e){}</script>
 <style>
 /* VOICE: calm, scholarly, a teacher's board in a study circle
    IDEA: a lesson tree drawn on parchment that grows branch by branch as the teacher speaks
    PICTURE: the mind map itself fills the screen; cards open beside it with the verse and its meaning
    COLOUR and TYPE: deep green ink, parchment ground, gilt accent; Reem Kufi titles, Naskh text, Amiri for Quran
    LAYOUT: full-bleed map, thin top bar, card on the left (bottom sheet on phones), controls along the bottom */
-:root { --qxf: 'Reem Kufi', sans-serif; color-scheme: light; --ink: #0F2E2A; --parch: #F4EEE1; --card: #FCFAF4; --gold: #85601C; --goldl: #D9B26A; --body: #34433F; --line: #DCD0B6; --muted: #6F6654; }
+:root { --qxf: 'Reem Kufi', sans-serif; color-scheme: light; --ink: #0F2E2A; --parch: #F4EEE1; --card: #FCFAF4; --gold: #85601C; --goldl: #D9B26A; --body: #34433F; --line: #DCD0B6; --muted: #6F6654;
+  --band: #0F2E2A; --onband: var(--onband); --ongold: #0F2E2A; --parch2: #EFE7D6; --cline: #E6DCC8;
+  --panel: rgba(252,250,244,.94); --d3bg: #EFE7D6; --d3ink: #2D3B37; --d3line: #C9B98F;
+  --stageA: #FAF6EC; --stageB: 241,234,218; --stageC: 230,220,198; --stageD: #EEE6D4; }
 * { box-sizing: border-box; min-width: 0; }
 html, body { margin: 0; height: 100%; overflow: hidden; background: var(--parch); color: var(--ink); font: 17px/1.6 'Noto Naskh Arabic', Tahoma, serif; }
 button { font: inherit; cursor: pointer; }
@@ -20,8 +24,8 @@ button:focus-visible { outline: 3px solid var(--goldl); outline-offset: 2px; }
 
 #stage { position: fixed; inset: 0; overflow: hidden; touch-action: none; cursor: grab;
   background:
-    radial-gradient(ellipse at 55% 45%, #FAF6EC 0%, rgba(241,234,218,.9) 55%, rgba(230,220,198,.55) 100%),
-    radial-gradient(rgba(133,96,28,.18) 1px, transparent 1.4px) 0 0 / 24px 24px, #EEE6D4; }
+    radial-gradient(ellipse at 55% 45%, var(--stageA) 0%, rgba(var(--stageB),.9) 55%, rgba(var(--stageC),.55) 100%),
+    radial-gradient(rgba(133,96,28,.18) 1px, transparent 1.4px) 0 0 / 24px 24px, var(--stageD); }
 #stage.drag { cursor: grabbing; }
 #world { position: absolute; left: 0; top: 0; width: 8000px; height: 5000px; transform-origin: 0 0; will-change: transform; }
 #links { position: absolute; left: 0; top: 0; overflow: visible; pointer-events: none; }
@@ -38,16 +42,16 @@ button:focus-visible { outline: 3px solid var(--goldl); outline-offset: 2px; }
 .node .more { display: inline-block; margin-inline-start: 10px; font-size: .7em; color: var(--goldl); vertical-align: middle; }
 .node.d2 .more, .node.d3 .more { color: var(--gold); }
 .node.open .more { opacity: .35; }
-.d0 { font-family: 'Reem Kufi', Tahoma, sans-serif; font-weight: 700; font-size: 56px; color: #F7F3EA; background: var(--ink);
+.d0 { font-family: 'Reem Kufi', Tahoma, sans-serif; font-weight: 700; font-size: 56px; color: var(--onband); background: var(--band);
   border: 5px solid var(--goldl); border-radius: 28px; padding: 30px 54px; line-height: 1.35; box-shadow: 0 18px 50px rgba(15,46,42,.28); }
-.d1 { font-family: 'Reem Kufi', Tahoma, sans-serif; font-weight: 600; font-size: 42px; color: #F7F3EA; background: var(--ink);
+.d1 { font-family: 'Reem Kufi', Tahoma, sans-serif; font-weight: 600; font-size: 42px; color: var(--onband); background: var(--band);
   border-radius: 20px; padding: 20px 38px; max-width: 440px; box-shadow: 0 10px 28px rgba(15,46,42,.22); }
 .d1 .n { color: var(--goldl); }
 .d2 { font-family: 'Reem Kufi', Tahoma, sans-serif; font-weight: 500; font-size: 32px; background: var(--card);
   border: 3px solid var(--gold); border-radius: 16px; padding: 14px 28px; max-width: 500px; box-shadow: 0 6px 16px rgba(15,46,42,.10); }
-.d3 { font-weight: 600; font-size: 28px; color: #2D3B37; background: #EFE7D6; border: 2px solid #C9B98F; border-radius: 14px; padding: 10px 24px; max-width: 480px; }
+.d3 { font-weight: 600; font-size: 28px; color: var(--d3ink); background: var(--d3bg); border: 2px solid var(--d3line); border-radius: 14px; padding: 10px 24px; max-width: 480px; }
 .node.v { font-family: 'Amiri', serif; font-weight: 400; font-size: 32px; }
-.d2.hot, .d3.hot { background: var(--ink); color: #F7F3EA; border-color: var(--goldl); }
+.d2.hot, .d3.hot { background: var(--band); color: var(--onband); border-color: var(--goldl); }
 .node.hascard::after { content: ''; position: absolute; top: -7px; left: -7px; width: 16px; height: 16px; border-radius: 50%;
   background: var(--goldl); border: 3px solid var(--parch); }
 
@@ -58,7 +62,7 @@ button:focus-visible { outline: 3px solid var(--goldl); outline-offset: 2px; }
 #brand { display: flex; align-items: center; gap: 10px; }
 #brand img { width: 46px; height: 46px; object-fit: contain; filter: drop-shadow(0 2px 4px rgba(15,46,42,.25)); }
 .ov .logo { width: clamp(96px, 11vw, 150px); height: auto; align-self: flex-start; filter: drop-shadow(0 6px 18px rgba(0,0,0,.35)); }
-#crumb { font-family: 'Reem Kufi', sans-serif; font-weight: 600; font-size: 17px; color: var(--ink); background: rgba(252,250,244,.94);
+#crumb { font-family: 'Reem Kufi', sans-serif; font-weight: 600; font-size: 17px; color: var(--ink); background: var(--panel);
   border: 2px solid var(--gold); border-radius: 30px; padding: 4px 18px; white-space: nowrap; }
 #crumb:empty { display: none; }
 
@@ -66,12 +70,12 @@ button:focus-visible { outline: 3px solid var(--goldl); outline-offset: 2px; }
 #card { position: fixed; left: 20px; top: 72px; bottom: 96px; width: clamp(300px, 38vw, 600px); display: flex; align-items: center;
   pointer-events: none; opacity: 0; transform: translateX(-24px); transition: opacity .35s, transform .35s; }
 #card.open { opacity: 1; transform: none; }
-#card .in { pointer-events: auto; width: 100%; max-height: 100%; overflow: auto; background: var(--card); border: 1px solid #E6DCC8;
+#card .in { pointer-events: auto; width: 100%; max-height: 100%; overflow: auto; background: var(--card); border: 1px solid var(--cline);
   border-radius: 16px; padding: 30px 30px 28px; box-shadow: 0 24px 60px rgba(15,46,42,.22); position: relative; }
 #card .in::before { content: ""; position: absolute; top: -1px; inset-inline: 30px; height: 4px; border-radius: 0 0 4px 4px; background: linear-gradient(90deg, #D9B26A, #85601C, #D9B26A); }
 #card .x { position: absolute; top: 10px; left: 10px; width: 44px; height: 44px; border: 0; border-radius: 50%; background: transparent;
   color: var(--muted); font-size: 26px; line-height: 1; }
-#card .x:hover { background: #EFE7D6; }
+#card .x:hover { background: var(--parch2); }
 .ctag { font-family: 'Reem Kufi', sans-serif; font-size: 16px; color: var(--gold); margin: 0 0 6px 48px; }
 .ctitle { font-family: 'Reem Kufi', sans-serif; font-weight: 700; font-size: clamp(22px, 2.2vw, 30px); line-height: 1.35; margin: 0 0 8px; }
 .cbig { font-family: 'Amiri', serif; font-weight: 700; font-size: 84px; line-height: 1.6; color: var(--gold); margin: 0; }
@@ -83,13 +87,13 @@ button:focus-visible { outline: 3px solid var(--goldl); outline-offset: 2px; }
 /* controls */
 #bar { position: fixed; bottom: 14px; left: 50%; transform: translateX(-50%); display: flex; align-items: center; gap: 8px;
   background: rgba(15,46,42,.96); border-radius: 40px; padding: 6px; box-shadow: 0 10px 30px rgba(15,46,42,.3); max-width: calc(100vw - 20px); }
-#bar button { min-height: 44px; border: 0; border-radius: 30px; background: transparent; color: #F7F3EA; padding: 0 16px; font-family: 'Reem Kufi', sans-serif; font-size: 16px; white-space: nowrap; }
+#bar button { min-height: 44px; border: 0; border-radius: 30px; background: transparent; color: var(--onband); padding: 0 16px; font-family: 'Reem Kufi', sans-serif; font-size: 16px; white-space: nowrap; }
 #bar button:hover { background: rgba(255,255,255,.1); }
-#bar #next { background: var(--goldl); color: var(--ink); font-weight: 700; padding: 0 22px; }
+#bar #next { background: var(--goldl); color: var(--ongold); font-weight: 700; padding: 0 22px; }
 #bar #next:hover { background: #E5C584; }
 #count { color: #C6D6D0; font-size: 14px; font-family: 'Reem Kufi', sans-serif; padding: 0 4px; white-space: nowrap; font-variant-numeric: tabular-nums; }
 #tools { position: fixed; bottom: 16px; left: 16px; display: flex; flex-direction: column; gap: 6px; }
-#tools button { width: 44px; height: 44px; border: 2px solid var(--line); border-radius: 12px; background: rgba(252,250,244,.95); color: var(--ink); font-size: 20px; line-height: 1; }
+#tools button { width: 44px; height: 44px; border: 2px solid var(--line); border-radius: 12px; background: var(--panel); color: var(--ink); font-size: 20px; line-height: 1; }
 #tools button:hover { border-color: var(--gold); }
 #prog { position: fixed; bottom: 0; right: 0; height: 5px; background: var(--gold); transition: width .4s; }
 
@@ -98,26 +102,26 @@ button:focus-visible { outline: 3px solid var(--goldl); outline-offset: 2px; }
 .ov.show { display: flex; animation: fade .4s ease both; }
 @keyframes fade { from { opacity: 0; } }
 .ov .box { margin: auto 0; max-width: 1100px; width: 100%; display: flex; flex-direction: column; gap: 18px; }
-#intro, #close { background: var(--ink); color: #F7F3EA; }
-#jamia { background: var(--goldl); color: var(--ink); }
+#intro, #close { background: var(--band); color: var(--onband); }
+#jamia { background: var(--goldl); color: var(--ongold); }
 .ov .eb { font-family: 'Reem Kufi', sans-serif; font-size: 18px; color: var(--goldl); margin: 0; }
-#jamia .eb { color: var(--ink); font-weight: 600; }
+#jamia .eb { color: var(--ongold); font-weight: 600; }
 .ov h1 { font-family: 'Reem Kufi', sans-serif; font-weight: 700; font-size: clamp(40px, 7vw, 96px); line-height: 1.2; margin: 0; }
 .ov .gl { width: 140px; height: 4px; background: var(--goldl); }
 .ov .lead { font-size: clamp(17px, 1.6vw, 22px); color: #C6D6D0; margin: 0; max-width: 760px; }
 .ov .big { font-family: 'Amiri', serif; font-size: clamp(24px, 3vw, 42px); line-height: 1.85; margin: 0; }
 .ov .help { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; margin: 6px 0 0; padding: 0; list-style: none; }
 .ov .help li { background: rgba(255,255,255,.06); border-radius: 12px; padding: 10px 14px; font-size: 15px; color: #C6D6D0; }
-.ov .help b { color: #F7F3EA; font-family: 'Reem Kufi', sans-serif; font-weight: 600; }
+.ov .help b { color: var(--onband); font-family: 'Reem Kufi', sans-serif; font-weight: 600; }
 .ov .acts { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 8px; }
-.ov .acts button { min-height: 48px; border-radius: 30px; padding: 0 28px; border: 2px solid var(--goldl); background: var(--goldl); color: var(--ink);
+.ov .acts button { min-height: 48px; border-radius: 30px; padding: 0 28px; border: 2px solid var(--goldl); background: var(--goldl); color: var(--ongold);
   font-family: 'Reem Kufi', sans-serif; font-weight: 700; font-size: 18px; }
-.ov .acts button.ghost { background: transparent; color: #F7F3EA; }
-#jamia .acts button { background: var(--ink); color: #F7F3EA; border-color: var(--ink); }
-#jamia .acts button.ghost { background: transparent; color: var(--ink); }
+.ov .acts button.ghost { background: transparent; color: var(--onband); }
+#jamia .acts button { background: var(--band); color: var(--onband); border-color: var(--band); }
+#jamia .acts button.ghost { background: transparent; color: var(--ongold); }
 
-#quiz { background: var(--ink); color: #F7F3EA; }
-.qx { align-self: flex-start; min-height: 44px; padding: 0 18px; border-radius: 30px; border: 2px solid rgba(217,178,106,.6); background: transparent; color: #F7F3EA; font-family: var(--qxf); font-size: 16px; display: inline-flex; align-items: center; gap: 8px; }
+#quiz { background: var(--band); color: var(--onband); }
+.qx { align-self: flex-start; min-height: 44px; padding: 0 18px; border-radius: 30px; border: 2px solid rgba(217,178,106,.6); background: transparent; color: var(--onband); font-family: var(--qxf); font-size: 16px; display: inline-flex; align-items: center; gap: 8px; }
 .qx:hover { background: rgba(217,178,106,.15); }
 .qx span:first-child { color: var(--goldl); font-size: 18px; }
 [hidden] { display: none !important; }
@@ -125,7 +129,7 @@ button:focus-visible { outline: 3px solid var(--goldl); outline-offset: 2px; }
 .qtext { font-family: 'Reem Kufi', sans-serif; font-weight: 700; font-size: clamp(22px, 2.4vw, 32px); line-height: 1.45; margin: 6px 0 16px; }
 .qopts { display: grid; gap: 10px; }
 .qopt { display: flex; align-items: center; gap: 14px; width: 100%; text-align: start; min-height: 56px; padding: 12px 16px; border-radius: 14px;
-  border: 2px solid rgba(255,255,255,.14); background: rgba(255,255,255,.05); color: #F7F3EA; font-size: clamp(16px, 1.4vw, 19px); line-height: 1.5; }
+  border: 2px solid rgba(255,255,255,.14); background: rgba(255,255,255,.05); color: var(--onband); font-size: clamp(16px, 1.4vw, 19px); line-height: 1.5; }
 .qopt:hover:not(:disabled) { border-color: var(--goldl); }
 .qopt:disabled { cursor: default; }
 .ql { flex: none; width: 34px; height: 34px; border-radius: 50%; display: grid; place-items: center; background: rgba(217,178,106,.18); color: var(--goldl); font-weight: 700; }
@@ -150,14 +154,14 @@ button:focus-visible { outline: 3px solid var(--goldl); outline-offset: 2px; }
 .lsw { display: flex; gap: 4px; background: rgba(15,46,42,.94); border-radius: 30px; padding: 4px; pointer-events: auto; }
 .lsw button { min-height: 36px; border: 0; border-radius: 26px; background: transparent; color: #C6D6D0; padding: 0 14px; font-family: 'Reem Kufi', sans-serif; font-size: 15px; white-space: nowrap; }
 .lsw button:hover { background: rgba(255,255,255,.1); }
-.lsw button[aria-pressed=true] { background: var(--goldl); color: var(--ink); font-weight: 700; }
+.lsw button[aria-pressed=true] { background: var(--goldl); color: var(--ongold); font-weight: 700; }
 .ov .lsw { align-self: flex-start; background: rgba(255,255,255,.08); }
 .ov .lsw button { min-height: 44px; font-size: 16px; padding: 0 18px; }
 #top .tl { display: flex; align-items: center; gap: 10px; min-width: 0; }
 @media (max-width: 760px) { #top .lsw button { padding: 0 10px; font-size: 13px; } #crumb { display: none; } }
 /* language switch */
 .lang { display: inline-flex; align-items: center; min-height: 44px; padding: 0 16px; border-radius: 30px; background: rgba(15,46,42,.94); color: var(--goldl); border: 2px solid var(--goldl); font-family: system-ui, sans-serif; font-size: 15px; font-weight: 700; text-decoration: none; pointer-events: auto; white-space: nowrap; }
-.lang:hover { background: var(--goldl); color: var(--ink); }
+.lang:hover { background: var(--goldl); color: var(--ongold); }
 .ov .lrow { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; align-self: flex-start; }
 .ov .lang { background: transparent; font-size: 16px; }
 
@@ -167,6 +171,9 @@ button:focus-visible { outline: 3px solid var(--goldl); outline-offset: 2px; }
 #world { z-index: 1; }
 @media (max-width: 760px) { .wm { bottom: 104px; inset-inline-start: 16px; width: 34vmin; opacity: .13; } }
 body:focus{outline:none}
+/* night mode: follows the choice saved on the site (wt.theme) or the device setting */
+:root[data-theme=dark] { --ink: #E9E4D6; --parch: #10201C; --card: #172822; --gold: #C9A355; --body: #C9D2CB; --line: #2E443C; --muted: #9DABA2; --parch2: #1C2F29; --cline: #2E443C; --panel: rgba(18,34,30,.94); --d3bg: #1C2F29; --d3ink: #D6DDD4; --d3line: #4C6350; --stageA: #14241F; --stageB: 16,30,26; --stageC: 8,18,15; --stageD: #0E1B18; color-scheme: dark; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme=light]) { --ink: #E9E4D6; --parch: #10201C; --card: #172822; --gold: #C9A355; --body: #C9D2CB; --line: #2E443C; --muted: #9DABA2; --parch2: #1C2F29; --cline: #2E443C; --panel: rgba(18,34,30,.94); --d3bg: #1C2F29; --d3ink: #D6DDD4; --d3line: #4C6350; --stageA: #14241F; --stageB: 16,30,26; --stageC: 8,18,15; --stageD: #0E1B18; color-scheme: dark; } }
 </style>
 </head>
 <body tabindex="-1">

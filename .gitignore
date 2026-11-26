@@ -1,2 +1,11 @@
 __pycache__/
 *.pyc
+
+# تطبيق Google Play: مفتاح التوقيع ومخرجات البناء لا تُرفع أبدًا
+android/*.keystore
+android/*.apk
+android/*.aab
+android/*.idsig
+android/build/
+android/app-release-*
+android/twa-manifest-backup*
