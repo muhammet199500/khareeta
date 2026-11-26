@@ -664,3 +664,25 @@ body:focus { outline: none; }
 .ios-steps .ic svg { width: 20px; height: 20px; }
 .ios-note { margin: 14px 0 0; font-size: 14px; color: var(--muted); }
 #iosDlg { width: min(460px, 94vw); }
+
+/* search results from inside the lessons */
+.hits { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+.hit a { display: block; text-decoration: none; background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 12px 16px; }
+.hit a:hover { border-color: var(--gold); }
+.hit .hw { display: block; font-family: var(--uf); font-size: 13.5px; color: var(--gold); margin-bottom: 4px; }
+.hit .hs { display: block; color: var(--body); font-size: 16px; line-height: 1.85; }
+.hit mark { background: var(--goldl); color: var(--ongold); border-radius: 4px; padding: 0 2px; }
+#inBand .sub { margin-bottom: 14px; }
+
+/* memory cards */
+.cstat { font-family: var(--uf); font-size: 14px; color: var(--muted); margin: 0 0 14px; }
+.cstat[hidden] { display: none; }
+#cards .ctag { font-family: var(--uf); font-size: 14px; color: var(--goldl); margin: 0 0 8px; }
+#cards .qtext { margin-bottom: 14px; }
+#cards .ca { border-top: 1px solid rgba(217,178,106,.3); padding-top: 14px; margin-top: 4px; color: var(--onband); font-size: 17.5px; line-height: 1.9; animation: rise .3s ease both; }
+#cards .ca[hidden] { display: none; }
+#cards .ca .ayah { color: var(--cream2); }
+#cards .acts .btn.ghost { color: var(--onband); border-color: rgba(217,178,106,.55); }
+#cards .acts .btn.ghost:hover { background: rgba(217,178,106,.14); }
+.cardcont .ic { background: var(--goldl); color: var(--ongold); }
+.cardcont::before { background: var(--goldl); }
