@@ -101,7 +101,9 @@
     addEventListener('beforeinstallprompt', e => { e.preventDefault(); ev = e; cta.hidden = false; $('#installBtn').hidden = false; });
     $('#installBtn').addEventListener('click', async () => { if (!ev) return; ev.prompt(); try { await ev.userChoice; } catch (e) {} ev = null; cta.hidden = true; });
     addEventListener('appinstalled', () => { cta.hidden = true; });
-    if (/iphone|ipad|ipod/i.test(navigator.userAgent) && !/crios|fxios/i.test(navigator.userAgent)) {
+    /* iPadOS Safari presents itself as a Mac by default; a Mac with a touch screen is an iPad */
+    const iOS = /iphone|ipad|ipod/i.test(navigator.userAgent) || (/macintosh/i.test(navigator.userAgent) && navigator.maxTouchPoints > 1);
+    if (iOS && !/crios|fxios|edgios/i.test(navigator.userAgent)) {
       const b = $('#iosBtn'), d = $('#iosDlg');
       if (b && d) {
         cta.hidden = false; b.hidden = false;
@@ -693,7 +695,7 @@
   /* reminders: ask permission, subscribe, tell the reminder service.
      Browsers never allow notifications without the student's own tap, so we make that tap easy:
      a card with one big button (home + task page) until it is on, and one offer after the first «I finished». */
-  const ios = /iphone|ipad|ipod/i.test(navigator.userAgent), standalone = matchMedia('(display-mode: standalone)').matches || navigator.standalone;
+  const ios = /iphone|ipad|ipod/i.test(navigator.userAgent) || (/macintosh/i.test(navigator.userAgent) && navigator.maxTouchPoints > 1), standalone = matchMedia('(display-mode: standalone)').matches || navigator.standalone;
   const can = 'serviceWorker' in navigator && 'PushManager' in window && 'Notification' in window;
   const b64 = s => { const p = '='.repeat((4 - s.length % 4) % 4), r = atob((s + p).replace(/-/g, '+').replace(/_/g, '/')); return Uint8Array.from(r, c => c.charCodeAt(0)); };
   async function current() { if (!can) return null; const reg = await navigator.serviceWorker.ready; return reg.pushManager.getSubscription(); }
