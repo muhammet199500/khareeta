@@ -76,6 +76,7 @@ S = {
     doneOff='أنهيتُ {x}', doneOn='✓ أنهيتَ {x}', doneUndo='اضغط مرة أخرى للتراجع', doneHint='عندما تنتهي من كل أدوات الدرس، اضغط هنا لتسجّل أنك أتممته.',
     progReset='مسح تقدّمي المحفوظ على هذا الجهاز', install='ثبّت الموقع على جوالك كتطبيق',
     iosHint='على iPhone: اضغط زر المشاركة ثم «إضافة إلى الشاشة الرئيسية» ليصير الموقع تطبيقًا يعمل بلا إنترنت.',
+    themeDark='الوضع الليلي', themeLight='الوضع النهاري',
     fsDown='تصغير الخط', fsUp='تكبير الخط', fsLabel='حجم الخط', tShare=('صورة للمشاركة', 'صورة الدرس لواتساب وتيليجرام، فيها رمز يفتحه'),
     tSum=('ملخص الدرس للطباعة', 'صفحة واحدة برمز QR يفتح الدرس'),
     chipSum='الملخص', sumPrint='اطبع', sumPdf='تنزيل PDF', sumImg='تنزيل صورة',
@@ -125,6 +126,7 @@ S = {
     doneOff='{x} bitirdim', doneOn='✓ {x} bitirdiniz', doneUndo='Geri almak için tekrar dokunun', doneHint='Dersin bütün araçlarını bitirdiğinizde, dersi tamamladığınızı kaydetmek için buraya dokunun.',
     progReset='Bu cihazda kayıtlı ilerlememi sil', install='Siteyi telefonunuza uygulama olarak yükleyin',
     iosHint='iPhone’da: Paylaş düğmesine, ardından «Ana Ekrana Ekle»ye dokunun; site internetsiz de çalışan bir uygulama olur.',
+    themeDark='Gece modu', themeLight='Gündüz modu',
     fsDown='Yazıyı küçült', fsUp='Yazıyı büyüt', fsLabel='Yazı boyutu', tShare=('Paylaşım görseli', 'WhatsApp ve Telegram için dersi açan QR kodlu görsel'),
     tSum=('Yazdırılabilir ders özeti', 'Dersi açan QR kodlu tek sayfa'),
     chipSum='Özet', sumPrint='Yazdır', sumPdf='PDF indir', sumImg='Görsel indir',
@@ -273,6 +275,16 @@ def app_tags(lang, root):
 <meta name="apple-mobile-web-app-title" content="{E(S[lang]['brand'])}">
 <script>if ('serviceWorker' in navigator) addEventListener('load', () => navigator.serviceWorker.register('{root}sw.js').catch(() => {{}}));</script>'''
 
+# applies the student's saved day/night choice before first paint, so the page never flashes the other scheme
+THEME_BOOT = "<script>try{var t=localStorage.getItem('wt.theme');if(t==='dark'||t==='light')document.documentElement.dataset.theme=t}catch(e){}</script>"
+
+THEME_I = ('<svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>'
+           '<svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>')
+
+def theme_btn(lang):
+    s = S[lang]
+    return f'<button class="tbtn" id="themeBtn" type="button" aria-label="{E(s["themeDark"])}" title="{E(s["themeDark"])}" data-dark="{E(s["themeDark"])}" data-light="{E(s["themeLight"])}">{THEME_I}</button>'
+
 def head(lang, title, depth, desc='', extra='', image=None):
     d = 'rtl' if lang == 'ar' else 'ltr'
     u = up(depth)
@@ -281,6 +293,7 @@ def head(lang, title, depth, desc='', extra='', image=None):
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+{THEME_BOOT}
 <title>{E(title)}</title>
 <meta name="description" content="{E(desc or S[lang]['lead'])}">
 {og_tags(lang, title, desc or S[lang]['lead'], image)}
@@ -303,7 +316,7 @@ def bar(lang, depth, other):
     olabel = 'Türkçe' if lang == 'ar' else 'العربية'
     return f'''<header class="bar"><div class="wrap">
   <a class="brand" href="{home_of(lang, depth)}"><img src="{root_up(lang, depth)}media/logo.webp" alt="{E(s['brand'])}"><span>{E(s['brand'])}</span></a>
-  <nav aria-label="{E(s['home'])}"><a class="hide-s" href="{home_of(lang, depth)}">{E(s['home'])}</a><a class="hide-s" href="{home_of(lang, depth)}#series">{E(LIB[lang]['nav'])}</a>{tasks_link(lang, depth)}<a class="lang" lang="{olang}" hreflang="{olang}" href="{other}">{olabel}</a></nav>
+  <nav aria-label="{E(s['home'])}"><a class="hide-s" href="{home_of(lang, depth)}">{E(s['home'])}</a><a class="hide-s" href="{home_of(lang, depth)}#series">{E(LIB[lang]['nav'])}</a>{tasks_link(lang, depth)}{theme_btn(lang)}<a class="lang" lang="{olang}" hreflang="{olang}" href="{other}">{olabel}</a></nav>
 </div></header>
 '''
 

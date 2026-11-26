@@ -694,3 +694,19 @@ document.addEventListener('click', e => {
   if (!/^(A|BUTTON|INPUT|TEXTAREA|SELECT|SUMMARY)$/.test(t.tagName) && !t.hasAttribute('tabindex')) t.setAttribute('tabindex', '-1');
   try { t.focus({ preventScroll: true }); } catch (err) {}
 });
+
+/* ---- day / night choice (saved on the student's device, like the font size) ---- */
+(function () {
+  const b = document.getElementById('themeBtn'); if (!b) return;
+  const mq = matchMedia('(prefers-color-scheme: dark)');
+  const cur = () => document.documentElement.dataset.theme || (mq.matches ? 'dark' : 'light');
+  const label = () => { const t = cur() === 'dark' ? b.dataset.light : b.dataset.dark; b.setAttribute('aria-label', t); b.title = t; };
+  b.addEventListener('click', () => {
+    const next = cur() === 'dark' ? 'light' : 'dark';
+    document.documentElement.dataset.theme = next;
+    try { localStorage.setItem('wt.theme', next); } catch (e) {}
+    label();
+  });
+  if (mq.addEventListener) mq.addEventListener('change', label);
+  label();
+})();
