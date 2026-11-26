@@ -101,7 +101,14 @@
     addEventListener('beforeinstallprompt', e => { e.preventDefault(); ev = e; cta.hidden = false; $('#installBtn').hidden = false; });
     $('#installBtn').addEventListener('click', async () => { if (!ev) return; ev.prompt(); try { await ev.userChoice; } catch (e) {} ev = null; cta.hidden = true; });
     addEventListener('appinstalled', () => { cta.hidden = true; });
-    if (/iphone|ipad|ipod/i.test(navigator.userAgent) && !/crios|fxios/i.test(navigator.userAgent)) { cta.hidden = false; $('#iosHint').hidden = false; }
+    if (/iphone|ipad|ipod/i.test(navigator.userAgent) && !/crios|fxios/i.test(navigator.userAgent)) {
+      const b = $('#iosBtn'), d = $('#iosDlg');
+      if (b && d) {
+        cta.hidden = false; b.hidden = false;
+        b.addEventListener('click', () => d.showModal());
+        $('#iosDlgX').addEventListener('click', () => d.close());
+      }
+    }
   }
 
   /* ---- video: show a calm placeholder when the file is not uploaded yet ---- */

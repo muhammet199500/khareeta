@@ -75,7 +75,12 @@ S = {
     doneWhat=dict(text='الدرس المكتوب', slides='الشرائح', map='الخريطة', qa='الأسئلة والأجوبة', quiz='الاختبار', lesson='هذا الدرس'),
     doneOff='أنهيتُ {x}', doneOn='✓ أنهيتَ {x}', doneUndo='اضغط مرة أخرى للتراجع', doneHint='عندما تنتهي من كل أدوات الدرس، اضغط هنا لتسجّل أنك أتممته.',
     progReset='مسح تقدّمي المحفوظ على هذا الجهاز', install='ثبّت الموقع على جوالك كتطبيق',
-    iosHint='على iPhone: اضغط زر المشاركة ثم «إضافة إلى الشاشة الرئيسية» ليصير الموقع تطبيقًا يعمل بلا إنترنت.',
+    iosT='تثبيت الموقع على الآيفون',
+    iosIntro='على iPhone وiPad يتم التثبيت من Safari بثلاث خطوات:',
+    ios1='اضغط زر المشاركة في شريط Safari.',
+    ios2='انزل في القائمة واختر «إضافة إلى الشاشة الرئيسية».',
+    ios3='اضغط «إضافة»، وستجد الموقع بأيقونته بين تطبيقاتك: يفتح بملء الشاشة ويعمل بلا إنترنت.',
+    iosSafari='إن كان الموقع مفتوحًا في متصفح آخر فافتحه في Safari أولًا.',
     themeDark='الوضع الليلي', themeLight='الوضع النهاري',
     fsDown='تصغير الخط', fsUp='تكبير الخط', fsLabel='حجم الخط', tShare=('صورة للمشاركة', 'صورة الدرس لواتساب وتيليجرام، فيها رمز يفتحه'),
     tSum=('ملخص الدرس للطباعة', 'صفحة واحدة برمز QR يفتح الدرس'),
@@ -125,7 +130,12 @@ S = {
     doneWhat=dict(text='Yazılı dersi', slides='Sunumu', map='Haritayı', qa='Soru-cevabı', quiz='Testi', lesson='Bu dersi'),
     doneOff='{x} bitirdim', doneOn='✓ {x} bitirdiniz', doneUndo='Geri almak için tekrar dokunun', doneHint='Dersin bütün araçlarını bitirdiğinizde, dersi tamamladığınızı kaydetmek için buraya dokunun.',
     progReset='Bu cihazda kayıtlı ilerlememi sil', install='Siteyi telefonunuza uygulama olarak yükleyin',
-    iosHint='iPhone’da: Paylaş düğmesine, ardından «Ana Ekrana Ekle»ye dokunun; site internetsiz de çalışan bir uygulama olur.',
+    iosT='iPhone’a yükleme',
+    iosIntro='iPhone ve iPad’de yükleme Safari’den üç adımla yapılır:',
+    ios1='Safari’nin Paylaş düğmesine dokunun.',
+    ios2='Listeden «Ana Ekrana Ekle»yi seçin.',
+    ios3='«Ekle»ye dokunun; site simgesiyle uygulamalarınız arasına eklenir, tam ekran açılır ve internetsiz çalışır.',
+    iosSafari='Site başka bir tarayıcıda açıksa önce Safari’de açın.',
     themeDark='Gece modu', themeLight='Gündüz modu',
     fsDown='Yazıyı küçült', fsUp='Yazıyı büyüt', fsLabel='Yazı boyutu', tShare=('Paylaşım görseli', 'WhatsApp ve Telegram için dersi açan QR kodlu görsel'),
     tSum=('Yazdırılabilir ders özeti', 'Dersi açan QR kodlu tek sayfa'),
@@ -338,7 +348,23 @@ def series_of(lang, depth):
 
 def footer(lang, depth):
     s, u = S[lang], up(depth)
-    return f'''<footer><div class="wrap"><div class="f1"><img src="{u}media/logo.webp" alt=""><span>{E(s['foot'])}</span></div><span class="flinks"><a href="{home_of(lang, depth)}">{E(LIB[lang]['title'])}</a><a href="{home_of(lang, depth)[:-len('index.html')]}privacy.html">{'سياسة الخصوصية' if lang == 'ar' else 'Gizlilik Politikası'}</a></span></div><div class="wrap app-cta" id="appCta" hidden><button class="btn line" id="installBtn" type="button" hidden>{E(s['install'])}</button><span id="iosHint" hidden>{E(s['iosHint'])}</span></div></footer>
+    return f'''<footer><div class="wrap"><div class="f1"><img src="{u}media/logo.webp" alt=""><span>{E(s['foot'])}</span></div><span class="flinks"><a href="{home_of(lang, depth)}">{E(LIB[lang]['title'])}</a><a href="{home_of(lang, depth)[:-len('index.html')]}privacy.html">{'سياسة الخصوصية' if lang == 'ar' else 'Gizlilik Politikası'}</a></span></div><div class="wrap app-cta" id="appCta" hidden><button class="btn line" id="installBtn" type="button" hidden>{E(s['install'])}</button><button class="btn line" id="iosBtn" type="button" hidden>{E(s['install'])}</button></div>{ios_dialog(lang)}</footer>
+'''
+
+IOS_I = dict(
+    share='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 14V3M8.5 6.5 12 3l3.5 3.5"/><path d="M5 10v9a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-9"/></svg>',
+    add='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="4"/><path d="M12 9v6M9 12h6"/></svg>',
+    ok='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg>')
+
+def ios_dialog(lang):
+    """Illustrated add-to-home-screen steps for iPhone/iPad, opened from the footer install button."""
+    s = S[lang]
+    steps = ''.join(f'<li><span class="ic">{IOS_I[i]}</span><span>{E(s[k])}</span></li>'
+                    for i, k in (('share', 'ios1'), ('add', 'ios2'), ('ok', 'ios3')))
+    return f'''<dialog id="iosDlg" aria-labelledby="iosDlgT">
+  <div class="dbar"><span id="iosDlgT">{E(s['iosT'])}</span><button id="iosDlgX" aria-label="×">×</button></div>
+  <div class="ios-in"><p>{E(s['iosIntro'])}</p><ol class="ios-steps">{steps}</ol><p class="ios-note">{E(s['iosSafari'])}</p></div>
+</dialog>
 '''
 
 def dialog(lang):
@@ -1089,6 +1115,9 @@ def page_404():
 </main>
 ''' + footer('ar', 0) + '</body>\n</html>\n'
 
+# بصمة SHA-256 لمفتاح توقيع تطبيق Google Play، مثل '14:6D:E9:...' — تُستخرج كما في guide/android-play.md
+PLAY_SHA256 = ''
+
 # ------------------------------------------------------------------ write
 # Cloudflare Web Analytics: visit counts for the teacher only; no cookies, no tracking of individual students
 ANALYTICS = '<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon=\'{"token": "dda53286faab4be6aca43215f29dc4b7"}\'></script>'
@@ -1133,6 +1162,12 @@ def build():
     w('.nojekyll', '')
     # custom domain for GitHub Pages, and files for search engines
     w('CNAME', 'tevhidim.com\n')
+    # تطبيق Google Play: بعد إنشاء مفتاح التوقيع (الدليل في guide/android-play.md) توضع بصمته في PLAY_SHA256
+    # فيُنشر الملف الذي يثبت أن التطبيق لهذا الموقع، ويفتح التطبيق بلا شريط متصفح
+    if PLAY_SHA256:
+        w('.well-known/assetlinks.json', '[{"relation": ["delegate_permission/common.handle_all_urls"], '
+          '"target": {"namespace": "android_app", "package_name": "com.tevhidim.app", '
+          '"sha256_cert_fingerprints": ["' + PLAY_SHA256 + '"]}}]\n')
     pages = sorted(os.path.relpath(os.path.join(dp, f), OUT).replace(os.sep, '/') for dp, dn, fn in os.walk(OUT) for f in fn if f.endswith('.html') and f not in ('404.html',) and not f.startswith('_'))
     urls = ''.join(f'  <url><loc>{SITE}{p[:-10] if p.endswith("index.html") else p}</loc></url>\n' for p in pages)
     w('sitemap.xml', f'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n{urls}</urlset>\n')

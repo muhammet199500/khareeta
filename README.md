@@ -80,6 +80,10 @@ python3 src/build.py
 الخطوط محفوظة داخل الموقع في `assets/fonts/` (رخصة SIL المفتوحة)، فلا يعتمد الموقع على Google Fonts:
 Reem Kufi للعناوين العربية، وIBM Plex Sans Arabic للأزرار والأسئلة، وNoto Naskh Arabic للقراءة، وAmiri Quran للآيات، وAmiri للنصوص المنقولة؛ وEB Garamond وSource Sans 3 للتركية.
 
+## تطبيق Google Play
+
+الموقع يُنشر في المتجر تطبيقَ TWA: الإعدادات وصور المتجر في [`android/`](android/)، والخطوات كاملة في [`guide/android-play.md`](guide/android-play.md). محتوى التطبيق يأتي من الموقع مباشرة، فلا يحتاج تحديثًا في المتجر عند إضافة الدروس.
+
 ## رفع الفيديوهات
 
 ارفع الملفات إلى مجلد `docs/media/` بهذه الأسماء بالضبط، وستظهر في الموقع تلقائيًا (البناء لا يحذف ما في هذا المجلد):

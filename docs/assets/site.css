@@ -654,3 +654,13 @@ body:focus { outline: none; }
 }
 :root[data-theme=light] .tbtn .i-moon { display: block; }
 :root[data-theme=light] .tbtn .i-sun { display: none; }
+
+/* iPhone install guide (footer button opens it) */
+.ios-in { padding: 16px 20px 20px; }
+.ios-in > p:first-child { margin: 0 0 14px; color: var(--body); }
+.ios-steps { list-style: none; margin: 0; padding: 0; display: grid; gap: 14px; }
+.ios-steps li { display: flex; gap: 12px; align-items: flex-start; line-height: 1.7; color: var(--body); }
+.ios-steps .ic { flex: none; width: 38px; height: 38px; border-radius: 10px; background: var(--band); color: var(--goldl); display: grid; place-items: center; }
+.ios-steps .ic svg { width: 20px; height: 20px; }
+.ios-note { margin: 14px 0 0; font-size: 14px; color: var(--muted); }
+#iosDlg { width: min(460px, 94vw); }
