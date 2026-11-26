@@ -704,15 +704,15 @@ def page_library(lang):
   <div class="cont"><span class="ic">{I['text']}</span><div><p class="where" id="contW"></p><h3 id="contT"></h3><p class="lprog" id="contP" hidden></p></div><a class="btn" id="contA" href="#">{E(lb['contB'])}</a></div>
 </div></section>
 
+<section class="band tight" id="latest"><div class="wrap">
+  <h2>{E(lb['latestT'])}</h2><p class="sub">{E(lb['latestS'])}</p>
+  <ol class="list">{''.join(rows)}</ol>
+</div></section>
+
 <section class="band tight" id="inBand" hidden><div class="wrap">
   <h2>{E(lb['inT'])}</h2><p class="sub" id="inCount"></p>
   <ol class="hits" id="inHits"></ol>
   <p><button class="btn line" id="inMore" type="button" hidden>{E(lb['inMore'])}</button></p>
-</div></section>
-
-<section class="band tight" id="latest"><div class="wrap">
-  <h2>{E(lb['latestT'])}</h2><p class="sub">{E(lb['latestS'])}</p>
-  <ol class="list">{''.join(rows)}</ol>
 </div></section>
 
 <section class="band" id="series"><div class="wrap">
@@ -722,7 +722,7 @@ def page_library(lang):
   <p class="noresult" id="noResult" hidden>{E(lb['noResult'])}</p>
 </div></section>
 
-<section class="band tight"><div class="wrap">
+<section class="band tight" id="teaserBand"><div class="wrap">
   <div class="teaser">
     <div class="vbox player" data-soon="{E(s['tzSoon'])}" data-logo="{u}media/logo.webp"><video controls preload="metadata" playsinline poster="{u}media/poster-teaser.jpg" data-check><source src="{u}media/teaser.mp4" type="video/mp4"></video></div>
     <div><h2>{E(s['tzT'])}</h2><p>{E(s['tzD'])}</p></div>

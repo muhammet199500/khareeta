@@ -339,6 +339,8 @@
   const q = $('#libQ');
   function apply() {
     const t = norm(q.value || '');
+    /* while searching, the results come right under the search box: the other cards step aside */
+    const lib = document.querySelector('main.lib'); if (lib) lib.classList.toggle('searching', !!t);
     let shown = 0;
     $$('.scard').forEach(c => { const ok = (!cat || c.dataset.cat === cat) && (!t || norm(c.dataset.q).includes(t)); c.hidden = !ok; if (ok) shown++; });
     let rowsShown = 0;
