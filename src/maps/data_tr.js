@@ -1112,7 +1112,7 @@ window.FIQH1 = {
               "card": {
                 "tag": "Üçüncü delil",
                 "verse": "«هُوَ الطَّهُورُ مَاؤُهُ، الْحِلُّ مَيْتَتُهُ»",
-                "ref": "Ebû Dâvûd (83), Tirmizî (69): hasen sahih",
+                "ref": "Ebû Dâvûd (83), Tirmizî (69), Nesâî (59), İbn Mâce (386); Tirmizî: hasen sahih",
                 "body": "Deniz hakkında: «Onun suyu temizleyicidir, ölüsü helaldir.»"
               }
             }
@@ -1171,7 +1171,7 @@ window.FIQH1 = {
             "tag": "Delil",
             "title": "İki kulle hadisi",
             "verse": "«إِذَا بَلَغَ الْمَاءُ قُلَّتَيْنِ لَمْ يَحْمِلِ الْخَبَثَ»",
-            "ref": "İbn Ömer’den · Ebû Dâvûd (63), Tirmizî (67); Elbânî sahih kabul etmiştir",
+            "ref": "İbn Ömer’den · Ahmed, Ebû Dâvûd (63), Tirmizî (67), Nesâî (52), İbn Mâce (517); Elbânî sahih kabul etmiştir",
             "body": "Kulle bir testidir; iki kulle yaklaşık 160,5 litre, yani beş kırba kadar."
           }
         },
@@ -1182,7 +1182,7 @@ window.FIQH1 = {
           "card": {
             "tag": "Delil",
             "verse": "«إِنَّ الْمَاءَ طَهُورٌ لَا يُنَجِّسُهُ شَيْءٌ»",
-            "ref": "Ebû Saîd el-Hudrî’den · Ebû Dâvûd (61), Tirmizî (66): hasen",
+            "ref": "Ebû Saîd el-Hudrî’den · Ahmed, Ebû Dâvûd (66), Tirmizî (66): hasen; Nesâî (326)",
             "body": "«Su temizleyicidir; onu hiçbir şey necis kılmaz.»"
           }
         },
@@ -1342,7 +1342,7 @@ window.FIQH1 = {
             "tag": "Köpek ve domuzun artığı",
             "title": "Necis",
             "verse": "«طَهُورُ إِنَاءِ أَحَدِكُمْ إِذَا وَلَغَ فِيهِ الْكَلْبُ أَنْ يَغْسِلَهُ سَبْعَ مَرَّاتٍ أُولَاهُنَّ بِالتُّرَابِ»",
-            "ref": "Buhârî (172), Müslim (279)",
+            "ref": "Buhârî (172), Müslim (279); lafız Müslim’indir",
             "body": "«Birinizin kabına köpek ağzını daldırırsa onun temizlenmesi, ilki toprakla olmak üzere yedi kez yıkanmasıdır.» Domuz hakkında: ﴿فَإِنَّهُ رِجْسٌ﴾ [En’âm, 145]."
           }
         }

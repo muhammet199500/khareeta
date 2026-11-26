@@ -9,6 +9,7 @@ import markdown
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from docqa_tr import DOCQA_TR
 from summaries import SUM
+from sharh import SHARH, GLOSS, GLOSS_TR_SRC, BOOK
 import io, segno
 SITE = 'https://tevhidim.com/'
 
@@ -132,6 +133,11 @@ S = {
     themeDark='الوضع الليلي', themeLight='الوضع النهاري',
     fsDown='تصغير الخط', fsUp='تكبير الخط', fsLabel='حجم الخط', tShare=('صورة للمشاركة', 'صورة الدرس لواتساب وتيليجرام، فيها رمز يفتحه'),
     tSum=('ملخص الدرس للطباعة', 'صفحة واحدة برمز QR يفتح الدرس'),
+    tSharh=('متن الكتاب ومعاني كلماته', 'نص الكتاب فقرةً فقرة؛ اضغط على الكلمة يظهر معناها'),
+    sharhSub='نص الكتاب بحروفه فقرةً فقرة، ومعاني كلماته الغريبة',
+    sharhHint='الكلمات التي تحتها نقاط: اضغط عليها ليظهر معناها ومصدره.',
+    sharhSrc='النص من {b}؛ والرقم فوق كل فقرة: الجزء/ الصفحة.',
+    sharhFn='حواشي الكتاب', sharhGl='معاني الكلمات', sharhGlSrc='المصدر', sharhLbl='الشرح', sharhTr='',
     chipSum='الملخص', sumPrint='اطبع', sumPdf='تنزيل PDF', sumImg='تنزيل صورة',
     sumHelp='مقاس A4. امسح الرمز بكاميرا الجوال لتفتح صفحة الدرس.',
     sumFootT='صفحة الدرس: الفيديو والدرس المكتوب والشرائح والخريطة والاختبار',
@@ -187,6 +193,11 @@ S = {
     themeDark='Gece modu', themeLight='Gündüz modu',
     fsDown='Yazıyı küçült', fsUp='Yazıyı büyüt', fsLabel='Yazı boyutu', tShare=('Paylaşım görseli', 'WhatsApp ve Telegram için dersi açan QR kodlu görsel'),
     tSum=('Yazdırılabilir ders özeti', 'Dersi açan QR kodlu tek sayfa'),
+    tSharh=('Kitabın metni ve kelime anlamları', 'Arapça metin paragraf paragraf, Türkçe anlamıyla; kelimeye dokununca anlamı çıkar'),
+    sharhSub='Kitabın Arapça metni harfiyen, paragraf paragraf; altında Türkçe anlamı ve garip kelimelerin anlamları',
+    sharhHint='Altı noktalı kelimelere dokunun: anlamı ve kaynağı görünür.',
+    sharhSrc='Metin {b} adlı eserdendir; her paragrafın üstündeki numara: cilt/ sayfa.',
+    sharhFn='Kitabın dipnotları (Arapça)', sharhGl='Kelimelerin anlamları', sharhGlSrc='Kaynak', sharhLbl='Şerh', sharhTr='Türkçe anlamı',
     chipSum='Özet', sumPrint='Yazdır', sumPdf='PDF indir', sumImg='Görsel indir',
     sumHelp='A4 boyutunda. Ders sayfasını açmak için kodu telefon kamerasıyla okutun.',
     sumFootT='Ders sayfası: video, yazılı ders, sunum, harita ve test',
@@ -853,6 +864,8 @@ def page_hub(lang, L):
     tools = []
     tools.append(tool('text', s['tText'], P['text'], True))
     tools += [tool('slides', s['tSlides'], P['slides']), tool('map', s['tMap'], P['map']), tool('qa', s['tQA'], P['qa']), tool('quiz', s['tQuiz'], P['quiz'])]
+    if L['n'] in SHARH:
+        tools.insert(1, tool('text', s['tSharh'], 'sharh.html'))
     if (L['n'], lang) in SUM:
         tools.append(tool('sum', s['tSum'], 'summary.html'))
     sh = share_img(lang, L)
@@ -939,6 +952,92 @@ def page_text(lang, L):
 </div></div></section>
 </main>
 ''' + footer(lang, depth) + '''<script>if (innerWidth < 960) document.querySelector('.toc details').open = false;</script>''' + f'<script src="{P["assets"]}site.js"></script>\n</body>\n</html>\n'
+
+SHARH_CSS = """<style>
+.sh-src{font-size:.88em;color:var(--muted);margin:0 0 6px}
+.sh-p{margin:18px 0 26px}
+.matn{background:var(--parch2);border:1px solid var(--line);border-radius:14px;padding:16px 20px;font-family:var(--af);font-size:1.14em;line-height:1.95;color:var(--ink);direction:rtl;text-align:right}
+.matn .pg{display:block;font-family:var(--uf);font-size:.68em;color:var(--gold);margin-bottom:4px}
+.matn .ayah{font-size:1.04em}
+.sh-tr{margin:10px 4px 0;line-height:1.8}
+.sh-tr small{display:block;font-family:var(--uf);font-weight:700;color:var(--gold);font-size:.78em;margin-bottom:2px}
+.gl{all:unset;cursor:pointer;color:inherit;border-bottom:2px dotted var(--goldl);padding:0 1px 1px;border-radius:3px}
+.gl:hover,.gl.on,.gl:focus-visible{background:rgba(217,178,106,.22)}
+.glpop{position:absolute;z-index:30;max-width:320px;background:var(--band);color:var(--onband);font:500 15px/1.75 var(--uf);padding:10px 14px;border-radius:12px;box-shadow:0 8px 24px rgba(0,0,0,.25);border:1px solid var(--goldl)}
+.glpop b{color:var(--goldl);display:block;font-family:var(--af);font-size:1.15em;margin-bottom:2px}
+.glpop .ar2{display:block;font-family:var(--af);direction:rtl;text-align:right;opacity:.85;margin-top:4px}
+.glpop small{display:block;color:var(--onband3);font-size:.8em;margin-top:6px}
+.sh-fn{margin:8px 4px 0;font-size:.9em}
+.sh-fn summary{cursor:pointer;color:var(--gold);font-family:var(--uf);font-weight:600}
+.sh-fn ol{list-style:none;margin:6px 0 0;padding:0;font-family:var(--af);direction:rtl;text-align:right;line-height:1.9;color:var(--body)}
+.sh-note{margin:8px 4px 0;padding:8px 12px;border-inline-start:3px solid var(--goldl);background:rgba(217,178,106,.1);border-radius:6px;font-size:.92em}
+.sh-sharh{margin:12px 4px 0}
+.sh-sharh .lbl{font-family:var(--uf);font-weight:700;color:var(--gold)}
+.sh-audio{width:100%;margin-top:10px}
+.sh-gl dt{font-family:var(--af);font-size:1.15em;color:var(--ink);margin-top:12px;font-weight:700}
+.sh-gl dd{margin:2px 0 0}
+.sh-gl dd small{color:var(--muted)}
+</style>"""
+
+SHARH_JS = r"""<script>(function(){var G=JSON.parse(document.getElementById('glData').textContent),pop=null,cur=null;
+function close(){if(pop)pop.remove();pop=null;if(cur){cur.classList.remove('on');cur.setAttribute('aria-expanded','false')}cur=null}
+document.addEventListener('click',function(e){var b=e.target.closest('.gl');if(!b){if(!e.target.closest('.glpop'))close();return}
+if(cur===b){close();return}close();var g=G[b.dataset.k];if(!g)return;cur=b;b.classList.add('on');b.setAttribute('aria-expanded','true');
+pop=document.createElement('div');pop.className='glpop';pop.setAttribute('role','status');
+var t=document.createElement('b');t.textContent=g.w;pop.appendChild(t);pop.appendChild(document.createTextNode(g.m));
+if(g.ar){var a=document.createElement('span');a.className='ar2';a.lang='ar';a.textContent=g.ar;pop.appendChild(a)}
+var sm=document.createElement('small');sm.textContent=g.src;pop.appendChild(sm);document.body.appendChild(pop);
+var r=b.getBoundingClientRect(),w=Math.min(320,innerWidth-24);pop.style.maxWidth=w+'px';
+var x=r.left+r.width/2-pop.offsetWidth/2+scrollX;x=Math.max(12+scrollX,Math.min(x,innerWidth-pop.offsetWidth-12+scrollX));
+pop.style.left=x+'px';pop.style.top=(r.bottom+8+scrollY)+'px'});
+addEventListener('keydown',function(e){if(e.key==='Escape')close()});addEventListener('resize',close)})();</script>"""
+
+def sharh_inline(t):
+    return re.sub(r'\[\[([^|\]]+)\|(\w+)\]\]', lambda m: f'<button type="button" class="gl" data-k="{m.group(2)}" aria-expanded="false">{m.group(1)}</button>', t)
+
+def page_sharh(lang, L):
+    """The book's text paragraph by paragraph (sharh.py), with tap-a-word meanings."""
+    s = S[lang]; P = lesson_paths(lang, L); depth = 1 if lang == 'ar' else 2; n = L['n']
+    out = []; used = []
+    for sec in SHARH[n]:
+        if lang == 'ar': out.append(f'<h2>{E(sec["ar"])}</h2>')
+        else: out.append(f'<h2>{E(sec["tr"])}</h2><p class="ar" lang="ar" dir="rtl" style="margin:-6px 0 8px;color:var(--muted)">{E(sec["ar"])}</p>')
+        for p in sec['paras']:
+            used += re.findall(r'\|(\w+)\]\]', p['ar'])
+            h = f'<div class="sh-p"><div class="matn" lang="ar" dir="rtl"><span class="pg">({E(p["pg"])})</span>{ayahify(sharh_inline(p["ar"]))}</div>'
+            if lang == 'tr': h += f'<p class="sh-tr"><small>{E(s["sharhTr"])}</small>{E(p["tr"])}</p>'
+            if p.get('note'): h += f'<p class="sh-note">{E(p["note"][lang])}</p>'
+            if p.get('sharh') and p['sharh'].get(lang):
+                h += f'<div class="sh-sharh"><span class="lbl">{E(s["sharhLbl"])}:</span>{ayahify(markdown.markdown(p["sharh"][lang]))}</div>'
+            if p.get('audio') and p['audio'].get(lang):
+                h += f'<audio class="sh-audio" controls preload="none" src="{P["media"]}{p["audio"][lang]}"></audio>'
+            if p['fn']:
+                h += f'<details class="sh-fn"><summary>{E(s["sharhFn"])}</summary><ol>' + ''.join(f'<li>{E(x)}</li>' for x in p['fn']) + '</ol></details>'
+            out.append(h + '</div>')
+    gdata = {}
+    for k in dict.fromkeys(used):
+        g = GLOSS[k]
+        gdata[k] = dict(w=g['w'], m=g['ar'], src=g['src']) if lang == 'ar' else dict(w=g['w'], m=g['tr'], ar=g['ar'], src=GLOSS_TR_SRC.get(g['src'], g['src']))
+    gl = ''.join(f'<dt lang="ar">{E(d["w"])}</dt><dd>{E(d["m"])}' + (f'<br><span class="ar" lang="ar" dir="rtl">{E(d["ar"])}</span>' if lang == 'tr' else '') + f' <small>({E(s["sharhGlSrc"])}: {E(d["src"])})</small></dd>' for d in gdata.values())
+    data = json.dumps(gdata, ensure_ascii=False).replace('</', '<\\/')
+    top = head(lang, f'{L[lang]} · {s["tSharh"][0]}', depth, L['descAr'] if lang == 'ar' else L['descTr'], extra='\n' + SHARH_CSS, image=share_img(lang, L)) + bar(lang, depth, P['other']('sharh.html'))
+    top += f'<main id="main" data-lesson="{n}" data-page="sharh">\n' + phead(lang, L, L[lang], s['sharhSub'], s['tSharh'][0])
+    body = f'''
+<section class="band"><div class="wrap narrow">
+  <article class="prose">{fs_ctl(lang)}
+    <p class="sh-src">{E(s['sharhSrc'].format(b=BOOK[lang]))}</p>
+    <p class="hint">{E(s['sharhHint'])}</p>
+    {''.join(out)}
+    <h2>{E(s['sharhGl'])}</h2>
+    <dl class="sh-gl">{gl}</dl>
+    <div class="endcta"><p>{E(L[lang])}</p><div style="display:flex;gap:8px;flex-wrap:wrap"><a class="btn" href="text.html">{E(s['tText'][0])}</a><a class="btn ghost" href="index.html">{E(s['backLesson'])}</a></div></div>
+  </article>
+</div></section>
+<script type="application/json" id="glData">{data}</script>
+{SHARH_JS}
+</main>
+'''
+    return top + body + footer(lang, depth) + f'<script src="{P["assets"]}site.js"></script>\n</body>\n</html>\n'
 
 def page_qa(lang, L):
     s = S[lang]; P = lesson_paths(lang, L); depth = 1 if lang == 'ar' else 2
@@ -1411,6 +1510,7 @@ def build():
             w(f'{pre}{sl}/quiz.html', page_quiz(lang, L))
             if (n, lang) in SUM: w(f'{pre}{sl}/summary.html', page_summary(lang, L))
             w(f'{pre}{sl}/text.html', page_text(lang, L))
+            if n in SHARH: w(f'{pre}{sl}/sharh.html', page_sharh(lang, L))
     w('404.html', page_404())
     # what the home-page search looks in; saved for offline use like the rest of the site
     w('search.json', json.dumps(search_index('ar'), ensure_ascii=False))

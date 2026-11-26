@@ -68,7 +68,7 @@ Taharet **tahûr su** ile gerçekleşir: **kendisi temiz, başkasını temizleyi
 
 **İkinci delil:** Nebî’nin (sallallâhu aleyhi ve sellem) şu duası: «اللَّهُمَّ اغْسِلْنِي مِنْ خَطَايَايَ بِالْمَاءِ وَالثَّلْجِ وَالْبَرَدِ» «Allah’ım! Beni hatalarımdan su, kar ve dolu ile yıka.» Buhârî (744) ve Müslim (598).
 
-**Üçüncü delil:** Deniz suyu hakkında: «هُوَ الطَّهُورُ مَاؤُهُ، الْحِلُّ مَيْتَتُهُ» «Onun suyu temizleyicidir, ölüsü helaldir.» Ebû Dâvûd (83), Tirmizî (69), Nesâî (59) ve İbn Mâce; Tirmizî «hasen sahih» demiş, Elbânî sahih kabul etmiştir.
+**Üçüncü delil:** Deniz suyu hakkında: «هُوَ الطَّهُورُ مَاؤُهُ، الْحِلُّ مَيْتَتُهُ» «Onun suyu temizleyicidir, ölüsü helaldir.» Ebû Dâvûd (83), Tirmizî (69), Nesâî (59) ve İbn Mâce (386); Tirmizî «hasen sahih» demiş, Elbânî sahih kabul etmiştir.
 
 **Taharetin gerçekleşmediği şeyler:** Su dışındaki sıvılar: sirke, benzin, meyve suyu ve limon gibi. Delil: ﴿فَلَمْ تَجِدُوا مَاءً فَتَيَمَّمُوا صَعِيدًا طَيِّبًا﴾ «Su bulamazsanız temiz bir toprakla teyemmüm edin.» [Mâide, 6]
 
@@ -86,7 +86,7 @@ Hüküm iki şeye bağlıdır: **Üç vasfından biri (koku, tat veya renk) değ
 
 **Çok suyun sınırı:** iki kulle ve fazlasıdır. Kulle bir testidir; iki kulle yaklaşık **160,5 litre** su, yani yaklaşık beş kırbadır.
 
-**Birinci delil:** Ebû Saîd el-Hudrî’den (radıyallâhu anh): «إِنَّ الْمَاءَ طَهُورٌ لَا يُنَجِّسُهُ شَيْءٌ» «Su temizleyicidir; onu hiçbir şey necis kılmaz.» Ahmed, Ebû Dâvûd (61), Nesâî ve Tirmizî (66) rivayet etmiş; Tirmizî «hasen» demiş, Elbânî İrvâ’da sahih kabul etmiştir.
+**Birinci delil:** Ebû Saîd el-Hudrî’den (radıyallâhu anh): «إِنَّ الْمَاءَ طَهُورٌ لَا يُنَجِّسُهُ شَيْءٌ» «Su temizleyicidir; onu hiçbir şey necis kılmaz.» Ahmed (11257), Ebû Dâvûd (66), Tirmizî (66) ve Nesâî (326) rivayet etmiş; Tirmizî «hasen» demiş, Elbânî İrvâ’da sahih kabul etmiştir.
 
 **İkinci delil:** İbn Ömer’den (radıyallâhu anhümâ): «إِذَا بَلَغَ الْمَاءُ قُلَّتَيْنِ لَمْ يَحْمِلِ الْخَبَثَ» «Su iki kulleye ulaşınca pisliği taşımaz.» Ahmed, Ebû Dâvûd (63), Tirmizî (67), Nesâî (52) ve İbn Mâce (517); Elbânî İrvâ’da sahih kabul etmiştir.
 
@@ -98,7 +98,7 @@ Suya ağaç yaprakları, sabun, üşnan veya sidr gibi temiz bir madde karışı
 
 **Birinci delil:** ﴿فَلَمْ تَجِدُوا مَاءً فَتَيَمَّمُوا صَعِيدًا طَيِّبًا﴾ [Nisâ, 43]. **Delil yönü:** «Su» kelimesi olumsuzluk bağlamında nekre olarak gelmiştir; saf su ile karışık su arasında fark gözetmeden her suyu kapsar.
 
-**İkinci delil:** Kızını hazırlayan kadınlara: «اغْسِلْنَهَا ثَلَاثًا أَوْ خَمْسًا أَوْ أَكْثَرَ مِنْ ذَلِكَ إِنْ رَأَيْتُنَّ، بِمَاءٍ وَسِدْرٍ…» «Onu üç, beş ya da gerekli görürseniz daha fazla, su ve sidr ile yıkayın…» Buhârî (1253) ve Müslim (939).
+**İkinci delil:** Nebî’nin (sallallâhu aleyhi ve sellem), kızını (vefatında) yıkamaya hazırlayan kadınlara sözü: «اغْسِلْنَهَا ثَلَاثًا أَوْ خَمْسًا أَوْ أَكْثَرَ مِنْ ذَلِكَ إِنْ رَأَيْتُنَّ، بِمَاءٍ وَسِدْرٍ…» «Onu üç, beş ya da gerekli görürseniz daha fazla, su ve sidr ile yıkayın…» Buhârî (1253) ve Müslim (939).
 
 **Yaklaştırıcı örnek:** İçine ağaç yaprakları düşen ve hâlâ «su» denilen havuz suyuyla abdest alınır. Karışan şey galip gelip su çay veya meyve suyu hâline gelirse, artık onunla taharet gerçekleşmez.
 
