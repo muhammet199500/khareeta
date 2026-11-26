@@ -700,3 +700,8 @@ body:focus { outline: none; }
 .points li .m { font-family: var(--uf); font-size: 13px; color: var(--muted); margin-top: 4px; }
 .open.brief { grid-template-columns: minmax(0, 1fr); }
 .open.brief .btn { display: inline-flex; gap: 8px; align-items: center; }
+
+/* ---- home page while searching: the results come right under the search box ---- */
+.lib.searching :is(#todayBand, #cardBand, #contBand, #teaserBand) { display: none !important; }
+.lib.searching #latest .sub { display: none; }
+.lib.searching :is(#latest, #inBand) { padding-top: 30px; }
