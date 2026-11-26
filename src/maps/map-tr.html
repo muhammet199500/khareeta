@@ -258,9 +258,13 @@ body:focus{outline:none}
 <script src="data_tr.js"></script>
 <script>
 {
-  const LS = window.LESSONS || [window.LESSON];
+  /* every lesson has a number n (fiqh lessons: 101, 102 …); the switcher shows the lessons of the same series */
+  const ALLL = window.LESSONS || [window.LESSON];
+  ALLL.forEach((x, i) => { if (x.n == null) x.n = i + 1; if (!x.series) x.series = 'taghut'; });
   const mL = /^#l(\d+)/.exec(location.hash);
-  const LI = Math.min(LS.length, Math.max(1, mL ? +mL[1] : 1)) - 1;
+  const L0 = (mL && ALLL.find(x => x.n === +mL[1])) || ALLL[0];
+  const LS = ALLL.filter(x => x.series === L0.series);
+  const LI = LS.indexOf(L0);
   const OX = 4000, OY = 2500, L = LS[LI];
   const AR = ['1','2','3','4','5','6','7','8','9'];
   const toAr = n => String(n);
@@ -581,13 +585,13 @@ body:focus{outline:none}
   if (L.lead) $('introLead').textContent = L.lead;
   $('brandT').textContent = L.title;
   document.title = L.title + ' · Ders Haritası';
-  const goLesson = i => { if (i === LI) return; history.replaceState(null, '', '#l' + (i + 1)); location.reload(); };
+  const goLesson = i => { if (i === LI) return; history.replaceState(null, '', '#l' + LS[i].n); location.reload(); };
   ['lsw', 'lswIntro'].forEach(id => {
     const box = $(id); if (LS.length < 2) { box.hidden = true; return; }
     box.innerHTML = LS.map((l, i) => `<button data-l="${i}" aria-pressed="${i === LI}">${l.short || l.title}</button>`).join('');
     box.querySelectorAll('button').forEach(b => b.onclick = e => { e.stopPropagation(); goLesson(+b.dataset.l); });
   });
-  addEventListener('hashchange', () => { const m = /^#l(\d+)/.exec(location.hash); if ((m ? +m[1] - 1 : 0) !== LI) location.reload(); });
+  addEventListener('hashchange', () => { const m = /^#l(\d+)/.exec(location.hash); if ((m ? +m[1] : 1) !== L.n) location.reload(); });
 
   document.querySelectorAll('.lang').forEach(a => { a.href = a.dataset.base + location.hash; });
 

@@ -900,4 +900,631 @@ window.LESSON3 = {
       x: "Nefyin kalbin tasdikindeki gereği bâtıllığına itikad, ameldeki gereği terk, kalbin duygusundaki gereği ise buğzdur." }
   ]
 };
-window.LESSONS = [window.LESSON, window.LESSON2, window.LESSON3];
+
+/* ===== el-Fıkhu’l-Müyesser · Taharet Kitabı · Birinci bölüm ===== */
+window.FIQH1 = {
+  "title": "Taharet ve Su Hükümleri",
+  "root": {
+    "id": "root",
+    "label": "Taharet ve\nSu Hükümleri"
+  },
+  "branches": [
+    {
+      "id": "b1",
+      "label": "Fıkıh ve bölümün yeri",
+      "children": [
+        {
+          "id": "b1a",
+          "label": "Fıkıh sözlükte: anlamak",
+          "card": {
+            "tag": "Sözlükte fıkıh",
+            "big": "Anlamak",
+            "verse": "﴿قَالُوا يَا شُعَيْبُ مَا نَفْقَهُ كَثِيرًا مِمَّا تَقُولُ﴾",
+            "ref": "Hûd, 91",
+            "body": "«Dediler ki: Ey Şuayb! Söylediklerinin çoğunu anlamıyoruz.»"
+          }
+        },
+        {
+          "id": "b1b",
+          "label": "Fıkıh ıstılahta",
+          "card": {
+            "tag": "Istılahta fıkıh",
+            "title": "Tanım",
+            "verse": "Ayrıntılı delillerinden elde edilen amelî şer’î hükümleri bilmektir."
+          },
+          "children": [
+            {
+              "id": "b1b1",
+              "label": "Kaynakları",
+              "card": {
+                "tag": "Fıkhın kaynakları",
+                "title": "Dört kaynak",
+                "body": "Kur’ân-ı Kerîm, Sünnet, icmâ ve kıyas."
+              }
+            },
+            {
+              "id": "b1b2",
+              "label": "Konusu",
+              "card": {
+                "tag": "Fıkhın konusu",
+                "title": "Mükelleflerin fiilleri",
+                "body": "İbadet hükümleri ve muamelât hükümleri."
+              }
+            },
+            {
+              "id": "b1b3",
+              "label": "Meyvesi",
+              "card": {
+                "tag": "Fıkhın meyvesi",
+                "title": "Kulun salâhı",
+                "body": "Mükellefin salâhı, ibadetinin sıhhati ve davranışının doğruluğu; kul salih olunca toplum da salih olur."
+              }
+            }
+          ]
+        },
+        {
+          "id": "b1c",
+          "label": "Neden taharetle başlanır?",
+          "card": {
+            "tag": "Bölümün yeri",
+            "title": "Şart, şartlı olandan önce",
+            "body": "Taharet namazın anahtarı ve en kuvvetli şartıdır; şart da şartlı olandan önce gelir."
+          }
+        }
+      ]
+    },
+    {
+      "id": "b2",
+      "label": "Taharet",
+      "children": [
+        {
+          "id": "b2a",
+          "label": "Önemi: namazın anahtarı",
+          "card": {
+            "tag": "Taharetin önemi",
+            "title": "Namazın anahtarı",
+            "body": "Ev anahtarsız açılmadığı gibi, temizlenmeyen kimse de namaza giremez."
+          }
+        },
+        {
+          "id": "b2b",
+          "label": "İki kısmı",
+          "children": [
+            {
+              "id": "b2b1",
+              "label": "Manevî: kalbin temizliği",
+              "hot": true,
+              "card": {
+                "tag": "Birinci kısım",
+                "title": "Manevî taharet",
+                "verse": "﴿إِنَّمَا الْمُشْرِكُونَ نَجَسٌ﴾",
+                "ref": "Tevbe, 28",
+                "body": "Kalbin şirkten, günahlardan ve onu kaplayan her şeyden temizlenmesi; beden temizliğinden daha önemlidir."
+              }
+            },
+            {
+              "id": "b2b2",
+              "label": "Hissî: beden, elbise, mekân",
+              "card": {
+                "tag": "İkinci kısım",
+                "title": "Hissî taharet",
+                "body": "Beden, elbise ve mekânın temizliği; bu bölümün konusudur."
+              }
+            }
+          ]
+        },
+        {
+          "id": "b2c",
+          "label": "Tanımı",
+          "card": {
+            "tag": "Istılahta taharet",
+            "title": "Tanım",
+            "verse": "Hadesi kaldırmak ve habesi gidermek."
+          },
+          "children": [
+            {
+              "id": "b2c1",
+              "label": "Hades",
+              "card": {
+                "tag": "Hadesin kalkması",
+                "title": "Hades",
+                "body": "Bedende bulunan ve namaz gibi şeylere engel olan bir vasıf. Küçüğü abdesti, büyüğü guslü gerektirir. Niyetle suyla kalkar; su yoksa veya kullanılamazsa toprakla."
+              }
+            },
+            {
+              "id": "b2c2",
+              "label": "Habes",
+              "card": {
+                "tag": "Habesin giderilmesi",
+                "title": "Habes",
+                "body": "Necaset; beden, elbise ve mekânda olur ve giderilmesiyle temizlenir."
+              }
+            },
+            {
+              "id": "b2c3",
+              "label": "Ayırt eden örnek",
+              "card": {
+                "tag": "Yaklaştırıcı örnek",
+                "title": "Örnek",
+                "body": "Bevl çıkan kimsenin üzerinde hades vardır; yerini yıkasa bile onu abdest kaldırır. Elbisesine bevl bulaşanın elbisesinde habes vardır; abdestli olsa bile."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b3",
+      "label": "Tahûr su",
+      "children": [
+        {
+          "id": "b3a",
+          "label": "Tanımı",
+          "card": {
+            "tag": "Tahûr su",
+            "title": "Temiz ve temizleyici",
+            "body": "Kendisi temiz, başkasını temizleyici ve yaratılışındaki hâli üzere kalan su."
+          }
+        },
+        {
+          "id": "b3b",
+          "label": "Kaynakları",
+          "children": [
+            {
+              "id": "b3b1",
+              "label": "Gökten: yağmur, kar, dolu"
+            },
+            {
+              "id": "b3b2",
+              "label": "Yerden: nehir, pınar, kuyu, deniz"
+            }
+          ]
+        },
+        {
+          "id": "b3c",
+          "label": "Delilleri",
+          "children": [
+            {
+              "id": "b3c1",
+              "label": "﴿مَاءً طَهُورًا﴾",
+              "v": true,
+              "card": {
+                "tag": "Birinci delil",
+                "verse": "﴿وَأَنْزَلْنَا مِنَ السَّمَاءِ مَاءً طَهُورًا﴾",
+                "ref": "Furkân, 48",
+                "body": "«Gökten tertemiz bir su indirdik.»"
+              }
+            },
+            {
+              "id": "b3c2",
+              "label": "﴿لِيُطَهِّرَكُمْ بِهِ﴾",
+              "v": true,
+              "card": {
+                "tag": "İkinci delil",
+                "verse": "﴿وَيُنَزِّلُ عَلَيْكُمْ مِنَ السَّمَاءِ مَاءً لِيُطَهِّرَكُمْ بِهِ﴾",
+                "ref": "Enfâl, 11",
+                "body": "«Sizi onunla temizlemek için üzerinize gökten su indiriyordu.»"
+              }
+            },
+            {
+              "id": "b3c3",
+              "label": "«Onun suyu temizleyicidir»",
+              "card": {
+                "tag": "Üçüncü delil",
+                "verse": "«هُوَ الطَّهُورُ مَاؤُهُ، الْحِلُّ مَيْتَتُهُ»",
+                "ref": "Ebû Dâvûd (83), Tirmizî (69): hasen sahih",
+                "body": "Deniz hakkında: «Onun suyu temizleyicidir, ölüsü helaldir.»"
+              }
+            }
+          ]
+        },
+        {
+          "id": "b3d",
+          "label": "Olmayanlar: diğer sıvılar",
+          "card": {
+            "tag": "Taharetin gerçekleşmediği şeyler",
+            "title": "Su dışındaki sıvılar",
+            "verse": "﴿فَلَمْ تَجِدُوا مَاءً فَتَيَمَّمُوا صَعِيدًا طَيِّبًا﴾",
+            "ref": "Mâide, 6",
+            "body": "Sirke, benzin, meyve suyu, limon gibi. Delil yönü: Taharet başka bir sıvıyla olsaydı, suyu bulamayan ona yönlendirilirdi; toprağa yönlendirilmezdi."
+          }
+        }
+      ]
+    },
+    {
+      "id": "b4",
+      "label": "Necaset karışan su",
+      "children": [
+        {
+          "id": "b4a",
+          "label": "Vasfı değişti → icmâ ile necis",
+          "hot": true,
+          "card": {
+            "tag": "Birinci durum",
+            "title": "Necasetle değişmiş",
+            "body": "Kokusu, tadı veya rengi necasetle değişirse, az olsun çok olsun icmâ ile necistir."
+          }
+        },
+        {
+          "id": "b4b",
+          "label": "Değişmedi, çok → tahûr",
+          "card": {
+            "tag": "İkinci durum",
+            "title": "Çok ve değişmemiş",
+            "body": "İki kulle ve fazlası olup değişmezse necis olmaz; onunla temizlenilir."
+          }
+        },
+        {
+          "id": "b4c",
+          "label": "Değişmedi, az → necis",
+          "card": {
+            "tag": "Üçüncü durum",
+            "title": "Az ve değişmemiş",
+            "body": "İki kulleden az olursa necasetin karışmasıyla necis olur; onunla temizlenilmez."
+          }
+        },
+        {
+          "id": "b4d",
+          "label": "Çokluğun sınırı: iki kulle",
+          "v": true,
+          "card": {
+            "tag": "Delil",
+            "title": "İki kulle hadisi",
+            "verse": "«إِذَا بَلَغَ الْمَاءُ قُلَّتَيْنِ لَمْ يَحْمِلِ الْخَبَثَ»",
+            "ref": "İbn Ömer’den · Ebû Dâvûd (63), Tirmizî (67); Elbânî sahih kabul etmiştir",
+            "body": "Kulle bir testidir; iki kulle yaklaşık 160,5 litre, yani beş kırba kadar."
+          }
+        },
+        {
+          "id": "b4e",
+          "label": "«Su temizleyicidir»",
+          "v": true,
+          "card": {
+            "tag": "Delil",
+            "verse": "«إِنَّ الْمَاءَ طَهُورٌ لَا يُنَجِّسُهُ شَيْءٌ»",
+            "ref": "Ebû Saîd el-Hudrî’den · Ebû Dâvûd (61), Tirmizî (66): hasen",
+            "body": "«Su temizleyicidir; onu hiçbir şey necis kılmaz.»"
+          }
+        },
+        {
+          "id": "b4f",
+          "label": "Örnek: depo ve bardak",
+          "card": {
+            "tag": "Yaklaştırıcı örnek",
+            "title": "Bir damla",
+            "body": "Büyük bir depoya düşüp suyu değiştirmeyen bir damla bevl: su tahûrdur. Aynı damla bir bardak suda: su necistir."
+          }
+        }
+      ]
+    },
+    {
+      "id": "b5",
+      "label": "Temiz madde karışan su",
+      "children": [
+        {
+          "id": "b5a",
+          "label": "Galip gelmezse → tahûr",
+          "hot": true,
+          "card": {
+            "tag": "Hüküm",
+            "title": "Doğru olan görüşe göre tahûr",
+            "body": "Suya yaprak, sabun, üşnan veya sidr gibi temiz bir madde karışır ve suya galip gelmezse su tahûrdur."
+          }
+        },
+        {
+          "id": "b5b",
+          "label": "«Su» olumsuzlukta nekre",
+          "card": {
+            "tag": "Birinci delil",
+            "title": "Delil yönü",
+            "verse": "﴿فَلَمْ تَجِدُوا مَاءً﴾",
+            "ref": "Nisâ, 43",
+            "body": "«Su» kelimesi olumsuzluk bağlamında nekredir; saf olsun karışık olsun her suyu kapsar."
+          }
+        },
+        {
+          "id": "b5c",
+          "label": "«Su ve sidr ile»",
+          "v": true,
+          "card": {
+            "tag": "İkinci delil",
+            "verse": "«اغْسِلْنَهَا ثَلَاثًا أَوْ خَمْسًا أَوْ أَكْثَرَ مِنْ ذَلِكَ إِنْ رَأَيْتُنَّ، بِمَاءٍ وَسِدْرٍ»",
+            "ref": "Buhârî (1253), Müslim (939)",
+            "body": "«Onu üç, beş ya da gerekli görürseniz daha fazla, su ve sidr ile yıkayın.»"
+          }
+        },
+        {
+          "id": "b5d",
+          "label": "Galip gelirse: artık su değil",
+          "card": {
+            "tag": "Uyarı",
+            "title": "Galip gelirse",
+            "body": "Su çay veya meyve suyu hâline gelirse, artık onunla temizlenilmez."
+          }
+        }
+      ]
+    },
+    {
+      "id": "b6",
+      "label": "Kullanılmış su",
+      "card": {
+        "tag": "Kullanılmış su",
+        "title": "Temiz ve temizleyici",
+        "body": "Abdest alan ve gusledenin organlarından ayrılan su, değişmedikçe doğru olan görüşe göre temiz ve temizleyicidir."
+      },
+      "children": [
+        {
+          "id": "b6a",
+          "label": "Abdest suyu için çekişirlerdi",
+          "card": {
+            "tag": "Birinci delil",
+            "ref": "Buhârî (189)",
+            "body": "Nebî abdest aldığında abdest suyu için neredeyse çekişirlerdi."
+          }
+        },
+        {
+          "id": "b6b",
+          "label": "Câbir’in üzerine döktü",
+          "card": {
+            "tag": "İkinci delil",
+            "ref": "Buhârî ve Müslim",
+            "body": "Hasta olan Câbir’in üzerine abdest suyundan döktü."
+          }
+        },
+        {
+          "id": "b6c",
+          "label": "Kaplarda abdest",
+          "card": {
+            "tag": "Üçüncü delil",
+            "body": "Kaplarda abdest alıp gusledirlerdi; sıçrayan damlalardan kaçınılamaz."
+          }
+        },
+        {
+          "id": "b6d",
+          "label": "«Mümin necis olmaz»",
+          "v": true,
+          "card": {
+            "tag": "Dördüncü delil",
+            "verse": "«إِنَّ الْمُؤْمِنَ لَا يَنْجُسُ»",
+            "ref": "Müslim (371)",
+            "body": "«Mümin necis olmaz.»"
+          }
+        }
+      ]
+    },
+    {
+      "id": "b7",
+      "label": "Artık su (sür’)",
+      "card": {
+        "tag": "Sür’",
+        "title": "Tanımı",
+        "body": "İçen kimsenin içtikten sonra kapta kalan su."
+      },
+      "children": [
+        {
+          "id": "b7a",
+          "label": "İnsan → temiz",
+          "card": {
+            "tag": "İnsanın artığı",
+            "title": "Temiz",
+            "body": "Müslüman olsun kâfir olsun; cünüp ve hayızlı da öyle."
+          }
+        },
+        {
+          "id": "b7b",
+          "label": "Eti yenen → icmâ ile temiz"
+        },
+        {
+          "id": "b7c",
+          "label": "Eti yenmeyen → doğru görüşe göre temiz",
+          "card": {
+            "tag": "Yırtıcılar ve eşek",
+            "title": "Doğru olan görüşe göre temiz",
+            "body": "Su az olur ve içmeleriyle değişirse necis olur."
+          }
+        },
+        {
+          "id": "b7d",
+          "label": "Kedi → temiz",
+          "v": true,
+          "card": {
+            "tag": "Kedi hadisi",
+            "verse": "«إِنَّهَا لَيْسَتْ بِنَجَسٍ، إِنَّمَا هِيَ مِنَ الطَّوَّافِينَ عَلَيْكُمْ وَالطَّوَّافَاتِ»",
+            "ref": "Ebû Dâvûd (75), Tirmizî (92): hasen sahih",
+            "body": "«O necis değildir; o, aranızda dolaşan erkek ve dişilerdendir.» Meşakkatin kaldırılması vardır."
+          }
+        },
+        {
+          "id": "b7e",
+          "label": "Köpek ve domuz → necis",
+          "hot": true,
+          "card": {
+            "tag": "Köpek ve domuzun artığı",
+            "title": "Necis",
+            "verse": "«طَهُورُ إِنَاءِ أَحَدِكُمْ إِذَا وَلَغَ فِيهِ الْكَلْبُ أَنْ يَغْسِلَهُ سَبْعَ مَرَّاتٍ أُولَاهُنَّ بِالتُّرَابِ»",
+            "ref": "Buhârî (172), Müslim (279)",
+            "body": "«Birinizin kabına köpek ağzını daldırırsa onun temizlenmesi, ilki toprakla olmak üzere yedi kez yıkanmasıdır.» Domuz hakkında: ﴿فَإِنَّهُ رِجْسٌ﴾ [En’âm, 145]."
+          }
+        }
+      ]
+    }
+  ],
+  "jamia": "Taharet, hadesi kaldırmak ve habesi gidermektir; tahûr su ile gerçekleşir. Suda asıl olan temizliktir; necaset onu değiştirmedikçe ya da su iki kulleden az olup necaset ona karışmadıkça.",
+  "closing": "Allah Teâlâ’dan bizi dinde fakih kılmasını, kalplerimizi ve bedenlerimizi temizlemesini, bize faydalı ilim ve salih amel nasip etmesini dileriz.",
+  "short": "1 · Taharet ve Sular",
+  "eb": "el-Fıkhu’l-Müyesser · Taharet Kitabı · Birinci bölüm",
+  "h1": "Taharet ve Su Hükümleri",
+  "lead": "Dersin etkileşimli haritası: Birbirinden doğan dallar; fıkıh ve taharetin anlamından su hükümlerine ve delillerine kadar.",
+  "n": 101,
+  "series": "fiqh",
+  "home": "fiqh-muyassar.html"
+};
+window.FIQH1.ui = window.LESSON.ui;
+window.FIQH1.quiz = [
+  {
+    "q": "Taharetin ıstılahî anlamı nedir?",
+    "o": [
+      "Yalnızca kirden temizlik",
+      "Hadesi kaldırmak ve habesi gidermek",
+      "Yalnızca abdest ve gusül",
+      "Elbiseyi necasetten yıkamak"
+    ],
+    "a": 1,
+    "x": "Taharet ıstılahta: hadesi kaldırmak ve habesi gidermektir."
+  },
+  {
+    "q": "Taharetin iki kısmından hangisi daha önemlidir?",
+    "o": [
+      "Hissî",
+      "İkisi eşittir",
+      "Manevî: kalbin şirkten ve günahlardan temizlenmesi",
+      "Hüküm bakımından fark yoktur"
+    ],
+    "a": 2,
+    "x": "Manevî taharet daha önemlidir; şirk necaseti varken beden temizliği gerçekleşmez: ﴿Müşrikler ancak bir necasettir﴾."
+  },
+  {
+    "q": "Hades nerede olur?",
+    "o": [
+      "Yalnızca bedende",
+      "Elbisede",
+      "Mekânda",
+      "Beden, elbise ve mekânda"
+    ],
+    "a": 0,
+    "x": "Hades bedende bulunan bir vasıftır; habes ise beden, elbise ve mekânda olur."
+  },
+  {
+    "q": "Abdestli iken elbisesine bevl bulaşan kimsenin elbisesinde ne vardır?",
+    "o": [
+      "Küçük hades",
+      "Büyük hades",
+      "Hiçbir şey",
+      "Habes"
+    ],
+    "a": 3,
+    "x": "Necaset habestir, giderilmesiyle temizlenir; abdesti bozulmaz."
+  },
+  {
+    "q": "Tahûr su nedir?",
+    "o": [
+      "Her temiz sıvı",
+      "Kendisi temiz, başkasını temizleyici ve yaratılışı üzere kalan su",
+      "Yalnızca yağmur suyu",
+      "Kaynatılmış su"
+    ],
+    "a": 1,
+    "x": "Tahûr su: kendisi temiz, başkasını temizleyici ve yaratılışındaki hâli üzere kalan sudur."
+  },
+  {
+    "q": "Deniz suyuyla abdest sahih midir?",
+    "o": [
+      "Evet; «Onun suyu temizleyicidir»",
+      "Hayır; tuzlu olduğu için",
+      "Yalnızca zaruret hâlinde",
+      "Önce kaynatılırsa"
+    ],
+    "a": 0,
+    "x": "Nebî deniz hakkında: «Onun suyu temizleyicidir, ölüsü helaldir» buyurdu."
+  },
+  {
+    "q": "Temiz olsa da meyve suyuyla neden taharet olmaz?",
+    "o": [
+      "Tatlı olduğu için",
+      "Pahalı olduğu için",
+      "Allah suyu bulamayanı başka bir sıvıya değil toprağa yönlendirdiği için",
+      "Necis olduğu için"
+    ],
+    "a": 2,
+    "x": "﴿Su bulamazsanız teyemmüm edin﴾: Taharet başka bir sıvıyla olsaydı, ona yönlendirilirdi."
+  },
+  {
+    "q": "Necasetin rengini değiştirdiği çok suyun hükmü nedir?",
+    "o": [
+      "Çokluğundan dolayı tahûr",
+      "Mekruh",
+      "Temiz ama temizleyici değil",
+      "İcmâ ile necis"
+    ],
+    "a": 3,
+    "x": "Vasıflarından biri necasetle değişen su, az olsun çok olsun icmâ ile necistir."
+  },
+  {
+    "q": "Çok suyun sınırı nedir?",
+    "o": [
+      "İki kulle ve fazlası",
+      "Bir bardak",
+      "Kabı dolduracak kadar",
+      "Sınırı yoktur"
+    ],
+    "a": 0,
+    "x": "«Su iki kulleye ulaşınca pisliği taşımaz»; iki kulle yaklaşık 160,5 litredir."
+  },
+  {
+    "q": "Bir bardak suya düşen ve onu değiştirmeyen bir damla bevlin hükmü nedir?",
+    "o": [
+      "Su tahûrdur",
+      "Su necistir; çünkü iki kulleden azdır",
+      "Temiz ama temizleyici değildir",
+      "İhtiyaç hâlinde abdest alınır"
+    ],
+    "a": 1,
+    "x": "Az su, değişmese bile necasetin karışmasıyla necis olur."
+  },
+  {
+    "q": "İçine yaprak düşen ve galip gelmeyen suyun hükmü nedir?",
+    "o": [
+      "Necis",
+      "Temiz ama temizleyici değil",
+      "Doğru olan görüşe göre tahûr",
+      "Yalnızca zaruret hâlinde kullanılır"
+    ],
+    "a": 2,
+    "x": "«Su» olumsuzlukta nekre olup her suyu kapsar; delillerden biri de «su ve sidr ile yıkayın» hadisidir."
+  },
+  {
+    "q": "Abdestte kullanılmış ve değişmemiş suyun hükmü nedir?",
+    "o": [
+      "Necis",
+      "Temiz ama temizleyici değil",
+      "Mekruh",
+      "Doğru olan görüşe göre temiz ve temizleyici"
+    ],
+    "a": 3,
+    "x": "Abdest suyu için çekişirlerdi, Câbir’in üzerine döktü ve «Mümin necis olmaz»."
+  },
+  {
+    "q": "Hayızlı kadının artık suyunun hükmü nedir?",
+    "o": [
+      "Temiz",
+      "Necis",
+      "Mekruh",
+      "Kap yedi kez yıkanır"
+    ],
+    "a": 0,
+    "x": "İnsanın artığı temizdir; cünüp ve hayızlı da öyle. «Mümin necis olmaz.»"
+  },
+  {
+    "q": "Hadiste kedinin artığının temiz olmasının hikmeti nedir?",
+    "o": [
+      "Eti yendiği için",
+      "Aramızda dolaştığı ve ondan sakınmak zor olduğu için",
+      "Az içtiği için",
+      "Küçük olduğu için"
+    ],
+    "a": 1,
+    "x": "«O necis değildir; o, aranızda dolaşan erkek ve dişilerdendir.»"
+  },
+  {
+    "q": "Köpeğin ağzını daldırdığı kap nasıl temizlenir?",
+    "o": [
+      "Bir kez yıkanır",
+      "Üç kez yıkanır",
+      "İlki toprakla olmak üzere yedi kez yıkanır",
+      "Kuruyana kadar bırakılır"
+    ],
+    "a": 2,
+    "x": "«…ilki toprakla olmak üzere yedi kez yıkanmasıdır.» Buhârî ve Müslim."
+  }
+];
+window.LESSONS = [window.LESSON, window.LESSON2, window.LESSON3, window.FIQH1];

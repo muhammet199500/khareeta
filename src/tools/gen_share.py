@@ -47,9 +47,9 @@ html[lang=tr] h1.long { font-size: 60px; }
 """
 
 TXT = {
-    'ar': dict(eb=lambda L: f"صفة الكفر بالطاغوت · الدرس {B.DIG('ar', L['n'])}", scan='امسح الرمز لتفتح الدرس',
+    'ar': dict(eb=lambda L: f"{B.SECT[L['sk']]['ar']['short']} · الدرس {B.DIG('ar', L['num'])}", scan='امسح الرمز لتفتح الدرس',
                tools='فيديو · درس مكتوب · خريطة · أسئلة · اختبار'),
-    'tr': dict(eb=lambda L: f"Tâğutu inkârın keyfiyeti · {L['n']}. ders", scan='Dersi açmak için kodu okutun',
+    'tr': dict(eb=lambda L: f"{B.SECT[L['sk']]['tr']['short']} · {L['num']}. ders", scan='Dersi açmak için kodu okutun',
                tools='Video · Yazılı ders · Harita · Soru-cevap · Test'),
 }
 
@@ -75,17 +75,17 @@ async def main():
     async with async_playwright() as p:
         b = await p.chromium.launch(**({'executable_path': '/usr/bin/google-chrome'} if os.path.exists('/usr/bin/google-chrome') else {}))
         pg = await b.new_page(viewport={'width': 1080, 'height': 1080})
-        for L in B.LIVE:
+        for L in B.ALL_LIVE:
             for lang in ('ar', 'tr'):
                 tmp = os.path.join(DOCS, '_share_tmp.html')
                 open(tmp, 'w', encoding='utf-8').write(page(lang, L))
                 await pg.goto(BASE + '_share_tmp.html', wait_until='networkidle')
                 os.remove(tmp)
                 await pg.evaluate('document.fonts.ready'); await pg.wait_for_timeout(300)
-                png = f'{MEDIA}share-l{L["n"]}-{lang}.png'
+                png = f'{MEDIA}share-{L["slug"]}-{lang}.png'
                 await (await pg.query_selector('#card')).screenshot(path=png)
                 im = cv2.imread(png); os.remove(png)
-                out = f'{MEDIA}share-l{L["n"]}-{lang}.jpg'
+                out = f'{MEDIA}share-{L["slug"]}-{lang}.jpg'
                 cv2.imwrite(out, im, [cv2.IMWRITE_JPEG_QUALITY, 88])
                 print(os.path.basename(out), 'QR =', cv2.QRCodeDetector().detectAndDecode(im)[0])
         await b.close()
