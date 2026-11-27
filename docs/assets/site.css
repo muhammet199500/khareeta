@@ -801,3 +801,7 @@ body:focus { outline: none; }
 :root[data-theme=dark] .points li.live { background: var(--band2); border-color: var(--gold); }
 @media (prefers-color-scheme: dark) { :root:not([data-theme=light]) .points li.live { background: var(--band2); border-color: var(--gold); } }
 
+
+/* the big filled buttons in soft beige with a thin gold edge (day and night) */
+.btn:not(.ghost):not(.dark):not(.line), .bar nav a.tasks-nav, .lrow.live .pill, .tasksl { background: var(--cream3); border-color: var(--goldl); color: var(--ongold); }
+.bar nav a.tasks-nav:hover, .tasksl:hover, .btn:not(.ghost):not(.dark):not(.line):hover { background: var(--cream2); border-color: var(--goldl); }
