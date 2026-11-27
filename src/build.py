@@ -9,6 +9,7 @@ import markdown
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from docqa_tr import DOCQA_TR
 from summaries import SUM
+from sharh import SHARH, GLOSS, GLOSS_TR_SRC, BOOK
 import io, segno
 SITE = 'https://tevhidim.com/'
 
@@ -53,7 +54,55 @@ LESSONS = [
     dict(n=4, live=False, ar='تكفير أهلها', tr='Ehlini Tekfir Etmek'),
     dict(n=5, live=False, ar='معاداتهم', tr='Onlara Düşmanlık Etmek'),
 ]
+for _L in LESSONS: _L.update(slug=f"l{_L['n']}", num=_L['n'], doc=f"lesson{_L['n']}", sk='taghut')
+
+# «الفقه الميسّر» · كتاب الطهارة: one lesson per chapter (باب) of the book. Pages f1/ … ; internal number 100 + chapter.
+FIQH = [
+    dict(n=101, num=1, slug='f1', doc='fiqh1', sk='tahara', live=True,
+         ar='أحكام الطهارة والمياه', tr='Taharet ve Su Hükümleri',
+         descAr='معنى الفقه، وأهمية الطهارة وقسماها وتعريفها، وبأي ماء تحصل، وحكم ما خالطته نجاسة أو طاهر، والماء المستعمل، والأسآر.',
+         descTr='Fıkhın anlamı; taharetin önemi, kısımları ve tanımı; hangi suyla olduğu; necaset veya temiz madde karışan su, kullanılmış su ve artık su.',
+         verse='﴿وَأَنْزَلْنَا مِنَ السَّمَاءِ مَاءً طَهُورًا﴾',
+         ref='الفرقان: 48',
+         verseTr='«Gökten tertemiz bir su indirdik.» (Furkân, 48)',
+         video='fiqh1.mp4', videoTr='fiqh1-tr.mp4', poster='poster-f1.jpg', posterTr='poster-f1-tr.jpg',
+         deckAr='far1', deckTr='ftr1'),
+    dict(n=102, num=2, slug='f2', sk='tahara', live=False, ar='الآنية', tr='Kaplar'),
+    dict(n=103, num=3, slug='f3', sk='tahara', live=False, ar='قضاء الحاجة وآدابها', tr='Def-i Hacet ve Âdâbı'),
+    dict(n=104, num=4, slug='f4', sk='tahara', live=False, ar='السواك وسنن الفطرة', tr='Misvak ve Fıtrat Sünnetleri'),
+    dict(n=105, num=5, slug='f5', sk='tahara', live=False, ar='الوضوء', tr='Abdest'),
+]
 LIVE = [l for l in LESSONS if l['live']]
+FIQH_LIVE = [l for l in FIQH if l['live']]
+ALL_LIVE = LIVE + FIQH_LIVE
+
+# what a section says about itself: its points/chapters, how a lesson is placed in it, its lead and quote
+SECT = {
+ 'taghut': {
+  'ar': dict(points=POINTS['ar'], ord=ORD['ar'], point='النقطة', of='من صفة الكفر بالطاغوت', short='صفة الكفر بالطاغوت',
+             lead='خمسة دروس في قول الشيخ محمد بن عبد الوهاب رحمه الله في صفة الكفر بالطاغوت. لكل درس: فيديو، ودرس مكتوب، وعرض شرائح، وخريطة تفاعلية، وأسئلة وأجوبة، واختبار لقياس الفهم.',
+             quote='«أن تعتقد بطلان عبادة غير الله، وتتركها، وتبغضها، وتكفّر أهلها، وتعاديهم»',
+             quoteRef='الشيخ محمد بن عبد الوهاب رحمه الله، رسالة «معنى الطاغوت ورؤوس أنواعه»',
+             pointsT='النقاط الخمس', pointsS='كل نقطة درس مستقل، تُضاف تباعًا. والروابط تبقى صالحة لكل الدروس.'),
+  'tr': dict(points=POINTS['tr'], ord=ORD['tr'], point='husus', of='· Tâğutu inkârın keyfiyeti', short='Tâğutu İnkârın Keyfiyeti',
+             lead='Şeyh Muhammed b. Abdülvehhab’ın (rahimehullah) tâğutu inkârın keyfiyeti hakkındaki sözü üzerine beş ders. Her ders için: video, yazılı ders, sunum, etkileşimli harita, soru-cevap ve anladığını ölçen bir test.',
+             quote='«Allah’tan başkasına yapılan ibadetin bâtıl olduğuna inanman, onu terk etmen, ondan buğz etmen, ehlini tekfir etmen ve onlara düşmanlık etmendir.»',
+             quoteRef='Şeyh Muhammed b. Abdülvehhab, «Ma‘ne’t-Tâğût ve Ruûsu Envâih» risalesi',
+             pointsT='Beş husus', pointsS='Her husus ayrı bir derstir ve sırayla eklenir. Bağlantılar bütün dersler için geçerli kalır.'),
+ },
+ 'tahara': {
+  'ar': dict(points=['الطهارة والمياه', 'الآنية', 'قضاء الحاجة وآدابها', 'السواك وسنن الفطرة', 'الوضوء'],
+             ord=['الأول', 'الثاني', 'الثالث', 'الرابع', 'الخامس'], point='الباب', of='من كتاب الطهارة', short='كتاب الطهارة',
+             lead='أبواب كتاب الطهارة من «الفقه الميسّر في ضوء الكتاب والسنة»، بابًا بابًا. لكل درس: فيديو، ودرس مكتوب، وعرض شرائح، وخريطة تفاعلية، وأسئلة وأجوبة، واختبار لقياس الفهم.',
+             quote='«مِفْتَاحُ الصَّلَاةِ الطُّهُورُ»', quoteRef='رواه أبو داود والترمذي وابن ماجه',
+             pointsT='أبواب كتاب الطهارة', pointsS='كل باب درس مستقل، تُضاف تباعًا. والروابط تبقى صالحة لكل الدروس.'),
+  'tr': dict(points=['Taharet ve sular', 'Kaplar', 'Def-i hacet ve âdâbı', 'Misvak ve fıtrat sünnetleri', 'Abdest'],
+             ord=['Birinci', 'İkinci', 'Üçüncü', 'Dördüncü', 'Beşinci'], point='bölüm', of='· Taharet Kitabı', short='Taharet Kitabı',
+             lead='«el-Fıkhu’l-Müyesser fî Dav’i’l-Kitâb ve’s-Sünne» kitabından Taharet Kitabı’nın bölümleri, bölüm bölüm. Her ders için: video, yazılı ders, sunum, etkileşimli harita, soru-cevap ve anladığını ölçen bir test.',
+             quote='«Namazın anahtarı temizliktir.»', quoteRef='Ebû Dâvûd, Tirmizî ve İbn Mâce rivayet etmiştir',
+             pointsT='Taharet Kitabı’nın bölümleri', pointsS='Her bölüm ayrı bir derstir ve sırayla eklenir. Bağlantılar bütün dersler için geçerli kalır.'),
+ },
+}
 
 S = {
  'ar': dict(
@@ -84,6 +133,11 @@ S = {
     themeDark='الوضع الليلي', themeLight='الوضع النهاري',
     fsDown='تصغير الخط', fsUp='تكبير الخط', fsLabel='حجم الخط', tShare=('صورة للمشاركة', 'صورة الدرس لواتساب وتيليجرام، فيها رمز يفتحه'),
     tSum=('ملخص الدرس للطباعة', 'صفحة واحدة برمز QR يفتح الدرس'),
+    tSharh=('متن الكتاب ومعاني كلماته', 'نص الكتاب فقرةً فقرة؛ اضغط على الكلمة يظهر معناها'),
+    sharhSub='نص الكتاب بحروفه فقرةً فقرة، ومعاني كلماته الغريبة',
+    sharhHint='الكلمات التي تحتها نقاط: اضغط عليها ليظهر معناها ومصدره.',
+    sharhSrc='النص من {b}؛ والرقم فوق كل فقرة: الجزء/ الصفحة.',
+    sharhFn='حواشي الكتاب', sharhGl='معاني الكلمات', sharhGlSrc='المصدر', sharhLbl='الشرح', sharhTr='',
     chipSum='الملخص', sumPrint='اطبع', sumPdf='تنزيل PDF', sumImg='تنزيل صورة',
     sumHelp='مقاس A4. امسح الرمز بكاميرا الجوال لتفتح صفحة الدرس.',
     sumFootT='صفحة الدرس: الفيديو والدرس المكتوب والشرائح والخريطة والاختبار',
@@ -139,6 +193,11 @@ S = {
     themeDark='Gece modu', themeLight='Gündüz modu',
     fsDown='Yazıyı küçült', fsUp='Yazıyı büyüt', fsLabel='Yazı boyutu', tShare=('Paylaşım görseli', 'WhatsApp ve Telegram için dersi açan QR kodlu görsel'),
     tSum=('Yazdırılabilir ders özeti', 'Dersi açan QR kodlu tek sayfa'),
+    tSharh=('Kitabın metni ve kelime anlamları', 'Arapça metin paragraf paragraf, Türkçe anlamıyla; kelimeye dokununca anlamı çıkar'),
+    sharhSub='Kitabın Arapça metni harfiyen, paragraf paragraf; altında Türkçe anlamı ve garip kelimelerin anlamları',
+    sharhHint='Altı noktalı kelimelere dokunun: anlamı ve kaynağı görünür.',
+    sharhSrc='Metin {b} adlı eserdendir; her paragrafın üstündeki numara: cilt/ sayfa.',
+    sharhFn='Kitabın dipnotları (Arapça)', sharhGl='Kelimelerin anlamları', sharhGlSrc='Kaynak', sharhLbl='Şerh', sharhTr='Türkçe anlamı',
     chipSum='Özet', sumPrint='Yazdır', sumPdf='PDF indir', sumImg='Görsel indir',
     sumHelp='A4 boyutunda. Ders sayfasını açmak için kodu telefon kamerasıyla okutun.',
     sumFootT='Ders sayfası: video, yazılı ders, sunum, harita ve test',
@@ -176,7 +235,7 @@ DIG = lambda lang, n: ''.join('٠١٢٣٤٥٦٧٨٩'[int(c)] if c.isdigit() else
 CATS = [('aqeedah', 'العقيدة', 'Akide'), ('fiqh', 'الفقه', 'Fıkıh'), ('hadith', 'الحديث', 'Hadis')]
 SERIES = [
     dict(slug='la-ilaha', cat='aqeedah', status='live', page='la-ilaha.html',
-         ar='حقيقة لا إله إلا الله', tr='Lâ ilâhe illallah’ın Hakikati', byAr='', byTr='',
+         ar='حقيقة لا إله إلا الله', tr='Lâ ilâhe illallah’ın Hakikati', byAr='', byTr='', quizAll=True,
          sections=[
             dict(key='taghut', ar='صفة الكفر بالطاغوت', tr='Tâğutu İnkârın Keyfiyeti', lessons=LESSONS),
             dict(key='shurut', ar='شروط لا إله إلا الله', tr='Lâ ilâhe illallah’ın Şartları', lessons=[]),
@@ -185,15 +244,38 @@ SERIES = [
          ]),
     dict(slug='tawhid', cat='aqeedah', status='prep', ar='شرح كتاب التوحيد', tr='Kitâbu’t-Tevhîd Şerhi',
          byAr='للشيخ محمد بن عبد الوهاب رحمه الله', byTr='Şeyh Muhammed b. Abdülvehhab'),
-    dict(slug='fiqh-muyassar', cat='fiqh', status='prep', ar='الفقه الميسر', tr='el-Fıkhu’l-Müyesser', byAr='', byTr=''),
+    dict(slug='fiqh-muyassar', cat='fiqh', status='live', page='fiqh-muyassar.html',
+         ar='الفقه الميسّر', tr='el-Fıkhu’l-Müyesser', byAr='إعداد نخبة من العلماء', byTr='Bir grup âlimin hazırladığı',
+         leadAr='سلسلة في فقه العبادات على كتاب «الفقه الميسّر في ضوء الكتاب والسنة»: الطهارة، والصلاة، والزكاة، والصيام، بالأدلة من غير تعقيد. لكل درس: فيديو، ودرس مكتوب، وعرض شرائح، وخريطة تفاعلية، وأسئلة وأجوبة، واختبار.',
+         leadTr='«el-Fıkhu’l-Müyesser fî Dav’i’l-Kitâb ve’s-Sünne» kitabı üzerine ibadet fıkhı serisi: taharet, namaz, zekât ve oruç; delilleriyle ve sade bir dille. Her derste: video, yazılı ders, sunum, etkileşimli harita, soru-cevap ve test.',
+         quoteAr='«مَنْ يُرِدِ اللَّهُ بِهِ خَيْرًا يُفَقِّهْهُ فِي الدِّينِ»',
+         quoteTr='<span class="ar" lang="ar" dir="rtl">«مَنْ يُرِدِ اللَّهُ بِهِ خَيْرًا يُفَقِّهْهُ فِي الدِّينِ»</span>',
+         mealTr='«Allah kime hayır dilerse onu dinde fakih kılar.» (Buhârî, Müslim)',
+         sections=[
+            dict(key='tahara', ar='كتاب الطهارة', tr='Taharet Kitabı', lessons=FIQH),
+            dict(key='salah', ar='كتاب الصلاة', tr='Namaz Kitabı', lessons=[]),
+            dict(key='zakah', ar='كتاب الزكاة', tr='Zekât Kitabı', lessons=[]),
+            dict(key='siyam', ar='كتاب الصيام', tr='Oruç Kitabı', lessons=[]),
+         ]),
     dict(slug='usul-thalatha', cat='aqeedah', status='prep', ar='الأصول الثلاثة', tr='Üç Esas (el-Usûlu’s-Selâse)',
          byAr='للشيخ محمد بن عبد الوهاب رحمه الله', byTr='Şeyh Muhammed b. Abdülvehhab'),
     dict(slug='riyad', cat='hadith', status='soon', ar='رياض الصالحين', tr='Riyâzu’s-Sâlihîn',
          byAr='للإمام النووي رحمه الله', byTr='İmam Nevevî'),
     dict(slug='wajeez', cat='aqeedah', status='soon', ar='شرح كتاب الوجيز في عقيدة السلف', tr='el-Vecîz fî Akîdeti’s-Selef Şerhi', byAr='', byTr=''),
 ]
-MAIN = SERIES[0]                      # the series the current lessons belong to
+MAIN = SERIES[0]                      # the series of the first lessons (la-ilaha.html)
 MAIN_PAGE = MAIN['page']
+
+def where_of(L):
+    """(series, section) a lesson belongs to"""
+    for x in SERIES:
+        for sec in x.get('sections', []):
+            if any(l is L for l in sec['lessons']): return x, sec
+    raise KeyError(L['ar'])
+
+def sect_live(L):
+    """the published lessons of the lesson's own section, in order"""
+    return [l for l in where_of(L)[1]['lessons'] if l['live']]
 
 def ar_count(n, one, two, few, many):
     """Arabic counted noun: ١ درس واحد، درسان، ٣ دروس، ١١ درسًا"""
@@ -473,6 +555,19 @@ DOCQA = {
   ('كل من عُبد من دون الله يُبغض، ولو كان غير راضٍ بعبادته.', 'خطأ؛ فمن عُبد وهو غير راضٍ، كعيسى عليه السلام والملائكة والصالحين، لا يُبغض؛ والمبغوض عبادتهم من دون الله، لا هم [المائدة: 117].', True),
   ('البغض في الله من استكمال الإيمان.', 'صح؛ قال رسول الله ﷺ: «مَنْ أَحَبَّ لِلَّهِ، وَأَبْغَضَ لِلَّهِ، وَأَعْطَى لِلَّهِ، وَمَنَعَ لِلَّهِ، فَقَدِ اسْتَكْمَلَ الْإِيمَانَ» رواه أبو داود.', True),
  ],
+ 101: [
+  ('ما معنى الفقه لغة واصطلاحًا؟', 'الفقه لغةً: الفهم، ومنه: ﴿مَا نَفْقَهُ كَثِيرًا مِمَّا تَقُولُ﴾ [هود: 91]. واصطلاحًا: العلم بالأحكام الشرعية العملية المكتسبة من أدلتها التفصيلية.', False),
+  ('ما قسما الطهارة؟ وأيهما أهم؟', 'طهارة معنوية: طهارة القلب من الشرك والمعاصي وكل ما ران عليه، وطهارة حسية: طهارة البدن والثوب والمكان. والمعنوية أهم، ولا تتحقق طهارة البدن مع وجود نجس الشرك: ﴿إِنَّمَا الْمُشْرِكُونَ نَجَسٌ﴾ [التوبة: 28].', False),
+  ('عرّف الطهارة اصطلاحًا، وفرّق بين الحدث والخبث.', 'الطهارة: ارتفاع الحدث وزوال الخبث. والحدث وصف قائم بالبدن يمنع من الصلاة ونحوها، ويرتفع بالوضوء أو الغسل. والخبث هو النجاسة، وتكون في البدن والثوب والمكان، وتزول بإزالتها.', False),
+  ('ما الماء الطهور؟ اذكر أربعة أمثلة له.', 'الطاهر في نفسه، المطهِّر لغيره، الباقي على خلقته. ومن أمثلته: المطر، وذوب الثلج، وماء الأنهار، وماء البحار.', False),
+  ('ما حدّ الماء الكثير؟ وما دليله؟', 'ما بلغ قلّتين فأكثر، والقلّتان نحو 160.5 لترًا. ودليله حديث ابن عمر رضي الله عنهما: «إِذَا بَلَغَ الْمَاءُ قُلَّتَيْنِ لَمْ يَحْمِلِ الْخَبَثَ».', False),
+  ('لماذا لا تحصل الطهارة بالعصير وإن كان طاهرًا؟ استدل بآية.', 'لأن الله قال: ﴿فَلَمْ تَجِدُوا مَاءً فَتَيَمَّمُوا صَعِيدًا طَيِّبًا﴾ [المائدة: 6]؛ فلو كانت الطهارة تحصل بمائع غير الماء لأُرشد إليه من عدم الماء، ولم يُنقل إلى التراب.', False),
+  ('كيف يدل حديث غسل ابنة النبي ﷺ على حكم الماء الذي خالطه طاهر؟', 'أمر ﷺ بغسلها «بِمَاءٍ وَسِدْرٍ»، والسدر طاهر يخالط الماء، فدلّ على أن الماء الذي خالطه طاهر ولم يغلب عليه باقٍ على طهوريته.', False),
+  ('ما الحكمة من طهارة سؤر الهرة كما جاء في الحديث؟', 'رفع الحرج والمشقة؛ لأنها من الطوّافين على الناس في بيوتهم ويشق التحرز منها: «إِنَّهَا لَيْسَتْ بِنَجَسٍ، إِنَّمَا هِيَ مِنَ الطَّوَّافِينَ عَلَيْكُمْ وَالطَّوَّافَاتِ».', False),
+  ('الماء المستعمل في الوضوء لا يجوز التطهر به مرة أخرى.', 'خطأ؛ هو طاهر مطهِّر على الصحيح ما لم يتغيّر، فقد كادوا يقتتلون على وَضوئه ﷺ، وصبّ وَضوءه على جابر، و«إِنَّ الْمُؤْمِنَ لَا يَنْجُسُ».', True),
+  ('سؤر الحائض طاهر.', 'صح؛ لأن سؤر الآدمي طاهر، ومنه الجنب والحائض، و«إِنَّ الْمُؤْمِنَ لَا يَنْجُسُ» رواه مسلم.', True),
+  ('الماء الكثير إذا غيّرت النجاسة لونه يبقى طهورًا لكثرته.', 'خطأ؛ ما تغيّر أحد أوصافه بالنجاسة نجس بالإجماع، قليلًا كان أو كثيرًا.', True),
+ ],
 }
 
 def qa_cards(lang, items, start=1):
@@ -488,25 +583,26 @@ def qa_cards(lang, items, start=1):
     return '\n'.join(out)
 
 # ------------------------------------------------------------------ pages
-def page_series(lang):
-    """page of the series «حقيقة لا إله إلا الله»: its sections, then the section «صفة الكفر بالطاغوت» with its lessons"""
-    s = S[lang]; depth = 0 if lang == 'ar' else 1; u = up(depth)
-    other = f'tr/{MAIN_PAGE}' if lang == 'ar' else f'../{MAIN_PAGE}'
+def page_series(lang, X=None):
+    """page of a live series: its sections, then the section that has lessons, with its lessons"""
+    X = X or MAIN; PAGE = X['page']; SEC = next(sec for sec in X['sections'] if sec['lessons']); LS = SEC['lessons']
+    s = S[lang]; depth = 0 if lang == 'ar' else 1; u = up(depth); sx = SECT[SEC['key']][lang]
+    other = f'tr/{PAGE}' if lang == 'ar' else f'../{PAGE}'
     lb = LIB[lang]
-    latest = LIVE[-1]
+    latest = [L for L in LS if L['live']][-1]
     pts = []
-    for i, p in enumerate(POINTS[lang]):
-        L = LESSONS[i]
-        inner = f'<span class="k">{E(s["point"]) + " " + E(ORD[lang][i]) if lang == "ar" else E(ORD[lang][i]) + " " + E(s["point"])}</span><span class="t">{E(p)}</span>'
+    for i, p in enumerate(sx['points']):
+        L = LS[i]
+        inner = f'<span class="k">{E(sx["point"]) + " " + E(sx["ord"][i]) if lang == "ar" else E(sx["ord"][i]) + " " + E(sx["point"])}</span><span class="t">{E(p)}</span>'
         if L['live']:
-            pts.append(f'<li class="live"><a href="l{L["n"]}/index.html">{inner}</a></li>')
+            pts.append(f'<li class="live"><a href="{L["slug"]}/index.html">{inner}</a></li>')
         else:
-            pts.append(f'<li>{inner}</li>')
+            pts.append(f'<li>{inner}<span class="m">{E(s["soon"])}</span></li>')
     rows = []
-    for L in LESSONS:
-        n = DIG(lang, L['n'])
+    for L in LS:
+        n = DIG(lang, L['num'])
         if L['live']:
-            b = f'l{L["n"]}/'
+            b = f'{L["slug"]}/'
             chips = []
             chips.append((I['text'], s['chipText'], f'{b}text.html'))
             chips += [(I['slides'], s['chipSlides'], f'{b}slides.html'), (I['map'], s['chipMap'], f'map.html#l{L["n"]}'), (I['qa'], s['chipQA'], f'{b}qa.html'), (I['quiz'], s['chipQuiz'], f'{b}quiz.html')]
@@ -515,25 +611,25 @@ def page_series(lang):
             rows.append(f'''<li class="lrow live"><span class="n">{n}</span><div><h3><a href="{b}index.html">{E(L[lang])}</a></h3><p>{E(L["descAr"] if lang == "ar" else L["descTr"])}</p><div class="chips">{ch}</div><p class="lprog" data-lesson="{L['n']}" hidden></p></div><a class="pill" href="{b}index.html">{E(s["open"])}</a></li>''')
         else:
             rows.append(f'''<li class="lrow"><span class="n">{n}</span><div><h3>{E(L[lang])}</h3><p>{E(s["lesson"])} {n}</p></div><span class="pill">{E(s["soon"])}</span></li>''')
-    b = f'l{latest["n"]}/'
-    tools = [tool('text', s['tText'], f'{b}text.html', True),
-             tool('slides', s['tSlides'], f'{b}slides.html'), tool('map', s['tMap'], f'map.html#l{latest["n"]}'),
-             tool('qa', s['tQA'], f'{b}qa.html'), tool('quiz', s['tQuiz'], f'{b}quiz.html')]
-    if (latest['n'], lang) in SUM: tools.append(tool('sum', s['tSum'], f'{b}summary.html'))
+    b = f'{latest["slug"]}/'
     meal = f'<p class="meal">{E(latest["verseTr"])}</p>' if lang == 'tr' else ''
     secs = []
-    for sec in MAIN['sections']:
+    for sec in X['sections']:
         ls = sec['lessons']; live = [L for L in ls if L['live']]
         meta = f'{lessons_count(lang, len(ls))} · {published(lang, len(live))}' if ls else lb['sectionSoon']
         inner = f'<span class="k">{E(lb["section"])}</span><span class="t">{E(sec[lang])}</span><span class="m">{E(meta)}</span>'
         secs.append(f'<li class="live"><a href="#{sec["key"]}">{inner}</a></li>' if live else f'<li>{inner}</li>')
-    cat = dict((c, ar if lang == 'ar' else tr) for c, ar, tr in CATS)[MAIN['cat']]
-    smeal = f'<p class="smeal">{E(lb["sQuoteMeal"])}</p>' if lb['sQuoteMeal'] else ''
-    return head(lang, f'{MAIN[lang]} · {s["brand"]}', depth, lb['sLead']) + bar(lang, depth, other) + f'''<main id="main">
+    cat = dict((c, ar if lang == 'ar' else tr) for c, ar, tr in CATS)[X['cat']]
+    slead = X.get('leadAr' if lang == 'ar' else 'leadTr') or lb['sLead']
+    squote = X.get('quoteAr' if lang == 'ar' else 'quoteTr') or lb['sQuote']
+    smeal_t = (X.get('mealTr', '') if lang == 'tr' else '') if 'quoteAr' in X else lb['sQuoteMeal']
+    smeal = f'<p class="smeal">{E(smeal_t)}</p>' if smeal_t else ''
+    tools2 = (tool('quiz', (QALL[lang]['btn'], QALL[lang]['btnS']), 'quiz-all.html') if X.get('quizAll') else '') + tool('qa', (CARDS[lang]['title'], CARDS[lang]['sub']), 'cards.html')
+    return head(lang, f'{X[lang]} · {s["brand"]}', depth, slead) + bar(lang, depth, other) + f'''<main id="main">
 <section class="hero">{ORN}<div class="wrap"><div class="in">
   <div class="emblem"><img src="{u}media/logo.webp" alt="{E(s['brand'])}"></div>
-  <div><nav class="crumbs hero-crumbs" aria-label="breadcrumb"><a href="index.html">{E(s['home'])}</a><span class="sep">›</span><a href="index.html#series">{E(cat)}</a></nav><h1>{E(MAIN[lang])}</h1><p class="lead">{E(lb['sLead'])}</p>
-  <p class="quote">{lb['sQuote']}</p>{smeal}</div>
+  <div><nav class="crumbs hero-crumbs" aria-label="breadcrumb"><a href="index.html">{E(s['home'])}</a><span class="sep">›</span><a href="index.html#series">{E(cat)}</a></nav><h1>{E(X[lang])}</h1><p class="lead">{E(slead)}</p>
+  <p class="quote">{squote}</p>{smeal}</div>
 </div></div></section>
 
 <section class="band"><div class="wrap">
@@ -541,27 +637,25 @@ def page_series(lang):
   <ol class="points secs">{''.join(secs)}</ol>
 </div></section>
 
-<section class="band tight sect" id="taghut"><div class="wrap">
-  <div class="secthead"><p class="eb">{E(lb['section'])}</p><h2>{E(s['seriesShort'] if lang == 'ar' else MAIN['sections'][0]['tr'])}</h2><p class="sub">{E(s['lead'])}</p>
-  <p class="squote">{E(s['quote'])}<small>{E(s['quoteRef'])}</small></p></div>
-  <h3 class="h3s">{E(s['pointsT'])}</h3><p class="sub">{E(s['pointsS'])}</p>
+<section class="band tight sect" id="{SEC['key']}"><div class="wrap">
+  <div class="secthead"><p class="eb">{E(lb['section'])}</p><h2>{E(sx['short'])}</h2><p class="sub">{E(sx['lead'])}</p>
+  <p class="squote">{E(sx['quote'])}<small>{E(sx['quoteRef'])}</small></p></div>
+  <h3 class="h3s">{E(sx['pointsT'])}</h3><p class="sub">{E(sx['pointsS'])}</p>
   <ol class="points">{''.join(pts)}</ol>
 <h3 class="h3s">{E(s['latestT'])}</h3><p class="sub">{E(s['latestS'])}</p>
-  <article class="open">
-    {player(lang, latest, u)}
+  <article class="open brief">
     <div>
-      <span class="num">{E(s['lesson'])} {DIG(lang, latest['n'])}</span>
+      <span class="num">{E(s['lesson'])} {DIG(lang, latest['num'])}</span>
       <h3><a href="{b}index.html">{E(latest[lang])}</a></h3>
       <p>{E(latest['descAr'] if lang == 'ar' else latest['descTr'])}</p>
       <p class="verse" lang="ar" dir="rtl">{E(latest['verse'])}</p>{meal}
-      <div class="tools">{''.join(tools)}</div>
+      <a class="btn" href="{b}index.html">{E(s['open'])} <span aria-hidden="true">{'←' if lang == 'ar' else '→'}</span></a>
     </div>
   </article>
   <h3 class="h3s" id="lessons">{E(s['listT'])}</h3><p class="sub">{E(s['listS'])}</p>
   <ol class="list">{''.join(rows)}</ol>
   <div class="tools grid" style="margin-top:18px">
-    {tool('quiz', (QALL[lang]['btn'], QALL[lang]['btnS']), 'quiz-all.html')}
-    {tool('qa', (CARDS[lang]['title'], CARDS[lang]['sub']), 'cards.html')}
+    {tools2}
   </div>
   <p class="reset-wrap"><button class="linkbtn" id="progReset" type="button" hidden>{E(s['progReset'])}</button></p>
 </div></section>
@@ -676,8 +770,9 @@ def page_library(lang):
 <div class="ft"><span class="spill">{E(lb['st']['live'])}</span><a class="go" href="{x['page']}">{E(lb['open'])} <span aria-hidden="true">{'←' if lang == 'ar' else '→'}</span></a></div>'''
             title = f'<a href="{x["page"]}">{E(x[lang])}</a>'
         else:
-            body = f'<div class="ft"><span class="spill {x["status"]}">{E(lb["st"][x["status"]])}</span></div>'
-            title = E(x[lang])
+            # not available yet: one short card (title + state), so the student reaches the lessons sooner
+            cards.append(f'''<li class="scard mini {x['cat']} {x['status']}" data-cat="{x['cat']}" data-q="{E(q)}"><div class="cover"><div class="top"><p class="tag">{E(catname[x['cat']])}</p><span class="spill {x["status"]}">{E(lb["st"][x["status"]])}</span></div><h3>{E(x[lang])}</h3>{f'<p class="by">{E(by)}</p>' if by else ''}</div></li>''')
+            continue
         cards.append(f'''<li class="scard {x['cat']} {x['status']}" data-cat="{x['cat']}" data-q="{E(q)}"><div class="cover"><p class="tag">{E(catname[x['cat']])}</p><h3>{title}</h3>{f'<p class="by">{E(by)}</p>' if by else ''}</div>
 <div class="bd">{body}</div></li>''')
     # latest lessons, newest first, from every live series
@@ -687,9 +782,9 @@ def page_library(lang):
             for L in sec['lessons']:
                 if not L['live']: continue
                 where = f'{x[lang]} · {sec[lang]}'
-                cont[L['n']] = dict(t=f'{s["lesson"]} {DIG(lang, L["n"])}: {L[lang]}', w=where)
-                rows.append(f'''<li class="lrow live" data-q="{E(L['ar'] + ' ' + L['tr'] + ' ' + x['ar'] + ' ' + x['tr'] + ' ' + sec['ar'] + ' ' + sec['tr'])}"><span class="n">{DIG(lang, L['n'])}</span><div><p class="where">{E(where)}</p><h3><a href="l{L['n']}/index.html">{E(L[lang])}</a></h3><p class="lprog" data-lesson="{L['n']}" hidden></p></div><a class="pill" href="l{L['n']}/index.html">{E(lb['openL'])}</a></li>''')
-    rows.reverse()
+                cont[L['n']] = dict(t=f'{s["lesson"]} {DIG(lang, L["num"])}: {L[lang]}', w=where)
+                rows.append(f'''<li class="lrow live" data-q="{E(L['ar'] + ' ' + L['tr'] + ' ' + x['ar'] + ' ' + x['tr'] + ' ' + sec['ar'] + ' ' + sec['tr'])}"><span class="n">{DIG(lang, L['num'])}</span><div><p class="where">{E(where)}</p><h3><a href="{L['slug']}/index.html">{E(L[lang])}</a></h3><p class="lprog" data-lesson="{L['n']}" hidden></p></div><a class="pill" href="{L['slug']}/index.html">{E(lb['openL'])}</a></li>''')
+    rows.reverse(); rows = rows[:5]
     redirect = f'''<script>{{ const h = location.hash, m = /^#l(\\d+)$/.exec(h); if (m) location.replace('map.html' + h); else if (h === '#lessons') location.replace('{MAIN_PAGE}#lessons'); }}</script>'''
     data = json.dumps(cont, ensure_ascii=False).replace('</', '<\\/')
     return head(lang, f'{s["brand"]} · {lb["title"]}', depth, lb['lead']) + redirect + bar(lang, depth, other) + f'''<main id="main" class="lib">
@@ -708,6 +803,11 @@ def page_library(lang):
   <div class="cont"><span class="ic">{I['text']}</span><div><p class="where" id="contW"></p><h3 id="contT"></h3><p class="lprog" id="contP" hidden></p></div><a class="btn" id="contA" href="#">{E(lb['contB'])}</a></div>
 </div></section>
 
+<section class="band tight" id="latest"><div class="wrap">
+  <h2>{E(lb['latestT'])}</h2><p class="sub">{E(lb['latestS'])}</p>
+  <ol class="list">{''.join(rows)}</ol>
+</div></section>
+
 <section class="band tight" id="inBand" hidden><div class="wrap">
   <h2>{E(lb['inT'])}</h2><p class="sub" id="inCount"></p>
   <ol class="hits" id="inHits"></ol>
@@ -721,12 +821,7 @@ def page_library(lang):
   <p class="noresult" id="noResult" hidden>{E(lb['noResult'])}</p>
 </div></section>
 
-<section class="band tight" id="latest"><div class="wrap">
-  <h2>{E(lb['latestT'])}</h2><p class="sub">{E(lb['latestS'])}</p>
-  <ol class="list">{''.join(rows)}</ol>
-</div></section>
-
-<section class="band tight"><div class="wrap">
+<section class="band tight" id="teaserBand"><div class="wrap">
   <div class="teaser">
     <div class="vbox player" data-soon="{E(s['tzSoon'])}" data-logo="{u}media/logo.webp"><video controls preload="metadata" playsinline poster="{u}media/poster-teaser.jpg" data-check><source src="{u}media/teaser.mp4" type="video/mp4"></video></div>
     <div><h2>{E(s['tzT'])}</h2><p>{E(s['tzD'])}</p></div>
@@ -738,7 +833,7 @@ def page_library(lang):
 
 def lesson_paths(lang, L):
     """relative links from a lesson folder page (l1/x.html or tr/l1/x.html)"""
-    n = L['n']
+    n, sl = L['n'], L['slug']
     return dict(
         home='../index.html',
         text='text.html',
@@ -746,17 +841,17 @@ def lesson_paths(lang, L):
         map=f'../map.html#l{n}',
         media='../media/' if lang == 'ar' else '../../media/',
         assets='../assets/' if lang == 'ar' else '../../assets/',
-        other=lambda page: (f'../tr/l{n}/{page}' if lang == 'ar' else f'../../l{n}/{page}'),
+        other=lambda page: (f'../tr/{sl}/{page}' if lang == 'ar' else f'../../{sl}/{page}'),
     )
 
 def phead(lang, L, title, sub, crumbs_extra=None):
-    s = S[lang]
-    eb = f'{s["lesson"]} {DIG(lang, L["n"])} · ' + (f'{s["point"]} {ORD[lang][L["n"]-1]} {s["of"]}' if lang == 'ar' else f'{ORD[lang][L["n"]-1]} {s["point"]} {s["of"]}')
-    cr = f'<a href="../index.html">{E(s["home"])}</a><span class="sep">›</span><a href="../{MAIN_PAGE}#taghut">{E(MAIN[lang])}</a><span class="sep">›</span>'
+    s = S[lang]; X, SEC = where_of(L); sx = SECT[L['sk']][lang]; k = L['num']
+    eb = f'{s["lesson"]} {DIG(lang, k)} · ' + (f'{sx["point"]} {sx["ord"][k-1]} {sx["of"]}' if lang == 'ar' else f'{sx["ord"][k-1]} {sx["point"]} {sx["of"]}')
+    cr = f'<a href="../index.html">{E(s["home"])}</a><span class="sep">›</span><a href="../{X["page"]}#{SEC["key"]}">{E(X[lang])}</a><span class="sep">›</span>'
     if crumbs_extra:
-        cr += f'<a href="index.html">{E(s["lesson"])} {DIG(lang, L["n"])}</a><span class="sep">›</span><span>{E(crumbs_extra)}</span>'
+        cr += f'<a href="index.html">{E(s["lesson"])} {DIG(lang, k)}</a><span class="sep">›</span><span>{E(crumbs_extra)}</span>'
     else:
-        cr += f'<span>{E(s["lesson"])} {DIG(lang, L["n"])}</span>'
+        cr += f'<span>{E(s["lesson"])} {DIG(lang, k)}</span>'
     return f'''<section class="phead">{ORN}<div class="wrap">
   <nav class="crumbs" aria-label="breadcrumb">{cr}</nav>
   <p class="eb">{E(eb)}</p><h1>{E(title)}</h1>{f'<p>{E(sub)}</p>' if sub else ''}
@@ -769,6 +864,8 @@ def page_hub(lang, L):
     tools = []
     tools.append(tool('text', s['tText'], P['text'], True))
     tools += [tool('slides', s['tSlides'], P['slides']), tool('map', s['tMap'], P['map']), tool('qa', s['tQA'], P['qa']), tool('quiz', s['tQuiz'], P['quiz'])]
+    if L['n'] in SHARH:
+        tools.insert(1, tool('text', s['tSharh'], 'sharh.html'))
     if (L['n'], lang) in SUM:
         tools.append(tool('sum', s['tSum'], 'summary.html'))
     sh = share_img(lang, L)
@@ -776,13 +873,13 @@ def page_hub(lang, L):
         tools.append(tool('share', s['tShare'], f'{P["media"]}{sh}').replace('<a class="tool" href=', '<a class="tool" download href=', 1))
     meal = f'<p class="meal">{E(L["verseTr"])}</p>' if lang == 'tr' else ''
     path = ''.join(f'<li>{E(x)}</li>' for x in s['path'])
-    idx = LIVE.index(L)
+    SL = sect_live(L); idx = SL.index(L); X, SEC = where_of(L)
     pager = ''
     if idx > 0:
-        pv = LIVE[idx-1]; pager += f'<a href="../l{pv["n"]}/index.html"><small>{E(s["prev"])}</small><b>{E(pv[lang])}</b></a>'
-    if idx < len(LIVE) - 1:
-        nx = LIVE[idx+1]; pager += f'<a class="nx" href="../l{nx["n"]}/index.html"><small>{E(s["next"])}</small><b>{E(nx[lang])}</b></a>'
-    return head(lang, f'{L[lang]} · {MAIN["sections"][0][lang]} · {MAIN[lang]}', depth, L['descAr'] if lang == 'ar' else L['descTr'], image=share_img(lang, L)) + bar(lang, depth, P['other']('index.html')) + '<main id="main">\n' + phead(lang, L, L[lang], L['descAr'] if lang == 'ar' else L['descTr']) + f'''
+        pv = SL[idx-1]; pager += f'<a href="../{pv["slug"]}/index.html"><small>{E(s["prev"])}</small><b>{E(pv[lang])}</b></a>'
+    if idx < len(SL) - 1:
+        nx = SL[idx+1]; pager += f'<a class="nx" href="../{nx["slug"]}/index.html"><small>{E(s["next"])}</small><b>{E(nx[lang])}</b></a>'
+    return head(lang, f'{L[lang]} · {SEC[lang]} · {X[lang]}', depth, L['descAr'] if lang == 'ar' else L['descTr'], image=share_img(lang, L)) + bar(lang, depth, P['other']('index.html')) + '<main id="main">\n' + phead(lang, L, L[lang], L['descAr'] if lang == 'ar' else L['descTr']) + f'''
 <section class="band"><div class="wrap">
   <article class="open">
     {player(lang, L, P['media'][:-6])}
@@ -804,10 +901,10 @@ def page_hub(lang, L):
 </main>
 ''' + footer(lang, depth) + dialog(lang) + f'<script src="{P["assets"]}site.js"></script>\n</body>\n</html>\n'
 
-def lesson_doc(lang, n):
+def lesson_doc(lang, L):
     """The written lesson: markdown → (html body, its table of contents).
        Used by the lesson page and by the search index, so both always see the same headings and ids."""
-    md = open(f'{ROOT}/content/lesson{n}-{lang}.md', encoding='utf-8').read()
+    md = open(f'{ROOT}/content/{L["doc"]}-{lang}.md', encoding='utf-8').read()
     body = markdown.markdown(md, extensions=['tables', 'sane_lists'])
     body = re.sub(r'<table>', '<div class="tbl"><table>', body); body = body.replace('</table>', '</table></div>')
     toc = []; c = [0]
@@ -829,22 +926,22 @@ def search_index(lang):
     """What the search on the home page looks in: every section of every written lesson, and every question.
        Each entry: [lesson number, where it is, link, text]. The file is saved for offline use with the rest."""
     out = []
-    for L in LIVE:
-        n = L['n']
-        body, _ = lesson_doc(lang, n)
+    for L in ALL_LIVE:
+        n, sl = L['n'], L['slug']
+        body, _ = lesson_doc(lang, L)
         # split the lesson at its main headings: one entry per section, linking to that heading
         parts = re.split(r'<h2 id="(s\d+)">(.*?)</h2>', body)
         for k in range(1, len(parts), 3):
             sid, hd, txt = parts[k], plain(parts[k + 1]), plain(parts[k + 2])
-            if txt: out.append([n, hd, f'l{n}/text.html#{sid}', txt])
+            if txt: out.append([n, hd, f'{sl}/text.html#{sid}', txt])
         DQ = DOCQA if lang == 'ar' else DOCQA_TR
         for q, a, _tf in DQ.get(n, []):
-            out.append([n, S[lang]['qaT'], f'l{n}/qa.html', plain(q) + ' — ' + plain(a)])
+            out.append([n, S[lang]['qaT'], f'{sl}/qa.html', plain(q) + ' — ' + plain(a)])
     return out
 
 def page_text(lang, L):
     s = S[lang]; P = lesson_paths(lang, L); n = L['n']; depth = 1 if lang == 'ar' else 2
-    body, toc = lesson_doc(lang, n)
+    body, toc = lesson_doc(lang, L)
     tocl = ''.join(f'<li><a href="#{i}">{E(t)}</a></li>' for i, t in toc)
     return head(lang, f'{L[lang]} · {s["tText"][0]}', depth, L['descAr'] if lang == 'ar' else L['descTr'], image=share_img(lang, L)) + bar(lang, depth, P['other']('text.html')) + f'<main id="main" data-lesson="{n}" data-page="text">\n' + phead(lang, L, L[lang], s['textSub'], s['tText'][0]) + f'''
 <section class="band"><div class="wrap"><div class="doc">
@@ -855,6 +952,92 @@ def page_text(lang, L):
 </div></div></section>
 </main>
 ''' + footer(lang, depth) + '''<script>if (innerWidth < 960) document.querySelector('.toc details').open = false;</script>''' + f'<script src="{P["assets"]}site.js"></script>\n</body>\n</html>\n'
+
+SHARH_CSS = """<style>
+.sh-src{font-size:.88em;color:var(--muted);margin:0 0 6px}
+.sh-p{margin:18px 0 26px}
+.matn{background:var(--parch2);border:1px solid var(--line);border-radius:14px;padding:16px 20px;font-family:var(--af);font-size:1.14em;line-height:1.95;color:var(--ink);direction:rtl;text-align:right}
+.matn .pg{display:block;font-family:var(--uf);font-size:.68em;color:var(--gold);margin-bottom:4px}
+.matn .ayah{font-size:1.04em}
+.sh-tr{margin:10px 4px 0;line-height:1.8}
+.sh-tr small{display:block;font-family:var(--uf);font-weight:700;color:var(--gold);font-size:.78em;margin-bottom:2px}
+.gl{all:unset;cursor:pointer;color:inherit;border-bottom:2px dotted var(--goldl);padding:0 1px 1px;border-radius:3px}
+.gl:hover,.gl.on,.gl:focus-visible{background:rgba(217,178,106,.22)}
+.glpop{position:absolute;z-index:30;max-width:320px;background:var(--band);color:var(--onband);font:500 15px/1.75 var(--uf);padding:10px 14px;border-radius:12px;box-shadow:0 8px 24px rgba(0,0,0,.25);border:1px solid var(--goldl)}
+.glpop b{color:var(--goldl);display:block;font-family:var(--af);font-size:1.15em;margin-bottom:2px}
+.glpop .ar2{display:block;font-family:var(--af);direction:rtl;text-align:right;opacity:.85;margin-top:4px}
+.glpop small{display:block;color:var(--onband3);font-size:.8em;margin-top:6px}
+.sh-fn{margin:8px 4px 0;font-size:.9em}
+.sh-fn summary{cursor:pointer;color:var(--gold);font-family:var(--uf);font-weight:600}
+.sh-fn ol{list-style:none;margin:6px 0 0;padding:0;font-family:var(--af);direction:rtl;text-align:right;line-height:1.9;color:var(--body)}
+.sh-note{margin:8px 4px 0;padding:8px 12px;border-inline-start:3px solid var(--goldl);background:rgba(217,178,106,.1);border-radius:6px;font-size:.92em}
+.sh-sharh{margin:12px 4px 0}
+.sh-sharh .lbl{font-family:var(--uf);font-weight:700;color:var(--gold)}
+.sh-audio{width:100%;margin-top:10px}
+.sh-gl dt{font-family:var(--af);font-size:1.15em;color:var(--ink);margin-top:12px;font-weight:700}
+.sh-gl dd{margin:2px 0 0}
+.sh-gl dd small{color:var(--muted)}
+</style>"""
+
+SHARH_JS = r"""<script>(function(){var G=JSON.parse(document.getElementById('glData').textContent),pop=null,cur=null;
+function close(){if(pop)pop.remove();pop=null;if(cur){cur.classList.remove('on');cur.setAttribute('aria-expanded','false')}cur=null}
+document.addEventListener('click',function(e){var b=e.target.closest('.gl');if(!b){if(!e.target.closest('.glpop'))close();return}
+if(cur===b){close();return}close();var g=G[b.dataset.k];if(!g)return;cur=b;b.classList.add('on');b.setAttribute('aria-expanded','true');
+pop=document.createElement('div');pop.className='glpop';pop.setAttribute('role','status');
+var t=document.createElement('b');t.textContent=g.w;pop.appendChild(t);pop.appendChild(document.createTextNode(g.m));
+if(g.ar){var a=document.createElement('span');a.className='ar2';a.lang='ar';a.textContent=g.ar;pop.appendChild(a)}
+var sm=document.createElement('small');sm.textContent=g.src;pop.appendChild(sm);document.body.appendChild(pop);
+var r=b.getBoundingClientRect(),w=Math.min(320,innerWidth-24);pop.style.maxWidth=w+'px';
+var x=r.left+r.width/2-pop.offsetWidth/2+scrollX;x=Math.max(12+scrollX,Math.min(x,innerWidth-pop.offsetWidth-12+scrollX));
+pop.style.left=x+'px';pop.style.top=(r.bottom+8+scrollY)+'px'});
+addEventListener('keydown',function(e){if(e.key==='Escape')close()});addEventListener('resize',close)})();</script>"""
+
+def sharh_inline(t):
+    return re.sub(r'\[\[([^|\]]+)\|(\w+)\]\]', lambda m: f'<button type="button" class="gl" data-k="{m.group(2)}" aria-expanded="false">{m.group(1)}</button>', t)
+
+def page_sharh(lang, L):
+    """The book's text paragraph by paragraph (sharh.py), with tap-a-word meanings."""
+    s = S[lang]; P = lesson_paths(lang, L); depth = 1 if lang == 'ar' else 2; n = L['n']
+    out = []; used = []
+    for sec in SHARH[n]:
+        if lang == 'ar': out.append(f'<h2>{E(sec["ar"])}</h2>')
+        else: out.append(f'<h2>{E(sec["tr"])}</h2><p class="ar" lang="ar" dir="rtl" style="margin:-6px 0 8px;color:var(--muted)">{E(sec["ar"])}</p>')
+        for p in sec['paras']:
+            used += re.findall(r'\|(\w+)\]\]', p['ar'])
+            h = f'<div class="sh-p"><div class="matn" lang="ar" dir="rtl"><span class="pg">({E(p["pg"])})</span>{ayahify(sharh_inline(p["ar"]))}</div>'
+            if lang == 'tr': h += f'<p class="sh-tr"><small>{E(s["sharhTr"])}</small>{E(p["tr"])}</p>'
+            if p.get('note'): h += f'<p class="sh-note">{E(p["note"][lang])}</p>'
+            if p.get('sharh') and p['sharh'].get(lang):
+                h += f'<div class="sh-sharh"><span class="lbl">{E(s["sharhLbl"])}:</span>{ayahify(markdown.markdown(p["sharh"][lang]))}</div>'
+            if p.get('audio') and p['audio'].get(lang):
+                h += f'<audio class="sh-audio" controls preload="none" src="{P["media"]}{p["audio"][lang]}"></audio>'
+            if p['fn']:
+                h += f'<details class="sh-fn"><summary>{E(s["sharhFn"])}</summary><ol>' + ''.join(f'<li>{E(x)}</li>' for x in p['fn']) + '</ol></details>'
+            out.append(h + '</div>')
+    gdata = {}
+    for k in dict.fromkeys(used):
+        g = GLOSS[k]
+        gdata[k] = dict(w=g['w'], m=g['ar'], src=g['src']) if lang == 'ar' else dict(w=g['w'], m=g['tr'], ar=g['ar'], src=GLOSS_TR_SRC.get(g['src'], g['src']))
+    gl = ''.join(f'<dt lang="ar">{E(d["w"])}</dt><dd>{E(d["m"])}' + (f'<br><span class="ar" lang="ar" dir="rtl">{E(d["ar"])}</span>' if lang == 'tr' else '') + f' <small>({E(s["sharhGlSrc"])}: {E(d["src"])})</small></dd>' for d in gdata.values())
+    data = json.dumps(gdata, ensure_ascii=False).replace('</', '<\\/')
+    top = head(lang, f'{L[lang]} · {s["tSharh"][0]}', depth, L['descAr'] if lang == 'ar' else L['descTr'], extra='\n' + SHARH_CSS, image=share_img(lang, L)) + bar(lang, depth, P['other']('sharh.html'))
+    top += f'<main id="main" data-lesson="{n}" data-page="sharh">\n' + phead(lang, L, L[lang], s['sharhSub'], s['tSharh'][0])
+    body = f'''
+<section class="band"><div class="wrap narrow">
+  <article class="prose">{fs_ctl(lang)}
+    <p class="sh-src">{E(s['sharhSrc'].format(b=BOOK[lang]))}</p>
+    <p class="hint">{E(s['sharhHint'])}</p>
+    {''.join(out)}
+    <h2>{E(s['sharhGl'])}</h2>
+    <dl class="sh-gl">{gl}</dl>
+    <div class="endcta"><p>{E(L[lang])}</p><div style="display:flex;gap:8px;flex-wrap:wrap"><a class="btn" href="text.html">{E(s['tText'][0])}</a><a class="btn ghost" href="index.html">{E(s['backLesson'])}</a></div></div>
+  </article>
+</div></section>
+<script type="application/json" id="glData">{data}</script>
+{SHARH_JS}
+</main>
+'''
+    return top + body + footer(lang, depth) + f'<script src="{P["assets"]}site.js"></script>\n</body>\n</html>\n'
 
 def page_qa(lang, L):
     s = S[lang]; P = lesson_paths(lang, L); depth = 1 if lang == 'ar' else 2
@@ -937,7 +1120,7 @@ def page_slides(lang, L):
 <body tabindex="-1">
 <div class="sv" data-lesson="{L['n']}">
   <div class="sv-top">
-    <div class="g"><a href="index.html" aria-label="{E(s['backLesson'])}"><span aria-hidden="true">{'→' if lang == 'ar' else '←'}</span> <span class="lbl">{E(s['lesson'])} {DIG(lang, L['n'])}</span></a><img src="{P['media']}logo.webp" alt=""></div>
+    <div class="g"><a href="index.html" aria-label="{E(s['backLesson'])}"><span aria-hidden="true">{'→' if lang == 'ar' else '←'}</span> <span class="lbl">{E(s['lesson'])} {DIG(lang, L['num'])}</span></a><img src="{P['media']}logo.webp" alt=""></div>
     <div class="t">{E(L[lang])}</div>
     <div class="g"><button id="svGridBtn" aria-pressed="false" aria-label="{E(s['grid'])}"><span aria-hidden="true">▦</span> <span class="lbl">{E(s['grid'])}</span></button><button id="svFs" aria-label="{E(s['fs'])}"><span aria-hidden="true">⛶</span> <span class="lbl">{E(s['fs'])}</span></button><a lang="{'tr' if lang == 'ar' else 'ar'}" href="{P['other']('slides.html')}">{'TR' if lang == 'ar' else 'AR'}</a></div>
   </div>
@@ -964,10 +1147,10 @@ def page_slides(lang, L):
 
 # ------------------------------------------------------------------ printable summary
 def share_img(lang, L):
-    return f'share-l{L["n"]}-{lang}.jpg' if os.path.exists(f'{ROOT}/media/share-l{L["n"]}-{lang}.jpg') else None
+    return f'share-{L["slug"]}-{lang}.jpg' if os.path.exists(f'{ROOT}/media/share-{L["slug"]}-{lang}.jpg') else None
 
 def lesson_url(lang, L):
-    return SITE + ('' if lang == 'ar' else 'tr/') + f'l{L["n"]}/'
+    return SITE + ('' if lang == 'ar' else 'tr/') + f'{L["slug"]}/'
 
 def sheet(lang, L, media):
     s = S[lang]; d = SUM[(L['n'], lang)]
@@ -996,7 +1179,7 @@ def sheet(lang, L, media):
 
 def page_summary(lang, L):
     s = S[lang]; P = lesson_paths(lang, L); depth = 1 if lang == 'ar' else 2; n = L['n']
-    base = f'summary-l{n}-{lang}'
+    base = f'summary-{L["slug"]}-{lang}'
     return head(lang, f'{s["tSum"][0]} · {L[lang]}', depth, L['descAr'] if lang == 'ar' else L['descTr'], extra=f'\n<link rel="stylesheet" href="{P["assets"]}summary.css">', image=share_img(lang, L)) + bar(lang, depth, P['other']('summary.html')) + '<main id="main">\n' + phead(lang, L, s['tSum'][0], L[lang], s['tSum'][0]) + f'''
 <section class="band sum-band"><div class="wrap">
   <div class="sum-tools"><button class="btn" type="button" onclick="print()">{E(s['sumPrint'])}</button><a class="btn line" href="{P['media']}{base}.pdf" download>{E(s['sumPdf'])}</a><a class="btn line" href="{P['media']}{base}.jpg" download>{E(s['sumImg'])}</a><p class="note">{E(s['sumHelp'])}</p></div>
@@ -1078,12 +1261,13 @@ html[lang=ar] body {{ word-spacing: .14em; }}
   addEventListener('click', e => { if (!mm.hidden && !e.target.closest('#moreMenu')) { mm.hidden = true; mb.setAttribute('aria-expanded', false); } });
   let tt; const toast = () => { if (!narrow()) return; const t = $('toast'); t.hidden = false; t.style.opacity = 1; clearTimeout(tt); tt = setTimeout(() => { t.style.opacity = 0; setTimeout(() => { t.hidden = true; }, 400); }, 3200); };
   $('all').addEventListener('click', toast); $('explore').addEventListener('click', toast);
+  if (L.home) document.querySelectorAll('#brand, #moreMenu a, .ov .acts a.home').forEach(a => { a.href = L.home; });
   /* progress: the lesson's map counts as seen once the student starts it (kept on this device only) */
   const db = document.querySelector('#close .mapdone');
   if (db) {
     const K = 'wt.progress.v1', rd = () => { try { return JSON.parse(localStorage.getItem(K)) || {}; } catch (e) { return {}; } };
-    const paintDone = () => { const on = !!(rd()[LI + 1] || {}).map; db.textContent = on ? db.dataset.on.replace('{x}', db.dataset.x) : db.dataset.off.replace('{x}', db.dataset.x); db.classList.toggle('on', on); db.setAttribute('aria-pressed', on); };
-    db.onclick = () => { const o = rd(), l = o[LI + 1] = o[LI + 1] || {}; if (l.map) delete l.map; else l.map = 1; try { localStorage.setItem(K, JSON.stringify(o)); } catch (e) {} paintDone(); };
+    const paintDone = () => { const on = !!(rd()[L.n] || {}).map; db.textContent = on ? db.dataset.on.replace('{x}', db.dataset.x) : db.dataset.off.replace('{x}', db.dataset.x); db.classList.toggle('on', on); db.setAttribute('aria-pressed', on); };
+    db.onclick = () => { const o = rd(), l = o[L.n] = o[L.n] || {}; if (l.map) delete l.map; else l.map = 1; try { localStorage.setItem(K, JSON.stringify(o)); } catch (e) {} paintDone(); };
     paintDone();
   }
 '''
@@ -1113,7 +1297,7 @@ def write_app_files():
             ],
         }
         w(pre + 'manifest.webmanifest', json.dumps(man, ensure_ascii=False, indent=1))
-    keep_media = {'logo.webp', 'icon-192.png', 'apple-touch-icon.png', 'poster1.jpg', 'poster1-tr.jpg', 'poster-teaser.jpg'}
+    keep_media = {'logo.webp', 'icon-192.png', 'apple-touch-icon.png', 'poster1.jpg', 'poster1-tr.jpg', 'poster-f1.jpg', 'poster-f1-tr.jpg', 'poster-teaser.jpg'}
     files = []
     for dp, dn, fn in os.walk(OUT):
         for f in fn:
@@ -1200,7 +1384,7 @@ def card_data(lang):
     DQ = DOCQA if lang == 'ar' else DOCQA_TR
     fx = (lambda h: arabify(ayahify(h))) if lang == 'tr' else ayahify
     out = []
-    for L in LIVE:
+    for L in ALL_LIVE:
         n = L['n']
         for k, (q, a, _tf) in enumerate(DQ.get(n, [])):
             out.append(dict(id=f'q{n}-{k}', n=n, q=fx(q), a=fx(a)))
@@ -1210,7 +1394,7 @@ def page_cards(lang):
     s, c = S[lang], CARDS[lang]; depth = 0 if lang == 'ar' else 1
     other = 'tr/cards.html' if lang == 'ar' else '../cards.html'
     data = json.dumps(dict(cards=card_data(lang),
-                           lessons={L['n']: f'{s["lesson"]} {DIG(lang, L["n"])}: {L[lang]}' for L in LIVE},
+                           lessons={L['n']: f'{s["lesson"]} {DIG(lang, L["num"])}: {L[lang]}' for L in ALL_LIVE},
                            t=c), ensure_ascii=False).replace('</', '<\\/')
     crumbs = f'<a href="index.html">{E(s["home"])}</a><span class="sep">›</span><span>{E(c["title"])}</span>'
     back = ('→ ' if lang == 'ar' else '← ') + E(c['backHome'])
@@ -1310,21 +1494,23 @@ def build():
     w('tr/data_tr.js', open(f'{ROOT}/maps/data_tr.js', encoding='utf-8').read().replace('tag: "Öğretmene not"', 'tag: "Not"'))
     w('map.html', page_map('ar')); w('tr/map.html', page_map('tr'))
     w('index.html', page_library('ar')); w('tr/index.html', page_library('tr'))
-    w(MAIN_PAGE, page_series('ar')); w('tr/' + MAIN_PAGE, page_series('tr'))
+    for X in SERIES:
+        if X['status'] == 'live': w(X['page'], page_series('ar', X)); w('tr/' + X['page'], page_series('tr', X))
     w('tasks.html', page_tasks('ar')); w('tr/tasks.html', page_tasks('tr'))
     w('privacy.html', page_privacy('ar')); w('tr/privacy.html', page_privacy('tr'))
     w('cards.html', page_cards('ar')); w('tr/cards.html', page_cards('tr'))
     w('quiz-all.html', page_quiz_all('ar')); w('tr/quiz-all.html', page_quiz_all('tr'))
     shutil.copy(f'{ROOT}/tasks.json', f'{OUT}/tasks.json')
-    for L in LIVE:
-        n = L['n']
+    for L in ALL_LIVE:
+        n, sl = L['n'], L['slug']
         for lang, pre in (('ar', ''), ('tr', 'tr/')):
-            w(f'{pre}l{n}/index.html', page_hub(lang, L))
-            w(f'{pre}l{n}/slides.html', page_slides(lang, L))
-            w(f'{pre}l{n}/qa.html', page_qa(lang, L))
-            w(f'{pre}l{n}/quiz.html', page_quiz(lang, L))
-            if (n, lang) in SUM: w(f'{pre}l{n}/summary.html', page_summary(lang, L))
-            w(f'{pre}l{n}/text.html', page_text(lang, L))
+            w(f'{pre}{sl}/index.html', page_hub(lang, L))
+            w(f'{pre}{sl}/slides.html', page_slides(lang, L))
+            w(f'{pre}{sl}/qa.html', page_qa(lang, L))
+            w(f'{pre}{sl}/quiz.html', page_quiz(lang, L))
+            if (n, lang) in SUM: w(f'{pre}{sl}/summary.html', page_summary(lang, L))
+            w(f'{pre}{sl}/text.html', page_text(lang, L))
+            if n in SHARH: w(f'{pre}{sl}/sharh.html', page_sharh(lang, L))
     w('404.html', page_404())
     # what the home-page search looks in; saved for offline use like the rest of the site
     w('search.json', json.dumps(search_index('ar'), ensure_ascii=False))

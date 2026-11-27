@@ -37,7 +37,7 @@
   };
   const toolOf = a => {
     const u = new URL(a.getAttribute('href'), location.href);
-    let m = /\/l(\d+)\/(text|slides|qa|quiz)\.html$/.exec(u.pathname); if (m) return [m[1], m[2]];
+    let m = /\/([lf])(\d+)\/(text|slides|qa|quiz)\.html$/.exec(u.pathname); if (m) return [String((m[1] === 'f' ? 100 : 0) + +m[2]), m[3]];
     m = /map\.html$/.test(u.pathname) && /^#l(\d+)$/.exec(u.hash); return m ? [m[1], 'map'] : null;
   };
   function paint() {
@@ -101,7 +101,9 @@
     addEventListener('beforeinstallprompt', e => { e.preventDefault(); ev = e; cta.hidden = false; $('#installBtn').hidden = false; });
     $('#installBtn').addEventListener('click', async () => { if (!ev) return; ev.prompt(); try { await ev.userChoice; } catch (e) {} ev = null; cta.hidden = true; });
     addEventListener('appinstalled', () => { cta.hidden = true; });
-    if (/iphone|ipad|ipod/i.test(navigator.userAgent) && !/crios|fxios/i.test(navigator.userAgent)) {
+    /* iPadOS Safari presents itself as a Mac by default; a Mac with a touch screen is an iPad */
+    const iOS = /iphone|ipad|ipod/i.test(navigator.userAgent) || (/macintosh/i.test(navigator.userAgent) && navigator.maxTouchPoints > 1);
+    if (iOS && !/crios|fxios|edgios/i.test(navigator.userAgent)) {
       const b = $('#iosBtn'), d = $('#iosDlg');
       if (b && d) {
         cta.hidden = false; b.hidden = false;
@@ -186,9 +188,11 @@
   if (qz && window.LESSONS) {
     /* one lesson's quiz, or — on the section's whole quiz — questions drawn from every published lesson, shuffled */
     const ALL = qz.dataset.lesson === 'all';
-    const L = ALL ? window.LESSONS[0] : window.LESSONS[+qz.dataset.lesson - 1], U = L.ui;
+    window.LESSONS.forEach((x, i) => { if (x.n == null) x.n = i + 1; if (!x.series) x.series = 'taghut'; });
+    const L = ALL ? window.LESSONS[0] : (window.LESSONS.find(x => x.n === +qz.dataset.lesson) || window.LESSONS[+qz.dataset.lesson - 1]), U = L.ui;
     const pick = () => {
-      const pool = window.LESSONS.reduce((a, x) => a.concat(x.quiz || []), []);
+      /* the section's whole quiz: lessons of «صفة الكفر بالطاغوت» only */
+      const pool = window.LESSONS.filter(x => x.series === (qz.dataset.series || 'taghut')).reduce((a, x) => a.concat(x.quiz || []), []);
       for (let i = pool.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [pool[i], pool[j]] = [pool[j], pool[i]]; }
       return pool.slice(0, Math.min(+qz.dataset.count || 15, pool.length));
     };
@@ -241,8 +245,9 @@
   const num = n => AR ? String(n).replace(/\d/g, d => '٠١٢٣٤٥٦٧٨٩'[d]) : String(n);
   const get = k => { try { return JSON.parse(localStorage.getItem(k)); } catch (e) { return null; } };
   /* on a lesson page (l1/…, tr/l1/…) note where the student is */
-  const m = /\/l(\d+)\/([\w-]+\.html)?$/.exec(location.pathname);
-  if (m) { try { localStorage.setItem(LKEY, JSON.stringify({ n: m[1], p: 'l' + m[1] + '/' + (m[2] || 'index.html') })); } catch (e) {} }
+  /* fiqh lessons (f1/ …) are numbered 101, 102 … in the stored progress */
+  const m = /\/([lf])(\d+)\/([\w-]+\.html)?$/.exec(location.pathname);
+  if (m) { try { localStorage.setItem(LKEY, JSON.stringify({ n: String((m[1] === 'f' ? 100 : 0) + +m[2]), p: m[1] + m[2] + '/' + (m[3] || 'index.html') })); } catch (e) {} }
   const dataEl = $('#libData'); if (!dataEl) return;
   const D = JSON.parse(dataEl.textContent), prog = get('wt.progress.v1') || {};
   const TOOLS = ['text', 'slides', 'map', 'qa', 'quiz'];
@@ -337,6 +342,8 @@
   const q = $('#libQ');
   function apply() {
     const t = norm(q.value || '');
+    /* while searching, the results come right under the search box: the other cards step aside */
+    const lib = document.querySelector('main.lib'); if (lib) lib.classList.toggle('searching', !!t);
     let shown = 0;
     $$('.scard').forEach(c => { const ok = (!cat || c.dataset.cat === cat) && (!t || norm(c.dataset.q).includes(t)); c.hidden = !ok; if (ok) shown++; });
     let rowsShown = 0;
@@ -693,7 +700,7 @@
   /* reminders: ask permission, subscribe, tell the reminder service.
      Browsers never allow notifications without the student's own tap, so we make that tap easy:
      a card with one big button (home + task page) until it is on, and one offer after the first «I finished». */
-  const ios = /iphone|ipad|ipod/i.test(navigator.userAgent), standalone = matchMedia('(display-mode: standalone)').matches || navigator.standalone;
+  const ios = /iphone|ipad|ipod/i.test(navigator.userAgent) || (/macintosh/i.test(navigator.userAgent) && navigator.maxTouchPoints > 1), standalone = matchMedia('(display-mode: standalone)').matches || navigator.standalone;
   const can = 'serviceWorker' in navigator && 'PushManager' in window && 'Notification' in window;
   const b64 = s => { const p = '='.repeat((4 - s.length % 4) % 4), r = atob((s + p).replace(/-/g, '+').replace(/_/g, '/')); return Uint8Array.from(r, c => c.charCodeAt(0)); };
   async function current() { if (!can) return null; const reg = await navigator.serviceWorker.ready; return reg.pushManager.getSubscription(); }
@@ -821,7 +828,7 @@ document.addEventListener('click', e => {
   /* the review questions come with the page; the gathering sentence comes from the map's data file */
   const all = D.cards.slice();
   (window.LESSONS || []).forEach((L, i) => {
-    const n = i + 1;
+    const n = L.n || i + 1;
     if (L && L.jamia && D.lessons[n]) all.push({ id: 'j' + n, n: n, q: T.jamiaQ, a: L.jamia, j: 1 });
   });
 

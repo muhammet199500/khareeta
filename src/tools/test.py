@@ -7,10 +7,7 @@ import asyncio, sys, os, re, urllib.parse
 from playwright.async_api import async_playwright
 
 BASE = sys.argv[1] if len(sys.argv) > 1 else 'http://localhost:8765/'
-PAGES = ['index.html', 'la-ilaha.html', 'tr/la-ilaha.html', 'tasks.html', 'tr/tasks.html', 'map.html', 'l1/index.html', 'l1/text.html', 'l1/slides.html', 'l1/qa.html', 'l1/quiz.html', 'l1/summary.html',
-         'l2/index.html', 'l2/text.html', 'l2/slides.html', 'l2/qa.html', 'l2/quiz.html', 'l2/summary.html',
-         'tr/index.html', 'tr/map.html', 'tr/l1/index.html', 'tr/l1/text.html', 'tr/l1/slides.html', 'tr/l1/qa.html', 'tr/l1/quiz.html', 'tr/l1/summary.html',
-         'tr/l2/index.html', 'tr/l2/text.html', 'tr/l2/slides.html', 'tr/l2/qa.html', 'tr/l2/quiz.html', 'tr/l2/summary.html']
+PAGES = ['index.html', 'la-ilaha.html', 'tr/la-ilaha.html', 'tasks.html', 'tr/tasks.html', 'map.html', 'l1/index.html', 'l1/text.html', 'f1/sharh.html', 'tr/f1/sharh.html', 'l1/slides.html', 'l1/qa.html', 'l1/quiz.html', 'l1/summary.html', 'l2/index.html', 'l2/text.html', 'l2/slides.html', 'l2/qa.html', 'l2/quiz.html', 'l2/summary.html', 'tr/index.html', 'tr/map.html', 'tr/l1/index.html', 'tr/l1/text.html', 'tr/l1/slides.html', 'tr/l1/qa.html', 'tr/l1/quiz.html', 'tr/l1/summary.html', 'tr/l2/index.html', 'tr/l2/text.html', 'tr/l2/slides.html', 'tr/l2/qa.html', 'tr/l2/quiz.html', 'tr/l2/summary.html', 'fiqh-muyassar.html', 'tr/fiqh-muyassar.html', 'f1/index.html', 'f1/text.html', 'f1/slides.html', 'f1/qa.html', 'f1/quiz.html', 'f1/summary.html', 'tr/f1/index.html', 'tr/f1/text.html', 'tr/f1/slides.html', 'tr/f1/qa.html', 'tr/f1/quiz.html', 'tr/f1/summary.html']
 SHOT = '/tmp/shots'
 os.makedirs(SHOT, exist_ok=True)
 

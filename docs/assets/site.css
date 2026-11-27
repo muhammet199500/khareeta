@@ -686,3 +686,22 @@ body:focus { outline: none; }
 #cards .acts .btn.ghost:hover { background: rgba(217,178,106,.14); }
 .cardcont .ic { background: var(--goldl); color: var(--ongold); }
 .cardcont::before { background: var(--goldl); }
+
+/* ---- series not available yet: a short card, so the lessons come sooner on the home page ---- */
+.scard.mini .cover { min-height: 0; padding: 18px 22px 18px; justify-content: flex-start; }
+.scard.mini .cover::after { display: none; }
+.scard.mini .top { display: flex; justify-content: space-between; align-items: center; gap: 10px; margin-bottom: 6px; }
+.scard.mini .tag { margin: 0; }
+.scard.mini h3 { font-size: 21px; }
+.scard.mini .by { font-size: 14px; margin-top: 2px; }
+@media (max-width: 640px) { .scard.mini .cover { min-height: 0; } }
+
+/* ---- series page: points not published yet; the latest lesson as a short card ---- */
+.points li .m { font-family: var(--uf); font-size: 13px; color: var(--muted); margin-top: 4px; }
+.open.brief { grid-template-columns: minmax(0, 1fr); }
+.open.brief .btn { display: inline-flex; gap: 8px; align-items: center; }
+
+/* ---- home page while searching: the results come right under the search box ---- */
+.lib.searching :is(#todayBand, #cardBand, #contBand, #teaserBand) { display: none !important; }
+.lib.searching #latest .sub { display: none; }
+.lib.searching :is(#latest, #inBand) { padding-top: 30px; }

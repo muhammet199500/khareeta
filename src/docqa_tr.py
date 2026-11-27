@@ -37,4 +37,17 @@ DOCQA_TR = {
   ('Kendisine ibadet edilmesine razı olmasa bile, Allah’tan başka ibadet edilen herkese buğz edilir.', 'Yanlış; kendisine ibadet edilen ve buna razı olmayana, İsa (aleyhisselâm), melekler ve salihler gibi, buğz edilmez. Buğz edilen, onlara Allah’tan başka ibadet edilmesidir, kendileri değil [Mâide, 117].', True),
   ('Allah için buğz, imanı kemale erdirmektendir.', 'Doğru; Rasûlullah (sallallâhu aleyhi ve sellem) şöyle buyurmuştur: «مَنْ أَحَبَّ لِلَّهِ، وَأَبْغَضَ لِلَّهِ، وَأَعْطَى لِلَّهِ، وَمَنَعَ لِلَّهِ، فَقَدِ اسْتَكْمَلَ الْإِيمَانَ» «Kim Allah için sever, Allah için buğz eder, Allah için verir ve Allah için vermezse imanını kemale erdirmiş olur.» (Ebû Dâvûd)', True),
  ],
+ 101: [
+  ('Fıkhın sözlük ve ıstılah anlamı nedir?', 'Fıkıh sözlükte anlamaktır: «Söylediklerinin çoğunu anlamıyoruz» [Hûd, 91]. Istılahta: ayrıntılı delillerinden elde edilen amelî şer’î hükümleri bilmektir.', False),
+  ('Taharetin iki kısmı nelerdir? Hangisi daha önemlidir?', 'Manevî taharet: kalbin şirkten, günahlardan ve onu kaplayan her şeyden temizlenmesi. Hissî taharet: beden, elbise ve mekânın temizliği. Manevî olan daha önemlidir; şirk necaseti varken beden temizliği gerçekleşmez: «Müşrikler ancak bir necasettir» [Tevbe, 28].', False),
+  ('Tahareti ıstılah olarak tanımlayın; hades ile habesi ayırt edin.', 'Taharet: hadesi kaldırmak ve habesi gidermektir. Hades, bedende bulunan ve namaz gibi şeylere engel olan bir vasıftır; abdest veya gusülle kalkar. Habes necasettir; beden, elbise ve mekânda olur ve giderilmesiyle temizlenir.', False),
+  ('Tahûr su nedir? Dört örnek verin.', 'Kendisi temiz, başkasını temizleyici ve yaratılışındaki hâli üzere kalan sudur. Örnekleri: yağmur, eriyen kar, nehir suyu ve deniz suyu.', False),
+  ('Çok suyun sınırı nedir? Delili nedir?', 'İki kulle ve fazlasıdır; iki kulle yaklaşık 160,5 litredir. Delili İbn Ömer’in hadisidir: «Su iki kulleye ulaşınca pisliği taşımaz.»', False),
+  ('Temiz bile olsa meyve suyuyla neden taharet olmaz? Âyetle delil getirin.', 'Allah şöyle buyurur: «Su bulamazsanız temiz bir toprakla teyemmüm edin» [Mâide, 6]. Taharet su dışındaki bir sıvıyla gerçekleşseydi, suyu bulamayan ona yönlendirilirdi; toprağa yönlendirilmezdi.', False),
+  ('Nebî’nin kızının yıkanması hadisi, temiz bir şey karışan suyun hükmüne nasıl delâlet eder?', '«Su ve sidr ile» yıkanmasını emretti; sidr suya karışan temiz bir maddedir. Bu, temiz bir şey karışıp galip gelmeyen suyun tahûr kaldığını gösterir.', False),
+  ('Hadiste geçtiği şekliyle kedinin artık suyunun temiz olmasının hikmeti nedir?', 'Meşakkatin kaldırılmasıdır; çünkü evlerde insanların arasında dolaşır ve ondan sakınmak zordur: «O necis değildir; o, aranızda dolaşan erkek ve dişilerdendir.»', False),
+  ('Abdestte kullanılmış su ile tekrar temizlenmek caiz değildir.', 'Yanlış; değişmedikçe doğru olan görüşe göre temiz ve temizleyicidir. Nebî’nin abdest suyu için neredeyse çekişirlerdi, onu Câbir’in üzerine döktü ve «Mümin necis olmaz» buyurdu.', True),
+  ('Hayızlı kadının artık suyu temizdir.', 'Doğru; insanın artığı temizdir, cünüp ve hayızlı da öyle. «Mümin necis olmaz.» (Müslim)', True),
+  ('Necasetin rengini değiştirdiği çok su, çokluğundan dolayı tahûr kalır.', 'Yanlış; vasıflarından biri necasetle değişen su, az olsun çok olsun icmâ ile necistir.', True),
+ ],
 }

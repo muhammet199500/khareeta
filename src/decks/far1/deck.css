@@ -1,0 +1,404 @@
+:root {
+  --ink: #0F2E2A;
+  --parch: #F7F3EA;
+  --parch2: #EEE7D7;
+  --card: #FCFAF4;
+  --gold: #85601C;
+  --goldl: #D9B26A;
+  --body: #3B4A46;
+  --bodyd: #C6D6D0;
+  --line: #DCD0B6;
+  --muted: #7A705C;
+}
+
+body {
+  font-family: 'Noto Naskh Arabic', Tahoma, serif;
+  color: #3B4A46;
+}
+
+/* Right-to-left: text runs RTL, rows are laid out from the right explicitly */
+p, h1, h2, h3, td, th { direction: rtl; text-align: right; }
+
+section {
+  direction: ltr;
+  text-align: right;
+  align-items: stretch;
+  background: #F7F3EA;
+  color: #3B4A46;
+  padding: 128px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  counter-increment: page;
+  box-sizing: border-box;
+}
+
+section.c { padding: 128px 128px 160px; }
+section.alt { background: #EEE7D7; }
+section.dark { background: #0F2E2A; color: #C6D6D0; }
+section.gold { background: #D9B26A; color: #0F2E2A; }
+section.mid { justify-content: center; }
+
+/* Type */
+.eb {
+  font-family: 'Reem Kufi', Tahoma, sans-serif;
+  font-size: 26px;
+  font-weight: 500;
+  color: #85601C;
+  line-height: 1.5;
+}
+.dark .eb { color: #D9B26A; }
+.gold .eb { color: #0F2E2A; }
+
+h1 {
+  font-family: 'Reem Kufi', Tahoma, sans-serif;
+  font-size: 120px;
+  font-weight: 700;
+  line-height: 1.25;
+  color: #F7F3EA;
+}
+h2 {
+  font-family: 'Reem Kufi', Tahoma, sans-serif;
+  font-size: 68px;
+  font-weight: 600;
+  line-height: 1.35;
+  color: #0F2E2A;
+}
+.dark h2 { color: #F7F3EA; }
+
+h3 {
+  font-family: 'Reem Kufi', Tahoma, sans-serif;
+  font-size: 36px;
+  font-weight: 600;
+  line-height: 1.45;
+  color: #0F2E2A;
+}
+.dark h3 { color: #F7F3EA; }
+
+p { font-size: 28px; line-height: 1.75; }
+
+.head { display: flex; flex-direction: column; gap: 8px; }
+
+.lead { font-size: 34px; line-height: 1.75; color: #3B4A46; }
+.dark .lead { color: #C6D6D0; }
+
+.note { font-size: 26px; line-height: 1.7; color: #6A6252; }
+.dark .note { color: #A9BDB6; }
+
+.ayah {
+  font-family: 'Amiri', 'Times New Roman', serif;
+  font-size: 40px;
+  line-height: 1.9;
+  color: #0F2E2A;
+}
+.dark .ayah { color: #F1E3C0; }
+.gold .ayah { color: #0F2E2A; }
+.ayah.big { font-size: 50px; line-height: 1.85; }
+.ayah.sm { font-size: 32px; line-height: 1.85; }
+
+.ref {
+  font-family: 'Reem Kufi', Tahoma, sans-serif;
+  font-size: 24px;
+  line-height: 1.5;
+  color: #85601C;
+}
+.dark .ref { color: #D9B26A; }
+
+/* Cards */
+.row { display: flex; flex-direction: row-reverse; gap: 32px; }
+.col { flex: 1; display: flex; flex-direction: column; gap: 14px; }
+
+.card {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background: #FCFAF4;
+  border: 1px solid #E6DCC8;
+  border-radius: 12px;
+  padding: 38px 40px 36px;
+  position: relative;
+  box-shadow: 0 6px 18px rgba(15, 46, 42, 0.07);
+  animation: rise 0.6s ease-out both;
+  animation-delay: calc(var(--i, 0) * 120ms);
+}
+.alt .card { background: #FBF8F0; }
+.card.ink { background: #0F2E2A; border-color: #0F2E2A; }
+.card.ink::before { background: #D9B26A; }
+.card.ink h3 { color: #F7F3EA; }
+.card.ink .txt { color: #C6D6D0; }
+.card.ink .ayah { color: #F1E3C0; }
+.card.ink .ref { color: #D9B26A; }
+.card.ink .tag { color: #D9B26A; }
+
+.dark .card { background: #173D38; border-color: rgba(217,178,106,.22); box-shadow: none; }
+.dark .card::before { background: #D9B26A; }
+.dark .card .txt { color: #C6D6D0; }
+
+.txt { font-size: 28px; line-height: 1.7; color: #3B4A46; }
+.dark .txt { color: #C6D6D0; }
+.tag {
+  font-family: 'Reem Kufi', Tahoma, sans-serif;
+  font-size: 24px;
+  line-height: 1.4;
+  color: #85601C;
+}
+.num {
+  font-family: 'Reem Kufi', Tahoma, sans-serif;
+  font-size: 56px;
+  font-weight: 700;
+  line-height: 1.1;
+  color: #85601C;
+}
+.card.ink .num { color: #D9B26A; }
+
+.rule { border: none; border-top: 2px solid #DCD0B6; margin: 4px 0; }
+.dark .rule { border-top-color: #2E5650; }
+
+/* Footer */
+.foot {
+  position: absolute;
+  left: 128px;
+  bottom: 64px;
+  width: 1664px;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  align-items: center;
+}
+.foot .ft {
+  font-family: 'Reem Kufi', Tahoma, sans-serif;
+  font-size: 24px;
+  line-height: 1.4;
+  color: #7A705C;
+}
+.foot .pn {
+  font-family: 'Reem Kufi', Tahoma, sans-serif;
+  font-size: 24px;
+  line-height: 1.4;
+  color: #7A705C;
+  width: 80px;
+  text-align: left;
+}
+.foot .pn::before { content: counter(page); }
+.dark .foot .ft, .dark .foot .pn { color: #8FA8A0; }
+
+/* Cover & closing */
+.dark.glow { background:
+  url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22360%22 height=%22520%22 viewBox=%220 0 360 520%22%3E%3Cdefs%3E%3ClinearGradient id=%22f%22 x1=%220%22 y1=%220%22 x2=%220%22 y2=%221%22%3E%3Cstop offset=%22.5%22 stop-color=%22%23D9B26A%22 stop-opacity=%22.34%22/%3E%3Cstop offset=%221%22 stop-color=%22%23D9B26A%22 stop-opacity=%220%22/%3E%3C/linearGradient%3E%3C/defs%3E%3Cg fill=%22none%22 stroke=%22url%28%23f%29%22%3E%3Cpath d=%22M10 520V215C10 120 85 52 180 10C275 52 350 120 350 215V520%22 stroke-width=%221.6%22/%3E%3Cpath d=%22M30 520V222C30 136 96 74 180 34C264 74 330 136 330 222V520%22 stroke-width=%221%22/%3E%3C/g%3E%3Ccircle cx=%22180%22 cy=%2234%22 r=%223%22 fill=%22%23D9B26A%22 fill-opacity=%22.3%22/%3E%3C/svg%3E") left 230px bottom 110px / 540px auto no-repeat,
+  url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2260%22 height=%2230%22 viewBox=%220 0 60 30%22%3E%3Cg fill=%22none%22 stroke=%22%23D9B26A%22 stroke-width=%221%22 stroke-opacity=%22.42%22%3E%3Cpath d=%22M0 3.5H60M0 26.5H60%22/%3E%3Cpath d=%22M23.31,18.44L18.68,18.68L18.44,23.31L15.00,20.20L11.56,23.31L11.32,18.68L6.69,18.44L9.80,15.00L6.69,11.56L11.32,11.32L11.56,6.69L15.00,9.80L18.44,6.69L18.68,11.32L23.31,11.56L20.20,15.00Z%22/%3E%3Ccircle cx=%2215%22 cy=%2215%22 r=%222%22/%3E%3Cpath d=%22M24 15H36%22/%3E%3Cpath d=%22M45 9.5L50.5 15L45 20.5L39.5 15Z%22/%3E%3Cpath d=%22M54 15H66M-6 15H6%22/%3E%3C/g%3E%3C/svg%3E") center bottom 36px / 120px 60px repeat-x,
+  radial-gradient(1100px 560px at 22% 32%, rgba(217,178,106,.17), transparent 70%),
+  radial-gradient(900px 480px at 92% 112%, rgba(63,143,106,.26), transparent 70%),
+  linear-gradient(to right, rgba(15,46,42,0) 0%, rgba(15,46,42,.6) 45%, #0F2E2A 75%),
+  radial-gradient(rgba(217,178,106,.26) 2px, transparent 2.6px) 0 0 / 38px 38px, #0F2E2A;
+  box-shadow: inset -8px 0 0 #D9B26A; }
+.cover-body { width: 1060px; align-self: flex-end; display: flex; flex-direction: column; gap: 28px; }
+.cover-body .logo { width: 150px; height: 138px; object-fit: contain; align-self: flex-end; }
+.gl { border: none; border-top: 4px solid #D9B26A; width: 160px; margin: 8px 0; align-self: flex-end; }
+
+/* Quote of the sheikh */
+.quote {
+  font-family: 'Amiri', 'Times New Roman', serif;
+  font-size: 52px;
+  line-height: 1.8;
+  color: #0F2E2A;
+}
+
+/* Five steps */
+.steps { display: flex; flex-direction: row-reverse; gap: 20px; }
+.step {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  background: #FCFAF4;
+  border: 2px solid #DCD0B6;
+  border-radius: 12px;
+  padding: 24px 28px;
+}
+.step .k { font-family: 'Reem Kufi', Tahoma, sans-serif; font-size: 26px; line-height: 1.3; color: #85601C; }
+.step .t { font-family: 'Reem Kufi', Tahoma, sans-serif; font-size: 34px; line-height: 1.4; font-weight: 600; color: #0F2E2A; }
+.step.on { background: #0F2E2A; border-color: #0F2E2A; }
+.step.on .k { color: #D9B26A; }
+.step.on .t { color: #F7F3EA; }
+
+/* Root word */
+.rootrow { display: flex; flex-direction: row-reverse; gap: 56px; align-items: center; }
+.root {
+  font-family: 'Amiri', 'Times New Roman', serif;
+  font-size: 128px;
+  line-height: 1.3;
+  font-weight: 700;
+  color: #85601C;
+  background: #FCFAF4;
+  border: 2px solid #DCD0B6;
+  border-radius: 16px;
+  padding: 8px 56px 24px;
+}
+
+/* Definition band */
+.defn {
+  font-family: 'Amiri', 'Times New Roman', serif;
+  font-size: 54px;
+  line-height: 1.7;
+  color: #0F2E2A;
+  border-right: 8px solid #85601C;
+  padding-right: 40px;
+}
+.dark .defn { color: #F7F3EA; border-right-color: #D9B26A; }
+
+/* Verse box */
+.vbox {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  background: #FCFAF4;
+  border-radius: 12px;
+  border: 1px solid #E6DCC8;
+  position: relative;
+  padding: 32px 44px;
+}
+.vbox::before { content: ""; position: absolute; right: -1px; top: 22px; bottom: 22px; width: 7px; border-radius: 7px 0 0 7px; background: #85601C; }
+.alt .vbox { background: #FBF8F0; }
+
+/* Table */
+.tbl { direction: ltr; font-family: 'Noto Naskh Arabic', Tahoma, serif; font-size: 28px; color: #3B4A46; width: 100%; }
+.tbl th { text-align: right; font-weight: 700; color: #0F2E2A; padding: 14px 22px; }
+.tbl td { text-align: right; padding: 14px 22px; }
+.tbl tr.h { background: #E4D8BC; }
+.tbl tr.hl { background: #0F2E2A; }
+.tbl tr.hl td { color: #F7F3EA; }
+
+/* Certainty meter */
+.meter { height: 16px; background: #E4D8BC; border-radius: 8px; overflow: hidden; display: flex; flex-direction: row-reverse; }
+.fill { height: 16px; background: #85601C; border-radius: 8px; }
+.say {
+  font-family: 'Amiri', 'Times New Roman', serif;
+  font-size: 36px;
+  line-height: 1.6;
+  color: #0F2E2A;
+}
+
+/* Big answer */
+.big-no {
+  font-family: 'Amiri', 'Times New Roman', serif;
+  font-size: 180px;
+  font-weight: 700;
+  line-height: 1.1;
+  color: #85601C;
+}
+
+/* Equation */
+.eq { display: flex; flex-direction: row-reverse; gap: 24px; align-items: center; }
+.eqbox {
+  flex: 1;
+  background: #FCFAF4;
+  border: 2px solid #DCD0B6;
+  border-radius: 12px;
+  padding: 28px 32px;
+}
+.eqbox.res { flex: 1.6; background: #0F2E2A; border-color: #0F2E2A; }
+.eqbox .t { font-family: 'Reem Kufi', Tahoma, sans-serif; font-size: 34px; line-height: 1.45; font-weight: 600; color: #0F2E2A; }
+.eqbox.res .t { color: #F7F3EA; }
+.op { font-family: 'Reem Kufi', Tahoma, sans-serif; font-size: 64px; line-height: 1; color: #85601C; }
+
+/* Tiles */
+.tiles { display: flex; flex-direction: column; gap: 24px; }
+.tiles .row { gap: 24px; }
+.tile {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  background: #FCFAF4;
+  border-radius: 12px;
+  border: 1px solid #E6DCC8;
+  padding: 28px 30px 26px;
+  position: relative;
+}
+/* gold accent bar set inside the top edge, so the rounded corners stay clean */
+.card::before, .tile::before { content: ""; position: absolute; top: -1px; inset-inline: 40px; height: 6px; border-radius: 0 0 6px 6px; background: #85601C; }
+.tile::before { inset-inline: 30px; height: 5px; }
+.notlist {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background: #EEE7D7;
+  border-radius: 12px;
+  padding: 32px 36px;
+}
+.nl { font-size: 26px; line-height: 1.6; color: #3B4A46; border-right: 4px solid #C9B98F; padding-right: 18px; }
+
+/* Tawhid panels */
+.panel {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  background: #173D38;
+  border-radius: 14px;
+  padding: 40px 48px;
+  animation: rise 0.6s ease-out both;
+  animation-delay: calc(var(--i, 0) * 160ms);
+}
+.kalima {
+  font-family: 'Amiri', 'Times New Roman', serif;
+  font-size: 96px;
+  font-weight: 700;
+  line-height: 1.35;
+  color: #D9B26A;
+}
+.pill {
+  font-family: 'Reem Kufi', Tahoma, sans-serif;
+  font-size: 30px;
+  line-height: 1.4;
+  font-weight: 600;
+  color: #0F2E2A;
+  background: #D9B26A;
+  border-radius: 40px;
+  padding: 12px 32px;
+  align-self: flex-end;
+}
+
+/* Review */
+.qa {
+  display: flex;
+  gap: 28px;
+  background: #FBF8F0;
+  border-radius: 12px;
+  padding: 28px 36px;
+  flex-direction: row-reverse;
+  align-items: flex-start;
+}
+.qn {
+  font-family: 'Reem Kufi', Tahoma, sans-serif;
+  font-size: 44px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #85601C;
+  width: 56px;
+}
+.qbody { flex: 1; display: flex; flex-direction: column; gap: 8px; }
+.q { font-size: 30px; line-height: 1.6; font-weight: 700; color: #0F2E2A; }
+.a { font-size: 27px; line-height: 1.7; color: #3B4A46; }
+.a.fragment { opacity: 0; transform: translateY(10px); transition: opacity 0.4s ease, transform 0.4s ease; }
+.a.fragment.visible { opacity: 1; transform: translateY(0); }
+
+/* Jamia */
+.jamia {
+  font-family: 'Amiri', 'Times New Roman', serif;
+  font-size: 46px;
+  line-height: 1.85;
+  color: #0F2E2A;
+}
+
+.closing {
+  font-family: 'Amiri', 'Times New Roman', serif;
+  font-size: 54px;
+  line-height: 1.85;
+  color: #F7F3EA;
+}
+
+@keyframes rise {
+  from { opacity: 0; transform: translateY(24px); }
+}
