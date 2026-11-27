@@ -1340,7 +1340,7 @@ html[lang=ar] body {{ word-spacing: .14em; }}
 .tasksl {{ pointer-events: auto; display: inline-flex; align-items: center; gap: 6px; min-height: 38px; padding: 0 14px; border-radius: 30px; background: #D9B26A; color: #0F2E2A; font-weight: 700; font-size: 14.5px; text-decoration: none; white-space: nowrap; }}
 .tasksl svg {{ width: 17px; height: 17px; }}
 .tasksl:hover {{ background: #E6C483; }}
-@media (max-width: 760px) {{ .tasksl {{ padding: 0 10px; min-height: 36px; }} .tasksl span {{ display: none; }} .tasksl svg {{ width: 20px; height: 20px; }} }}
+@media (max-width: 760px) and (not ((display-mode: standalone) and (pointer: fine))) {{ .tasksl {{ padding: 0 10px; min-height: 36px; }} .tasksl span {{ display: none; }} .tasksl svg {{ width: 20px; height: 20px; }} }}
 #brand:hover span {{ color: var(--ink); }}
 #bar .m-only {{ display: none; }}
 #moreMenu {{ position: fixed; bottom: 76px; left: 50%; transform: translateX(-50%); z-index: 6; background: rgba(15,46,42,.98); border-radius: 18px; padding: 8px; display: grid; gap: 4px; min-width: 220px; box-shadow: 0 14px 40px rgba(15,46,42,.4); }}
@@ -1348,7 +1348,7 @@ html[lang=ar] body {{ word-spacing: .14em; }}
 #moreMenu button:hover, #moreMenu a:hover {{ background: rgba(255,255,255,.1); }}
 #toast {{ position: fixed; top: 70px; left: 50%; transform: translateX(-50%); z-index: 6; background: rgba(15,46,42,.95); color: #F7F3EA; border: 1px solid var(--goldl); border-radius: 30px; padding: 8px 18px; font-size: 14px; white-space: nowrap; pointer-events: none; transition: opacity .4s; }}
 .ov .acts a.home {{ min-height: 48px; border-radius: 30px; padding: 0 22px; border: 2px solid rgba(217,178,106,.5); color: #F7F3EA; display: inline-flex; align-items: center; text-decoration: none; font-family: var(--qxf); font-size: 17px; }}
-@media (max-width: 760px) {{
+@media (max-width: 760px) and (not ((display-mode: standalone) and (pointer: fine))) {{
   #tools {{ display: none; }}
   #bar .m-only {{ display: inline-flex; align-items: center; justify-content: center; font-size: 22px; padding: 0 14px; }}
   #top {{ background: linear-gradient(var(--parch) 72%, rgba(244,238,225,0)); height: calc(66px + env(safe-area-inset-top)); }}
