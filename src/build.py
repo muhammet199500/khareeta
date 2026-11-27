@@ -1241,7 +1241,7 @@ def page_summary(lang, L):
   <div class="sheet-wrap" id="sheetWrap">{sheet(lang, L, P['media'])}</div>
 </div></section>
 </main>
-''' + footer(lang, depth) + """<script>
+''' + footer(lang, depth) + f'<script src="{P["assets"]}site.js"></script>\n' + """<script>
 (() => { const w = document.getElementById('sheetWrap'), sh = document.getElementById('sheet');
   const fit = () => { const z = Math.min(1, w.clientWidth / 794); sh.style.zoom = z; };
   fit(); addEventListener('resize', fit); })();
