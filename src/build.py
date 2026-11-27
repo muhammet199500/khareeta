@@ -293,7 +293,8 @@ def ar_count(n, one, two, few, many):
 
 LIB = {
  'ar': dict(title='مكتبة الدروس', nav='السلاسل',
-    lead='سلاسل علمية في العقيدة والفقه والحديث. لكل درس: فيديو، ودرس مكتوب، وعرض شرائح، وخريطة تفاعلية، وأسئلة وأجوبة، واختبار.',
+    lead='دروس في العقيدة والفقه والحديث، مكتوبة ومرئية، مع أسئلة واختبار.',
+    soonT='قريبًا إن شاء الله',
     search='ابحث في الدروس: كلمة أو عبارة…', noResult='لا نتائج. جرّب كلمة أخرى.',
     inT='نتائج داخل الدروس', inMore='عرض نتائج أكثر', inCount='{n} موضعًا',
     contT='تابع من حيث توقفت', contB='أكمِل',
@@ -306,7 +307,8 @@ LIB = {
     section='قسم', toSection='إلى القسم',
  ),
  'tr': dict(title='Ders Kütüphanesi', nav='Seriler',
-    lead='Akide, fıkıh ve hadis alanında ilmî seriler. Her derste: video, yazılı ders, sunum, etkileşimli harita, soru-cevap ve test.',
+    lead='Akide, fıkıh ve hadis dersleri: yazılı ve görüntülü, sorular ve testle.',
+    soonT='Yakında inşallah',
     search='Derslerde ara: kelime veya ifade…', noResult='Sonuç yok. Başka bir kelime deneyin.',
     inT='Derslerin içinden sonuçlar', inMore='Daha fazla sonuç göster', inCount='{n} yer',
     contT='Kaldığın yerden devam et', contB='Devam et',
@@ -770,7 +772,7 @@ def page_library(lang):
     counts = {c: sum(1 for x in SERIES if x['cat'] == c) for c, _, _ in CATS}
     cats = f'<li><button type="button" class="on" data-cat="">{E(lb["all"])}<span>{DIG(lang, len(SERIES))}</span></button></li>'
     cats += ''.join(f'<li><button type="button" data-cat="{c}">{E(catname[c])}<span>{DIG(lang, counts[c])}</span></button></li>' for c, _, _ in CATS if counts[c])
-    cards = []
+    cards, soon = [], []
     for x in SERIES:
         by = x['byAr'] if lang == 'ar' else x['byTr']
         q = ' '.join([x['ar'], x['tr'], by, catname[x['cat']]] + [sec['ar'] + ' ' + sec['tr'] for sec in x.get('sections', [])])
@@ -780,11 +782,11 @@ def page_library(lang):
             q += ' ' + ' '.join(L['ar'] + ' ' + L['tr'] for L in live)
             body = f'''<p class="sec">{I['text']}<span>{E(names)}</span></p><p class="meta">{E(sections_count(lang, len(secs)))} · {E(published(lang, len(live)))}</p>
 <p class="sprog" data-lessons="{','.join(str(L['n']) for L in live)}" hidden></p>
-<div class="ft"><span class="spill">{E(lb['st']['live'])}</span><a class="go" href="{x['page']}">{E(lb['open'])} <span aria-hidden="true">{'←' if lang == 'ar' else '→'}</span></a></div>'''
+<div class="ft"><a class="go" href="{x['page']}">{E(lb['open'])} <span aria-hidden="true">{'←' if lang == 'ar' else '→'}</span></a></div>'''
             title = f'<a href="{x["page"]}">{E(x[lang])}</a>'
         else:
             # not available yet: one short card (title + state), so the student reaches the lessons sooner
-            cards.append(f'''<li class="scard mini {x['cat']} {x['status']}" data-cat="{x['cat']}" data-q="{E(q)}"><div class="cover"><div class="top"><p class="tag">{E(catname[x['cat']])}</p><span class="spill {x["status"]}">{E(lb["st"][x["status"]])}</span></div><h3>{E(x[lang])}</h3>{f'<p class="by">{E(by)}</p>' if by else ''}</div></li>''')
+            soon.append(f'<li>{E(x[lang])}' + (f' <small>· {E(by)}</small>' if by else '') + '</li>')
             continue
         cards.append(f'''<li class="scard {x['cat']} {x['status']}" data-cat="{x['cat']}" data-q="{E(q)}"><div class="cover"><p class="tag">{E(catname[x['cat']])}</p><h3>{title}</h3>{f'<p class="by">{E(by)}</p>' if by else ''}</div>
 <div class="bd">{body}</div></li>''')
@@ -796,7 +798,7 @@ def page_library(lang):
                 if not L['live']: continue
                 where = f'{x[lang]} · {sec[lang]}'
                 cont[L['n']] = dict(t=f'{s["lesson"]} {DIG(lang, L["num"])}: {L[lang]}', w=where)
-                rows.append(f'''<li class="lrow live" data-q="{E(L['ar'] + ' ' + L['tr'] + ' ' + x['ar'] + ' ' + x['tr'] + ' ' + sec['ar'] + ' ' + sec['tr'])}"><span class="n">{DIG(lang, L['num'])}</span><div><p class="where">{E(where)}</p><h3><a href="{L['slug']}/index.html">{E(L[lang])}</a></h3><p class="lprog" data-lesson="{L['n']}" hidden></p></div><a class="pill" href="{L['slug']}/index.html">{E(lb['openL'])}</a></li>''')
+                rows.append(f'''<li class="lrow live" data-q="{E(L['ar'] + ' ' + L['tr'] + ' ' + x['ar'] + ' ' + x['tr'] + ' ' + sec['ar'] + ' ' + sec['tr'])}"><div><p class="where">{E(where)} · {E(s['lesson'])} {DIG(lang, L['num'])}</p><h3><a href="{L['slug']}/index.html">{E(L[lang])}</a></h3><p class="lprog" data-lesson="{L['n']}" hidden></p></div><a class="pill" href="{L['slug']}/index.html">{E(lb['openL'])}</a></li>''')
     rows.reverse(); rows = rows[:5]
     redirect = f'''<script>{{ const h = location.hash, m = /^#l(\\d+)$/.exec(h); if (m) location.replace('map.html' + h); else if (h === '#lessons') location.replace('{MAIN_PAGE}#lessons'); }}</script>'''
     data = json.dumps(cont, ensure_ascii=False).replace('</', '<\\/')
@@ -817,7 +819,7 @@ def page_library(lang):
 </div></section>
 
 <section class="band tight" id="latest"><div class="wrap">
-  <h2>{E(lb['latestT'])}</h2><p class="sub">{E(lb['latestS'])}</p>
+  <h2>{E(lb['latestT'])}</h2>
   <ol class="list">{''.join(rows)}</ol>
 </div></section>
 
@@ -828,9 +830,10 @@ def page_library(lang):
 </div></section>
 
 <section class="band" id="series"><div class="wrap">
-  <h2>{E(lb['seriesT'])}</h2><p class="sub">{E(lb['seriesS'])}</p>
-  <ul class="cats" aria-label="{E(lb['seriesT'])}">{cats}</ul>
+  <h2>{E(lb['seriesT'])}</h2>
+  {f'<ul class="cats" aria-label="{E(lb["seriesT"])}">{cats}</ul>' if len(cards) > 2 else ''}
   <ul class="sgrid">{''.join(cards)}</ul>
+  {f'<div class="soonbox"><h3>{E(lb["soonT"])}</h3><ul>{"".join(soon)}</ul></div>' if soon else ''}
   <p class="noresult" id="noResult" hidden>{E(lb['noResult'])}</p>
 </div></section>
 

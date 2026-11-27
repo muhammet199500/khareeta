@@ -2,7 +2,7 @@
  "id": "./",
  "name": "Ve Tevâsav bi’l-Hak · Ders Kütüphanesi",
  "short_name": "Ve Tevâsav bi’l-Hak",
- "description": "Akide, fıkıh ve hadis alanında ilmî seriler. Her derste: video, yazılı ders, sunum, etkileşimli harita, soru-cevap ve test.",
+ "description": "Akide, fıkıh ve hadis dersleri: yazılı ve görüntülü, sorular ve testle.",
  "lang": "tr",
  "dir": "ltr",
  "start_url": "./",
