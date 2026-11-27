@@ -78,11 +78,14 @@ Taharet **tahûr su** (temizleyici su) ile gerçekleşir. Tahûr su, **kendisi t
 
 Hüküm iki şeye bağlıdır: **Üç vasfından biri (koku, tat veya renk) değişti mi?** ve **Su çok mu, az mı?**
 
-| Durum | Hüküm |
-| --- | --- |
-| Vasıflarından biri necasetle değişti; çok olsun az olsun | **İcmâ ile necistir**; hadesi kaldırmaz, necaseti gidermez |
-| Değişmedi ve çoktur (iki kulle ve fazlası) | **Necis olmaz**; onunla taharet gerçekleşir |
-| Değişmedi ve azdır (iki kulleden az) | **Necis olur**; onunla taharet gerçekleşmez |
+<ol class="flow">
+<li><p class="q">Necaset suyun üç vasfından birini (kokusunu, tadını veya rengini) değiştirdi mi?</p>
+<p class="a"><b class="k">Evet →</b><span class="r no">✗ <strong>İcmâ ile necistir</strong>, çok olsun az olsun: hadesi kaldırmaz, necaseti gidermez.</span></p>
+<p class="a"><b class="k">Hayır →</b><span class="go">İkinci soruya geçin ↓</span></p></li>
+<li><p class="q">Su çok mu, yani iki kulle veya daha fazla mı?</p>
+<p class="a"><b class="k">Evet →</b><span class="r yes">✓ <strong>Necis olmaz</strong>; onunla taharet gerçekleşir.</span></p>
+<p class="a"><b class="k">Hayır →</b><span class="r no">✗ <strong>Necis olur</strong>; onunla taharet gerçekleşmez.</span></p></li>
+</ol>
 
 **Çok suyun sınırı:** iki kulle ve fazlasıdır. Kulle, büyük bir testi (küp) demektir; iki kulle yaklaşık **160,5 litre** su yapar, yani yaklaşık beş kırba eder.
 

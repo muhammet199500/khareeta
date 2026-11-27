@@ -905,12 +905,47 @@ def page_hub(lang, L):
 </main>
 ''' + footer(lang, depth) + dialog(lang) + f'<script src="{P["assets"]}site.js"></script>\n</body>\n</html>\n'
 
+
+_YES, _NO = {'نعم', 'Evet'}, {'لا', 'Hayır'}
+
+def tables_to_cards(body):
+    """Tables read badly on a phone, so every lesson table becomes cards (decided with the author):
+       - a comparison table (empty top-left cell, 2+ things compared) → one card per compared thing;
+       - a table whose last column is only yes/no → a short list with ✓ / ✗;
+       - any other table → one card per row, titled by its first cell.
+       Decision tables are written by hand in the lesson as <ol class="flow"> question steps."""
+    def conv(m):
+        t = m.group(1)
+        head = [c.strip() for c in re.findall(r'<th[^>]*>(.*?)</th>', t, re.S)]
+        rows = [[c.strip() for c in re.findall(r'<td[^>]*>(.*?)</td>', r, re.S)] for r in re.findall(r'<tr>(.*?)</tr>', t, re.S)]
+        rows = [r for r in rows if r]
+        n = len(head)
+        if not rows or n < 2: return m.group(0)
+        last = {re.sub('<[^>]+>', '', r[-1]).strip() for r in rows}
+        if n >= 3 and last <= (_YES | _NO):
+            li = ''.join(f'<li><span class="ic {"yes" if re.sub("<[^>]+>", "", r[-1]).strip() in _YES else "no"}" aria-hidden="true">'
+                         f'{"✓" if re.sub("<[^>]+>", "", r[-1]).strip() in _YES else "✗"}</span><span><strong>{re.sub("</?strong>", "", r[0])}</strong>: '
+                         + '، '.join(r[1:-1]) + f' <span class="vlh">({head[-1]} {r[-1]})</span></span></li>' for r in rows)
+            return f'<ul class="vl">{li}</ul>'
+        if not re.sub('<[^>]+>', '', head[0]).strip() and n >= 3:
+            cards = ''.join(f'<div class="cc"><h4>{head[j]}</h4><dl>' + ''.join(f'<dt>{re.sub("</?strong>", "", r[0])}</dt><dd>{r[j]}</dd>' for r in rows) + '</dl></div>' for j in range(1, n))
+            return f'<div class="cmp">{cards}</div>'
+        out = []
+        for r in rows:
+            title = re.sub('</?strong>', '', r[0])
+            if n == 2: inner = f'<p>{r[1]}</p>'
+            else: inner = '<dl>' + ''.join(f'<dt>{head[j]}</dt><dd>{r[j]}</dd>' for j in range(1, n)) + '</dl>'
+            out.append(f'<div class="rc"><h4>{title}</h4>{inner}</div>')
+        return f'<div class="rcs">{"".join(out)}</div>'
+    return re.sub(r'<div class="tbl"><table>(.*?)</table></div>', conv, body, flags=re.S)
+
 def lesson_doc(lang, L):
     """The written lesson: markdown → (html body, its table of contents).
        Used by the lesson page and by the search index, so both always see the same headings and ids."""
     md = open(f'{ROOT}/content/{L["doc"]}-{lang}.md', encoding='utf-8').read()
     body = markdown.markdown(md, extensions=['tables', 'sane_lists'])
     body = re.sub(r'<table>', '<div class="tbl"><table>', body); body = body.replace('</table>', '</table></div>')
+    body = tables_to_cards(body)
     toc = []; c = [0]
     def hid(m):
         c[0] += 1; tag, txt = m.group(1), m.group(2)
