@@ -2,8 +2,8 @@
 
 Bu dersin sonunda şunları yapabilmelisiniz:
 
-1. Fıkhı tanımlamak; kaynaklarını ve meyvesini saymak.
-2. Taharetin önemini açıklamak; iki kısmını, manevî ve hissî taharet arasındaki farkı ayırt etmek.
+1. Fıkhı tanımlamak; kaynaklarını ve faydasını saymak.
+2. Taharetin önemini açıklamak; iki kısmını, manevî ve maddî taharet arasındaki farkı ayırt etmek.
 3. Tahareti sözlük ve ıstılah (dinî terim) anlamıyla tanımlamak; hades (abdestsizlik ve cünüplük hâli) ile necaset (pislik) arasındaki farkı ayırt etmek.
 4. Taharetin hangi su ile gerçekleştiğini açıklamak ve delilini göstermek.
 5. İçine necaset veya temiz bir madde karışan suyun ve kullanılmış suyun hükmünü ayırt etmek.
@@ -20,7 +20,7 @@ Bu, «el-Fıkhu’l-Müyesser» serisinin ilk dersidir. Önce fıkhın anlamıyl
 | | Açıklama |
 | --- | --- |
 | **Temel kaynakları** | Kur’ân-ı Kerîm, sahih Sünnet, icmâ (âlimlerin ittifakı) ve kıyas (benzer bir meselenin hükmüne göre hüküm vermek) |
-| **Konusu** | Dinen sorumlu olan kimselerin (mükellef) fiilleri: ibadet hükümleri ve alışveriş, evlilik gibi muamelât hükümleri |
+| **Konusu** | Dinen sorumlu olan kimselerin (mükellef) fiilleri: ibadet hükümleri ve alışveriş, kira gibi muamelât hükümleri |
 | **Faydası** | Kişinin düzelmesi, ibadetinin sahih olması ve davranışının doğru olması; kul düzelince toplum da düzelir |
 
 Allah Teâlâ şöyle buyurur: ﴿فَلَوْلَا نَفَرَ مِنْ كُلِّ فِرْقَةٍ مِنْهُمْ طَائِفَةٌ لِيَتَفَقَّهُوا فِي الدِّينِ﴾ «Her topluluktan bir grubun dinde derin bilgi edinmek için ayrılması gerekmez miydi?» [Tevbe, 122]. Nebî (sallallâhu aleyhi ve sellem) şöyle buyurmuştur: «مَنْ يُرِدِ اللَّهُ بِهِ خَيْرًا يُفَقِّهْهُ فِي الدِّينِ» «Allah kime hayır dilerse onu dinde fakih kılar.» Buhârî (71) ve Müslim (1037) rivayet etmiştir.
@@ -48,7 +48,7 @@ Taharet namazın anahtarı ve şartlarının en kuvvetlisidir. Ev anahtarsız a�
 
 | | Hades | Necaset (habes) |
 | --- | --- | --- |
-| **Nedir?** | Bedende bulunan ve namaz gibi ibadetlere engel olan bir hâl | Pislik (idrar, dışkı, kan gibi) |
+| **Nedir?** | Bedende bulunan ve namaz gibi ibadetlere engel olan bir hâl | Pislik (idrar ve dışkı gibi) |
 | **Nerede olur?** | Yalnızca beden | Beden, elbise ve mekân |
 | **Türleri** | Küçük hades: abdesti gerektirir. Büyük hades: guslü gerektirir | Yıkanması, serpilmesi ve silinmesi gerekenler |
 | **Nasıl kalkar?** | Niyetle abdest organlarına ya da bütün bedene su ile; su bulunmaz veya kullanılamazsa toprak ile | Necasetin giderilmesiyle |

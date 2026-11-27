@@ -7,13 +7,13 @@ Bu dersin sonunda şunları yapabilmelisiniz:
 3. Bu hususa Kur’an’dan ayetler ve Sünnet’ten bir hadisle delil getirip delil yönünü açıklamak.
 4. İtikad (birinci husus) ile terk (ikinci husus) arasındaki ilişkiyi açıklamak.
 5. Bu hususu tevhid kelimesiyle ilişkilendirmek.
-6. İstenen ibadet terkini, bu bapa girmeyen şeylerden ayırt etmek.
+6. İstenen ibadet terkini, bu konuya girmeyen şeylerden ayırt etmek.
 
 ## Giriş: Bu hususun yeri
 
 Şeyh Muhammed b. Abdülvehhab (rahimehullah) tâğutu inkârın keyfiyetini şöyle açıklamıştır: «Allah’tan başkasına yapılan ibadetin bâtıl olduğuna inanman, **onu terk etmen**, ondan buğz etmen, ehlini tekfir etmen ve onlara düşmanlık etmendir.»
 
-Önceki derste **birinci hususu** öğrendik: tâğuta ibadetin bâtıl olduğuna itikad; bu, kalbin amelidir. Bu ders ise **ikinci husus** hakkındadır: tâğuta ibadeti terk etmek; bu da o itikadın amelî meyvesidir.
+Önceki derste **birinci hususu** öğrendik: tâğuta ibadetin bâtıl olduğuna itikad; bu, kalbin amelidir. Bu ders ise **ikinci husus** hakkındadır: tâğuta ibadeti terk etmek; bu da o itikadın amelde görünen sonucudur.
 
 Bir şeyin bâtıl olduğuna inanan kimsenin onu terk etmesi gerekir. Allah’tan başkasına ibadetin bâtıl olduğuna inandığını söyleyip sonra onu yapan kimsenin fiili sözünü yalanlar. Bu yüzden terk, itikaddan hemen sonra gelmiştir.
 
@@ -21,9 +21,9 @@ Bir şeyin bâtıl olduğuna inanan kimsenin onu terk etmesi gerekir. Allah’ta
 
 **Sözlükte:** Terk, bir şeyden ayrılmak ve onu bırakmaktır. Yûsuf (aleyhisselâm)’ın şu sözü de bu anlamdadır: ﴿إِنِّي تَرَكْتُ مِلَّةَ قَوْمٍ لَا يُؤْمِنُونَ بِاللَّهِ﴾ «Ben, Allah’a inanmayan bir kavmin dinini terk ettim.» [Yûsuf, 37]
 
-**İctinab:** Kur’an’ın bu bapta kullandığı lafızdır. Aslı **cânib** (yan, taraf) kelimesinden gelir: sen bir yanda, o şey başka bir yanda olursun. Bu yüzden ictinab, sadece terkten daha kapsamlıdır; çünkü fiili bırakmayı ve onun vasıtalarından ve mekânlarından uzak durmayı içerir.
+**İctinab:** Kur’an’ın bu konuda kullandığı lafızdır. Aslı **cânib** (yan, taraf) kelimesinden gelir: sen bir yanda, o şey başka bir yanda olursun. Bu yüzden ictinab, sadece terkten daha kapsamlıdır; çünkü fiili bırakmayı ve onun vasıtalarından ve mekânlarından uzak durmayı içerir.
 
-**Istılahta (bu baptaki anlamıyla):** Tâğuta ibadeti terk etmek; Müslümanın, Allah’ın emrine uyarak, açıkta ve gizlide Allah’tan başkasına hiçbir ibadet türünü yöneltmemesi, onun vasıtalarından ve mekânlarından uzak durmasıdır.
+**Istılahta (bu konudaki anlamıyla):** Tâğuta ibadeti terk etmek; Müslümanın, Allah’ın emrine uyarak, açıkta ve gizlide Allah’tan başkasına hiçbir ibadet türünü yöneltmemesi, onun vasıtalarından ve mekânlarından uzak durmasıdır.
 
 > **Uyarı:** Buradaki terk, Müslümanın kendisiyle ibadet ettiği ve sevap kazandığı bir **ameldir**; çünkü Allah’ın emrine uymak için bilerek yapılan bir terktir, sadece fiilin yapılmamış olması değildir.
 
@@ -50,7 +50,7 @@ Bu husustan kastedilen şudur:
 
 ## Üçüncü bölüm: İtikad ile terk arasındaki ilişki
 
-İtikad ve terk birbirinden ayrılmaz: itikad asıldır, terk ise onun meyvesi ve delilidir. Bu, üç durum karşılaştırıldığında açıkça görünür:
+İtikad ve terk birbirinden ayrılmaz: itikad asıldır, terk ise onun sonucu ve delilidir. Bu, üç durum karşılaştırıldığında açıkça görünür:
 
 | Durum | Hakikati | Hükmü |
 | --- | --- | --- |
@@ -62,7 +62,7 @@ Bu husustan kastedilen şudur:
 
 **Birinci durum: İtikadsız terk**
 
-Allah’tan başkasına ibadet edilmeyen bir çevrede yetişmiş bir adam düşünün. O hiç böyle bir şey yapmamıştır; fakat bunu yapmakta bir sakınca görmez ve «Herkesin kendi yolu var» der. Onun terki ibadet terki değil, âdet terkidir. Kalpte bir asla dayanmadığı için çevresi değiştiğinde ortadan kalkmaya açıktır. Bu da önceki derste geçen şu esasa dayanır: itikad asıldır, zahirî terk onun yerini tutmaz.
+Allah’tan başkasına ibadet edilmeyen bir çevrede yetişmiş bir adam düşünün. O hiç böyle bir şey yapmamıştır; fakat bunu yapmakta bir sakınca görmez ve «Herkesin kendi yolu var» der. Onun terki ibadet terki değil, âdet terkidir. Kalpteki bir inanca dayanmadığı için çevresi değişince ortadan kalkabilir. Bu da önceki derste geçen şu esasa dayanır: itikad asıldır, zahirî terk onun yerini tutmaz.
 
 **İkinci durum: Terksiz itikad**
 
@@ -145,7 +145,7 @@ Sâbit b. Dahhâk (radıyallâhu anh) şöyle dedi: Rasûlullah (sallallâhu ale
 
 > **Tâğuta ibadeti terk etmek; Müslümanın Allah’tan başkasına hiçbir ibadeti kalbiyle, diliyle ve azalarıyla yöneltmemesi, buna götüren şeylerden kaçınması, bunu Allah’ın emrine uymak için yapması ve insanlar muhalefet etse de bunda sebat etmesidir.**
 
-Bu terk, o ibadetin bâtıl olduğuna itikadın amelî meyvesi ve doğruluğunun delilidir; tevhid kelimesinin gereklerinden ve tâğutu inkârın aslındandır.
+Bu terk, o ibadetin bâtıl olduğuna itikadın amelde görünen sonucu ve doğruluğunun delilidir; tevhid kelimesinin gereklerinden ve tâğutu inkârın aslındandır.
 
 ## Tekrar soruları
 
@@ -161,7 +161,7 @@ Bu terk, o ibadetin bâtıl olduğuna itikadın amelî meyvesi ve doğruluğunun
 
 6. Hususların sıralamasında terk neden itikaddan sonra gelmiştir?
 7. Bir adam, Allah’tan başkası için kurban kesmenin bâtıl olduğuna inandığını söylüyor, fakat ailesinin hatırı için ona katılıyor. Onun hâlindeki kusur nedir?
-8. Ashâb-ı Kehf kıssasından bu bapta hangi amelî dersi çıkarırız?
+8. Ashâb-ı Kehf kıssasından bu konuda hangi amelî dersi çıkarırız?
 
 **Üçüncü kısım: Doğru mu, yanlış mı? (gerekçesiyle)**
 

@@ -534,7 +534,7 @@ TR = {
 <div class="card" style="--i:0"><p class="num">1</p><h3>Buğzun anlamı</h3><p class="txt">Sözlük ve ıstılah anlamı</p></div>
 <div class="card" style="--i:1"><p class="num">2</p><h3>İlgili olduğu şeyler</h3><p class="txt">Allah’tan başkasına ibadet, tâğut, ehli ve buğzun şekilleri</p></div>
 <div class="card" style="--i:2"><p class="num">3</p><h3>Delilleri</h3><p class="txt">Kitap ve Sünnet’ten, delil yönüyle</p></div>
-<div class="card" style="--i:3"><p class="num">4</p><h3>Tevhidle bağı</h3><p class="txt">Örnekler, nasslardan uyarılar ve meyveler</p></div>
+<div class="card" style="--i:3"><p class="num">4</p><h3>Tevhidle bağı</h3><p class="txt">Örnekler, âyet ve hadislerden uyarılar ve faydalar</p></div>
 </div>
 <div class="vbox">
 <p class="tag">Dersin amacı</p>
@@ -560,7 +560,7 @@ TR = {
 </div>
 <div class="card ink" style="--i:1">
 <p class="tag">Kerâhiyet · Yakın bir lafız</p>
-<h3>Kur’an ve Sünnet bu bapta onu da kullanır</h3>
+<h3>Kur’an ve Sünnet bu konuda onu da kullanır</h3>
 <p class="txt">Hadiste: «Küfre dönmekten hoşlanmaması.»</p>
 <hr class="rule">
 <p class="ayah sm">﴿وَكَرَّهَ إِلَيْكُمُ الْكُفْرَ﴾</p>
@@ -574,7 +574,7 @@ TR = {
 'istilah': f'''<section id="istilah" class="c">
 <div class="head">
 <p class="eb">Birinci bölüm · Buğzun anlamı</p>
-<h2>Bu baptaki buğz</h2>
+<h2>Bu konudaki buğz</h2>
 </div>
 <p class="defn">Müslümanın kalbiyle Allah’tan başkasına ibadete, tâğuta ve ona ibadet edenlere Allah için buğz etmesidir; o ibadete razı olmaz, onu sevmez ve ehliyle sevgi bağı kurmaz.</p>
 <div class="row">
@@ -606,7 +606,7 @@ TR = {
 <p class="lead">«Biz sizden ve Allah’ı bırakıp ibadet ettiklerinizden uzağız. Sizi inkâr ettik. Bizimle sizin aranızda ebedî bir düşmanlık ve buğz başlamıştır.» (Mümtehine, 4)</p>
 </div>
 {FT}
-<aside>Müslüman, Allah’tan başkasına ibadetten ateşe atılmaktan hoşlanmadığı gibi hoşlanmaz; isimlerle, mevsimlerle ve kutlamalarla süslense bile ona razı olmaz. Mümtehine ayetinde üçü bir araya gelmiştir: kavimden ve ibadet ettiklerinden beri olmak ve buğzu ilan etmek.</aside>
+<aside>Müslüman, Allah’tan başkasına ibadetten ateşe atılmaktan hoşlanmadığı gibi hoşlanmaz; isimlerle, bayram ve kutlamalarla süslense bile ona razı olmaz. Mümtehine ayetinde üçü bir araya gelmiştir: kavimden ve ibadet ettiklerinden beri olmak ve buğzu ilan etmek.</aside>
 </section>''',
 'tawaghit': f'''<section id="tawaghit" class="c">
 <div class="head">
@@ -662,7 +662,7 @@ TR = {
 <div class="row">
 <div class="card" style="--i:0"><p class="tag">1 · Kalp · Buğzun aslı</p><h3>Ondan hoşlanmaz, razı olmaz</h3><p class="txt">Ondan nefret eder; onu görünce Allah için üzülür ve kıskanır, ortadan kalkmasını ister; tâğutu ve ehlini sevmez, onlarla sevgi bağı kurmaz.</p></div>
 <div class="card" style="--i:1"><p class="tag">2 · Dil</p><h3>Şirki ve ehlini övmez</h3><p class="txt">Bâtıllığını açıklar; ondan ve ehlinden beri olduğunu söyler: «Biz sizden ve Allah’ı bırakıp ibadet ettiklerinizden uzağız.»</p></div>
-<div class="card ink" style="--i:2"><p class="tag">3 · Azalar</p><h3>Şirk mekânlarında bulunmaz</h3><p class="txt">Mevsimlerinde hoşlanarak ya da seyirci olarak bulunmaz; gücü yettiğince şirki eliyle, diliyle ya da kalbiyle reddeder.</p></div>
+<div class="card ink" style="--i:2"><p class="tag">3 · Azalar</p><h3>Şirk mekânlarında bulunmaz</h3><p class="txt">Kutlamalarda hoşlanarak ya da seyirci olarak bulunmaz; gücü yettiğince şirki eliyle, diliyle ya da kalbiyle reddeder.</p></div>
 </div>
 {FT}
 <aside>Buğzun aslı ve yeri kalptir; etkisi dilde ve azalarda görünür.</aside>
@@ -670,7 +670,7 @@ TR = {
 'alaqa': f'''<section id="alaqa" class="c alt">
 <div class="head">
 <p class="eb">Dördüncü bölüm · Önceki iki husus ile ilişkisi</p>
-<h2>İtikad asıldır; terk ve buğz onun meyveleridir</h2>
+<h2>İtikad asıldır; terk ve buğz onun sonuçlarıdır</h2>
 </div>
 <div class="eq">
 <div class="eqbox"><p class="tag">İtikad · Birinci ders</p><p class="t">Kalp, Allah’tan başkasına ibadetin bâtıllığına kesin inanır</p></div>
@@ -679,7 +679,7 @@ TR = {
 <p class="op">+</p>
 <div class="eqbox res"><p class="tag">Buğz · Bu ders</p><p class="t">Kalp ona, tâğuta ve ehline buğz eder</p></div>
 </div>
-<p class="lead">Üç husus birbirinden ayrılmaz: itikad kalpteki asıldır, terk onun azalardaki meyvesidir, buğz ise kalbin duygusundaki meyvesidir.</p>
+<p class="lead">Üç husus birbirinden ayrılmaz: itikad kalpteki asıldır; terk onun bedende görünen sonucudur; buğz ise kalbin hissettiği sonucudur.</p>
 {FT}
 <aside>Kalbin bir tasdiki, bir de duygusu vardır. İtikad tasdikiyle, buğz duygusuyla, terk ise azalarla ilgilidir.</aside>
 </section>''',
@@ -704,7 +704,7 @@ TR = {
 <h2>Her durum bir örnekle</h2>
 </div>
 <div class="row">
-<div class="card" style="--i:0"><p class="tag">Buğzsuz terk</p><h3>Şirk mevsimlerine sevinir</h3><p class="txt">Kurban kesmez, kabir tavaf etmez; fakat şirk mevsimlerinin havasını sever ve ehlini över. Bir şeyi güzel bulan kalp onu yapmaya yakındır.</p></div>
+<div class="card" style="--i:0"><p class="tag">Buğzsuz terk</p><h3>Şirk kutlamalarına sevinir</h3><p class="txt">Kurban kesmez, kabir tavaf etmez; fakat şirk kutlamalarının havasını sever ve ehlini över. Bir şeyi güzel bulan kalp onu yapmaya yakındır.</p></div>
 <div class="card" style="--i:1"><p class="tag">Buğzsuz itikad</p><h3>«Herkes ibadetinde özgürdür»</h3><p class="txt">Ölülere duanın şirk olduğunu bilir; fakat yapanı görünce kalbinde hiçbir şey kıpırdamaz ve onunla sevgi bağı kurar.</p></div>
 <div class="card ink" style="--i:2"><p class="tag">İtikad, terk ve buğz</p><h3>Muvahhidin hâli</h3><p class="txt">Bâtıllığına inanır, terk eder, ona buğz eder; tâğuta ve ehline de Allah yolunda buğz eder; İbrahim ve beraberindekiler gibi.</p></div>
 </div>
@@ -747,7 +747,7 @@ TR = {
 </div>
 </div>
 {FT}
-<aside>Ayetin devamı: «İşte Allah onların kalplerine imanı yazmış ve onları kendi katından bir ruhla desteklemiştir.» Bu, Allah için buğzun meyvelerindendir.</aside>
+<aside>Ayetin devamı: «İşte Allah onların kalplerine imanı yazmış ve onları kendi katından bir ruhla desteklemiştir.» Bu, Allah için buğzun faydalarındandır.</aside>
 </section>''',
 'adilla3': f'''<section id="adilla3" class="c">
 <div class="head">
@@ -792,7 +792,7 @@ TR = {
 <p class="txt">Peygamber (s.a.v.) küfürden hoşlanmamayı imanın tadını veren hasletlerden saydı ve onu ateşe atılmaktan hoşlanmamaya benzetti.</p>
 </div>
 {FT}
-<aside>İmanın tadı, Allah için buğzun meyvelerindendir.</aside>
+<aside>İmanın tadı, Allah için buğzun faydalarındandır.</aside>
 </section>''',
 'hadith2': f'''<section id="hadith2" class="c dark">
 <div class="head">
@@ -884,7 +884,7 @@ TR = {
 </div>
 <div class="tiles">
 <div class="row">
-<div class="tile"><p class="tag">Mevsimler ve kutlamalar</p><p class="txt">Onlara sevinmez, hoşlanarak seyretmeye gitmez, ehlini onlarla tebrik etmez.</p></div>
+<div class="tile"><p class="tag">Bayramlar ve kutlamalar</p><p class="txt">Onlara sevinmez, hoşlanarak seyretmeye gitmez, ehlini onlarla tebrik etmez.</p></div>
 <div class="tile"><p class="tag">Övmek ve güzel bulmak</p><p class="txt">Şirki ve ehlini övmez; şirk görüntüleri için «Ne güzel!» demez.</p></div>
 <div class="tile"><p class="tag">Akrabalık</p><p class="txt">Akrabasının şirkine buğz eder, bu hâli üzerine onunla sevgi bağı kurmaz, ona razı olmaz.</p></div>
 </div>
@@ -898,7 +898,7 @@ TR = {
 </section>''',
 'tanbihat': f'''<section id="tanbihat" class="c alt">
 <div class="head">
-<p class="eb">Nasslardan uyarılar</p>
+<p class="eb">Âyet ve hadislerden uyarılar</p>
 <h2>Dört uyarı</h2>
 </div>
 <div class="row">
@@ -921,7 +921,7 @@ TR = {
 'thamarat': f'''<section id="thamarat" class="c">
 <div class="head">
 <p class="eb">Sekizinci bölüm</p>
-<h2>Allah için buğzun meyveleri</h2>
+<h2>Allah için buğzun faydaları</h2>
 </div>
 <div class="row">
 <div class="card" style="--i:0"><p class="tag">1</p><h3>İmanın tadı</h3><p class="txt">Enes (r.a.) hadisinde geçtiği gibi.</p></div>
@@ -981,7 +981,7 @@ TR = {
 <hr class="gl">
 <p class="lead">Hamd âlemlerin Rabbi Allah’a mahsustur.</p>
 </div>
-<aside>Özet: Bu buğz, Allah’tan başkasına ibadetin bâtıl olduğuna itikadın kalbin duygusundaki meyvesidir; terk de onun azalardaki meyvesidir. Tevhid kelimesindeki «Lâ ilâhe»nin gereklerinden ve tâğutu inkârın aslındandır.</aside>
+<aside>Özet: Bu buğz, Allah’tan başkasına ibadetin bâtıl olduğuna itikadın kalpte hissedilen sonucudur; terk de onun bedende görünen sonucudur. Tevhid kelimesindeki «Lâ ilâhe»nin gereklerinden ve tâğutu inkârın aslındandır.</aside>
 </section>''',
 }
 
@@ -991,7 +991,7 @@ SECTIONS = {
         "s5": ("البغض وكلمة التوحيد، والأمثلة والتنبيهات والثمرات", "tawhid"), "s6": ("أسئلة المراجعة والخلاصة والخاتمة", "review1")},
  'tr': {"s1": ("Dersin girişi: tâğutu inkârın keyfiyeti ve dersin planı", "cover"), "s2": ("Buğzun anlamı; ilgili olduğu şeyler: Allah’tan başkasına ibadet, tâğut ve ehli; şekilleri", "lugha"),
         "s3": ("Buğzun itikad ve terk ile ilişkisi", "alaqa"), "s4": ("Kitap ve Sünnet’ten şer’î deliller ve delil yönleri", "adilla1"),
-        "s5": ("Buğz ve tevhid kelimesi; örnekler, uyarılar ve meyveler", "tawhid"), "s6": ("Tekrar soruları, özet ve kapanış", "review1")},
+        "s5": ("Buğz ve tevhid kelimesi; örnekler, uyarılar ve faydalar", "tawhid"), "s6": ("Tekrar soruları, özet ve kapanış", "review1")},
 }
 TITLE = {'ar': 'بغض الطاغوت وعبادته وأهله', 'tr': 'Tâğuta, İbadetine ve Ehline Buğz'}
 

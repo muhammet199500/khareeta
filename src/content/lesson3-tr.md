@@ -21,9 +21,9 @@ Kalbin bilmesi ve tasdik etmesi yetmez; Allah’ın sevdiğini sevmesi, Allah’
 
 **Sözlükte:** Buğz, sevginin zıddıdır. Cevherî şöyle der: «البُغْضُ: ضدُّ الحبِّ... والبَغْضاءُ: شدّة البُغْضِ» «Buğz, sevginin zıddıdır… Bağzâ ise şiddetli buğzdur.» [es-Sıhâh, «b-ğ-d» maddesi] Allah Teâlâ’nın İbrahim (aleyhisselâm) ve onunla birlikte olanlar hakkındaki şu sözü de bu anlamdadır: ﴿وَبَدَا بَيْنَنَا وَبَيْنَكُمُ الْعَدَاوَةُ وَالْبَغْضَاءُ أَبَدًا﴾ «Bizimle sizin aranızda ebedî bir düşmanlık ve buğz başlamıştır.» [Mümtehine, 4]
 
-**Kerâhiyet (hoşlanmamak):** Buğza yakın bir lafızdır; Kur’an ve Sünnet bu bapta onu da kullanmıştır: ﴿وَكَرَّهَ إِلَيْكُمُ الْكُفْرَ﴾ «Küfrü size çirkin gösterdi.» [Hucurât, 7] ve «أَنْ يَكْرَهَ أَنْ يَعُودَ فِي الْكُفْرِ» «Küfre dönmekten hoşlanmaması.»
+**Kerâhiyet (hoşlanmamak):** Buğza yakın bir lafızdır; Kur’an ve Sünnet bu konuda onu da kullanmıştır: ﴿وَكَرَّهَ إِلَيْكُمُ الْكُفْرَ﴾ «Küfrü size çirkin gösterdi.» [Hucurât, 7] ve «أَنْ يَكْرَهَ أَنْ يَعُودَ فِي الْكُفْرِ» «Küfre dönmekten hoşlanmaması.»
 
-**Istılahta (bu baptaki anlamıyla):** Müslümanın kalbiyle Allah’tan başkasına ibadete, Allah’ı bırakıp ibadet edilen tâğuta ve ona ibadet edenlere Allah için ve Allah yolunda buğz etmesidir; o ibadete razı olmaz, onu sevmez ve onun üzerinde olanlarla sevgi bağı kurmaz.
+**Istılahta (bu konudaki anlamıyla):** Müslümanın kalbiyle Allah’tan başkasına ibadete, Allah’ı bırakıp ibadet edilen tâğuta ve ona ibadet edenlere Allah için ve Allah yolunda buğz etmesidir; o ibadete razı olmaz, onu sevmez ve onun üzerinde olanlarla sevgi bağı kurmaz.
 
 > **Uyarı:** Buradaki buğz, Müslümanın kendisiyle Allah’a yaklaştığı **kalbî bir ibadettir**; çünkü Allah’ın buğz ettiği şeye ve Allah’ın buğz ettiği kimseye buğzdur. Bu, imanın en sağlam kulplarındandır.
 
@@ -33,7 +33,7 @@ Bu husustaki buğz üç şeyle ilgilidir:
 
 ### 1. Allah’tan başkasına ibadete buğz
 
-Müslümanın şirke ve Allah’tan başkasına yöneltilen her ibadete buğz etmesidir: Allah’tan başkasına dua etmek, onun için kurban kesmek, ona adak adamak, ona secde etmek, ölülerden medet istemek ve benzerleri. Ateşe atılmaktan hoşlanmadığı gibi ondan hoşlanmaz; isimlerle, mevsimlerle ve kutlamalarla süslense bile ona razı olmaz ve onu güzel bulmaz.
+Müslümanın şirke ve Allah’tan başkasına yöneltilen her ibadete buğz etmesidir: Allah’tan başkasına dua etmek, onun için kurban kesmek, ona adak adamak, ona secde etmek, ölülerden medet istemek ve benzerleri. Ateşe atılmaktan hoşlanmadığı gibi ondan hoşlanmaz; farklı isimlerle anılsa, bayram ve kutlamalarla süslense bile ona razı olmaz ve onu güzel bulmaz.
 
 ### 2. Tâğuta buğz
 
@@ -64,12 +64,12 @@ Bu buğz, Allah yolunda bir buğzdur: Onlara üzerinde bulundukları şirk sebeb
 - Onun bâtıllığını açıklamak; ondan ve ehlinden beri olduğunu söylemek. Tıpkı İbrahim ve onunla birlikte olanların dediği gibi: ﴿إِنَّا بُرَآءُ مِنْكُمْ وَمِمَّا تَعْبُدُونَ مِنْ دُونِ اللَّهِ﴾ «Biz sizden ve Allah’ı bırakıp ibadet ettiklerinizden uzağız.»
 
 **3. Azalarda:**
-- Şirk mekânlarında ve mevsimlerinde hoşlanarak ya da seyirci olarak bulunmamak.
+- Şirkin yapıldığı yerlerde, bayram ve kutlamalarda hoşlanarak ya da seyirci olarak bulunmamak.
 - Gücü yettiğince şirki eliyle, diliyle ya da kalbiyle reddetmek.
 
 ## Dördüncü bölüm: Buğzun önceki iki husus ile ilişkisi
 
-Üç husus birbirinden ayrılmaz: itikad kalpteki asıldır, terk onun azalardaki meyvesidir, buğz ise kalbin duygusundaki meyvesidir. Bu, üç durum karşılaştırıldığında açıkça görünür:
+Üç husus birbirinden ayrılmaz: itikad kalpteki asıldır; terk onun bedende görünen sonucudur; buğz ise kalbin hissettiği sonucudur. Bu, üç durum karşılaştırıldığında açıkça görünür:
 
 | Durum | Hakikati | Hükmü |
 | --- | --- | --- |
@@ -81,7 +81,7 @@ Bu buğz, Allah yolunda bir buğzdur: Onlara üzerinde bulundukları şirk sebeb
 
 **Birinci durum: Buğzsuz terk**
 
-Bir adam Allah’tan başkası için kurban kesmez ve kabirleri tavaf etmez; fakat insanları şirk mevsimlerinde gördüğünde buna sevinir, havasını sever ve ehlini över. Bu kimse azalarıyla terk etmiştir, fakat kalbi Allah’ın buğz ettiğine buğz etmemiştir. Bir şeyi güzel bulan kalp, onu yapmaya yakındır.
+Bir adam Allah’tan başkası için kurban kesmez ve kabirleri tavaf etmez; fakat insanları şirk kutlamalarında gördüğünde buna sevinir, havasını sever ve ehlini över. Bu kimse azalarıyla terk etmiştir, fakat kalbi Allah’ın buğz ettiğine buğz etmemiştir. Bir şeyi güzel bulan kalp, onu yapmaya yakındır.
 
 **İkinci durum: Buğzsuz itikad**
 
@@ -103,7 +103,7 @@ Bu, muvahhidin hâlidir: Kalbi, Allah’tan başkasına ibadetin bâtıl olduğu
 
 > ﴿لَا تَجِدُ قَوْمًا يُؤْمِنُونَ بِاللَّهِ وَالْيَوْمِ الْآخِرِ يُوَادُّونَ مَنْ حَادَّ اللَّهَ وَرَسُولَهُ وَلَوْ كَانُوا آبَاءَهُمْ أَوْ أَبْنَاءَهُمْ أَوْ إِخْوَانَهُمْ أَوْ عَشِيرَتَهُمْ﴾ «Allah’a ve ahiret gününe iman eden bir topluluğun, babaları, oğulları, kardeşleri ya da akrabaları olsalar bile, Allah’a ve Rasûlü’ne karşı gelenlerle sevgi bağı kurduğunu göremezsin.» [Mücâdele, 22]
 
-**Delil yönü:** Allah, insanların kendisine en yakını olsa bile, Allah’a ve Rasûlü’ne karşı gelenle sevgi bağı kuran kimseden imanı nefyetmiştir. Meveddet kalbin sevgisidir; bu da müminin şirk ehlini sevmediğine, aksine onlara Allah yolunda buğz ettiğine delildir.
+**Delil yönü:** Allah, insanların kendisine en yakını olsa bile, Allah’a ve Rasûlü’ne karşı gelenle sevgi bağı kuran kimseden imanı nefyetmiştir. Âyetteki «meveddet» kalbin sevgisidir; bu da müminin şirk ehlini sevmediğine, aksine onlara Allah yolunda buğz ettiğine delildir.
 
 ### Üçüncü delil: İbrahim (aleyhisselâm)’ın Allah’ı bırakıp ibadet edilen şeylere düşmanlığı
 
@@ -139,7 +139,7 @@ Ebû Saîd el-Hudrî (radıyallâhu anh) şöyle dedi: Rasûlullah (sallallâhu 
 
 «Lâ ilâhe illallah» nefy ve isbattır; her birinin kalpte bir gereği vardır: bilgi ve tasdik, sevgi ve buğz.
 
-| Rükün | Kalbin tasdikindeki gereği | Kalbin duygusundaki gereği | Ameldeki gereği |
+| Rükün | Kalbin inancındaki gereği | Kalbin hissindeki gereği | Ameldeki gereği |
 | --- | --- | --- | --- |
 | **Nefy: «Lâ ilâhe»** | Allah’tan başkasına ibadetin bâtıl olduğuna itikad (birinci ders) | **Allah’tan başkasına ibadete, tâğuta ve ehline buğz (bu ders)** | Allah’tan başkasına ibadeti terk (ikinci ders) |
 | **İsbat: «illallah»** | İbadete yalnız Allah’ın layık olduğuna itikad | Allah’ı ve tevhid ehlini sevmek | İbadette Allah’ı birlemek |
@@ -150,13 +150,13 @@ Bunun zıddı müşriklerin hâlidir; Allah onları şöyle nitelemiştir: ﴿و
 
 ## Yedinci bölüm: Uygulamalı örnekler
 
-- **Mevsimler ve kutlamalar:** Allah’tan başkasına ibadet yöneltilen bir kutlama yapıldığında Müslüman buna sevinmez, oraya hoşlanarak seyretmeye gitmez ve ehlini onunla tebrik etmez.
+- **Bayramlar ve kutlamalar:** Allah’tan başkasına ibadet yöneltilen bir kutlama yapıldığında Müslüman buna sevinmez, oraya hoşlanarak seyretmeye gitmez ve ehlini onunla tebrik etmez.
 - **Övmek ve güzel bulmak:** Şirki ve ehlini övmez; şirk görüntüleri için «Ne güzel!» demez ve onların resimlerini hayranlıkla paylaşmaz.
 - **Akrabalık:** Akrabaları arasında Allah’tan başkasına ibadet eden biri varsa, onun üzerinde bulunduğu şirke buğz eder, bu hâli üzerine onunla sevgi bağı kurmaz; akrabalık onu, onun şirkine razı olmaya sürüklemez.
 - **Miras kalan âdetler:** Kavminin âdetlerinde Allah’tan başkasına ibadet görürse, ataların âdeti olsa bile ona buğz eder; tıpkı İbrahim’in dediği gibi: ﴿أَنْتُمْ وَآبَاؤُكُمُ الْأَقْدَمُونَ ۝ فَإِنَّهُمْ عَدُوٌّ لِي﴾ «Siz ve eski atalarınız; işte onlar benim düşmanımdır.»
 - **Kalbi muhasebe etmek:** Kalbinde bunlardan birine bir meyil ya da ehline bir sevgi bulursa, bunu tevhid ilmiyle ve Allah’a, imanı kendisine sevdirmesi ve küfrü çirkin göstermesi için dua ederek tedavi eder.
 
-## Nasslardan uyarılar
+## Âyet ve hadislerden uyarılar
 
 1. **Kendisine ibadet edilen ve buna razı olmayana buğz edilmez:** İsa (aleyhisselâm), melekler ve salihler gibi; buğz edilen, onlara Allah’tan başka ibadet edilmesidir, kendileri değil. [Mâide, 117]
 2. **Allah için buğz, Allah’ın emrettiği anne babaya iyiliği düşürmez:** Allah Teâlâ şöyle buyurur: ﴿وَإِنْ جَاهَدَاكَ عَلَى أَنْ تُشْرِكَ بِي مَا لَيْسَ لَكَ بِهِ عِلْمٌ فَلَا تُطِعْهُمَا وَصَاحِبْهُمَا فِي الدُّنْيَا مَعْرُوفًا﴾ «Eğer onlar, hakkında bilgin olmayan bir şeyi bana ortak koşman için seninle uğraşırlarsa, onlara itaat etme; dünyada onlarla iyi geçin.» [Lokmân, 15]
@@ -175,7 +175,7 @@ Bunun zıddı müşriklerin hâlidir; Allah onları şöyle nitelemiştir: ﴿و
 
 > **Bu husustaki buğz; Müslümanın kalbiyle Allah’tan başkasına ibadete, Allah’ı bırakıp kendisine ibadet edilen ve buna razı olan tâğuta ve ona ibadet edenlere Allah yolunda buğz etmesidir. Şirke razı olmaz ve onu sevmez; en yakın akrabası olsalar bile ehliyle sevgi bağı kurmaz. Bunun etkisi dilinde ve azalarında görünür.**
 
-Bu buğz, Allah’tan başkasına ibadetin bâtıl olduğuna itikadın kalbin duygusundaki meyvesidir; terk de onun azalardaki meyvesidir. Tevhid kelimesindeki «Lâ ilâhe»nin gereklerinden ve tâğutu inkârın aslındandır.
+Bu buğz, Allah’tan başkasına ibadetin bâtıl olduğuna itikadın kalpte hissedilen sonucudur; terk de onun bedende görünen sonucudur. Tevhid kelimesindeki «Lâ ilâhe»nin gereklerinden ve tâğutu inkârın aslındandır.
 
 ## Tekrar soruları
 

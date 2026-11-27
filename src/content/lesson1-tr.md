@@ -15,7 +15,7 @@ Allah’ın kullarına ilk farz kıldığı şey, tâğutu inkâr etmek ve Allah
 
 Şeyh Muhammed b. Abdülvehhab (rahimehullah), tâğutun anlamına dair risalesinde tâğutu inkârın keyfiyetini şöyle açıklamıştır: «Allah’tan başkasına yapılan ibadetin bâtıl olduğuna inanman, onu terk etmen, ondan buğz etmen, ehlini tekfir etmen ve onlara düşmanlık etmendir.»
 
-Bu keyfiyet birbirine bağlı birkaç hususu içerir. **Bunların ilki ve temeli itikaddır;** çünkü asıl olan kalptir. Ondan sonra gelen terk, buğz ve diğerleri onun meyvesidir ve onun üzerine kurulur. Bu ders yalnızca birinci husus için ayrılmıştır. Diğer hususlar, âlimlerin belirlediği ölçüleriyle birlikte sonraki derslerde gelecektir.
+Bu keyfiyet birbirine bağlı birkaç hususu içerir. **Bunların ilki ve temeli itikaddır;** çünkü asıl olan kalptir. Ondan sonra gelen terk, buğz ve diğerleri onun sonucudur ve onun üzerine kurulur. Bu ders yalnızca birinci husus için ayrılmıştır. Diğer hususlar, âlimlerin belirlediği ölçüleriyle birlikte sonraki derslerde gelecektir.
 
 ## Birinci bölüm: Tâğutun anlamı
 
@@ -49,7 +49,7 @@ Selef’in tâğutu açıklarken kullandığı, birbirine yakın ve birbiriyle �
 
 Kalp sanki bu meseleye **düğümlenmiştir**; çözülmez ve sarsılmaz. Bu yüzden zanna ya da şüpheye kesin itikad denmez.
 
-«Tâğuta ibadetin bâtıl olduğuna itikad» dediğimizde kastedilen şudur: Tâğuta ibadetin bâtıl olduğu, sahih bir ibadet ve Allah’a yaklaşmanın meşru bir yolu olmadığı Müslümanın kalbine yerleşir ve o buna kesin olarak inanır.
+«Tâğuta ibadetin bâtıl olduğuna itikad» dediğimizde şunu kastediyoruz: Müslüman, tâğuta yapılan ibadetin bâtıl olduğuna, sahih bir ibadet olmadığına ve Allah’a yaklaştıran meşru bir yol olmadığına kalben kesin olarak inanır; bu inanç kalbine yerleşir.
 
 **Ayırt edilmesi gereken üç derece:**
 
@@ -77,7 +77,7 @@ Onların sözü kendi başına haktır; fakat Allah onları yalanlamıştır, ç
 
 **Üçüncü derece: Kesin itikad**
 
-Kalpte, şüphe ve tereddüdün karışmadığı sağlam bir tasdikin yerleşmesidir. Nitekim Allah Teâlâ şöyle buyurmuştur: ﴿إِنَّمَا الْمُؤْمِنُونَ الَّذِينَ آمَنُوا بِاللَّهِ وَرَسُولِهِ ثُمَّ لَمْ يَرْتَابُوا﴾ «Müminler ancak Allah’a ve Resulüne iman eden, sonra hiç şüpheye düşmeyenlerdir.» [Hucurât, 15] Allah onlardan reybi, yani şüpheyi nefyetmiştir. Daha sonra Allah’tan başkasına ibadeti terk etmeyi ve ona buğz etmeyi meyve olarak veren, sahibini şüpheler ve âdetlerin baskısı karşısında sabit tutan işte bu itikaddır.
+Kalpte, şüphe ve tereddüdün karışmadığı sağlam bir tasdikin yerleşmesidir. Nitekim Allah Teâlâ şöyle buyurmuştur: ﴿إِنَّمَا الْمُؤْمِنُونَ الَّذِينَ آمَنُوا بِاللَّهِ وَرَسُولِهِ ثُمَّ لَمْ يَرْتَابُوا﴾ «Müminler ancak Allah’a ve Resulüne iman eden, sonra hiç şüpheye düşmeyenlerdir.» [Hucurât, 15] Allah onların şüpheye (reyb) düşmediğini bildirmiştir. Allah’tan başkasına ibadeti terk etmeyi ve ona buğz etmeyi doğuran işte bu itikaddır. Kişiyi şüphelere ve âdetlerin baskısına karşı ayakta tutan da odur.
 
 **Önemli not:** Bu dereceler, Müslümanın aralarından birini seçtiği alternatifler değildir; istenen, **hepsinin bir arada bulunmasıdır**: itikadın üzerine kurulduğu bilgi, kalpte kesin tasdik ve bunu ifade eden dille söz. Tablodaki «yeterli değildir» ifadesi, **tek başına** yetmez demektir.
 
@@ -152,11 +152,11 @@ Bu kelime iki rüknü içerir:
 
 Allah’ın ibadete layık olduğuna inanıp O’nunla birlikte başkasının da buna layık olduğuna inanan kimse, bu kelimenin gösterdiği tevhid anlamını gerçekleştirmemiştir; çünkü nefy olmadan isbatı getirmiştir.
 
-**Örnek:** Biri «Falanca bu beldenin doktorudur» dese, bu başka bir doktorun bulunmasına engel değildir. Fakat «Bu beldede falancadan başka doktor yoktur» derse, hem nefyetmiş hem de sınırlamıştır. «Lâ ilâhe illallah» da hak olarak ibadet edilen her şeyi nefyeder ve ibadete layık olmayı yalnız Allah’a hasreder.
+**Örnek:** Biri «Falanca bu beldenin doktorudur» dese, bu başka bir doktorun bulunmasına engel değildir. Fakat «Bu beldede falancadan başka doktor yoktur» derse, hem nefyetmiş hem de sınırlamıştır. «Lâ ilâhe illallah» da Allah’tan başka hak olarak ibadet edilen her şeyi reddeder ve ibadete layık olmayı yalnız Allah’a ayırır.
 
 ## Altıncı bölüm: İtikad neden birinci husus kılınmıştır?
 
-1. **Çünkü kalp asıldır, azalar ona tabidir:** Kalbinde Allah’tan başkasına ibadetin bâtıl olduğuna inanmayan kimseye, onu zahiren terk etmesi fayda vermez.
+1. **Çünkü kalp asıldır, azalar (beden organları) ona tabidir:** Kalbinde Allah’tan başkasına ibadetin bâtıl olduğuna inanmayan kimseye, onu dıştan terk etmesi fayda vermez.
 2. **Çünkü itikadsız terk, Allah için olmayabilir:** İnsan Allah’tan başkasına ibadeti âdet sebebiyle, çevresi bunu yapmadığı için ya da insanlardan korktuğu için terk edebilir; onun bâtıl olduğuna inandığı için değil. Şartlar değişince ona geri döner.
 3. **Çünkü itikad şüphelerden korur:** Bu itikad kalbine yerleşen kimse, yapanların çokluğuna, ibadet edilenin makamına ya da âdetin yaygınlığına aldanmaz.
 4. **Çünkü diğer hususlar onun üzerine kuruludur:** Terk, buğz ve diğerleri ancak önceden bulunan bir bâtıllık itikadı üzerine kurulabilir.
@@ -168,7 +168,7 @@ Allah’ın ibadete layık olduğuna inanıp O’nunla birlikte başkasının da
 - **Bir puta, bir taşa ya da bir insana ibadet eden** bir topluluk gördüğünde, bu ibadetin bâtıl olduğuna ve ibadet edilenin ibadete layık olmadığına inanır.
 - Allah’tan başkasına ibadet **insanların atalarından miras aldığı bir âdet** ise, yaygın ya da miras kalmış olması sebebiyle onun doğru olduğuna inanmaz; aksine bâtıl olduğuna inanır. Allah, bununla delil getirenleri kınamıştır: ﴿إِنَّا وَجَدْنَا آبَاءَنَا عَلَى أُمَّةٍ وَإِنَّا عَلَى آثَارِهِمْ مُقْتَدُونَ﴾ «Biz atalarımızı bir din üzere bulduk; biz de onların izlerine uyuyoruz.» [Zuhruf, 23]
 
-**Kural:** Bu baptaki ölçü, vahyin getirdiği haktır; yapanların çokluğu, âdetin yaygınlığı ya da ibadet edilenin makamı değildir.
+**Kural:** Bu konudaki ölçü, vahyin getirdiği haktır; yapanların çokluğu, âdetin yaygınlığı ya da ibadet edilenin makamı değildir.
 
 ## Sekizinci bölüm: Önemli uyarılar
 
@@ -184,7 +184,7 @@ Bu husustan kastedilen; Allah’tan başkasına yöneltilen **ibadetin** bâtıl
 
 ### İkinci uyarı: İbadetin anlamını doğru belirlemek
 
-Burada kastedilen, gerçekten **ibadet** olan şeylerdir: ibadet kastıyla yapılan dua, yaklaşmak için kesilen kurban ve adanan adak, ibadet olarak yapılan secde ve ancak Allah’a yöneltilebilecek tevekkül, korku ve ümit gibi. İbadet olmayan şeyler ise bu baba girmez: âlimlere ve anne-babaya saygı, meşru işlerde yöneticiye itaat, hazır ve gücü yeten diriden gücü yettiği şeyde yardım istemek ve tabii sevgi gibi. Bu farkı doğru belirlemek önemlidir; tâ ki bâtıla ondan olmayan sokulmasın, ondan olan da dışarı çıkarılmasın.
+Burada kastedilen, gerçekten **ibadet** olan şeylerdir: ibadet kastıyla yapılan dua, yaklaşmak için kesilen kurban ve adanan adak, ibadet olarak yapılan secde ve ancak Allah’a yöneltilebilecek tevekkül, korku ve ümit gibi. İbadet olmayan şeyler ise bu konuya girmez: âlimlere ve anne-babaya saygı, meşru işlerde yöneticiye itaat, hazır ve gücü yeten diriden gücü yettiği şeyde yardım istemek ve tabii sevgi gibi. Bu farkı doğru belirlemek önemlidir; böylece ibadet olmayan bir şey bâtıl ibadetin içine sokulmaz, ibadet olan bir şey de onun dışında bırakılmaz.
 
 ### Üçüncü uyarı: Bu husus kalpteki bir itikaddır
 

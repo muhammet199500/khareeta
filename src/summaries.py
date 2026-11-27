@@ -122,7 +122,7 @@ SUM = {
         '<b>Terkte sebat etmek,</b> insanlar muhalefet etse de.'],
         chips=['Kalp', 'Dil', 'Azalar'], chipsLabel='Terkin alanları:'),
    dict(t='İtikad ve Terk', table=[['İtikadsız terk', 'Âdet ya da çevre; yeterli değildir'], ['Terksiz itikad', 'Bâtıl der, sonra yapar; çelişkidir'], ['İtikad ve terk', 'Bâtıl olduğuna inanır, Allah için terk eder; istenen budur']],
-        note='İtikad asıldır; terk onun meyvesi ve delilidir.'),
+        note='İtikad asıldır; terk onun sonucu ve delilidir.'),
    dict(t='Terk ve Tevhid Kelimesi', bullets=[
         '<b>Nefy «Lâ ilâhe»:</b> kalpte bâtıllığa itikad, amelde terk.',
         '<b>İsbat «illallah»:</b> ibadette yalnız Allah’ı birlemek.',
@@ -134,12 +134,12 @@ SUM = {
         'İbrahim’in uzaklaşması <i>(Meryem, 48)</i> · Ashâb-ı Kehf <i>(Kehf, 16)</i>',
         '«Sizin ibadet ettiklerinize ibadet etmem.» <i>(Kâfirûn, 2)</i>',
         'Buvâne hadisi: «Orada ibadet edilen bir put var mıydı?» <i>(Ebû Dâvûd)</i>']),
-   dict(t='Uygulamalı Meseleler ve Meyveler', wide=True, bullets=[
+   dict(t='Uygulamalı Meseleler ve Faydalar', wide=True, bullets=[
         '<b>Sıkıntıda:</b> yalnız Allah’a sığınır, ölülerden medet istemeyi terk eder.',
         '<b>Kurban, adak ve törenler:</b> kabir sahibi için kesilen kurbana ve Allah’tan başkasına ibadet edilen törene katılmaz.',
         '<b>Miras kalan âdetler:</b> yaygın olsa da Allah’tan başkasına ibadet olanı terk eder, İbrahim gibi.',
         '<b>Karıştırılmamalı:</b> ibadeti terk, iyiliği ve mübah ilişkiyi terk etmek değildir <i>(Mümtehine, 8)</i>.',
-        '<b>Meyveleri:</b> müjde, hayırlı karşılık, hidayet ve rahmet, tevhidin sadakati, kalbin özgürlüğü.']),
+        '<b>Faydaları:</b> müjde, hayırlı karşılık, hidayet ve rahmet, tevhidin sadakati, kalbin özgürlüğü.']),
   ],
   jamiaT='Özet ifade',
   jamia='Tâğuta ibadeti terk etmek; Müslümanın Allah’tan başkasına hiçbir ibadeti kalbiyle, diliyle ve azalarıyla yöneltmemesi, buna götüren şeylerden kaçınması, bunu Allah’ın emrine uymak için yapması ve insanlar muhalefet etse de bunda sebat etmesidir.',
@@ -193,7 +193,7 @@ SUM = {
         '<b>Ehli:</b> en yakın akraba olsalar bile sevgi bağı kurulmaz <i>(Mücâdele, 22)</i>; «Allah’a iman edinceye kadar».'],
         chips=['Kalp', 'Dil', 'Azalar'], chipsLabel='Buğzun şekilleri:'),
    dict(t='Buğz, İtikad ve Terk', table=[['Buğzsuz terk', 'Kalbi ona meyleder ya da ehlini sever; kusur'], ['Buğzsuz itikad', 'Bilir, ama ona da ehline de buğz etmez; gerçekleştirmemiş'], ['İtikad, terk ve buğz', 'Ona, tâğuta ve ehline buğz eder; istenen budur']],
-        note='İtikad asıldır; terk azalardaki, buğz kalbin duygusundaki meyvesidir.'),
+        note='İtikad asıldır; terk bedende görünen, buğz kalpte hissedilen sonucudur.'),
    dict(t='Buğz ve Tevhid Kelimesi', bullets=[
         '<b>Nefy «Lâ ilâhe»:</b> bâtıllığa itikad, terk ve <b>buğz</b>.',
         '<b>İsbat «illallah»:</b> Allah’ı ve tevhid ehlini sevmek.',
@@ -205,10 +205,10 @@ SUM = {
         '«İşte onlar benim düşmanımdır…» <i>(Şuarâ, 77)</i>; «Küfrü size çirkin gösterdi.» <i>(Hucurât, 7)</i>',
         '«…küfre dönmekten hoşlanmaması.» <i>(Buhârî, Müslim)</i>; «Kim Allah için sever, Allah için buğz eder…» <i>(Ebû Dâvûd)</i>',
         '«…gücü yetmezse kalbiyle.» <i>(Müslim)</i>']),
-   dict(t='Nasslardan Uyarılar ve Meyveler', wide=True, bullets=[
+   dict(t='Âyet ve Hadislerden Uyarılar ve Faydalar', wide=True, bullets=[
         '<b>Razı olmadan kendisine ibadet edilene buğz edilmez:</b> İsa, melekler, salihler <i>(Mâide, 117)</i>.',
         '<b>Anne babaya iyiliği</b> <i>(Lokmân, 15)</i> <b>ve adaleti düşürmez</b> <i>(Mâide, 8)</i>. <b>Tekfir ve düşmanlık</b> gelecek iki derste.',
-        '<b>Meyveleri:</b> imanın tadı ve kemali, doğru yol, İbrahim’e uymak, imanın kalbe yazılması ve destek.']),
+        '<b>Faydaları:</b> imanın tadı ve kemali, doğru yol, İbrahim’e uymak, imanın kalbe yazılması ve destek.']),
   ],
   jamiaT='Özet',
   jamia='Müslümanın kalbiyle Allah’tan başkasına ibadete, razı olan tâğuta ve ona ibadet edenlere Allah yolunda buğz etmesidir. Şirke razı olmaz; en yakın akraba olsalar bile ehliyle sevgi bağı kurmaz; etkisi dilinde ve azalarında görünür.',
@@ -247,8 +247,8 @@ SUM = {
   blocks=[
    dict(t='Fıkıh ve bölümün yeri', p=['<b>Fıkıh sözlükte:</b> anlamak. <b>Istılahta:</b> ayrıntılı delillerinden elde edilen amelî şer’î hükümleri bilmek.', 'Âlimler taharetle başlamıştır; çünkü taharet <b>namazın anahtarı ve en kuvvetli şartıdır</b>.'],
         chips=['Kur’ân', 'Sünnet', 'İcmâ', 'Kıyas']),
-   dict(t='Taharet', p=['<b>İki kısmı:</b> manevî (kalbin şirkten ve günahlardan temizliği; daha önemlidir) ve hissî (beden, elbise, mekân).', '<b>Tanımı:</b> hadesi kaldırmak ve habesi gidermek.'],
-        chips=['Hades: bedende', 'Habes: beden, elbise, mekân']),
+   dict(t='Taharet', p=['<b>İki kısmı:</b> manevî (kalbin şirkten ve günahlardan temizliği; daha önemlidir) ve maddî (beden, elbise, mekân).', '<b>Tanımı:</b> hadesi kaldırmak ve necaseti gidermek.'],
+        chips=['Hades: bedende', 'Necaset: beden, elbise, mekân']),
    dict(t='Tahûr su', p=['Kendisi temiz, başkasını temizleyici, yaratılışı üzere kalan su: yağmur, kar, dolu; nehir, pınar, kuyu, deniz.'],
         bullets=['﴿وَأَنْزَلْنَا مِنَ السَّمَاءِ مَاءً طَهُورًا﴾ <i>[Furkân, 48]</i>', '«Onun suyu temizleyicidir, ölüsü helaldir.» <i>[Ebû Dâvûd, Tirmizî]</i>'],
         note='Su dışındaki sıvılarla taharet olmaz: «Su bulamazsanız teyemmüm edin» [Mâide, 6].'),
@@ -265,7 +265,7 @@ SUM = {
         '<b>Kural:</b> Suda asıl olan temizliktir; ondan ancak delille çıkılır.']),
   ],
   jamiaT='Ezberlenecek özet',
-  jamia='Taharet, hadesi kaldırmak ve habesi gidermektir; tahûr su ile gerçekleşir. Suda asıl olan temizliktir; necaset onu değiştirmedikçe ya da su iki kulleden az olup necaset ona karışmadıkça.',
+  jamia='Taharet, hadesi kaldırmak ve necaseti gidermektir; tahûr su ile gerçekleşir. Suda asıl olan temizliktir; necaset onu değiştirmedikçe ya da su iki kulleden az olup necaset ona karışmadıkça.',
   src='Kaynak: «el-Fıkhu’l-Müyesser fî Dav’i’l-Kitâb ve’s-Sünne», Taharet Kitabı, birinci bölüm; âyetler Mushaf’tan (Hafs rivayeti), hadisler kitabın tahricine göre.',
  ),
 }
