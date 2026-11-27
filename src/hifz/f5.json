@@ -1,0 +1,356 @@
+{
+ "ar": [
+  {
+   "id": "h1",
+   "label": "تعريفه",
+   "children": [
+    {
+     "id": "h10",
+     "label": "لغة: من الوضاءة\nوهي الحسن والنظافة"
+    },
+    {
+     "id": "h11",
+     "label": "شرعًا: غسل الأعضاء الأربعة\nعلى صفة مخصوصة تعبّدًا لله"
+    }
+   ]
+  },
+  {
+   "id": "h2",
+   "label": "شروطه الثمانية",
+   "children": [
+    {
+     "id": "h20",
+     "label": "الإسلام والعقل والتمييز"
+    },
+    {
+     "id": "h21",
+     "label": "النية (بلا تلفّظ)",
+     "hot": true
+    },
+    {
+     "id": "h22",
+     "label": "الماء الطهور"
+    },
+    {
+     "id": "h23",
+     "label": "إزالة ما يمنع وصول الماء",
+     "hot": true
+    },
+    {
+     "id": "h24",
+     "label": "الاستنجاء أو الاستجمار"
+    },
+    {
+     "id": "h25",
+     "label": "الموالاة"
+    },
+    {
+     "id": "h26",
+     "label": "الترتيب"
+    },
+    {
+     "id": "h27",
+     "label": "غسل جميع الأعضاء"
+    }
+   ]
+  },
+  {
+   "id": "h3",
+   "label": "فروضه الستة",
+   "children": [
+    {
+     "id": "h30",
+     "label": "غسل الوجه\n(ومنه المضمضة والاستنشاق)"
+    },
+    {
+     "id": "h31",
+     "label": "غسل اليدين إلى المرفقين",
+     "hot": true
+    },
+    {
+     "id": "h32",
+     "label": "مسح الرأس كله مع الأذنين",
+     "hot": true
+    },
+    {
+     "id": "h33",
+     "label": "غسل الرجلين إلى الكعبين"
+    },
+    {
+     "id": "h34",
+     "label": "الترتيب"
+    },
+    {
+     "id": "h35",
+     "label": "الموالاة",
+     "hot": true
+    }
+   ]
+  },
+  {
+   "id": "h4",
+   "label": "سننه الثمانية",
+   "children": [
+    {
+     "id": "h40",
+     "label": "التسمية"
+    },
+    {
+     "id": "h41",
+     "label": "السواك"
+    },
+    {
+     "id": "h42",
+     "label": "غسل الكفين ثلاثًا"
+    },
+    {
+     "id": "h43",
+     "label": "المبالغة في المضمضة\nوالاستنشاق لغير الصائم"
+    },
+    {
+     "id": "h44",
+     "label": "الدلك وتخليل اللحية"
+    },
+    {
+     "id": "h45",
+     "label": "التيامن"
+    },
+    {
+     "id": "h46",
+     "label": "التثليث"
+    },
+    {
+     "id": "h47",
+     "label": "الذكر بعده"
+    }
+   ]
+  },
+  {
+   "id": "h5",
+   "label": "نواقضه الستة",
+   "children": [
+    {
+     "id": "h50",
+     "label": "الخارج من السبيلين"
+    },
+    {
+     "id": "h51",
+     "label": "النجاسة من بقية البدن"
+    },
+    {
+     "id": "h52",
+     "label": "زوال العقل"
+    },
+    {
+     "id": "h53",
+     "label": "مسّ الفرج بلا حائل"
+    },
+    {
+     "id": "h54",
+     "label": "أكل لحم الإبل",
+     "hot": true
+    },
+    {
+     "id": "h55",
+     "label": "الردة"
+    }
+   ]
+  },
+  {
+   "id": "h6",
+   "label": "ما يجب له",
+   "children": [
+    {
+     "id": "h60",
+     "label": "الصلاة"
+    },
+    {
+     "id": "h61",
+     "label": "الطواف"
+    },
+    {
+     "id": "h62",
+     "label": "مسّ المصحف",
+     "hot": true
+    }
+   ]
+  }
+ ],
+ "tr": [
+  {
+   "id": "h1",
+   "label": "Tanımı",
+   "children": [
+    {
+     "id": "h10",
+     "label": "Sözlükte: güzellik ve temizlik"
+    },
+    {
+     "id": "h11",
+     "label": "Şer’an: dört organı ibadet için\nbelirlenmiş şekilde yıkamak"
+    }
+   ]
+  },
+  {
+   "id": "h2",
+   "label": "Sekiz şartı",
+   "children": [
+    {
+     "id": "h20",
+     "label": "İslam, akıl ve temyiz"
+    },
+    {
+     "id": "h21",
+     "label": "Niyet (dille söylenmez)",
+     "hot": true
+    },
+    {
+     "id": "h22",
+     "label": "Tahûr su"
+    },
+    {
+     "id": "h23",
+     "label": "Suyu engelleyeni gidermek",
+     "hot": true
+    },
+    {
+     "id": "h24",
+     "label": "İstincâ veya isticmâr"
+    },
+    {
+     "id": "h25",
+     "label": "Muvâlât"
+    },
+    {
+     "id": "h26",
+     "label": "Tertip"
+    },
+    {
+     "id": "h27",
+     "label": "Bütün organları yıkamak"
+    }
+   ]
+  },
+  {
+   "id": "h3",
+   "label": "Altı farzı",
+   "children": [
+    {
+     "id": "h30",
+     "label": "Yüzü yıkamak\n(mazmaza ve istinşak dahil)"
+    },
+    {
+     "id": "h31",
+     "label": "Elleri dirseklerle yıkamak",
+     "hot": true
+    },
+    {
+     "id": "h32",
+     "label": "Kulaklarla başın tamamını\nmeshetmek",
+     "hot": true
+    },
+    {
+     "id": "h33",
+     "label": "Ayakları topuklarla yıkamak"
+    },
+    {
+     "id": "h34",
+     "label": "Tertip"
+    },
+    {
+     "id": "h35",
+     "label": "Muvâlât",
+     "hot": true
+    }
+   ]
+  },
+  {
+   "id": "h4",
+   "label": "Sekiz sünneti",
+   "children": [
+    {
+     "id": "h40",
+     "label": "Besmele"
+    },
+    {
+     "id": "h41",
+     "label": "Misvak"
+    },
+    {
+     "id": "h42",
+     "label": "Elleri üç kez yıkamak"
+    },
+    {
+     "id": "h43",
+     "label": "Oruçlu değilse mazmaza\nve istinşakta mübalağa"
+    },
+    {
+     "id": "h44",
+     "label": "Ovmak ve sakalı hilâllemek"
+    },
+    {
+     "id": "h45",
+     "label": "Sağdan başlamak"
+    },
+    {
+     "id": "h46",
+     "label": "Üç kez yıkamak"
+    },
+    {
+     "id": "h47",
+     "label": "Sonraki zikir"
+    }
+   ]
+  },
+  {
+   "id": "h5",
+   "label": "Altı bozanı",
+   "children": [
+    {
+     "id": "h50",
+     "label": "İki yoldan çıkan"
+    },
+    {
+     "id": "h51",
+     "label": "Bedenin diğer yerlerinden\nnecaset"
+    },
+    {
+     "id": "h52",
+     "label": "Aklın gitmesi"
+    },
+    {
+     "id": "h53",
+     "label": "Avret yerine engelsiz\ndokunmak"
+    },
+    {
+     "id": "h54",
+     "label": "Deve eti yemek",
+     "hot": true
+    },
+    {
+     "id": "h55",
+     "label": "İslam’dan dönmek"
+    }
+   ]
+  },
+  {
+   "id": "h6",
+   "label": "Farz olduğu durumlar",
+   "children": [
+    {
+     "id": "h60",
+     "label": "Namaz"
+    },
+    {
+     "id": "h61",
+     "label": "Tavaf"
+    },
+    {
+     "id": "h62",
+     "label": "Mushafa dokunmak",
+     "hot": true
+    }
+   ]
+  }
+ ]
+}
