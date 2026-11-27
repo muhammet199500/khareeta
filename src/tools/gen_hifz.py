@@ -103,15 +103,15 @@ async def render(pg, page, path):
         else if(e.classList.contains('d2')){li++; if(blank){const x=document.createElement('span');x.className='ix';x.textContent=nm(li);e.appendChild(x);}}});
       const cols=__COLS__; bi=-1;
       const tint=c=>c+'1f';
-      let lj=0; nodes.forEach(e=>{ if(e.classList.contains('d1')){bi++; lj=0; e.style.setProperty('background',cols[bi],'important'); e.dataset.b=bi;}
-        else if(e.classList.contains('d2')){ lj++; e.dataset.b=bi; const c=cols[bi]; e.classList.remove('hot'); if(lj===1) e.classList.add('first'); e.style.setProperty('border-color',c,'important');
+      let lj=0; const cnt=__CNT__; nodes.forEach(e=>{ if(e.classList.contains('d1')){bi++; lj=0; e.style.setProperty('background',cols[bi],'important'); e.dataset.b=bi;}
+        else if(e.classList.contains('d2')){ lj++; e.dataset.b=bi; const c=cols[bi]; e.classList.remove('hot'); if(lj===1||lj===cnt[bi]) e.classList.add('first'); e.style.setProperty('border-color',c,'important');
           if(e.classList.contains('first')){ e.style.setProperty('background', blank?tint(c):c,'important'); e.style.setProperty('color', blank?'transparent':'#fff','important'); const ix=e.querySelector('.ix'); if(ix) ix.style.color=c; }
           else { e.style.setProperty('color', blank?'transparent':'#1d2826','important'); const ix=e.querySelector('.ix'); if(ix) ix.style.color=c; } } });
       const pts=nodes.map(e=>({x:parseFloat(e.style.left),y:parseFloat(e.style.top),b:e.dataset.b,d:e.classList.contains('d0')?0:e.classList.contains('d1')?1:2,w:e.offsetWidth}));
       document.querySelectorAll('#links path').forEach(p=>{const n=p.getAttribute('d').match(/-?[\\d.]+/g).map(Number); const ex=n[n.length-2], ey=n[n.length-1];
         let best=null,bd=1e9; pts.forEach(q=>{if(q.d===0)return; const dd=Math.min(Math.hypot(q.x-q.w/2-ex,q.y-ey),Math.hypot(q.x+q.w/2-ex,q.y-ey)); if(dd<bd){bd=dd;best=q}});
         if(best&&best.b!==undefined) p.setAttribute('stroke',cols[+best.b]);});
-      document.getElementById('fitb').click();}""".replace('__COLS__', json.dumps([b.get('color','#0F2E2A') for b in obj['branches']])), [counts, D, page == 2])
+      document.getElementById('fitb').click();}""".replace('__COLS__', json.dumps([b.get('color','#0F2E2A') for b in obj['branches']])).replace('__CNT__', json.dumps(counts)), [counts, D, page == 2])
     await pg.wait_for_timeout(1400)
     await pg.screenshot(path=path + '.png')
     await pg.pdf(path=path + '.pdf', width='297mm', height='210mm', print_background=True)
