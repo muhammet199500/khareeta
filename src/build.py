@@ -946,11 +946,13 @@ def search_index(lang):
 
 _HAR = '[ً-ْٰـ]*'
 def _ar_re(word):
-    return '(?<![ء-ي])(?:[وفبلك]' + _HAR + ')?' + _HAR.join(word) + _HAR + '(?![ء-ي])'
+    L = [('[اأإآ]' if ch in 'اأإآ' else re.escape(ch)) for ch in word]   # alif/hamza forms match each other
+    return '(?<![ء-ي])(?:[وفبلك]' + _HAR + ')?' + _HAR.join(L) + _HAR + '(?![ء-ي])'
 _GL_TR = re.compile('|'.join(f'(?P<{t["k"]}>(?<!\\w){t["re"]})' for t in sozluk.TR))
-_GL_AR = [(re.compile(_ar_re(w)), k) for w, k in sozluk.AR]
+_GL_AR = [(re.compile(_ar_re(w)), k, None) for w, k in sozluk.AR] + [(re.compile(_ar_re(f)), t['k'], t.get('docs')) for t in sozluk.AR_TERMS for f in t['forms']]
+_AR_T = {t['k']: t for t in sozluk.AR_TERMS}
 
-def gloss_mark(body, lang):
+def gloss_mark(body, lang, doc=''):
     """Mark the first occurrence, in each h2 section, of every glossary word (sozluk.py).
        Returns (html, {key: popup data}). Headings, links, buttons and Qur'an text are left alone."""
     used_all = {}; parts = re.split(r'(<[^>]+>)', body); skip = 0; seen = set(); out = []
@@ -972,8 +974,8 @@ def gloss_mark(body, lang):
                     return f'<button type="button" class="gl" data-k="{k}" aria-expanded="false">{m.group(0)}</button>'
                 res.append(_GL_TR.sub(rep, seg))
             else:
-                for rx, k in _GL_AR:
-                    if k in seen: continue
+                for rx, k, only in _GL_AR:
+                    if k in seen or (only and doc not in only): continue
                     m = rx.search(seg)
                     if m and not re.search(r'<button[^>]*>[^<]*$', seg[:m.start()]):
                         seen.add(k); used_all[k] = 1
@@ -986,13 +988,15 @@ def gloss_mark(body, lang):
         T = {t['k']: t for t in sozluk.TR}
         for k in used_all: data[k] = dict(w=T[k]['w'], m=T[k]['m'], **({'src': T[k]['src']} if T[k].get('src') else {}))
     else:
-        for k in used_all: g = GLOSS[k]; data[k] = dict(w=g['w'], m=g['ar'], src=g['src'])
+        for k in used_all:
+            if k in _AR_T: t = _AR_T[k]; data[k] = dict(w=t['w'], m=t['m'], **({'src': t['src']} if t.get('src') else {}))
+            else: g = GLOSS[k]; data[k] = dict(w=g['w'], m=g['ar'], src=g['src'])
     return html, data
 
 def page_text(lang, L):
     s = S[lang]; P = lesson_paths(lang, L); n = L['n']; depth = 1 if lang == 'ar' else 2
     body, toc = lesson_doc(lang, L)
-    body, gdata = gloss_mark(body, lang)
+    body, gdata = gloss_mark(body, lang, L['doc'])
     gl = (f'<p class="hint">{E(s["glHint"])}</p>' if gdata else '')
     gjs = (f'<script type="application/json" id="glData">' + json.dumps(gdata, ensure_ascii=False).replace('</', '<\\/') + '</script>' + SHARH_JS) if gdata else ''
     tocl = ''.join(f'<li><a href="#{i}">{E(t)}</a></li>' for i, t in toc)
