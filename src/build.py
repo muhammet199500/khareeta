@@ -786,7 +786,8 @@ def page_library(lang):
             title = f'<a href="{x["page"]}">{E(x[lang])}</a>'
         else:
             # not available yet: one short card (title + state), so the student reaches the lessons sooner
-            soon.append(f'<li data-cat="{x["cat"]}" data-q="{E(q)}">{E(x[lang])}' + (f' <small>· {E(by)}</small>' if by else '') + '</li>')
+            soon.append(f'<li class="{x["cat"]}" data-cat="{x["cat"]}" data-q="{E(q)}"><span class="sbadge {x["status"]}">{E(lb["st"][x["status"]])}</span>'
+                        f'<p class="stag">{E(catname[x["cat"]])}</p><p class="sname">{E(x[lang])}</p>' + (f'<p class="sby">{E(by)}</p>' if by else '') + '</li>')
             continue
         cards.append(f'''<li class="scard {x['cat']} {x['status']}" data-cat="{x['cat']}" data-q="{E(q)}"><div class="cover"><p class="tag">{E(catname[x['cat']])}</p><h3>{title}</h3>{f'<p class="by">{E(by)}</p>' if by else ''}</div>
 <div class="bd">{body}</div></li>''')
