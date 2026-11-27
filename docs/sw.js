@@ -2,7 +2,7 @@
    Pages, styles and scripts: network first (so every edit reaches students when they are online),
    falling back to the saved copy when there is no connection.
    Fonts and pictures: saved copy first. Videos are never saved (too large). */
-const VERSION = '419503d3cd30';
+const VERSION = 'f23c189c440a';
 const CACHE = 'wt-' + VERSION;
 const PRECACHE = [
  "./",

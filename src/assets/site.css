@@ -744,9 +744,7 @@ body:focus { outline: none; }
 .wip .wipnote { margin: 0; padding: 14px 16px 6px; line-height: 1.8; color: var(--body); }
 .wip .wipgo { display: flex; gap: 8px; flex-wrap: wrap; padding: 6px 16px 16px; }
 
-/* quieter home page (agreed with the author): no inner frames or watermark on series covers, no frame inside the homework box */
-.scard .cover { background: var(--c); min-height: 0; padding: 20px 22px; }
-.scard .cover::before, .scard .cover::after, .scard .tag::before, .today::before { display: none; }
+/* home page: lesson number sits in the small line (no circle); upcoming series in one quiet list */
 .lrow { grid-template-columns: minmax(0, 1fr) auto; }
 .soonbox { margin: 22px 0 0; padding: 16px 18px; border: 1px dashed var(--line); border-radius: 14px; }
 .soonbox h3 { margin: 0 0 8px; font-family: var(--uf); font-size: 15px; color: var(--muted); font-weight: 700; }
@@ -754,4 +752,4 @@ body:focus { outline: none; }
 .soonbox li { padding: 6px 0; border-top: 1px solid var(--line); font-size: 16px; line-height: 1.6; }
 .soonbox li:first-child { border-top: 0; }
 .soonbox li small { color: var(--muted); font-size: 13.5px; }
-main.lib.searching .soonbox { display: none; }
+.soonbox[hidden], .soonbox li[hidden] { display: none; }

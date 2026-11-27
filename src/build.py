@@ -786,7 +786,7 @@ def page_library(lang):
             title = f'<a href="{x["page"]}">{E(x[lang])}</a>'
         else:
             # not available yet: one short card (title + state), so the student reaches the lessons sooner
-            soon.append(f'<li>{E(x[lang])}' + (f' <small>· {E(by)}</small>' if by else '') + '</li>')
+            soon.append(f'<li data-cat="{x["cat"]}" data-q="{E(q)}">{E(x[lang])}' + (f' <small>· {E(by)}</small>' if by else '') + '</li>')
             continue
         cards.append(f'''<li class="scard {x['cat']} {x['status']}" data-cat="{x['cat']}" data-q="{E(q)}"><div class="cover"><p class="tag">{E(catname[x['cat']])}</p><h3>{title}</h3>{f'<p class="by">{E(by)}</p>' if by else ''}</div>
 <div class="bd">{body}</div></li>''')
@@ -831,7 +831,7 @@ def page_library(lang):
 
 <section class="band" id="series"><div class="wrap">
   <h2>{E(lb['seriesT'])}</h2>
-  {f'<ul class="cats" aria-label="{E(lb["seriesT"])}">{cats}</ul>' if len(cards) > 2 else ''}
+  <ul class="cats" aria-label="{E(lb['seriesT'])}">{cats}</ul>
   <ul class="sgrid">{''.join(cards)}</ul>
   {f'<div class="soonbox"><h3>{E(lb["soonT"])}</h3><ul>{"".join(soon)}</ul></div>' if soon else ''}
   <p class="noresult" id="noResult" hidden>{E(lb['noResult'])}</p>

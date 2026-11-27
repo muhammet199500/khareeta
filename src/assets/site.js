@@ -346,6 +346,11 @@
     const lib = document.querySelector('main.lib'); if (lib) lib.classList.toggle('searching', !!t);
     let shown = 0;
     $$('.scard').forEach(c => { const ok = (!cat || c.dataset.cat === cat) && (!t || norm(c.dataset.q).includes(t)); c.hidden = !ok; if (ok) shown++; });
+    /* upcoming series (one list under the cards) follow the same filter */
+    let soonShown = 0;
+    $$('.soonbox li').forEach(li => { const ok = (!cat || li.dataset.cat === cat) && (!t || norm(li.dataset.q).includes(t)); li.hidden = !ok; if (ok) soonShown++; });
+    const sb = $('.soonbox'); if (sb) sb.hidden = !soonShown;
+    shown += soonShown;
     let rowsShown = 0;
     $$('#latest .lrow').forEach(r => { const ok = !t || norm(r.dataset.q).includes(t); r.hidden = !ok; if (ok) rowsShown++; });
     $('#latest').hidden = !rowsShown;
