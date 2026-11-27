@@ -39,6 +39,7 @@ button { font: inherit; cursor: pointer; }
 [hidden] { display: none !important; }
 .wrap { max-width: 1180px; margin: 0 auto; padding: 0 max(4vw, 16px, env(safe-area-inset-right)) 0 max(4vw, 16px, env(safe-area-inset-left)); }
 .narrow { max-width: 860px; }
+@media (pointer: fine) and (min-width: 1200px) { .wrap { max-width: 1440px; } }
 .ayah { font-family: var(--qf); font-size: 1.16em; line-height: 1.9; color: var(--ink); }
 html[lang=tr] .ayah { direction: rtl; unicode-bidi: isolate; }
 .skip { position: absolute; inset-inline-start: 8px; top: -60px; background: var(--goldl); color: var(--ongold); padding: 8px 16px; border-radius: 8px; z-index: 50; }
