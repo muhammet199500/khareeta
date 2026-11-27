@@ -744,18 +744,5 @@ body:focus { outline: none; }
 .wip .wipnote { margin: 0; padding: 14px 16px 6px; line-height: 1.8; color: var(--body); }
 .wip .wipgo { display: flex; gap: 8px; flex-wrap: wrap; padding: 6px 16px 16px; }
 
-/* home page: lesson number sits in the small line (no circle); upcoming series in one quiet list */
+/* home page: lesson number sits in the small line (no circle) */
 #latest .lrow { grid-template-columns: minmax(0, 1fr) auto; }
-.soonbox { margin: 26px 0 0; }
-.soonbox > h3 { margin: 0 0 12px; font-family: var(--hf); font-size: 20px; color: var(--ink); font-weight: 600; }
-.soonbox ul { margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 12px; }
-.soonbox li { --c: var(--band); position: relative; overflow: hidden; border-radius: 14px; padding: 50px 14px 14px; min-height: 150px; display: flex; flex-direction: column; justify-content: flex-end; gap: 4px;
-  background: radial-gradient(120% 90% at 85% 0%, rgba(217,178,106,.18), transparent 60%), var(--c); color: var(--onband); opacity: .92; }
-.soonbox li.fiqh { --c: #3A2D17; } .soonbox li.hadith { --c: #1C2A3A; }
-.soonbox li::before { content: ""; position: absolute; inset: 6px; border: 1px dashed rgba(217,178,106,.4); border-radius: 10px; pointer-events: none; }
-.soonbox .stag { font-family: var(--uf); font-size: 12px; color: var(--goldl); margin: 0; }
-.soonbox .sname { font-family: var(--hf); font-size: 17px; line-height: 1.45; color: var(--cream); margin: 0; }
-.soonbox .sby { font-size: 12.5px; color: var(--onband3); margin: 0; line-height: 1.5; }
-.soonbox .sbadge { position: absolute; top: 12px; inset-inline-start: 12px; font: 700 12px/1 var(--uf); padding: 6px 11px; border-radius: 30px; background: var(--goldl); color: #0F2E2A; }
-.soonbox .sbadge.prep { background: rgba(247,243,234,.92); color: #0F2E2A; }
-.soonbox[hidden], .soonbox li[hidden] { display: none; }
