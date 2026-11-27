@@ -150,6 +150,8 @@ S = {
     path=['شاهد الفيديو أو اقرأ الدرس المكتوب.', 'راجع البطاقات والخريطة التفاعلية.', 'أجب عن أسئلة المراجعة قبل أن تكشف الجواب.', 'اختبر فهمك، ثم احفظ العبارة الجامعة.'],
     prev='الدرس السابق', next='الدرس التالي',
     noVideo='فيديو هذا الدرس يُضاف قريبًا',
+    wipBadge='قيد الإعداد',
+    wipNote='فيديو هذا الدرس قيد الإعداد، ويُضاف قريبًا إن شاء الله. وبقية الدرس جاهزة الآن، فابدأ بها:',
     tzSoon='التشويقة تُضاف قريبًا',
     tzT='دروسٌ أوضح، وأقرب، وأيسر', tzD='نرفع جودة دروسنا بتجهيزات جديدة تيسّر التعلّم. شاهد التشويقة القصيرة وشاركها.',
     foot='وتواصوا بالحق · نسأل الله العلم النافع والعمل الصالح.',
@@ -211,6 +213,8 @@ S = {
     path=['Videoyu izleyin ya da yazılı dersi okuyun.', 'Sunumu ve etkileşimli haritayı tekrar edin.', 'Cevabı açmadan önce tekrar sorularını cevaplayın.', 'Kendinizi sınayın, ardından özet ifadeyi ezberleyin.'],
     prev='Önceki ders', next='Sonraki ders',
     noVideo='Bu dersin videosu yakında eklenecek',
+    wipBadge='Hazırlanıyor',
+    wipNote='Bu dersin videosu hazırlanıyor; inşallah yakında eklenecek. Dersin geri kalanı şimdiden hazır, onunla başlayabilirsiniz:',
     tzSoon='Tanıtım videosu yakında eklenecek',
     tzT='Daha net, daha yakın, daha kolay dersler', tzD='Öğrenmeyi kolaylaştıran yeni hazırlıklarla derslerimizin kalitesini yükseltiyoruz. Kısa tanıtımı izleyin ve paylaşın.',
     foot='Ve Tevâsav bi’l-Hak · Allah’tan faydalı ilim ve salih amel dileriz.',
@@ -497,6 +501,12 @@ def player(lang, L, prefix):
     v = L.get('videoTr' if lang == 'tr' else 'video')
     p = L.get('posterTr' if lang == 'tr' else 'poster') or ''
     poster = f' poster="{prefix}media/{p}"' if p else ''
+    if v and not os.path.exists(os.path.join(OUT, 'media', v)):
+        # video not uploaded yet: say so plainly from the first moment, and point to what is ready
+        bg = f' style="background-image:url(\'{prefix}media/{p}\')"' if p else ''
+        return (f'<div class="wip"><div class="wipart"{bg} role="img" aria-label="{E(s["noVideo"])}"><span class="wipbadge">{E(s["wipBadge"])}</span></div>'
+                f'<p class="wipnote">{E(s["wipNote"])}</p><div class="wipgo"><a class="btn" href="text.html">{E(s["tText"][0])}</a>'
+                f'<a class="btn ghost" href="slides.html">{E(s["tSlides"][0])}</a></div></div>')
     return f'''<div class="player" data-logo="{prefix}media/logo.webp" data-soon="{E(s['noVideo'])}"><video controls preload="none" playsinline{poster} data-check><source src="{prefix}media/{v}" type="video/mp4"></video></div>'''
 
 # ------------------------------------------------------------------ Q&A data
