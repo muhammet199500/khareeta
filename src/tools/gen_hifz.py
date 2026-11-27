@@ -14,19 +14,19 @@ AR = lang == 'ar'
 base = 'http://localhost:8765/' + ('' if AR else 'tr/')
 s = open(SRC + 'maps/' + ('data.js' if AR else 'data_tr.js'), encoding='utf-8').read()
 i = s.index(f'window.{var} = ') + len(f'window.{var} = '); obj, _ = json.JSONDecoder().raw_decode(s[i:])
-url = f'https://tevhidim.com/{"" if AR else "tr/"}{slug}/'
-qr = segno.make(url, error='m').svg_inline(scale=3, dark='#0F2E2A', border=0)
+url = f'https://tevhidim.com/{"" if AR else "tr/"}map.html#l{n}'  # الباركود يفتح الخريطة الأصلية
+qr = segno.make(url, error='m').svg_inline(dark='#0F2E2A', border=2, omitsize=True)
 D = '٠١٢٣٤٥٦٧٨٩' if AR else '0123456789'
 num = lambda k: ''.join(D[int(c)] for c in str(k))
 T = dict(
  ar=dict(p1='الخريطة', p2='اختبر حفظك', hot='مسألة يكثر فيها الخطأ', cnt='عدد المسائل',
    how1='احفظ الفروع بأرقامها، ثم مسائل كل فرع بعددها.', how2='غطِّ الصفحة الأولى، واكتب كل مسألة في مكانها، ثم صحّح منها.',
    jam='العبارة الجامعة', jamw='اكتب العبارة الجامعة من حفظك', rev='راجعها', days=['اليوم', 'غدًا', 'بعد ٣ أيام', 'بعد أسبوع', 'بعد شهر'],
-   scan='الخريطة التفاعلية والاختبار', score='صحيح: ____ من'),
+   scan='امسح الرمز لتفتح الخريطة التفاعلية', score='صحيح: ____ من'),
  tr=dict(p1='Harita', p2='Ezberini sına', hot='Sık hata yapılan mesele', cnt='Mesele sayısı',
    how1='Önce dalları numaralarıyla, sonra her dalın meselelerini sayısıyla ezberle.', how2='İlk sayfayı kapat, her meseleyi yerine yaz, sonra ondan kontrol et.',
    jam='Ezberlenecek özet', jamw='Özeti ezberinden yaz', rev='Tekrar et', days=['Bugün', 'Yarın', '3 gün sonra', '1 hafta sonra', '1 ay sonra'],
-   scan='Etkileşimli harita ve test', score='Doğru: ____ /'))[lang]
+   scan='Etkileşimli haritayı açmak için okutun', score='Doğru: ____ /'))[lang]
 HJ = json.load(open(SRC + f'hifz/{HZ}.json', encoding='utf-8')); H = HJ[lang]
 PART = HJ.get('part', {}).get(lang, '')
 obj['branches'] = H
@@ -59,7 +59,7 @@ body,#stage{{background:#F7F3EA!important}} #stage::before,#stage::after{{displa
 #pf .rev .ds span{{display:flex;flex-direction:column;align-items:center;gap:2px;white-space:nowrap}}
 #pf .rev .ds i{{width:15px;height:15px;border:1.5px solid #85601C;border-radius:4px;display:block}}
 #pf .qr{{display:flex;align-items:center;gap:8px;background:#0F2E2A;color:#B9CBC4;border-radius:12px;padding:6px 10px;font-size:9.4px}}
-#pf .qr svg{{width:58px;height:58px;background:#fff;padding:4px;border-radius:6px}}
+#pf .qr svg{{width:64px;height:64px;background:#fff;padding:2px;border-radius:6px;flex:none;box-sizing:content-box}}
 #pf .u{{direction:ltr;unicode-bidi:isolate;color:#F7F3EA;font-weight:600}}
 #pf .lines{{background:#fff;border:1px solid #E6DCC8;border-radius:12px;padding:5px 14px;flex:1;color:#6B706B;font-size:10.5px}}
 #pf .lines i{{display:block;border-bottom:1px dashed #C9AE7A;height:19px}}

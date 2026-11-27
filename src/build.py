@@ -174,6 +174,7 @@ S = {
     sharhFn='حواشي الكتاب', sharhGl='معاني الكلمات', sharhGlSrc='المصدر', sharhLbl='الشرح', sharhTr='',
     chipSum='الملخص', sumPrint='اطبع', sumPdf='تنزيل PDF', sumImg='تنزيل صورة',
     sumHelp='مقاس A4. امسح الرمز بكاميرا الجوال لتفتح صفحة الدرس.',
+    sumHifz='خريطة الحفظ (PDF)', sumHifzHelp='صفحتان: الخريطة، ثم «اختبر حفظك». والرمز فيها يفتح الخريطة التفاعلية.',
     sumFootT='صفحة الدرس: الفيديو والدرس المكتوب والشرائح والخريطة والاختبار',
     sumFoot='امسح الرمز لتفتح صفحة الدرس وأدواته كلها:',
     tVideo=('فيديو الدرس', 'شاهد الدرس كاملًا'),
@@ -237,6 +238,7 @@ S = {
     sharhFn='Kitabın dipnotları (Arapça)', sharhGl='Kelimelerin anlamları', sharhGlSrc='Kaynak', sharhLbl='Şerh', sharhTr='Türkçe anlamı',
     chipSum='Özet', sumPrint='Yazdır', sumPdf='PDF indir', sumImg='Görsel indir',
     sumHelp='A4 boyutunda. Ders sayfasını açmak için kodu telefon kamerasıyla okutun.',
+    sumHifz='Ezber haritası (PDF)', sumHifzHelp='İki sayfa: harita ve «Ezberini sına». Kodu okutunca etkileşimli harita açılır.',
     sumFootT='Ders sayfası: video, yazılı ders, sunum, harita ve test',
     sumFoot='Dersin sayfasını ve bütün araçlarını açmak için kodu okutun:',
     tVideo=('Ders videosu', 'Dersin tamamını izleyin'),
@@ -1370,12 +1372,18 @@ def sheet(lang, L, media):
   </div>
 </article>'''
 
+def hifz_btn(lang, L, P, s):
+    # ورقة الحفظ تظهر فقط إذا وُلّد ملفها (src/media/hifz-<slug>-<lang>.pdf)؛ انظر guide/hifz-maps.md
+    f = f'hifz-{L["slug"]}-{lang}.pdf'
+    if not os.path.exists(os.path.join(ROOT, 'media', f)): return ''
+    return f'<a class="btn" href="{P["media"]}{f}" download title="{E(s["sumHifzHelp"])}">{E(s["sumHifz"])}</a>'
+
 def page_summary(lang, L):
     s = S[lang]; P = lesson_paths(lang, L); depth = 1 if lang == 'ar' else 2; n = L['n']
     base = f'summary-{L["slug"]}-{lang}'
     return head(lang, f'{s["tSum"][0]} · {L[lang]}', depth, L['descAr'] if lang == 'ar' else L['descTr'], extra=f'\n<link rel="stylesheet" href="{P["assets"]}summary.css">', image=share_img(lang, L)) + bar(lang, depth, P['other']('summary.html')) + '<main id="main">\n' + phead(lang, L, s['tSum'][0], L[lang], s['tSum'][0]) + f'''
 <section class="band sum-band"><div class="wrap">
-  <div class="sum-tools"><button class="btn" type="button" onclick="print()">{E(s['sumPrint'])}</button><a class="btn line" href="{P['media']}{base}.pdf" download>{E(s['sumPdf'])}</a><a class="btn line" href="{P['media']}{base}.jpg" download>{E(s['sumImg'])}</a><p class="note">{E(s['sumHelp'])}</p></div>
+  <div class="sum-tools"><button class="btn" type="button" onclick="print()">{E(s['sumPrint'])}</button><a class="btn line" href="{P['media']}{base}.pdf" download>{E(s['sumPdf'])}</a><a class="btn line" href="{P['media']}{base}.jpg" download>{E(s['sumImg'])}</a>{hifz_btn(lang, L, P, s)}<p class="note">{E(s['sumHelp'])}{(' ' + E(s['sumHifzHelp'])) if hifz_btn(lang, L, P, s) else ''}</p></div>
   <div class="sheet-wrap" id="sheetWrap">{sheet(lang, L, P['media'])}</div>
 </div></section>
 </main>
