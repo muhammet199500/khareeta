@@ -10,7 +10,7 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from docqa_tr import DOCQA_TR
 from summaries import SUM
 from sharh import SHARH, GLOSS, GLOSS_TR_SRC, BOOK
-import sozluk
+import sozluk, gate
 import io, segno
 SITE = 'https://tevhidim.com/'
 
@@ -391,6 +391,7 @@ def head(lang, title, depth, desc='', extra='', image=None):
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 {THEME_BOOT}
+{gate.tags(lang, u)}
 <title>{E(title)}</title>
 <meta name="description" content="{E(desc or S[lang]['lead'])}">
 {og_tags(lang, title, desc or S[lang]['lead'], image)}
@@ -1528,6 +1529,10 @@ PLAY_SHA256 = ''
 ANALYTICS = '<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon=\'{"token": "dda53286faab4be6aca43215f29dc4b7"}\'></script>'
 
 def w(path, text):
+    if path.endswith('.html'):
+        if gate.START not in text and '</head>' in text:   # pages with their own template (slides, map)
+            text = text.replace('</head>', gate.tags('tr' if path.startswith('tr/') else 'ar', '../' * path.count('/')) + '\n</head>', 1)
+        text = gate.strip_if_free(path, text)
     if path.endswith('.html') and '</head>' in text and 'cloudflareinsights' not in text:
         text = text.replace('</head>', ANALYTICS + '\n</head>', 1)
     p = os.path.join(OUT, path); os.makedirs(os.path.dirname(p), exist_ok=True)

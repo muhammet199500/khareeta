@@ -4,6 +4,24 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <script>try{var t=localStorage.getItem('wt.theme');if(t==='dark'||t==='light')document.documentElement.dataset.theme=t}catch(e){}</script>
+<!--gate--><style>html.gated body>*:not(#gate){display:none!important}
+#gate{position:fixed;inset:0;z-index:99;display:grid;place-items:center;padding:24px;background:#0F2E2A;color:#F7F3EA}
+#gate .gbox{width:min(380px,100%);text-align:center}
+#gate img{width:96px;height:96px;margin:0 auto 14px;display:block}
+#gate h1{font-family:var(--hf,serif);color:#D9B26A;font-size:1.6em;margin:0 0 8px}
+#gate p{margin:0 0 18px;line-height:1.8;opacity:.9}
+#gate input{width:100%;box-sizing:border-box;font:600 1.25em/1 var(--uf,sans-serif);letter-spacing:.12em;text-align:center;direction:ltr;text-transform:uppercase;padding:14px;border-radius:12px;border:1px solid #D9B26A;background:#F7F3EA;color:#0F2E2A}
+#gate button{margin-top:12px;width:100%;padding:13px;border:0;border-radius:12px;background:#D9B26A;color:#0F2E2A;font:700 1.05em var(--uf,sans-serif);cursor:pointer}
+#gate .gerr{color:#F2B8A8;min-height:1.6em;margin:10px 0 0}
+#gate input::placeholder{text-transform:none;letter-spacing:.04em}</style><script>(function(){var K=["219d9ab974e580a5be5657264d3aac83c8f2f72d8c6cfa93364ddb81738eb0c7", "3ab6ca6436c865ef07751c6d894fc2501e160320008665c654829b62ddb0092c", "4158ef515d5905aab8f6156802c2a3397f3079a5141b5097a8ef97c061d48e08", "4d17420674c72768ae62f0a17f01b180ef039c443512bdf0bab1a05b5cf07a3a", "657ddb6aa4399f999494cb8d4e4aa023eca58f1279b9527f44105e2218a9e82f", "7c19fe9bcbcf7f3aa2b5c9e4bb81a71ee980b20a124a18612c1062cce82cd61e", "7c53c32843db24e792e6f901ef9c4e92a92e06973ef4f524f6804a9e082c8087", "b9024adc1be65892d08f6379dc754b004dd5b968232039c5419579c711ed68bd", "c32de502069cd4c128ca18c6ba380a1d1b5a5ba90f029dc55311e18d3ee3b5ce", "fe3cd27c0f13c52c46380bda2ffa1e26e3f04fe1fe2507c8d34c48525f523425"],S="fc9529d18c7d4a03",L='tvh_key',d=document.documentElement,h=null;
+try{h=localStorage.getItem(L)}catch(e){}
+if(h&&K.indexOf(h)>-1)return;d.classList.add('gated');
+function hx(b){return Array.prototype.map.call(new Uint8Array(b),function(x){return('0'+x.toString(16)).slice(-2)}).join('')}
+document.addEventListener('DOMContentLoaded',function(){var g=document.createElement('div');g.id='gate';g.setAttribute('role','dialog');g.setAttribute('aria-modal','true');
+g.innerHTML="<form class=\"gbox\"><img src=\"../media/logo.webp\" alt=\"\"><h1>الدخول برمز</h1><p>الموقع الآن في مرحلة تجريبية لعدد محدود من الأشخاص. اكتب الرمز الذي أُعطيته.</p><input name=\"c\" autocomplete=\"off\" autocapitalize=\"characters\" spellcheck=\"false\" placeholder=\"مثال: AB12-CD34\" aria-label=\"الدخول برمز\"><button type=\"submit\">دخول</button><p class=\"gerr\" aria-live=\"polite\"></p></form>";document.body.appendChild(g);var f=g.querySelector('form'),i=f.elements.c,er=g.querySelector('.gerr');i.focus();
+f.addEventListener('submit',function(e){e.preventDefault();var c=(i.value||'').toUpperCase().replace(/[^A-Z0-9]/g,'');
+crypto.subtle.digest('SHA-256',new TextEncoder().encode(S+':'+c)).then(function(b){var x=hx(b);
+if(K.indexOf(x)>-1){try{localStorage.setItem(L,x)}catch(e){}d.classList.remove('gated');g.remove()}else{er.textContent="الرمز غير صحيح. تأكد منه وأعد المحاولة.";i.select()}})})})})();</script><!--/gate-->
 <title>أحكام الطهارة والمياه · الدرس المكتوب</title>
 <meta name="description" content="معنى الفقه، وأهمية الطهارة وقسماها وتعريفها، وبأي ماء تحصل، وحكم ما خالطته نجاسة أو طاهر، والماء المستعمل، والأسآر.">
 <meta property="og:title" content="أحكام الطهارة والمياه · الدرس المكتوب">

@@ -17,6 +17,10 @@ async def main():
         links = set(); problems = []
         for w, h, tag in ((390, 844, 'm'), (1366, 900, 'd')):
             ctx = await b.new_context(viewport={'width': w, 'height': h}, device_scale_factor=1, is_mobile=(w < 500), has_touch=(w < 500))
+            _g = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'gate.json')
+            if os.path.exists(_g):   # pass the temporary entry gate like a person with a code
+                import json as _j; _k = sorted(_j.load(open(_g))['keys'].values())
+                if _k: await ctx.add_init_script(f"try{{localStorage.setItem('tvh_key','{_k[0]}')}}catch(e){{}}")
             for path in PAGES:
                 pg = await ctx.new_page()
                 errs = []
