@@ -777,3 +777,9 @@ body:focus { outline: none; }
 
 /* bottom edge of the dark bands: one thin gold line with an eight-pointed star in the middle (replaces the repeating star band) */
 .hero::after, .phead::after { background: url(divider.svg) center / min(92%, 520px) auto no-repeat; height: 36px; bottom: 8px; opacity: .5; }
+
+/* no blue flash when tapping on a phone; keyboard focus rings stay */
+* { -webkit-tap-highlight-color: transparent; }
+/* tasks page: holds the place of the week card while it loads, so the page does not jump */
+.wksk { min-height: 360px; border-radius: 18px; background: rgba(120, 90, 60, .08); }
+.wksk:not(:only-child) { margin-bottom: 14px; }

@@ -655,6 +655,7 @@
     const list = $('#taskList'); if (!list) return;
     const started = weeks.filter(w => w.days.some(d => d.date <= TODAY));
     const week = weeks.find(w => w.days.some(d => d.date === TODAY)) || started[started.length - 1] || weeks[0];
+    const sk = $('#wkSk'); if (sk) sk.remove();
     if (!week) { $('#taskEmpty').hidden = false; return; }
     renderIntro(week);
     const days = week.days.slice().sort((a, b) => a.date < b.date ? -1 : 1);
@@ -712,13 +713,19 @@
     function show(i, focus) {
       panels.forEach((p, j) => { p.hidden = j !== i; });
       tabs.forEach((b, j) => { b.classList.toggle('on', j === i); b.setAttribute('aria-selected', j === i); });
-      if (focus) tabs[i].scrollIntoView({ block: 'nearest', inline: 'nearest', behavior: 'smooth' });
+      if (focus) centerTab(tabs[i], true);
+    }
+    /* move only the row of day buttons sideways; never scroll the page up or down (that made the page jump) */
+    function centerTab(b, smooth) {
+      const r = b.getBoundingClientRect(), q = bar.getBoundingClientRect();
+      const dx = (r.left + r.width / 2) - (q.left + q.width / 2);
+      try { bar.scrollBy({ left: dx, behavior: smooth ? 'smooth' : 'auto' }); } catch (err) { bar.scrollLeft += dx; }
     }
     const start = ti >= 0 ? ti : (TODAY < days[0].date ? 0 : (fin ? panels.indexOf(fin) : days.length - 1));
     document.querySelector('#taskList').before(bar);
     document.querySelector('#taskList').addEventListener('click', e => { if (e.target.closest('.donebtn')) setTimeout(mark, 0); });
     mark(); show(start, false);
-    setTimeout(() => tabs[start].scrollIntoView({ block: 'nearest', inline: 'center' }), 50);
+    setTimeout(() => centerTab(tabs[start], false), 50);
   }
 
   /* reminders: ask permission, subscribe, tell the reminder service.

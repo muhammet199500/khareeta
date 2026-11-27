@@ -742,6 +742,7 @@ def page_tasks(lang):
   <a class="btn ghost back" href="index.html">{back}</a>
 </div></section>
 <section class="band"><div class="wrap">
+  <div class="wksk" id="wkSk" aria-hidden="true"></div>
   <div id="wkIntro"></div>
   <div class="rcard" data-rcard="page" hidden></div>
   <div id="wkHead"></div>
