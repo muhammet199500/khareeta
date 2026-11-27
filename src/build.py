@@ -292,7 +292,7 @@ def ar_count(n, one, two, few, many):
     return f'{DIG("ar", n)} {many}'
 
 LIB = {
- 'ar': dict(title='مكتبة الدروس', nav='السلاسل',
+ 'ar': dict(title='مكتبة الدروس', hero='ما لا يسع المسلمَ جهلُهُ', nav='السلاسل',
     lead='دروس في العقيدة والفقه والحديث، مكتوبة ومرئية، مع أسئلة واختبار.',
     soonT='قريبًا إن شاء الله',
     search='ابحث في الدروس: كلمة أو عبارة…', noResult='لا نتائج. جرّب كلمة أخرى.',
@@ -306,7 +306,7 @@ LIB = {
     sQuote='﴿فَاعْلَمْ أَنَّهُ لَا إِلَٰهَ إِلَّا اللَّهُ﴾', sQuoteMeal='',
     section='قسم', toSection='إلى القسم',
  ),
- 'tr': dict(title='Ders Kütüphanesi', nav='Seriler',
+ 'tr': dict(title='Ders Kütüphanesi', hero='Her Müslümanın Bilmesi Gerekenler', nav='Seriler',
     lead='Akide, fıkıh ve hadis dersleri: yazılı ve görüntülü, sorular ve testle.',
     soonT='Yakında inşallah',
     search='Derslerde ara: kelime veya ifade…', noResult='Sonuç yok. Başka bir kelime deneyin.',
@@ -808,7 +808,7 @@ def page_library(lang):
     return head(lang, f'{s["brand"]} · {lb["title"]}', depth, lb['lead']) + redirect + bar(lang, depth, other) + f'''<main id="main" class="lib">
 <section class="hero">{ORN}<div class="wrap"><div class="in">
   <div class="emblem"><img src="{u}media/logo.webp" alt="{E(s['brand'])}"></div>
-  <div><p class="eb">{E(s['eb'])}</p><h1>{E(lb['title'])}</h1><p class="lead">{E(lb['lead'])}</p>
+  <div><p class="eb">{E(s['eb'])}</p><h1>{E(lb['hero'])}</h1><p class="lead">{E(lb['lead'])}</p>
   <label class="srch">{SEARCH_I}<input id="libQ" type="search" placeholder="{E(lb['search'])}" aria-label="{E(lb['search'])}" autocomplete="off"></label></div>
 </div></div></section>
 
