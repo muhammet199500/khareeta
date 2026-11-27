@@ -48,6 +48,13 @@ TR = [
     dict(k='istiaze', re=r'[İi]stiâze\w*', w='İstiâze', m='«Eûzü billah» diyerek Allah’a sığınmak.'),
     dict(k='mekruh', re=r'[Mm]ekruh\w*', w='Mekruh', m='Terk edene sevap verilen, yapan günaha girmeyen şey.'),
     dict(k='muste', re=r'[Mm]üstehap\w*', w='Müstehap', m='Yapılması sevaplı olan, yapılmaması günah olmayan şey.'),
+    dict(k='istihdad', re=r'[İi]stihdâd\w*', w='İstihdâd', m='Kasık kıllarını tıraş etmek; ustura (demir) kullanıldığı için bu adı almıştır.', src='Kitabın kendisi (1/ 14–15)'),
+    dict(k='hitan', re=r'\bhitan\b', w='Hitan', m='Sünnet olmak: erkekte organın başını örten derinin kesilmesi.', src=DERS),
+    dict(k='berac', re=r'[Bb]erâcim\w*', w='Berâcim', m='Parmakların üst yüzündeki, kirin biriktiği eklem yerleri.', src='Kitabın kendisi (1/ 16)'),
+    dict(k='erak', re=r'\b[Ee]râk\w*', w='Erâk', m='Dallarıyla misvak yapılan bir ağaç; bugün «misvak» diye bilinen çubuk ondandır.', src='Kitabın dipnotu (1/ 14)'),
+    dict(k='istinsak', re=r'[İi]stinşak\w*', w='İstinşak', m='Suyu buruna çekmek.'),
+    dict(k='mazmaza', re=r'[Mm]azmaza\w*', w='Mazmaza', m='Ağza su alıp çalkalamak.'),
+    dict(k='muekked', re=r'[Mm]üekked\w*', w='Müekked', m='Kuvvetli, üzerinde durulan (sünnet).'),
     dict(k='mubah', re=r'[Mm]ubah\w*', w='Mubah', m='Yapılması da yapılmaması da serbest olan; dinin yasaklamadığı şey.'),
     dict(k='tazbib', re=r'[Tt]azbîb\w*', w='Tazbîb', m='Kırılan kabı demir ve benzeri bir şeyle birleştirmek (yamamak).', src='Kitabın dipnotu (1/ 6)'),
     dict(k='dabbe', re=r'\bdabbe\b', w='Dabbe', m='Kırık kabı birleştirmek için kullanılan parça; yama.'),
@@ -120,6 +127,12 @@ AR = [
     ('البراز', 'baraz'),
     ('الراكد', 'rakid'),
     ('الملاعن', 'malaain'),
+    ('يشوص', 'shaws'),
+    ('الأراك', 'arak'), ('أراك', 'arak'),
+    ('الاستحداد', 'istihdad'),
+    ('الحشفة', 'hashafa'),
+    ('القلفة', 'qulfa'),
+    ('البراجم', 'barajim'),
 ]
 
 # Arabic lesson pages: terms with a plain meaning written here (no source line unless one is real).

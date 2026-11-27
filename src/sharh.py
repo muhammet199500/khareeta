@@ -637,3 +637,169 @@ SHARH[103] = [
      '**Bölümün tamamındaki kaide:** Şeriat temizliği, örtünmeyi, Allah’ın şiarlarına saygıyı ve insanlardan eziyeti uzaklaştırmayı korumuştur.'),
  ]),
 ]
+
+# ------------------------------------------------------------------ الدرس الرابع: السواك وسنن الفطرة (الباب الرابع، ١/ ١٣–١٦)
+GLOSS.update({
+ 'shaws': dict(w='يَشُوص', ar='الشوص: الدلك.', tr='Şavs: ovmak.', src='حاشية الكتاب (١/ ١٣)'),
+ 'arak': dict(w='أراك', ar='الأرَاك: شجر من الحمض يستاك بقضبانه، واسمه الكَبَاث.', tr='Erâk: dallarıyla misvak yapılan, hamd türünden bir ağaç.', src='حاشية الكتاب (١/ ١٤)'),
+ 'istihdad': dict(w='الاستحداد', ar='حلق العانة، وهي الشعر النابت حول الفرج؛ سمّي بذلك لاستعمال الحديدة فيه وهي الموسى.', tr='Kasık kıllarını tıraş etmek; ustura (demir) kullanıldığı için bu adı almıştır.', src='الكتاب نفسه (١/ ١٤–١٥)'),
+ 'hashafa': dict(w='الحَشَفَة', ar='الحشفة: هي رأس الذكر.', tr='Erkek tenasül organının baş kısmı.', src='حاشية الكتاب (١/ ١٥)'),
+ 'qulfa': dict(w='القُلْفَة', ar='الجلدة التي تغطي الحشفة، والتي تقطع في الختان.', tr='Sünnette kesilen, organın başını örten deri.', src='حاشية الكتاب (١/ ١٥)'),
+ 'jazz': dict(w='جزّوا', ar='الجز: القص. وإرخاء اللحية: تركها وعدم التعرض لها.', tr='Cezz: kısaltmak. Sakalı salıvermek: onu bırakıp dokunmamak.', src='حاشية الكتاب (١/ ١٥)'),
+ 'barajim': dict(w='البراجم', ar='العقد التي في ظهور الأصابع، يجتمع فيها الوسخ.', tr='Parmakların üst yüzündeki, kirin biriktiği eklem yerleri.', src='الكتاب نفسه (١/ ١٦)'),
+})
+GLOSS_TR_SRC.update({
+ 'حاشية الكتاب (١/ ١٣)': 'Kitabın dipnotu (1/ 13)',
+ 'حاشية الكتاب (١/ ١٤)': 'Kitabın dipnotu (1/ 14)',
+ 'حاشية الكتاب (١/ ١٥)': 'Kitabın dipnotu (1/ 15)',
+ 'الكتاب نفسه (١/ ١٤–١٥)': 'Kitabın kendisi (1/ 14–15)',
+ 'الكتاب نفسه (١/ ١٦)': 'Kitabın kendisi (1/ 16)',
+})
+
+SHARH[104] = [
+ dict(ar='الباب الرابع: في السواك وسنن الفطرة', tr='Dördüncü bölüm: Misvak ve fıtrat sünnetleri', paras=[
+  PS('السواك: هو استعمال عود أو نحوه في الأسنان أو اللثة؛ لإزالة ما يعلق بهما من الأطعمة والروائح.',
+     'Misvak: Yemek artıklarını ve kokuları gidermek için dişlerde veya diş etlerinde bir çubuk ya da benzerini kullanmaktır.',
+     '١/ ١٣',
+     'بدأ الكتاب بتعريف السواك، وفيه ثلاثة أشياء: **الآلة** (عود أو نحوه)، و**المحلّ** (الأسنان واللثة)، و**المقصود** (إزالة ما يعلق بهما من الطعام والرائحة).\n\n'
+     'فالسواك يُطلق على الفعل، ويُطلق على العود الذي يُستاك به.',
+     'Kitap misvakın tanımıyla başlar; tanımda üç şey vardır: **araç** (çubuk vb.), **yer** (dişler ve diş etleri) ve **amaç** (yemek artığını ve kokuyu gidermek).\n\n'
+     'Misvak kelimesi hem fiil için hem de onunla yapılan çubuk için kullanılır.'),
+ ]),
+ dict(ar='المسألة الأولى: حكمه', tr='Birinci mesele: Hükmü', paras=[
+  PS('السواك مسنون في جميع الأوقات، حتى الصائم لو تَسَوَّك في حال صيامه فلا بأس بذلك سواء كان أول النهار أو آخره؛ لأن النبي ﷺ رغَّب فيه ترغيباً مطلقاً، ولم يقيده بوقت دون آخر، حيث قال ﷺ: (السواك مطهرة للفم مرضاة للرب) (١). وقال ﷺ: (لولا أن أشق على أمتي لأمرتهم بالسواك عند كل صلاة) (٢).',
+     'Misvak her vakitte sünnettir. Oruçlu kimse orucu sırasında misvak kullansa, günün başında olsun sonunda olsun, sakıncası yoktur. Çünkü Nebî (sallallâhu aleyhi ve sellem) onu bir vakitle sınırlamadan genel olarak teşvik etmiş ve şöyle buyurmuştur: «Misvak ağzı temizler, Rabbi razı eder.» (1) Yine buyurmuştur: «Ümmetime zorluk vermeyecek olsaydım, onlara her namazda misvak kullanmalarını emrederdim.» (2)',
+     '١/ ١٣',
+     '**الحكم:** سنة في كل وقت. **والدليل على العموم:** أن النبي ﷺ رغّب فيه ترغيبًا مطلقًا، ولم يخصّه بوقت؛ فيدخل فيه الصائم في أول النهار وآخره.\n\n'
+     '**وفي الحديث الثاني قاعدة أصولية:** أن **الأمر يقتضي الوجوب**. فالنبي ﷺ ترك أن يأمر بالسواك عند كل صلاة **خوف المشقة**؛ لأنه لو أمر به لصار واجبًا. فدلّ على أنه سنة مؤكدة لا واجب، وعلى رحمته ﷺ بأمته.\n\n'
+     '**شرح الحواشي:** (١) حديث «السواك مطهرة» ذكره البخاري بلا إسناد بصيغة الجزم، ووصله أحمد والنسائي، وصحّحه الألباني. (٢) حديث «لولا أن أشق» متفق عليه من حديث أبي هريرة رضي الله عنه.',
+     '**Hüküm:** Her vakitte sünnettir. **Genellik delili:** Nebî (sallallâhu aleyhi ve sellem) onu bir vakte tahsis etmeden genel olarak teşvik etmiştir; günün başında ve sonunda oruçlu da buna girer.\n\n'
+     '**İkinci hadiste usûle dair bir kaide vardır:** **Emir vacipliği gerektirir.** Nebî (sallallâhu aleyhi ve sellem) her namazda misvakı emretmeyi **zorluk korkusuyla** terk etmiştir; çünkü emretseydi vacip olurdu. Bu, misvakın vacip değil, müekked bir sünnet olduğunu ve onun ümmetine olan rahmetini gösterir.\n\n'
+     '**Dipnotların şerhi:** (1) «Misvak ağzı temizler» hadisini Buhârî kesinlik bildiren bir ifadeyle senetsiz zikretmiş; Ahmed ve Nesâî senedli rivayet etmiş, Elbânî sahih saymıştır. (2) «Zorluk vermeyecek olsaydım» hadisi Ebû Hureyre’den (radıyallâhu anh) Buhârî ve Müslim’dedir.',
+     fn=['(١) أخرجه البخاري في كتاب الصوم ٢/ ٤٠ معلقاً بصيغة الجزم، ورواه أحمد (٦/ ٤٧)، والنسائي (١/ ١٠). وصححه الألباني في الإرواء (١/ ١٠٥).', '(٢) متفق عليه: البخاري برقم (٨٨٧)، ومسلم في كتاب الطهارة برقم (٢٥٢).']),
+ ]),
+ dict(ar='المسألة الثانية: متى يتأكد؟', tr='İkinci mesele: Ne zaman daha da önem kazanır?', paras=[
+  PS('ويتأكد عند الوضوء، وعند الانتباه من النوم، وعند تغير رائحة الفم، وعند قراءة القرآن، وعند الصلاة. وكذا عند دخول المسجد والمنزل؛ لحديث القدام بن شريح، عن أبيه قال: سألت عائشة، قلت: بأيِّ شيء كان يبدأ النبي ﷺ إذا دخل بيته؟ قالت: بالسواك (٣). ويتأكد كذلك عند طول السكوت، وصفرة الأسنان، للأحاديث السابقة.',
+     'Misvak abdestte, uykudan uyanınca, ağız kokusu değişince, Kur’ân okurken ve namazda daha da önem kazanır. Mescide ve eve girerken de öyledir. Mikdâm b. Şureyh’in babasından rivayeti buna delildir: «Âişe’ye sordum: Nebî (sallallâhu aleyhi ve sellem) evine girince ilk ne ile başlardı? “Misvakla” dedi.» (3) Uzun süre susunca ve dişler sararınca da önceki hadisler gereği önem kazanır.',
+     '١/ ١٣',
+     'السواك سنة في كل وقت، لكن **يتأكد** في مواضع، أي يكون أشدّ استحبابًا. ويجمعها أمران: **العبادة** (الوضوء، والصلاة، والقراءة، ودخول المسجد)، و**تغيّر الفم** (القيام من النوم، وطول السكوت، وتغيّر الرائحة، وصفرة الأسنان).\n\n'
+     'وفي حديث عائشة أدب جميل: أول ما يبدأ به النبي ﷺ إذا دخل بيته **السواك**؛ فيلقى أهله بفم طيب.\n\n'
+     '**شرح الحواشي:** (٣) الحديث في صحيح مسلم.',
+     'Misvak her vakitte sünnettir; ama bazı yerlerde **daha da önem kazanır**, yani daha kuvvetli müstehap olur. Bunları iki şey toplar: **ibadet** (abdest, namaz, Kur’ân okumak, mescide girmek) ve **ağzın değişmesi** (uykudan kalkmak, uzun susmak, kokunun değişmesi, dişlerin sararması).\n\n'
+     'Âişe hadisinde güzel bir edep vardır: Nebî (sallallâhu aleyhi ve sellem) evine girince ilk olarak **misvakla** başlardı; ailesini güzel kokulu bir ağızla karşılardı.\n\n'
+     '**Dipnotların şerhi:** (3) Hadis Müslim’in Sahîh’indedir.',
+     fn=['(٣) أخرجه مسلم برقم (٢٥٣).'],
+     note=dict(ar='تنبيه: اسم الراوي «المقدام بن شريح»، بالميم.', tr='Not: Râvinin adı «el-Mikdâm b. Şureyh»tir.')),
+  PS('وكان رسول الله ﷺ إذا قام من الليل [[يَشُوصُ|shaws]] (٤) فاه بالسواك (٥)، والمسلم مأمور عند العبادة والتقرب إلى الله، أن يكون على أحسن حال من النظافة والطهارة.',
+     'Rasûlullah (sallallâhu aleyhi ve sellem) geceleyin kalkınca ağzını misvakla ovardı (4) (5). Müslümana ibadet ederken ve Allah’a yaklaşırken temizlik ve taharetin en güzel hâlinde olması emredilmiştir.',
+     '١/ ١٣',
+     'هذه **قاعدة الباب كله**: المسلم إذا وقف بين يدي ربه، أو تقرّب إليه بعبادة، فهو على أحسن حال من النظافة. ومن هنا تأكّد السواك عند الصلاة والقراءة ودخول المسجد.\n\n'
+     '**شرح الحواشي:** (٤) **الشوص** الدلك؛ أي يدلك أسنانه بالسواك. (٥) الحديث متفق عليه من حديث حذيفة رضي الله عنه.',
+     'Bu, **bölümün tamamının kaidesidir**: Müslüman Rabbinin huzurunda durduğunda veya bir ibadetle O’na yaklaştığında temizliğin en güzel hâlindedir. Bu yüzden misvak namazda, Kur’ân okurken ve mescide girerken daha da önem kazanır.\n\n'
+     '**Dipnotların şerhi:** (4) **Şavs** ovmaktır; yani dişlerini misvakla ovardı. (5) Hadis Huzeyfe’den (radıyallâhu anh) Buhârî ve Müslim’dedir.',
+     fn=['(٤) الشوص: الدلك.', '(٥) رواه البخاري في كتاب الوضوء باب السواك برقم (٢٤٥)، ومسلم في كتاب الطهارة باب السواك برقم (٢٥٥).']),
+ ]),
+ dict(ar='المسألة الثالثة: بم يكون؟', tr='Üçüncü mesele: Neyle yapılır?', paras=[
+  PS('يسن أن يكون التسوك بعود رطب لا يتفتت، ولا يجرح الفم؛ فإن النبي ﷺ كان يستاك بعود [[أراك|arak]] (١). وله أن يتسوك بيده اليمنى أو اليسرى، فالأمر في هذا واسع.',
+     'Misvakın, dağılmayan ve ağzı yaralamayan taze bir çubukla yapılması sünnettir; çünkü Nebî (sallallâhu aleyhi ve sellem) erâk çubuğuyla misvak kullanırdı. (1) Sağ veya sol eliyle misvak kullanabilir; bu konuda genişlik vardır.',
+     '١/ ١٤',
+     'صفات العود المسنون ثلاث: **رطب** حتى يلين، و**لا يتفتت** فيبقى في الفم، و**لا يجرح** اللثة. وأفضله عود الأراك، وهو المعروف عند الناس بـ«السواك».\n\n'
+     '**وباليمين أو اليسار:** الأمر واسع، فلا يتحرّج المسلم من أيّهما.\n\n'
+     '**شرح الحواشي:** (١) **الأراك** شجر يُستاك بقضبانه، أي بأغصانه الرقيقة.',
+     'Sünnet olan çubuğun üç vasfı vardır: yumuşasın diye **taze**, ağızda parçalar kalmasın diye **dağılmayan** ve diş etlerini **yaralamayan**. En faziletlisi, insanlar arasında «misvak» diye bilinen erâk çubuğudur.\n\n'
+     '**Sağ veya sol elle:** Bu konuda genişlik vardır; Müslüman ikisinden birini kullanmakta sıkıntıya düşmez.\n\n'
+     '**Dipnotların şerhi:** (1) **Erâk**, ince dallarıyla misvak yapılan bir ağaçtır.',
+     fn=['(١) الأرَاك: شجر من الحمض يستاك بقضبانه، واسمه الكَبَاث.']),
+  PS('فإن لم يكن عنده عود يستاك به حال الوضوء، أجزأه التسوك بأصبعه، كما روى ذلك عليُّ بن أبي طالب ﵁ في صفة وضوء النبي ﷺ. (٢)',
+     'Abdest alırken misvak kullanacağı bir çubuk yoksa, parmağıyla misvak kullanması yeterlidir; Ali b. Ebî Tâlib (radıyallâhu anh) Nebî’nin (sallallâhu aleyhi ve sellem) abdestini anlatırken bunu rivayet etmiştir. (2)',
+     '١/ ١٤',
+     'هذا **البديل** عند فقد العود: الإصبع، ويدلك بها أسنانه. والمقصود من السواك تنظيف الأسنان والفم؛ فإذا أجزأت الإصبع، **فالفرشاة المعروفة يحصل بها المقصود أيضًا**، فلا يتحرّج من استعمالها. ويبقى عود الأراك أوفق للسنة.\n\n'
+     '**شرح الحواشي:** (٢) الحديث أخرجه أحمد، وصحّحه ابن حجر.',
+     'Çubuk bulunmadığında **yerine geçen** budur: parmak; onunla dişlerini ovar. Misvaktan maksat dişleri ve ağzı temizlemektir; parmak yettiğine göre **bilinen diş fırçasıyla da bu maksat hâsıl olur**, onu kullanmakta sıkıntı yoktur. Erâk çubuğu ise sünnete daha uygundur.\n\n'
+     '**Dipnotların şerhi:** (2) Hadisi Ahmed rivayet etmiş, İbn Hacer sahih saymıştır.',
+     fn=['(٢) أخرجه أحمد في المسند (١/ ١٥٨)، وصححه ابن حجر في التلخيص الحبير (١/ ٧٠).']),
+ ]),
+ dict(ar='المسألة الرابعة: فوائد السواك', tr='Dördüncü mesele: Misvakın faydaları', paras=[
+  PS('ومن أهمها ما ورد في الحديث السابق: أنه مطهرة للفم في الدنيا مرضاة للرب في الآخرة. فينبغي للمسلم أن يتعاهد هذه السنة، ولا يتركها؛ لما فيها من فوائد عظيمة. وقد يمر على بعض المسلمين مدة من الوقت كالشهر والشهرين وهم لم يتسوكوا إما تكاسلاً وإما جهلاً، وهؤلاء قد فاتهم الأجر العظيم والفوائد الكثيرة؛ بسبب تركهم هذه السُّنةَ التي كان يحافظ عليها النبي ﷺ، وكاد يأمر بها أمته أَمْرَ إيجاب، لولا خوف المشقة.',
+     'Faydalarının en önemlisi önceki hadiste geçendir: Dünyada ağzı temizler, ahirette Rabbi razı eder. Müslümanın bu sünnete devam etmesi ve onu terk etmemesi gerekir; çünkü onda büyük faydalar vardır. Bazı Müslümanlar tembellik veya bilgisizlik yüzünden bir iki ay misvak kullanmadan geçirir. Bunlar, Nebî’nin (sallallâhu aleyhi ve sellem) devam ettiği ve zorluk korkusu olmasa ümmetine vacip olarak emredeceği bu sünneti terk ettikleri için büyük sevabı ve pek çok faydayı kaçırmışlardır.',
+     '١/ ١٤',
+     'فائدتان في حديث واحد: **دنيوية** (طهارة الفم)، و**أخروية** (رضا الرب). وكفى بالثانية سببًا للمحافظة عليه.\n\n'
+     'ثم نبّه الكتاب على حال من يترك السواك الشهر والشهرين: فهذا قد فاته أجر سنة كاد النبي ﷺ أن يوجبها.\n\n'
+     'وفي هذا **حفظ لنعمة الأسنان**: نعمة لا يُعرف قدرها إلا عند فقدها؛ فالعلاج لا يعيد السنّ كما خلقها الله، وإنما يرمّمها.',
+     'Tek hadiste iki fayda vardır: **dünyevî** (ağzın temizliği) ve **uhrevî** (Rabbin rızası). İkincisi bile ona devam etmek için yeterli bir sebeptir.\n\n'
+     'Sonra kitap, bir iki ay misvakı terk edenin durumuna dikkat çekmiştir: Bu kimse, Nebî’nin (sallallâhu aleyhi ve sellem) neredeyse vacip kılacağı bir sünnetin sevabını kaçırmıştır.\n\n'
+     'Bunda **diş nimetini korumak** vardır: Değeri ancak kaybedilince anlaşılan bir nimettir; tedavi dişi Allah’ın yarattığı gibi geri getiremez, ancak onarır.'),
+  PS('وقد ذكروا فوائد أخرى للسواك، منها: أنه يقوي الأسنان، ويشد اللثة، وينقي الصوت، وينشط العبد.',
+     'Misvakın başka faydaları da zikredilmiştir: Dişleri güçlendirir, diş etlerini sıkılaştırır, sesi berraklaştırır ve kulu dinçleştirir.',
+     '١/ ١٤',
+     'هذه فوائد ذكرها أهل العلم من التجربة، تضاف إلى الفائدتين المنصوص عليهما في الحديث.',
+     'Bunlar âlimlerin tecrübeyle zikrettiği faydalardır; hadiste açıkça bildirilen iki faydaya eklenir.'),
+ ]),
+ dict(ar='المسألة الخامسة: سنن الفطرة', tr='Beşinci mesele: Fıtrat sünnetleri', paras=[
+  PS('وتسمى أيضاً: خصال الفطرة؛ وذلك لأن فاعلها يتصف بالفطرة التي فطر الله الناس عليها واستحبها لهم؛ ليكونوا على أحسن هيئة وأكمل صورة. عن أبي هريرة ﵁ قال: قال رسول الله ﷺ: (خمس من الفطرة: الاستحداد والختان وقص الشارب ونتف الإبط وتقليم الأظافر) (٣).',
+     'Bunlara fıtrat hasletleri de denir; çünkü bunları yapan kimse, Allah’ın insanları üzerine yarattığı ve onlar için sevdiği fıtratla vasıflanır; böylece en güzel görünüşte ve en mükemmel surette olurlar. Ebû Hureyre’den (radıyallâhu anh), Rasûlullah (sallallâhu aleyhi ve sellem) şöyle buyurmuştur: «Beş şey fıtrattandır: kasık kıllarını tıraş etmek, sünnet olmak, bıyığı kısaltmak, koltuk altı kıllarını yolmak ve tırnakları kesmek.» (3)',
+     '١/ ١٤',
+     '**لماذا ذُكرت سنن الفطرة مع السواك؟** لأنها كلها من باب النظافة والتجمّل. وهذه فائدة من دراسة الفقه كاملًا: أن تعرف أين تجد المسألة في كتب الفقه، فقد تُذكر تحت باب لا يدلّ عليها اسمه مباشرة.\n\n'
+     '**والفطرة:** الخِلقة التي خلق الله الناس عليها؛ فهذه الخصال يستحسنها كل صاحب طبع سليم.\n\n'
+     '**شرح الحواشي:** (٣) الحديث متفق عليه.',
+     '**Fıtrat sünnetleri neden misvakla birlikte anılmıştır?** Çünkü hepsi temizlik ve güzellik konusundandır. Bu, fıkhı bütün olarak okumanın bir faydasıdır: Bir meseleyi fıkıh kitaplarında nerede bulacağınızı bilirsiniz; bazen adı ona doğrudan delâlet etmeyen bir babda anılır.\n\n'
+     '**Fıtrat:** Allah’ın insanları üzerine yarattığı yaratılış; selim tabiatlı herkes bu hasletleri güzel bulur.\n\n'
+     '**Dipnotların şerhi:** (3) Hadis Buhârî ve Müslim’dedir.',
+     fn=['(٣) متفق عليه: رواه البخاري برقم (٥٨٨٩)، ومسلم برقم (٢٥٧).']),
+  PS('١ - [[الاستحداد|istihdad]]: وهو حَلْقُ العانة، وهي الشعر النابت حول الفرج، سمي بذلك لاستعمال الحديدة فيه وهي المُوسَى. وفي إزالته جمال ونظافة، ويمكن إزالته بغير الحلق كالمزيلات المصنعة.',
+     '1. İstihdâd: Kasık kıllarını, yani tenasül organının çevresinde biten kılları tıraş etmektir. Bunda demir, yani ustura kullanıldığı için bu adı almıştır. Onu gidermekte güzellik ve temizlik vardır; tıraş dışında, hazır temizleyici ürünlerle de giderilebilir.',
+     '١/ ١٥',
+     'الاسم مأخوذ من **الحديدة**، لكن المقصود **الإزالة**؛ فتحصل السنة بالحلق، وبالمزيلات المصنّعة، وبغيرهما.',
+     'İsim **demirden** alınmıştır; ama amaç **gidermektir**. Sünnet tıraşla, hazır temizleyicilerle veya başka bir yolla yerine gelir.'),
+  PS('٢ - الختان: وهو إزالة الجلدة التي تغطي [[الحَشَفَة|hashafa]] (١) حتى تبرز الحشفة، وهذا في حق الذكر. أما الأنثى: فقطع لحمة زائدة فوق محل الإيلاج. قيل: إنها تشبه عُرف الديك. والصحيح: أنه واجب في حق الرجال، سنة في حق النساء. والحكمة في ختان الرجل: تطهير الذكر من النجاسة المحتقنة في [[القُلْفَة|qulfa]] (٢). وفوائده كثيرة. أما المرأة: فإنه يُقَلِّل من غُلْمَتِها أي: شدة شهوتها. ويستحب أن يكون في اليوم السابع للمولود؛ لأنه أسرع للبرء، ولينشأ الصغير على أكمل حال.',
+     '2. Sünnet (hitan): Erkekte organın başını örten deriyi, baş ortaya çıkacak şekilde kesmektir. (1) Kadında ise birleşme yerinin üstündeki fazla bir et parçasını kesmektir. Doğru olan görüşe göre erkeklere vacip, kadınlara sünnettir. Erkeğin sünnetindeki hikmet, organı sünnet derisinde (2) biriken necasetten temizlemektir; faydaları çoktur. Kadındaki hikmeti ise şehvetin şiddetini azaltmaktır. Doğumun yedinci gününde yapılması müstehaptır; çünkü daha çabuk iyileşir ve çocuk en mükemmel hâl üzere yetişir.',
+     '١/ ١٥',
+     'فرّق الكتاب في الحكم بين الرجل والمرأة: **واجب في حق الرجال، سنة في حق النساء**.\n\n'
+     'و**علّة الوجوب** في الرجل **الطهارة**: فالقلفة تحبس النجاسة، فإزالتها تُعين على الطهارة التي هي شرط الصلاة. **ووقته المستحب** اليوم السابع، لأن الصغير أسرع برءًا.\n\n'
+     '**شرح الحواشي:** (١) **الحشفة** رأس الذكر. (٢) **القلفة** الجلدة التي تغطيها، وهي التي تُقطع في الختان.',
+     'Kitap hükümde erkek ile kadını ayırmıştır: **Erkeklere vacip, kadınlara sünnettir.**\n\n'
+     'Erkekteki **vacip olmasının gerekçesi taharettir**: Sünnet derisi necaseti tutar; onu gidermek, namazın şartı olan taharete yardım eder. **Müstehap vakti** yedinci gündür; çünkü küçük çocuk daha çabuk iyileşir.\n\n'
+     '**Dipnotların şerhi:** (1) **Haşefe**, organın baş kısmıdır. (2) **Kulfe**, onu örten ve sünnette kesilen deridir.',
+     fn=['(١) الحشفة: هي رأس الذكر.', '(٢) وهي الجلدة التي تغطي الحشفة، والتي تقطع في الختان.']),
+  PS('٣ - قص الشارب وإحفاؤه: وهو المبالغة في قَصِّه؛ لما في ذلك من التجمل، والنظافة، ومخالفة الكفار. وقد وردت الأحاديث الصحيحة في الحث على قَصِّه، وإعفاء اللحية، وإرسالها وإكرامها؛ لما في بقاء اللحية من الجمال ومظهر الرجولة، وقد عَكَسَ كثير من الناس الأمر، فصاروا يوفرون شواربهم، ويحلقون لحاهم، أو يقصرونها.',
+     '3. Bıyığı kısaltmak ve iyice kesmek: Kesmede ileri gitmektir; bunda güzellik, temizlik ve kâfirlere muhalefet vardır. Sahih hadisler bıyığı kısaltmayı, sakalı salıvermeyi, uzatmayı ve ona özen göstermeyi teşvik etmiştir; çünkü sakalın kalmasında güzellik ve erkeklik görünümü vardır. Pek çok insan işi tersine çevirmiş; bıyıklarını uzatıp sakallarını tıraş etmiş veya kısaltmıştır.',
+     '١/ ١٥',
+     '**الإحفاء:** المبالغة في قصّ الشارب، ولا سيما ما طال على الشفة حتى لا يصيب الطعام والشراب. وفيه ثلاث حِكَم ذكرها الكتاب: **التجمّل، والنظافة، ومخالفة الكفار**.\n\n'
+     'ثم ذكر الكتاب ما وقع فيه كثير من الناس من **عكس السنة**: توفير الشارب، وحلق اللحية أو تقصيرها.',
+     '**İhfâ:** Bıyığı kesmede ileri gitmek; özellikle yemeğe ve içeceğe değmesin diye dudağın üzerine uzayanı. Kitap bunda üç hikmet zikretmiştir: **güzellik, temizlik ve kâfirlere muhalefet.**\n\n'
+     'Sonra kitap, pek çok insanın düştüğü **sünnete ters** durumu anmıştır: bıyığı uzatmak, sakalı tıraş etmek veya kısaltmak.'),
+  PS('وفي كل هذا مخالفة للسنة والأوامر الواردة في وجوب إعفائها؛ منها: حديث أبي هريرة ﵁ قال: قال رسول الله ﷺ: ([[جزُّوا|jazz]] الشوارب، وأرخوا اللحى، وخالفوا المجوس) (٣). وحديث ابن عمر ﵄ عن النبي ﷺ قال: (خالفوا المشركين، وفِّروا اللحى، وأحفوا الشوارب) (٤). فعلى المسلم أن يلتزم بهذا الهدي النبوي، ويخالف الأعداء، ويتميز عن التشبه بالنساء.',
+     'Bütün bunlarda sünnete ve sakalı salıvermenin vacip olduğunu bildiren emirlere aykırılık vardır. Bunlardan biri Ebû Hureyre’nin (radıyallâhu anh) hadisidir: Rasûlullah (sallallâhu aleyhi ve sellem) şöyle buyurdu: «Bıyıkları kısaltın, sakalları salıverin, Mecûsîlere muhalefet edin.» (3) İbn Ömer’in (radıyallâhu anhümâ) Nebî’den (sallallâhu aleyhi ve sellem) hadisi: «Müşriklere muhalefet edin: Sakalları bol bırakın, bıyıkları iyice kısaltın.» (4) Müslümanın bu nebevî yola bağlı kalması, düşmanlara muhalefet etmesi ve kadınlara benzemekten ayrılması gerekir.',
+     '١/ ١٥',
+     '**الحكم:** إعفاء اللحية **واجب**؛ لأن الأحاديث جاءت بصيغة الأمر: «أَرْخُوا»، «وَفِّرُوا»، والأمر يقتضي الوجوب، كما تقدّم في حديث السواك.\n\n'
+     '**والعلّة:** مخالفة المجوس والمشركين، والتميّز عن التشبه بالنساء.\n\n'
+     '**شرح الحواشي:** (٣) حديث أبي هريرة في صحيح مسلم. و**الجزّ** القصّ، و**إرخاء اللحية** تركها وعدم التعرض لها. (٤) حديث ابن عمر في الصحيحين، واللفظ للبخاري.',
+     '**Hüküm:** Sakalı salıvermek **vaciptir**; çünkü hadisler emir kipiyle gelmiştir: «salıverin», «bol bırakın». Misvak hadisinde geçtiği gibi emir vacipliği gerektirir.\n\n'
+     '**Gerekçe:** Mecûsîlere ve müşriklere muhalefet etmek ve kadınlara benzemekten ayrılmak.\n\n'
+     '**Dipnotların şerhi:** (3) Ebû Hureyre hadisi Müslim’in Sahîh’indedir. **Cezz** kısaltmak, **sakalı salıvermek** ona dokunmadan bırakmaktır. (4) İbn Ömer hadisi Buhârî ve Müslim’dedir; lafız Buhârî’nindir.',
+     fn=['(٣) أخرجه مسلم برقم (٢٦٠)، والجز: القص. وإرخاء اللحية: تركها وعدم التعرض لها.', '(٤) رواه البخاري برقم (٥٨٩٢)، ومسلم برقم (٢٥٨). واللفظ للبخاري.'],
+     note=dict(ar='تنبيه على الحاشية (٤): حديث ابن عمر في «صحيح مسلم» برقم (٢٥٩).', tr='(4) numaralı dipnot hakkında: İbn Ömer hadisi Müslim’in Sahîh’inde 259 numaradadır.')),
+  PS('٤ - تقليم الأظافر: وهو قَصُّها بحيث لا تترك حتى تطول. والتقليم يجملها، ويزيل الأوساخ المتراكمة تحتها، وقد خالف هذه الفطرة النبوية بعض المسلمين فصاروا يطيلون أظافرهم، أو أظافر إصبع معين من أيديهم. كل ذلك من تزيين الشيطان والتقليد لأعداء الله.',
+     '4. Tırnakları kesmek: Uzamaya bırakılmayacak şekilde kesmektir. Kesmek onları güzelleştirir ve altlarında biriken kirleri giderir. Bazı Müslümanlar bu nebevî fıtrata aykırı davranarak tırnaklarını ya da elindeki belli bir parmağın tırnağını uzatmışlardır. Bunların hepsi şeytanın süslemesi ve Allah düşmanlarını taklittir.',
+     '١/ ١٦',
+     'حكمتان للتقليم: **الجمال**، و**النظافة**، فالوسخ يتجمّع تحت الأظفار الطويلة. وإطالة الأظفار عادة تخالف الفطرة، وإن زيّنها الشيطان للناس.',
+     'Tırnak kesmenin iki hikmeti vardır: **güzellik** ve **temizlik**; çünkü uzun tırnakların altında kir birikir. Tırnak uzatmak, şeytan insanlara süslü gösterse de fıtrata aykırı bir âdettir.'),
+  PS('٥ - نتف الإبط: أي إزالة الشعر النابت فيه، فيسن إزالة هذا الشعر بالنتف أو الحلق أو غيرهما؛ لما في إزالته من النظافة وقطع الروائح الكريهة التي تتجمع مع وجود هذا الشعر، فهذا هو ديننا الحنيف، أمرنا بهذه الخصال؛ لما فيها من التجمل والتطهر والنظافة، وليكون المسلم على أحسن حال، مبتعداً عن تقليد الكفار والجهال، مفتخراً بدينه، مطيعاً لربه، متبعاً لسنة نبيه ﷺ.',
+     '5. Koltuk altı kıllarını yolmak: Orada biten kılları gidermektir. Bu kılları yolarak, tıraş ederek veya başka bir yolla gidermek sünnettir; çünkü bunda temizlik ve bu kıllarla birlikte biriken kötü kokuların önlenmesi vardır. İşte hanîf dinimiz bize bu hasletleri emretmiştir; çünkü bunlarda güzellik, taharet ve temizlik vardır. Böylece Müslüman en güzel hâlde olur; kâfirleri ve cahilleri taklitten uzak durur, diniyle iftihar eder, Rabbine itaat eder ve Nebî’sinin (sallallâhu aleyhi ve sellem) sünnetine uyar.',
+     '١/ ١٦',
+     'النتف هو الأفضل لأنه لفظ الحديث، لكن **المقصود الإزالة**؛ فتحصل السنة بالحلق وغيره.\n\n'
+     'ثم ختم الكتاب الخصال الخمس بالمقصد الجامع: **التجمّل والتطهّر والنظافة**، وأن يكون المسلم على أحسن حال، **مفتخرًا بدينه** لا مقلّدًا لغيره.',
+     'Yolmak, hadisin lafzı olduğu için daha faziletlidir; ama **amaç gidermektir**; sünnet tıraşla ve başka yollarla da yerine gelir.\n\n'
+     'Sonra kitap beş hasleti toplayıcı amaçla bitirmiştir: **güzellik, taharet ve temizlik**; Müslümanın en güzel hâlde olması ve başkasını taklit etmeden **diniyle iftihar etmesi**.'),
+  PS('ويضاف إلى هذه الخصال الخمس: السواك، واستنشاق الماء، والمضمضة، وغسل [[البراجم|barajim]] -وهي العقد التي في ظهور الأصابع، يجتمع فيها الوسخ-، والاستنجاء، وذلك لحديث عائشة ﵂ قالت: قال رسول الله ﷺ: (عشر من الفطرة: قص الشارب، وإعفاء اللحية، والسواك، واستنشاق الماء، وقص الأظفار، وغسل البراجم، ونتف الإبط، وحلق العانة، وانتقاص الماء) يعني الاستنجاء. قال مصعب بن شيبة -أحد رواة الحديث-: "ونسيت العاشرة، إلا أن تكون المضمضة". (١)',
+     'Bu beş haslete misvak, suyu buruna çekmek, ağzı çalkalamak, berâcimi —parmakların üst yüzündeki, kirin biriktiği eklem yerlerini— yıkamak ve istincâ eklenir. Âişe’nin (radıyallâhu anhâ) hadisi buna delildir: Rasûlullah (sallallâhu aleyhi ve sellem) şöyle buyurdu: «On şey fıtrattandır: bıyığı kısaltmak, sakalı salıvermek, misvak, suyu buruna çekmek, tırnakları kesmek, parmak eklemlerini yıkamak, koltuk altı kıllarını yolmak, kasık kıllarını tıraş etmek ve suyu azaltmak», yani istincâ. Hadisin râvilerinden Mus’ab b. Şeybe: «Onuncusunu unuttum; mazmaza olmalı» demiştir. (1)',
+     '١/ ١٦',
+     'حديث عائشة يزيد على الخمس: **إعفاء اللحية، والسواك، والاستنشاق، والمضمضة، وغسل البراجم، والاستنجاء**. فخصال الفطرة كلها **نظافة**: للفم، والأنف، والأصابع، والبدن.\n\n'
+     '**وانتقاص الماء:** الاستنجاء، كما فسّره الكتاب. وفي قول الراوي «نسيت العاشرة» أمانة الرواة: لم يجزم بما لم يحفظ.\n\n'
+     '**شرح الحواشي:** (١) الحديث في صحيح مسلم.',
+     'Âişe hadisi beşe şunları ekler: **sakalı salıvermek, misvak, suyu buruna çekmek, ağzı çalkalamak, parmak eklemlerini yıkamak ve istincâ.** Fıtrat hasletlerinin hepsi **temizliktir**: ağzın, burnun, parmakların ve bedenin.\n\n'
+     '**İntikâsu’l-mâ:** Kitabın açıkladığı gibi istincâdır. Râvinin «onuncusunu unuttum» demesinde râvilerin emaneti vardır: Ezberlemediği şeyi kesin olarak söylememiştir.\n\n'
+     '**Dipnotların şerhi:** (1) Hadis Müslim’in Sahîh’indedir.',
+     fn=['(١) رواه مسلم برقم (٢٦١).']),
+ ]),
+]

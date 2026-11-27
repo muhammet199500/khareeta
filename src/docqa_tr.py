@@ -75,4 +75,17 @@ DOCQA_TR = {
   ('Çalınmasından korkuyorsa üzerinde Allah’ın adı yazılı paralarla tuvalete girmek caizdir.', 'Doğru; içinde Allah’ın zikri bulunan şeyle girmek ihtiyaç olmadıkça mekruhtur; bu bir ihtiyaçtır. Mushafla girmek ise haramdır.', True),
   ('Yer temizlendiyse isticmârda tek silme yeterlidir.', 'Yanlış; Selmân’ın (radıyallâhu anh) hadisi gereği üç silmeden azı yetmez.', True),
  ],
+ 104: [
+  ('Misvak nedir? Hükmü nedir?', 'Misvak: Yemek artıklarını ve kokuları gidermek için dişlerde veya diş etlerinde bir çubuk ya da benzerini kullanmaktır. Oruçluya bile her vakitte sünnettir: «Misvak ağzı temizler, Rabbi razı eder.»', False),
+  ('Misvakın daha da önem kazandığı dört yer sayın.', 'Abdest, namaz, uykudan kalkmak ve eve girmek; ayrıca Kur’ân okumak, mescide girmek, ağız kokusunun değişmesi, uzun susmak ve dişlerin sararması.', False),
+  ('Misvakın neyle yapılması sünnettir? Çubuk bulunmazsa ne yeterlidir?', 'Erâk çubuğu gibi dağılmayan ve ağzı yaralamayan taze bir çubukla. Çubuk yoksa parmakla misvak yeterlidir; Ali (radıyallâhu anh) Nebî’nin (sallallâhu aleyhi ve sellem) abdestini anlatırken bunu rivayet etmiştir.', False),
+  ('Fıtrat sünnetleri nelerdir? Neden bu adı almışlardır?', 'Kasık kıllarını tıraş etmek, sünnet olmak, bıyığı kısaltmak, koltuk altı kıllarını yolmak ve tırnak kesmek. Bunları yapan, Allah’ın insanları üzerine yarattığı fıtratla vasıflanıp en güzel görünüşte olduğu için bu adı almışlardır.', False),
+  ('İstihdâd nedir? Berâcim nedir?', 'İstihdâd: kasık kıllarını tıraş etmek; ustura (demir) kullanıldığı için bu adı almıştır. Berâcim: parmakların üst yüzündeki, kirin biriktiği eklem yerleri.', False),
+  ('«Ümmetime zorluk vermeyecek olsaydım» hadisi misvakın vacip değil sünnet olduğunu nasıl gösterir?', 'Emir vacipliği gerektirir; Nebî (sallallâhu aleyhi ve sellem) ümmetine zorluk vermemek için her namazda misvakı emretmemiştir. Emretseydi vacip olurdu; böylece müekked sünnet olarak kalmıştır.', False),
+  ('Misvak neden oruçlu için günün başında da sonunda da müstehaptır?', 'Çünkü Nebî (sallallâhu aleyhi ve sellem) onu bir vakit veya hâlle sınırlamadan genel olarak teşvik etmiştir.', False),
+  ('Bıyık ve sakalda Mecûsîlere ve müşriklere muhalefetin hikmeti nedir?', 'Müslümanın görünüşünde ayrılması, Nebî’sinin (sallallâhu aleyhi ve sellem) yoluyla iftihar etmesi ve Müslüman olmayanları taklit etmemesi; ayrıca bunda güzellik, erkeklik görünümü ve kadınlara benzemekten ayrılmak vardır.', False),
+  ('Oruçlunun öğleden sonra misvak kullanması mekruhtur.', 'Yanlış; misvak oruçluya bile günün başında ve sonunda her vakitte sünnettir; çünkü teşvik geneldir.', True),
+  ('Sol elle misvak kullanmak caizdir.', 'Doğru; sağ veya sol elle kullanılabilir; bu konuda genişlik vardır.', True),
+  ('Sünnet olmak (hitan) erkekler için sünnettir.', 'Yanlış; doğru olan görüşe göre erkeklere vacip, kadınlara sünnettir.', True),
+ ],
 }

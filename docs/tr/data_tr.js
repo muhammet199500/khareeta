@@ -2379,4 +2379,385 @@ window.FIQH3.quiz = [
     "x": "Mushaf Allah’ın kelâmıdır; onunla tuvalete girmek saygısızlıktır."
   }
 ];
-window.LESSONS = [window.LESSON, window.LESSON2, window.LESSON3, window.FIQH1, window.FIQH2, window.FIQH3];
+window.FIQH4 = {
+  "title": "Misvak ve Fıtrat Sünnetleri",
+  "root": {
+    "id": "root",
+    "label": "Misvak ve\nFıtrat Sünnetleri"
+  },
+  "branches": [
+    {
+      "id": "b1",
+      "label": "Misvak ve hükmü",
+      "children": [
+        {
+          "id": "b1a",
+          "label": "Tanım",
+          "card": {
+            "tag": "Misvak",
+            "title": "Diş ve diş etlerinde çubuk",
+            "body": "Yemek artıklarını ve kokuları gidermek için."
+          }
+        },
+        {
+          "id": "b1b",
+          "label": "Her vakitte sünnet",
+          "v": true,
+          "card": {
+            "tag": "Hüküm",
+            "title": "Oruçluya bile",
+            "verse": "«السِّوَاكُ مَطْهَرَةٌ لِلْفَمِ، مَرْضَاةٌ لِلرَّبِّ»",
+            "ref": "Buhârî (muallak), Ahmed ve Nesâî",
+            "body": "«Misvak ağzı temizler, Rabbi razı eder.»"
+          }
+        },
+        {
+          "id": "b1c",
+          "label": "Vacip değil, sünnet",
+          "hot": true,
+          "v": true,
+          "card": {
+            "tag": "Delil",
+            "verse": "«لَوْلَا أَنْ أَشُقَّ عَلَى أُمَّتِي لَأَمَرْتُهُمْ بِالسِّوَاكِ عِنْدَ كُلِّ صَلَاةٍ»",
+            "ref": "Buhârî (887) ve Müslim (252)",
+            "body": "«Zorluk vermeyecek olsaydım her namazda emrederdim.» Emir vacipliği gerektirir; zorluk korkusuyla emretmedi."
+          }
+        }
+      ]
+    },
+    {
+      "id": "b2",
+      "label": "Ne zaman daha önemli?",
+      "children": [
+        {
+          "id": "b2a",
+          "label": "Abdest ve namaz",
+          "card": {
+            "tag": "İbadet",
+            "body": "Abdestte, namazda, Kur’ân okurken ve mescide girerken."
+          }
+        },
+        {
+          "id": "b2b",
+          "label": "Uykudan kalkınca",
+          "card": {
+            "tag": "Gece",
+            "body": "«Geceleyin kalkınca ağzını misvakla ovardı.» Buhârî ve Müslim. Şavs: ovmak."
+          }
+        },
+        {
+          "id": "b2c",
+          "label": "Eve girince",
+          "card": {
+            "tag": "İlk yaptığı",
+            "body": "Âişe’ye eve girince ilk ne yaptığı soruldu: «Misvak» dedi. Müslim (253)."
+          }
+        },
+        {
+          "id": "b2d",
+          "label": "Ağız değişince",
+          "card": {
+            "tag": "Gerekçe",
+            "body": "Koku değişince, uzun susunca, dişler sararınca."
+          }
+        }
+      ]
+    },
+    {
+      "id": "b3",
+      "label": "Neyle yapılır?",
+      "children": [
+        {
+          "id": "b3a",
+          "label": "Erâk gibi taze çubuk",
+          "card": {
+            "tag": "Sünnet olan",
+            "body": "Dağılmayan ve ağzı yaralamayan; Nebî (s.a.v.) erâk çubuğu kullanırdı."
+          }
+        },
+        {
+          "id": "b3b",
+          "label": "Sağ veya sol el",
+          "card": {
+            "tag": "El",
+            "title": "Genişlik vardır"
+          }
+        },
+        {
+          "id": "b3c",
+          "label": "Çubuk yoksa parmak",
+          "hot": true,
+          "card": {
+            "tag": "Yerine geçen",
+            "body": "Ali’nin (r.a.) abdest tarifindeki gibi (Ahmed). Diş fırçasıyla da maksat hâsıl olur."
+          }
+        }
+      ]
+    },
+    {
+      "id": "b4",
+      "label": "Faydaları",
+      "children": [
+        {
+          "id": "b4a",
+          "label": "Ağzı temizler, Rabbi razı eder",
+          "card": {
+            "tag": "En büyüğü",
+            "title": "Dünyada ve ahirette"
+          }
+        },
+        {
+          "id": "b4b",
+          "label": "Diğer faydalar",
+          "card": {
+            "tag": "Âlimlerin zikrettikleri",
+            "body": "Dişleri güçlendirir, diş etlerini sıkılaştırır, sesi berraklaştırır, kulu dinçleştirir."
+          }
+        }
+      ]
+    },
+    {
+      "id": "b5",
+      "label": "Fıtrat sünnetleri",
+      "children": [
+        {
+          "id": "b5a",
+          "label": "Beş haslet",
+          "v": true,
+          "card": {
+            "tag": "Hadis",
+            "verse": "«خَمْسٌ مِنَ الْفِطْرَةِ: الِاسْتِحْدَادُ، وَالْخِتَانُ، وَقَصُّ الشَّارِبِ، وَنَتْفُ الْإِبْطِ، وَتَقْلِيمُ الْأَظْفَارِ»",
+            "ref": "Buhârî (5889) ve Müslim (257)",
+            "body": "«Beş şey fıtrattandır: kasık kıllarını tıraş etmek, sünnet olmak, bıyığı kısaltmak, koltuk altı kıllarını yolmak, tırnak kesmek.»"
+          },
+          "children": [
+            {
+              "id": "b5a1",
+              "label": "İstihdâd",
+              "card": {
+                "tag": "Kasık kılları",
+                "body": "Ustura kullanıldığı için bu adı almıştır; temizleyici ürünlerle de olur."
+              }
+            },
+            {
+              "id": "b5a2",
+              "label": "Sünnet (hitan)",
+              "hot": true,
+              "card": {
+                "tag": "Hüküm",
+                "title": "Erkeğe vacip, kadına sünnet",
+                "body": "Yedinci günde yapılması müstehaptır."
+              }
+            },
+            {
+              "id": "b5a3",
+              "label": "Bıyık, tırnak, koltuk altı",
+              "card": {
+                "tag": "Temizlik",
+                "body": "Bıyığı iyice kısaltmak, tırnakları kesmek, koltuk altı kıllarını yolmak veya tıraş etmek."
+              }
+            }
+          ]
+        },
+        {
+          "id": "b5b",
+          "label": "Sakalı salıvermek vacip",
+          "hot": true,
+          "v": true,
+          "card": {
+            "tag": "Bıyık ve sakal",
+            "verse": "«جُزُّوا الشَّوَارِبَ، وَأَرْخُوا اللِّحَى، خَالِفُوا الْمَجُوسَ»",
+            "ref": "Müslim (260)",
+            "body": "«Bıyıkları kısaltın, sakalları salıverin, Mecûsîlere muhalefet edin.» İbn Ömer: «Sakalları bol bırakın, bıyıkları kısaltın» (Buhârî 5892)."
+          }
+        },
+        {
+          "id": "b5c",
+          "label": "On haslet",
+          "card": {
+            "tag": "Âişe hadisi",
+            "body": "Eklenenler: sakalı salıvermek, misvak, istinşak, mazmaza, parmak eklemlerini yıkamak ve istincâ. Müslim (261)."
+          }
+        }
+      ]
+    }
+  ],
+  "jamia": "Misvak her vakitte sünnettir; abdestte, namazda, uykudan kalkınca ve eve girince daha da önemlidir. O, ağzı temizler ve Rabbi razı eder. Fıtrat hasletleri: kasık kıllarını tıraş etmek, sünnet olmak, bıyığı kısaltmak, tırnakları kesmek ve koltuk altı kıllarını yolmaktır; sakal da salıverilir.",
+  "closing": "Allah Teâlâ’dan bizi Nebî’sinin (s.a.v.) sünnetine uyanlardan eylemesini, dışımızı ve içimizi güzelleştirmesini dileriz.",
+  "short": "4 · Misvak ve Fıtrat",
+  "eb": "el-Fıkhu’l-Müyesser · Taharet Kitabı · Dördüncü bölüm",
+  "h1": "Misvak ve Fıtrat Sünnetleri",
+  "lead": "Dersin etkileşimli haritası: misvakın hükmü, yerleri, aracı ve faydalarından beş ve on fıtrat hasletine.",
+  "series": "fiqh",
+  "home": "fiqh-muyassar.html",
+  "n": 104
+};
+window.FIQH4.ui = window.LESSON.ui;
+window.FIQH4.quiz = [
+  {
+    "q": "Misvakın hükmü nedir?",
+    "o": [
+      "Her namazda vacip",
+      "Oruçluya mekruh",
+      "Her vakitte sünnet",
+      "Abdestte vacip"
+    ],
+    "a": 2,
+    "x": "Nebî (s.a.v.) onu genel olarak teşvik etmiştir."
+  },
+  {
+    "q": "Oruçlunun öğleden sonra misvak kullanmasının hükmü nedir?",
+    "o": [
+      "Sünnet",
+      "Mekruh",
+      "Haram",
+      "Orucu bozar"
+    ],
+    "a": 0,
+    "x": "Teşvik geneldir, bir vakitle sınırlanmamıştır."
+  },
+  {
+    "q": "«Ümmetime zorluk vermeyecek olsaydım» neyi gösterir?",
+    "o": [
+      "Misvakın vacip olduğunu",
+      "Misvakın mekruh olduğunu",
+      "Yalnız geceye özel olduğunu",
+      "Misvakın vacip değil sünnet olduğunu"
+    ],
+    "a": 3,
+    "x": "Emretseydi vacip olurdu; zorluk korkusuyla emretmedi."
+  },
+  {
+    "q": "Nebî (s.a.v.) evine girince ilk ne yapardı?",
+    "o": [
+      "Abdest alırdı",
+      "Misvak kullanırdı",
+      "Namaz kılardı",
+      "Yemek yerdi"
+    ],
+    "a": 1,
+    "x": "Âişe: «Misvak» dedi. Müslim."
+  },
+  {
+    "q": "«Ağzını şavs ederdi» ne demektir?",
+    "o": [
+      "Yıkardı",
+      "Kapatırdı",
+      "Ovardı",
+      "Güzel kokulandırırdı"
+    ],
+    "a": 2,
+    "x": "Şavs: ovmak."
+  },
+  {
+    "q": "Misvak çubuğu bulunmazsa ne yeterlidir?",
+    "o": [
+      "Sadece su",
+      "Hiçbir şey",
+      "Yalnız bez",
+      "Parmak"
+    ],
+    "a": 3,
+    "x": "Ali’nin (r.a.) abdest tarifinde rivayet ettiği gibi."
+  },
+  {
+    "q": "Misvak hangi elle kullanılır?",
+    "o": [
+      "Sağ veya sol; genişlik vardır",
+      "Yalnız sağ",
+      "Yalnız sol",
+      "İki elle birlikte"
+    ],
+    "a": 0,
+    "x": "Bu konuda genişlik vardır."
+  },
+  {
+    "q": "Misvakın en büyük faydası nedir?",
+    "o": [
+      "Dişleri beyazlatması",
+      "Rabbi razı etmesi",
+      "Ucuz olması",
+      "Ömrü uzatması"
+    ],
+    "a": 1,
+    "x": "«Ağzı temizler, Rabbi razı eder.»"
+  },
+  {
+    "q": "İstihdâd nedir?",
+    "o": [
+      "Bıyığı kısaltmak",
+      "Koltuk altı kıllarını yolmak",
+      "Tırnak kesmek",
+      "Kasık kıllarını tıraş etmek"
+    ],
+    "a": 3,
+    "x": "Demir (ustura) kullanıldığı için bu adı almıştır."
+  },
+  {
+    "q": "Erkekler için sünnet olmanın (hitan) hükmü nedir?",
+    "o": [
+      "Sünnet",
+      "Mekruh",
+      "Vacip",
+      "Mubah"
+    ],
+    "a": 2,
+    "x": "Erkeklere vacip, kadınlara sünnettir."
+  },
+  {
+    "q": "Sakalı salıvermenin hükmü nedir?",
+    "o": [
+      "Sünnet",
+      "Vacip",
+      "Mubah",
+      "Mekruh"
+    ],
+    "a": 1,
+    "x": "«Sakalları salıverin», «bol bırakın»: Emir vacipliği gerektirir."
+  },
+  {
+    "q": "Bıyığı «ihfâ» etmek ne demektir?",
+    "o": [
+      "Kesmede ileri gitmek",
+      "Uzamaya bırakmak",
+      "Boyamak",
+      "Sakalı tıraş etmek"
+    ],
+    "a": 0,
+    "x": "İhfâ: kesmede ileri gitmek."
+  },
+  {
+    "q": "Berâcim nedir?",
+    "o": [
+      "Tırnak uçları",
+      "Burun kılları",
+      "Arka dişler",
+      "Parmakların üst yüzündeki eklem yerleri"
+    ],
+    "a": 3,
+    "x": "Kir orada birikir; yıkamak fıtrattandır."
+  },
+  {
+    "q": "Âişe hadisindeki «intikâsu’l-mâ» nedir?",
+    "o": [
+      "İstincâ",
+      "Az su içmek",
+      "İsraf",
+      "Abdest"
+    ],
+    "a": 0,
+    "x": "Kitap onu istincâ diye açıklamıştır."
+  },
+  {
+    "q": "Erkeğin sünnet olmasının vacip olmasındaki hikmet nedir?",
+    "o": [
+      "Yalnız süs",
+      "Âdet",
+      "Sünnet derisinde biriken necasetten temizlenmek",
+      "Hiçbir hikmeti yok"
+    ],
+    "a": 2,
+    "x": "Namazın şartı olan taharete yardım eder."
+  }
+];
+window.LESSONS = [window.LESSON, window.LESSON2, window.LESSON3, window.FIQH1, window.FIQH2, window.FIQH3, window.FIQH4];
