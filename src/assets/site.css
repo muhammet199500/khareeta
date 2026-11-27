@@ -774,3 +774,6 @@ body:focus { outline: none; }
   .bar nav a { min-height: 44px; }
   .bar nav .tbtn { width: 44px; height: 44px; }
 }
+
+/* bottom edge of the dark bands: one thin gold line with an eight-pointed star in the middle (replaces the repeating star band) */
+.hero::after, .phead::after { background: url(divider.svg) center / min(92%, 520px) auto no-repeat; height: 36px; bottom: 8px; opacity: .5; }
