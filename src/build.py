@@ -1577,11 +1577,17 @@ PLAY_SHA256 = ''
 # Cloudflare Web Analytics: visit counts for the teacher only; no cookies, no tracking of individual students
 ANALYTICS = '<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon=\'{"token": "dda53286faab4be6aca43215f29dc4b7"}\'></script>'
 
+# switching language replaces the page instead of adding one, so «back» leaves the page
+# instead of bouncing between its Arabic and Turkish versions
+LANG_SWAP = """<script id="langSwap">document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a.lang[hreflang]');if(!a||e.defaultPrevented||e.button||e.ctrlKey||e.metaKey||e.shiftKey||e.altKey)return;e.preventDefault();location.replace(a.href)});</script>"""
+
 def w(path, text):
     if path.endswith('.html'):
         if gate.START not in text and '</head>' in text:   # pages with their own template (slides, map)
             text = text.replace('</head>', gate.tags('tr' if path.startswith('tr/') else 'ar', '../' * path.count('/')) + '\n</head>', 1)
         text = gate.strip_if_free(path, text)
+        if '</body>' in text and 'id="langSwap"' not in text:
+            text = text.replace('</body>', LANG_SWAP + '\n</body>', 1)
     if path.endswith('.html') and '</head>' in text and 'cloudflareinsights' not in text:
         text = text.replace('</head>', ANALYTICS + '\n</head>', 1)
     p = os.path.join(OUT, path); os.makedirs(os.path.dirname(p), exist_ok=True)
