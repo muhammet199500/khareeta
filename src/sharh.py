@@ -803,3 +803,258 @@ SHARH[104] = [
      fn=['(١) رواه مسلم برقم (٢٦١).']),
  ]),
 ]
+
+# ------------------------------------------------------------------ الدرس الخامس: الوضوء (الباب الخامس، ١/ ١٧–٢٣)
+GLOSS.update({
+ 'wadaa': dict(w='الوضاءة', ar='الحسن والنظافة.', tr='Güzellik ve temizlik.', src='الكتاب نفسه (١/ ١٧)'),
+ 'ghulul': dict(w='غُلُول', ar='الغلول: السرقة من أموال الغنيمة وغيرها.', tr='Gulûl: ganimet ve benzeri ortak mallardan çalmak.', src='حاشية الكتاب (١/ ١٧)'),
+ 'lumaa': dict(w='لُمعَةٌ', ar='اللمعة: الموضع الذي لم يصبه الماء في الوضوء أو الغسل.', tr='Lum’a: abdestte veya gusülde su değmeyen yer.', src='الكتاب نفسه (١/ ١٩)'),
+ 'wika': dict(w='وِكَاءُ', ar='الخيط الذي يربط به الخريطة والقربة.', tr='Kırbanın veya kesenin ağzını bağlayan ip.', src='حاشية الكتاب (١/ ٢١)'),
+ 'sah': dict(w='السَّه', ar='الدبر. والمعنى: أن العينين في يقظتهما بمنزلة الحبل الذي يربط به، فزوال اليقظة كزوال هذا الرباط.', tr='Makat. Anlamı: Gözler uyanıkken bağlayan ip gibidir; uyanıklığın gitmesi bu bağın çözülmesi gibidir.', src='حاشية الكتاب (١/ ٢١)'),
+})
+GLOSS_TR_SRC.update({
+ 'الكتاب نفسه (١/ ١٧)': 'Kitabın kendisi (1/ 17)',
+ 'حاشية الكتاب (١/ ١٧)': 'Kitabın dipnotu (1/ 17)',
+ 'الكتاب نفسه (١/ ١٩)': 'Kitabın kendisi (1/ 19)',
+ 'حاشية الكتاب (١/ ٢١)': 'Kitabın dipnotu (1/ 21)',
+})
+
+SHARH[105] = [
+ dict(ar='المسألة الأولى: تعريفه، وحكمه', tr='Birinci mesele: Tanımı ve hükmü', paras=[
+  PS('الوُضوء لغة: مشتق من [[الوضاءة|wadaa]]، وهي الحسن والنظافة. وشرعاً: استعمال الماء في الأعضاء الأربعة -وهي الوجه واليدان والرأس والرجلان- على صفة مخصوصة في الشرع، على وجه التعبد لله تعالى.',
+     'Abdest (vudû) sözlükte: «vedâe» kelimesinden türemiştir; güzellik ve temizlik demektir. Şer’an: Suyu dört organda —yüz, eller, baş ve ayaklarda— şeriatta belirlenmiş bir şekilde, Allah Teâlâ’ya ibadet maksadıyla kullanmaktır.',
+     '١/ ١٧',
+     'تعلّمنا في الأبواب السابقة الماء والإناء والاستنجاء والسواك، وكلها مقدّمات لهذا الباب.\n\n'
+     'وفي التعريف الشرعي ثلاثة قيود: **الأعضاء الأربعة**، و**الصفة المخصوصة** (فلا يكفي أي غسل)، و**التعبّد لله**؛ ومنه نفهم أن **النية** لا بد منها، فمن غسل هذه الأعضاء للتبرّد وحده لم يتوضأ.\n\n'
+     'والوضوء بضمّ الواو: الفعل، وبفتحها: الماء الذي يُتوضأ به.',
+     'Önceki bölümlerde suyu, kabı, istincâyı ve misvakı öğrendik; hepsi bu bölüme hazırlıktır.\n\n'
+     'Şer’î tanımda üç kayıt vardır: **dört organ**, **belirlenmiş şekil** (her yıkama yetmez) ve **Allah’a ibadet**. Buradan **niyetin** şart olduğunu anlarız: Bu organları yalnızca serinlemek için yıkayan abdest almış olmaz.\n\n'
+     'Arapçada «vudû» fiilin, «vadû» abdest alınan suyun adıdır.'),
+  PS('وحكمه: أنه واجب على المُحْدِث إذا أراد الصلاة وما في حكمها، كالطواف ومسِّ المصحف.',
+     'Hükmü: Abdestsiz kimse namaz ve onun hükmündeki şeyleri, tavaf ve Mushafa dokunmak gibi, istediğinde farzdır.',
+     '١/ ١٧',
+     '**المُحدِث:** من عليه حدث أصغر، كمن بال أو نام. فالوضوء لا يجب لذاته في كل وقت، بل **يجب لغيره**: للصلاة وما في حكمها. فمن كان على وضوء لم يجب عليه أن يتوضأ مرة أخرى.',
+     '**Muhdis:** küçük hadesi olan kimse; küçük abdest yapan veya uyuyan gibi. Abdest her vakitte kendisi için farz değildir; **başka bir şey için farzdır**: namaz ve onun hükmündekiler için. Abdestli olanın tekrar abdest alması gerekmez.'),
+ ]),
+ dict(ar='المسألة الثانية: الدليل على وجوبه، وعلى من يجب، ومتى يجب؟', tr='İkinci mesele: Farz olduğunun delili, kime ve ne zaman farz olduğu', paras=[
+  PS('أما الدليل على وجوبه: فقوله تعالى ﴿يَا أَيُّهَا الَّذِينَ آمَنُوا إِذَا قُمْتُمْ إِلَى الصَّلَاةِ فَاغْسِلُوا وُجُوهَكُمْ وَأَيْدِيَكُمْ إِلَى الْمَرَافِقِ وَامْسَحُوا بِرُءُوسِكُمْ وَأَرْجُلَكُمْ إِلَى الْكَعْبَيْنِ﴾ [المائدة: ٦]. وقوله ﷺ: (لا يقبل الله صلاةً بغير طُهُور، ولا صدقة من [[غُلُول|ghulul]]) (١). وقوله ﷺ: (لا يقبل الله صلاة من أحدث حتى يتوضأ) (٢). ولم ينقل عن أحد من المسلمين في ذلك خلاف، فثبتت بذلك مشروعية الوضوء: بالكتاب، والسنة، والإجماع.',
+     'Farz olduğunun delili Allah Teâlâ’nın şu sözüdür: «Ey iman edenler! Namaza kalktığınızda yüzlerinizi ve dirseklere kadar ellerinizi yıkayın, başlarınızı meshedin ve topuklara kadar ayaklarınızı (yıkayın).» [Mâide, 6] Nebî’nin (sallallâhu aleyhi ve sellem) şu sözü: «Allah temizlik olmadan namazı, haksız alınan maldan da sadakayı kabul etmez.» (1) Ve şu sözü: «Allah, abdesti bozulan kimsenin namazını abdest alıncaya kadar kabul etmez.» (2) Müslümanlardan hiç kimseden bu konuda ihtilaf nakledilmemiştir; böylece abdestin meşruiyeti Kitap, Sünnet ve icmâ ile sabit olmuştur.',
+     '١/ ١٧',
+     'ثلاثة أدلة يحفظها الطالب: **الكتاب** (آية المائدة)، و**السنة** (لا يقبل الله صلاة بغير طهور)، و**الإجماع**.\n\n'
+     'و**الآية** نفسها هي أصل فروض الوضوء الأربعة الأولى: الوجه، واليدان، والرأس، والرجلان، كما سيأتي.\n\n'
+     '**شرح الحواشي:** (١) الحديث في صحيح مسلم من حديث ابن عمر رضي الله عنهما. و**الغلول** السرقة من الغنيمة قبل قسمتها. (٢) الحديث في الصحيحين من حديث أبي هريرة رضي الله عنه.',
+     'Öğrencinin ezberleyeceği üç delil: **Kitap** (Mâide âyeti), **Sünnet** (Allah temizlik olmadan namazı kabul etmez) ve **icmâ**.\n\n'
+     '**Âyet** de abdestin ilk dört farzının aslıdır: yüz, eller, baş ve ayaklar; ileride gelecek.\n\n'
+     '**Dipnotların şerhi:** (1) Hadis İbn Ömer’den (radıyallâhu anhümâ) Müslim’in Sahîh’indedir. **Gulûl**, ganimetten paylaştırılmadan önce çalmaktır. (2) Hadis Ebû Hureyre’den (radıyallâhu anh) Buhârî ve Müslim’dedir.',
+     fn=['(١) رواه مسلم برقم (٢٢٤). والغلول: السرقة من أموال الغنيمة وغيرها.', '(٢) رواه مسلم برقم (٢٢٣).'],
+     note=dict(ar='تنبيه على الحاشية (٢): الحديث في «صحيح مسلم» برقم (٢٢٥)، وفي «صحيح البخاري» برقم (١٣٥).', tr='(2) numaralı dipnot hakkında: Hadis Müslim’in Sahîh’inde 225, Buhârî’nin Sahîh’inde 135 numaradadır.')),
+  PS('وأما على مَنْ يجب: فيجب على المسلم البالغ العاقل إذا أراد الصلاة وما في حكمها. وأما متى يجب؟ فإذا دخل وقت الصلاة أو أراد الإنسان الفعل الذي يشترط له الوضوء، وإن لم يكن ذلك متعلقاً بوقت، كالطواف ومس المصحف.',
+     'Kime farzdır: Namaz ve onun hükmündekileri isteyen, ergenlik çağına girmiş akıllı Müslümana. Ne zaman farzdır: Namaz vakti girince veya kişi, vakte bağlı olmasa da tavaf ve Mushafa dokunmak gibi abdestin şart olduğu bir fiili yapmak isteyince.',
+     '١/ ١٧',
+     '**على من:** ثلاثة أوصاف: مسلم، بالغ، عاقل؛ وهذه شروط التكليف.\n\n'
+     '**متى:** للصلاة إذا دخل وقتها، وللطواف ومسّ المصحف عند إرادتهما، لأنهما لا يتعلّقان بوقت. ولا حرج أن يتوضأ قبل دخول الوقت.',
+     '**Kime:** üç vasıf: Müslüman, ergen ve akıllı; bunlar dinen sorumluluğun şartlarıdır.\n\n'
+     '**Ne zaman:** Namaz için vakti girince; tavaf ve Mushafa dokunmak için bunları isteyince, çünkü bunlar bir vakte bağlı değildir. Vakit girmeden abdest almakta sakınca yoktur.'),
+ ]),
+ dict(ar='المسألة الثالثة: في شروطه', tr='Üçüncü mesele: Şartları', paras=[
+  PS('ويشترط لصحة الوضوء ما يأتي: أ) الإسلام، والعقل، والتمييز، فلا يصح من الكافر، ولا المجنون، ولا يكون معتبراً من الصغير الذي دون سن التمييز. ب) النية: لحديث: (إنما الأعمال بالنيات) (١). ولا يشرع التلفظ بها؛ لعدم ثبوته عن النبي ﷺ.',
+     'Abdestin sahih olması için şunlar şarttır: a) İslam, akıl ve temyiz: Kâfirden ve deliden sahih olmaz; temyiz yaşına girmemiş küçüğün abdesti muteber değildir. b) Niyet: «Ameller ancak niyetlere göredir» hadisi gereği. (1) Niyeti dille söylemek meşru değildir; çünkü Nebî’den (sallallâhu aleyhi ve sellem) sabit olmamıştır.',
+     '١/ ١٨',
+     '**التمييز:** أن يفرّق الصغير بين العبادة واللعب، فيستطيع أن ينوي.\n\n'
+     '**النية محلّها القلب:** فمن قام إلى الماء يريد الوضوء فقد نوى. **والتلفظ بها** كقول «نويت أن أتوضأ» لم يفعله النبي ﷺ ولا أصحابه، فلا يُشرع.\n\n'
+     '**شرح الحواشي:** (١) حديث «إنما الأعمال بالنيات» متفق عليه، وهو أول حديث في صحيح البخاري.',
+     '**Temyiz:** Küçüğün ibadet ile oyunu ayırabilmesi ve böylece niyet edebilmesi.\n\n'
+     '**Niyetin yeri kalptir:** Abdest almak isteyerek suya kalkan niyet etmiştir. **Dille söylemek**, «Abdest almaya niyet ettim» demek gibi, Nebî’nin (sallallâhu aleyhi ve sellem) ve ashabının yaptığı bir şey değildir; meşru değildir.\n\n'
+     '**Dipnotların şerhi:** (1) «Ameller ancak niyetlere göredir» hadisi Buhârî ve Müslim’dedir; Buhârî’nin Sahîh’indeki ilk hadistir.',
+     fn=['(١) رواه البخاري برقم (١)، ومسلم برقم (١٩٠٧).']),
+  PS('ج) الماء الطهور: لما تقدم في المياه، أما الماء النجس فلا يصح الوضوء به. د) إزالة ما يمنع وصول الماء إلى البشرة، من شمع أو عجين ونحوهما: كطلاء الأظافر الذي يعرف بين النساء اليوم. هـ) الاستجمار أو الاستنجاء عند وجود سببهما لما تقدم. و) الموالاة. ز) الترتيب. وسيأتي الكلام عليهما بعد قليل. ح) غسل جميع الأعضاء الواجب غسلها.',
+     'c) Tahûr su: Sular bölümünde geçtiği gibi; necis su ile abdest sahih olmaz. d) Mum, hamur ve benzeri, suyun cilde ulaşmasına engel olan şeyleri gidermek; bugün kadınlar arasında bilinen oje gibi. e) Sebebi bulunduğunda isticmâr veya istincâ; geçtiği gibi. f) Muvâlât. g) Tertip; ikisi biraz sonra gelecek. h) Yıkanması farz olan bütün organları yıkamak.',
+     '١/ ١٨',
+     '**إزالة الحائل:** كل ما يكوّن طبقة على الجلد فيمنع وصول الماء، كالطلاء والشمع والعجين والدهان العازل، يجب إزالته قبل الوضوء. فالمرأة التي على أظفارها طلاء لا يصح وضوؤها حتى تزيله. أما اللون الذي لا طبقة له، كالحِنّاء، فلا يمنع.\n\n'
+     '**الاستنجاء قبل الوضوء:** هذا ترتيب الكتاب؛ فالمسلم يستنجي أولًا ثم يتوضأ.\n\n'
+     'ودرس المياه والاستنجاء صار هنا **شرطين** من شروط الوضوء؛ فالأبواب يبني بعضها على بعض.',
+     '**Engeli gidermek:** Ciltte tabaka oluşturup suyun ulaşmasını engelleyen her şey, oje, mum, hamur ve su geçirmeyen boya gibi, abdestten önce giderilmelidir. Tırnaklarında oje bulunan kadının abdesti, onu gidermedikçe sahih olmaz. Kına gibi tabakası olmayan renk ise engel değildir.\n\n'
+     '**Abdestten önce istincâ:** Kitabın sıralaması budur; Müslüman önce istincâ yapar, sonra abdest alır.\n\n'
+     'Sular ve istincâ dersleri burada abdestin iki **şartı** olmuştur; bölümler birbirinin üzerine kurulur.'),
+ ]),
+ dict(ar='المسألة الرابعة: فروضه -أي أعضاؤه-', tr='Dördüncü mesele: Farzları, yani organları', paras=[
+  PS('وهي ستة: ١ - غسل الوجه بكامله؛ لقوله تعالى: ﴿إِذَا قُمْتُمْ إِلَى الصَّلَاةِ فَاغْسِلُوا وُجُوهَكُمْ﴾ [المائدة: ٦]، ومنه المضمضة والاستنشاق؛ لأن الفم والأنف من الوجه. ٢ - غسل اليدين إلى المرفقين؛ لقوله تعالى: ﴿وَأَيْدِيَكُمْ إِلَى الْمَرَافِقِ﴾ [المائدة: ٦].',
+     'Bunlar altıdır: 1. Yüzün tamamını yıkamak; Allah Teâlâ’nın «Namaza kalktığınızda yüzlerinizi yıkayın» [Mâide, 6] sözü gereği. Mazmaza ve istinşak da buna dahildir; çünkü ağız ve burun yüzdendir. 2. Elleri dirseklerle birlikte yıkamak; «dirseklere kadar ellerinizi» [Mâide, 6] sözü gereği.',
+     '١/ ١٨',
+     '**الوجه:** ما تحصل به المواجهة؛ فيدخل فيه الفم والأنف، فلهذا كانت **المضمضة والاستنشاق من فرض غسل الوجه**.\n\n'
+     '**اليدان إلى المرفقين:** من أطراف الأصابع إلى المرفق، والمرفق داخل في الغسل. **وانتبه:** بعض الناس يغسل كفّيه أول الوضوء، ثم يغسل وجهه، ثم يغسل من الرسغ إلى المرفق فقط؛ وهذا لا يصح، لأن غسل الكفين أول الوضوء سنة، والفرض بعد الوجه أن تُغسل اليد كلها من أطراف الأصابع.',
+     '**Yüz:** Karşılaşmanın onunla olduğu kısım; ağız ve burun buna girer. Bu yüzden **mazmaza ve istinşak, yüzü yıkama farzına dahildir.**\n\n'
+     '**Dirseklere kadar eller:** Parmak uçlarından dirseğe kadar; dirsek de yıkamaya dahildir. **Dikkat:** Bazı insanlar abdestin başında ellerini yıkar, sonra yüzünü, sonra yalnızca bilekten dirseğe kadar yıkar; bu sahih değildir. Çünkü başta elleri yıkamak sünnettir; yüzden sonraki farz, eli parmak uçlarından itibaren tamamen yıkamaktır.'),
+  PS('٣ - مسح الرأس كله مع الأذنين؛ لقوله تعالى: ﴿وَامْسَحُوا بِرُءُوسِكُمْ﴾ [المائدة: ٦]. وقوله ﷺ: (الأذنان من الرأس) (٢). فلا يُجزئ مسح بعض الرأس دون بعضه.',
+     '3. Kulaklarla birlikte başın tamamını meshetmek; «Başlarınızı meshedin» [Mâide, 6] âyeti ve Nebî’nin (sallallâhu aleyhi ve sellem) «Kulaklar baştandır» sözü gereği. (2) Başın bir kısmını meshedip diğerini bırakmak yetmez.',
+     '١/ ١٨',
+     'هذا اختيار الكتاب: **يجب مسح الرأس كله**. ووجهه أن الباء في ﴿بِرُءُوسِكُمْ﴾ للإلصاق، أي ألصقوا المسح برؤوسكم، وقد بيّن النبي ﷺ ذلك بفعله: بدأ بمقدّم رأسه حتى ذهب بيديه إلى قفاه، ثم ردّهما إلى المكان الذي بدأ منه.\n\n'
+     'و**الأذنان من الرأس**، فتُمسحان معه، ولا تحتاجان ماءً جديدًا.\n\n'
+     '**شرح الحواشي:** (٢) الحديث رواه الترمذي وابن ماجه، وصحّحه الألباني وجمع طرقه.',
+     'Kitabın tercihi budur: **Başın tamamını meshetmek farzdır.** Gerekçesi şudur: «Başlarınızı» kelimesindeki «bi» harfi yapıştırma içindir, yani meshi başlarınıza ulaştırın. Nebî (sallallâhu aleyhi ve sellem) bunu fiiliyle açıklamıştır: Başının önünden başlayıp ellerini ensesine kadar götürmüş, sonra başladığı yere geri getirmiştir.\n\n'
+     '**Kulaklar baştandır**; onunla birlikte meshedilir, yeni su gerekmez.\n\n'
+     '**Dipnotların şerhi:** (2) Hadisi Tirmizî ve İbn Mâce rivayet etmiş; Elbânî sahih saymış ve yollarını toplamıştır.',
+     fn=['(٢) رواه الترمذي برقم (٣٧) وابن ماجه برقم (٤٤٣) وصححه الألباني (صحيح سنن ابن ماجه برقم ٣٥٧، والسلسلة الصحيحة برقم ٣٦) وأفاض الشيخ ﵀ في جمع طرقه والكلام عليه.']),
+  PS('٤ - غسل الرجلين إلى الكعبين؛ لقوله تعالى: ﴿وَأَرْجُلَكُمْ إِلَى الْكَعْبَيْنِ﴾ [المائدة: ٦]. ٥ - الترتيب: لأن الله تعالى ذكره مرتباً؛ وتوضأ رسول الله ﷺ مرتباً على حسب ما ذكر الله سبحانه: الوجه، فاليدين، فالرأس، فالرجلين، كما ورد ذلك في صفة وضوئه ﷺ في حديث عبد الله بن زيد (١) وغيره.',
+     '4. Ayakları topuklarla birlikte yıkamak; «topuklara kadar ayaklarınızı» [Mâide, 6] âyeti gereği. 5. Tertip: Çünkü Allah Teâlâ onları sıralı zikretmiş; Rasûlullah (sallallâhu aleyhi ve sellem) de Allah’ın zikrettiği sıraya göre abdest almıştır: yüz, eller, baş, ayaklar. Abdullah b. Zeyd’in (1) ve başkalarının Nebî’nin (sallallâhu aleyhi ve sellem) abdestini anlattığı hadislerde böyle gelmiştir.',
+     '١/ ١٩',
+     '**الكعبان:** العظمان الناتئان في جانبي القدم، وهما داخلان في الغسل.\n\n'
+     '**الترتيب:** دليله أمران: أن الله ذكر الأعضاء مرتّبة، **وأدخل الممسوح (الرأس) بين المغسولات** (اليدين والرجلين)، ولا يُفعل هذا في الكلام إلا لفائدة، وهي الترتيب؛ وأن النبي ﷺ توضأ مرتّبًا دائمًا.\n\n'
+     '**شرح الحواشي:** (١) حديث عبد الله بن زيد في صفة الوضوء أخرجه مسلم.',
+     '**Topuklar:** Ayağın iki yanındaki çıkıntılı kemikler; yıkamaya dahildir.\n\n'
+     '**Tertip:** İki delili vardır: Allah organları sıralı zikretmiş ve **meshedileni (başı) yıkananların (eller ve ayaklar) arasına koymuştur**; söz ancak bir fayda için böyle kurulur; bu fayda tertiptir. Ayrıca Nebî (sallallâhu aleyhi ve sellem) her zaman sıralı abdest almıştır.\n\n'
+     '**Dipnotların şerhi:** (1) Abdullah b. Zeyd’in abdesti anlattığı hadisi Müslim rivayet etmiştir.',
+     fn=['(١) أخرجه مسلم برقم (٢٣٥).']),
+  PS('٦ - الموالاة: بأن يكون غسل العضو عقب الذي قبله مباشرة بدون تأخير، فقد كان النبي ﷺ يتوضأ متوالياً، ولحديث خالد بن معدان: (أن النبي ﷺ رأى رجلاً يصلي وفي ظهر قدمه [[لُمعَةٌ|lumaa]] قدر الدرهم لم يصبها الماء، فأمره أن يعيد الوضوء) (٢)، فلو لم تكن الموالاة شرطاً لأمره بغسل ما فاته، ولم يأمره بإعادة الوضوء كله. واللُّمْعَة: الموضع الذي لم يصبه الماء في الوضوء أو الغسل.',
+     '6. Muvâlât: Her organı, öncekinin hemen ardından gecikmeden yıkamaktır. Nebî (sallallâhu aleyhi ve sellem) peş peşe abdest alırdı. Hâlid b. Ma’dân’ın hadisi de buna delildir: «Nebî (sallallâhu aleyhi ve sellem) namaz kılan bir adam gördü; ayağının üstünde su değmemiş dirhem büyüklüğünde bir kuru yer vardı; ona abdesti yeniden almasını emretti.» (2) Muvâlât şart olmasaydı, yalnızca yıkanmayan yeri yıkamasını emreder, bütün abdesti yeniden almasını emretmezdi. Lum’a: abdestte veya gusülde su değmeyen yerdir.',
+     '١/ ١٩',
+     '**الموالاة:** ألا يؤخّر غسل عضو حتى ينشف الذي قبله في الزمن المعتدل.\n\n'
+     '**ووجه الدلالة من الحديث دقيق:** الرجل كان قد صلّى، أي طال الفصل بين وضوئه وتدارك اللمعة، ففاتت الموالاة؛ فأمره بإعادة الوضوء كله. ولو كانت الموالاة غير واجبة لكفاه أن يغسل اللمعة وحدها.\n\n'
+     'وفي الحديث درس عملي: **تفقّد ظهور القدمين والعقبين** عند الوضوء، فهي مواضع يقصّر فيها الناس.\n\n'
+     '**شرح الحواشي:** (٢) الحديث رواه أحمد وأبو داود، وصحّحه الألباني.',
+     '**Muvâlât:** Normal havada önceki organ kurumadan sonrakini yıkamayı geciktirmemek.\n\n'
+     '**Hadisteki delil yönü incedir:** Adam namazını kılmıştı; yani abdesti ile kuru yeri telafi etmesi arasında uzun bir ara geçmiş, muvâlât kaçmıştı. Bu yüzden bütün abdesti yeniden almasını emretti. Muvâlât vacip olmasaydı, yalnızca kuru yeri yıkaması yeterdi.\n\n'
+     'Hadiste pratik bir ders vardır: Abdest alırken **ayakların üstünü ve topukları kontrol etmek**; insanlar buralarda kusur eder.\n\n'
+     '**Dipnotların şerhi:** (2) Hadisi Ahmed ve Ebû Dâvûd rivayet etmiş, Elbânî sahih saymıştır.',
+     fn=['(٢) رواه أحمد (٣/ ٤٢٤)، وأبو داود برقم (١٧٥)، وصححه الألباني. انظر إرواء الغليل (١/ ١٢٧).']),
+ ]),
+ dict(ar='المسألة الخامسة: سننه', tr='Beşinci mesele: Sünnetleri', paras=[
+  PS('هناك أفعال يستحب فعلها عند الوضوء ويؤجر عليها من فعلها، ومن تركها فلا حرج عليه، وتسمى هذه الأفعال بسنن الوضوء، وهي: ١ - التسمية في أوله: لقوله ﷺ: (لا وضوء لمن لم يذكر اسم الله عليه) (٣). ٢ - السواك: لقوله ﷺ: (لولا أن أشق على أمتي لأمرتهم بالسواك مع كل وضوء) (٤). ٣ - غسل الكفين ثلاثاً في أول الوضوء: لفعله ﷺ ذلك، إذ كان يغسل كفيه ثلاثاً كما ورد في صفة وضوئه.',
+     'Abdestte yapılması müstehap olan fiiller vardır; yapan sevap kazanır, terk edene günah yoktur. Bunlara abdestin sünnetleri denir: 1. Başta besmele; Nebî’nin (sallallâhu aleyhi ve sellem) «Allah’ın adını anmayanın abdesti yoktur» sözü gereği. (3) 2. Misvak; «Ümmetime zorluk vermeyecek olsaydım, onlara her abdestte misvak kullanmalarını emrederdim» sözü gereği. (4) 3. Abdestin başında elleri üç kez yıkamak; Nebî’nin (sallallâhu aleyhi ve sellem) fiili gereği; abdestinin tarifinde geldiği gibi ellerini üç kez yıkardı.',
+     '١/ ١٩',
+     '**الفرق بين الفرض والسنة:** الفرض لا يصح الوضوء بدونه، والسنة كمال يُؤجر عليه ولا يبطل الوضوء بتركه.\n\n'
+     '**التسمية:** قول «بسم الله» عند البدء. **والسواك:** تقدّم أنه يتأكد عند الوضوء. **وغسل الكفين ثلاثًا** أول الوضوء سنة، وليس هو غسل اليدين المفروض.\n\n'
+     '**شرح الحواشي:** (٣) حديث التسمية أخرجه أحمد وأبو داود وغيرهما، وحسّنه جماعة من الأئمة والألباني. (٤) حديث السواك ذكره البخاري معلّقًا بصيغة الجزم، ووصله النسائي.',
+     '**Farz ile sünnet arasındaki fark:** Farz olmadan abdest sahih olmaz; sünnet ise sevap kazandıran bir kemaldir, terk edilmesi abdesti bozmaz.\n\n'
+     '**Besmele:** Başlarken «Bismillah» demek. **Misvak:** Abdestte daha da önem kazandığı geçmişti. **Elleri üç kez yıkamak** abdestin başında sünnettir; farz olan elleri yıkamak bu değildir.\n\n'
+     '**Dipnotların şerhi:** (3) Besmele hadisini Ahmed, Ebû Dâvûd ve başkaları rivayet etmiş; bir grup imam ve Elbânî hasen saymıştır. (4) Misvak hadisini Buhârî kesinlik bildiren ifadeyle muallak zikretmiş, Nesâî senedli rivayet etmiştir.',
+     fn=['(٣) أخرجه أحمد (٢/ ٤١٨)، وأبو داود برقم (١٠١)، والحاكم (١/ ١٤٧) وغيرهم من حديث أبي هريرة ﵁، وحسنه: ابن الصلاح، وابن كثير، والعراقي، وقواه المنذري وابن حجر، وقال الألباني: حسن. (إرواء الغليل ١/ ١٢٢).', '(٤) أخرجه البخاري معلقاً بصيغة جزم: ك الصيام، ب سواك الرطب واليابس للصائم. ووصله النسائي (انظر: فتح الباري ٤/ ١٥٩).']),
+  PS('٤ - المبالغة في المضمضة والاستنشاق لغير الصائم: فقد ورد في صفة وضوئه ﷺ: (فمضمضَ واستنثَر)، ولقوله ﷺ: (وبالغ في الاستنشاق إلا أن تكون صائماً) (١). ٥ - الدلك، وتخليل اللحية الكثيفة بالماء حتى يدخل الماء في داخلها: لفعله ﷺ، فإنه (كان إذا توضأ يدلك ذراعيه) (٢)، وكذلك (كان يدخل الماء تحت حنكه ويخلل به لحيته) (٣).',
+     '4. Oruçlu olmayan için mazmaza ve istinşakta mübalağa: Nebî’nin (sallallâhu aleyhi ve sellem) abdestinin tarifinde «Ağzını çalkaladı ve burnuna su çekip sümkürdü» geçmiştir; ayrıca «Oruçlu olman hariç, suyu buruna çekmede mübalağa et» buyurmuştur. (1) 5. Ovmak ve sık sakalı, su içine girecek şekilde hilâllemek: Nebî’nin (sallallâhu aleyhi ve sellem) fiili gereği; o, abdest alınca kollarını ovardı (2) ve suyu çenesinin altına sokup sakalını hilâllerdi. (3)',
+     '١/ ٢٠',
+     '**المبالغة:** المضمضة إدخال الماء في الفم وإدارته، والمبالغة تحريكه بقوة في جميع الفم؛ والاستنشاق جذب الماء بالنفَس إلى الأنف، والمبالغة جذبه إلى أقصاه. **واستثنى الصائم** لئلا يصل الماء إلى جوفه فيفسد صومه.\n\n'
+     '**التخليل** للحية **الكثيفة** التي لا تُرى البشرة من تحتها؛ أما الخفيفة فيجب غسل ما تحتها.\n\n'
+     '**شرح الحواشي:** (١) حديث المبالغة رواه أبو داود والنسائي، وصحّحه الألباني. (٢) حديث الدلك رواه ابن حبان وابن خزيمة والحاكم وأحمد. (٣) حديث التخليل رواه أبو داود، وصحّحه الألباني.',
+     '**Mübalağa:** Mazmaza suyu ağza alıp çalkalamak, mübalağa onu bütün ağızda kuvvetlice hareket ettirmektir. İstinşak suyu nefesle buruna çekmek, mübalağa en uca kadar çekmektir. **Oruçlu hariç tutulmuştur**; su midesine ulaşıp orucu bozulmasın diye.\n\n'
+     '**Hilâllemek**, altındaki cilt görünmeyen **sık sakal** içindir; seyrek sakalın altını yıkamak ise farzdır.\n\n'
+     '**Dipnotların şerhi:** (1) Mübalağa hadisini Ebû Dâvûd ve Nesâî rivayet etmiş, Elbânî sahih saymıştır. (2) Ovma hadisini İbn Hibbân, İbn Huzeyme, Hâkim ve Ahmed rivayet etmiştir. (3) Hilâlleme hadisini Ebû Dâvûd rivayet etmiş, Elbânî sahih saymıştır.',
+     fn=['(١) أخرجه أبو داود برقم (١٤٢)، والنسائي (١/ ٦٦ رقم ٨٧)، وصححه الألباني (صحيح النسائي رقم ٨٥).', '(٢) رواه ابن حبان في صحيحه (٣/ ٣٦٣) برقم (١٠٨٢)، والبيهقي في السنن الكبرى (١/ ١٩٦)، والحاكم في المستدرك (١/ ٢٤٣) وصححه، وابن خزيمة في صحيحه (١/ ٦٢)، والإمام أحمد في مسنده (٤/ ٣٩).', '(٣) رواه أبو داود برقم (١٤٥)، وصححه الألباني (الإرواء برقم ٩٢).']),
+  PS('٦ - تقديم اليمنى على اليسرى في اليدين والرجلين: لفعله ﷺ، فإنه (كان يحب التيامن في تنعله وترجله وطهوره وفي شأنه كله) (٤). ٧ - تثليث الغسل في الوجه واليدين والرجلين: فالواجب مرة واحدة، ويستحب ثلاثاً، لفعله ﷺ فقد ثبت عنه: (أنه توضأ مرة مرة ومرتين مرتين وثلاثاً ثلاثاً) (٥).',
+     '6. Ellerde ve ayaklarda sağı soldan önce yıkamak: Nebî’nin (sallallâhu aleyhi ve sellem) fiili gereği; o, «ayakkabı giymesinde, taranmasında, temizlenmesinde ve bütün işlerinde sağdan başlamayı severdi.» (4) 7. Yüzü, elleri ve ayakları üçer kez yıkamak: Farz bir kezdir, üç kez müstehaptır; Nebî’nin (sallallâhu aleyhi ve sellem) fiili gereği; ondan «birer kez, ikişer kez ve üçer kez abdest aldığı» sabittir. (5)',
+     '١/ ٢٠',
+     '**التيامن:** البدء باليمين في اليدين والرجلين. أما الوجه والرأس والأذنان فتُغسل أو تُمسح معًا.\n\n'
+     '**التثليث:** الفرض مرة تعمّ العضو، والثلاث أكمل، ولا يُزاد عليها. وفعل النبي ﷺ للمرة والمرتين بيان للجواز.\n\n'
+     '**شرح الحواشي:** (٤) حديث التيامن متفق عليه من حديث عائشة رضي الله عنها. (٥) الوضوء مرة مرة ومرتين مرتين وثلاثًا ثلاثًا في صحيح البخاري، وعند مسلم الثلاث.',
+     '**Teyâmün:** Ellerde ve ayaklarda sağdan başlamak. Yüz, baş ve kulaklar ise birlikte yıkanır veya meshedilir.\n\n'
+     '**Üçlemek:** Farz, organı kaplayan bir yıkamadır; üç kez daha kâmildir, üçten fazlası yapılmaz. Nebî’nin (sallallâhu aleyhi ve sellem) bir ve iki kez yıkaması caiz olduğunu göstermek içindir.\n\n'
+     '**Dipnotların şerhi:** (4) Sağdan başlama hadisi Âişe’den (radıyallâhu anhâ) Buhârî ve Müslim’dedir. (5) Birer, ikişer ve üçer kez abdest Buhârî’nin Sahîh’inde, üçer kez olanı Müslim’dedir.',
+     fn=['(٤) متفق عليه: رواه البخاري برقم (١٦٨)، ومسلم برقم (٢٢٦).', '(٥) متفق عليه: رواه البخاري برقم (١٥٧، ١٥٨، ١٥٩) ومسلم برقم (٢٢٦) وعنده ذكر الثلاث فقط.'],
+     note=dict(ar='تنبيه على الحاشية (٤): حديث التيامن في «صحيح مسلم» برقم (٢٦٨)؛ أما (٢٢٦) فحديث عثمان في صفة الوضوء.', tr='(4) numaralı dipnot hakkında: Sağdan başlama hadisi Müslim’in Sahîh’inde 268 numaradadır; 226 ise Osman’ın abdesti anlattığı hadistir.')),
+  PS('٨ - الذكر الوارد بعد الوضوء: لقوله ﷺ: (ما منكم أحد يتوضأ فيسبغ الوضوء ثم يقول: أشهد أن لا إله إلا الله وحده لا شريك له، وأشهد أن محمداً عبده ورسوله، إلا فتحت له أبواب الجنة الثمانية، يدخل من أيها شاء) (٦).',
+     '8. Abdestten sonra gelen zikir: Nebî’nin (sallallâhu aleyhi ve sellem) şu sözü gereği: «Sizden kim abdest alır, abdestini güzelce tamamlar, sonra “Allah’tan başka ilah olmadığına, O’nun tek olduğuna, ortağı bulunmadığına şahitlik ederim; Muhammed’in O’nun kulu ve rasûlü olduğuna şahitlik ederim” derse, cennetin sekiz kapısı ona açılır; dilediğinden girer.» (6)',
+     '١/ ٢٠',
+     'تأمّل الجمع بين **الطهارتين**: طهارة البدن بالماء، وطهارة القلب بالتوحيد؛ فيختم المسلم وضوءه بكلمة التوحيد، ويسأل الله أن يجعله من التوابين والمتطهرين.\n\n'
+     '**ويُسبغ الوضوء:** يتمّه ويعمّ به الأعضاء.\n\n'
+     '**شرح الحواشي:** (٦) الحديث في صحيح مسلم، وزاد الترمذي: «اللَّهُمَّ اجْعَلْنِي مِنَ التَّوَّابِينَ، وَاجْعَلْنِي مِنَ الْمُتَطَهِّرِينَ»، وصحّحها الألباني.',
+     'İki temizliğin birleşmesine dikkat edin: bedenin su ile, kalbin tevhid ile temizliği. Müslüman abdestini tevhid kelimesiyle bitirir ve Allah’tan kendisini tövbe edenlerden ve temizlenenlerden kılmasını ister.\n\n'
+     '**Abdesti güzelce tamamlamak:** organları kaplayarak eksiksiz yapmak.\n\n'
+     '**Dipnotların şerhi:** (6) Hadis Müslim’in Sahîh’indedir; Tirmizî şunu ekler: «Allah’ım, beni tövbe edenlerden kıl, temizlenenlerden kıl.» Elbânî bu ilaveyi sahih saymıştır.',
+     fn=['(٦) أخرجه مسلم برقم (٢٣٤) وزاد الترمذي: (اللهم اجعلني من التوابين واجعلني من المتطهرين) برقم (٥٥)، وصححه بهذه الزيادة الألباني (الإرواء برقم ٩٦).']),
+ ]),
+ dict(ar='المسألة السادسة: في نواقضه', tr='Altıncı mesele: Abdesti bozanlar', paras=[
+  PS('والنواقض: هي الأشياء التي تبطل الوضوء وتفسده. وهي ستة: ١ - الخارج من السبيلين: أي من مخرج البول والغائط، والخارج: إما أن يكون بولاً أو غائطاً أو منيّاً أو مذيّاً أو دم استحاضة أو ريحاً قليلاً كان أو كثيراً؛ لقوله تعالى: ﴿أَوْ جَاءَ أَحَدٌ مِنْكُمْ مِنَ الْغَائِطِ﴾ [النساء: ٤٣]. وقوله ﷺ: (لا يقبل الله صلاة أحدكم إذا أحدث حتى يتوضأ) وقد تقدَّم. وقوله ﷺ: (ولكن من غائط أو بول ونوم) (١). وقوله ﷺ فيمن شك هل خرج منه ريح أو لا: (فلا ينصرف حتى يسمع صوتاً أو يجد ريحاً) (٢).',
+     'Abdesti bozanlar, onu geçersiz kılan ve ifsat eden şeylerdir; altı tanedir: 1. İki yoldan, yani idrar ve dışkı çıkış yerlerinden çıkan: İdrar, dışkı, meni, mezi, istihâza kanı veya yel; az olsun çok olsun. Allah Teâlâ’nın «Ya da biriniz ayak yolundan gelirse» [Nisâ, 43] sözü; Nebî’nin (sallallâhu aleyhi ve sellem) daha önce geçen «Allah, abdesti bozulan birinizin namazını abdest alıncaya kadar kabul etmez» sözü; «Fakat dışkıdan, idrardan ve uykudan (dolayı abdest alınır)» sözü (1) ve yel çıkıp çıkmadığından şüphe eden hakkında «Bir ses işitmedikçe veya bir koku almadıkça (namazdan) ayrılmasın» sözü (2) gereği.',
+     '١/ ٢١',
+     '**الناقض الأول** يجمع كل ما خرج من المخرجين: المعتاد (البول والغائط والريح)، وغير المعتاد (كدم الاستحاضة)، **قليلًا كان أو كثيرًا**.\n\n'
+     '**وحديث الشكّ قاعدة عظيمة:** اليقين لا يزول بالشك. فمن تيقّن الطهارة وشكّ في الحدث، فهو على طهارته حتى يتيقّن، بسماع صوت أو وجود رائحة. وفي هذا علاج للوسوسة.\n\n'
+     '**شرح الحواشي:** (١) حديث صفوان بن عسّال رواه أحمد والنسائي والترمذي وصحّحه، وحسّنه الألباني. (٢) حديث الشك متفق عليه.',
+     '**Birinci bozan**, iki çıkış yerinden çıkan her şeyi kapsar: alışılmış olanı (idrar, dışkı ve yel) ve alışılmamış olanı (istihâza kanı gibi), **az olsun çok olsun**.\n\n'
+     '**Şüphe hadisi büyük bir kaidedir:** Kesinlik şüpheyle kalkmaz. Temizliğinden emin olup hadesten şüphe eden, ses işitmek veya koku almakla kesin bilinceye kadar temizliği üzeredir. Bunda vesveseye bir tedavi vardır.\n\n'
+     '**Dipnotların şerhi:** (1) Safvân b. Assâl hadisini Ahmed, Nesâî ve Tirmizî rivayet etmiş; Tirmizî sahih, Elbânî hasen saymıştır. (2) Şüphe hadisi Buhârî ve Müslim’dedir.',
+     fn=['(١) رواه أحمد (٤/ ٢٣٩)، والنسائي برقم (١/ ٨٣)، والترمذي برقم (٩٦) وصححه، وحسنه الألباني في الإرواء (١/ ١٤١).', '(٢) متفق عليه: البخاري برقم (١٣٧)، ومسلم برقم (٣٦١).']),
+  PS('٢ - خروج النجاسة من بقية البدن: فإن كان بولاً أو غائطاً نقض مطلقاً لدخوله في النصوص السابقة، وإن كان غيرهما كالدم والقيء: فإن فحش وكَثُرَ فالأَولى أن يتوضأ منه؛ عملاً بالأحوط، وإن كان يسيراً فلا يتوضأ منه بالاتفاق.',
+     '2. Bedenin diğer yerlerinden necaset çıkması: İdrar veya dışkı ise önceki nasların kapsamına girdiği için her durumda bozar. Kan ve kusmuk gibi başka bir şey ise: Çok ve fahiş olursa ihtiyata uyarak ondan dolayı abdest almak daha iyidir; az olursa ittifakla ondan dolayı abdest alınmaz.',
+     '١/ ٢١',
+     'فرّق الكتاب بين نوعين: **البول والغائط** إذا خرجا من غير المخرج المعتاد، كمن له فتحة في بطنه، ينقضان مطلقًا. **والدم والقيء:** الكثير الفاحش **الأولى** أن يتوضأ منه احتياطًا، واليسير **لا ينقض بالاتفاق**. فمن جرح إصبعه فخرجت قطرات دم، فوضوؤه باقٍ.',
+     'Kitap iki türü ayırmıştır: **İdrar ve dışkı**, karındaki bir açıklıktan çıkması gibi alışılmış yerden başka bir yerden çıksa da her durumda bozar. **Kan ve kusmuk:** Fahiş çokluğundan dolayı ihtiyaten abdest almak **daha iyidir**; azı **ittifakla bozmaz**. Parmağı kesilip birkaç damla kan çıkan kimsenin abdesti bozulmaz.'),
+  PS('٣ - زوال العقل أو تغطيته بإغماء أو نوم: لقوله ﷺ: (ولكن من غائط وبول ونوم). وقوله: (العين [[وِكَاءُ|wika]] (٣) [[السَّه|sah]] (٤)، فمن نام فليتوضأ) (٥). وأما الجنون والإغماء والسكر ونحوه فينقض إجماعاً، والنوم الناقض هو المستغرق الذي لا يبقى معه إدراك على أي هيئة كان النوم، أما النوم اليسير فإنه لا ينقض الوضوء، لأن الصحابة ﵃ كان يصيبهم النعاس وهم في انتظار الصلاة، ويقومون، يُصَلُّون، ولا يتوضؤون (٦).',
+     '3. Aklın gitmesi veya bayılma ya da uykuyla örtülmesi: Nebî’nin (sallallâhu aleyhi ve sellem) «Fakat dışkıdan, idrardan ve uykudan» sözü ve «Göz, makadın bağıdır (3) (4); kim uyursa abdest alsın» sözü (5) gereği. Delilik, bayılma, sarhoşluk ve benzerleri icmâ ile abdesti bozar. Bozan uyku, hangi şekilde olursa olsun, farkındalığın kalmadığı derin uykudur. Hafif uyku ise abdesti bozmaz; çünkü sahâbe (radıyallâhu anhüm) namazı beklerken uyuklar, kalkıp namaz kılar ve abdest almazlardı. (6)',
+     '١/ ٢١',
+     '**العلّة:** النوم مظنّة الحدث، لأن النائم لا يشعر بما يخرج منه. ولهذا شبّه الحديث العينين **بالوِكاء**، أي الرباط: ما دام مستيقظًا فهو يحسّ بنفسه، فإذا نام انحلّ الرباط.\n\n'
+     '**والضابط** في النوم الناقض: **ذهاب الإدراك**، لا هيئة النائم. فالنعاس اليسير الذي يسمع معه من حوله لا ينقض، كما في فعل الصحابة.\n\n'
+     '**شرح الحواشي:** (٣) **الوكاء** الخيط الذي تُربط به القربة. (٤) **السَّه** الدبر. (٥) الحديث رواه أبو داود وابن ماجه، وحسّنه الألباني. (٦) نعاس الصحابة في صحيح مسلم.',
+     '**Gerekçe:** Uyku, hadesin muhtemel olduğu bir hâldir; çünkü uyuyan kendisinden çıkanı hissetmez. Bu yüzden hadis gözleri **vikâya**, yani bağa benzetmiştir: Uyanık olduğu sürece kendini hisseder; uyuyunca bağ çözülür.\n\n'
+     '**Ölçü:** Bozan uykuda ölçü, uyuyanın şekli değil, **farkındalığın gitmesidir**. Etrafındakileri işittiği hafif uyuklama, sahâbenin fiilinde olduğu gibi bozmaz.\n\n'
+     '**Dipnotların şerhi:** (3) **Vikâ**, kırbanın bağlandığı iptir. (4) **Seh**, makattır. (5) Hadisi Ebû Dâvûd ve İbn Mâce rivayet etmiş, Elbânî hasen saymıştır. (6) Sahâbenin uyuklaması Müslim’in Sahîh’indedir.',
+     fn=['(٣) الخيط الذي يربط به الخريطة والقربة.', '(٤) الدبر. والمعنى: أن العينين في يقظتهما بمنزلة الحبل الذي يربط به، فزوال اليقظة كزوال هذا الرباط.', '(٥) رواه أبو داود برقم (٢٠٣)، وابن ماجه برقم (٤٧٧)، وحسنه الألباني في الإرواء (١/ ١٤٨).', '(٦) صحيح مسلم برقم (٣٧٦).']),
+  PS('٤ - مس فرج الآدمي بلا حائل: لحديث بسرة بنت صفوان ﵂ أن النبي ﷺ قال: (من مسّ ذكره فليتوضأ) (١). وفي حديث أبي أيوب وأم حبيبة: (من مسّ فرجه فليتوضأ) (٢).',
+     '4. İnsanın avret yerine engelsiz dokunmak: Büsre bint Safvân’ın (radıyallâhu anhâ) hadisi gereği; Nebî (sallallâhu aleyhi ve sellem) «Kim tenasül organına dokunursa abdest alsın» buyurmuştur. (1) Ebû Eyyûb ve Ümmü Habîbe’nin hadisinde: «Kim avret yerine dokunursa abdest alsın.» (2)',
+     '١/ ٢٢',
+     'قيدان في هذا الناقض: **بلا حائل**، فمن مسّ من وراء الثوب لم ينتقض وضوؤه؛ و**الفرج**، أي القُبُل أو الدُّبُر. وقوله «فرج الآدمي» يشمل فرجه وفرج غيره، كالأم تغسّل طفلها.\n\n'
+     '**شرح الحواشي:** (١) حديث بسرة رواه أبو داود والنسائي والترمذي وقال: حسن صحيح، وصحّحه الألباني. (٢) رواية أم حبيبة عند ابن ماجه وصحّحها الألباني، وحديث أبي أيوب لم يقف الألباني على إسناده.',
+     'Bu bozanda iki kayıt vardır: **engelsiz**; elbisenin üstünden dokunanın abdesti bozulmaz; ve **avret yeri**, yani ön veya arka. «İnsanın avret yeri» ifadesi, çocuğunu yıkayan anne gibi kendisinin ve başkasının avret yerini kapsar.\n\n'
+     '**Dipnotların şerhi:** (1) Büsre hadisini Ebû Dâvûd, Nesâî ve Tirmizî rivayet etmiş; Tirmizî «hasen sahih» demiş, Elbânî sahih saymıştır. (2) Ümmü Habîbe rivayeti İbn Mâce’dedir, Elbânî sahih saymıştır; Ebû Eyyûb hadisinin isnadını Elbânî bulamamıştır.',
+     fn=['(١) أخرجه أبو داود برقم (١٨١) واللفظ له، والنسائي برقم (١٦٣)، والترمذي برقم (٨٢) وقال: حديث حسن صحيح، وابن ماجه برقم (٤٤٧٩)، وصححه الألباني في الإرواء (١/ ١٥٠).', '(٢) رواية أم حبيبة أخرجها: ابن ماجه برقم (٤٨١)، وصححها الألباني في الإرواء (١/ ١٥١)، أما حديث أبي أيوب فقال الألباني: "لم أقف على إسناده" الإرواء (١/ ١٥١).'],
+     note=dict(ar='تنبيه على الحاشية (١): حديث بسرة في «سنن ابن ماجه» برقم (٤٧٩).', tr='(1) numaralı dipnot hakkında: Büsre hadisi İbn Mâce’nin Sünen’inde 479 numaradadır.')),
+  PS('٥ - أكل لحم الإبل: لحديث جابر بن سمرة أن رجلاً سأل النبي ﷺ: أنتوضأ من لحوم الغنم؟ قال: (إن شئت توضأ وإن شئت لا تتوضأ)، قال: أنتوضأ من لحوم الإبل؟ قال: (نعم توضأ من لحوم الإبل). (٣) ٦ - الردة عن الإسلام: لقوله تعالى: ﴿وَمَنْ يَكْفُرْ بِالْإِيمَانِ فَقَدْ حَبِطَ عَمَلُهُ﴾ [المائدة: ٥]. وكل ما أوجب الغسل أوجب الوضوء غير الموت.',
+     '5. Deve eti yemek: Câbir b. Semüre’nin hadisi gereği; bir adam Nebî’ye (sallallâhu aleyhi ve sellem) sordu: «Koyun etinden dolayı abdest alalım mı?» «İstersen al, istersen alma» buyurdu. «Deve etinden dolayı abdest alalım mı?» dedi. «Evet, deve etinden dolayı abdest al» buyurdu. (3) 6. İslam’dan dönmek: Allah Teâlâ’nın «Kim imanı inkâr ederse ameli boşa gitmiştir» [Mâide, 5] sözü gereği. Guslü gerektiren her şey, ölüm hariç, abdesti de gerektirir.',
+     '١/ ٢٢',
+     '**لحم الإبل:** الحديث فرّق بين الغنم والإبل؛ فخيّر في الغنم، وأمر في الإبل، فدلّ على أن لحم الإبل ناقض. ونحن نتّبع النص، علمنا الحكمة أو لم نعلمها.\n\n'
+     '**الردة** تحبط العمل، ومنه الطهارة؛ فمن ارتدّ ثم رجع إلى الإسلام توضأ.\n\n'
+     '**«وكل ما أوجب الغسل أوجب الوضوء»:** أي ما أوجب الغسل كالجنابة فهو ناقض للوضوء أيضًا، فلا يصلي حتى يتطهّر. واستُثني الموت.\n\n'
+     '**شرح الحواشي:** (٣) الحديث في صحيح مسلم.',
+     '**Deve eti:** Hadis koyun ile deveyi ayırmıştır: Koyunda serbest bırakmış, devede emretmiştir; bu, deve etinin abdesti bozduğunu gösterir. Hikmetini bilelim veya bilmeyelim, nassa uyarız.\n\n'
+     '**İslam’dan dönmek** ameli boşa çıkarır; taharet de buna dahildir. Dönüp sonra İslam’a giren abdest alır.\n\n'
+     '**«Guslü gerektiren her şey abdesti de gerektirir»:** Cünüplük gibi guslü gerektiren şey abdesti de bozar; temizlenmeden namaz kılınmaz. Ölüm bundan hariç tutulmuştur.\n\n'
+     '**Dipnotların şerhi:** (3) Hadis Müslim’in Sahîh’indedir.',
+     fn=['(٣) رواه مسلم برقم (٣٦٠).']),
+ ]),
+ dict(ar='المسألة السابعة: ما يجب له الوضوء', tr='Yedinci mesele: Abdestin farz olduğu durumlar', paras=[
+  PS('ويجب على المكلف فعل الوضوء للأمور الآتية: ١ - الصلاة: لحديث ابن عمر مرفوعاً: (لا يقبل الله صلاة بغير طُهُور، ولا صدقة من غلول) (٤). ٢ - الطواف بالبيت الحرام فرضاً كان أو نفلاً: لفعله ﷺ (فإنه توضأ ثم طاف بالبيت) (٥)، ولقوله ﷺ: (الطواف بالبيت صلاة إلا أن الله أباح فيه الكلام) (٦)، ولمنعه الحائض من الطواف حتى تطهر (٧).',
+     'Mükellefin şunlar için abdest alması farzdır: 1. Namaz: İbn Ömer’in merfû hadisi gereği: «Allah temizlik olmadan namazı, haksız alınan maldan da sadakayı kabul etmez.» (4) 2. Kâbe’yi tavaf, farz olsun nafile olsun: Nebî’nin (sallallâhu aleyhi ve sellem) fiili gereği, «abdest alıp Kâbe’yi tavaf etmiştir» (5); «Kâbe’yi tavaf namazdır; ancak Allah onda konuşmayı mubah kılmıştır» sözü (6) ve hayızlı kadını temizlenene kadar tavaftan alıkoyması (7) gereği.',
+     '١/ ٢٢',
+     '**الطواف صلاة** في الحكم، إلا أن الكلام فيه مباح؛ فيُشترط له ما يُشترط للصلاة من الطهارة. وفي منع الحائض من الطواف دليل على أن الطهارة شرط له.\n\n'
+     '**شرح الحواشي:** (٤) حديث ابن عمر في صحيح مسلم. (٥) وضوؤه ثم طوافه في الصحيحين. (٦) حديث «الطواف بالبيت صلاة» رواه ابن حبان والحاكم والبيهقي، وصحّحه الألباني. (٧) منع الحائض من الطواف في الصحيحين من حديث عائشة رضي الله عنها.',
+     '**Tavaf** hüküm bakımından **namazdır**; ancak onda konuşmak mubahtır. Bu yüzden namaz için şart olan taharet onun için de şarttır. Hayızlı kadının tavaftan alıkonulması, taharetin tavafın şartı olduğuna delildir.\n\n'
+     '**Dipnotların şerhi:** (4) İbn Ömer hadisi Müslim’in Sahîh’indedir. (5) Abdest alıp tavaf etmesi Buhârî ve Müslim’dedir. (6) «Kâbe’yi tavaf namazdır» hadisini İbn Hibbân, Hâkim ve Beyhakî rivayet etmiş, Elbânî sahih saymıştır. (7) Hayızlının tavaftan alıkonulması Âişe’den (radıyallâhu anhâ) Buhârî ve Müslim’dedir.',
+     fn=['(٤) رواه مسلم برقم (٢٢٤)، والترمذي برقم (١).', '(٥) رواه البخاري برقم (١٦١٤)، ومسلم برقم (١٢٣٥).', '(٦) رواه ابن حبان برقم (٣٨٣٦)، والحاكم (١/ ٤٥٩) وصحح إسناده، ووافقه الذهبي، والبيهقي (٥/ ٨٧) وغيرهم، وصححه الألباني (الإرواء برقم ١٢١).', '(٧) رواه البخاري برقم (٣٠٥)، ومسلم برقم (١٢١١).']),
+  PS('٣ - مس المصحف ببشرته بلا حائل: لقوله تعالى: ﴿لَا يَمَسُّهُ إِلَّا الْمُطَهَّرُونَ﴾ [الواقعة: ٧٩]. ولقوله ﷺ: (لا يمس القرآن إلا طاهر) (١).',
+     '3. Mushafa cildiyle engelsiz dokunmak: Allah Teâlâ’nın «Ona tertemiz olanlardan başkası dokunamaz» [Vâkıa, 79] sözü ve Nebî’nin (sallallâhu aleyhi ve sellem) «Kur’ân’a ancak temiz olan dokunur» sözü (1) gereği.',
+     '١/ ٢٣',
+     'فرّق بين أمرين: **قراءة القرآن من الحفظ**، فلا يجب لها الوضوء بل يُستحب؛ و**مسّ المصحف** بالبشرة بلا حائل، فيجب له الوضوء. فمن أراد أن يقرأ من المصحف وهو محدث، أمسكه بحائل.\n\n'
+     '**شرح الحواشي:** (١) الحديث أخرجه مالك والدارقطني والبيهقي والحاكم، وصحّحه الألباني.',
+     'İki şeyi ayırın: **Ezberden Kur’ân okumak** için abdest farz değil, müstehaptır; **Mushafa** cildiyle engelsiz **dokunmak** için ise abdest farzdır. Abdestsiz olarak Mushaftan okumak isteyen, onu bir engelle tutar.\n\n'
+     '**Dipnotların şerhi:** (1) Hadisi Mâlik, Dârekutnî, Beyhakî ve Hâkim rivayet etmiş; Elbânî sahih saymıştır.',
+     fn=['(١) أخرجه مالك (١/ ١٩٩)، والدارقطني (١/ ١٢١)، والبيهقي (١/ ٨٧)، والحاكم (١/ ٣٩٥) وصححه، وصححه الألباني (الإرواء برقم ١٢٢).']),
+ ]),
+ dict(ar='المسألة الثامنة: ما يستحب له الوضوء', tr='Sekizinci mesele: Abdestin müstehap olduğu durumlar', paras=[
+  PS('يستحب الوضوء ويندب في الأحوال التالية: ١ - عند ذكر الله تعالى وقراءة القرآن. ٢ - عند كل صلاة: لمواظبته ﷺ على ذلك، كما في حديث أنس ﵁ قال: (كان النبي ﷺ يتوضأ عند كل صلاة) (٢).',
+     'Abdest şu durumlarda müstehap ve mendubtur: 1. Allah Teâlâ’yı zikrederken ve Kur’ân okurken. 2. Her namaz için: Nebî’nin (sallallâhu aleyhi ve sellem) buna devam etmesi gereği; Enes’in (radıyallâhu anh) hadisinde: «Nebî (sallallâhu aleyhi ve sellem) her namazda abdest alırdı.» (2)',
+     '١/ ٢٣',
+     '**الوضوء على الوضوء:** من كان على طهارة يُستحب له أن يجدّد الوضوء لكل صلاة، اقتداءً بالنبي ﷺ؛ ولا يجب.\n\n'
+     '**شرح الحواشي:** (٢) حديث أنس في صحيح البخاري.',
+     '**Abdest üstüne abdest:** Abdestli olanın her namaz için abdestini yenilemesi, Nebî’ye (sallallâhu aleyhi ve sellem) uyarak müstehaptır; farz değildir.\n\n'
+     '**Dipnotların şerhi:** (2) Enes hadisi Buhârî’nin Sahîh’indedir.',
+     fn=['(٢) أخرجه البخاري برقم (٢١٤).']),
+  PS('٣ - يستحب الوضوء للجنب إذا أراد أن يعود للجماع، أو أراد النوم أو الأكل أو الشرب: لحديث أبي سعيد الخدري ﵁ أن رسول الله ﷺ قال: (إذا أتى أحدكم أهله، ثم أراد أن يعود، فليتوضأ) (٣). ولحديث عائشة ﵂: (أن رسول الله ﷺ كان إذا أراد أن ينام وهو جنب، توضأ وضوءه للصلاة، قبل أن ينام) (٤). وفي رواية لها: (فأراد أن يأكل أو ينام) (٥).',
+     '3. Cünüp kimsenin tekrar birleşmek, uyumak, yemek veya içmek istediğinde abdest alması müstehaptır: Ebû Saîd el-Hudrî’nin (radıyallâhu anh) hadisi gereği; Rasûlullah (sallallâhu aleyhi ve sellem) «Biriniz hanımına yaklaşır, sonra tekrar etmek isterse abdest alsın» buyurmuştur. (3) Âişe’nin (radıyallâhu anhâ) hadisi gereği: «Rasûlullah (sallallâhu aleyhi ve sellem) cünüp iken uyumak istediğinde, uyumadan önce namaz abdesti gibi abdest alırdı.» (4) Onun başka bir rivayetinde: «…yemek veya uyumak istediğinde.» (5)',
+     '١/ ٢٣',
+     'الجنب إذا أخّر الغسل، فالوضوء **يخفّف الجنابة**، وقد يُنشّطه على الغسل فلا يؤخّره. والغسل أفضل.\n\n'
+     '**شرح الحواشي:** (٣) حديث أبي سعيد في صحيح مسلم. (٤) حديث عائشة في صحيح مسلم. (٥) والرواية الأخرى بعده في صحيح مسلم.',
+     'Cünüp kimse guslü geciktirirse, abdest **cünüplüğü hafifletir** ve onu gusle teşvik edebilir; böylece geciktirmez. Gusül ise daha faziletlidir.\n\n'
+     '**Dipnotların şerhi:** (3) Ebû Saîd hadisi Müslim’in Sahîh’indedir. (4) Âişe hadisi Müslim’in Sahîh’indedir. (5) Diğer rivayet de ondan sonra Müslim’dedir.',
+     fn=['(٣) أخرجه مسلم برقم (٣٠٨).', '(٤) أخرجه مسلم برقم (٣٠٥).', '(٥) انظر المصدر السابق، الحديث الذي يليه.']),
+  PS('٤ - الوضوء قبل الغسل: لحديث عائشة ﵂ قالت: (كان رسول الله ﷺ إذا اغتسل من الجنابة يبدأ، فيغسل يديه، ثم يفرغ بيمينه على شماله، فيغسل فرجه، ثم يتوضأ وضوءه للصلاة ... ) الحديث (٦). ٥ - عند النوم: لحديث البراء بن عازب ﵁ قال: قال النبي ﷺ: (إذا أتيت مضجعك فتوضَّأ وضوءك للصلاة، ثم اضطجع على شقك الأيمن ... ) الحديث (٧).',
+     '4. Gusülden önce abdest: Âişe’nin (radıyallâhu anhâ) hadisi gereği: «Rasûlullah (sallallâhu aleyhi ve sellem) cünüplükten yıkanacağı zaman önce ellerini yıkar, sonra sağ eliyle sol eline su döküp avret yerini yıkar, sonra namaz abdesti gibi abdest alırdı…» (6) 5. Uyurken: Berâ b. Âzib’in (radıyallâhu anh) hadisi gereği; Nebî (sallallâhu aleyhi ve sellem) şöyle buyurdu: «Yatağına gideceğin zaman namaz abdesti gibi abdest al, sonra sağ yanına uzan…» (7)',
+     '١/ ٢٣',
+     '**الوضوء قبل الغسل** من سنن الغسل، وسيأتي في باب الغسل.\n\n'
+     '**والوضوء عند النوم:** أن ينام المسلم على طهارة وذكر، على شقّه الأيمن.\n\n'
+     '**خلاصة الباب:** الوضوء واجب لثلاثة: الصلاة، والطواف، ومسّ المصحف؛ ومستحب لغيرها.\n\n'
+     '**شرح الحواشي:** (٦) حديث صفة الغسل في صحيح مسلم. (٧) حديث البراء في صحيح البخاري.',
+     '**Gusülden önce abdest** guslün sünnetlerindendir; gusül bölümünde gelecek.\n\n'
+     '**Uyurken abdest:** Müslümanın sağ yanı üzere, temiz ve zikir hâlinde uyuması.\n\n'
+     '**Bölümün özeti:** Abdest üç şey için farzdır: namaz, tavaf ve Mushafa dokunmak; diğerleri için müstehaptır.\n\n'
+     '**Dipnotların şerhi:** (6) Gusül tarifi hadisi Müslim’in Sahîh’indedir. (7) Berâ hadisi Buhârî’nin Sahîh’indedir.',
+     fn=['(٦) أخرجه مسلم برقم (٣١٦).', '(٧) أخرجه البخاري برقم (٢٤٧).']),
+ ]),
+]

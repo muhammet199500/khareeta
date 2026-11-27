@@ -88,4 +88,17 @@ DOCQA_TR = {
   ('Sol elle misvak kullanmak caizdir.', 'Doğru; sağ veya sol elle kullanılabilir; bu konuda genişlik vardır.', True),
   ('Sünnet olmak (hitan) erkekler için sünnettir.', 'Yanlış; doğru olan görüşe göre erkeklere vacip, kadınlara sünnettir.', True),
  ],
+ 105: [
+  ('Abdest nedir? Hükmü nedir?', 'Abdest: Suyu dört organda —yüz, eller, baş ve ayaklarda— şeriatta belirlenmiş şekilde, Allah’a ibadet maksadıyla kullanmaktır. Hükmü: Abdestsiz kimse namaz ve onun hükmündekileri, tavaf ve Mushafa dokunmak gibi, istediğinde farzdır.', False),
+  ('Abdestin farz olduğunun delili nedir?', 'Kitap: «Namaza kalktığınızda yüzlerinizi… yıkayın» [Mâide, 6]; Sünnet: «Allah temizlik olmadan namazı kabul etmez»; ve icmâ, çünkü bu konuda ihtilaf nakledilmemiştir.', False),
+  ('Abdestin şartlarını sayın.', 'İslam, akıl ve temyiz; niyet; tahûr su; suyun cilde ulaşmasını engelleyeni gidermek; sebebi varsa istincâ veya isticmâr; muvâlât; tertip; yıkanması farz olan bütün organları yıkamak.', False),
+  ('Abdestin altı farzı nelerdir?', 'Mazmaza ve istinşak dahil yüzü yıkamak, elleri dirseklerle yıkamak, kulaklarla başın tamamını meshetmek, ayakları topuklarla yıkamak, tertip ve muvâlât.', False),
+  ('Abdestin beş sünnetini sayın.', 'Başta besmele, misvak, elleri üç kez yıkamak, oruçlu değilse mazmaza ve istinşakta mübalağa, ovmak ve sık sakalı hilâllemek, sağdan başlamak, üçlemek ve sonraki zikir.', False),
+  ('Abdesti bozanlar nelerdir?', 'İki yoldan çıkan, bedenin diğer yerlerinden necaset çıkması, aklın gitmesi veya örtülmesi, avret yerine engelsiz dokunmak, deve eti yemek ve İslam’dan dönmek.', False),
+  ('Lum’a hadisi muvâlâtın farz olduğunu nasıl gösterir?', 'Nebî (s.a.v.), ayağında su değmemiş bir yer bulunan ve namazını kılarak arayı uzatmış olan adama bütün abdesti yeniden almasını emretmiştir. Muvâlât şart olmasaydı yalnız o yeri yıkamasını emrederdi.', False),
+  ('Abdesti bozan uykunun ölçüsü nedir? Neden bozar?', 'Bozan, hangi şekilde olursa olsun farkındalığın kalmadığı derin uykudur; çünkü uyku hadesin muhtemel olduğu hâldir ve uyuyan kendisinden çıkanı hissetmez: «Göz, makadın bağıdır.» Hafif uyuklama ise bozmaz.', False),
+  ('Abdest alan kişinin «Abdest almaya niyet ettim» demesi meşrudur.', 'Yanlış; niyetin yeri kalptir, Nebî’den (s.a.v.) sabit olmadığı için dille söylemek meşru değildir.', True),
+  ('Yel çıkıp çıkmadığından şüphe edene abdest farzdır.', 'Yanlış; kesin bilinceye kadar temizliği üzeredir: «Bir ses işitmedikçe veya bir koku almadıkça ayrılmasın.»', True),
+  ('Mushafa cildiyle engelsiz dokunmak için abdest farzdır.', 'Doğru; Nebî (s.a.v.) «Kur’ân’a ancak temiz olan dokunur» buyurmuştur.', True),
+ ],
 }

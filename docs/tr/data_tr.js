@@ -2760,4 +2760,467 @@ window.FIQH4.quiz = [
     "x": "Namazın şartı olan taharete yardım eder."
   }
 ];
-window.LESSONS = [window.LESSON, window.LESSON2, window.LESSON3, window.FIQH1, window.FIQH2, window.FIQH3, window.FIQH4];
+window.FIQH5 = {
+  "title": "Abdest",
+  "root": {
+    "id": "root",
+    "label": "Abdest"
+  },
+  "branches": [
+    {
+      "id": "b1",
+      "label": "Tanım ve hüküm",
+      "children": [
+        {
+          "id": "b1a",
+          "label": "Tanım",
+          "card": {
+            "tag": "Abdest",
+            "title": "Dört organ, ibadet maksadıyla",
+            "body": "Suyu yüz, eller, baş ve ayaklarda şeriatta belirlenmiş şekilde kullanmak. Sözlükte: güzellik ve temizlik anlamındaki «vedâe»den."
+          }
+        },
+        {
+          "id": "b1b",
+          "label": "Hüküm",
+          "card": {
+            "tag": "Abdestsize farz",
+            "body": "Namaz, tavaf veya Mushafa dokunmak istediğinde. Ergen, akıllı Müslümana farzdır."
+          }
+        },
+        {
+          "id": "b1c",
+          "label": "Delil",
+          "v": true,
+          "card": {
+            "tag": "Kitap, Sünnet, icmâ",
+            "verse": "«لَا يَقْبَلُ اللَّهُ صَلَاةً بِغَيْرِ طُهُورٍ، وَلَا صَدَقَةً مِنْ غُلُولٍ»",
+            "ref": "Müslim (224)",
+            "body": "«Allah temizlik olmadan namazı, haksız alınan maldan da sadakayı kabul etmez.» Mâide âyeti ve icmâ ile birlikte."
+          }
+        }
+      ]
+    },
+    {
+      "id": "b2",
+      "label": "Sekiz şart",
+      "children": [
+        {
+          "id": "b2a",
+          "label": "İslam, akıl, temyiz",
+          "card": {
+            "tag": "Ehliyet",
+            "body": "Kâfirden, deliden ve temyiz yaşına girmemiş küçükten sahih olmaz."
+          }
+        },
+        {
+          "id": "b2b",
+          "label": "Niyet",
+          "hot": true,
+          "v": true,
+          "card": {
+            "tag": "Yeri kalptir",
+            "verse": "«إِنَّمَا الْأَعْمَالُ بِالنِّيَّاتِ»",
+            "ref": "Buhârî (1) ve Müslim (1907)",
+            "body": "«Ameller ancak niyetlere göredir.» Dille söylemek meşru değildir."
+          }
+        },
+        {
+          "id": "b2c",
+          "label": "Tahûr su, engeli gidermek",
+          "card": {
+            "tag": "Su ve cilt",
+            "body": "Necis su ile sahih olmaz; mum, hamur ve oje gibi suyun ulaşmasını engelleyen şeyler giderilir."
+          }
+        },
+        {
+          "id": "b2d",
+          "label": "İstincâ, muvâlât, tertip",
+          "card": {
+            "tag": "Ve bütün organlar",
+            "body": "Sebebi varsa istincâ veya isticmâr; muvâlât; tertip; yıkanması farz olan bütün organları yıkamak."
+          }
+        }
+      ]
+    },
+    {
+      "id": "b3",
+      "label": "Altı farz",
+      "children": [
+        {
+          "id": "b3a",
+          "label": "Yüz",
+          "v": true,
+          "card": {
+            "tag": "Mazmaza ve istinşak dahil",
+            "verse": "﴿فَاغْسِلُوا وُجُوهَكُمْ﴾",
+            "ref": "Mâide, 6",
+            "body": "«Yüzlerinizi yıkayın.» Ağız ve burun yüzdendir."
+          }
+        },
+        {
+          "id": "b3b",
+          "label": "Dirseklere kadar eller",
+          "hot": true,
+          "card": {
+            "tag": "Parmak uçlarından",
+            "body": "Baştaki el yıkama sünnettir; yüzden sonra yalnız bilekten yıkamak yetmez."
+          }
+        },
+        {
+          "id": "b3c",
+          "label": "Kulaklarla başın tamamı",
+          "v": true,
+          "card": {
+            "tag": "Bir kısmı yetmez",
+            "verse": "«الْأُذُنَانِ مِنَ الرَّأْسِ»",
+            "ref": "Tirmizî (37) ve İbn Mâce (443)",
+            "body": "«Kulaklar baştandır.»"
+          }
+        },
+        {
+          "id": "b3d",
+          "label": "Topuklara kadar ayaklar",
+          "card": {
+            "tag": "Topuklar",
+            "body": "Ayağın iki yanındaki çıkıntılı kemikler; yıkamaya dahildir."
+          }
+        },
+        {
+          "id": "b3e",
+          "label": "Tertip",
+          "card": {
+            "tag": "Delil",
+            "body": "Allah sıralı zikretmiş, meshedileni yıkananların arasına koymuş; Nebî (s.a.v.) de sıralı abdest almıştır."
+          }
+        },
+        {
+          "id": "b3f",
+          "label": "Muvâlât",
+          "hot": true,
+          "v": true,
+          "card": {
+            "tag": "Lum’a hadisi",
+            "verse": "«فَأَمَرَهُ أَنْ يُعِيدَ الْوُضُوءَ»",
+            "ref": "Ahmed ve Ebû Dâvûd (175)",
+            "body": "«Ona abdesti yeniden almasını emretti.» Muvâlât şart olmasaydı yalnız o yeri yıkamasını emrederdi."
+          }
+        }
+      ]
+    },
+    {
+      "id": "b4",
+      "label": "Sünnetler",
+      "children": [
+        {
+          "id": "b4a",
+          "label": "Besmele ve misvak",
+          "card": {
+            "tag": "Başta",
+            "body": "«Allah’ın adını anmayanın abdesti yoktur»; «Onlara her abdestte misvakı emrederdim.»"
+          }
+        },
+        {
+          "id": "b4b",
+          "label": "Eller ve mübalağa",
+          "card": {
+            "tag": "Başta",
+            "body": "Elleri üç kez yıkamak; oruçlu değilse mazmaza ve istinşakta mübalağa."
+          }
+        },
+        {
+          "id": "b4c",
+          "label": "Ovmak ve hilâllemek",
+          "card": {
+            "tag": "Sık sakal",
+            "body": "Nebî (s.a.v.) kollarını ovar, suyu çenesinin altına sokup sakalını hilâllerdi."
+          }
+        },
+        {
+          "id": "b4d",
+          "label": "Sağdan başlamak, üçlemek",
+          "card": {
+            "tag": "Farz bir kez",
+            "body": "Ellerde ve ayaklarda sağdan başlanır, üç kez yıkanır; Nebî (s.a.v.) birer, ikişer ve üçer kez abdest almıştır."
+          }
+        },
+        {
+          "id": "b4e",
+          "label": "Sonraki zikir",
+          "v": true,
+          "card": {
+            "tag": "Cennetin sekiz kapısı",
+            "verse": "«أَشْهَدُ أَنْ لَا إِلَهَ إِلَّا اللَّهُ وَحْدَهُ لَا شَرِيكَ لَهُ، وَأَشْهَدُ أَنَّ مُحَمَّدًا عَبْدُهُ وَرَسُولُهُ»",
+            "ref": "Müslim (234)",
+            "body": "«Allah’tan başka ilah olmadığına, O’nun tek olduğuna ve ortağı bulunmadığına; Muhammed’in O’nun kulu ve rasûlü olduğuna şahitlik ederim.»"
+          }
+        }
+      ]
+    },
+    {
+      "id": "b5",
+      "label": "Altı bozan",
+      "children": [
+        {
+          "id": "b5a",
+          "label": "İki yoldan çıkan",
+          "hot": true,
+          "card": {
+            "tag": "Az olsun çok olsun",
+            "body": "İdrar, dışkı, meni, mezi, istihâza kanı ve yel. Şüphe eden: «Bir ses işitmedikçe veya bir koku almadıkça ayrılmasın.»"
+          }
+        },
+        {
+          "id": "b5b",
+          "label": "Bedenin diğer yerlerinden necaset",
+          "card": {
+            "tag": "Ayrıntı",
+            "body": "İdrar ve dışkı her durumda bozar; çok kan ve kusmuktan abdest almak daha iyidir; az olanı ittifakla bozmaz."
+          }
+        },
+        {
+          "id": "b5c",
+          "label": "Aklın gitmesi",
+          "v": true,
+          "card": {
+            "tag": "Derin uyku",
+            "verse": "«الْعَيْنُ وِكَاءُ السَّهِ، فَمَنْ نَامَ فَلْيَتَوَضَّأْ»",
+            "ref": "Ebû Dâvûd (203) ve İbn Mâce (477)",
+            "body": "«Göz, makadın bağıdır; kim uyursa abdest alsın.» Hafif uyuklama bozmaz."
+          }
+        },
+        {
+          "id": "b5d",
+          "label": "Avret yerine engelsiz dokunmak",
+          "v": true,
+          "card": {
+            "tag": "Büsre hadisi",
+            "verse": "«مَنْ مَسَّ ذَكَرَهُ فَلْيَتَوَضَّأْ»",
+            "ref": "Ebû Dâvûd (181) ve Tirmizî (82)",
+            "body": "«Kim tenasül organına dokunursa abdest alsın.»"
+          }
+        },
+        {
+          "id": "b5e",
+          "label": "Deve eti yemek",
+          "v": true,
+          "card": {
+            "tag": "Câbir b. Semüre hadisi",
+            "verse": "«نَعَمْ، فَتَوَضَّأْ مِنْ لُحُومِ الْإِبِلِ»",
+            "ref": "Müslim (360)",
+            "body": "«Evet, deve etinden dolayı abdest al.» Koyun etinde ise: «İstersen al, istersen alma.»"
+          }
+        },
+        {
+          "id": "b5f",
+          "label": "İslam’dan dönmek",
+          "card": {
+            "tag": "Ameli boşa çıkarır",
+            "body": "«Kim imanı inkâr ederse ameli boşa gitmiştir.» Guslü gerektiren her şey, ölüm hariç, abdesti de gerektirir."
+          }
+        }
+      ]
+    },
+    {
+      "id": "b6",
+      "label": "Farz ve müstehap olduğu durumlar",
+      "children": [
+        {
+          "id": "b6a",
+          "label": "Farz: namaz, tavaf, Mushafa dokunmak",
+          "hot": true,
+          "card": {
+            "tag": "Deliller",
+            "body": "«Kâbe’yi tavaf namazdır; ancak Allah onda konuşmayı mubah kılmıştır»; «Kur’ân’a ancak temiz olan dokunur.»"
+          }
+        },
+        {
+          "id": "b6b",
+          "label": "Müstehap",
+          "card": {
+            "tag": "Yerleri",
+            "body": "Zikir ve Kur’ân okurken, her namazda; cünüp tekrar birleşmek, uyumak veya yemek isteyince; gusülden önce; uyurken."
+          }
+        }
+      ]
+    }
+  ],
+  "jamia": "Abdest namaz, tavaf ve Mushafa dokunmak için farzdır. Farzları altıdır: yüzü yıkamak, elleri dirseklerle yıkamak, başın tamamını meshetmek, ayakları topuklarla yıkamak, tertip ve muvâlât. Onu iki yoldan çıkan, aklın gitmesi, avret yerine dokunmak, deve eti yemek ve İslam’dan dönmek bozar.",
+  "closing": "Allah’ım, bizi tövbe edenlerden kıl, temizlenenlerden kıl.",
+  "short": "5 · Abdest",
+  "eb": "el-Fıkhu’l-Müyesser · Taharet Kitabı · Beşinci bölüm",
+  "h1": "Abdest",
+  "lead": "Dersin etkileşimli haritası: abdestin tanımı, hükmü ve şartlarından farzlarına, sünnetlerine, bozanlarına ve farz ve müstehap olduğu durumlara.",
+  "series": "fiqh",
+  "home": "fiqh-muyassar.html",
+  "n": 105
+};
+window.FIQH5.ui = window.LESSON.ui;
+window.FIQH5.quiz = [
+  {
+    "q": "Abdestin (vudû) sözlük anlamı nedir?",
+    "o": [
+      "Çok su ile yıkamak",
+      "Meshetmek",
+      "Güzellik ve temizlik anlamındaki «vedâe»den",
+      "Necasetten temizlenmek"
+    ],
+    "a": 2,
+    "x": "«Vedâe» kelimesinden türemiştir."
+  },
+  {
+    "q": "Abdestsiz kimse namaz kılmak isterse abdestin hükmü nedir?",
+    "o": [
+      "Farz",
+      "Sünnet",
+      "Müstehap",
+      "Mubah"
+    ],
+    "a": 0,
+    "x": "Allah temizlik olmadan namazı kabul etmez."
+  },
+  {
+    "q": "Niyeti dille söylemenin hükmü nedir?",
+    "o": [
+      "Farzdır",
+      "Müekked sünnettir",
+      "Abdestin sıhhat şartıdır",
+      "Meşru değildir"
+    ],
+    "a": 3,
+    "x": "Nebî’den (s.a.v.) sabit olmamıştır; niyetin yeri kalptir."
+  },
+  {
+    "q": "Tırnaklarında suyun ulaşmasını engelleyen oje bulunan kadının abdesti nedir?",
+    "o": [
+      "Sahihtir",
+      "Onu gidermedikçe sahih olmaz",
+      "Mekruh olarak sahihtir",
+      "Üstünü meshetmek yeter"
+    ],
+    "a": 1,
+    "x": "Suyun cilde ulaşmasını engelleyeni gidermek şarttır."
+  },
+  {
+    "q": "Mazmaza ve istinşak neden abdestin farzlarındandır?",
+    "o": [
+      "Sünnet oldukları için",
+      "Yalnız temizlik için",
+      "Ağız ve burun yüzden olduğu için",
+      "Baştan oldukları için"
+    ],
+    "a": 2,
+    "x": "Yüzü yıkamak âyetle farzdır."
+  },
+  {
+    "q": "Kitaba göre başın ne kadarını meshetmek farzdır?",
+    "o": [
+      "Üç kılı",
+      "Dörtte birini",
+      "Yalnız ön kısmını",
+      "Kulaklarla birlikte tamamını"
+    ],
+    "a": 3,
+    "x": "Başın bir kısmını meshetmek yetmez."
+  },
+  {
+    "q": "Abdestte tertibin delili nedir?",
+    "o": [
+      "Allah organları sıralı zikretmiş, Nebî (s.a.v.) sıralı abdest almıştır",
+      "Yalnız icmâ",
+      "Kıyas",
+      "Delili yoktur"
+    ],
+    "a": 0,
+    "x": "Meshedileni yıkananların arasına koymuştur."
+  },
+  {
+    "q": "Lum’a nedir?",
+    "o": [
+      "Su damlası",
+      "Su değmeyen yer",
+      "Cildin parlaması",
+      "Bir kap türü"
+    ],
+    "a": 1,
+    "x": "Hâlid b. Ma’dân hadisinde geçer."
+  },
+  {
+    "q": "Biri başta ellerini, sonra yüzünü, sonra yalnız bilekten dirseğe yıkarsa hükmü nedir?",
+    "o": [
+      "Sahihtir",
+      "Sünnettir",
+      "Yalnız mekruhtur",
+      "Sahih olmaz; çünkü baştaki el yıkama sünnettir"
+    ],
+    "a": 3,
+    "x": "Farz, eli parmak uçlarından itibaren tamamen yıkamaktır."
+  },
+  {
+    "q": "Oruçlunun istinşakta mübalağa etmesinin hükmü nedir?",
+    "o": [
+      "Farz olarak eder",
+      "Müstehap olarak eder",
+      "Mübalağa etmez",
+      "İstinşakı terk eder"
+    ],
+    "a": 2,
+    "x": "«Oruçlu olman hariç, suyu buruna çekmede mübalağa et.»"
+  },
+  {
+    "q": "Temizliğinden emin olup hadesten şüphe edenin hükmü nedir?",
+    "o": [
+      "Abdest alması farzdır",
+      "Temizliği üzeredir",
+      "Namazını iade eder",
+      "Teyemmüm eder"
+    ],
+    "a": 1,
+    "x": "«Bir ses işitmedikçe veya bir koku almadıkça ayrılmasın.»"
+  },
+  {
+    "q": "Abdesti bozan uyku hangisidir?",
+    "o": [
+      "Farkındalığın gittiği derin uyku",
+      "Hafif de olsa her uyku",
+      "Yalnız yan yatarak uyku",
+      "Uyku bozmaz"
+    ],
+    "a": 0,
+    "x": "Sahâbe uyuklar, sonra abdest almadan namaz kılardı."
+  },
+  {
+    "q": "Koyun eti yemek abdesti bozar mı?",
+    "o": [
+      "Evet",
+      "Pişmişse evet",
+      "Yalnız erkekler için evet",
+      "Hayır; isterse abdest alır"
+    ],
+    "a": 3,
+    "x": "«İstersen al, istersen alma.»"
+  },
+  {
+    "q": "Parmağından birkaç damla kan çıkan kimsenin abdesti nedir?",
+    "o": [
+      "Bozulmaz",
+      "Bozulur",
+      "Gusül gerekir",
+      "Teyemmüm eder"
+    ],
+    "a": 0,
+    "x": "Az kan ittifakla bozmaz."
+  },
+  {
+    "q": "Hangisi için abdest farzdır?",
+    "o": [
+      "Ezberden Kur’ân okumak",
+      "Uyumak",
+      "Mushafa engelsiz dokunmak",
+      "Yemek"
+    ],
+    "a": 2,
+    "x": "«Kur’ân’a ancak temiz olan dokunur.»"
+  }
+];
+window.LESSONS = [window.LESSON, window.LESSON2, window.LESSON3, window.FIQH1, window.FIQH2, window.FIQH3, window.FIQH4, window.FIQH5];

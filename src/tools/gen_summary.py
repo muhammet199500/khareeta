@@ -13,7 +13,7 @@ import cv2
 from playwright.async_api import async_playwright
 MEDIA = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'media') + '/'
 BASE = sys.argv[1] if len(sys.argv) > 1 else 'http://localhost:8765/'
-PAGES = [('l1', 'ar'), ('l2', 'ar'), ('l3', 'ar'), ('f1', 'ar'), ('f2', 'ar'), ('f3', 'ar'), ('f4', 'ar'), ('l1', 'tr'), ('l2', 'tr'), ('l3', 'tr'), ('f1', 'tr'), ('f2', 'tr'), ('f3', 'tr'), ('f4', 'tr')]
+PAGES = [('l1', 'ar'), ('l2', 'ar'), ('l3', 'ar'), ('f1', 'ar'), ('f2', 'ar'), ('f3', 'ar'), ('f4', 'ar'), ('f5', 'ar'), ('l1', 'tr'), ('l2', 'tr'), ('l3', 'tr'), ('f1', 'tr'), ('f2', 'tr'), ('f3', 'tr'), ('f4', 'tr'), ('f5', 'tr')]
 async def main():
     async with async_playwright() as p:
         b = await p.chromium.launch(**({'executable_path': '/usr/bin/google-chrome'} if os.path.exists('/usr/bin/google-chrome') else {}))

@@ -101,6 +101,15 @@ TR = [
     dict(k='haslet', re=r'[Hh]aslet\w*', w='Haslet', m='Güzel huy, özellik.'),
     dict(k='fisk', re=r'\b[Ff]ısk\w*', w='Fısk', m='Allah’ın emrinin dışına çıkmak; büyük günah işlemek.'),
     dict(k='munezzeh', re=r'[Mm]ünezzeh\w*', w='Münezzeh', m='Her türlü eksiklikten uzak.'),
+    # ── abdest (fiqh5) ──
+    dict(k='muvalat', re=r'[Mm]uvâlât\w*', w='Muvâlât', m='Abdest organlarını ara vermeden, öncekinin hemen ardından yıkamak.', src=DERS),
+    dict(k='tertip', re=r'\b[Tt]ertip\w*', w='Tertip', m='Sıra; abdest organlarını Allah’ın âyette zikrettiği sırayla yıkamak.'),
+    dict(k='temyiz', re=r'\b[Tt]emyiz\w*', w='Temyiz', m='Çocuğun iyiyi kötüden, ibadeti oyundan ayırabildiği yaş.'),
+    dict(k='mesh', re=r'\b[Mm]esh(?:et|ed|i\b)\w*', w='Mesh', m='Islak eli bir organın üzerinden geçirmek; yıkamak değil.'),
+    dict(k='hilal', re=r'\b[Hh]ilâll\w*', w='Hilâllemek', m='Islak parmakları sakalın veya parmakların arasına sokup suyu içeriye ulaştırmak.'),
+    dict(k='mezi', re=r'\b[Mm]ezi\b', w='Mezi', m='Şehvet anında, şehvet doruğa ulaşmadan gelen ince, yapışkan sıvı.'),
+    dict(k='istihaza', re=r'[İi]stihâza\w*', w='İstihâza', m='Kadında âdet ve lohusalık dışında, hastalık sebebiyle gelen kan.'),
+    dict(k='luma', re=r'\b[Ll]um’a\w*', w='Lum’a', m='Abdestte veya gusülde su değmeyen yer.', src='Kitabın kendisi (1/ 19)'),
 ]
 
 # Arabic lesson pages: word forms (bare letters) → sharh.GLOSS key
@@ -133,6 +142,10 @@ AR = [
     ('الحشفة', 'hashafa'),
     ('القلفة', 'qulfa'),
     ('البراجم', 'barajim'),
+    ('غلول', 'ghulul'),
+    ('لمعة', 'lumaa'), ('اللمعة', 'lumaa'),
+    ('وكاء', 'wika'),
+    ('السه', 'sah'),
 ]
 
 # Arabic lesson pages: terms with a plain meaning written here (no source line unless one is real).
@@ -166,4 +179,10 @@ AR_TERMS = [
     dict(k='a_mayta', forms=['الميتة'], w='الميتة', m='ما مات من الحيوان دون ذكاة شرعية.'),
     dict(k='a_dibagh', forms=['الدباغ', 'بالدباغ'], w='الدِّباغ', m='معالجة الجلد بالملح أو النبات حتى يزول ما فيه من الأذى والقذر، فلا يتعفّن ويُنتفع به.'),
     dict(k='a_ghayb', forms=['الغيب'], w='الغيب', m='ما غاب عن الناس فلا يعلمونه، ولا يعلمه إلا الله.'),
+    dict(k='a_muwalat', forms=['الموالاة', 'متواليا'], w='الموالاة', m='أن يغسل كل عضو عقب الذي قبله مباشرة، بلا تأخير.'),
+    dict(k='a_tartib', docs=('fiqh5',), forms=['الترتيب', 'مرتبا'], w='الترتيب', m='غسل أعضاء الوضوء على الترتيب الذي ذكره الله: الوجه، فاليدين، فالرأس، فالرجلين.'),
+    dict(k='a_tamyiz', forms=['التمييز'], w='التمييز', m='أن يميّز الصغير بين العبادة واللعب، ويفهم الخطاب.'),
+    dict(k='a_madhy', forms=['مذيا', 'المذي'], w='المذي', m='ماء رقيق لزج يخرج عند الشهوة، من غير دفق ولا لذة كاملة.'),
+    dict(k='a_istihada', forms=['استحاضة', 'الاستحاضة'], w='الاستحاضة', m='دم يخرج من المرأة في غير أيام حيضها ونفاسها، لمرض ونحوه.'),
+    dict(k='a_muhdith', forms=['المحدث'], w='المُحْدِث', m='من عليه حدث أصغر، كمن بال أو نام.'),
 ]
