@@ -277,7 +277,7 @@ window.LESSON.quiz = [
     x: "Sözleri kendi başına doğrudur; fakat kalplerinde ona uygun bir tasdik yoktu. Söz tek başına yetmez." },
   { q: "Şeyh neden «terk etmen»den önce «inanman» ile başladı?",
     o: ["Çünkü terk istenmez", "Çünkü itikad terke gerek bırakmaz", "Çünkü sıralamanın bir anlamı yoktur", "Çünkü önce kalpte yerleşen şey kastedilir"], a: 3,
-    x: "Şeyhin ifadesi itikad ile başlar; çünkü kalbin ameli asıldır, terk ise onun meyvesi olarak gelir." },
+    x: "Şeyhin ifadesi itikad ile başlar; çünkü kalbin ameli asıldır, terk ise onun sonucu olarak gelir." },
   { q: "«الَّذِينَ يَظُنُّونَ أَنَّهُمْ مُلَاقُو رَبِّهِمْ» (Bakara, 46) ayetinde «zan» ne anlama gelir?",
     o: ["Yakîn", "Şek", "Vehim", "Yalnızca ağır basan ihtimal"], a: 0,
     x: "Yani yakînen bilirler; Kur'an'da zan, yakîn anlamına gelebilir. Usul ıstılahı, kelimenin geçtiği her yere uygulanmaz." },
@@ -312,7 +312,7 @@ window.LESSON2 = {
             ar: "«أن تعتقد بطلان عبادة غير الله، وتتركها، وتبغضها، وتكفّر أهلها، وتعاديهم»",
             meal: "«Allah'tan başkasına yapılan ibadetin bâtıl olduğuna inanman, onu terk etmen, ondan buğz etmen, ehlini tekfir etmen ve onlara düşmanlık etmendir.»",
             ref: "Şeyh Muhammed b. Abdülvehhab (rahimehullah), «Ma‘ne’t-Tâğût ve Ruûsu Envâih» risalesi",
-            body: "Önceki derste birincisini, yani kalbin ameli olan itikadı işledik. Bu derste ikincisini ele alıyoruz: onun amelî meyvesi olan terk." },
+            body: "Önceki derste birincisini, yani kalbin ameli olan itikadı işledik. Bu derste ikincisini ele alıyoruz: onun amelde görünen sonucu olan terk." },
           children: [
             { id: "b1a1", label: "1 · İtikad ← önceki ders" },
             { id: "b1a2", label: "2 · Terk ← dersimiz", hot: true },
@@ -348,7 +348,7 @@ window.LESSON2 = {
           children: [
             { id: "b2c1", label: "Kesintisiz bir terk",
               card: { tag: "Uyarı", title: "İstenen terk kalıcıdır",
-                body: "Sözlükte terk, bağlama göre geçici de kalıcı da olabilir. Bu bapta istenen terk ise kalıcıdır; Müslüman Allah'tan başkasına ibadeti bir süre bırakıp sonra ona dönmez." } },
+                body: "Sözlükte terk, bağlama göre geçici de kalıcı da olabilir. Bu konuda istenen terk ise kalıcıdır; Müslüman Allah'tan başkasına ibadeti bir süre bırakıp sonra ona dönmez." } },
             { id: "b2c2", label: "Sevap kazandıran bir amel",
               card: { tag: "Öğretmene not", title: "Terk, kastedilen bir ibadettir",
                 body: "Müslüman, Allah'ın emrine uymak niyetiyle terk ettiğinde sevap kazanır; fiilin hayatında hiç bulunmaması ya da aklına gelmemesi bu değildir." } }
@@ -406,7 +406,7 @@ window.LESSON2 = {
           card: { tag: "Üçüncü durum", title: "Muvahhidin hâli",
             body: "Kalbi, Allah'tan başkasına ibadetin bâtıllığına kesin inanır; onu Allah'a kulluk niyetiyle terk eder ve ondan kaçınır; kavmine muhalif olsa da sebat eder, İbrahim (a.s.) ve Ashâb-ı Kehf gibi." } },
         { id: "b4d", label: "Doktor örneği",
-          card: { tag: "Yaklaştırıcı örnek", title: "Doğru itikad davranışta görünür",
+          card: { tag: "Örnek", title: "Doğru itikad davranışta görünür",
             body: "Bir yiyeceğin zehirli olduğunu kesin bilen bir doktor onu isteyerek yerse, zararına inandığını söylediğinde kimse onu tasdik etmez." } },
         { id: "b4e", label: "Görünürde terk yeterli mi?",
           children: [
@@ -565,7 +565,7 @@ window.LESSON2 = {
                 ar: "﴿إِلَّا مَنْ أُكْرِهَ وَقَلْبُهُ مُطْمَئِنٌّ بِالْإِيمَانِ﴾", meal: "«Kalbi imanla dolu olduğu halde zorlanan hariç.»", ref: "Nahl, 106",
                 body: "İkrahın ilim ehlinin açıkladığı şartları ve ölçüleri vardır; hatır, utanma ve mevki kaygısı ikrah sayılmaz." } }
           ] },
-        { id: "b7e", label: "Meyveleri",
+        { id: "b7e", label: "Faydaları",
           children: [
             { id: "b7e1", label: "Allah'tan müjde" },
             { id: "b7e2", label: "Hayırlı karşılık" },
@@ -601,7 +601,7 @@ window.LESSON2 = {
     { q: "Tâğuta ibadeti terk, gayrimüslimlerle iyiliği ve mubah muameleyi terk etmek demek midir?",
       o: ["Evet, mutlak olarak", "Evet, alışveriş hariç", "Hayır; kastedilen Allah'tan başkasına yöneltilen ibadeti terktir", "Bu konuda bir hüküm yoktur"], a: 2,
       x: "«Allah, din konusunda sizinle savaşmayan ve sizi yurtlarınızdan çıkarmayanlara iyilik etmenizi ve onlara adaletli davranmanızı yasaklamaz» (Mümtehine, 8)." },
-    { q: "Bu bapta istenen terk geçici midir, kalıcı mı?",
+    { q: "Bu konuda istenen terk geçici midir, kalıcı mı?",
       o: ["Kesintisiz ve kalıcıdır", "İhtiyaca göre geçicidir", "Bir ülkede olur, başka bir ülkede olmaz", "Yalnızca âlimler yanındayken geçerlidir"], a: 0,
       x: "Sözlükte terk geçici de kalıcı da olabilir; burada istenen terk ise kalıcıdır. Müslüman Allah'tan başkasına ibadeti bir süre bırakıp sonra ona dönmez." },
     { q: "Tâğuta ibadeti terkin alanları nelerdir?",
@@ -671,9 +671,9 @@ window.LESSON3 = {
         { id: "b2b", label: "Kerâhiyet: yakın bir lafız",
           card: { tag: "Buğz ve kerâhiyet", title: "Kur'an ve Sünnet onu da kullanır",
             verse: "﴿وَكَرَّهَ إِلَيْكُمُ الْكُفْرَ﴾", ref: "Hucurât, 7",
-            body: "«Küfrü size çirkin gösterdi.» Hadiste de: «Küfre dönmekten hoşlanmaması.» Kerâhiyet bu bapta buğza yakın bir lafızdır." } },
+            body: "«Küfrü size çirkin gösterdi.» Hadiste de: «Küfre dönmekten hoşlanmaması.» Kerâhiyet bu konuda buğza yakın bir lafızdır." } },
         { id: "b2c", label: "Istılahta", hot: true,
-          card: { tag: "Bu baptaki buğz", title: "Tanım",
+          card: { tag: "Bu konudaki buğz", title: "Tanım",
             body: "Müslümanın kalbiyle Allah'tan başkasına ibadete, Allah'ı bırakıp ibadet edilen tâğuta ve ona ibadet edenlere Allah için ve Allah yolunda buğz etmesidir; o ibadete razı olmaz, onu sevmez ve onun üzerinde olanlarla sevgi bağı kurmaz." },
           children: [
             { id: "b2c1", label: "Kalbî bir ibadet",
@@ -687,7 +687,7 @@ window.LESSON3 = {
       children: [
         { id: "b3a", label: "1 · Allah'tan başkasına ibadete buğz",
           card: { tag: "Buğz üç şeyle ilgilidir · Birincisi", title: "Allah'tan başkasına ibadete buğz",
-            body: "Müslümanın şirke ve Allah'tan başkasına yöneltilen her ibadete buğz etmesidir: Allah'tan başkasına dua etmek, onun için kurban kesmek, ona adak adamak, ona secde etmek, ölülerden medet istemek ve benzerleri. Ateşe atılmaktan hoşlanmadığı gibi ondan hoşlanmaz; isimlerle, mevsimlerle ve kutlamalarla süslense bile ona razı olmaz ve onu güzel bulmaz." } },
+            body: "Müslümanın şirke ve Allah'tan başkasına yöneltilen her ibadete buğz etmesidir: Allah'tan başkasına dua etmek, onun için kurban kesmek, ona adak adamak, ona secde etmek, ölülerden medet istemek ve benzerleri. Ateşe atılmaktan hoşlanmadığı gibi ondan hoşlanmaz; isimlerle, bayram ve kutlamalarla süslense bile ona razı olmaz ve onu güzel bulmaz." } },
         { id: "b3b", label: "2 · Tâğuta buğz", hot: true,
           card: { tag: "İkincisi", title: "Tâğuta buğz",
             body: "Şeyh Muhammed b. Abdülvehhab (rahimehullah) «Üç Esas» risalesinde şöyle der: «Tâğutlar çoktur; başları beştir: Allah'ın lânet ettiği İblis, kendisine ibadet edilen ve buna razı olan, insanları kendisine ibadete çağıran, gaybı bildiğini iddia eden ve Allah'ın indirdiğinden başkasıyla hükmeden.» Mümin bunlara buğz eder; çünkü onlar Allah'ın hakkında O'na ortaklık iddia etmiş ve insanları O'ndan başkasına ibadete çağırmışlardır." },
@@ -729,18 +729,18 @@ window.LESSON3 = {
             body: "«Biz sizden ve Allah'ı bırakıp ibadet ettiklerinizden uzağız.» Şirki ve ehlini övmemek, onların üzerinde bulunduğu şeyi güzel göstermemek; onun bâtıllığını açıklamak ve ondan ve ehlinden beri olduğunu söylemek." } },
         { id: "b4c", label: "Azalarda",
           card: { tag: "Üçüncü şekil · Azalarda", title: "Şirk mekânlarında bulunmamak",
-            body: "Şirk mekânlarında ve mevsimlerinde hoşlanarak ya da seyirci olarak bulunmamak; gücü yettiğince şirki eliyle, diliyle ya da kalbiyle reddetmek." } }
+            body: "Şirkin yapıldığı yerlerde, bayram ve kutlamalarda hoşlanarak ya da seyirci olarak bulunmamak; gücü yettiğince şirki eliyle, diliyle ya da kalbiyle reddetmek." } }
       ]
     },
     {
       id: "b5", label: "Buğz, İtikad ve Terk",
       children: [
-        { id: "b5a", label: "İtikad asıl; terk ve buğz meyvesi",
-          card: { tag: "Üç hususun birlikteliği", title: "Bir asıl ve iki meyve",
-            body: "İtikad kalpteki asıldır, terk onun azalardaki meyvesidir, buğz ise kalbin duygusundaki meyvesidir." } },
+        { id: "b5a", label: "İtikad asıl; terk ve buğz sonucu",
+          card: { tag: "Üç hususun birlikteliği", title: "Bir asıl ve iki sonuç",
+            body: "İtikad kalpteki asıldır; terk onun bedende görünen sonucudur; buğz ise kalbin hissettiği sonucudur." } },
         { id: "b5b", label: "Buğzsuz terk: kusur",
           card: { tag: "Birinci durum · Tâğutu inkârda bir kusur", title: "Buğzsuz terk",
-            body: "Bir adam Allah'tan başkası için kurban kesmez ve kabirleri tavaf etmez; fakat insanları şirk mevsimlerinde gördüğünde buna sevinir, havasını sever ve ehlini över. Azalarıyla terk etmiştir, fakat kalbi Allah'ın buğz ettiğine buğz etmemiştir. Bir şeyi güzel bulan kalp, onu yapmaya yakındır." } },
+            body: "Bir adam Allah'tan başkası için kurban kesmez ve kabirleri tavaf etmez; fakat insanları şirk kutlamalarında gördüğünde buna sevinir, havasını sever ve ehlini över. Azalarıyla terk etmiştir, fakat kalbi Allah'ın buğz ettiğine buğz etmemiştir. Bir şeyi güzel bulan kalp, onu yapmaya yakındır." } },
         { id: "b5c", label: "Buğzsuz itikad: gerçekleştirmemiş",
           card: { tag: "İkinci durum · Bu hususu gerçekleştirmemiştir", title: "Buğzsuz itikad",
             body: "Bir adam «Ölülere dua etmenin şirk olduğunu biliyorum» der; fakat bunu yapan birini gördüğünde kalbinde hiçbir şey kıpırdamaz, onu yapanlarla sevgi bağı kurar ve «Herkes ibadetinde özgürdür» der. Müslüman, tevhid ile şirk arasında da, tevhid ehli ile şirk ehli arasında da tarafsız olmaz." } },
@@ -810,7 +810,7 @@ window.LESSON3 = {
       children: [
         { id: "b8a", label: "Uygulamalı örnekler",
           children: [
-            { id: "b8a1", label: "Mevsimler: sevinmez, ehlini tebrik etmez" },
+            { id: "b8a1", label: "Bayramlar: sevinmez, ehlini tebrik etmez" },
             { id: "b8a2", label: "Şirki ve ehlini övmez" },
             { id: "b8a3", label: "Akrabalık: şirki üzerine sevgi bağı kurmaz",
               card: { tag: "Örnek", title: "Akrabalık",
@@ -820,7 +820,7 @@ window.LESSON3 = {
               card: { tag: "Örnek", title: "Kalbi muhasebe etmek",
                 body: "Kalbinde bunlardan birine bir meyil ya da ehline bir sevgi bulursa, bunu tevhid ilmiyle ve Allah'a, imanı kendisine sevdirmesi ve küfrü çirkin göstermesi için dua ederek tedavi eder." } }
           ] },
-        { id: "b8b", label: "Nasslardan uyarılar",
+        { id: "b8b", label: "Âyet ve hadislerden uyarılar",
           children: [
             { id: "b8b1", label: "Razı olmayana buğz edilmez",
               card: { tag: "Uyarı", title: "Kendisine ibadet edilen ve buna razı olmayana buğz edilmez",
@@ -835,14 +835,14 @@ window.LESSON3 = {
                 body: "«Bir topluluğa olan buğzunuz sizi adaletsizliğe sürüklemesin. Adaletli olun; bu, takvaya daha yakındır.»" } },
             { id: "b8b4", label: "Tekfir ve düşmanlık: gelecek iki ders" }
           ] },
-        { id: "b8c", label: "Meyveler",
+        { id: "b8c", label: "Faydalar",
           children: [
             { id: "b8c1", label: "İmanın tadı" },
             { id: "b8c2", label: "İmanı kemale erdirmek" },
             { id: "b8c3", label: "Doğru yolda olmak" },
             { id: "b8c4", label: "İbrahim ve beraberindekilere uymak" },
             { id: "b8c5", label: "İmanın kalbe yazılması ve destek",
-              card: { tag: "Meyve", title: "İmanın kalbe yazılması ve Allah'ın desteği",
+              card: { tag: "Fayda", title: "İmanın kalbe yazılması ve Allah'ın desteği",
                 verse: "﴿أُولَئِكَ كَتَبَ فِي قُلُوبِهِمُ الْإِيمَانَ وَأَيَّدَهُمْ بِرُوحٍ مِنْهُ﴾", ref: "Mücâdele, 22",
                 body: "«İşte Allah onların kalplerine imanı yazmış ve onları kendi katından bir ruhla desteklemiştir.»" } }
           ] }
@@ -877,7 +877,7 @@ window.LESSON3 = {
     { q: "Buğzun aslı nerededir?",
       o: ["Dilde", "Azalarda", "Kalpte", "Görünüşte"], a: 2,
       x: "Buğzun şekilleri kalpte, dilde ve azalardadır; buğzun aslı kalptir." },
-    { q: "Bir adam Allah'tan başkası için kurban kesmiyor, fakat şirk mevsimlerine seviniyor ve ehlini övüyor. Hâli nedir?",
+    { q: "Bir adam Allah'tan başkası için kurban kesmiyor, fakat şirk kutlamalarına seviniyor ve ehlini övüyor. Hâli nedir?",
       o: ["Yapmadığı sürece hâli tamdır", "Buğzsuz terk; tâğutu inkârda bir kusur", "Terksiz itikad", "Kalbe hiç bakılmaz"], a: 1,
       x: "Azalarıyla terk etmiştir, fakat kalbi Allah'ın buğz ettiğine buğz etmemiştir; bir şeyi güzel bulan kalp onu yapmaya yakındır." },
     { q: "Bir adam «Ölülere duanın şirk olduğunu biliyorum, ama herkes ibadetinde özgürdür» diyor ve ehliyle sevgi bağı kuruyor. Hâlinin hükmü nedir?",
@@ -953,11 +953,11 @@ window.FIQH1 = {
             },
             {
               "id": "b1b3",
-              "label": "Meyvesi",
+              "label": "Faydası",
               "card": {
-                "tag": "Fıkhın meyvesi",
-                "title": "Kulun salâhı",
-                "body": "Mükellefin salâhı, ibadetinin sıhhati ve davranışının doğruluğu; kul salih olunca toplum da salih olur."
+                "tag": "Fıkhın faydası",
+                "title": "Kişinin düzelmesi",
+                "body": "Kişinin düzelmesi, ibadetinin sahih olması ve davranışının doğru olması; kul salih olunca toplum da salih olur."
               }
             }
           ]
@@ -999,15 +999,15 @@ window.FIQH1 = {
                 "title": "Manevî taharet",
                 "verse": "﴿إِنَّمَا الْمُشْرِكُونَ نَجَسٌ﴾",
                 "ref": "Tevbe, 28",
-                "body": "Kalbin şirkten, günahlardan ve onu kaplayan her şeyden temizlenmesi; beden temizliğinden daha önemlidir."
+                "body": "Kalbin şirkten, günahlardan ve onu kirleten her şeyden temizlenmesi; beden temizliğinden daha önemlidir."
               }
             },
             {
               "id": "b2b2",
-              "label": "Hissî: beden, elbise, mekân",
+              "label": "Maddî: beden, elbise, mekân",
               "card": {
                 "tag": "İkinci kısım",
-                "title": "Hissî taharet",
+                "title": "Maddî taharet",
                 "body": "Beden, elbise ve mekânın temizliği; bu bölümün konusudur."
               }
             }
@@ -1019,7 +1019,7 @@ window.FIQH1 = {
           "card": {
             "tag": "Istılahta taharet",
             "title": "Tanım",
-            "verse": "Hadesi kaldırmak ve habesi gidermek."
+            "verse": "Hadesi kaldırmak ve necaseti gidermek."
           },
           "children": [
             {
@@ -1033,10 +1033,10 @@ window.FIQH1 = {
             },
             {
               "id": "b2c2",
-              "label": "Habes",
+              "label": "Necaset",
               "card": {
-                "tag": "Habesin giderilmesi",
-                "title": "Habes",
+                "tag": "Necasetin giderilmesi",
+                "title": "Necaset",
                 "body": "Necaset; beden, elbise ve mekânda olur ve giderilmesiyle temizlenir."
               }
             },
@@ -1044,9 +1044,9 @@ window.FIQH1 = {
               "id": "b2c3",
               "label": "Ayırt eden örnek",
               "card": {
-                "tag": "Yaklaştırıcı örnek",
+                "tag": "Örnek",
                 "title": "Örnek",
-                "body": "Bevl çıkan kimsenin üzerinde hades vardır; yerini yıkasa bile onu abdest kaldırır. Elbisesine bevl bulaşanın elbisesinde habes vardır; abdestli olsa bile."
+                "body": "Bevl çıkan kimsenin üzerinde hades vardır; yerini yıkasa bile onu abdest kaldırır. Elbisesine bevl bulaşanın elbisesinde necaset vardır; abdestli olsa bile."
               }
             }
           ]
@@ -1190,7 +1190,7 @@ window.FIQH1 = {
           "id": "b4f",
           "label": "Örnek: depo ve bardak",
           "card": {
-            "tag": "Yaklaştırıcı örnek",
+            "tag": "Örnek",
             "title": "Bir damla",
             "body": "Büyük bir depoya düşüp suyu değiştirmeyen bir damla bevl: su tahûrdur. Aynı damla bir bardak suda: su necistir."
           }
@@ -1349,7 +1349,7 @@ window.FIQH1 = {
       ]
     }
   ],
-  "jamia": "Taharet, hadesi kaldırmak ve habesi gidermektir; tahûr su ile gerçekleşir. Suda asıl olan temizliktir; necaset onu değiştirmedikçe ya da su iki kulleden az olup necaset ona karışmadıkça.",
+  "jamia": "Taharet, hadesi kaldırmak ve necaseti gidermektir; tahûr su ile gerçekleşir. Suda asıl olan temizliktir; necaset onu değiştirmedikçe ya da su iki kulleden az olup necaset ona karışmadıkça.",
   "closing": "Allah Teâlâ’dan bizi dinde fakih kılmasını, kalplerimizi ve bedenlerimizi temizlemesini, bize faydalı ilim ve salih amel nasip etmesini dileriz.",
   "short": "1 · Taharet ve Sular",
   "eb": "el-Fıkhu’l-Müyesser · Taharet Kitabı · Birinci bölüm",
@@ -1365,17 +1365,17 @@ window.FIQH1.quiz = [
     "q": "Taharetin ıstılahî anlamı nedir?",
     "o": [
       "Yalnızca kirden temizlik",
-      "Hadesi kaldırmak ve habesi gidermek",
+      "Hadesi kaldırmak ve necaseti gidermek",
       "Yalnızca abdest ve gusül",
       "Elbiseyi necasetten yıkamak"
     ],
     "a": 1,
-    "x": "Taharet ıstılahta: hadesi kaldırmak ve habesi gidermektir."
+    "x": "Taharet ıstılahta: hadesi kaldırmak ve necaseti gidermektir."
   },
   {
     "q": "Taharetin iki kısmından hangisi daha önemlidir?",
     "o": [
-      "Hissî",
+      "Maddî",
       "İkisi eşittir",
       "Manevî: kalbin şirkten ve günahlardan temizlenmesi",
       "Hüküm bakımından fark yoktur"
@@ -1392,7 +1392,7 @@ window.FIQH1.quiz = [
       "Beden, elbise ve mekânda"
     ],
     "a": 0,
-    "x": "Hades bedende bulunan bir vasıftır; habes ise beden, elbise ve mekânda olur."
+    "x": "Hades bedende bulunan bir vasıftır; necaset ise beden, elbise ve mekânda olur."
   },
   {
     "q": "Abdestli iken elbisesine bevl bulaşan kimsenin elbisesinde ne vardır?",
@@ -1400,10 +1400,10 @@ window.FIQH1.quiz = [
       "Küçük hades",
       "Büyük hades",
       "Hiçbir şey",
-      "Habes"
+      "Necaset"
     ],
     "a": 3,
-    "x": "Necaset habestir, giderilmesiyle temizlenir; abdesti bozulmaz."
+    "x": "Elbisede necaset (pislik) vardır; o yıkanarak giderilir. Bu, abdesti bozmaz."
   },
   {
     "q": "Tahûr su nedir?",

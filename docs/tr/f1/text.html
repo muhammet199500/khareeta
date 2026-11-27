@@ -28,6 +28,12 @@
 <link rel="preload" href="../../assets/fonts/eb-garamond-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="../../assets/fonts.css">
 <link rel="stylesheet" href="../../assets/site.css">
+<style>.gl{all:unset;cursor:pointer;color:inherit;border-bottom:2px dotted var(--goldl);padding:0 1px 1px;border-radius:3px}
+.gl:hover,.gl.on,.gl:focus-visible{background:rgba(217,178,106,.22)}
+.glpop{position:absolute;z-index:30;max-width:320px;background:var(--band);color:var(--onband);font:500 15px/1.75 var(--uf);padding:10px 14px;border-radius:12px;box-shadow:0 8px 24px rgba(0,0,0,.25);border:1px solid var(--goldl)}
+.glpop b{color:var(--goldl);display:block;font-family:var(--af);font-size:1.15em;margin-bottom:2px}
+.glpop .ar2{display:block;font-family:var(--af);direction:rtl;text-align:right;opacity:.85;margin-top:4px}
+.glpop small{display:block;color:var(--onband3);font-size:.8em;margin-top:6px}</style>
 <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "dda53286faab4be6aca43215f29dc4b7"}'></script>
 </head>
 <body tabindex="-1">
@@ -43,20 +49,20 @@
 </div></section>
 
 <section class="band"><div class="wrap"><div class="doc">
-  <article class="prose"><div class="fs-ctl" role="group" aria-label="Yazı boyutu"><button type="button" data-fs="-1" aria-label="Yazıyı küçült" title="Yazıyı küçült">A<small>−</small></button><button type="button" data-fs="1" aria-label="Yazıyı büyüt" title="Yazıyı büyüt">A<small>+</small></button></div><h2 id="s1">Dersin hedefleri</h2>
-<p>Bu dersin sonunda öğrenci şunları yapabilmelidir:</p>
+  <article class="prose"><div class="fs-ctl" role="group" aria-label="Yazı boyutu"><button type="button" data-fs="-1" aria-label="Yazıyı küçült" title="Yazıyı küçült">A<small>−</small></button><button type="button" data-fs="1" aria-label="Yazıyı büyüt" title="Yazıyı büyüt">A<small>+</small></button></div><p class="hint">Altı noktalı kelimelere dokunun: anlamı görünür.</p><h2 id="s1">Dersin hedefleri</h2>
+<p>Bu dersin sonunda şunları yapabilmelisiniz:</p>
 <ol>
-<li>Fıkhı tanımlamak; kaynaklarını ve meyvesini saymak.</li>
-<li>Taharetin önemini açıklamak; iki kısmını, manevî ve hissî taharet arasındaki farkı ayırt etmek.</li>
-<li>Tahareti sözlük ve ıstılah olarak tanımlamak; hades ile habes arasındaki farkı ayırt etmek.</li>
-<li>Taharetin hangi su ile gerçekleştiğini açıklamak ve buna delil getirmek.</li>
-<li>Necaset veya temiz bir madde karışan suyun hükmünü ve kullanılmış suyun hükmünü ayırt etmek.</li>
-<li>Artık su (sür’) hükümlerini kendi hayatından örneklere uygulamak.</li>
+<li><button type="button" class="gl" data-k="fikih" aria-expanded="false">Fıkhı</button> tanımlamak; kaynaklarını ve faydasını saymak.</li>
+<li><button type="button" class="gl" data-k="taharet" aria-expanded="false">Taharetin</button> önemini açıklamak; iki kısmını, manevî ve maddî taharet arasındaki farkı ayırt etmek.</li>
+<li>Tahareti sözlük ve <button type="button" class="gl" data-k="istilah" aria-expanded="false">ıstılah</button> (dinî terim) anlamıyla tanımlamak; <button type="button" class="gl" data-k="hades" aria-expanded="false">hades</button> (abdestsizlik ve <button type="button" class="gl" data-k="cunup" aria-expanded="false">cünüplük</button> hâli) ile <button type="button" class="gl" data-k="necaset" aria-expanded="false">necaset</button> (pislik) arasındaki farkı ayırt etmek.</li>
+<li>Taharetin hangi su ile gerçekleştiğini açıklamak ve delilini göstermek.</li>
+<li>İçine necaset veya temiz bir madde karışan suyun ve kullanılmış suyun hükmünü ayırt etmek.</li>
+<li>Artık suyun (<button type="button" class="gl" data-k="sur" aria-expanded="false">sür’</button>) hükümlerini günlük hayattan örneklere uygulamak.</li>
 </ol>
 <h2 id="s2">Giriş: Fıkıh ve bu bölümün yeri</h2>
-<p>Bu, «el-Fıkhu’l-Müyesser» serisinin ilk dersidir. Önce fıkhın anlamıyla, sonra ilk bölümüyle başlıyoruz.</p>
+<p>Bu, «el-Fıkhu’l-Müyesser» serisinin ilk dersidir. Önce <button type="button" class="gl" data-k="fikih" aria-expanded="false">fıkhın</button> anlamıyla, sonra ilk bölümüyle başlıyoruz.</p>
 <p><strong>Fıkıh sözlükte: anlamaktır.</strong> Allah Teâlâ’nın Şuayb’ın kavmi hakkındaki şu sözü bundandır: <span class="ayah" lang="ar">﴿قَالُوا يَا شُعَيْبُ مَا نَفْقَهُ كَثِيرًا مِمَّا تَقُولُ﴾</span> «Dediler ki: Ey Şuayb! Söylediklerinin çoğunu anlamıyoruz.» [Hûd, 91]</p>
-<p><strong>Istılahta ise:</strong> «Ayrıntılı delillerinden elde edilen amelî şer’î hükümleri bilmektir.»</p>
+<p><strong><button type="button" class="gl" data-k="istilah" aria-expanded="false">Istılahta</button> (dinî terim olarak) ise:</strong> «Ayrıntılı delillerinden çıkarılan, amele ait şer’î hükümleri bilmektir.»</p>
 <div class="tbl"><table>
 <thead>
 <tr>
@@ -67,23 +73,23 @@
 <tbody>
 <tr>
 <td><strong>Temel kaynakları</strong></td>
-<td>Kur’ân-ı Kerîm, temiz Sünnet, icmâ ve kıyas</td>
+<td>Kur’ân-ı Kerîm, sahih Sünnet, <button type="button" class="gl" data-k="icma" aria-expanded="false">icmâ</button> (âlimlerin ittifakı) ve <button type="button" class="gl" data-k="kiyas" aria-expanded="false">kıyas</button> (benzer bir meselenin hükmüne göre hüküm vermek)</td>
 </tr>
 <tr>
 <td><strong>Konusu</strong></td>
-<td>Mükelleflerin fiilleri: ibadet hükümleri ve muamelât hükümleri</td>
+<td>Dinen sorumlu olan kimselerin (<button type="button" class="gl" data-k="mukellef" aria-expanded="false">mükellef</button>) fiilleri: ibadet hükümleri ve alışveriş, kira gibi <button type="button" class="gl" data-k="muamelat" aria-expanded="false">muamelât</button> hükümleri</td>
 </tr>
 <tr>
-<td><strong>Meyvesi</strong></td>
-<td>Mükellefin salâhı, ibadetinin sıhhati ve davranışının doğruluğu; kul salih olunca toplum da salih olur</td>
+<td><strong>Faydası</strong></td>
+<td>Kişinin düzelmesi, ibadetinin sahih olması ve davranışının doğru olması; kul düzelince toplum da düzelir</td>
 </tr>
 </tbody>
 </table></div>
 <p>Allah Teâlâ şöyle buyurur: <span class="ayah" lang="ar">﴿فَلَوْلَا نَفَرَ مِنْ كُلِّ فِرْقَةٍ مِنْهُمْ طَائِفَةٌ لِيَتَفَقَّهُوا فِي الدِّينِ﴾</span> «Her topluluktan bir grubun dinde derin bilgi edinmek için ayrılması gerekmez miydi?» [Tevbe, 122]. Nebî (sallallâhu aleyhi ve sellem) şöyle buyurmuştur: <span class="ar" lang="ar" dir="rtl">«مَنْ يُرِدِ اللَّهُ بِهِ خَيْرًا يُفَقِّهْهُ فِي الدِّينِ»</span> «Allah kime hayır dilerse onu dinde fakih kılar.» Buhârî (71) ve Müslim (1037) rivayet etmiştir.</p>
-<p>Kitap «Taharet Kitabı» ile başlar; çünkü taharet <strong>namazın anahtarı ve şartlarının en kuvvetlisidir; şart, şartlı olandan önce gelmelidir.</strong> Bu ders onun ilk bölümüdür: altı meselede taharet ve sular.</p>
+<p>Kitap «<button type="button" class="gl" data-k="taharet" aria-expanded="false">Taharet</button> Kitabı» ile başlar. Çünkü taharet <strong>namazın anahtarı ve şartlarının en kuvvetlisidir</strong>; şart ise şartlı olandan önce gelir. Bu ders Taharet Kitabı’nın ilk bölümüdür ve altı meseleyi işler: taharet ve sular.</p>
 <h2 id="s3">Birincisi: Taharet: önemi, kısımları ve tanımı</h2>
 <h3 id="s4">1. Önemi</h3>
-<p>Taharet namazın anahtarı ve şartlarının en kuvvetlisidir. Ev anahtarsız açılmadığı gibi, temizlenmeyen kimse de namaza giremez.</p>
+<p><button type="button" class="gl" data-k="taharet" aria-expanded="false">Taharet</button> namazın anahtarı ve şartlarının en kuvvetlisidir. Ev anahtarsız açılmadığı gibi, taharet almayan kimse de namaza giremez.</p>
 <h3 id="s5">2. İki kısmı</h3>
 <div class="tbl"><table>
 <thead>
@@ -95,30 +101,30 @@
 <tbody>
 <tr>
 <td><strong>Manevî taharet</strong></td>
-<td>Kalbin şirkten, günahlardan ve onu kaplayan her şeyden temizlenmesi; beden temizliğinden <strong>daha önemlidir</strong></td>
+<td>Kalbin şirkten, günahlardan ve onu kirleten her şeyden temizlenmesi; beden temizliğinden <strong>daha önemlidir</strong></td>
 </tr>
 <tr>
-<td><strong>Hissî taharet</strong></td>
+<td><strong>Maddî taharet</strong></td>
 <td>Beden, elbise ve mekânın temizliği; bu bölümün konusudur</td>
 </tr>
 </tbody>
 </table></div>
-<p>Şirk necaseti varken beden temizliği gerçekleşmez. Allah Teâlâ şöyle buyurur: <span class="ayah" lang="ar">﴿إِنَّمَا الْمُشْرِكُونَ نَجَسٌ﴾</span> «Müşrikler ancak bir necasettir.» [Tevbe, 28]</p>
+<p>Şirk <button type="button" class="gl" data-k="necaset" aria-expanded="false">necaseti</button> varken beden temizliği gerçekleşmez. Allah Teâlâ şöyle buyurur: <span class="ayah" lang="ar">﴿إِنَّمَا الْمُشْرِكُونَ نَجَسٌ﴾</span> «Müşrikler ancak bir necasettir.» [Tevbe, 28]</p>
 <h3 id="s6">3. Tanımı</h3>
-<p><strong>Sözlükte:</strong> temizlik ve pisliklerden uzak olmak. <strong>Istılahta: hadesi kaldırmak ve habesi (necaseti) gidermektir.</strong></p>
+<p><strong>Sözlükte:</strong> temizlik ve pisliklerden uzak olmak. <strong><button type="button" class="gl" data-k="istilah" aria-expanded="false">Istılahta</button>: <button type="button" class="gl" data-k="hades" aria-expanded="false">hadesi</button> kaldırmak ve necaseti gidermektir.</strong></p>
 <div class="tbl"><table>
 <thead>
 <tr>
 <th></th>
 <th>Hades</th>
-<th>Habes</th>
+<th>Necaset (habes)</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><strong>Nedir?</strong></td>
-<td>Bedende bulunan ve namaz gibi şeylere engel olan bir vasıf</td>
-<td>Necaset</td>
+<td>Bedende bulunan ve namaz gibi ibadetlere engel olan bir hâl</td>
+<td>Pislik (idrar ve dışkı gibi)</td>
 </tr>
 <tr>
 <td><strong>Nerede olur?</strong></td>
@@ -127,7 +133,7 @@
 </tr>
 <tr>
 <td><strong>Türleri</strong></td>
-<td>Küçük hades: abdesti gerektirir. Büyük hades: guslü gerektirir</td>
+<td>Küçük hades: abdesti gerektirir. Büyük hades: <button type="button" class="gl" data-k="gusul" aria-expanded="false">guslü</button> gerektirir</td>
 <td>Yıkanması, serpilmesi ve silinmesi gerekenler</td>
 </tr>
 <tr>
@@ -137,9 +143,9 @@
 </tr>
 </tbody>
 </table></div>
-<p><strong>Yaklaştırıcı örnek:</strong> Bevl veya gaita çıkan kimsenin üzerinde küçük hades vardır; yerini yıkasa bile onu abdest kaldırır. Elbisesine bevl bulaşan kimsenin elbisesinde habes vardır; abdestli olsa bile.</p>
+<p><strong>Örnek:</strong> İdrar (bevl) veya dışkı (gaita) çıkan kimsede küçük hades vardır; yerini yıkasa bile onu ancak abdest kaldırır. Elbisesine idrar bulaşan kimsenin elbisesinde ise necaset vardır; abdestli olsa bile.</p>
 <h2 id="s7">İkincisi: Taharetin gerçekleştiği su</h2>
-<p>Taharet <strong>tahûr su</strong> ile gerçekleşir: <strong>kendisi temiz, başkasını temizleyici</strong> olan ve yaratılışındaki asıl hâli üzere kalan su.</p>
+<p><button type="button" class="gl" data-k="taharet" aria-expanded="false">Taharet</button> <strong><button type="button" class="gl" data-k="tahur" aria-expanded="false">tahûr</button> su</strong> (temizleyici su) ile gerçekleşir. Tahûr su, <strong>kendisi temiz olan, başkasını da temizleyen</strong> ve yaratılıştaki asıl hâli üzere kalan sudur.</p>
 <div class="tbl"><table>
 <thead>
 <tr>
@@ -160,11 +166,11 @@
 </table></div>
 <p><strong>Birinci delil:</strong> <span class="ayah" lang="ar">﴿وَيُنَزِّلُ عَلَيْكُمْ مِنَ السَّمَاءِ مَاءً لِيُطَهِّرَكُمْ بِهِ﴾</span> «Sizi onunla temizlemek için üzerinize gökten su indiriyordu.» [Enfâl, 11] ve <span class="ayah" lang="ar">﴿وَأَنْزَلْنَا مِنَ السَّمَاءِ مَاءً طَهُورًا﴾</span> «Gökten tertemiz bir su indirdik.» [Furkân, 48]</p>
 <p><strong>İkinci delil:</strong> Nebî’nin (sallallâhu aleyhi ve sellem) şu duası: <span class="ar" lang="ar" dir="rtl">«اللَّهُمَّ اغْسِلْنِي مِنْ خَطَايَايَ بِالْمَاءِ وَالثَّلْجِ وَالْبَرَدِ»</span> «Allah’ım! Beni hatalarımdan su, kar ve dolu ile yıka.» Buhârî (744) ve Müslim (598).</p>
-<p><strong>Üçüncü delil:</strong> Deniz suyu hakkında: <span class="ar" lang="ar" dir="rtl">«هُوَ الطَّهُورُ مَاؤُهُ، الْحِلُّ مَيْتَتُهُ»</span> «Onun suyu temizleyicidir, ölüsü helaldir.» Ebû Dâvûd (83), Tirmizî (69), Nesâî (59) ve İbn Mâce (386); Tirmizî «hasen sahih» demiş, Elbânî sahih kabul etmiştir.</p>
-<p><strong>Taharetin gerçekleşmediği şeyler:</strong> Su dışındaki sıvılar: sirke, benzin, meyve suyu ve limon gibi. Delil: <span class="ayah" lang="ar">﴿فَلَمْ تَجِدُوا مَاءً فَتَيَمَّمُوا صَعِيدًا طَيِّبًا﴾</span> «Su bulamazsanız temiz bir toprakla teyemmüm edin.» [Mâide, 6]</p>
-<p><strong>Delil yönü:</strong> Taharet su dışındaki bir sıvıyla gerçekleşseydi, suyu bulamayan kimse ona yönlendirilirdi; toprağa yönlendirilmezdi.</p>
+<p><strong>Üçüncü delil:</strong> Deniz suyu hakkında: <span class="ar" lang="ar" dir="rtl">«هُوَ الطَّهُورُ مَاؤُهُ، الْحِلُّ مَيْتَتُهُ»</span> «Onun suyu temizleyicidir, ölüsü helaldir.» Ebû Dâvûd (83), Tirmizî (69), Nesâî (59) ve İbn Mâce (386); Tirmizî «<button type="button" class="gl" data-k="hasen" aria-expanded="false">hasen</button> sahih» demiş, Elbânî sahih kabul etmiştir.</p>
+<p><strong>Taharetin gerçekleşmediği şeyler:</strong> Su dışındaki sıvılardır; sirke, benzin, meyve suyu ve limon gibi. Delil: <span class="ayah" lang="ar">﴿فَلَمْ تَجِدُوا مَاءً فَتَيَمَّمُوا صَعِيدًا طَيِّبًا﴾</span> «Su bulamazsanız temiz bir toprakla <button type="button" class="gl" data-k="teyemmum" aria-expanded="false">teyemmüm</button> edin.» [Mâide, 6]</p>
+<p><strong>Delil yönü:</strong> Taharet su dışındaki bir sıvıyla da gerçekleşseydi, suyu bulamayan kimse o sıvıya yönlendirilirdi; toprağa (teyemmüme) yönlendirilmezdi.</p>
 <h2 id="s8">Üçüncüsü: Necaset karışan su</h2>
-<p>Hüküm iki şeye bağlıdır: <strong>Üç vasfından biri (koku, tat veya renk) değişti mi?</strong> ve <strong>Su çok mu, az mı?</strong></p>
+<p>Hüküm iki şeye bağlıdır: <strong>Üç <button type="button" class="gl" data-k="vasif" aria-expanded="false">vasfından</button> biri (koku, tat veya renk) değişti mi?</strong> ve <strong>Su çok mu, az mı?</strong></p>
 <div class="tbl"><table>
 <thead>
 <tr>
@@ -174,12 +180,12 @@
 </thead>
 <tbody>
 <tr>
-<td>Vasıflarından biri necasetle değişti; çok olsun az olsun</td>
-<td><strong>İcmâ ile necistir</strong>; hadesi kaldırmaz, habesi gidermez</td>
+<td>Vasıflarından biri <button type="button" class="gl" data-k="necaset" aria-expanded="false">necasetle</button> değişti; çok olsun az olsun</td>
+<td><strong><button type="button" class="gl" data-k="icma" aria-expanded="false">İcmâ</button> ile <button type="button" class="gl" data-k="necis" aria-expanded="false">necistir</button></strong>; <button type="button" class="gl" data-k="hades" aria-expanded="false">hadesi</button> kaldırmaz, necaseti gidermez</td>
 </tr>
 <tr>
-<td>Değişmedi ve çoktur (iki kulle ve fazlası)</td>
-<td><strong>Necis olmaz</strong>; onunla taharet gerçekleşir</td>
+<td>Değişmedi ve çoktur (iki <button type="button" class="gl" data-k="kulle" aria-expanded="false">kulle</button> ve fazlası)</td>
+<td><strong>Necis olmaz</strong>; onunla <button type="button" class="gl" data-k="taharet" aria-expanded="false">taharet</button> gerçekleşir</td>
 </tr>
 <tr>
 <td>Değişmedi ve azdır (iki kulleden az)</td>
@@ -187,26 +193,26 @@
 </tr>
 </tbody>
 </table></div>
-<p><strong>Çok suyun sınırı:</strong> iki kulle ve fazlasıdır. Kulle bir testidir; iki kulle yaklaşık <strong>160,5 litre</strong> su, yani yaklaşık beş kırbadır.</p>
-<p><strong>Birinci delil:</strong> Ebû Saîd el-Hudrî’den (radıyallâhu anh): <span class="ar" lang="ar" dir="rtl">«إِنَّ الْمَاءَ طَهُورٌ لَا يُنَجِّسُهُ شَيْءٌ»</span> «Su temizleyicidir; onu hiçbir şey necis kılmaz.» Ahmed (11257), Ebû Dâvûd (66), Tirmizî (66) ve Nesâî (326) rivayet etmiş; Tirmizî «hasen» demiş, Elbânî İrvâ’da sahih kabul etmiştir.</p>
+<p><strong>Çok suyun sınırı:</strong> iki kulle ve fazlasıdır. Kulle, büyük bir testi (küp) demektir; iki kulle yaklaşık <strong>160,5 litre</strong> su yapar, yani yaklaşık beş <button type="button" class="gl" data-k="kirba" aria-expanded="false">kırba</button> eder.</p>
+<p><strong>Birinci delil:</strong> Ebû Saîd el-Hudrî’den (radıyallâhu anh): <span class="ar" lang="ar" dir="rtl">«إِنَّ الْمَاءَ طَهُورٌ لَا يُنَجِّسُهُ شَيْءٌ»</span> «Su temizleyicidir; onu hiçbir şey necis kılmaz.» Ahmed (11257), Ebû Dâvûd (66), Tirmizî (66) ve Nesâî (326) rivayet etmiş; Tirmizî «<button type="button" class="gl" data-k="hasen" aria-expanded="false">hasen</button>» demiş, Elbânî İrvâ’da sahih kabul etmiştir.</p>
 <p><strong>İkinci delil:</strong> İbn Ömer’den (radıyallâhu anhümâ): <span class="ar" lang="ar" dir="rtl">«إِذَا بَلَغَ الْمَاءُ قُلَّتَيْنِ لَمْ يَحْمِلِ الْخَبَثَ»</span> «Su iki kulleye ulaşınca pisliği taşımaz.» Ahmed, Ebû Dâvûd (63), Tirmizî (67), Nesâî (52) ve İbn Mâce (517); Elbânî İrvâ’da sahih kabul etmiştir.</p>
-<p><strong>Yaklaştırıcı örnek:</strong> Büyük bir su deposuna düşen ve rengini, tadını, kokusunu değiştirmeyen bir damla bevl: su tahûrdur. Aynı damla bir bardak suya düşerse: su necistir.</p>
+<p><strong>Örnek:</strong> Büyük bir su deposuna bir damla idrar düşse ve suyun rengini, tadını, kokusunu değiştirmese, su <button type="button" class="gl" data-k="tahur" aria-expanded="false">tahûrdur</button>. Aynı damla bir bardak suya düşerse su necis olur.</p>
 <h2 id="s9">Dördüncüsü: Temiz bir madde karışan su</h2>
-<p>Suya ağaç yaprakları, sabun, üşnan veya sidr gibi temiz bir madde karışır <strong>ve karışan şey suya galip gelmezse</strong>, doğru olan görüşe göre su <strong>tahûrdur</strong>; onunla hadesten ve necasetten temizlenmek caizdir.</p>
-<p><strong>Birinci delil:</strong> <span class="ayah" lang="ar">﴿فَلَمْ تَجِدُوا مَاءً فَتَيَمَّمُوا صَعِيدًا طَيِّبًا﴾</span> [Nisâ, 43]. <strong>Delil yönü:</strong> «Su» kelimesi olumsuzluk bağlamında nekre olarak gelmiştir; saf su ile karışık su arasında fark gözetmeden her suyu kapsar.</p>
+<p>Suya ağaç yaprakları, sabun, <button type="button" class="gl" data-k="usnan" aria-expanded="false">üşnan</button> veya <button type="button" class="gl" data-k="sidr" aria-expanded="false">sidr</button> (ikisi de eskiden yıkanmada kullanılan bitkilerdir) gibi temiz bir madde karışsa <strong>ve karışan şey suya galip gelmese</strong>, doğru olan görüşe göre su <strong><button type="button" class="gl" data-k="tahur" aria-expanded="false">tahûrdur</button></strong>; onunla <button type="button" class="gl" data-k="hades" aria-expanded="false">hadesten</button> ve <button type="button" class="gl" data-k="necaset" aria-expanded="false">necasetten</button> temizlenmek caizdir.</p>
+<p><strong>Birinci delil:</strong> <span class="ayah" lang="ar">﴿فَلَمْ تَجِدُوا مَاءً فَتَيَمَّمُوا صَعِيدًا طَيِّبًا﴾</span> [Nisâ, 43]. <strong>Delil yönü:</strong> Âyette «su» kelimesi olumsuz cümlede belirsiz (<button type="button" class="gl" data-k="nekre" aria-expanded="false">nekre</button>) olarak geçmiştir. Bu yüzden saf su ile karışık su arasında ayrım yapmadan her suyu kapsar.</p>
 <p><strong>İkinci delil:</strong> Nebî’nin (sallallâhu aleyhi ve sellem), kızını (vefatında) yıkamaya hazırlayan kadınlara sözü: <span class="ar" lang="ar" dir="rtl">«اغْسِلْنَهَا ثَلَاثًا أَوْ خَمْسًا أَوْ أَكْثَرَ مِنْ ذَلِكَ إِنْ رَأَيْتُنَّ، بِمَاءٍ وَسِدْرٍ…»</span> «Onu üç, beş ya da gerekli görürseniz daha fazla, su ve sidr ile yıkayın…» Buhârî (1253) ve Müslim (939).</p>
-<p><strong>Yaklaştırıcı örnek:</strong> İçine ağaç yaprakları düşen ve hâlâ «su» denilen havuz suyuyla abdest alınır. Karışan şey galip gelip su çay veya meyve suyu hâline gelirse, artık onunla taharet gerçekleşmez.</p>
+<p><strong>Örnek:</strong> İçine ağaç yaprakları düşen ve hâlâ «su» denilen havuz suyuyla abdest alınır. Karışan şey galip gelip su çaya veya meyve suyuna dönüşürse artık onunla <button type="button" class="gl" data-k="taharet" aria-expanded="false">taharet</button> gerçekleşmez.</p>
 <h2 id="s10">Beşincisi: Taharette kullanılmış su</h2>
-<p>Kullanılmış su, abdest alan ve gusleden kimsenin organlarından ayrılan su gibi, <strong>doğru olan görüşe göre temiz ve temizleyicidir</strong>; üç vasfından biri değişmediği sürece.</p>
+<p>Kullanılmış su, abdest alan veya boy abdesti (<button type="button" class="gl" data-k="gusul" aria-expanded="false">gusül</button>) alan kimsenin organlarından ayrılan sudur. <strong>Doğru olan görüşe göre temizdir ve temizler</strong>; yeter ki koku, tat ve rengi değişmesin.</p>
 <ol>
 <li>Nebî (sallallâhu aleyhi ve sellem) abdest aldığında, abdest suyu için neredeyse birbirleriyle çekişirlerdi. Buhârî (189).</li>
 <li>Hasta olan Câbir’in üzerine abdest suyundan döktü. Buhârî (5651) ve Müslim (1616).</li>
 <li>Nebî, ashabı ve hanımları kaplarda ve tasla abdest alır, büyük kaplarda gusledirlerdi; bu durumda suya sıçrayan damlalardan kaçınılamaz.</li>
-<li>Cünüp iken Ebû Hureyre’ye: <span class="ar" lang="ar" dir="rtl">«إِنَّ الْمُؤْمِنَ لَا يَنْجُسُ»</span> «Mümin necis olmaz.» Müslim (371).</li>
+<li><button type="button" class="gl" data-k="cunup" aria-expanded="false">Cünüp</button> iken Ebû Hureyre’ye: <span class="ar" lang="ar" dir="rtl">«إِنَّ الْمُؤْمِنَ لَا يَنْجُسُ»</span> «Mümin <button type="button" class="gl" data-k="necis" aria-expanded="false">necis</button> olmaz.» Müslim (371).</li>
 </ol>
-<p><strong>Yaklaştırıcı örnek:</strong> Bir kapta abdest alırken organlarından suya damla sıçrayan kimsenin, kaptaki kalan suyu bozulmaz.</p>
+<p><strong>Örnek:</strong> Bir kapta abdest alırken organlarından suya damla sıçrayan kimsenin, kaptaki suyu bozulmaz.</p>
 <h2 id="s11">Altıncısı: İnsanların ve hayvanların artık suyu</h2>
-<p><strong>Sür’ (artık su):</strong> İçen kimsenin içtikten sonra kapta kalan su.</p>
+<p><strong><button type="button" class="gl" data-k="sur" aria-expanded="false">Sür’</button> (artık su):</strong> İçen kimsenin içtikten sonra kapta kalan su.</p>
 <div class="tbl"><table>
 <thead>
 <tr>
@@ -216,16 +222,16 @@
 </thead>
 <tbody>
 <tr>
-<td><strong>İnsan</strong>: Müslüman olsun kâfir olsun; cünüp ve hayızlı da öyle</td>
+<td><strong>İnsan:</strong> Müslüman da olsa kâfir de olsa; <button type="button" class="gl" data-k="cunup" aria-expanded="false">cünüp</button> (boy abdesti gereken) ve <button type="button" class="gl" data-k="hayiz" aria-expanded="false">hayızlı</button> (adetli) kimse de dâhildir</td>
 <td>Temizdir</td>
 </tr>
 <tr>
 <td><strong>Eti yenen</strong> hayvanlar</td>
-<td>İcmâ ile temizdir</td>
+<td><button type="button" class="gl" data-k="icma" aria-expanded="false">İcmâ</button> ile temizdir</td>
 </tr>
 <tr>
 <td><strong>Eti yenmeyen</strong> yırtıcılar ve eşek gibi</td>
-<td>Doğru olan görüşe göre temizdir; su az olur ve onların içmesiyle değişirse necis olur</td>
+<td>Doğru olan görüşe göre temizdir; su az olur ve onların içmesiyle değişirse <button type="button" class="gl" data-k="necis" aria-expanded="false">necis</button> olur</td>
 </tr>
 <tr>
 <td><strong>Köpek ve domuz</strong></td>
@@ -233,7 +239,7 @@
 </tr>
 </tbody>
 </table></div>
-<p>Kaptan içen kedi hakkında: <span class="ar" lang="ar" dir="rtl">«إِنَّهَا لَيْسَتْ بِنَجَسٍ، إِنَّمَا هِيَ مِنَ الطَّوَّافِينَ عَلَيْكُمْ وَالطَّوَّافَاتِ»</span> «O necis değildir; o, aranızda dolaşan erkek ve dişilerdendir.» Ahmed, Ebû Dâvûd (75), Tirmizî (92); Tirmizî «hasen sahih» demiştir.</p>
+<p>Kaptan içen kedi hakkında: <span class="ar" lang="ar" dir="rtl">«إِنَّهَا لَيْسَتْ بِنَجَسٍ، إِنَّمَا هِيَ مِنَ الطَّوَّافِينَ عَلَيْكُمْ وَالطَّوَّافَاتِ»</span> «O necis değildir; o, aranızda dolaşan erkek ve dişilerdendir.» Ahmed, Ebû Dâvûd (75), Tirmizî (92); Tirmizî «<button type="button" class="gl" data-k="hasen" aria-expanded="false">hasen</button> sahih» demiştir.</p>
 <p>Köpek hakkında: <span class="ar" lang="ar" dir="rtl">«طَهُورُ إِنَاءِ أَحَدِكُمْ إِذَا وَلَغَ فِيهِ الْكَلْبُ أَنْ يَغْسِلَهُ سَبْعَ مَرَّاتٍ أُولَاهُنَّ بِالتُّرَابِ»</span> «Birinizin kabına köpek ağzını daldırırsa onun temizlenmesi, ilki toprakla olmak üzere yedi kez yıkanmasıdır.» Buhârî (172) ve Müslim (279). Domuz hakkında: <span class="ayah" lang="ar">﴿فَإِنَّهُ رِجْسٌ﴾</span> «Çünkü o pistir.» [En’âm, 145]</p>
 <h2 id="s12">Su hükümleri tablosu</h2>
 <div class="tbl"><table>
@@ -247,7 +253,7 @@
 <tbody>
 <tr>
 <td>Yaratılışı üzere kalan</td>
-<td>Tahûr</td>
+<td><button type="button" class="gl" data-k="tahur" aria-expanded="false">Tahûr</button></td>
 <td>Evet</td>
 </tr>
 <tr>
@@ -256,23 +262,23 @@
 <td>Evet</td>
 </tr>
 <tr>
-<td>Taharette kullanılmış ve değişmemiş</td>
+<td><button type="button" class="gl" data-k="taharet" aria-expanded="false">Taharette</button> kullanılmış ve değişmemiş</td>
 <td>Tahûr</td>
 <td>Evet</td>
 </tr>
 <tr>
-<td>Çok; necaset karışmış, değiştirmemiş</td>
+<td>Çok; <button type="button" class="gl" data-k="necaset" aria-expanded="false">necaset</button> karışmış, değiştirmemiş</td>
 <td>Tahûr</td>
 <td>Evet</td>
 </tr>
 <tr>
 <td>Az; necaset karışmış, değiştirmemiş</td>
-<td>Necis</td>
+<td><button type="button" class="gl" data-k="necis" aria-expanded="false">Necis</button></td>
 <td>Hayır</td>
 </tr>
 <tr>
 <td>Necaset kokusunu, tadını veya rengini değiştirmiş</td>
-<td>İcmâ ile necis</td>
+<td><button type="button" class="gl" data-k="icma" aria-expanded="false">İcmâ</button> ile necis</td>
 <td>Hayır</td>
 </tr>
 <tr>
@@ -283,22 +289,22 @@
 </tbody>
 </table></div>
 <p><strong>Kural:</strong> Suda asıl olan temizliktir; ondan ancak delille çıkılır.</p>
-<h2 id="s13">Dersin meyveleri</h2>
+<h2 id="s13">Dersin faydaları</h2>
 <ol>
-<li>Namazın sıhhati; çünkü taharet onun anahtarı ve en kuvvetli şartıdır.</li>
+<li>Namazın sıhhati; çünkü <button type="button" class="gl" data-k="taharet" aria-expanded="false">taharet</button> onun anahtarı ve en kuvvetli şartıdır.</li>
 <li>Su kullanırken gönül huzuru; çünkü suda asıl olan temizliktir.</li>
 <li>Vesveseden ve aşırılıktan uzak durmak; kedi hadisinde olduğu gibi meşakkatin kaldırılması.</li>
 <li>Müslümanın Rabbine ilim ve basiret üzere ibadet etmesi.</li>
 </ol>
-<h2 id="s14">Öğrencinin ezberlemesi gereken özet</h2>
-<p><strong>Taharet, hadesi kaldırmak ve habesi gidermektir; tahûr su ile gerçekleşir. Suda asıl olan temizliktir; necaset onu değiştirmedikçe ya da su iki kulleden az olup necaset ona karışmadıkça.</strong></p>
+<h2 id="s14">Ezberlemeniz gereken özet</h2>
+<p><strong><button type="button" class="gl" data-k="taharet" aria-expanded="false">Taharet</button>, <button type="button" class="gl" data-k="hades" aria-expanded="false">hadesi</button> kaldırmak ve <button type="button" class="gl" data-k="necaset" aria-expanded="false">necaseti</button> gidermektir; <button type="button" class="gl" data-k="tahur" aria-expanded="false">tahûr</button> su ile gerçekleşir. Suda asıl olan temizliktir; necaset onu değiştirmedikçe ya da su iki <button type="button" class="gl" data-k="kulle" aria-expanded="false">kulleden</button> az olup necaset ona karışmadıkça.</strong></p>
 <h2 id="s15">Tekrar soruları</h2>
 <h3 id="s16">Birincisi: Doğrudan sorular</h3>
 <ol>
-<li>Fıkhın sözlük ve ıstılah anlamı nedir?</li>
-<li>Taharetin iki kısmı nelerdir? Hangisi daha önemlidir?</li>
-<li>Tahareti ıstılah olarak tanımlayın; hades ile habesi ayırt edin.</li>
-<li>Tahûr su nedir? Dört örnek verin.</li>
+<li><button type="button" class="gl" data-k="fikih" aria-expanded="false">Fıkhın</button> sözlük ve <button type="button" class="gl" data-k="istilah" aria-expanded="false">ıstılah</button> anlamı nedir?</li>
+<li><button type="button" class="gl" data-k="taharet" aria-expanded="false">Taharetin</button> iki kısmı nelerdir? Hangisi daha önemlidir?</li>
+<li>Tahareti ıstılah olarak tanımlayın; <button type="button" class="gl" data-k="hades" aria-expanded="false">hades</button> ile <button type="button" class="gl" data-k="necaset" aria-expanded="false">necaseti</button> ayırt edin.</li>
+<li><button type="button" class="gl" data-k="tahur" aria-expanded="false">Tahûr</button> su nedir? Dört örnek verin.</li>
 <li>Çok suyun sınırı nedir?</li>
 </ol>
 <h3 id="s17">İkincisi: Düşünme soruları</h3>
@@ -310,13 +316,25 @@
 <h3 id="s18">Üçüncüsü: Doğru mu yanlış mı? (gerekçesiyle)</h3>
 <ol>
 <li>Abdestte kullanılmış su ile tekrar temizlenmek caiz değildir.</li>
-<li>Hayızlı kadının artık suyu temizdir.</li>
+<li><button type="button" class="gl" data-k="hayiz" aria-expanded="false">Hayızlı</button> kadının artık suyu temizdir.</li>
 <li>Necasetin rengini değiştirdiği çok su, çokluğundan dolayı tahûr kalır.</li>
 </ol>
     <div class="endcta"><p>Okuduktan sonra: soru-cevapla kendinizi gözden geçirin, ardından anladığınızı sınayın.</p><div style="display:flex;gap:8px;flex-wrap:wrap"><button class="donebtn" type="button" data-done="101:text" data-off="Yazılı dersi bitirdim" data-on="✓ Yazılı dersi bitirdiniz" title="Geri almak için tekrar dokunun" aria-pressed="false">Yazılı dersi bitirdim</button><a class="btn" href="qa.html">Soru-cevap</a><a class="btn ghost" href="quiz.html">Kendini dene</a></div></div>
   </article>
-  <aside class="toc"><details open><summary>İçindekiler <span aria-hidden="true">▾</span></summary><ol><li><a href="#s1">Dersin hedefleri</a></li><li><a href="#s2">Giriş: Fıkıh ve bu bölümün yeri</a></li><li><a href="#s3">Birincisi: Taharet: önemi, kısımları ve tanımı</a></li><li><a href="#s7">İkincisi: Taharetin gerçekleştiği su</a></li><li><a href="#s8">Üçüncüsü: Necaset karışan su</a></li><li><a href="#s9">Dördüncüsü: Temiz bir madde karışan su</a></li><li><a href="#s10">Beşincisi: Taharette kullanılmış su</a></li><li><a href="#s11">Altıncısı: İnsanların ve hayvanların artık suyu</a></li><li><a href="#s12">Su hükümleri tablosu</a></li><li><a href="#s13">Dersin meyveleri</a></li><li><a href="#s14">Öğrencinin ezberlemesi gereken özet</a></li><li><a href="#s15">Tekrar soruları</a></li></ol></details></aside>
+  <aside class="toc"><details open><summary>İçindekiler <span aria-hidden="true">▾</span></summary><ol><li><a href="#s1">Dersin hedefleri</a></li><li><a href="#s2">Giriş: Fıkıh ve bu bölümün yeri</a></li><li><a href="#s3">Birincisi: Taharet: önemi, kısımları ve tanımı</a></li><li><a href="#s7">İkincisi: Taharetin gerçekleştiği su</a></li><li><a href="#s8">Üçüncüsü: Necaset karışan su</a></li><li><a href="#s9">Dördüncüsü: Temiz bir madde karışan su</a></li><li><a href="#s10">Beşincisi: Taharette kullanılmış su</a></li><li><a href="#s11">Altıncısı: İnsanların ve hayvanların artık suyu</a></li><li><a href="#s12">Su hükümleri tablosu</a></li><li><a href="#s13">Dersin faydaları</a></li><li><a href="#s14">Ezberlemeniz gereken özet</a></li><li><a href="#s15">Tekrar soruları</a></li></ol></details></aside>
 </div></div></section>
+<script type="application/json" id="glData">{"fikih": {"w": "Fıkıh", "m": "Sözlükte «anlamak». Dinde: amelle ilgili şer’î hükümleri ayrıntılı delilleriyle bilmek.", "src": "Bu dersteki tanım"}, "taharet": {"w": "Taharet", "m": "Temizlik. Fıkıhta: hadesi kaldırmak ve necaseti gidermek.", "src": "Bu dersteki tanım"}, "istilah": {"w": "Istılah", "m": "Bir ilmin kendi içinde kullandığı özel anlam (terim anlamı). «Istılahta» = dinî terim olarak."}, "hades": {"w": "Hades", "m": "Abdestsizlik veya cünüplük hâli: bedende bulunan ve namaz gibi ibadetlere engel olan durum. Küçük hades abdestle, büyük hades gusülle kalkar.", "src": "Kitabın dipnotu (1/ 1)"}, "cunup": {"w": "Cünüp", "m": "Gusül (boy abdesti) alması gereken hâldeki kimse."}, "necaset": {"w": "Necaset", "m": "Pislik; idrar ve dışkı gibi. Beden, elbise veya mekânda bulunur ve giderilmesiyle temizlenir. Arapçada «habes» de denir.", "src": "Kitabın dipnotu (1/ 1)"}, "sur": {"w": "Sür’", "m": "Artık su: bir insan veya hayvan içtikten sonra kapta kalan su.", "src": "Bu dersteki tanım"}, "icma": {"w": "İcmâ", "m": "Müslüman âlimlerin dinî bir hükümde görüş birliği etmesi."}, "kiyas": {"w": "Kıyas", "m": "Hükmü âyet veya hadiste açıkça geçmeyen bir meseleye, aynı sebebi taşıyan ve hükmü bilinen bir meselenin hükmünü vermek."}, "mukellef": {"w": "Mükellef", "m": "Dinin emir ve yasaklarından sorumlu olan kimse: akıllı ve ergenlik çağına girmiş kişi."}, "muamelat": {"w": "Muamelât", "m": "İnsanlar arasındaki alışveriş, kira gibi işlerle ilgili hükümler."}, "gusul": {"w": "Gusül", "m": "Boy abdesti: niyet ederek bütün bedeni yıkamak."}, "tahur": {"w": "Tahûr", "m": "Hem kendisi temiz hem de başkasını temizleyen su; yağmur, kuyu ve deniz suyu gibi.", "src": "Bu dersteki tanım"}, "hasen": {"w": "Hasen", "m": "Hadis ilminde: delil olarak kabul edilen, derecesi sahihe yakın hadis."}, "teyemmum": {"w": "Teyemmüm", "m": "Su bulunmadığında veya kullanılamadığında, abdest ya da gusül yerine temiz toprakla yapılan temizlik."}, "vasif": {"w": "Vasıf", "m": "Özellik. Suyun üç vasfı: kokusu, tadı ve rengi."}, "necis": {"w": "Necis", "m": "Pis; temiz olmayan."}, "kulle": {"w": "Kulle", "m": "Büyük testi. İki kulle yaklaşık beş kırba, yani yaklaşık 160,5 litre su eder.", "src": "Kitabın dipnotu (1/ 3)"}, "kirba": {"w": "Kırba", "m": "Deriden yapılmış su tulumu."}, "usnan": {"w": "Üşnan", "m": "Çorak ve tuzlu yerlerde yetişen otlardan bir bitki; elleri yıkamada kullanılır.", "src": "Kitabın dipnotu (1/ 3)"}, "sidr": {"w": "Sidr", "m": "Nebk ağacı (bir tür hünnap ağacı). Hadiste geçtiği gibi yaprağı suya katılarak yıkanmada kullanılırdı.", "src": "İbn Sîde, el-Muhkem (8/ 445)"}, "nekre": {"w": "Nekre", "m": "Arapça dil bilgisinde belirsiz isim. Olumsuz bir cümlede geçerse, o türün hepsini kapsar."}, "hayiz": {"w": "Hayız", "m": "Kadının aylık âdet hâli."}}</script><script>(function(){var G=JSON.parse(document.getElementById('glData').textContent),pop=null,cur=null;
+function close(){if(pop)pop.remove();pop=null;if(cur){cur.classList.remove('on');cur.setAttribute('aria-expanded','false')}cur=null}
+document.addEventListener('click',function(e){var b=e.target.closest('.gl');if(!b){if(!e.target.closest('.glpop'))close();return}
+if(cur===b){close();return}close();var g=G[b.dataset.k];if(!g)return;cur=b;b.classList.add('on');b.setAttribute('aria-expanded','true');
+pop=document.createElement('div');pop.className='glpop';pop.setAttribute('role','status');
+var t=document.createElement('b');t.textContent=g.w;pop.appendChild(t);pop.appendChild(document.createTextNode(g.m));
+if(g.ar){var a=document.createElement('span');a.className='ar2';a.lang='ar';a.textContent=g.ar;pop.appendChild(a)}
+if(g.src){var sm=document.createElement('small');sm.textContent=g.src;pop.appendChild(sm)}document.body.appendChild(pop);
+var r=b.getBoundingClientRect(),w=Math.min(320,innerWidth-24);pop.style.maxWidth=w+'px';
+var x=r.left+r.width/2-pop.offsetWidth/2+scrollX;x=Math.max(12+scrollX,Math.min(x,innerWidth-pop.offsetWidth-12+scrollX));
+pop.style.left=x+'px';pop.style.top=(r.bottom+8+scrollY)+'px'});
+addEventListener('keydown',function(e){if(e.key==='Escape')close()});addEventListener('resize',close)})();</script>
 </main>
 <footer><div class="wrap"><div class="f1"><img src="../../media/logo.webp" alt=""><span>Ve Tevâsav bi’l-Hak · Allah’tan faydalı ilim ve salih amel dileriz.</span></div><span class="flinks"><a href="../index.html">Ders Kütüphanesi</a><a href="../privacy.html">Gizlilik Politikası</a></span></div><div class="wrap app-cta" id="appCta" hidden><button class="btn line" id="installBtn" type="button" hidden>Siteyi telefonunuza uygulama olarak yükleyin</button><button class="btn line" id="iosBtn" type="button" hidden>Siteyi telefonunuza uygulama olarak yükleyin</button></div><dialog id="iosDlg" aria-labelledby="iosDlgT">
   <div class="dbar"><span id="iosDlgT">iPhone’a yükleme</span><button id="iosDlgX" aria-label="×">×</button></div>

@@ -1,13 +1,13 @@
 ## Dersin hedefleri
 
-Bu dersin sonunda öğrenci şunları yapabilmelidir:
+Bu dersin sonunda şunları yapabilmelisiniz:
 
-1. Fıkhı tanımlamak; kaynaklarını ve meyvesini saymak.
-2. Taharetin önemini açıklamak; iki kısmını, manevî ve hissî taharet arasındaki farkı ayırt etmek.
-3. Tahareti sözlük ve ıstılah olarak tanımlamak; hades ile habes arasındaki farkı ayırt etmek.
-4. Taharetin hangi su ile gerçekleştiğini açıklamak ve buna delil getirmek.
-5. Necaset veya temiz bir madde karışan suyun hükmünü ve kullanılmış suyun hükmünü ayırt etmek.
-6. Artık su (sür’) hükümlerini kendi hayatından örneklere uygulamak.
+1. Fıkhı tanımlamak; kaynaklarını ve faydasını saymak.
+2. Taharetin önemini açıklamak; iki kısmını, manevî ve maddî taharet arasındaki farkı ayırt etmek.
+3. Tahareti sözlük ve ıstılah (dinî terim) anlamıyla tanımlamak; hades (abdestsizlik ve cünüplük hâli) ile necaset (pislik) arasındaki farkı ayırt etmek.
+4. Taharetin hangi su ile gerçekleştiğini açıklamak ve delilini göstermek.
+5. İçine necaset veya temiz bir madde karışan suyun ve kullanılmış suyun hükmünü ayırt etmek.
+6. Artık suyun (sür’) hükümlerini günlük hayattan örneklere uygulamak.
 
 ## Giriş: Fıkıh ve bu bölümün yeri
 
@@ -15,49 +15,49 @@ Bu, «el-Fıkhu’l-Müyesser» serisinin ilk dersidir. Önce fıkhın anlamıyl
 
 **Fıkıh sözlükte: anlamaktır.** Allah Teâlâ’nın Şuayb’ın kavmi hakkındaki şu sözü bundandır: ﴿قَالُوا يَا شُعَيْبُ مَا نَفْقَهُ كَثِيرًا مِمَّا تَقُولُ﴾ «Dediler ki: Ey Şuayb! Söylediklerinin çoğunu anlamıyoruz.» [Hûd, 91]
 
-**Istılahta ise:** «Ayrıntılı delillerinden elde edilen amelî şer’î hükümleri bilmektir.»
+**Istılahta (dinî terim olarak) ise:** «Ayrıntılı delillerinden çıkarılan, amele ait şer’î hükümleri bilmektir.»
 
 | | Açıklama |
 | --- | --- |
-| **Temel kaynakları** | Kur’ân-ı Kerîm, temiz Sünnet, icmâ ve kıyas |
-| **Konusu** | Mükelleflerin fiilleri: ibadet hükümleri ve muamelât hükümleri |
-| **Meyvesi** | Mükellefin salâhı, ibadetinin sıhhati ve davranışının doğruluğu; kul salih olunca toplum da salih olur |
+| **Temel kaynakları** | Kur’ân-ı Kerîm, sahih Sünnet, icmâ (âlimlerin ittifakı) ve kıyas (benzer bir meselenin hükmüne göre hüküm vermek) |
+| **Konusu** | Dinen sorumlu olan kimselerin (mükellef) fiilleri: ibadet hükümleri ve alışveriş, kira gibi muamelât hükümleri |
+| **Faydası** | Kişinin düzelmesi, ibadetinin sahih olması ve davranışının doğru olması; kul düzelince toplum da düzelir |
 
 Allah Teâlâ şöyle buyurur: ﴿فَلَوْلَا نَفَرَ مِنْ كُلِّ فِرْقَةٍ مِنْهُمْ طَائِفَةٌ لِيَتَفَقَّهُوا فِي الدِّينِ﴾ «Her topluluktan bir grubun dinde derin bilgi edinmek için ayrılması gerekmez miydi?» [Tevbe, 122]. Nebî (sallallâhu aleyhi ve sellem) şöyle buyurmuştur: «مَنْ يُرِدِ اللَّهُ بِهِ خَيْرًا يُفَقِّهْهُ فِي الدِّينِ» «Allah kime hayır dilerse onu dinde fakih kılar.» Buhârî (71) ve Müslim (1037) rivayet etmiştir.
 
-Kitap «Taharet Kitabı» ile başlar; çünkü taharet **namazın anahtarı ve şartlarının en kuvvetlisidir; şart, şartlı olandan önce gelmelidir.** Bu ders onun ilk bölümüdür: altı meselede taharet ve sular.
+Kitap «Taharet Kitabı» ile başlar. Çünkü taharet **namazın anahtarı ve şartlarının en kuvvetlisidir**; şart ise şartlı olandan önce gelir. Bu ders Taharet Kitabı’nın ilk bölümüdür ve altı meseleyi işler: taharet ve sular.
 
 ## Birincisi: Taharet: önemi, kısımları ve tanımı
 
 ### 1. Önemi
 
-Taharet namazın anahtarı ve şartlarının en kuvvetlisidir. Ev anahtarsız açılmadığı gibi, temizlenmeyen kimse de namaza giremez.
+Taharet namazın anahtarı ve şartlarının en kuvvetlisidir. Ev anahtarsız açılmadığı gibi, taharet almayan kimse de namaza giremez.
 
 ### 2. İki kısmı
 
 | Kısım | Hakikati |
 | --- | --- |
-| **Manevî taharet** | Kalbin şirkten, günahlardan ve onu kaplayan her şeyden temizlenmesi; beden temizliğinden **daha önemlidir** |
-| **Hissî taharet** | Beden, elbise ve mekânın temizliği; bu bölümün konusudur |
+| **Manevî taharet** | Kalbin şirkten, günahlardan ve onu kirleten her şeyden temizlenmesi; beden temizliğinden **daha önemlidir** |
+| **Maddî taharet** | Beden, elbise ve mekânın temizliği; bu bölümün konusudur |
 
 Şirk necaseti varken beden temizliği gerçekleşmez. Allah Teâlâ şöyle buyurur: ﴿إِنَّمَا الْمُشْرِكُونَ نَجَسٌ﴾ «Müşrikler ancak bir necasettir.» [Tevbe, 28]
 
 ### 3. Tanımı
 
-**Sözlükte:** temizlik ve pisliklerden uzak olmak. **Istılahta: hadesi kaldırmak ve habesi (necaseti) gidermektir.**
+**Sözlükte:** temizlik ve pisliklerden uzak olmak. **Istılahta: hadesi kaldırmak ve necaseti gidermektir.**
 
-| | Hades | Habes |
+| | Hades | Necaset (habes) |
 | --- | --- | --- |
-| **Nedir?** | Bedende bulunan ve namaz gibi şeylere engel olan bir vasıf | Necaset |
+| **Nedir?** | Bedende bulunan ve namaz gibi ibadetlere engel olan bir hâl | Pislik (idrar ve dışkı gibi) |
 | **Nerede olur?** | Yalnızca beden | Beden, elbise ve mekân |
 | **Türleri** | Küçük hades: abdesti gerektirir. Büyük hades: guslü gerektirir | Yıkanması, serpilmesi ve silinmesi gerekenler |
 | **Nasıl kalkar?** | Niyetle abdest organlarına ya da bütün bedene su ile; su bulunmaz veya kullanılamazsa toprak ile | Necasetin giderilmesiyle |
 
-**Yaklaştırıcı örnek:** Bevl veya gaita çıkan kimsenin üzerinde küçük hades vardır; yerini yıkasa bile onu abdest kaldırır. Elbisesine bevl bulaşan kimsenin elbisesinde habes vardır; abdestli olsa bile.
+**Örnek:** İdrar (bevl) veya dışkı (gaita) çıkan kimsede küçük hades vardır; yerini yıkasa bile onu ancak abdest kaldırır. Elbisesine idrar bulaşan kimsenin elbisesinde ise necaset vardır; abdestli olsa bile.
 
 ## İkincisi: Taharetin gerçekleştiği su
 
-Taharet **tahûr su** ile gerçekleşir: **kendisi temiz, başkasını temizleyici** olan ve yaratılışındaki asıl hâli üzere kalan su.
+Taharet **tahûr su** (temizleyici su) ile gerçekleşir. Tahûr su, **kendisi temiz olan, başkasını da temizleyen** ve yaratılıştaki asıl hâli üzere kalan sudur.
 
 | Kaynağı | Örnekleri |
 | --- | --- |
@@ -70,9 +70,9 @@ Taharet **tahûr su** ile gerçekleşir: **kendisi temiz, başkasını temizleyi
 
 **Üçüncü delil:** Deniz suyu hakkında: «هُوَ الطَّهُورُ مَاؤُهُ، الْحِلُّ مَيْتَتُهُ» «Onun suyu temizleyicidir, ölüsü helaldir.» Ebû Dâvûd (83), Tirmizî (69), Nesâî (59) ve İbn Mâce (386); Tirmizî «hasen sahih» demiş, Elbânî sahih kabul etmiştir.
 
-**Taharetin gerçekleşmediği şeyler:** Su dışındaki sıvılar: sirke, benzin, meyve suyu ve limon gibi. Delil: ﴿فَلَمْ تَجِدُوا مَاءً فَتَيَمَّمُوا صَعِيدًا طَيِّبًا﴾ «Su bulamazsanız temiz bir toprakla teyemmüm edin.» [Mâide, 6]
+**Taharetin gerçekleşmediği şeyler:** Su dışındaki sıvılardır; sirke, benzin, meyve suyu ve limon gibi. Delil: ﴿فَلَمْ تَجِدُوا مَاءً فَتَيَمَّمُوا صَعِيدًا طَيِّبًا﴾ «Su bulamazsanız temiz bir toprakla teyemmüm edin.» [Mâide, 6]
 
-**Delil yönü:** Taharet su dışındaki bir sıvıyla gerçekleşseydi, suyu bulamayan kimse ona yönlendirilirdi; toprağa yönlendirilmezdi.
+**Delil yönü:** Taharet su dışındaki bir sıvıyla da gerçekleşseydi, suyu bulamayan kimse o sıvıya yönlendirilirdi; toprağa (teyemmüme) yönlendirilmezdi.
 
 ## Üçüncüsü: Necaset karışan su
 
@@ -80,38 +80,38 @@ Hüküm iki şeye bağlıdır: **Üç vasfından biri (koku, tat veya renk) değ
 
 | Durum | Hüküm |
 | --- | --- |
-| Vasıflarından biri necasetle değişti; çok olsun az olsun | **İcmâ ile necistir**; hadesi kaldırmaz, habesi gidermez |
+| Vasıflarından biri necasetle değişti; çok olsun az olsun | **İcmâ ile necistir**; hadesi kaldırmaz, necaseti gidermez |
 | Değişmedi ve çoktur (iki kulle ve fazlası) | **Necis olmaz**; onunla taharet gerçekleşir |
 | Değişmedi ve azdır (iki kulleden az) | **Necis olur**; onunla taharet gerçekleşmez |
 
-**Çok suyun sınırı:** iki kulle ve fazlasıdır. Kulle bir testidir; iki kulle yaklaşık **160,5 litre** su, yani yaklaşık beş kırbadır.
+**Çok suyun sınırı:** iki kulle ve fazlasıdır. Kulle, büyük bir testi (küp) demektir; iki kulle yaklaşık **160,5 litre** su yapar, yani yaklaşık beş kırba eder.
 
 **Birinci delil:** Ebû Saîd el-Hudrî’den (radıyallâhu anh): «إِنَّ الْمَاءَ طَهُورٌ لَا يُنَجِّسُهُ شَيْءٌ» «Su temizleyicidir; onu hiçbir şey necis kılmaz.» Ahmed (11257), Ebû Dâvûd (66), Tirmizî (66) ve Nesâî (326) rivayet etmiş; Tirmizî «hasen» demiş, Elbânî İrvâ’da sahih kabul etmiştir.
 
 **İkinci delil:** İbn Ömer’den (radıyallâhu anhümâ): «إِذَا بَلَغَ الْمَاءُ قُلَّتَيْنِ لَمْ يَحْمِلِ الْخَبَثَ» «Su iki kulleye ulaşınca pisliği taşımaz.» Ahmed, Ebû Dâvûd (63), Tirmizî (67), Nesâî (52) ve İbn Mâce (517); Elbânî İrvâ’da sahih kabul etmiştir.
 
-**Yaklaştırıcı örnek:** Büyük bir su deposuna düşen ve rengini, tadını, kokusunu değiştirmeyen bir damla bevl: su tahûrdur. Aynı damla bir bardak suya düşerse: su necistir.
+**Örnek:** Büyük bir su deposuna bir damla idrar düşse ve suyun rengini, tadını, kokusunu değiştirmese, su tahûrdur. Aynı damla bir bardak suya düşerse su necis olur.
 
 ## Dördüncüsü: Temiz bir madde karışan su
 
-Suya ağaç yaprakları, sabun, üşnan veya sidr gibi temiz bir madde karışır **ve karışan şey suya galip gelmezse**, doğru olan görüşe göre su **tahûrdur**; onunla hadesten ve necasetten temizlenmek caizdir.
+Suya ağaç yaprakları, sabun, üşnan veya sidr (ikisi de eskiden yıkanmada kullanılan bitkilerdir) gibi temiz bir madde karışsa **ve karışan şey suya galip gelmese**, doğru olan görüşe göre su **tahûrdur**; onunla hadesten ve necasetten temizlenmek caizdir.
 
-**Birinci delil:** ﴿فَلَمْ تَجِدُوا مَاءً فَتَيَمَّمُوا صَعِيدًا طَيِّبًا﴾ [Nisâ, 43]. **Delil yönü:** «Su» kelimesi olumsuzluk bağlamında nekre olarak gelmiştir; saf su ile karışık su arasında fark gözetmeden her suyu kapsar.
+**Birinci delil:** ﴿فَلَمْ تَجِدُوا مَاءً فَتَيَمَّمُوا صَعِيدًا طَيِّبًا﴾ [Nisâ, 43]. **Delil yönü:** Âyette «su» kelimesi olumsuz cümlede belirsiz (nekre) olarak geçmiştir. Bu yüzden saf su ile karışık su arasında ayrım yapmadan her suyu kapsar.
 
 **İkinci delil:** Nebî’nin (sallallâhu aleyhi ve sellem), kızını (vefatında) yıkamaya hazırlayan kadınlara sözü: «اغْسِلْنَهَا ثَلَاثًا أَوْ خَمْسًا أَوْ أَكْثَرَ مِنْ ذَلِكَ إِنْ رَأَيْتُنَّ، بِمَاءٍ وَسِدْرٍ…» «Onu üç, beş ya da gerekli görürseniz daha fazla, su ve sidr ile yıkayın…» Buhârî (1253) ve Müslim (939).
 
-**Yaklaştırıcı örnek:** İçine ağaç yaprakları düşen ve hâlâ «su» denilen havuz suyuyla abdest alınır. Karışan şey galip gelip su çay veya meyve suyu hâline gelirse, artık onunla taharet gerçekleşmez.
+**Örnek:** İçine ağaç yaprakları düşen ve hâlâ «su» denilen havuz suyuyla abdest alınır. Karışan şey galip gelip su çaya veya meyve suyuna dönüşürse artık onunla taharet gerçekleşmez.
 
 ## Beşincisi: Taharette kullanılmış su
 
-Kullanılmış su, abdest alan ve gusleden kimsenin organlarından ayrılan su gibi, **doğru olan görüşe göre temiz ve temizleyicidir**; üç vasfından biri değişmediği sürece.
+Kullanılmış su, abdest alan veya boy abdesti (gusül) alan kimsenin organlarından ayrılan sudur. **Doğru olan görüşe göre temizdir ve temizler**; yeter ki koku, tat ve rengi değişmesin.
 
 1. Nebî (sallallâhu aleyhi ve sellem) abdest aldığında, abdest suyu için neredeyse birbirleriyle çekişirlerdi. Buhârî (189).
 2. Hasta olan Câbir’in üzerine abdest suyundan döktü. Buhârî (5651) ve Müslim (1616).
 3. Nebî, ashabı ve hanımları kaplarda ve tasla abdest alır, büyük kaplarda gusledirlerdi; bu durumda suya sıçrayan damlalardan kaçınılamaz.
 4. Cünüp iken Ebû Hureyre’ye: «إِنَّ الْمُؤْمِنَ لَا يَنْجُسُ» «Mümin necis olmaz.» Müslim (371).
 
-**Yaklaştırıcı örnek:** Bir kapta abdest alırken organlarından suya damla sıçrayan kimsenin, kaptaki kalan suyu bozulmaz.
+**Örnek:** Bir kapta abdest alırken organlarından suya damla sıçrayan kimsenin, kaptaki suyu bozulmaz.
 
 ## Altıncısı: İnsanların ve hayvanların artık suyu
 
@@ -119,7 +119,7 @@ Kullanılmış su, abdest alan ve gusleden kimsenin organlarından ayrılan su g
 
 | Artık suyun sahibi | Hükmü |
 | --- | --- |
-| **İnsan**: Müslüman olsun kâfir olsun; cünüp ve hayızlı da öyle | Temizdir |
+| **İnsan:** Müslüman da olsa kâfir de olsa; cünüp (boy abdesti gereken) ve hayızlı (adetli) kimse de dâhildir | Temizdir |
 | **Eti yenen** hayvanlar | İcmâ ile temizdir |
 | **Eti yenmeyen** yırtıcılar ve eşek gibi | Doğru olan görüşe göre temizdir; su az olur ve onların içmesiyle değişirse necis olur |
 | **Köpek ve domuz** | Necistir |
@@ -142,16 +142,16 @@ Köpek hakkında: «طَهُورُ إِنَاءِ أَحَدِكُمْ إِذَ�
 
 **Kural:** Suda asıl olan temizliktir; ondan ancak delille çıkılır.
 
-## Dersin meyveleri
+## Dersin faydaları
 
 1. Namazın sıhhati; çünkü taharet onun anahtarı ve en kuvvetli şartıdır.
 2. Su kullanırken gönül huzuru; çünkü suda asıl olan temizliktir.
 3. Vesveseden ve aşırılıktan uzak durmak; kedi hadisinde olduğu gibi meşakkatin kaldırılması.
 4. Müslümanın Rabbine ilim ve basiret üzere ibadet etmesi.
 
-## Öğrencinin ezberlemesi gereken özet
+## Ezberlemeniz gereken özet
 
-**Taharet, hadesi kaldırmak ve habesi gidermektir; tahûr su ile gerçekleşir. Suda asıl olan temizliktir; necaset onu değiştirmedikçe ya da su iki kulleden az olup necaset ona karışmadıkça.**
+**Taharet, hadesi kaldırmak ve necaseti gidermektir; tahûr su ile gerçekleşir. Suda asıl olan temizliktir; necaset onu değiştirmedikçe ya da su iki kulleden az olup necaset ona karışmadıkça.**
 
 ## Tekrar soruları
 
@@ -159,7 +159,7 @@ Köpek hakkında: «طَهُورُ إِنَاءِ أَحَدِكُمْ إِذَ�
 
 1. Fıkhın sözlük ve ıstılah anlamı nedir?
 2. Taharetin iki kısmı nelerdir? Hangisi daha önemlidir?
-3. Tahareti ıstılah olarak tanımlayın; hades ile habesi ayırt edin.
+3. Tahareti ıstılah olarak tanımlayın; hades ile necaseti ayırt edin.
 4. Tahûr su nedir? Dört örnek verin.
 5. Çok suyun sınırı nedir?
 

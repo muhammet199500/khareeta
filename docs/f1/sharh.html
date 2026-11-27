@@ -85,7 +85,7 @@ if(cur===b){close();return}close();var g=G[b.dataset.k];if(!g)return;cur=b;b.cla
 pop=document.createElement('div');pop.className='glpop';pop.setAttribute('role','status');
 var t=document.createElement('b');t.textContent=g.w;pop.appendChild(t);pop.appendChild(document.createTextNode(g.m));
 if(g.ar){var a=document.createElement('span');a.className='ar2';a.lang='ar';a.textContent=g.ar;pop.appendChild(a)}
-var sm=document.createElement('small');sm.textContent=g.src;pop.appendChild(sm);document.body.appendChild(pop);
+if(g.src){var sm=document.createElement('small');sm.textContent=g.src;pop.appendChild(sm)}document.body.appendChild(pop);
 var r=b.getBoundingClientRect(),w=Math.min(320,innerWidth-24);pop.style.maxWidth=w+'px';
 var x=r.left+r.width/2-pop.offsetWidth/2+scrollX;x=Math.max(12+scrollX,Math.min(x,innerWidth-pop.offsetWidth-12+scrollX));
 pop.style.left=x+'px';pop.style.top=(r.bottom+8+scrollY)+'px'});

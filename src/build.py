@@ -10,6 +10,7 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from docqa_tr import DOCQA_TR
 from summaries import SUM
 from sharh import SHARH, GLOSS, GLOSS_TR_SRC, BOOK
+import sozluk
 import io, segno
 SITE = 'https://tevhidim.com/'
 
@@ -136,6 +137,7 @@ S = {
     tSharh=('متن الكتاب ومعاني كلماته', 'نص الكتاب فقرةً فقرة؛ اضغط على الكلمة يظهر معناها'),
     sharhSub='نص الكتاب بحروفه فقرةً فقرة، ومعاني كلماته الغريبة',
     sharhHint='الكلمات التي تحتها نقاط: اضغط عليها ليظهر معناها ومصدره.',
+    glHint='الكلمات التي تحتها نقاط: اضغط عليها ليظهر معناها.',
     sharhSrc='النص من {b}؛ والرقم فوق كل فقرة: الجزء/ الصفحة.',
     sharhFn='حواشي الكتاب', sharhGl='معاني الكلمات', sharhGlSrc='المصدر', sharhLbl='الشرح', sharhTr='',
     chipSum='الملخص', sumPrint='اطبع', sumPdf='تنزيل PDF', sumImg='تنزيل صورة',
@@ -196,6 +198,7 @@ S = {
     tSharh=('Kitabın metni ve kelime anlamları', 'Arapça metin paragraf paragraf, Türkçe anlamıyla; kelimeye dokununca anlamı çıkar'),
     sharhSub='Kitabın Arapça metni harfiyen, paragraf paragraf; altında Türkçe anlamı ve garip kelimelerin anlamları',
     sharhHint='Altı noktalı kelimelere dokunun: anlamı ve kaynağı görünür.',
+    glHint='Altı noktalı kelimelere dokunun: anlamı görünür.',
     sharhSrc='Metin {b} adlı eserdendir; her paragrafın üstündeki numara: cilt/ sayfa.',
     sharhFn='Kitabın dipnotları (Arapça)', sharhGl='Kelimelerin anlamları', sharhGlSrc='Kaynak', sharhLbl='Şerh', sharhTr='Türkçe anlamı',
     chipSum='Özet', sumPrint='Yazdır', sumPdf='PDF indir', sumImg='Görsel indir',
@@ -939,17 +942,67 @@ def search_index(lang):
             out.append([n, S[lang]['qaT'], f'{sl}/qa.html', plain(q) + ' — ' + plain(a)])
     return out
 
+
+_HAR = '[ً-ْٰـ]*'
+def _ar_re(word):
+    return '(?<![ء-ي])(?:[وفبلك]' + _HAR + ')?' + _HAR.join(word) + _HAR + '(?![ء-ي])'
+_GL_TR = re.compile('|'.join(f'(?P<{t["k"]}>(?<!\\w){t["re"]})' for t in sozluk.TR))
+_GL_AR = [(re.compile(_ar_re(w)), k) for w, k in sozluk.AR]
+
+def gloss_mark(body, lang):
+    """Mark the first occurrence, in each h2 section, of every glossary word (sozluk.py).
+       Returns (html, {key: popup data}). Headings, links, buttons and Qur'an text are left alone."""
+    used_all = {}; parts = re.split(r'(<[^>]+>)', body); skip = 0; seen = set(); out = []
+    for part in parts:
+        if part.startswith('<'):
+            m = re.match(r'<(/?)(h[1-4]|a|button|summary)\b', part)
+            if m: skip += -1 if m.group(1) else 1
+            if re.match(r'<h2\b', part): seen = set()
+            out.append(part); continue
+        if skip or not part.strip(): out.append(part); continue
+        segs = re.split(r'(﴿[^﴾]*﴾)', part); res = []
+        for seg in segs:
+            if seg.startswith('﴿'): res.append(seg); continue
+            if lang == 'tr':
+                def rep(m):
+                    k = m.lastgroup
+                    if k in seen: return m.group(0)
+                    seen.add(k); used_all[k] = 1
+                    return f'<button type="button" class="gl" data-k="{k}" aria-expanded="false">{m.group(0)}</button>'
+                res.append(_GL_TR.sub(rep, seg))
+            else:
+                for rx, k in _GL_AR:
+                    if k in seen: continue
+                    m = rx.search(seg)
+                    if m and not re.search(r'<button[^>]*>[^<]*$', seg[:m.start()]):
+                        seen.add(k); used_all[k] = 1
+                        seg = seg[:m.start()] + f'<button type="button" class="gl" data-k="{k}" aria-expanded="false">{m.group(0)}</button>' + seg[m.end():]
+                res.append(seg)
+        out.append(''.join(res))
+    html = ''.join(out)
+    data = {}
+    if lang == 'tr':
+        T = {t['k']: t for t in sozluk.TR}
+        for k in used_all: data[k] = dict(w=T[k]['w'], m=T[k]['m'], **({'src': T[k]['src']} if T[k].get('src') else {}))
+    else:
+        for k in used_all: g = GLOSS[k]; data[k] = dict(w=g['w'], m=g['ar'], src=g['src'])
+    return html, data
+
 def page_text(lang, L):
     s = S[lang]; P = lesson_paths(lang, L); n = L['n']; depth = 1 if lang == 'ar' else 2
     body, toc = lesson_doc(lang, L)
+    body, gdata = gloss_mark(body, lang)
+    gl = (f'<p class="hint">{E(s["glHint"])}</p>' if gdata else '')
+    gjs = (f'<script type="application/json" id="glData">' + json.dumps(gdata, ensure_ascii=False).replace('</', '<\\/') + '</script>' + SHARH_JS) if gdata else ''
     tocl = ''.join(f'<li><a href="#{i}">{E(t)}</a></li>' for i, t in toc)
-    return head(lang, f'{L[lang]} · {s["tText"][0]}', depth, L['descAr'] if lang == 'ar' else L['descTr'], image=share_img(lang, L)) + bar(lang, depth, P['other']('text.html')) + f'<main id="main" data-lesson="{n}" data-page="text">\n' + phead(lang, L, L[lang], s['textSub'], s['tText'][0]) + f'''
+    return head(lang, f'{L[lang]} · {s["tText"][0]}', depth, L['descAr'] if lang == 'ar' else L['descTr'], extra=('\n' + GL_CSS) if gdata else '', image=share_img(lang, L)) + bar(lang, depth, P['other']('text.html')) + f'<main id="main" data-lesson="{n}" data-page="text">\n' + phead(lang, L, L[lang], s['textSub'], s['tText'][0]) + f'''
 <section class="band"><div class="wrap"><div class="doc">
-  <article class="prose">{fs_ctl(lang)}{body}
+  <article class="prose">{fs_ctl(lang)}{gl}{body}
     <div class="endcta"><p>{E(s['textEnd'])}</p><div style="display:flex;gap:8px;flex-wrap:wrap">{done_btn(lang, n, 'text')}<a class="btn" href="qa.html">{E(s['tQA'][0])}</a><a class="btn ghost" href="quiz.html">{E(s['tQuiz'][0])}</a></div></div>
   </article>
   <aside class="toc"><details open><summary>{E(s['toc'])} <span aria-hidden="true">▾</span></summary><ol>{tocl}</ol></details></aside>
 </div></div></section>
+{gjs}
 </main>
 ''' + footer(lang, depth) + '''<script>if (innerWidth < 960) document.querySelector('.toc details').open = false;</script>''' + f'<script src="{P["assets"]}site.js"></script>\n</body>\n</html>\n'
 
@@ -986,11 +1039,13 @@ if(cur===b){close();return}close();var g=G[b.dataset.k];if(!g)return;cur=b;b.cla
 pop=document.createElement('div');pop.className='glpop';pop.setAttribute('role','status');
 var t=document.createElement('b');t.textContent=g.w;pop.appendChild(t);pop.appendChild(document.createTextNode(g.m));
 if(g.ar){var a=document.createElement('span');a.className='ar2';a.lang='ar';a.textContent=g.ar;pop.appendChild(a)}
-var sm=document.createElement('small');sm.textContent=g.src;pop.appendChild(sm);document.body.appendChild(pop);
+if(g.src){var sm=document.createElement('small');sm.textContent=g.src;pop.appendChild(sm)}document.body.appendChild(pop);
 var r=b.getBoundingClientRect(),w=Math.min(320,innerWidth-24);pop.style.maxWidth=w+'px';
 var x=r.left+r.width/2-pop.offsetWidth/2+scrollX;x=Math.max(12+scrollX,Math.min(x,innerWidth-pop.offsetWidth-12+scrollX));
 pop.style.left=x+'px';pop.style.top=(r.bottom+8+scrollY)+'px'});
 addEventListener('keydown',function(e){if(e.key==='Escape')close()});addEventListener('resize',close)})();</script>"""
+
+GL_CSS = '<style>' + '\n'.join(l for l in SHARH_CSS.splitlines() if l.startswith(('.gl', '.glpop'))) + '</style>'
 
 def sharh_inline(t):
     return re.sub(r'\[\[([^|\]]+)\|(\w+)\]\]', lambda m: f'<button type="button" class="gl" data-k="{m.group(2)}" aria-expanded="false">{m.group(1)}</button>', t)

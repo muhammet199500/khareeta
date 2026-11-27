@@ -46,11 +46,11 @@ GLOSS = {
    src='حاشية الكتاب (١/ ٣)'),
  'ushnan': dict(w='الأُشْنان',
    ar='معرَّب، وهو حَمْض تُغسل به الأيدي، ويقال له بالعربية: الحُرْض، ويقال بكسر الألف أيضًا.',
-   tr='Arapçaya başka dilden geçmiş bir kelimedir: elleri yıkamada kullanılan bir bitki (çöven otu); Arapçada «hurd» da denir.',
+   tr='Arapçaya başka dilden geçmiş bir kelimedir: çorak ve tuzlu yerlerde yetişen otlardan (hamd) bir bitki; elleri yıkamada kullanılır. Arapçada «hurd» da denir.',
    src='حاشية الكتاب (١/ ٣)'),
  'sidr': dict(w='السِّدْر',
    ar='شجر النَّبْق، واحدته سِدْرة.',
-   tr='Arap kirazı (nebk) ağacı; tekili sidre. Yaprakları dövülüp yıkamada kullanılır.',
+   tr='Nebk ağacı (bir tür hünnap ağacı); tekili sidre.',
    src='ابن سيده، «المحكم والمحيط الأعظم» (٨/ ٤٤٥)'),
  'tawr': dict(w='الأَتْوار',
    ar='جمع تَوْر، وهو: إناء يُشرب فيه.',
@@ -93,7 +93,7 @@ def P(ar, tr, pg, fn=None, note=None):
 
 SHARH = {
  101: [
-  dict(ar='التمهيد: معنى الفقه، ومصادره، وموضوعه، وثمرته، وفضله', tr='Giriş: Fıkhın anlamı, kaynakları, konusu, meyvesi ve fazileti', paras=[
+  dict(ar='التمهيد: معنى الفقه، ومصادره، وموضوعه، وثمرته، وفضله', tr='Giriş: Fıkhın anlamı, kaynakları, konusu, faydası ve fazileti', paras=[
    P('الفقه في اللغة: الفهم. ومنه قول الله تعالى عن قوم شعيب: ﴿... مَا [[نَفْقَهُ|fiqh]] كَثِيرًا مِمَّا تَقُولُ ...﴾ [هود: ٩١]. وقوله عز وجل: ﴿... وَلَكِنْ لَا تَفْقَهُونَ تَسْبِيحَهُمْ ...﴾ [الإسراء: ٤٤].',
      'Fıkıh sözlükte «anlamak»tır. Allah Teâlâ’nın Şuayb’ın kavmi hakkındaki şu sözü bundandır: «…Söylediklerinin çoğunu anlamıyoruz…» [Hûd, 91]. Yine Allah’ın şu sözü: «…fakat siz onların tesbihlerini anlamazsınız…» [İsrâ, 44].',
      'المقدمة/ ١٨'),
@@ -110,7 +110,7 @@ SHARH = {
      'Bu hükümler şöyle sınırlandırılabilir: 1- Ailenin kuruluşundan sonuna kadar aile hükümleri: evlilik, boşanma, nesep, nafaka, miras ve benzerleri. 2- Malî (medenî) muamele hükümleri: fertlerin alım-satım, kira, ortaklık gibi muamele ve değişimleriyle ilgili hükümler. 3- Cezaî hükümler: mükelleften sadır olan suç ve tecavüzler ile bunlara karşılık hak ettiği cezalar. 4- Yargılama ve kaza hükümleri: davalar, iddialar ve ispat yolları gibi. 5- Devletler arası hükümler: İslam devletinin barışta ve savaşta diğer devletlerle ilişkisini ve gayrimüslim vatandaşların devletle ilişkisini düzenleyen hükümler; cihad ve antlaşmaları da kapsar.',
      'المقدمة/ ١٩'),
    P('ثمرة علم الفقه: معرفة الفقه، والعمل به، تثمر صلاح المكلف، وصحة عبادته، واستقامة سلوكه. وإذا صلح العبد صلح المجتمع، وصارت النتيجة في الدنيا السعادة والعيش الرغد، وفي الأخرى رضوان الله وجنته.',
-     'Fıkıh ilminin meyvesi: Fıkhı bilmek ve onunla amel etmek; mükellefin salâhını, ibadetinin sıhhatini ve davranışının doğruluğunu meyve verir. Kul salih olunca toplum da salih olur; sonuç dünyada mutluluk ve bolluk içinde yaşamak, ahirette ise Allah’ın rızası ve cennetidir.',
+     'Fıkıh ilminin faydası: Fıkhı bilmek ve onunla amel etmek; kişinin düzelmesini, ibadetinin sahih olmasını ve davranışının doğru olmasını sağlar. Kul düzelince toplum da düzelir; sonuç dünyada mutluluk ve bolluk içinde yaşamak, ahirette ise Allah’ın rızası ve cennetidir.',
      'المقدمة/ ١٩'),
    P('فضل الفقه في الدين والحث على طلبه وتحصيله: إن التفقه في الدين من أفضل الأعمال، ومن أطيب الخصال. وقد دلت النصوص من الكتاب والسنة على فضله، والحث عليه. منها: قوله تعالى: ﴿وَمَا كَانَ الْمُؤْمِنُونَ لِيَنْفِرُوا كَافَّةً فَلَوْلَا نَفَرَ مِنْ كُلِّ فِرْقَةٍ مِنْهُمْ طَائِفَةٌ لِيَتَفَقَّهُوا فِي الدِّينِ وَلِيُنْذِرُوا قَوْمَهُمْ إِذَا رَجَعُوا إِلَيْهِمْ لَعَلَّهُمْ يَحْذَرُونَ﴾ [التوبة: ١٢٢]. وقوله ﷺ: «من يرد الله به خيرًا يفقهه في الدين» (١).',
      'Dinde fıkhın fazileti ve onu öğrenmeye teşvik: Dinde derin anlayış sahibi olmak amellerin en faziletlilerinden ve hasletlerin en güzellerindendir. Kitap ve Sünnet’in nasları onun faziletine ve ona teşvike delalet eder. Bunlardan biri Allah Teâlâ’nın şu sözüdür: «Müminlerin hepsinin birden savaşa çıkması doğru değildir. Her topluluktan bir grubun dinde derin bilgi edinmek ve döndüklerinde kavimlerini uyarmak için ayrılması gerekmez miydi? Umulur ki sakınırlar.» [Tevbe, 122]. Ve Nebî’nin (sallallâhu aleyhi ve sellem) şu sözü: «Allah kime hayır dilerse onu dinde derin anlayış sahibi kılar.» (1)',
@@ -124,16 +124,16 @@ SHARH = {
      '1- Taharetin önemi ve kısımları: Taharet namazın anahtarı ve şartlarının en kuvvetlisidir; şart ise şartlı olandan önce gelmek zorundadır.',
      '١/ ١'),
    P('والطهارة على قسمين: القسم الأول: طهارة معنوية وهي طهارة القلب من الشرك والمعاصي وكل ما [[ران|ran]] عليه، وهي أهم من طهارة البدن، ولا يمكن أن تتحقق طهارة البدن مع وجود نجس الشرك كما قال تعالى: ﴿إِنَّمَا الْمُشْرِكُونَ نَجَسٌ﴾ [التوبة: ٢٨]. القسم الثاني: الطهارة الحسية، وسيأتي تفصيل القول فيها في الأسطر التالية.',
-     'Taharet iki kısımdır: Birinci kısım manevî taharettir: kalbin şirkten, günahlardan ve onu kaplayan her şeyden temizlenmesidir. Bu, beden temizliğinden daha önemlidir; şirk necaseti varken beden temizliği gerçekleşemez. Allah Teâlâ şöyle buyurur: «Müşrikler ancak bir necasettir.» [Tevbe, 28]. İkinci kısım hissî taharettir; ayrıntısı ileriki satırlarda gelecektir.',
+     'Taharet iki kısımdır: Birinci kısım manevî taharettir: kalbin şirkten, günahlardan ve onu kirleten her şeyden temizlenmesidir. Bu, beden temizliğinden daha önemlidir; şirk necaseti varken beden temizliği gerçekleşemez. Allah Teâlâ şöyle buyurur: «Müşrikler ancak bir necasettir.» [Tevbe, 28]. İkinci kısım maddî taharettir; ayrıntısı ileriki satırlarda gelecektir.',
      '١/ ١'),
    P('٢- تعريفها: وهي في اللغة: النظافة، والنزاهة من الأقذار. وفي الاصطلاح: رفع [[الحَدَث|hadath]]، وزوال [[الخَبَث|khabath]] (١).',
-     '2- Tanımı: Sözlükte temizlik ve pisliklerden uzak olmaktır. Istılahta ise hadesi kaldırmak ve habesi (necaseti) gidermektir. (1)',
+     '2- Tanımı: Sözlükte temizlik ve pisliklerden uzak olmaktır. Istılahta ise hadesi kaldırmak ve necaseti gidermektir. (1)',
      '١/ ١', fn=['(١) الحَدَثُ: هو وصف قائم بالبدن يمنع من الصلاة ونحوها مما يشترط له الطهارة. وهو نوعان: حدث أصغر؛ وهو الذي يقوم بأعضاء الوضوء كالخارج من السبيلين من بول وغائط، ويرتفع هذا بالوضوء، وحدث أكبر؛ وهو الذي يقوم بالبدن كله، كالجنابة، وهذا يرتفع بالغسل. وعلى هذا فطهارة الحدث: كبرى؛ وهي الغسل، وصغرى، وهي الوضوء، وبدل منهما عند تعذرهما؛ وهو التيمم. انظر: الشرح الممتع (١/ ١٩)، الفقه الإسلامي وأدلته (١/ ٢٣٨). والخبث: النجاسة، وسيأتي بيانها.']),
    P('والمراد بارتفاع الحدث: إزالة الوصف المانع من الصلاة باستعمال الماء في جميع البدن، إن كان الحدث أكبر، وإن كان حدثًا أصغر يكفي مروره على أعضاء الوضوء بنية، وإن فقد الماء أو عجز عنه استعمل ما ينوب عنه، وهو التراب، على الصفة المأمور بها شرعًا. وسيأتي ذكرها إن شاء الله في باب التيمم.',
      'Hadesin kalkmasından maksat, namaza engel olan vasfı gidermektir: hades büyükse bütün bedende su kullanarak; küçükse suyun niyetle abdest organlarından geçmesi yeterlidir. Su bulunmaz veya kullanılamazsa onun yerine geçen şey, yani toprak, şer’an emredilen şekilde kullanılır. İnşallah teyemmüm bölümünde zikredilecektir.',
      '١/ ١'),
    P('والمراد بزوال الخبث: أي: زوال النجاسة من البدن والثوب والمكان. فالطهارة الحسية على نوعين: طهارة حدث وتختص بالبدن، وطهارة خبث، وتكون في البدن، والثوب، والمكان. والحدث على نوعين: حدث أصغر، وهو ما يجب به الوضوء، وحدث أكبر، وهو ما يجب به الغسل. والخبث على ثلاثة أنواع: خبث يجب غسله، وخبث يجب [[نضحه|nadh]]، وخبث يجب مسحه.',
-     'Habesin giderilmesinden maksat, necasetin bedenden, elbiseden ve mekândan giderilmesidir. Buna göre hissî taharet iki türlüdür: bedene mahsus olan hades tahareti ve beden, elbise ve mekânda olan habes tahareti. Hades iki türlüdür: abdesti gerektiren küçük hades ve guslü gerektiren büyük hades. Habes ise üç türlüdür: yıkanması gereken, üzerine su serpilmesi gereken ve silinmesi gereken.',
+     'Necasetin giderilmesinden maksat, necasetin bedenden, elbiseden ve mekândan giderilmesidir. Buna göre maddî taharet iki türlüdür: bedene mahsus olan hades tahareti ve beden, elbise ve mekânda olan necasetten taharet. Hades iki türlüdür: abdesti gerektiren küçük hades ve guslü gerektiren büyük hades. Necaset ise üç türlüdür: yıkanması gereken, üzerine su serpilmesi gereken ve silinmesi gereken.',
      '١/ ١–٢'),
   ]),
   dict(ar='المسألة الثانية: الماء الذي تحصل به الطهارة', tr='İkinci mesele: Taharetin gerçekleştiği su', paras=[
@@ -149,7 +149,7 @@ SHARH = {
   ]),
   dict(ar='المسألة الثالثة: الماء إذا خالطته نجاسة', tr='Üçüncü mesele: Necaset karışan su', paras=[
    P('الماء إذا خالطته نجاسة فغيَّرت أحد أوصافه الثلاثة -ريحه، أو طعمه، أو لونه- فهو نجس بالإجماع لا يجوز استعماله، فلا يرفع الحدث، ولا يزيل الخبث -سواء كان كثيرًا أو قليلًا- أما إن خالطته النجاسة ولم تغير أحد أوصافه: فإن كان كثيرًا لم ينجس وتحصل الطهارة به، وأما إن كان قليلًا فينجس، ولا تحصل الطهارة به. وحدُّ الماء الكثير ما بلغ [[قُلَّتين|qulla]] (١) فأكثر، والقليل ما دون ذلك.',
-     'Suya necaset karışır ve üç vasfından birini —kokusunu, tadını veya rengini— değiştirirse icmâ ile necistir; kullanılması caiz değildir: hadesi kaldırmaz, habesi gidermez; ister çok olsun ister az. Necaset karışır da vasıflarından hiçbirini değiştirmezse: su çoksa necis olmaz ve onunla taharet gerçekleşir; azsa necis olur ve onunla taharet gerçekleşmez. Çok suyun sınırı iki kulle (1) ve fazlasıdır; az su ise bundan aşağısıdır.',
+     'Suya necaset karışır ve üç vasfından birini —kokusunu, tadını veya rengini— değiştirirse icmâ ile necistir; kullanılması caiz değildir: hadesi kaldırmaz, necaseti gidermez; ister çok olsun ister az. Necaset karışır da vasıflarından hiçbirini değiştirmezse: su çoksa necis olmaz ve onunla taharet gerçekleşir; azsa necis olur ve onunla taharet gerçekleşmez. Çok suyun sınırı iki kulle (1) ve fazlasıdır; az su ise bundan aşağısıdır.',
      '١/ ٢–٣', fn=['(١) القلة هي الجرة، جمعها قُلل وقلال. وهي تساوي ما يقارب ٩٣.٠٧٥ صاعًا = ١٦٠.٥ لترًا من الماء، والقلتان خمس قرب تقريبًا.']),
    P('والدليل على ذلك حديث أبي سعيد الخدري رضي الله عنه قال: قال رسول الله ﷺ: «إن الماء طهور لا ينجسه شيء» (٢)، وحديث ابن عمر رضي الله عنهما أن رسول الله ﷺ قال: «إذا بلغ الماء قلتين لم يحمل الخبث» (٣).',
      'Bunun delili Ebû Saîd el-Hudrî’nin (radıyallâhu anh) hadisidir: Rasûlullah (sallallâhu aleyhi ve sellem) şöyle buyurdu: «Su temizleyicidir; onu hiçbir şey necis kılmaz.» (2) Ve İbn Ömer’in (radıyallâhu anhümâ) hadisi: Rasûlullah (sallallâhu aleyhi ve sellem) şöyle buyurdu: «Su iki kulleye ulaşınca pisliği taşımaz.» (3)',
