@@ -2,13 +2,14 @@
 الصفحة ١ الخريطة بالأمور المهمة فقط، والصفحة ٢ الخريطة نفسها بمربعات فارغة («اختبر حفظك»).
 المسائل تُكتب يدويًا في src/hifz/<slug>.json (ar و tr)، ولا تُؤخذ من بيانات الخريطة.
 الاستعمال: ابنِ الموقع وشغّل الخادم، ثم:
-  python3 src/tools/gen_hifz.py ar FIQH5 105 f5 [مجلد الإخراج]
+  python3 src/tools/gen_hifz.py ar FIQH5 105 f5 f5a [مجلد الإخراج]
 يحتاج: playwright و segno و pdfunite. انظر guide/hifz-maps.md."""
 import asyncio, sys, json, segno, subprocess, os
 from playwright.async_api import async_playwright
 lang, var, n, slug = sys.argv[1], sys.argv[2], sys.argv[3], sys.argv[4]
 SRC = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..') + '/'
-OUT = (sys.argv[5] if len(sys.argv) > 5 else '.') + '/'
+HZ = sys.argv[5]
+OUT = (sys.argv[6] if len(sys.argv) > 6 else '.') + '/'
 AR = lang == 'ar'
 base = 'http://localhost:8765/' + ('' if AR else 'tr/')
 s = open(SRC + 'maps/' + ('data.js' if AR else 'data_tr.js'), encoding='utf-8').read()
@@ -26,7 +27,8 @@ T = dict(
    how1='Önce dalları numaralarıyla, sonra her dalın meselelerini sayısıyla ezberle.', how2='İlk sayfayı kapat, her meseleyi yerine yaz, sonra ondan kontrol et.',
    jam='Ezberlenecek özet', jamw='Özeti ezberinden yaz', rev='Tekrar et', days=['Bugün', 'Yarın', '3 gün sonra', '1 hafta sonra', '1 ay sonra'],
    scan='Etkileşimli harita ve test', score='Doğru: ____ /'))[lang]
-H = json.load(open(SRC + f'hifz/{slug}.json', encoding='utf-8'))[lang]
+HJ = json.load(open(SRC + f'hifz/{HZ}.json', encoding='utf-8')); H = HJ[lang]
+PART = HJ.get('part', {}).get(lang, '')
 obj['branches'] = H
 total = sum(len(b['children']) for b in obj['branches'])
 HF = "'Reem Kufi','IBM Plex Sans Arabic',sans-serif" if AR else "'EB Garamond',Georgia,serif"
@@ -45,7 +47,7 @@ body,#stage{{background:#F7F3EA!important}} #stage::before,#stage::after{{displa
 #ph .pg{{background:#D9B26A;color:#0F2E2A;border-radius:20px;padding:3px 12px;font-weight:700;font-size:11.5px;margin-inline-start:6px}}
 #ph .lg{{margin-inline-start:auto;display:flex;gap:14px;align-items:center;font-size:10.5px;color:#DCE6E2}}
 #ph .lg span{{display:flex;align-items:center;gap:6px}}
-#ph .sw{{width:20px;height:12px;border-radius:4px;background:#0F2E2A;border:1.5px solid #D9B26A;display:inline-block}}
+#ph .sw{{width:20px;height:12px;border-radius:4px;background:linear-gradient(90deg,#1F6B4F 0 33%,#2B4C7E 33% 66%,#8C2F39 66%);border:1.5px solid #F7F3EA;display:inline-block}}
 #ph .how{{font-size:10px;color:#B9CBC4;max-width:330px;line-height:1.45}}
 .cnt{{position:absolute;z-index:3;background:#D9B26A;color:#0F2E2A;font-family:{UF};font-weight:700;border-radius:50%;display:grid;place-items:center;border:2px solid #F7F3EA}}
 #pf{{position:fixed;bottom:8px;inset-inline:20px;display:flex;gap:10px;z-index:9;font-family:{UF};height:80px}}
@@ -70,7 +72,7 @@ BLANK = '''
 .node.d2.hot .ix{color:#0F2E2A}
 '''
 def header(page):
-    pl = T['p1'] if page == 1 else T['p2']
+    pl = (T['p1'] if page == 1 else T['p2']) + (f' ({PART})' if PART else '')
     how = T['how1'] if page == 1 else T['how2']
     return (f'<div id="ph"><img src="/media/logo.webp"><div><p class="eb">{obj["eb"]}</p><h1>{obj["h1"]}<span class="pg">{num(page)} · {pl}</span></h1></div>'
             f'<div class="lg"><span class="how">{how}</span><span><i class="sw"></i>{T["hot"]}</span>'
@@ -99,7 +101,17 @@ async def render(pg, page, path):
           const c=document.createElement('i'); c.className='cnt'; c.textContent=nm(counts[bi]);
           c.style.cssText+=';width:44px;height:44px;font-size:22px;top:-22px;inset-inline-end:-22px'; e.appendChild(c);}
         else if(e.classList.contains('d2')){li++; if(blank){const x=document.createElement('span');x.className='ix';x.textContent=nm(li);e.appendChild(x);}}});
-      document.getElementById('fitb').click();}""", [counts, D, page == 2])
+      const cols=__COLS__; bi=-1;
+      const tint=c=>c+'1f';
+      nodes.forEach(e=>{ if(e.classList.contains('d1')){bi++; e.style.setProperty('background',cols[bi],'important'); e.dataset.b=bi;}
+        else if(e.classList.contains('d2')){ e.dataset.b=bi; const c=cols[bi]; e.style.setProperty('border-color',c,'important');
+          if(e.classList.contains('hot')){ e.style.setProperty('background', blank?tint(c):c,'important'); e.style.setProperty('color', blank?'transparent':'#fff','important'); const ix=e.querySelector('.ix'); if(ix) ix.style.color=c; }
+          else { e.style.setProperty('color', blank?'transparent':'#1d2826','important'); const ix=e.querySelector('.ix'); if(ix) ix.style.color=c; } } });
+      const pts=nodes.map(e=>({x:parseFloat(e.style.left),y:parseFloat(e.style.top),b:e.dataset.b,d:e.classList.contains('d0')?0:e.classList.contains('d1')?1:2,w:e.offsetWidth}));
+      document.querySelectorAll('#links path').forEach(p=>{const n=p.getAttribute('d').match(/-?[\\d.]+/g).map(Number); const ex=n[n.length-2], ey=n[n.length-1];
+        let best=null,bd=1e9; pts.forEach(q=>{if(q.d===0)return; const dd=Math.min(Math.hypot(q.x-q.w/2-ex,q.y-ey),Math.hypot(q.x+q.w/2-ex,q.y-ey)); if(dd<bd){bd=dd;best=q}});
+        if(best&&best.b!==undefined) p.setAttribute('stroke',cols[+best.b]);});
+      document.getElementById('fitb').click();}""".replace('__COLS__', json.dumps([b.get('color','#0F2E2A') for b in obj['branches']])), [counts, D, page == 2])
     await pg.wait_for_timeout(1400)
     await pg.screenshot(path=path + '.png')
     await pg.pdf(path=path + '.pdf', width='297mm', height='210mm', print_background=True)
@@ -108,8 +120,8 @@ async def main():
         b = await p.chromium.launch(); ctx = await b.new_context(viewport={'width': 1123, 'height': 794}, device_scale_factor=2)
         await ctx.add_init_script(INIT.replace('__H__', json.dumps(H, ensure_ascii=False)).replace('__V__', var))
         for k in (1, 2):
-            pg = await ctx.new_page(); await render(pg, k, OUT + f'_hifz-{slug}-{lang}-{k}'); await pg.close()
+            pg = await ctx.new_page(); await render(pg, k, OUT + f'_hifz-{HZ}-{lang}-{k}'); await pg.close()
         await b.close()
-    subprocess.run(['pdfunite', OUT + f'_hifz-{slug}-{lang}-1.pdf', OUT + f'_hifz-{slug}-{lang}-2.pdf', OUT + f'hifz-{slug}-{lang}.pdf'], check=True)
+    subprocess.run(['pdfunite', OUT + f'_hifz-{HZ}-{lang}-1.pdf', OUT + f'_hifz-{HZ}-{lang}-2.pdf', OUT + f'hifz-{HZ}-{lang}.pdf'], check=True)
     print('ok', total)
 asyncio.run(main())

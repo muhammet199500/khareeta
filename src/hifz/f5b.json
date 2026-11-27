@@ -1,0 +1,216 @@
+{
+ "part": {
+  "ar": "ب",
+  "tr": "B"
+ },
+ "ar": [
+  {
+   "id": "h1",
+   "label": "فروضه الستة",
+   "color": "#1F6B4F",
+   "children": [
+    {
+     "id": "h10",
+     "label": "غسل الوجه"
+    },
+    {
+     "id": "h11",
+     "label": "غسل اليدين إلى المرفقين",
+     "hot": true
+    },
+    {
+     "id": "h12",
+     "label": "مسح الرأس كله"
+    },
+    {
+     "id": "h13",
+     "label": "غسل الرجلين إلى الكعبين"
+    },
+    {
+     "id": "h14",
+     "label": "الترتيب"
+    },
+    {
+     "id": "h15",
+     "label": "الموالاة"
+    }
+   ]
+  },
+  {
+   "id": "h2",
+   "label": "سننه الثمانية",
+   "color": "#9A6A1F",
+   "children": [
+    {
+     "id": "h20",
+     "label": "التسمية"
+    },
+    {
+     "id": "h21",
+     "label": "السواك"
+    },
+    {
+     "id": "h22",
+     "label": "غسل الكفين ثلاثًا"
+    },
+    {
+     "id": "h23",
+     "label": "المبالغة في المضمضة\nوالاستنشاق"
+    },
+    {
+     "id": "h24",
+     "label": "الدلك وتخليل اللحية"
+    },
+    {
+     "id": "h25",
+     "label": "تقديم اليمنى"
+    },
+    {
+     "id": "h26",
+     "label": "تثليث الغسل"
+    },
+    {
+     "id": "h27",
+     "label": "الذكر بعده"
+    }
+   ]
+  },
+  {
+   "id": "h3",
+   "label": "نواقضه الستة",
+   "color": "#8C2F39",
+   "children": [
+    {
+     "id": "h30",
+     "label": "الخارج من السبيلين"
+    },
+    {
+     "id": "h31",
+     "label": "النجاسة من بقية البدن"
+    },
+    {
+     "id": "h32",
+     "label": "زوال العقل"
+    },
+    {
+     "id": "h33",
+     "label": "مسّ الفرج بلا حائل"
+    },
+    {
+     "id": "h34",
+     "label": "أكل لحم الإبل",
+     "hot": true
+    },
+    {
+     "id": "h35",
+     "label": "الردة"
+    }
+   ]
+  }
+ ],
+ "tr": [
+  {
+   "id": "h1",
+   "label": "Altı farzı",
+   "color": "#1F6B4F",
+   "children": [
+    {
+     "id": "h10",
+     "label": "Yüzü yıkamak"
+    },
+    {
+     "id": "h11",
+     "label": "Elleri dirseklerle yıkamak",
+     "hot": true
+    },
+    {
+     "id": "h12",
+     "label": "Başın tamamını meshetmek"
+    },
+    {
+     "id": "h13",
+     "label": "Ayakları topuklarla yıkamak"
+    },
+    {
+     "id": "h14",
+     "label": "Tertip"
+    },
+    {
+     "id": "h15",
+     "label": "Muvâlât"
+    }
+   ]
+  },
+  {
+   "id": "h2",
+   "label": "Sekiz sünneti",
+   "color": "#9A6A1F",
+   "children": [
+    {
+     "id": "h20",
+     "label": "Besmele"
+    },
+    {
+     "id": "h21",
+     "label": "Misvak"
+    },
+    {
+     "id": "h22",
+     "label": "Elleri üç kez yıkamak"
+    },
+    {
+     "id": "h23",
+     "label": "Mazmaza ve istinşakta\nmübalağa"
+    },
+    {
+     "id": "h24",
+     "label": "Ovmak ve sakalı hilâllemek"
+    },
+    {
+     "id": "h25",
+     "label": "Sağdan başlamak"
+    },
+    {
+     "id": "h26",
+     "label": "Üç kez yıkamak"
+    },
+    {
+     "id": "h27",
+     "label": "Sonraki zikir"
+    }
+   ]
+  },
+  {
+   "id": "h3",
+   "label": "Altı bozanı",
+   "color": "#8C2F39",
+   "children": [
+    {
+     "id": "h30",
+     "label": "İki yoldan çıkan"
+    },
+    {
+     "id": "h31",
+     "label": "Bedenden çıkan necaset"
+    },
+    {
+     "id": "h32",
+     "label": "Aklın gitmesi"
+    },
+    {
+     "id": "h33",
+     "label": "Avret yerine engelsiz\ndokunmak"
+    },
+    {
+     "id": "h34",
+     "label": "Deve eti yemek",
+     "hot": true
+    },
+    {
+     "id": "h35",
+     "label": "İslam’dan dönmek"
+    }
+   ]
+  }
+ ]
+}

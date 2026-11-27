@@ -1,0 +1,160 @@
+{
+ "part": {
+  "ar": "أ",
+  "tr": "A"
+ },
+ "ar": [
+  {
+   "id": "h1",
+   "label": "تعريفه",
+   "color": "#4A5D5E",
+   "children": [
+    {
+     "id": "h10",
+     "label": "لغةً: الحسن والنظافة"
+    },
+    {
+     "id": "h11",
+     "label": "شرعًا: استعمال الماء في\nالأعضاء الأربعة تعبّدًا"
+    }
+   ]
+  },
+  {
+   "id": "h2",
+   "label": "شروطه الثمانية",
+   "color": "#2B4C7E",
+   "children": [
+    {
+     "id": "h20",
+     "label": "الإسلام والعقل والتمييز"
+    },
+    {
+     "id": "h21",
+     "label": "النية"
+    },
+    {
+     "id": "h22",
+     "label": "الماء الطهور"
+    },
+    {
+     "id": "h23",
+     "label": "إزالة ما يمنع وصول الماء",
+     "hot": true
+    },
+    {
+     "id": "h24",
+     "label": "الاستنجاء أو الاستجمار"
+    },
+    {
+     "id": "h25",
+     "label": "الموالاة"
+    },
+    {
+     "id": "h26",
+     "label": "الترتيب"
+    },
+    {
+     "id": "h27",
+     "label": "غسل جميع الأعضاء"
+    }
+   ]
+  },
+  {
+   "id": "h3",
+   "label": "ما يجب له",
+   "color": "#5B3F7A",
+   "children": [
+    {
+     "id": "h30",
+     "label": "الصلاة"
+    },
+    {
+     "id": "h31",
+     "label": "الطواف"
+    },
+    {
+     "id": "h32",
+     "label": "مسّ المصحف",
+     "hot": true
+    }
+   ]
+  }
+ ],
+ "tr": [
+  {
+   "id": "h1",
+   "label": "Tanımı",
+   "color": "#4A5D5E",
+   "children": [
+    {
+     "id": "h10",
+     "label": "Sözlükte: güzellik ve temizlik"
+    },
+    {
+     "id": "h11",
+     "label": "Şer’an: dört organda\nibadet için su kullanmak"
+    }
+   ]
+  },
+  {
+   "id": "h2",
+   "label": "Sekiz şartı",
+   "color": "#2B4C7E",
+   "children": [
+    {
+     "id": "h20",
+     "label": "İslam, akıl ve temyiz"
+    },
+    {
+     "id": "h21",
+     "label": "Niyet"
+    },
+    {
+     "id": "h22",
+     "label": "Tahûr su"
+    },
+    {
+     "id": "h23",
+     "label": "Suyu engelleyeni gidermek",
+     "hot": true
+    },
+    {
+     "id": "h24",
+     "label": "İstincâ veya isticmâr"
+    },
+    {
+     "id": "h25",
+     "label": "Muvâlât"
+    },
+    {
+     "id": "h26",
+     "label": "Tertip"
+    },
+    {
+     "id": "h27",
+     "label": "Bütün organları yıkamak"
+    }
+   ]
+  },
+  {
+   "id": "h3",
+   "label": "Farz olduğu durumlar",
+   "color": "#5B3F7A",
+   "children": [
+    {
+     "id": "h30",
+     "label": "Namaz"
+    },
+    {
+     "id": "h31",
+     "label": "Tavaf"
+    },
+    {
+     "id": "h32",
+     "label": "Mushafa dokunmak",
+     "hot": true
+    }
+   ]
+  }
+ ]
+}
