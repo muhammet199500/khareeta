@@ -196,3 +196,254 @@ SHARH = {
   ]),
  ],
 }
+
+
+# ------------------------------------------------------------------ الدرس الثاني: الآنية (الباب الثاني، ١/ ٦–٨)
+# sharh: شرحنا للفقرة، على طريقة الشرح المعتمد في المجلس (سؤال، ثم معنى الكلمات، ثم العلّة والمثال)، بعبارتنا،
+# ويليه «شرح الحواشي» إن كان للفقرة حواشٍ.
+
+GLOSS.update({
+ 'sihaf': dict(w='صِحافها',
+   ar='الصَّحْفة: إناء كالقَصْعة المبسوطة ونحوها، وجمعها صِحاف.',
+   tr='Sahfe: yayvan çanak gibi bir kap; çoğulu sıhâf.',
+   src='ابن الأثير، «النهاية في غريب الحديث والأثر» (٣/ ١٣)'),
+ 'jarjar': dict(w='يُجَرْجِرُ',
+   ar='أي: يُحدِر فيها نار جهنم؛ فجعل الشرب والجَرْع جَرْجَرةً، وهي صوت وقوع الماء في الجوف.',
+   tr='Yani karnına cehennem ateşini indirir. İçmeyi ve yudumlamayı «cercere» diye anlatmıştır; bu, suyun karına düşerken çıkardığı sestir.',
+   src='ابن الأثير، «النهاية في غريب الحديث والأثر» (١/ ٢٥٥)'),
+ 'mumawwah': dict(w='المُمَوَّه',
+   ar='المطليّ.',
+   tr='Kaplanmış, yaldızlanmış.',
+   src='حاشية الكتاب (١/ ٦)'),
+ 'tadbib': dict(w='المُضَبَّب',
+   ar='التضبيب: هو وصل الإناء المكسور بالحديد ونحوه.',
+   tr='Tazbîb: kırılan kabı demir ve benzeri bir şeyle birleştirmek (yamamak).',
+   src='حاشية الكتاب (١/ ٦)'),
+ 'shab': dict(w='الشَّعْب',
+   ar='أي: مكان الصَّدْع والشَّقّ الذي فيه.',
+   tr='Yani kaptaki çatlağın ve yarığın yeri.',
+   src='ابن الأثير، «النهاية في غريب الحديث والأثر» (٢/ ٤٧٧)'),
+ 'mazada': dict(w='مَزَادة',
+   ar='قربة كبيرة يزاد فيها جلد من غيرها.',
+   tr='Başka bir deri eklenerek büyütülmüş büyük su tulumu.',
+   src='حاشية الكتاب (١/ ٧)'),
+ 'ihala': dict(w='إهالَة سَنِخَة',
+   ar='الإهالة: الشحم والزيت. والسنخة: المتغيرة الريح.',
+   tr='İhâle: iç yağı ve sıvı yağ. Sanıha: kokusu değişmiş.',
+   src='حاشية الكتاب (١/ ٧)'),
+ 'ihab': dict(w='إهاب',
+   ar='الإهاب: الجلد قبل أن يدبغ.',
+   tr='İhâb: tabaklanmadan önceki deri.',
+   src='حاشية الكتاب (١/ ٧)'),
+ 'dhakat': dict(w='الذكاة',
+   ar='التذكية: الذبح والنحر؛ يقال: ذكّيت الشاة تذكية، والاسم: الذكاة، والمذبوح: ذكيّ.',
+   tr='Tezkiye: boğazlamak ve (deveyi) nahretmek, yani şer’î kesim. «Zekât» bunun ismidir; kesilen hayvana «zekî» denir.',
+   src='ابن الأثير، «النهاية في غريب الحديث والأثر» (٢/ ١٦٤)'),
+ 'qaraz': dict(w='القَرَظ',
+   ar='ورق السَّلَم، يُدبغ به.',
+   tr='Selem ağacının yaprağı; deri onunla tabaklanır.',
+   src='ابن الأثير، «النهاية في غريب الحديث والأثر» (٤/ ٤٣)'),
+})
+
+GLOSS_TR_SRC.update({
+ 'حاشية الكتاب (١/ ٦)': 'Kitabın dipnotu (1/ 6)',
+ 'حاشية الكتاب (١/ ٧)': 'Kitabın dipnotu (1/ 7)',
+ 'ابن الأثير، «النهاية في غريب الحديث والأثر» (٣/ ١٣)': 'İbnü’l-Esîr, en-Nihâye fî Garîbi’l-Hadîs (3/ 13)',
+ 'ابن الأثير، «النهاية في غريب الحديث والأثر» (١/ ٢٥٥)': 'İbnü’l-Esîr, en-Nihâye fî Garîbi’l-Hadîs (1/ 255)',
+ 'ابن الأثير، «النهاية في غريب الحديث والأثر» (٢/ ٤٧٧)': 'İbnü’l-Esîr, en-Nihâye fî Garîbi’l-Hadîs (2/ 477)',
+ 'ابن الأثير، «النهاية في غريب الحديث والأثر» (٢/ ١٦٤)': 'İbnü’l-Esîr, en-Nihâye fî Garîbi’l-Hadîs (2/ 164)',
+ 'ابن الأثير، «النهاية في غريب الحديث والأثر» (٤/ ٤٣)': 'İbnü’l-Esîr, en-Nihâye fî Garîbi’l-Hadîs (4/ 43)',
+})
+
+def PS(ar, tr, pg, sh_ar, sh_tr, fn=None, note=None):
+    p = P(ar, tr, pg, fn=fn, note=note)
+    p['sharh'] = {'ar': sh_ar, 'tr': sh_tr}
+    return p
+
+SHARH[102] = [
+ dict(ar='الباب الثاني: في الآنية', tr='İkinci bölüm: Kaplar', paras=[
+  PS('الآنية: هي الأوعية التي يحفظ فيها الماء وغيره، سواء كانت من الحديد أو من غيره. والأصل فيها الإباحة؛ لقوله تعالى: ﴿هُوَ الَّذِي خَلَقَ لَكُمْ مَا فِي الْأَرْضِ جَمِيعًا﴾ [البقرة: ٢٩].',
+     'Kaplar: İçinde su ve başka şeylerin saklandığı kaplardır; demirden olsun veya başka bir maddeden. Kaplarda asıl olan mubahlıktır. Çünkü Allah Teâlâ şöyle buyurur: «Yeryüzünde ne varsa hepsini sizin için yaratan O’dur.» [Bakara, 29]',
+     '١/ ٦',
+     'لماذا يأتي باب الآنية بعد باب المياه؟ لأن الماء لا يُحفظ ولا يُحمل إلا في إناء، فبعد أن عرفنا الماء الذي نتطهّر به، نعرف الوعاء الذي نحفظه فيه ونتوضأ منه.\n\n'
+     '**الآنية** جمع إناء: الكأس، والقدر، والإبريق، والقربة، والطبق، وكل ما يُحفظ فيه شيء. ولا فرق بين أن يكون من حديد أو نحاس أو زجاج أو خشب أو غيرها.\n\n'
+     '**والأصل فيها الإباحة:** أي أن الإناء حلال حتى يأتي دليل يمنع منه. ووجه الاستدلال بالآية أن الله ذكر خلق ما في الأرض لنا في مقام الامتنان، ولا يمتنّ الله على عباده بشيء محرّم عليهم.',
+     'Kaplar bölümü neden sulardan sonra gelir? Çünkü su ancak bir kapta saklanır ve taşınır. Temizlendiğimiz suyu öğrendikten sonra, onu sakladığımız ve ondan abdest aldığımız kabı öğreniriz.\n\n'
+     '**Âniye** (kaplar), «inâ»nın çoğuludur: bardak, tencere, ibrik, kırba, tabak ve içinde bir şey saklanan her şey. Demirden, bakırdan, camdan, tahtadan veya başka bir maddeden olması fark etmez.\n\n'
+     '**Asıl olan mubahlıktır:** Kap, onu yasaklayan bir delil gelinceye kadar helâldir. Âyetten delil yönü şudur: Allah, yeryüzündekileri bizim için yarattığını bir nimet olarak hatırlatır; Allah kullarına haram kıldığı bir şeyi nimet olarak saymaz.'),
+ ]),
+ dict(ar='المسألة الأولى: استعمال آنية الذهب والفضة وغيرهما في الطهارة', tr='Birinci mesele: Altın, gümüş ve diğer kapların taharette kullanılması', paras=[
+  PS('يجوز استعمال جميع الأواني في الأكل والشرب وسائر الاستعمال، إذا كانت طاهرة مباحة، ولو كانت ثمينة، لبقائها على الأصل وهو الإباحة،',
+     'Temiz ve mubah olduğu sürece bütün kapların yemede, içmede ve diğer bütün kullanımlarda kullanılması caizdir; değerli olsalar bile. Çünkü asıl hâl olan mubahlık üzere kalırlar.',
+     '١/ ٦',
+     'السؤال الذي تجيب عنه المسألة: **هل يجوز أن يتوضأ الإنسان من إناء ذهب أو فضة أو غيرهما؟**\n\n'
+     'بدأ الكتاب بالقاعدة العامة قبل الاستثناء: كل إناء يجوز استعماله بشرطين: أن يكون **طاهرًا** (فلا يكون نجسًا كجلد ميتة لم يُدبغ)، وأن يكون **مباحًا** (فلا يكون مغصوبًا ونحوه). ولا يمنع منه أنه **ثمين**: فالإناء من الكريستال أو الحجر الكريم يُستعمل، لأن الغلاء وحده ليس دليلًا على التحريم.',
+     'Meselenin cevap verdiği soru: **İnsan altın, gümüş veya başka bir kaptan abdest alabilir mi?**\n\n'
+     'Kitap istisnadan önce genel kaideyle başlar: Her kap iki şartla kullanılabilir: **temiz** olması (tabaklanmamış ölü hayvan derisi gibi necis olmaması) ve **mubah** olması (gasp edilmiş vb. olmaması). **Değerli** olması ise engel değildir: Kristal veya kıymetli taştan bir kap kullanılır; çünkü pahalılık tek başına haramlığa delil değildir.'),
+  PS('ما عدا آنية الذهب والفضة، فإنه يحرم الأكل والشرب فيهما خاصة، دون سائر الاستعمال؛ لقوله ﷺ: (لا تشربوا في آنية الذهب والفضة ولا تأكلوا في [[صحافها|sihaf]] فإنها لهم في الدنيا ولكم في الآخرة) (١)، وقوله ﷺ: (الذي يشرب في آنية الفضة إنما [[يجرجر|jarjar]] في بطنه نار جهنم) (٢)',
+     'Altın ve gümüş kaplar bunun dışındadır: Onlarda yalnızca yemek ve içmek haramdır, diğer kullanımlar haram değildir. Çünkü Nebî (sallallâhu aleyhi ve sellem) şöyle buyurmuştur: «Altın ve gümüş kaplarda içmeyin, tabaklarında yemeyin; çünkü bunlar dünyada onlar içindir, ahirette ise sizin içindir.» (1) Yine şöyle buyurmuştur: «Gümüş kapta içen kimse, karnına ancak cehennem ateşini gürüldeterek indirir.» (2)',
+     '١/ ٦',
+     'هذا هو **الاستثناء** من القاعدة، وهو محدود بأمرين: **المعدن** (الذهب والفضة)، و**الفعل** (الأكل والشرب).\n\n'
+     'وفي الحديث الأول **علّة** النهي: «فَإِنَّهَا لَهُمْ فِي الدُّنْيَا»، أي للكفار الذين يتنعّمون بها في دنياهم، «وَلَكُمْ فِي الْآخِرَةِ»، فهي من نعيم الجنة المدّخر للمؤمنين. وفي الحديث الثاني **وعيد** شديد: من شرب في آنية الفضة فكأنما يصبّ في بطنه نار جهنم. وتحريم الأكل والشرب فيهما محلّ إجماع، نقله ابن عبد البر في «الاستذكار» (٨/ ٣٥٠).\n\n'
+     '**شرح الحواشي:** (١) الحديث في الصحيحين من حديث حذيفة رضي الله عنه. (٢) والثاني فيهما من حديث أم سلمة رضي الله عنها.',
+     'Bu, kaidenin **istisnasıdır** ve iki şeyle sınırlıdır: **maden** (altın ve gümüş) ve **fiil** (yemek ve içmek).\n\n'
+     'Birinci hadiste yasağın **gerekçesi** vardır: «Bunlar dünyada onlar içindir», yani dünyada bunlarla nimetlenen kâfirler içindir; «ahirette ise sizin içindir», yani müminler için saklanmış cennet nimetlerindendir. İkinci hadiste ağır bir **tehdit** vardır: Gümüş kapta içen, karnına cehennem ateşi döker gibidir. Bu ikisinde yemenin ve içmenin haram olduğunda icmâ vardır; İbn Abdilber bunu el-İstizkâr’da (8/ 350) nakletmiştir.\n\n'
+     '**Dipnotların şerhi:** (1) Hadis Buhârî ve Müslim’de Huzeyfe’den (radıyallâhu anh) rivayet edilmiştir. (2) İkincisi yine ikisinde Ümmü Seleme’den (radıyallâhu anhâ) rivayet edilmiştir.',
+     fn=['(١) رواه البخاري برقم (٥٤٢٦)، ومسلم برقم (٢٠٦٧).', '(٢) رواه البخاري برقم (٥٦٣٤)، ومسلم برقم (٢٠٦٥).']),
+  PS('فهذا نصٌ على تحريم الأكل والشرب دون سائر الاستعمال، فدل على جواز استعمالها في الطهارة.',
+     'Bu, diğer kullanımları değil, yemeyi ve içmeyi haram kılan bir nastır. Bu da onların taharette kullanılmasının caiz olduğunu gösterir.',
+     '١/ ٦',
+     'هنا **وجه الدلالة**: النبي ﷺ ذكر الأكل والشرب بعينهما، ولم يقل: «لا تستعملوا». فما سواهما يبقى على الأصل الذي تقرّر في أول الباب، وهو الإباحة. والوضوء والغسل ليسا أكلًا ولا شربًا، **فيجوز أن يتوضأ المسلم من إبريق فضة**.\n\n'
+     'وفي هذا درس في الفقه: **نقف عند حدود النص**، فلا نوسّع التحريم إلى ما لم يذكره، ولا نضيّقه عمّا ذكره.',
+     'İşte **delil yönü**: Nebî (sallallâhu aleyhi ve sellem) yemeyi ve içmeyi açıkça zikretmiş, «kullanmayın» dememiştir. Bunların dışındaki kullanımlar, bölümün başında belirlenen asıl üzere, yani mubahlık üzere kalır. Abdest ve gusül ne yemektir ne içmektir; **dolayısıyla Müslüman gümüş bir ibrikten abdest alabilir.**\n\n'
+     'Burada bir fıkıh dersi vardır: **Nassın sınırında dururuz**; haramlığı nassın zikretmediğine genişletmeyiz, zikrettiğinden de daraltmayız.'),
+  PS('والنهي عام يتناول الإناء الخالص، أو [[المُمَوَّه|mumawwah]] (٣) بالذهب أو الفضة، أو الذي فيه شيء من الذهب والفضة.',
+     'Yasak geneldir: saf kabı, altın veya gümüşle kaplanmış (3) kabı ve içinde biraz altın veya gümüş bulunan kabı kapsar.',
+     '١/ ٦',
+     'ما الذي يدخل في النهي؟ ثلاثة أنواع:\n\n'
+     '1. **الخالص:** الإناء المصنوع كلّه من ذهب أو فضة.\n'
+     '2. **المموَّه:** إناء من معدن آخر طُلي بالذهب أو الفضة، ككأس طُليت حافّته بماء الذهب.\n'
+     '3. **ما فيه شيء منهما:** إناء دخل فيه شيء من الذهب أو الفضة.\n\n'
+     'فاختار الكتاب أن النهي **عام** في هذه الأنواع كلها، لأنها كلها يصدق عليها أنها آنية ذهب أو فضة. ويُستثنى من الثالث ما تأتي في المسألة التالية: الضبّة اليسيرة من الفضة.\n\n'
+     '**شرح الحواشي:** (٣) المموَّه هو المطليّ؛ أي أن الطلاء وحده كافٍ لدخوله في النهي، ولو كان أصل الإناء من غير الذهب والفضة.',
+     'Yasağa hangi kaplar girer? Üç çeşit:\n\n'
+     '1. **Saf olan:** Tamamı altından veya gümüşten yapılmış kap.\n'
+     '2. **Kaplanmış olan:** Başka bir madenden yapılıp altın veya gümüşle kaplanmış kap; kenarı altın yaldızla kaplanmış bir bardak gibi.\n'
+     '3. **İçinde biraz bulunan:** İçine biraz altın veya gümüş girmiş kap.\n\n'
+     'Kitap, yasağın bu çeşitlerin hepsinde **genel** olduğunu tercih etmiştir; çünkü hepsine altın veya gümüş kap denir. Üçüncüsünden, bir sonraki meselede gelecek olan az gümüş yama müstesnadır.\n\n'
+     '**Dipnotların şerhi:** (3) Mumeveh, kaplanmış demektir; yani kabın aslı altın ve gümüşten olmasa bile, kaplama tek başına onu yasağa sokmaya yeter.',
+     fn=['(٣) المُمَوَّه: المطليّ.']),
+ ]),
+ dict(ar='المسألة الثانية: حكم استعمال الإناء المُضَبَّب بالذهب والفضة', tr='İkinci mesele: Altın ve gümüşle yamanmış kabı kullanmanın hükmü', paras=[
+  PS('إن كانت [[الضبة|tadbib]] (٤) من الذهب حرم استعمال الإناء مطلقاً؛ لدخوله تحت عموم النص،',
+     'Yama (4) altındansa kabın kullanılması her durumda haramdır; çünkü nassın genel hükmüne girer.',
+     '١/ ٦',
+     'صورة المسألة: إناء من خشب أو نحاس أو غيرهما **انكسر**، فوُصل موضع الكسر ولُحِم بقطعة من معدن. هذه القطعة تسمّى **الضبّة**. فإن كانت من حديد أو نحاس فلا إشكال. **فإن كانت من ذهب أو فضة، فما الحكم؟**\n\n'
+     '**الذهب:** يحرم استعمال الإناء **مطلقًا**، قليلًا كان الذهب أو كثيرًا؛ لأن الإناء صار مما «فيه شيء من الذهب»، فدخل في عموم النهي الذي تقدّم.\n\n'
+     '**شرح الحواشي:** (٤) التضبيب هو الوصل: يكون الإناء مكسورًا فيُوصل بالحديد ونحوه؛ فالكلام هنا في **إصلاح** الإناء، لا في زخرفته.',
+     'Meselenin sureti: Tahtadan, bakırdan veya başka bir şeyden yapılmış bir kap **kırılmış**, kırık yeri bir maden parçasıyla birleştirilip kaynatılmıştır. Bu parçaya **dabbe (yama)** denir. Demirden veya bakırdan olursa sorun yoktur. **Altından veya gümüşten olursa hüküm nedir?**\n\n'
+     '**Altın:** Altın az olsun çok olsun, kabın kullanılması **her durumda** haramdır; çünkü kap «içinde biraz altın bulunan» kaplardan olmuş ve önceki genel yasağa girmiştir.\n\n'
+     '**Dipnotların şerhi:** (4) Tazbîb birleştirmektir: Kap kırık olur ve demir benzeri bir şeyle birleştirilir. Burada söz konusu olan kabın **onarılmasıdır**, süslenmesi değil.',
+     fn=['(٤) التضبيب: هو وصل الإناء المكسور بالحديد ونحوه.']),
+  PS('أما إن كانت الضبة من الفضة وهي يسيرة فإنه يجوز استعمال الإناء؛ لحديث أنس ﵁ قال: (انكسر قدح رسول الله ﷺ فاتخذ مكان [[الشعْب|shab]] سلسلة من فضة) (٥).',
+     'Yama gümüşten ve az ise kabın kullanılması caizdir. Çünkü Enes (radıyallâhu anh) şöyle demiştir: «Rasûlullah’ın (sallallâhu aleyhi ve sellem) kadehi kırıldı; çatlağın yerine gümüşten bir zincir yaptı.» (5)',
+     '١/ ٦',
+     '**الفضة:** يجوز استعمال الإناء بشرط أن تكون الفضة **يسيرة**. والدليل **فعل النبي ﷺ**: قدحه انشقّ، فرُبط موضع الشقّ بسلسلة صغيرة من فضة، وبقي يُستعمل.\n\n'
+     'فلماذا فرّقنا بين الذهب والفضة؟ لأن الرخصة جاءت في الفضة اليسيرة وحدها، فبقي الذهب على عموم التحريم. وإن كانت الفضة **كثيرة** لم تدخل في الرخصة.\n\n'
+     '**مثال:** قدح خشبي انشقّ فرُبط بشريط صغير من فضة: يُشرب فيه. ولو رُبط بشريط من ذهب: لا يُستعمل.\n\n'
+     '**شرح الحواشي:** (٥) الحديث في صحيح البخاري، في الباب الذي جمع فيه ما ذُكر من درع النبي ﷺ وعصاه وسيفه وقدحه.',
+     '**Gümüş:** Gümüş **az** olmak şartıyla kabın kullanılması caizdir. Delil, **Nebî’nin (sallallâhu aleyhi ve sellem) fiilidir**: Kadehi çatlamış, çatlak yeri küçük bir gümüş zincirle bağlanmış ve kullanılmaya devam etmiştir.\n\n'
+     'Altın ile gümüş arasında neden ayrım yaptık? Çünkü ruhsat yalnızca az gümüş hakkında gelmiştir; altın genel haramlık üzere kalır. Gümüş **çok** olursa ruhsata girmez.\n\n'
+     '**Örnek:** Çatlayan tahta bir kadeh küçük bir gümüş şeritle bağlanırsa onda içilir. Altın bir şeritle bağlanırsa kullanılmaz.\n\n'
+     '**Dipnotların şerhi:** (5) Hadis, Buhârî’nin Sahîh’inde, Nebî’nin (sallallâhu aleyhi ve sellem) zırhı, asası, kılıcı ve kadehiyle ilgili rivayetleri topladığı babdadır.',
+     fn=['(٥) رواه البخاري برقم (٣١٠٩).']),
+ ]),
+ dict(ar='المسألة الثالثة: آنية الكفار', tr='Üçüncü mesele: Kâfirlerin kapları', paras=[
+  PS('الأصل في آنية الكفار الحل، إلا إذا عُلمت نجاستها، فإنه لا يجوز استعمالها إلا بعد غسلها؛ لحديث أبي ثعلبة الخشني قال: قلت يا رسول الله إنا بأرض قوم أهل كتاب، أفنأكل في آنيتهم؟ قال: (لا تأكلوا فيها إلا أن لا تجدوا غيرها فاغسلوها، ثم كلوا فيها) (١).',
+     'Kâfirlerin kaplarında asıl olan helâlliktir. Ancak necaseti bilinirse, yıkandıktan sonra kullanılabilir. Çünkü Ebû Sa’lebe el-Huşenî şöyle demiştir: «Ey Allah’ın Rasûlü! Biz Ehl-i Kitap bir kavmin yurdundayız; onların kaplarında yiyelim mi?» Buyurdu ki: «Başkasını bulamazsanız hariç onlarda yemeyin; (bulamazsanız) onları yıkayın, sonra onlarda yiyin.» (1)',
+     '١/ ٧',
+     'الأصل في آنية الكفار **الحِلّ والطهارة**، كسائر الآنية. ويخرج عن هذا الأصل حالة واحدة: أن **تُعلم نجاستها**، فلا تُستعمل حتى تُغسل.\n\n'
+     'ولماذا أمر النبي ﷺ أبا ثعلبة بالغسل؟ لأن أولئك القوم كانوا **يباشرون النجاسة في آنيتهم**: يطبخون فيها الخنزير، ويشربون فيها الخمر، كما جاء في رواية أبي داود. وفي الحديث أدب آخر: «لا تأكلوا فيها» ما دمتم تجدون غيرها؛ احتياطًا وبعدًا عمّا كانت فيه النجاسة. فإن لم تجدوا غيرها، فالغسل يكفي.\n\n'
+     '**شرح الحواشي:** (١) الحديث في الصحيحين، ولفظه عندهما: «فَإِنْ وَجَدْتُمْ غَيْرَ آنِيَتِهِمْ فَلَا تَأْكُلُوا فِيهَا، وَإِنْ لَمْ تَجِدُوا فَاغْسِلُوهَا ثُمَّ كُلُوا فِيهَا»، والمعنى واحد.',
+     'Kâfirlerin kaplarında asıl olan, diğer kaplar gibi **helâllik ve temizliktir**. Bu asıldan tek bir durumda çıkılır: **necasetinin bilinmesi**. O zaman yıkanmadan kullanılmaz.\n\n'
+     'Nebî (sallallâhu aleyhi ve sellem) Ebû Sa’lebe’ye neden yıkamayı emretti? Çünkü o kavim **kaplarında necasetle uğraşıyordu**: Ebû Dâvûd’un rivayetinde geldiği gibi tencerelerinde domuz pişiriyor, kaplarında şarap içiyorlardı. Hadiste başka bir edep de vardır: Başkasını bulduğunuz sürece «onlarda yemeyin»; bu, ihtiyat ve necasetin bulunduğu şeyden uzak durmak içindir. Başkasını bulamazsanız yıkamak yeterlidir.\n\n'
+     '**Dipnotların şerhi:** (1) Hadis Buhârî ve Müslim’dedir; ikisindeki lafzı şöyledir: «Onların kaplarından başkasını bulursanız onlarda yemeyin; bulamazsanız onları yıkayın, sonra onlarda yiyin.» Anlam aynıdır.',
+     fn=['(١) رواه البخاري برقم (٥٤٧٨)، ومسلم برقم (١٩٣٠).']),
+  PS('وأما إذا لم تُعلم نجاستها بأن يكون أهلها غير معروفين بمباشرة النجاسة، فإنه يجوز استعمالها؛ لأنه ثبت أن النبي ﷺ وأصحابه أخذوا الماء للوضوء من [[مَزَادة|mazada]] امرأة مشركة (٢)،',
+     'Necaseti bilinmiyorsa, yani sahipleri necasetle uğraşmakla tanınmıyorsa, kullanılması caizdir. Çünkü Nebî’nin (sallallâhu aleyhi ve sellem) ve ashabının, müşrik bir kadının mezâdesinden (büyük su tulumundan) abdest için su aldıkları sabittir. (2)',
+     '١/ ٧',
+     'هذه هي الحالة الثانية: **لم تُعلم النجاسة**، فيبقى الإناء على الأصل: يجوز استعماله دون غسل.\n\n'
+     'والدليل أن النبي ﷺ وأصحابه أخذوا الماء من قربة امرأة مشركة وتوضؤوا منه، ولم يسألوا عن قربتها ولم يغسلوها. ويُفهم من هذا أن المرأة لم تكن معروفة بمباشرة النجاسة في قربتها، فبقيت على الأصل.\n\n'
+     'ويشهد لهذا حديث جابر رضي الله عنه: «كُنَّا نَغْزُو مَعَ رَسُولِ اللَّهِ ﷺ، فَنُصِيبُ مِنْ آنِيَةِ الْمُشْرِكِينَ وَأَسْقِيَتِهِمْ، فَنَسْتَمْتِعُ بِهَا، فَلَا يَعِيبُ ذَلِكَ عَلَيْهِمْ»، رواه أبو داود (٣٨٣٨).\n\n'
+     '**كيف نجمع بين الدليلين؟** الغسل في حديث أبي ثعلبة لأن النجاسة **معلومة**، وترك الغسل في حديث المزادة لأنها **غير معلومة**. فلا تعارض بينهما.\n\n'
+     '**شرح الحواشي:** (٢) الحديث في الصحيحين من حديث عمران بن حصين رضي الله عنه في قصة طويلة. و**المزادة** قربة كبيرة يُضاف إليها جلد آخر لتتّسع.',
+     'Bu ikinci durumdur: **Necaset bilinmiyorsa** kap asıl hâli üzere kalır ve yıkamadan kullanılabilir.\n\n'
+     'Delili, Nebî’nin (sallallâhu aleyhi ve sellem) ve ashabının müşrik bir kadının su tulumundan su alıp ondan abdest almalarıdır; tulumunu sormamış ve yıkamamışlardır. Buradan, kadının tulumunda necasetle uğraşmakla tanınmadığı, tulumun asıl hâli üzere kaldığı anlaşılır.\n\n'
+     'Câbir’in (radıyallâhu anh) hadisi de buna şahittir: «Rasûlullah (sallallâhu aleyhi ve sellem) ile birlikte savaşırdık; müşriklerin kaplarından ve kırbalarından ele geçirip onlardan faydalanırdık; o da bunu ayıplamazdı.» Ebû Dâvûd (3838).\n\n'
+     '**İki delil nasıl bağdaştırılır?** Ebû Sa’lebe hadisinde yıkama emredilmiştir; çünkü necaset **biliniyordu**. Mezâde hadisinde yıkanmamıştır; çünkü necaset **bilinmiyordu**. Dolayısıyla aralarında çelişki yoktur.\n\n'
+     '**Dipnotların şerhi:** (2) Hadis, İmrân b. Husayn’ın (radıyallâhu anh) uzun bir kıssasıyla Buhârî ve Müslim’dedir. **Mezâde**, genişlemesi için başka bir deri eklenen büyük su tulumudur.',
+     fn=['(٢) رواه البخاري في كتاب التيمم باب الصعيد الطيب رقم (٣٤٤) ومسلم كتاب المساجد باب قضاء الصلاة الفائتة برقم (٦٨٢)، والمزادة: قربة كبيرة يزاد فيها جلد من غيرها.']),
+  PS('ولأن الله سبحانه قد أباح لنا طعام أهل الكتاب، وقد يقدِّمونه إلينا في أوانيهم، كما دعا غلام يهودي النبي ﷺ على خبز شعير و[[إهالَة سَنِخَة|ihala]] فأكل منها (٣).',
+     'Ayrıca Allah Teâlâ bize Ehl-i Kitab’ın yemeğini helâl kılmıştır; onlar da onu bize kendi kaplarında sunabilirler. Nitekim Yahudi bir genç Nebî’yi (sallallâhu aleyhi ve sellem) arpa ekmeği ile kokusu değişmiş yağa davet etmiş, o da ondan yemiştir. (3)',
+     '١/ ٧',
+     'دليل ثالث على أن الأصل في آنيتهم الطهارة: أن الله أباح لنا طعام أهل الكتاب بقوله: ﴿وَطَعَامُ الَّذِينَ أُوتُوا الْكِتَابَ حِلٌّ لَكُمْ﴾ [المائدة: ٥]، ومعلوم أنهم يقدّمونه في أوانيهم. فلو كانت آنيتهم نجسة لما أُبيح لنا طعامهم بلا غسل.\n\n'
+     'وفي قصة الغلام اليهودي **حسن خلق النبي ﷺ**: دعاه إلى طعام بسيط، خبز شعير وشحم قد تغيّرت رائحته، فأجاب دعوته وأكل منه.\n\n'
+     '**شرح الحواشي:** (٣) الحديث رواه أحمد من حديث أنس رضي الله عنه، وصحّحه الألباني. و**الإهالة** الشحم أو الزيت، و**السَّنِخة** التي تغيّرت ريحها لطول بقائها.',
+     'Kaplarında asıl olanın temizlik olduğuna üçüncü delil: Allah, «Kendilerine kitap verilenlerin yemeği size helâldir» [Mâide, 5] buyurarak Ehl-i Kitab’ın yemeğini bize helâl kılmıştır. Onların yemeği kendi kaplarında sundukları da bilinmektedir. Kapları necis olsaydı, yemekleri bize yıkamadan helâl kılınmazdı.\n\n'
+     'Yahudi gencin kıssasında **Nebî’nin (sallallâhu aleyhi ve sellem) güzel ahlakı** vardır: Genç onu sade bir yemeğe, arpa ekmeği ve kokusu değişmiş yağa davet etmiş; o da davetine icabet edip ondan yemiştir.\n\n'
+     '**Dipnotların şerhi:** (3) Hadisi Ahmed, Enes’ten (radıyallâhu anh) rivayet etmiş, Elbânî sahih kabul etmiştir. **İhâle** iç yağı veya sıvı yağdır; **sanıha** uzun süre kaldığı için kokusu değişmiş olandır.',
+     fn=['(٣) أخرجه أحمد (٣/ ٢١٠، ٢١١). وصححه الألباني في الإرواء (١/ ٧١) والإهالة: الشحم والزيت. والسنخة: المتغيرة الريح.']),
+ ]),
+ dict(ar='المسألة الرابعة: الطهارة في الآنية المتخذة من جلود الميتة', tr='Dördüncü mesele: Ölü hayvan derisinden yapılan kaplarda taharet', paras=[
+  PS('جلد الميتة إذا دبغ طهر وجاز استعماله لقوله ﷺ: (أيما [[إهاب|ihab]] (٤) دبغ فقد طهر) (٥).',
+     'Ölü hayvanın derisi tabaklanınca temizlenir ve kullanılması caiz olur. Çünkü Nebî (sallallâhu aleyhi ve sellem) şöyle buyurmuştur: «Hangi deri (4) tabaklanırsa temizlenmiş olur.» (5)',
+     '١/ ٧',
+     'كانت القِرَب والدِّلاء والأوعية تُصنع من الجلود. فإذا ماتت شاة دون ذبح، هل يُنتفع بجلدها إناءً؟\n\n'
+     '**الميتة** ما مات دون ذكاة شرعية، وهي نجسة. لكن جلدها إذا **دُبغ** طهُر. و**الدباغ** معالجة الجلد بمواد تمنع تعفّنه وتجفّفه، حتى يصلح للاستعمال.\n\n'
+     '**شرح الحواشي:** (٤) **الإهاب** هو الجلد قبل أن يُدبغ. (٥) الحديث من رواية ابن عباس رضي الله عنهما.',
+     'Kırbalar, kovalar ve kaplar deriden yapılırdı. Bir koyun kesilmeden ölürse, derisinden kap olarak faydalanılır mı?\n\n'
+     '**Meyte**, şer’î kesim olmadan ölen hayvandır ve necistir. Ancak derisi **tabaklanınca** temizlenir. **Tabaklama**, deriyi kokuşmasını önleyen ve onu kurutan maddelerle işlemek, böylece kullanılır hâle getirmektir.\n\n'
+     '**Dipnotların şerhi:** (4) **İhâb**, tabaklanmadan önceki deridir. (5) Hadis İbn Abbâs’ın (radıyallâhu anhümâ) rivayetidir.',
+     fn=['(٤) الإهاب: الجلد قبل أن يدبغ.', '(٥) رواه الترمذي برقم (١٦٥٠)، ومسلم برقم (٣٦٦) بلفظ: (إذا دبغ الإهاب فقد طهر) من حديث ابن عباس.'],
+     note=dict(ar='تنبيه على الحاشية (٥): الحديث في «جامع الترمذي» برقم (١٧٢٨) في الترقيم المشهور، وقال: حسن صحيح.',
+               tr='(5) numaralı dipnot hakkında: Hadis, Tirmizî’nin Câmi’inde yaygın numaralandırmada 1728 numaradadır; Tirmizî «hasen sahih» demiştir.')),
+  PS('ولأنه ﷺ مرّ على شاة ميتة فقال ﷺ: (هلَّا أخذوا إهابها فدبغوه فانتفعوا به)؟ فقالوا: إنها ميتة. قال: (فإنما حَرُمَ أكلُهَا) (٦).',
+     'Ayrıca Nebî (sallallâhu aleyhi ve sellem) ölü bir koyunun yanından geçti ve şöyle buyurdu: «Derisini alıp tabaklasalar da ondan faydalansalar ya!» «O ölüdür» dediler. Buyurdu ki: «Onun yalnızca yenmesi haram kılındı.» (6)',
+     '١/ ٧',
+     'تأمّل جواب النبي ﷺ: الصحابة ظنّوا أن كون الشاة ميتة يمنع من كل انتفاع بها، فبيّن لهم أن الذي حرُم منها هو **الأكل**. أما الجلد، فإذا دُبغ صار طاهرًا يُنتفع به، **مع أنها ميتة غير مذبوحة**.\n\n'
+     'وفي الحديث **حفظ المال وترك الإسراف**: فلا يُرمى ما يمكن الانتفاع به.\n\n'
+     '**شرح الحواشي:** (٦) الحديث رواه مسلم، وفيه أن الشاة كانت لمولاة ميمونة رضي الله عنها، أُعطيتها من الصدقة.',
+     'Nebî’nin (sallallâhu aleyhi ve sellem) cevabına dikkat edin: Sahâbe, koyunun ölü olmasının ondan her türlü faydalanmaya engel olduğunu sandılar. O da onlara bu hayvandan haram olanın **yenmesi** olduğunu açıkladı. Derisi ise tabaklanınca temiz olur ve ondan faydalanılır; **kesilmemiş, ölü bir hayvan olmasına rağmen**.\n\n'
+     'Hadiste **malı korumak ve israfı terk etmek** de vardır: Faydalanılabilecek bir şey atılmaz.\n\n'
+     '**Dipnotların şerhi:** (6) Hadisi Müslim rivayet etmiştir; koyun, Meymûne’nin (radıyallâhu anhâ) azatlı cariyesine sadakadan verilmiş bir koyundu.',
+     fn=['(٦) رواه مسلم برقم (٣٦٣)، وابن ماجه برقم (٣٦١٠).']),
+  PS('وهذا فيما إذا كانت الميتة مما تحلها [[الذكاة|dhakat]] وإلا فلا.',
+     'Bu hüküm, ölü hayvan kesimin helâl kıldığı hayvanlardan ise geçerlidir; değilse geçerli değildir.',
+     '١/ ٧',
+     'هذا **الشرط** الذي تقوم عليه المسألة كلها. و**الذكاة** هي الذبح الشرعي الذي استوفى شروطه.\n\n'
+     'فالسؤال: **لو ذُبح هذا الحيوان ذبحًا شرعيًّا، هل يحلّ أكله؟** إن كان الجواب نعم، كالشاة والبقرة والإبل، فجلده إذا مات يطهر بالدباغ. وإن كان الجواب لا، فلا يطهر جلده بالدباغ.',
+     'Bütün meselenin dayandığı **şart** budur. **Zekât (tezkiye)**, şartlarını taşıyan şer’î kesimdir.\n\n'
+     'Soru şudur: **Bu hayvan şer’î olarak kesilseydi eti yenir miydi?** Cevap evetse, koyun, sığır ve deve gibi, öldüğünde derisi tabaklanmakla temizlenir. Cevap hayırsa, derisi tabaklanmakla temizlenmez.'),
+  PS('أما شعرها فهو طاهر -أي شعر الميتة المباحة الأكل في حال الحياة- وأما اللحم فإنه نجس، ومحرم أكله. لقوله تعالى: ﴿إِلَّا أَنْ يَكُونَ مَيْتَةً أَوْ دَمًا مَسْفُوحًا أَوْ لَحْمَ خِنْزِيرٍ فَإِنَّهُ [[رِجْسٌ|rijs]]﴾ [الأنعام: ١٤٥].',
+     'Ölü hayvanın kılına gelince, o temizdir; yani hayattayken eti yenen hayvanın ölüsünün kılı. Eti ise necistir ve yenmesi haramdır. Çünkü Allah Teâlâ şöyle buyurur: «Ancak ölü hayvan, akıtılmış kan veya domuz eti olursa başka; çünkü bunlar pisliktir.» [En’âm, 145]',
+     '١/ ٧',
+     'فرّق الكتاب بين أجزاء الميتة المأكولة:\n\n'
+     '- **الشعر** (ومثله الصوف والوبر): طاهر، ولو لم يُدبغ الجلد.\n'
+     '- **اللحم:** نجس ومحرّم، بنصّ الآية: ﴿فَإِنَّهُ رِجْسٌ﴾، والرِّجس: النجس.\n\n'
+     'وقيّد الكتاب الشعر بأن يكون من **الميتة المباحة الأكل في حياتها**، أي من الحيوان الذي يحلّ أكله لو ذُبح.',
+     'Kitap, eti yenen ölü hayvanın parçaları arasında ayrım yapmıştır:\n\n'
+     '- **Kıl** (yün ve tüy de böyledir): Deri tabaklanmasa bile temizdir.\n'
+     '- **Et:** Âyetin nassıyla necis ve haramdır: «Çünkü bunlar pisliktir.» Rics, necis demektir.\n\n'
+     'Kitap kılı, **hayattayken eti yenen ölü hayvanın** kılı olmakla kayıtlamıştır; yani kesilse eti helâl olan hayvanın.'),
+  PS('ويحصل الدبغ بتنظيف الأذى والقذر الذي كان في الجلد، بواسطة مواد تضاف إلى الماء كالملح وغيره، أو بالنبات المعروف كـ[[القَرَظ|qaraz]] أو العرعر ونحوهما.',
+     'Tabaklama, derideki eziyet verici şeylerin ve pisliklerin temizlenmesiyle olur; suya katılan tuz ve benzeri maddelerle ya da karaz veya ardıç gibi bilinen bitkilerle.',
+     '١/ ٨',
+     'كيف يكون الدباغ؟ المقصود أن يُزال ما في الجلد من رطوبات وقذر، حتى لا يتعفّن ويصلح للاستعمال. وذلك بأحد طريقين:\n\n'
+     '1. **مواد تُضاف إلى الماء:** كالملح ونحوه.\n'
+     '2. **نباتات معروفة بالدباغ:** كالقَرَظ، وهو ورق شجر السَّلَم، والعَرعَر.\n\n'
+     'فليس الدباغ مجرّد تجفيف الجلد في الشمس، بل تنظيفه ومعالجته.',
+     'Tabaklama nasıl olur? Amaç, deri kokuşmasın ve kullanılır hâle gelsin diye ondaki nemin ve pisliğin giderilmesidir. Bu iki yoldan biriyle olur:\n\n'
+     '1. **Suya katılan maddeler:** tuz ve benzeri.\n'
+     '2. **Tabaklamada bilinen bitkiler:** selem ağacının yaprağı olan karaz ve ardıç gibi.\n\n'
+     'Yani tabaklama, deriyi sadece güneşte kurutmak değil; onu temizleyip işlemektir.'),
+  PS('وأما ما لا تحله الذكاة فإنه لا يطهر، وعلى هذا فجلد الهرة وما دونها في الخلقة لا يطهر بالدبغ، ولو كان في حال الحياة طاهراً.',
+     'Kesimin helâl kılmadığı hayvanın derisi ise temizlenmez. Buna göre kedinin ve yaratılışta ondan küçük olan hayvanların derisi, hayattayken temiz olsa bile tabaklanmakla temizlenmez.',
+     '١/ ٨',
+     'هنا تنبيه دقيق: **الهرّة طاهرة في حياتها**، وقد عرفنا في الدرس الأول أن سؤرها طاهر. فهل يطهر جلدها بالدباغ؟\n\n'
+     '**لا.** لأن السؤال ليس: هل كان الحيوان طاهرًا وهو حيّ؟ بل: **هل يحلّ أكله إذا ذُبح؟** والهرّة لا تؤكل، فجلدها لا يطهر بالدباغ. ومثلها ما دونها في الخِلقة، أي ما كان أصغر منها من الحيوان الذي لا يُؤكل.',
+     'Burada ince bir uyarı vardır: **Kedi hayattayken temizdir**; ilk derste artığının temiz olduğunu öğrendik. Peki derisi tabaklanmakla temizlenir mi?\n\n'
+     '**Hayır.** Çünkü soru, «hayvan hayattayken temiz miydi?» değildir; soru, **«kesilse eti helâl olur mu?»** sorusudur. Kedi yenmez; bu yüzden derisi tabaklanmakla temizlenmez. Yaratılışta ondan küçük olan, yani ondan küçük ve eti yenmeyen hayvanlar da böyledir.'),
+  PS('وجلد ما يحرم أكله ولو كان طاهراً في الحياة فإنه لا يطهر بالدباغ.',
+     'Eti yenmesi haram olan hayvanın derisi, hayattayken temiz olsa bile tabaklanmakla temizlenmez.',
+     '١/ ٨',
+     'وهذه قاعدة الفقرة السابقة بعبارة عامة: **طهارة الحيوان في حياته لا تكفي**؛ فكل حيوان يحرم أكله لا يطهر جلده بالدباغ.',
+     'Bu, önceki paragrafın kaidesinin genel ifadesidir: **Hayvanın hayattayken temiz olması yetmez**; eti haram olan her hayvanın derisi tabaklanmakla temizlenmez.'),
+  PS('والخلاصة: أن كل حيوان مات، وهو من مأكول اللحم، فإنَّ جلده يطهر بالدباغ، وكل حيوان مات، وليس من مأكول اللحم، فإن جلده لا يطهر بالدباغ.',
+     'Özet: Eti yenen her hayvan öldüğünde derisi tabaklanmakla temizlenir; eti yenmeyen her hayvan öldüğünde ise derisi tabaklanmakla temizlenmez.',
+     '١/ ٨',
+     'هذه **العبارة الجامعة** التي يحفظها الطالب من المسألة: **لا يطهر بالدباغ إلا جلد ما يحلّ أكله بالذكاة.**\n\n'
+     '**مثال:** شاة ماتت في المزرعة، فدبغ صاحبها جلدها وجعله قِربة: يحفظ فيها الماء ويتوضأ منه، وصوفها طاهر. وقطّ مات فدُبغ جلده: لا يطهر.',
+     'Öğrencinin bu meseleden ezberleyeceği **özet ifade** budur: **Tabaklanmakla ancak kesimle eti helâl olan hayvanın derisi temizlenir.**\n\n'
+     '**Örnek:** Çiftlikte bir koyun ölse, sahibi derisini tabaklayıp ondan bir kırba yapsa, onda su saklar ve ondan abdest alır; yünü de temizdir. Ölen bir kedinin derisi tabaklansa da temizlenmez.'),
+ ]),
+]

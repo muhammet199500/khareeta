@@ -266,5 +266,56 @@ SUM = {
   jamia='Taharet, hadesi kaldırmak ve necaseti gidermektir; tahûr su ile gerçekleşir. Suda asıl olan temizliktir; necaset onu değiştirmedikçe ya da su iki kulleden az olup necaset ona karışmadıkça.',
   src='Kaynak: «el-Fıkhu’l-Müyesser fî Dav’i’l-Kitâb ve’s-Sünne», Taharet Kitabı, birinci bölüm; âyetler Mushaf’tan (Hafs rivayeti), hadisler kitabın tahricine göre.',
  ),
+ (102, 'ar'): dict(
+  eb='الفقه الميسّر · كتاب الطهارة · الباب الثاني · ملخص الدرس',
+  sub='الخريطة الكاملة للدرس في صفحة واحدة',
+  blocks=[
+   dict(t='معنى الآنية والأصل فيها', p=['<b>الآنية:</b> الأوعية التي يُحفظ فيها الماء وغيره، من الحديد أو غيره.', '<b>الأصل فيها الإباحة</b>، ولو كانت ثمينة: ﴿هُوَ الَّذِي خَلَقَ لَكُمْ مَا فِي الْأَرْضِ جَمِيعًا﴾ <i>[البقرة: ٢٩]</i>'],
+        chips=['الكأس', 'القدر', 'الإبريق', 'القربة']),
+   dict(t='آنية الذهب والفضة', table=[['الأكل والشرب فيها', 'حرام بالإجماع'], ['الطهارة وسائر الاستعمال', 'جائز']],
+        note='«لَا تَشْرَبُوا فِي آنِيَةِ الذَّهَبِ وَالْفِضَّةِ، وَلَا تَأْكُلُوا فِي صِحَافِهَا» <i>[متفق عليه]</i>'),
+   dict(t='ما يدخل في النهي', bullets=['<b>الخالص</b> من الذهب أو الفضة.', '<b>المموَّه:</b> المطليّ بهما.', '<b>ما فيه شيء منهما.</b>']),
+   dict(t='الإناء المضبّب', table=[['ضبّة من ذهب', 'يحرم استعماله مطلقًا'], ['ضبّة فضة يسيرة', 'يجوز استعماله']],
+        note='قدح النبي ﷺ انكسر فاتخذ مكان الشَّعب سلسلة من فضة <i>[البخاري]</i>.'),
+   dict(t='آنية الكفار', table=[['عُلمت نجاستها', 'لا تُستعمل إلا بعد غسلها'], ['لم تُعلم نجاستها', 'تُستعمل على الأصل']],
+        note='«…فَاغْسِلُوهَا ثُمَّ كُلُوا فِيهَا» <i>[متفق عليه]</i>؛ وتوضأ ﷺ من مزادة مشركة <i>[متفق عليه]</i>.'),
+   dict(t='جلود الميتة', bullets=[
+        '<b>تطهر بالدباغ</b> إن كانت مما يُؤكل إذا ذُبح: «أَيُّمَا إِهَابٍ دُبِغَ فَقَدْ طَهُرَ» <i>[الترمذي، ومسلم بنحوه]</i>',
+        '<b>لا يطهر</b> جلد ما لا يُؤكل، ولو كان طاهرًا حيًّا كالهرّة.',
+        '<b>الشعر</b> طاهر، و<b>اللحم</b> نجس: ﴿فَإِنَّهُ رِجْسٌ﴾ <i>[الأنعام: ١٤٥]</i>']),
+   dict(t='جدول جامع لأحكام الآنية', wide=True, bullets=[
+        '<b>يُستعمل:</b> كل إناء طاهر مباح ولو ثمينًا، وآنية الذهب والفضة في الطهارة، والمضبّب بفضة يسيرة، وإناء الكافر ما لم تُعلم نجاسته، وجلد المأكول بعد الدباغ.',
+        '<b>لا يُستعمل:</b> الذهب والفضة في الأكل والشرب، والمضبّب بالذهب، وجلد غير المأكول ولو دُبغ؛ وإناء الكافر المعلوم نجاسته حتى يُغسل.',
+        '<b>القاعدة:</b> الأصل في الآنية الإباحة والطهارة، ولا يُخرج عنه إلا بدليل.']),
+  ],
+  jamiaT='العبارة الجامعة',
+  jamia='الأصل في الآنية الإباحة، إلا آنية الذهب والفضة فيحرم الأكل والشرب فيها؛ وآنية الكفار حلال حتى تُعلم نجاستها؛ وجلد الميتة يطهر بالدباغ إن كانت مما يُؤكل.',
+  src='المصدر: «الفقه الميسّر في ضوء الكتاب والسنة»، كتاب الطهارة، الباب الثاني؛ والآيات من المصحف الشريف (رواية حفص)، والأحاديث بتخريج الكتاب.',
+ ),
+ (102, 'tr'): dict(
+  eb='el-Fıkhu’l-Müyesser · Taharet Kitabı · İkinci bölüm · Ders özeti',
+  sub='Dersin tam haritası tek sayfada',
+  blocks=[
+   dict(t='Kapların anlamı ve asıl hükmü', p=['<b>Kaplar:</b> içinde su ve başka şeylerin saklandığı kaplar; demirden veya başka bir maddeden.', '<b>Asıl olan mubahlıktır</b>, değerli olsalar bile: «Yeryüzünde ne varsa hepsini sizin için yaratan O’dur.» <i>[Bakara, 29]</i>'],
+        chips=['Bardak', 'Tencere', 'İbrik', 'Kırba']),
+   dict(t='Altın ve gümüş kaplar', table=[['Onlarda yemek ve içmek', 'İcmâ ile haram'], ['Taharet ve diğer kullanımlar', 'Caiz']],
+        note='«Altın ve gümüş kaplarda içmeyin, tabaklarında yemeyin.» <i>[Buhârî, Müslim]</i>'),
+   dict(t='Yasağa girenler', bullets=['<b>Saf</b> altın veya gümüş kap.', '<b>Kaplanmış</b> (yaldızlanmış) kap.', '<b>İçinde biraz</b> altın veya gümüş bulunan kap.']),
+   dict(t='Yamanmış kap', table=[['Altın yama', 'Her durumda haram'], ['Az gümüş yama', 'Caiz']],
+        note='Nebî’nin (s.a.v.) kırılan kadehinin çatlağına gümüş zincir yapıldı <i>[Buhârî]</i>.'),
+   dict(t='Kâfirlerin kapları', table=[['Necaseti biliniyor', 'Yıkanmadan kullanılmaz'], ['Necaseti bilinmiyor', 'Asıl hükme göre kullanılır']],
+        note='«…onları yıkayın, sonra onlarda yiyin» <i>[Buhârî, Müslim]</i>; müşrik kadının mezâdesinden abdest <i>[Buhârî, Müslim]</i>.'),
+   dict(t='Ölü hayvan derileri', bullets=[
+        '<b>Tabaklanınca temizlenir</b>, kesilince eti yenen hayvandansa: «Hangi deri tabaklanırsa temizlenir.» <i>[Tirmizî; Müslim benzeri]</i>',
+        '<b>Temizlenmez:</b> eti yenmeyenin derisi, hayattayken temiz olsa bile (kedi gibi).',
+        '<b>Kıl</b> temizdir, <b>et</b> necistir: «Çünkü o pisliktir.» <i>[En’âm, 145]</i>']),
+   dict(t='Kaplar hükümleri tablosu', wide=True, bullets=[
+        '<b>Kullanılır:</b> değerli olsa da temiz ve mubah her kap; taharette altın ve gümüş kap; az gümüşle yamanmış kap; necaseti bilinmeyen kâfir kabı; eti yenen hayvanın tabaklanmış derisi.',
+        '<b>Kullanılmaz:</b> yemede ve içmede altın ve gümüş; altınla yamanmış kap; eti yenmeyenin derisi, tabaklansa da; necaseti bilinen kâfir kabı, yıkanıncaya kadar.',
+        '<b>Kural:</b> Kaplarda asıl olan mubahlık ve temizliktir; ondan ancak delille çıkılır.']),
+  ],
+  jamiaT='Ezberlenecek özet',
+  jamia='Kaplarda asıl olan mubahlıktır; yalnız altın ve gümüş kaplarda yemek ve içmek haramdır. Kâfirlerin kapları, necasetleri bilinmedikçe helâldir. Ölü hayvanın derisi, eti yenen hayvandansa tabaklanınca temizlenir.',
+  src='Kaynak: «el-Fıkhu’l-Müyesser fî Dav’i’l-Kitâb ve’s-Sünne», Taharet Kitabı, ikinci bölüm; âyetler Mushaf’tan (Hafs rivayeti), hadisler kitabın tahricine göre. Mealler hazırlayana aittir.',
+ ),
 }
-

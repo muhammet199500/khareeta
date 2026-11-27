@@ -49,4 +49,17 @@ DOCQA_TR = {
   ('Hayızlı kadının artık suyu temizdir.', 'Doğru; insanın artığı temizdir, cünüp ve hayızlı da öyle. «Mümin necis olmaz.» (Müslim)', True),
   ('Necasetin rengini değiştirdiği çok su, çokluğundan dolayı tahûr kalır.', 'Yanlış; vasıflarından biri necasetle değişen su, az olsun çok olsun icmâ ile necistir.', True),
  ],
+ 102: [
+  ('Kaplar nedir? Onlarda asıl olan nedir? Bu aslı nereden aldık?', 'Kaplar: İçinde su ve başka şeylerin saklandığı kaplardır; demirden veya başka bir maddeden. Onlarda asıl olan mubahlıktır. Çünkü Allah şöyle buyurur: «Yeryüzünde ne varsa hepsini sizin için yaratan O’dur.» [Bakara, 29] Allah bunu nimet olarak hatırlatmıştır; haram olan nimet olarak sayılmaz.', False),
+  ('Altın ve gümüş kaplarda ne haramdır? Ne caizdir?', 'Onlarda yalnızca yemek ve içmek haramdır: «Altın ve gümüş kaplarda içmeyin, tabaklarında yemeyin.» Bunun dışındakiler caizdir; taharet de bunlardandır.', False),
+  ('Tazbîb (yamama) nedir? Altınla yamanmış kabın ve az gümüşle yamanmış kabın hükmü nedir?', 'Tazbîb: kırılan kabı demir ve benzeriyle birleştirmektir. Yama altındansa kabın kullanılması her durumda haramdır; az gümüştense caizdir. Çünkü Nebî’nin (sallallâhu aleyhi ve sellem) kadehi kırılmış, çatlağın yerine gümüşten bir zincir yapılmıştır (Buhârî).', False),
+  ('Kâfirin kabını kullanmadan önce yıkamak ne zaman gerekir?', 'Necaseti bilinirse; yani sahipleri onda domuz pişirmek veya şarap içmek gibi necasetle uğraşıyorsa. Nebî (sallallâhu aleyhi ve sellem) Ebû Sa’lebe’ye: «Bulamazsanız onları yıkayın, sonra onlarda yiyin» buyurmuştur. Necaseti bilinmiyorsa yıkamadan kullanılabilir.', False),
+  ('Tabaklanınca temizlenen derinin ölçüsü nedir?', 'Kesimle helâl olan, yani kesilince eti yenen bir hayvanın derisi olması. Eti yenen her hayvan öldüğünde derisi tabaklanınca temizlenir; eti yenmeyen hayvanın derisi tabaklanmakla temizlenmez.', False),
+  ('«Altın ve gümüş kaplarda içmeyin…» hadisi, onlardan abdest almanın caiz olduğuna nasıl delâlet eder?', 'Hadis yalnızca yemeyi ve içmeyi yasaklamış, her kullanımı yasaklamamıştır. Bunların dışındakiler asıl olan mubahlık üzere kalır; abdest ise ne yemektir ne içmektir.', False),
+  ('Kedi hayattayken temizdir; o hâlde derisi tabaklanınca neden temizlenmez?', 'Çünkü derinin tabaklanmakla temizlenmesinde ölçü, kesimle eti helâl olmaktır; hayvanın hayattayken temiz olması değildir. Kedi ise kesilse de yenmez.', False),
+  ('Nebî’nin (sallallâhu aleyhi ve sellem) Ehl-i Kitab’ın kaplarını yıkamayı emretmesi ile müşrik bir kadının mezâdesinden abdest alması nasıl bağdaştırılır?', 'Necaset bilindiği için yıkamayı emretmiştir; çünkü onlar tencerelerinde domuz pişiriyor, kaplarında şarap içiyorlardı. Mezâdeden ise abdest almıştır; çünkü necaseti bilinmiyordu ve asıl hâli olan temizlik üzere kalmıştı.', False),
+  ('Gümüş bir ibrikten abdest almak caizdir.', 'Doğru; çünkü hadis haramlığı yemek ve içmekle sınırlamıştır, abdest bunlardan değildir.', True),
+  ('Her deri tabaklanınca temizlenir.', 'Yanlış; tabaklanmakla ancak kesilince eti yenen hayvanın derisi temizlenir. Kedi hayattayken temiz olsa da derisi tabaklanmakla temizlenmez.', True),
+  ('Bir kâfire ait her kabı kullanmadan önce yıkamak gerekir.', 'Yanlış; kâfirlerin kaplarında asıl olan helâlliktir, ancak necaset bilinirse yıkamak gerekir. Nebî (sallallâhu aleyhi ve sellem) müşrik bir kadının mezâdesinden abdest almıştır.', True),
+ ],
 }

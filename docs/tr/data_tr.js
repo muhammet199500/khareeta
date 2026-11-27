@@ -1516,4 +1516,463 @@ window.FIQH1.quiz = [
     "x": "«…ilki toprakla olmak üzere yedi kez yıkanmasıdır.» Buhârî ve Müslim."
   }
 ];
-window.LESSONS = [window.LESSON, window.LESSON2, window.LESSON3, window.FIQH1];
+window.FIQH2 = {
+  "title": "Kapların Hükümleri",
+  "root": {
+    "id": "root",
+    "label": "Kapların\nHükümleri"
+  },
+  "branches": [
+    {
+      "id": "b1",
+      "label": "Kapların anlamı ve asıl hükmü",
+      "children": [
+        {
+          "id": "b1a",
+          "label": "Kaplar: saklama kapları",
+          "card": {
+            "tag": "Tanım",
+            "title": "Kaplar (âniye)",
+            "body": "İçinde su ve başka şeylerin saklandığı kaplar; demirden olsun veya başka bir maddeden: bardak, tencere, ibrik, kırba."
+          }
+        },
+        {
+          "id": "b1b",
+          "label": "Asıl olan mubahlıktır",
+          "hot": true,
+          "v": true,
+          "card": {
+            "tag": "Kaide",
+            "title": "Mubahlık",
+            "verse": "﴿هُوَ الَّذِي خَلَقَ لَكُمْ مَا فِي الْأَرْضِ جَمِيعًا﴾",
+            "ref": "Bakara, 29",
+            "body": "«Yeryüzünde ne varsa hepsini sizin için yaratan O’dur.» Allah nimet olarak haramı saymaz; her kap, yasaklayan delil gelinceye kadar mubahtır."
+          }
+        },
+        {
+          "id": "b1c",
+          "label": "Neden sulardan sonra?",
+          "card": {
+            "tag": "Bölümün yeri",
+            "title": "Su kapta saklanır",
+            "body": "Temizlendiğimiz suyu öğrendik; sonra onu sakladığımız ve ondan abdest aldığımız kabı öğreniriz."
+          }
+        }
+      ]
+    },
+    {
+      "id": "b2",
+      "label": "Altın ve gümüş kaplar",
+      "children": [
+        {
+          "id": "b2a",
+          "label": "Yemek ve içmek → haram",
+          "hot": true,
+          "v": true,
+          "card": {
+            "tag": "Haram olan",
+            "title": "Yalnızca yemek ve içmek",
+            "verse": "«لَا تَشْرَبُوا فِي آنِيَةِ الذَّهَبِ وَالْفِضَّةِ، وَلَا تَأْكُلُوا فِي صِحَافِهَا، فَإِنَّهَا لَهُمْ فِي الدُّنْيَا وَلَكُمْ فِي الْآخِرَةِ»",
+            "ref": "Buhârî (5426) ve Müslim (2067)",
+            "body": "«Altın ve gümüş kaplarda içmeyin, tabaklarında yemeyin; bunlar dünyada onlar için, ahirette sizin içindir.» Sıhâf: yemek yenen tabaklar."
+          }
+        },
+        {
+          "id": "b2b",
+          "label": "Tehdit",
+          "v": true,
+          "card": {
+            "tag": "Tehdit",
+            "verse": "«الَّذِي يَشْرَبُ فِي آنِيَةِ الْفِضَّةِ إِنَّمَا يُجَرْجِرُ فِي بَطْنِهِ نَارَ جَهَنَّمَ»",
+            "ref": "Buhârî (5634) ve Müslim (2065)",
+            "body": "«Gümüş kapta içen kimse, karnına ancak cehennem ateşini gürüldeterek indirir.»"
+          }
+        },
+        {
+          "id": "b2c",
+          "label": "Taharet ve diğer kullanımlar → caiz",
+          "card": {
+            "tag": "Caiz olan",
+            "title": "Onlardan abdest almak",
+            "body": "Hadis yemeyi ve içmeyi zikretti; diğerleri mubahlık üzere kalır. Abdest ne yemektir ne içmektir."
+          }
+        },
+        {
+          "id": "b2d",
+          "label": "Yasağa girenler",
+          "children": [
+            {
+              "id": "b2d1",
+              "label": "Saf olan",
+              "card": {
+                "tag": "Birinci çeşit",
+                "title": "Saf olan",
+                "body": "Tamamı altın veya gümüşten yapılmış kap."
+              }
+            },
+            {
+              "id": "b2d2",
+              "label": "Kaplanmış olan",
+              "card": {
+                "tag": "İkinci çeşit",
+                "title": "Kaplanmış (mumeveh)",
+                "body": "Altın veya gümüşle yaldızlanmış kap; kenarı altın yaldızlı bardak gibi."
+              }
+            },
+            {
+              "id": "b2d3",
+              "label": "İçinde biraz bulunan",
+              "card": {
+                "tag": "Üçüncü çeşit",
+                "title": "İçinde biraz bulunan",
+                "body": "İçine biraz altın veya gümüş girmiş kap; az gümüş yama bundan müstesnadır."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b3",
+      "label": "Yamanmış kap",
+      "children": [
+        {
+          "id": "b3a",
+          "label": "Tazbîb nedir?",
+          "card": {
+            "tag": "Tanım",
+            "title": "Kırık kabı birleştirmek",
+            "body": "Kırılan kap demir ve benzeriyle birleştirilir; birleştirilen parçaya dabbe (yama) denir."
+          }
+        },
+        {
+          "id": "b3b",
+          "label": "Altın yama → her durumda haram",
+          "hot": true,
+          "card": {
+            "tag": "Altın yama",
+            "title": "Kabın kullanılması haram",
+            "body": "Altın az olsun çok olsun; çünkü nassın genel hükmüne girer."
+          }
+        },
+        {
+          "id": "b3c",
+          "label": "Az gümüş yama → caiz",
+          "v": true,
+          "card": {
+            "tag": "Az gümüş yama",
+            "title": "Kabın kullanılması caiz",
+            "verse": "«أَنَّ قَدَحَ النَّبِيِّ ﷺ انْكَسَرَ، فَاتَّخَذَ مَكَانَ الشَّعْبِ سِلْسِلَةً مِنْ فِضَّةٍ»",
+            "ref": "Buhârî (3109)",
+            "body": "«Nebî’nin (s.a.v.) kadehi kırıldı; çatlağın yerine gümüşten bir zincir yaptı.» Şa’b: çatlak yeri."
+          }
+        }
+      ]
+    },
+    {
+      "id": "b4",
+      "label": "Kâfirlerin kapları",
+      "children": [
+        {
+          "id": "b4a",
+          "label": "Asıl: helâllik",
+          "card": {
+            "tag": "Asıl",
+            "title": "Helâllik ve temizlik",
+            "body": "Kâfirlerin kapları, necasetleri bilinmedikçe diğer kaplar gibidir."
+          }
+        },
+        {
+          "id": "b4b",
+          "label": "Necaseti biliniyor → yıkanır",
+          "hot": true,
+          "v": true,
+          "card": {
+            "tag": "Birinci durum",
+            "title": "Yıkanmadan kullanılmaz",
+            "verse": "«فَإِنْ وَجَدْتُمْ غَيْرَ آنِيَتِهِمْ فَلَا تَأْكُلُوا فِيهَا، وَإِنْ لَمْ تَجِدُوا فَاغْسِلُوهَا ثُمَّ كُلُوا فِيهَا»",
+            "ref": "Ebû Sa’lebe hadisi · Buhârî (5478) ve Müslim (1930)",
+            "body": "«Başkasını bulursanız onlarda yemeyin; bulamazsanız yıkayın, sonra onlarda yiyin.» Tencerelerinde domuz pişirip kaplarında şarap içen kavim gibi."
+          }
+        },
+        {
+          "id": "b4c",
+          "label": "Bilinmiyor → kullanılır",
+          "card": {
+            "tag": "İkinci durum",
+            "title": "Kullanılması caiz",
+            "body": "Nebî (s.a.v.) ve ashabı müşrik bir kadının mezâdesinden abdest aldılar. Buhârî (344) ve Müslim (682). Câbir: «Müşriklerin kaplarından ve kırbalarından ele geçirip onlardan faydalanırdık; o da bunu ayıplamazdı.» Ebû Dâvûd (3838)."
+          },
+          "children": [
+            {
+              "id": "b4c1",
+              "label": "Ehl-i Kitab’ın yemeği",
+              "v": true,
+              "card": {
+                "tag": "Kur’ân’dan delil",
+                "verse": "﴿وَطَعَامُ الَّذِينَ أُوتُوا الْكِتَابَ حِلٌّ لَكُمْ﴾",
+                "ref": "Mâide, 5",
+                "body": "«Kendilerine kitap verilenlerin yemeği size helâldir.» Onlar yemeği kendi kaplarında sunarlar."
+              }
+            },
+            {
+              "id": "b4c2",
+              "label": "Yahudi genç",
+              "card": {
+                "tag": "Güzel ahlak",
+                "title": "Yemeğinden yedi",
+                "body": "Yahudi bir genç Nebî’yi (s.a.v.) arpa ekmeği ve kokusu değişmiş yağa davet etti, o da yedi. Ahmed; Elbânî sahih kabul etmiştir."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b5",
+      "label": "Ölü hayvan derileri",
+      "children": [
+        {
+          "id": "b5a",
+          "label": "Tabaklanınca temizlenir",
+          "v": true,
+          "card": {
+            "tag": "Hüküm",
+            "title": "Temizlenir ve kullanılır",
+            "verse": "«أَيُّمَا إِهَابٍ دُبِغَ فَقَدْ طَهُرَ»",
+            "ref": "Tirmizî (1728); Müslim (366): «إِذَا دُبِغَ الْإِهَابُ فَقَدْ طَهُرَ»",
+            "body": "«Hangi deri tabaklanırsa temizlenmiş olur.» İhâb: tabaklanmamış deri."
+          }
+        },
+        {
+          "id": "b5b",
+          "label": "Şart: kesimle helâl olan",
+          "hot": true,
+          "card": {
+            "tag": "Ölçü",
+            "title": "Kesilince eti yenen",
+            "body": "Zekât: şer’î kesim. Tabaklanmakla ancak kesimle eti helâl olan hayvanın derisi temizlenir."
+          }
+        },
+        {
+          "id": "b5c",
+          "label": "Haram olan yenmesidir",
+          "v": true,
+          "card": {
+            "tag": "Ölü koyun",
+            "verse": "«إِنَّمَا حَرُمَ أَكْلُهَا»",
+            "ref": "Müslim (363) ve İbn Mâce (3610)",
+            "body": "«Onun yalnızca yenmesi haram kılındı.» «Derisini alıp tabaklasalar da ondan faydalansalar ya!»"
+          }
+        },
+        {
+          "id": "b5d",
+          "label": "Kıl temiz, et necis",
+          "card": {
+            "tag": "Ölü hayvanın parçaları",
+            "title": "Kıl ve yün temizdir",
+            "verse": "﴿فَإِنَّهُ رِجْسٌ﴾",
+            "ref": "En’âm, 145",
+            "body": "«Çünkü o pisliktir.» Eti ise necis ve yenmesi haramdır."
+          }
+        },
+        {
+          "id": "b5e",
+          "label": "Kedi: hayattayken temiz, derisi temizlenmez",
+          "card": {
+            "tag": "Uyarı",
+            "title": "Ölçü yenmesidir",
+            "body": "Kedi hayattayken temizdir ama yenmez; bu yüzden derisi tabaklanmakla temizlenmez."
+          }
+        },
+        {
+          "id": "b5f",
+          "label": "Tabaklama nasıl olur?",
+          "card": {
+            "tag": "Tabaklama",
+            "title": "Deriyi temizlemek",
+            "body": "Pisliği tuz ve benzeriyle ya da karaz ve ardıç gibi bitkilerle gidermek."
+          }
+        }
+      ]
+    }
+  ],
+  "jamia": "Kaplarda asıl olan mubahlıktır; yalnız altın ve gümüş kaplarda yemek ve içmek haramdır. Kâfirlerin kapları, necasetleri bilinmedikçe helâldir. Ölü hayvanın derisi, eti yenen hayvandansa tabaklanınca temizlenir.",
+  "closing": "Allah Teâlâ’dan bizi dinde fakih kılmasını, sınırlarında duranlardan eylemesini ve bize ahiret nimetini nasip etmesini dileriz.",
+  "short": "2 · Kaplar",
+  "eb": "el-Fıkhu’l-Müyesser · Taharet Kitabı · İkinci bölüm",
+  "h1": "Kapların Hükümleri",
+  "lead": "Dersin etkileşimli haritası: Birbirinden doğan dallar; kapların anlamından ve asıl hükmünden dört meseleye ve delillerine kadar.",
+  "n": 102,
+  "series": "fiqh",
+  "home": "fiqh-muyassar.html"
+};
+window.FIQH2.ui = window.LESSON.ui;
+window.FIQH2.quiz = [
+  {
+    "q": "Kaplarda asıl olan nedir?",
+    "o": [
+      "Delil gelinceye kadar haramlık",
+      "Mekruhluk",
+      "Yasaklayan delil gelinceye kadar mubahlık",
+      "Bekleme (tevakkuf)"
+    ],
+    "a": 2,
+    "x": "«Yeryüzünde ne varsa hepsini sizin için yaratan O’dur»; kaplarda asıl olan mubahlıktır."
+  },
+  {
+    "q": "Çok pahalı kristal bir kapta yemenin hükmü nedir?",
+    "o": [
+      "Caiz; değerli olsa da temiz ve mubahtır",
+      "Pahalı olduğu için haram",
+      "Mekruh",
+      "Yalnızca zaruret hâlinde caiz"
+    ],
+    "a": 0,
+    "x": "Temiz ve mubah her kap, değerli olsa bile kullanılabilir; pahalılık tek başına haramlığa delil değildir."
+  },
+  {
+    "q": "Altın ve gümüş kaplarda ne haramdır?",
+    "o": [
+      "Her türlü kullanım",
+      "Yalnızca abdest",
+      "Hiçbir şey",
+      "Yalnızca yemek ve içmek"
+    ],
+    "a": 3,
+    "x": "«Altın ve gümüş kaplarda içmeyin, tabaklarında yemeyin.»"
+  },
+  {
+    "q": "Gümüş ibrikten abdest almanın hükmü nedir?",
+    "o": [
+      "Haram",
+      "Caiz; çünkü hadis yemeyi ve içmeyi tahsis etti",
+      "Abdest sahih olmaz",
+      "Tahrimen mekruh"
+    ],
+    "a": 1,
+    "x": "Hadis yalnızca yemeyi ve içmeyi yasakladı; taharet dahil diğerleri mubahlık üzere kalır."
+  },
+  {
+    "q": "Hadisteki «sıhâf» kelimesinin anlamı nedir?",
+    "o": [
+      "Kitaplar",
+      "Bardaklar",
+      "Yemek yenen tabaklar",
+      "Kaşıklar"
+    ],
+    "a": 2,
+    "x": "Sahfe yayvan çanak gibi bir kaptır; çoğulu sıhâf."
+  },
+  {
+    "q": "Kenarı altın yaldızlı bir bardakta içmenin hükmü nedir?",
+    "o": [
+      "Caiz; aslı altın değil",
+      "Sadece mekruh",
+      "Yaldız azsa caiz",
+      "Haram; altınla kaplanmıştır"
+    ],
+    "a": 3,
+    "x": "Yasak geneldir: saf olanı, kaplanmış olanı ve içinde biraz altın veya gümüş bulunanı kapsar."
+  },
+  {
+    "q": "Tazbîb nedir?",
+    "o": [
+      "Kırılan kabı demir ve benzeriyle birleştirmek",
+      "Kabı süslemek",
+      "Kabı yıkamak",
+      "Kabın ağzını örtmek"
+    ],
+    "a": 0,
+    "x": "Tazbîb: kırılan kabı demir ve benzeriyle birleştirmektir."
+  },
+  {
+    "q": "Küçük bir altın parçayla yamanmış kabın hükmü nedir?",
+    "o": [
+      "Az olduğu için caiz",
+      "Kullanılması her durumda haram",
+      "Yalnızca abdestte caiz",
+      "Mekruh"
+    ],
+    "a": 1,
+    "x": "Altın yama, nassın genel hükmüne girdiği için kabı her durumda haram kılar."
+  },
+  {
+    "q": "Az gümüş yamanın caiz olduğunun delili nedir?",
+    "o": [
+      "İcmâ",
+      "İpeğe kıyas",
+      "Delili yoktur",
+      "Nebî’nin (s.a.v.) kadehi kırılınca çatlağına gümüş zincir yapılması"
+    ],
+    "a": 3,
+    "x": "«Nebî’nin (s.a.v.) kadehi kırıldı; çatlağın yerine gümüşten bir zincir yaptı.» Buhârî."
+  },
+  {
+    "q": "Kâfirlerin kaplarında asıl olan nedir?",
+    "o": [
+      "Necaset",
+      "Her zaman yıkamak gerekir",
+      "Necaseti bilinmedikçe helâllik",
+      "Asla kullanılmaz"
+    ],
+    "a": 2,
+    "x": "Asıl olan helâlliktir; necaseti bilinirse ancak yıkandıktan sonra kullanılır."
+  },
+  {
+    "q": "Kâfirin kabını kullanmadan önce yıkamak ne zaman gerekir?",
+    "o": [
+      "Her zaman",
+      "Necaseti bilinirse",
+      "Yeni ise",
+      "Hiçbir zaman"
+    ],
+    "a": 1,
+    "x": "Tencerelerinde domuz pişiren Ehl-i Kitap gibi; Nebî (s.a.v.): «Onları yıkayın, sonra onlarda yiyin.»"
+  },
+  {
+    "q": "Nebî’nin (s.a.v.) müşrik bir kadının mezâdesinden abdest alması neyi gösterir?",
+    "o": [
+      "Necaset bilinmedikçe kaplarında asıl olanın temizlik olduğunu",
+      "Kâfirlerin kaplarının necis olduğunu",
+      "Abdest için temiz su gerekmediğini",
+      "Mezâdenin altından olduğunu"
+    ],
+    "a": 0,
+    "x": "Ondan abdest aldı; sormadı ve yıkamadı. Tulum asıl hâli üzere kaldı."
+  },
+  {
+    "q": "Hangi deri tabaklanınca temizlenir?",
+    "o": [
+      "Her deri",
+      "Hayattayken temiz olan hayvanın derisi",
+      "Küçük hayvanın derisi",
+      "Kesilince eti yenen hayvanın derisi"
+    ],
+    "a": 3,
+    "x": "Tabaklanmakla ancak kesimle eti helâl olan hayvanın derisi temizlenir."
+  },
+  {
+    "q": "Kedi hayattayken temizdir; derisi tabaklanınca temizlenir mi?",
+    "o": [
+      "Hayır; çünkü yenmez",
+      "Evet; temiz olduğu için",
+      "İki kez tabaklanırsa evet",
+      "Zaruret hâlinde evet"
+    ],
+    "a": 0,
+    "x": "Ölçü kesimle eti helâl olmaktır; hayvanın hayattayken temiz olması değildir."
+  },
+  {
+    "q": "Kesilmeden ölen bir koyunun yününün hükmü nedir?",
+    "o": [
+      "Necis",
+      "Yalnızca yıkanınca temiz",
+      "Temiz",
+      "Ondan faydalanılmaz"
+    ],
+    "a": 2,
+    "x": "Eti yenen ölü hayvanın kılı ve yünü temizdir; eti ise necis ve haramdır."
+  }
+];
+window.LESSONS = [window.LESSON, window.LESSON2, window.LESSON3, window.FIQH1, window.FIQH2];

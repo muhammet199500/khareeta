@@ -43,6 +43,17 @@ TR = [
     dict(k='vasif', re=r'[Vv]as(?:ıf|f)\w*', w='Vasıf', m='Özellik. Suyun üç vasfı: kokusu, tadı ve rengi.'),
     dict(k='nekre', re=r'[Nn]ekre\w*', w='Nekre', m='Arapça dil bilgisinde belirsiz isim. Olumsuz bir cümlede geçerse, o türün hepsini kapsar.'),
     dict(k='hasen', re=r'(?<=«)hasen\b', w='Hasen', m='Hadis ilminde: delil olarak kabul edilen, derecesi sahihe yakın hadis.'),
+    dict(k='mubah', re=r'[Mm]ubah\w*', w='Mubah', m='Yapılması da yapılmaması da serbest olan; dinin yasaklamadığı şey.'),
+    dict(k='tazbib', re=r'[Tt]azbîb\w*', w='Tazbîb', m='Kırılan kabı demir ve benzeri bir şeyle birleştirmek (yamamak).', src='Kitabın dipnotu (1/ 6)'),
+    dict(k='dabbe', re=r'\bdabbe\b', w='Dabbe', m='Kırık kabı birleştirmek için kullanılan parça; yama.'),
+    dict(k='mezade', re=r'[Mm]ezâde\w*', w='Mezâde', m='Başka bir deri eklenerek büyütülmüş büyük su tulumu.', src='Kitabın dipnotu (1/ 7)'),
+    dict(k='ihab', re=r'[İi]hâb\w*', w='İhâb', m='Tabaklanmadan önceki deri.', src='Kitabın dipnotu (1/ 7)'),
+    dict(k='ihale', re=r'[İi]hâle\w*', w='İhâle', m='İç yağı ve sıvı yağ.', src='Kitabın dipnotu (1/ 7)'),
+    dict(k='meyte', re=r'[Mm]eyte\w*', w='Meyte', m='Şer’î kesim yapılmadan ölen hayvan.', src=DERS),
+    dict(k='zekat_kesim', re=r'[Zz]ekât \((?:tezkiye|kesim)\)', w='Zekât (tezkiye)', m='Şer’î kesim: hayvanı şartlarına uygun olarak boğazlamak.', src='İbnü’l-Esîr, en-Nihâye fî Garîbi’l-Hadîs (2/ 164)'),
+    dict(k='tabaklama', re=r'[Tt]abakla\w*', w='Tabaklamak', m='Deriyi kokuşmaması ve kullanılabilmesi için tuz veya bitkilerle işleyip pislikten temizlemek.', src=DERS),
+    dict(k='karaz', re=r'\b[Kk]araz\b', w='Karaz', m='Selem ağacının yaprağı; deri onunla tabaklanır.', src='İbnü’l-Esîr, en-Nihâye fî Garîbi’l-Hadîs (4/ 43)'),
+    dict(k='ricz', re=r'\b[Rr]ics\b', w='Rics', m='Pislik; necis olan.'),
     # ── tevhid ──
     dict(k='tagut', re=r'[Tt]âğut\w*', w='Tâğut', m='Kulun Allah’a karşı haddini aştığı her şey: Allah’ı bırakıp kendisine ibadet edilen (ve buna razı olan), uyulan veya itaat edilen.', src='Bu dersteki tanım (İbnü’l-Kayyim)'),
     dict(k='itikad', re=r'[İi]tikad\w*', w='İtikad', m='Kalbin bir şeye kesin olarak inanması; kalbe yerleşen ve sarsılmayan inanç.', src=DERS),
@@ -89,6 +100,15 @@ AR = [
     ('السدر', 'sidr'), ('سدر', 'sidr'),
     ('ولغ', 'walagh'),
     ('رجس', 'rijs'),
+    ('المموه', 'mumawwah'),
+    ('التضبيب', 'tadbib'), ('المضبب', 'tadbib'),
+    ('الشعب', 'shab'),
+    ('مزادة', 'mazada'), ('المزادة', 'mazada'),
+    ('الإهالة', 'ihala'), ('إهالة', 'ihala'),
+    ('الإهاب', 'ihab'), ('إهاب', 'ihab'),
+    ('الذكاة', 'dhakat'),
+    ('القرظ', 'qaraz'),
+    ('الصحاف', 'sihaf'),
 ]
 
 # Arabic lesson pages: terms with a plain meaning written here (no source line unless one is real).
@@ -113,5 +133,8 @@ AR_TERMS = [
     dict(k='a_takfir', forms=['التكفير'], w='التكفير', m='الحكم على الشخص بأنه كافر.'),
     dict(k='a_inaba', forms=['الإنابة'], w='الإنابة', m='الرجوع إلى الله والإقبال عليه.'),
     dict(k='a_munkar', forms=['منكرا', 'المنكر'], w='المنكر', m='كل ما نهى عنه الشرع وقبّحه.'),
+    dict(k='a_ibaha', forms=['الإباحة'], w='الإباحة', m='أن يكون الشيء مأذونًا فيه: لا إثم في فعله ولا في تركه.'),
+    dict(k='a_mayta', forms=['الميتة'], w='الميتة', m='ما مات من الحيوان دون ذكاة شرعية.'),
+    dict(k='a_dibagh', forms=['الدباغ', 'بالدباغ'], w='الدِّباغ', m='معالجة الجلد بالملح أو النبات حتى يزول ما فيه من الأذى والقذر، فلا يتعفّن ويُنتفع به.'),
     dict(k='a_ghayb', forms=['الغيب'], w='الغيب', m='ما غاب عن الناس فلا يعلمونه، ولا يعلمه إلا الله.'),
 ]
