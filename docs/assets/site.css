@@ -783,3 +783,18 @@ body:focus { outline: none; }
 /* tasks page: holds the place of the week card while it loads, so the page does not jump */
 .wksk { min-height: 360px; border-radius: 18px; background: rgba(120, 90, 60, .08); }
 .wksk:not(:only-child) { margin-bottom: 14px; }
+
+/* press feedback (see the last block of site.js): a quick dip and a soft gold ring */
+@keyframes tapfx {
+  0%   { transform: scale(1);                    box-shadow: 0 0 0 0 rgba(201, 163, 85, .55); }
+  30%  { transform: scale(var(--tp, .96)); }
+  100% { transform: scale(1);                    box-shadow: 0 0 0 12px rgba(201, 163, 85, 0); }
+}
+.tapfx { animation: tapfx .46s cubic-bezier(.2, .7, .3, 1); }
+.scard, .points li.live, .lrow.live, .cont, .pager a { --tp: .985; }
+.points li.live { border-radius: 14px; }
+@media (prefers-reduced-motion: reduce) { .tapfx { animation: none; } }
+
+/* dark mode: the open section must stand out from the «soon» ones — a gold edge on the lighter ink */
+:root[data-theme=dark] .points li.live { background: var(--band2); border-color: var(--gold); }
+@media (prefers-color-scheme: dark) { :root:not([data-theme=light]) .points li.live { background: var(--band2); border-color: var(--gold); } }

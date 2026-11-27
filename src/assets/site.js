@@ -944,3 +944,18 @@ document.addEventListener('click', e => {
   document.getElementById('cardMsg').textContent = n ? (t.due || '').replace('{n}', num(n)) : (t.none || '');
   band.hidden = false;
 })();
+
+/* press feedback: the thing you touch dips a little and sends out a soft ring, so the tap is seen to land */
+(function () {
+  const SEL = '.btn, .pill, .chip, .cats button, .daytabs button, .donebtn, .tasksl, .tbtn, a.lang, .qopt, .scard, .points li.live, .lrow.live, .cont, .pager a, .fs-ctl button, details > summary';
+  let cur = null, timer = 0;
+  const stop = () => { if (cur) cur.classList.remove('tapfx'); cur = null; clearTimeout(timer); };
+  document.addEventListener('pointerdown', e => {
+    if (e.button > 0) return;
+    const t = e.target.closest && e.target.closest(SEL);
+    if (!t || t.disabled || t.getAttribute('aria-disabled') === 'true') return;
+    stop(); void t.offsetWidth; t.classList.add('tapfx'); cur = t;
+    timer = setTimeout(stop, 480);
+  }, { passive: true });
+  ['pointercancel', 'scroll'].forEach(ev => document.addEventListener(ev, stop, { passive: true, capture: true }));
+})();
