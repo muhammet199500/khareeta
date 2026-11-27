@@ -231,7 +231,7 @@ html[lang=ar] body { word-spacing: .14em; }
   </div>
 </div>
 
-<div id="top"><div class="tl"><div class="lsw" id="lsw" role="group" aria-label="Ders seçin"></div><a class="lang" data-base="../map.html" href="../map.html" lang="ar" hreflang="ar" aria-label="النسخة العربية">العربية</a><a id="hifzT" class="hifz" hidden download>Ezber haritası PDF</a><a class="tasksl" href="tasks.html" aria-label="Ödevler" title="Ödevler"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="3"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg><span>Ödevler</span></a><div id="crumb"></div></div><a id="brand" href="la-ilaha.html" title="Seri sayfası"><img src="../media/logo.webp" alt="وتواصوا بالحق"><span id="brandT">Tâğuta İbadetin Bâtıl Olduğuna İtikad</span></a></div>
+<div id="top"><div class="tl"><a class="lang" data-base="../map.html" href="../map.html" lang="ar" hreflang="ar" aria-label="النسخة العربية">العربية</a><a id="hifzT" class="hifz" hidden download>Ezber haritası PDF</a><a class="tasksl" href="tasks.html" aria-label="Ödevler" title="Ödevler"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="3"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg><span>Ödevler</span></a><div id="crumb"></div></div><a id="brand" href="la-ilaha.html" title="Seri sayfası"><img src="../media/logo.webp" alt="وتواصوا بالحق"><span id="brandT">Tâğuta İbadetin Bâtıl Olduğuna İtikad</span></a></div>
 
 <div id="card" aria-live="polite"><div class="in"><button class="x" id="cardX" aria-label="Kartı kapat">×</button><div id="cardBody"></div></div></div>
 
@@ -256,7 +256,7 @@ html[lang=ar] body { word-spacing: .14em; }
 
 <div id="intro" class="ov show"><div class="box">
   <img class="logo" src="../media/logo.webp" alt="وتواصوا بالحق">
-  <div class="lrow"><div class="lsw" id="lswIntro" role="group" aria-label="Ders seçin"></div><a class="lang" data-base="../map.html" href="../map.html" lang="ar" hreflang="ar" aria-label="النسخة العربية">العربية</a></div>
+  <div class="lrow"><a class="lang" data-base="../map.html" href="../map.html" lang="ar" hreflang="ar" aria-label="النسخة العربية">العربية</a></div>
   <p class="eb" id="introEb">Tâğutu inkârın keyfiyeti · Birinci husus</p>
   <h1 id="introH1">Tâğuta İbadetin Bâtıl Olduğuna İtikad</h1>
   <div class="gl"></div>
@@ -631,12 +631,7 @@ html[lang=ar] body { word-spacing: .14em; }
   if (L.lead) $('introLead').textContent = L.lead;
   $('brandT').textContent = L.title;
   document.title = L.title + ' · Ders Haritası';
-  const goLesson = i => { if (i === LI) return; history.replaceState(null, '', '#l' + LS[i].n); location.reload(); };
-  ['lsw', 'lswIntro'].forEach(id => {
-    const box = $(id); if (LS.length < 2) { box.hidden = true; return; }
-    box.innerHTML = LS.map((l, i) => `<button data-l="${i}" aria-pressed="${i === LI}">${l.short || l.title}</button>`).join('');
-    box.querySelectorAll('button').forEach(b => b.onclick = e => { e.stopPropagation(); goLesson(+b.dataset.l); });
-  });
+  /* كل خريطة تابعة لدرسها: لا تنقّل بين دروس السلسلة من داخل الخريطة */
   addEventListener('hashchange', () => { const m = /^#l(\d+)/.exec(location.hash); if ((m ? +m[1] : 1) !== L.n) location.reload(); });
 
   document.querySelectorAll('.lang').forEach(a => { a.href = a.dataset.base + location.hash; });

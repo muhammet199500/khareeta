@@ -187,7 +187,7 @@ body:focus{outline:none}
   </div>
 </div>
 
-<div id="top"><div class="tl"><div class="lsw" id="lsw" role="group" aria-label="Ders seçin"></div><a class="lang" data-base="../" href="../" lang="ar" hreflang="ar" aria-label="النسخة العربية">العربية</a><div id="crumb"></div></div><div id="brand"><img src="" data-logo="" alt="وتواصوا بالحق"><span id="brandT">Tâğuta İbadetin Bâtıl Olduğuna İtikad</span></div></div>
+<div id="top"><div class="tl"><a class="lang" data-base="../" href="../" lang="ar" hreflang="ar" aria-label="النسخة العربية">العربية</a><div id="crumb"></div></div><div id="brand"><img src="" data-logo="" alt="وتواصوا بالحق"><span id="brandT">Tâğuta İbadetin Bâtıl Olduğuna İtikad</span></div></div>
 
 <div id="card" aria-live="polite"><div class="in"><button class="x" id="cardX" aria-label="Kartı kapat">×</button><div id="cardBody"></div></div></div>
 
@@ -209,7 +209,7 @@ body:focus{outline:none}
 
 <div id="intro" class="ov show"><div class="box">
   <img class="logo" src="" data-logo="" alt="وتواصوا بالحق">
-  <div class="lrow"><div class="lsw" id="lswIntro" role="group" aria-label="Ders seçin"></div><a class="lang" data-base="../" href="../" lang="ar" hreflang="ar" aria-label="النسخة العربية">العربية</a></div>
+  <div class="lrow"><a class="lang" data-base="../" href="../" lang="ar" hreflang="ar" aria-label="النسخة العربية">العربية</a></div>
   <p class="eb" id="introEb">Tâğutu inkârın keyfiyeti · Birinci husus</p>
   <h1 id="introH1">Tâğuta İbadetin Bâtıl Olduğuna İtikad</h1>
   <div class="gl"></div>
@@ -585,12 +585,7 @@ body:focus{outline:none}
   if (L.lead) $('introLead').textContent = L.lead;
   $('brandT').textContent = L.title;
   document.title = L.title + ' · Ders Haritası';
-  const goLesson = i => { if (i === LI) return; history.replaceState(null, '', '#l' + LS[i].n); location.reload(); };
-  ['lsw', 'lswIntro'].forEach(id => {
-    const box = $(id); if (LS.length < 2) { box.hidden = true; return; }
-    box.innerHTML = LS.map((l, i) => `<button data-l="${i}" aria-pressed="${i === LI}">${l.short || l.title}</button>`).join('');
-    box.querySelectorAll('button').forEach(b => b.onclick = e => { e.stopPropagation(); goLesson(+b.dataset.l); });
-  });
+  /* كل خريطة تابعة لدرسها: لا تنقّل بين دروس السلسلة من داخل الخريطة */
   addEventListener('hashchange', () => { const m = /^#l(\d+)/.exec(location.hash); if ((m ? +m[1] : 1) !== L.n) location.reload(); });
 
   document.querySelectorAll('.lang').forEach(a => { a.href = a.dataset.base + location.hash; });
