@@ -757,3 +757,20 @@ body:focus { outline: none; }
 .scard .cover { min-height: 160px; padding: 22px 22px 18px; }
 .scard .bd { padding: 14px 18px 14px; gap: 8px; }
 .scard .ft { padding-top: 2px; }
+
+/* weekly homework card: progress of the week (dots) and a clear «done today» state */
+.today .wkprog { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin: 4px 0 10px; }
+.today .wkprog .dots { display: inline-flex; gap: 6px; }
+.today .wkprog .dot { width: 12px; height: 12px; border-radius: 50%; border: 1.5px solid rgba(255,233,176,.75); background: transparent; }
+.today .wkprog .dot.done { background: #FFE9B0; border-color: #FFE9B0; }
+.today .wkprog .dot.now { box-shadow: 0 0 0 3px rgba(255,233,176,.28); }
+.today .wkprog .dot.miss { border-style: dashed; opacity: .6; }
+.today .wkprog .plab { font-family: var(--uf); font-size: 14px; font-weight: 600; color: #FFE9B0; }
+.today.isdone::after { content: "✓"; position: absolute; top: 12px; inset-inline-end: 14px; width: 30px; height: 30px; border-radius: 50%; display: grid; place-items: center; background: #FFE9B0; color: #5E1624; font: 700 16px/1 var(--uf); }
+
+/* top bar on phones: finger-sized targets (44px) with a little more room between them */
+@media (max-width: 640px) {
+  .bar nav { gap: 10px; }
+  .bar nav a { min-height: 44px; }
+  .bar nav .tbtn { width: 44px; height: 44px; }
+}

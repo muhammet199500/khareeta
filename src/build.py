@@ -702,7 +702,8 @@ TS = {
     notePh='اكتب هنا…', private='ما تكتبه هنا يُحفظ على جهازك فقط، ولا يراه أحد إلا إذا أرسلته أنت.',
     sendT='أرسِل واجبك للمعلّم', sendTab='أرسِل الواجب', missed='واجب {d} لم يُسجَّل بعد', missedBtn='سجّله الآن', sendHelp='يتحوّل واجب الأسبوع كاملًا إلى ملف PDF باسمك، ترسله للمعلّم بواتساب أو تيليجرام.',
     nameL='اسمك', namePh='اكتب اسمك', sendBtn='أرسِل واجبي', saveBtn='حفظ الملف', noName='اكتب اسمك أولًا.',
-    imgDone='أنهى الواجب', imgNot='لم يُنهِ', imgNA='—', imgName='الاسم', imgWeek='من {a} إلى {b}', imgFile='واجبي'),
+    imgDone='أنهى الواجب', imgNot='لم يُنهِ', imgNA='—', imgName='الاسم', imgWeek='من {a} إلى {b}', imgFile='واجبي',
+    progDone='أنجزتَ {a} من {b}', progStart='يبدأ {d}', progAll='✓ أنجزتَ واجب الأسبوع كله'),
  'tr': dict(nav='Ödevler', title='Haftanın ödevleri',
     sub='Her gün küçük bir ödev. Bitirdiğinizde «Bitirdim»e dokunun; dokunana kadar gündüz iki saatte bir hatırlatma gelir.',
     backHome='Ana sayfaya dön', today='Bugünün ödevi', week='Haftanın ödevi', openWeek='Ödevi aç', all='Haftanın bütün ödevleri', none='Bugün ödev yok.',
@@ -720,7 +721,8 @@ TS = {
     notePh='Buraya yaz…', private='Buraya yazdıkların yalnızca cihazında saklanır; sen göndermedikçe kimse görmez.',
     sendT='Ödevini hocana gönder', sendTab='Ödevi gönder', missed='{d} ödevi henüz kaydedilmedi', missedBtn='Şimdi kaydet', sendHelp='Haftanın ödevinin tamamı adınla bir PDF dosyasına dönüşür; onu WhatsApp ya da Telegram ile hocana gönderirsin.',
     nameL='Adın', namePh='Adını yaz', sendBtn='Ödevimi gönder', saveBtn='Dosyayı kaydet', noName='Önce adını yaz.',
-    imgDone='Ödevi bitirdi', imgNot='Bitirmedi', imgNA='—', imgName='Ad', imgWeek='{a} – {b}', imgFile='odevim'),
+    imgDone='Ödevi bitirdi', imgNot='Bitirmedi', imgNA='—', imgName='Ad', imgWeek='{a} – {b}', imgFile='odevim',
+    progDone='{b} günden {a} tamamlandı', progStart='Başlangıç: {d}', progAll='✓ Haftanın bütün ödevlerini bitirdiniz'),
 }
 TS_KEYS = ['doneOff', 'doneOn', 'none', 'empty', 'open', 'rOn', 'rOff', 'rIsOn', 'rHelp', 'rIos', 'rNo', 'rDenied', 'rErr', 'nTitle', 'nDone']
 

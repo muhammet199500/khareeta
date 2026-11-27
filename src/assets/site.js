@@ -627,6 +627,30 @@
         $('#todayBand').hidden = false;
       }
     }
+    /* home: the week's progress under the card: one dot per day (done / today / missed / to come) */
+    const pw = weeks.find(w => w.days.some(d => d.date === TODAY)) || weeks.find(w => w.days.some(d => d.date >= TODAY));
+    const band = $('#todayBand');
+    if (band && pw && !band.hidden) {
+      const days = pw.days.slice().sort((a, b) => a.date < b.date ? -1 : 1);
+      const box = el('div', 'wkprog'); box.setAttribute('aria-live', 'polite');
+      const dots = el('span', 'dots'), lab = el('span', 'plab'); box.append(dots, lab);
+      const paint = () => {
+        const done = ls.get(DKEY, {}); dots.textContent = '';
+        let n = 0;
+        days.forEach(d => {
+          const st = done[d.date] ? 'done' : d.date === TODAY ? 'now' : d.date < TODAY ? 'miss' : 'later';
+          if (done[d.date]) n++;
+          const s = el('span', 'dot ' + st); s.title = dayName(d.date); dots.append(s);
+        });
+        const started = days[0].date <= TODAY;
+        lab.textContent = !started ? T('progStart').replace('{d}', dayName(days[0].date))
+          : n === days.length ? T('progAll') : T('progDone').replace('{a}', num(n)).replace('{b}', num(days.length));
+        band.querySelector('.today').classList.toggle('isdone', !!done[TODAY]);
+      };
+      paint();
+      $('#todayBand .tgo').before(box);
+      band.addEventListener('click', e => { if (e.target.closest('#todayDone')) setTimeout(paint, 0); });
+    }
     /* tasks page: the current week (holding today, else the latest started, else the next one) */
     const list = $('#taskList'); if (!list) return;
     const started = weeks.filter(w => w.days.some(d => d.date <= TODAY));
