@@ -945,17 +945,23 @@ document.addEventListener('click', e => {
   band.hidden = false;
 })();
 
-/* press feedback: the thing you touch dips a little and sends out a soft ring, so the tap is seen to land */
+/* press feedback: a control you really can press dips a little, so the tap is seen to land.
+   Nothing happens on things that do nothing (a tile with no link, the page you are already on, a chosen tab). */
 (function () {
-  const SEL = '.btn, .pill, .chip, .cats button, .daytabs button, .donebtn, .tasksl, .tbtn, a.lang, .qopt, .scard, .points li.live, .lrow.live, .cont, .pager a, .fs-ctl button, details > summary';
+  const SEL = '.btn, .pill, .chip, .cats button, .daytabs button, .donebtn, .tasksl, .tbtn, a.lang, .qopt, .scard, .points li.live, .pager a, .fs-ctl button, details > summary';
+  const flat = p => p.replace(/index\.html$/, '').replace(/\/$/, '');
   let cur = null, timer = 0;
   const stop = () => { if (cur) cur.classList.remove('tapfx'); cur = null; clearTimeout(timer); };
   document.addEventListener('pointerdown', e => {
-    if (e.button > 0) return;
-    const t = e.target.closest && e.target.closest(SEL);
+    if (e.button > 0 || !e.target.closest) return;
+    const t = e.target.closest(SEL);
     if (!t || t.disabled || t.getAttribute('aria-disabled') === 'true') return;
+    const hit = e.target.closest('a, button, summary, label, [role=tab]');
+    if (!hit || !(hit === t || t.contains(hit))) return;                       /* the touch is not on something pressable */
+    if (t.matches('.on, [aria-selected=true], [aria-current]') || t.closest('[aria-current]')) return;   /* already chosen */
+    if (hit.tagName === 'A' && hit.href && !hit.hash && flat(hit.pathname) === flat(location.pathname)) return; /* the page you are on */
     stop(); void t.offsetWidth; t.classList.add('tapfx'); cur = t;
-    timer = setTimeout(stop, 480);
+    timer = setTimeout(stop, 400);
   }, { passive: true });
   ['pointercancel', 'scroll'].forEach(ev => document.addEventListener(ev, stop, { passive: true, capture: true }));
 })();

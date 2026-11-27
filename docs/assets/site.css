@@ -784,17 +784,20 @@ body:focus { outline: none; }
 .wksk { min-height: 360px; border-radius: 18px; background: rgba(120, 90, 60, .08); }
 .wksk:not(:only-child) { margin-bottom: 14px; }
 
-/* press feedback (see the last block of site.js): a quick dip and a soft gold ring */
+/* press feedback (see the last block of site.js): a small dip and a faint ring */
 @keyframes tapfx {
-  0%   { transform: scale(1);                    box-shadow: 0 0 0 0 rgba(201, 163, 85, .55); }
-  30%  { transform: scale(var(--tp, .96)); }
-  100% { transform: scale(1);                    box-shadow: 0 0 0 12px rgba(201, 163, 85, 0); }
+  0%   { transform: scale(1);                    box-shadow: 0 0 0 0 rgba(201, 163, 85, .32); }
+  35%  { transform: scale(var(--tp, .975)); }
+  100% { transform: scale(1);                    box-shadow: 0 0 0 7px rgba(201, 163, 85, 0); }
 }
-.tapfx { animation: tapfx .46s cubic-bezier(.2, .7, .3, 1); }
-.scard, .points li.live, .lrow.live, .cont, .pager a { --tp: .985; }
-.points li.live { border-radius: 14px; }
+.tapfx { animation: tapfx .36s ease-out; }
+.scard, .points li.live, .pager a { --tp: .99; }
 @media (prefers-reduced-motion: reduce) { .tapfx { animation: none; } }
+/* a section tile that is itself the link opens wherever it is touched */
+.points li.live { position: relative; }
+.points li.live a::after { content: ""; position: absolute; inset: 0; border-radius: inherit; }
 
 /* dark mode: the open section must stand out from the «soon» ones — a gold edge on the lighter ink */
 :root[data-theme=dark] .points li.live { background: var(--band2); border-color: var(--gold); }
 @media (prefers-color-scheme: dark) { :root:not([data-theme=light]) .points li.live { background: var(--band2); border-color: var(--gold); } }
+
