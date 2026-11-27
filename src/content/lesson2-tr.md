@@ -166,5 +166,4 @@ Bu terk, o ibadetin bâtıl olduğuna itikadın amelde görünen sonucu ve doğr
 **Üçüncü kısım: Doğru mu, yanlış mı? (gerekçesiyle)**
 
 9. Allah’tan başkasına hiç ibadet etmemiş olan kimse, o ibadetin bâtıl olduğuna inanmasa bile tâğutu inkârı gerçekleştirmiştir. (     )
-10. Tâğuta ibadeti terk etmek, gayrimüslimlerle mübah ilişkiyi terk etmek demektir. (     )
-11. İctinab, sadece terkten daha kapsamlıdır. (     )
+10. İctinab, sadece terkten daha kapsamlıdır. (     )
