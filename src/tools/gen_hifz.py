@@ -41,14 +41,14 @@ document.addEventListener('DOMContentLoaded',()=>{const st=document.createElemen
 COMMON = f'''
 #top,#card,#tools,#bar,#prog,.wm,#orn,.node .more,.node.hascard::after{{display:none!important}}
 body,#stage{{background:#F7F3EA!important}} #stage::before,#stage::after{{display:none!important}}
-#ph{{position:fixed;top:0;inset-inline:0;height:60px;background:#0F2E2A;color:#F7F3EA;display:flex;align-items:center;gap:12px;padding:0 24px;z-index:9;font-family:{UF}}}
-#ph img{{width:42px}} #ph .eb{{color:#D9B26A;font-size:10px;font-weight:600;margin:0}}
-#ph h1{{margin:0;font-family:{HF};font-size:22px;font-weight:600;line-height:1.2}}
-#ph .pg{{background:#D9B26A;color:#0F2E2A;border-radius:20px;padding:3px 12px;font-weight:700;font-size:11.5px;margin-inline-start:6px}}
-#ph .lg{{margin-inline-start:auto;display:flex;gap:14px;align-items:center;font-size:10.5px;color:#DCE6E2}}
+#ph{{position:fixed;top:0;inset-inline:0;height:68px;background:#0F2E2A;color:#F7F3EA;display:flex;align-items:center;gap:12px;padding:0 24px;z-index:9;font-family:{UF}}}
+#ph img{{width:50px}} #ph .eb{{color:#E3BF78;font-size:13px;font-weight:700;margin:0}}
+#ph h1{{margin:0;font-family:{HF};font-size:27px;font-weight:600;line-height:1.2}}
+#ph .pg{{background:#D9B26A;color:#0F2E2A;border-radius:20px;padding:3px 12px;font-weight:700;font-size:14px;margin-inline-start:8px}}
+#ph .lg{{margin-inline-start:auto;display:flex;gap:14px;align-items:center;font-size:13.5px;font-weight:600;color:#FFFFFF}}
 #ph .lg span{{display:flex;align-items:center;gap:6px}}
 #ph .sw{{width:20px;height:12px;border-radius:4px;background:linear-gradient(90deg,#1F6B4F 0 33%,#2B4C7E 33% 66%,#8C2F39 66%);border:1.5px solid #F7F3EA;display:inline-block}}
-#ph .how{{font-size:10px;color:#B9CBC4;max-width:330px;line-height:1.45}}
+#ph .how{{font-size:13.5px;font-weight:600;color:#FFFFFF;max-width:420px;line-height:1.45}}
 .cnt{{position:absolute;z-index:3;background:#D9B26A;color:#0F2E2A;font-family:{UF};font-weight:700;border-radius:50%;display:grid;place-items:center;border:2px solid #F7F3EA}}
 #pf{{position:fixed;bottom:8px;inset-inline:20px;display:flex;gap:10px;z-index:9;font-family:{UF};height:80px}}
 #pf .box{{background:#D9B26A;border-radius:12px;padding:6px 14px;color:#0F2E2A;flex:1;overflow:hidden}}
@@ -75,8 +75,8 @@ def header(page):
     pl = (T['p1'] if page == 1 else T['p2']) + (f' ({PART})' if PART else '')
     how = T['how1'] if page == 1 else T['how2']
     return (f'<div id="ph"><img src="/media/logo.webp"><div><p class="eb">{obj["eb"]}</p><h1>{obj["h1"]}<span class="pg">{num(page)} · {pl}</span></h1></div>'
-            f'<div class="lg"><span class="how">{how}</span><span><i class="sw"></i>{T["hot"]}</span>'
-            f'<span><i class="cnt" style="position:static;width:18px;height:18px;font-size:10px">{num(6)}</i>{T["cnt"]}</span></div></div>')
+            f'<div class="lg"><span class="how">{how}</span>'
+            f'<span><i class="cnt" style="position:static;width:22px;height:22px;font-size:12px">{num(6)}</i>{T["cnt"]}</span></div></div>')
 def footer(page):
     if page == 1:
         ds = ''.join(f'<span><i></i>{d}</span>' for d in T['days'])
@@ -103,9 +103,9 @@ async def render(pg, page, path):
         else if(e.classList.contains('d2')){li++; if(blank){const x=document.createElement('span');x.className='ix';x.textContent=nm(li);e.appendChild(x);}}});
       const cols=__COLS__; bi=-1;
       const tint=c=>c+'1f';
-      nodes.forEach(e=>{ if(e.classList.contains('d1')){bi++; e.style.setProperty('background',cols[bi],'important'); e.dataset.b=bi;}
-        else if(e.classList.contains('d2')){ e.dataset.b=bi; const c=cols[bi]; e.style.setProperty('border-color',c,'important');
-          if(e.classList.contains('hot')){ e.style.setProperty('background', blank?tint(c):c,'important'); e.style.setProperty('color', blank?'transparent':'#fff','important'); const ix=e.querySelector('.ix'); if(ix) ix.style.color=c; }
+      let lj=0; nodes.forEach(e=>{ if(e.classList.contains('d1')){bi++; lj=0; e.style.setProperty('background',cols[bi],'important'); e.dataset.b=bi;}
+        else if(e.classList.contains('d2')){ lj++; e.dataset.b=bi; const c=cols[bi]; e.classList.remove('hot'); if(lj===1) e.classList.add('first'); e.style.setProperty('border-color',c,'important');
+          if(e.classList.contains('first')){ e.style.setProperty('background', blank?tint(c):c,'important'); e.style.setProperty('color', blank?'transparent':'#fff','important'); const ix=e.querySelector('.ix'); if(ix) ix.style.color=c; }
           else { e.style.setProperty('color', blank?'transparent':'#1d2826','important'); const ix=e.querySelector('.ix'); if(ix) ix.style.color=c; } } });
       const pts=nodes.map(e=>({x:parseFloat(e.style.left),y:parseFloat(e.style.top),b:e.dataset.b,d:e.classList.contains('d0')?0:e.classList.contains('d1')?1:2,w:e.offsetWidth}));
       document.querySelectorAll('#links path').forEach(p=>{const n=p.getAttribute('d').match(/-?[\\d.]+/g).map(Number); const ex=n[n.length-2], ey=n[n.length-1];
