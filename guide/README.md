@@ -12,6 +12,8 @@
    - [`series/kufr-bittaghut.md`](series/kufr-bittaghut.md): سلسلة «صفة الكفر بالطاغوت».
    - [`series/fiqh-muyassar.md`](series/fiqh-muyassar.md): سلسلة «الفقه الميسّر».
 
+4. [`status.md`](status.md): **حالة المشروع**، ما اتُّفق عليه ولم يُنفَّذ بعد.
+
 جملة البدء المقترحة في المحادثة الجديدة:
 
 > اقرأ أدلة مشروع khareeta (مجلد guide) وخريطة سلسلة «…»، ثم جهّز الدرس رقم … . هذه نقاطه: …

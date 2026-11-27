@@ -64,6 +64,8 @@ Taharet **tahûr su** (temizleyici su) ile gerçekleşir. Tahûr su, **kendisi t
 | Gökten inen | Yağmur, eriyen kar ve dolu |
 | Yerde akan | Nehir, pınar, kuyu ve deniz suyu |
 
+**Kolay bir ölçü:** Tahûr su, yalnızca «su» demenin yettiği sudur. Kuyu suyu ve deniz suyu için «bu sudur» deyip susabilirsiniz; «kuyu» ya da «deniz» kelimesi sadece yerini gösterir. Ama gül suyuna sadece «su» denmez; o yüzden taharetin gerçekleştiği su değildir.
+
 **Birinci delil:** ﴿وَيُنَزِّلُ عَلَيْكُمْ مِنَ السَّمَاءِ مَاءً لِيُطَهِّرَكُمْ بِهِ﴾ «Sizi onunla temizlemek için üzerinize gökten su indiriyordu.» [Enfâl, 11] ve ﴿وَأَنْزَلْنَا مِنَ السَّمَاءِ مَاءً طَهُورًا﴾ «Gökten tertemiz bir su indirdik.» [Furkân, 48]
 
 **İkinci delil:** Nebî’nin (sallallâhu aleyhi ve sellem) şu duası: «اللَّهُمَّ اغْسِلْنِي مِنْ خَطَايَايَ بِالْمَاءِ وَالثَّلْجِ وَالْبَرَدِ» «Allah’ım! Beni hatalarımdan su, kar ve dolu ile yıka.» Buhârî (744) ve Müslim (598).
@@ -103,11 +105,13 @@ Suya ağaç yaprakları, sabun, üşnan veya sidr (ikisi de eskiden yıkanmada k
 
 **İkinci delil:** Nebî’nin (sallallâhu aleyhi ve sellem), kızını (vefatında) yıkamaya hazırlayan kadınlara sözü: «اغْسِلْنَهَا ثَلَاثًا أَوْ خَمْسًا أَوْ أَكْثَرَ مِنْ ذَلِكَ إِنْ رَأَيْتُنَّ، بِمَاءٍ وَسِدْرٍ…» «Onu üç, beş ya da gerekli görürseniz daha fazla, su ve sidr ile yıkayın…» Buhârî (1253) ve Müslim (939).
 
-**Örnek:** İçine ağaç yaprakları düşen ve hâlâ «su» denilen havuz suyuyla abdest alınır. Karışan şey galip gelip su çaya veya meyve suyuna dönüşürse artık onunla taharet gerçekleşmez.
+**Örnek:** İçine ağaç yaprakları düşen ve hâlâ «su» denilen havuz suyuyla abdest alınır. Karışan şey galip gelip su çaya veya meyve suyuna dönüşürse ya da toprakla karışıp çamur olursa artık onunla taharet gerçekleşmez.
 
 ## Beşincisi: Taharette kullanılmış su
 
 Kullanılmış su, abdest alan veya boy abdesti (gusül) alan kimsenin organlarından ayrılan sudur. **Doğru olan görüşe göre temizdir ve temizler**; yeter ki koku, tat ve rengi değişmesin.
+
+**Dikkat:** Burada kastedilen kullanılmış su, farz olan temizlikte kullanılan sudur; abdestte yüzün ilk yıkanışı gibi. Fakihlerin üzerinde durduğu su budur.
 
 1. Nebî (sallallâhu aleyhi ve sellem) abdest aldığında, abdest suyu için neredeyse birbirleriyle çekişirlerdi. Buhârî (189).
 2. Hasta olan Câbir’in üzerine abdest suyundan döktü. Buhârî (5651) ve Müslim (1616).
@@ -126,6 +130,8 @@ Kullanılmış su, abdest alan veya boy abdesti (gusül) alan kimsenin organlar�
 | **Eti yenen** hayvanlar | İcmâ ile temizdir |
 | **Eti yenmeyen** yırtıcılar ve eşek gibi | Doğru olan görüşe göre temizdir; su az olur ve onların içmesiyle değişirse necis olur |
 | **Köpek ve domuz** | Necistir |
+
+**Kâfirin artık suyu neden temizdir?** Çünkü ﴿إِنَّمَا الْمُشْرِكُونَ نَجَسٌ﴾ «Müşrikler ancak bir pisliktir.» [Tevbe, 28] âyetindeki pislik manevîdir; yani kalpteki şirkin pisliğidir, bedenin pisliği değildir. Bu yüzden onun içtiği su necis olmaz; manevî taharet konusunda geçtiği gibi.
 
 Kaptan içen kedi hakkında: «إِنَّهَا لَيْسَتْ بِنَجَسٍ، إِنَّمَا هِيَ مِنَ الطَّوَّافِينَ عَلَيْكُمْ وَالطَّوَّافَاتِ» «O necis değildir; o, aranızda dolaşan erkek ve dişilerdendir.» Ahmed, Ebû Dâvûd (75), Tirmizî (92); Tirmizî «hasen sahih» demiştir.
 
