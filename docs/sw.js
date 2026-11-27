@@ -2,7 +2,7 @@
    Pages, styles and scripts: network first (so every edit reaches students when they are online),
    falling back to the saved copy when there is no connection.
    Fonts and pictures: saved copy first. Videos are never saved (too large). */
-const VERSION = '0ca3279a8830';
+const VERSION = 'd75b45e77e4b';
 const CACHE = 'wt-' + VERSION;
 const PRECACHE = [
  "./",
@@ -60,6 +60,13 @@ const PRECACHE = [
  "f2/slides.html",
  "f2/summary.html",
  "f2/text.html",
+ "f3/",
+ "f3/qa.html",
+ "f3/quiz.html",
+ "f3/sharh.html",
+ "f3/slides.html",
+ "f3/summary.html",
+ "f3/text.html",
  "fiqh-muyassar.html",
  "l1/",
  "l1/qa.html",
@@ -111,6 +118,13 @@ const PRECACHE = [
  "tr/f2/slides.html",
  "tr/f2/summary.html",
  "tr/f2/text.html",
+ "tr/f3/",
+ "tr/f3/qa.html",
+ "tr/f3/quiz.html",
+ "tr/f3/sharh.html",
+ "tr/f3/slides.html",
+ "tr/f3/summary.html",
+ "tr/f3/text.html",
  "tr/fiqh-muyassar.html",
  "tr/",
  "tr/l1/",
@@ -140,11 +154,13 @@ const PRECACHE = [
  "tr/tasks.html",
  "f1/index.html",
  "f2/index.html",
+ "f3/index.html",
  "l1/index.html",
  "l2/index.html",
  "l3/index.html",
  "tr/f1/index.html",
  "tr/f2/index.html",
+ "tr/f3/index.html",
  "tr/index.html",
  "tr/l1/index.html",
  "tr/l2/index.html",

@@ -447,3 +447,193 @@ SHARH[102] = [
      '**Örnek:** Çiftlikte bir koyun ölse, sahibi derisini tabaklayıp ondan bir kırba yapsa, onda su saklar ve ondan abdest alır; yünü de temizdir. Ölen bir kedinin derisi tabaklansa da temizlenmez.'),
  ]),
 ]
+
+# ------------------------------------------------------------------ الدرس الثالث: قضاء الحاجة وآدابها (الباب الثالث، ١/ ٩–١٢)
+GLOSS.update({
+ 'idawa': dict(w='إداوة', ar='إناء صغير من جلد.', tr='Deriden küçük bir kap.', src='حاشية الكتاب (١/ ٩)'),
+ 'rajee': dict(w='رجيع', ar='العَذِرة والروث.', tr='Dışkı ve tezek.', src='حاشية الكتاب (١/ ٩)'),
+ 'khubth': dict(w='الخبث والخبائث',
+   ar='الخُبُث بضم الباء جمع الخبيث، والخبائث جمع الخبيثة؛ يريد ذكور الشياطين وإناثهم.',
+   tr='«Hubus» habîsin, «habâis» habîsenin çoğuludur; erkek ve dişi şeytanlar kastedilir.',
+   src='ابن الأثير، «النهاية في غريب الحديث والأثر» (٢/ ٦)'),
+ 'baraz': dict(w='البراز', ar='البَراز بالفتح: اسم للفضاء الواسع، فكنَّوا به عن قضاء الغائط.', tr='Berâz: geniş açık arazi; ihtiyaç gidermek bununla kinaye yoluyla anlatılmıştır.',
+   src='ابن الأثير، «النهاية في غريب الحديث والأثر» (١/ ١١٨)'),
+ 'rakid': dict(w='الراكد', ar='الساكن الذي لا يجري.', tr='Akmayan, durgun (su).', src='حاشية الكتاب (١/ ١١)'),
+ 'malaain': dict(w='الملاعن', ar='جمع مَلْعَنة، وهي الفَعْلة التي يُلعن بها فاعلها، كأنها مظنّة للّعن.', tr='«Mel’ane»nin çoğulu: yapanın lanetlenmesine sebep olan iş; lanet edilmeye yol açan yer.',
+   src='ابن الأثير، «النهاية في غريب الحديث والأثر» (٤/ ٢٥٥)'),
+})
+GLOSS_TR_SRC.update({
+ 'حاشية الكتاب (١/ ٩)': 'Kitabın dipnotu (1/ 9)',
+ 'حاشية الكتاب (١/ ١١)': 'Kitabın dipnotu (1/ 11)',
+ 'ابن الأثير، «النهاية في غريب الحديث والأثر» (٢/ ٦)': 'İbnü’l-Esîr, en-Nihâye fî Garîbi’l-Hadîs (2/ 6)',
+ 'ابن الأثير، «النهاية في غريب الحديث والأثر» (١/ ١١٨)': 'İbnü’l-Esîr, en-Nihâye fî Garîbi’l-Hadîs (1/ 118)',
+ 'ابن الأثير، «النهاية في غريب الحديث والأثر» (٤/ ٢٥٥)': 'İbnü’l-Esîr, en-Nihâye fî Garîbi’l-Hadîs (4/ 255)',
+})
+
+SHARH[103] = [
+ dict(ar='المسألة الأولى: الاستنجاء والاستجمار وقيام أحدهما مقام الآخر', tr='Birinci mesele: İstincâ, isticmâr ve birinin diğerinin yerini tutması', paras=[
+  PS('الاستنجاء: إزالة الخارج من السبيلين بالماء. والاستجمار: مسحه بطاهر مباح مُنْقِ كالحجر ونحوه.',
+     'İstincâ: iki yoldan çıkanı su ile gidermektir. İsticmâr: onu taş gibi temiz, mubah ve temizleyici bir şeyle silmektir.',
+     '١/ ٩',
+     'لماذا يأتي هذا الباب بعد المياه والآنية؟ لأن أول ما يحتاج المسلم إلى تطهيره قبل الوضوء هو أثر ما يخرج منه. وفي الباب دليل على **شمول الشريعة**: فلم تترك حالًا من أحوال المسلم بلا أدب، حتى قضاء الحاجة. وهذا العلم ينفعك في السفر والرحلات وانقطاع الماء.\n\n'
+     'وفرّق الكتاب بين لفظين: **الاستنجاء** يكون **بالماء**، و**الاستجمار** يكون بغير الماء، وأصله من الجِمار، أي الحجارة الصغيرة. **والسبيلان:** مخرج البول ومخرج الغائط.\n\n'
+     'وما يُستجمر به له ثلاثة أوصاف: **طاهر**، فلا يكون نجسًا كالروث؛ و**مباح**، فلا يكون مغصوبًا ولا مما له حرمة؛ و**مُنْقٍ**، أي يزيل الأذى، فما لا يُنقي كالشيء الأملس لا يحصل به المقصود.',
+     'Bu bölüm neden sulardan ve kaplardan sonra gelir? Çünkü Müslümanın abdestten önce ilk temizlemesi gereken şey, kendisinden çıkanın izidir. Bölüm **şeriatın kapsayıcılığını** gösterir: Müslümanın hiçbir hâlini, ihtiyaç gidermeyi bile edepsiz bırakmamıştır. Bu bilgi yolculukta, gezilerde ve suyun kesildiği durumlarda işinize yarar.\n\n'
+     'Kitap iki kelimeyi ayırmıştır: **İstincâ su ile**, **isticmâr ise su dışındaki bir şeyle** olur; aslı «cimâr», yani küçük taşlardır. **İki yol:** idrar ve dışkının çıkış yerleri.\n\n'
+     'İsticmârda kullanılan şeyin üç vasfı vardır: **temiz** olması (tezek gibi necis olmaması), **mubah** olması (gasp edilmiş veya saygınlığı olan bir şey olmaması) ve **temizleyici** olması, yani pisliği gidermesi; temizlemeyen kaygan bir şeyle amaç hâsıl olmaz.'),
+  PS('ويجزئ أحدهما عن الآخر؛ لثبوت ذلك عن النبي ﷺ: فعن أنس ﵁ قال: (كان النبي ﷺ يدخل الخلاء، فأحمل أنا وغلام نحوي [[إداوة|idawa]] من ماء وعنزة، فيستنجي بالماء) (١). وعن عائشة ﵂، عن النبي ﷺ قال: (إذا ذهب أحدكم إلى الغائط، فليستطب بثلاثة أحجار، فإنها تُجزئ عنه) (٢). والجمع بينهما أفضل.',
+     'Her biri diğerinin yerini tutar; çünkü bu, Nebî’den (sallallâhu aleyhi ve sellem) sabittir. Enes (radıyallâhu anh) şöyle demiştir: «Nebî (sallallâhu aleyhi ve sellem) tuvalete girerdi; ben ve benim yaşımda bir genç, içinde su bulunan küçük bir deri kap ve kısa bir mızrak taşırdık; o da su ile istincâ yapardı.» (1) Âişe’den (radıyallâhu anhâ), Nebî (sallallâhu aleyhi ve sellem) şöyle buyurdu: «Biriniz ihtiyacını gidermeye gidince üç taşla temizlensin; bu ona yeter.» (2) İkisini birlikte yapmak daha faziletlidir.',
+     '١/ ٩',
+     'بعض الناس يظن أن الاستجمار لا يجوز إلا إذا لم يجد الماء، **وليس كذلك**: فكلٌّ منهما يجزئ عن الآخر، ولو مع وجود الماء؛ وهذا من تيسير الشريعة. فمن استجمر بالمناديل ثم توضأ وصلّى، فطهارته وصلاته صحيحتان.\n\n'
+     'لكن **الماء أفضل** من الحجارة وحدها، لأنه يزيل عين النجاسة وأثرها، والحجارة تزيل العين وقد يبقى أثر يسير يُعفى عنه. **والجمع بينهما أفضل** من الكل: يبدأ بالحجارة أو المناديل، ثم يُتبعها الماء.\n\n'
+     '**شرح الحواشي:** (١) الحديث في صحيح مسلم. و**الإداوة** إناء صغير من جلد يُحمل فيه الماء، و**العَنَزة** عصا قصيرة في طرفها حديدة. (٢) حديث عائشة أخرجه أحمد والدارقطني، وصحّح الدارقطني إسناده.',
+     'Bazı insanlar, su bulunmadıkça isticmârın caiz olmadığını sanır; **böyle değildir**: Su bulunsa bile her biri diğerinin yerini tutar; bu, şeriatın kolaylığındandır. Peçeteyle isticmâr yapıp abdest alan ve namaz kılanın taharet ve namazı sahihtir.\n\n'
+     'Ancak **su, yalnız taştan daha faziletlidir**; çünkü pisliğin hem kendisini hem izini giderir. Taş ise kendisini giderir, affedilen küçük bir iz kalabilir. **İkisini birlikte yapmak** ise hepsinden faziletlidir: önce taş veya peçeteyle başlanır, sonra su kullanılır.\n\n'
+     '**Dipnotların şerhi:** (1) Hadis Müslim’in Sahîh’indedir. **İdâve**, su taşınan deriden küçük kaptır; **aneze**, ucunda demir bulunan kısa bir değnektir. (2) Âişe hadisini Ahmed ve Dârekutnî rivayet etmiş, Dârekutnî isnadını sahih saymıştır.',
+     fn=['(١) رواه مسلم برقم (٢٧١)، والإداوة: إناء صغير من جلد.', '(٢) أخرجه أحمد (٦/ ١٠٨)، والدارقطني برقم (١٤٤) وقال: إسناد صحيح.']),
+  PS('والاستجمار يحصل بالحجارة أو ما يقوم مقامها من كل طاهر مُنْقِ مباح، كمناديل الورق والخشب ونحو ذلك؛ لأن النبي ﷺ كان يستجمر بالحجارة فيلحق بها ما يماثلها في الإنقاء. ولا يجزئ في الاستجمار أقل من ثلاث مسحات؛ لحديث سلمان ﵁: (نهانا -يعني النبي ﷺ - أن نستنجي باليمين، وأن نستنجي بأقل من ثلاثة أحجار، وأن نستنجي بـ[[رجيع|rajee]] أو عظم) (٣).',
+     'İsticmâr taşlarla veya onların yerini tutan temiz, temizleyici ve mubah her şeyle olur: kâğıt peçete, tahta ve benzeri gibi. Çünkü Nebî (sallallâhu aleyhi ve sellem) taşla isticmâr yapardı; temizlemede ona benzeyen şeyler de ona katılır. İsticmârda üç silmeden azı yetmez. Selmân’ın (radıyallâhu anh) hadisi buna delildir: «(Nebî) bizi sağ elle istincâ yapmaktan, üç taştan azıyla istincâ yapmaktan ve tezek ya da kemikle istincâ yapmaktan nehyetti.» (3)',
+     '١/ ٩',
+     'العلّة في الحجارة **الإنقاء**، فكل ما يُنقي مثلها يقوم مقامها: المناديل، والخشب، ونحوها.\n\n'
+     'وأُضيف إلى الشروط السابقة شرط مهم: **ألا يكون له حرمة**. فلا يُستجمر بورق الجرائد والكتب، لأنها قد تحمل آيات أو أحاديث أو أسماء فيها اسم الله، كعبد الله وعبد الرحمن؛ ولا يُستجمر بالطعام.\n\n'
+     '**وأقل الاستجمار ثلاث مسحات**، ولو نظف المحلّ بأقل منها. وحديث سلمان جمع ثلاثة أحكام: لا يُستنجى باليمين، ولا بأقل من ثلاثة أحجار، ولا برجيع أو عظم.\n\n'
+     '**شرح الحواشي:** (٣) الحديث في صحيح مسلم. و**الرجيع** العَذِرة والروث، سُمّي رجيعًا لأنه رجع عن حاله الأولى.',
+     'Taştaki gerekçe **temizlemesidir**; onun gibi temizleyen her şey onun yerini tutar: peçete, tahta ve benzerleri.\n\n'
+     'Önceki şartlara önemli bir şart eklenir: **saygınlığı olmaması**. Gazete ve kitap kâğıtlarıyla isticmâr yapılmaz; çünkü içinde âyetler, hadisler veya Abdullah, Abdurrahman gibi Allah’ın adı geçen isimler bulunabilir. Yiyecekle de isticmâr yapılmaz.\n\n'
+     '**İsticmârın en azı üç silmedir**; yer daha azıyla temizlense bile. Selmân hadisi üç hükmü toplamıştır: sağ elle, üç taştan azıyla, tezek veya kemikle istincâ yapılmaz.\n\n'
+     '**Dipnotların şerhi:** (3) Hadis Müslim’in Sahîh’indedir. **Recî’** dışkı ve tezektir; ilk hâlinden döndüğü için böyle adlandırılmıştır.',
+     fn=['(٣) رواه مسلم برقم (٢٦٢)، والرجيع: العَذرَةُ والروْثُ.']),
+ ]),
+ dict(ar='المسألة الثانية: استقبال القبلة واستدبارها حال قضاء الحاجة', tr='İkinci mesele: İhtiyaç giderirken kıbleye yönelmek ve sırt dönmek', paras=[
+  PS('لا يجوز استقبال القبلة ولا استدبارها حال قضاء الحاجة في الصحراء بلا حائل؛ لحديث أبي أيوب الأنصاري ﵁: قال رسول الله ﷺ: (إذا أتيتم الغائط فلا تستقبلوا القبلة، ولا تستدبروها، ولكن شَرِّقوا أو غَرِّبوا) قال أبو أيوب: فقدمنا الشام، فوجدنا مراحيض قد بُنيت نحو الكعبة، فننحرف عنها، ونستغفر الله (٤).',
+     'Açık arazide engel olmadan ihtiyaç giderirken kıbleye yönelmek de sırt dönmek de caiz değildir. Ebû Eyyûb el-Ensârî’nin (radıyallâhu anh) hadisi buna delildir: Rasûlullah (sallallâhu aleyhi ve sellem) şöyle buyurdu: «İhtiyacınızı gidermeye vardığınızda kıbleye yönelmeyin, sırtınızı da dönmeyin; doğuya veya batıya dönün.» Ebû Eyyûb dedi ki: «Şam’a geldik, Kâbe’ye doğru yapılmış tuvaletler bulduk; onlardan yönümüzü çevirir ve Allah’tan bağışlanma dilerdik.» (4)',
+     '١/ ٩',
+     'تأمّل القيود في الحكم، فكل قيد له معنى: **في الصحراء**، و**بلا حائل**. فإذا اجتمعا حرُم الاستقبال والاستدبار.\n\n'
+     'و**«شرّقوا أو غرّبوا»** خطاب لأهل المدينة، لأن الكعبة عندهم جهة الجنوب؛ فإذا اتجهوا شرقًا أو غربًا لم يستقبلوها ولم يستدبروها. أما من كانت القبلة عنده في الشرق، فإنه يتجه جنوبًا أو شمالًا.\n\n'
+     'وفي فعل أبي أيوب أدب جميل: كان ينحرف عن القبلة ما استطاع، ويستغفر الله.\n\n'
+     '**شرح الحواشي:** (٤) الحديث متفق عليه.',
+     'Hükümdeki kayıtlara dikkat edin; her kaydın bir anlamı vardır: **açık arazide** ve **engelsiz**. İkisi bir araya gelince kıbleye yönelmek ve sırt dönmek haram olur.\n\n'
+     '**«Doğuya veya batıya dönün»** sözü Medine halkına hitaptır; çünkü onlara göre Kâbe güney yönündedir. Doğuya veya batıya döndüklerinde ona ne yönelmiş ne de sırt dönmüş olurlar. Kıblesi doğuda olan kimse ise güneye veya kuzeye döner.\n\n'
+     'Ebû Eyyûb’un fiilinde güzel bir edep vardır: Gücü yettiğince kıbleden yönünü çevirir ve Allah’tan bağışlanma dilerdi.\n\n'
+     '**Dipnotların şerhi:** (4) Hadis Buhârî ve Müslim’dedir.',
+     fn=['(٤) رواه البخاري في كتاب الوضوء برقم (١٤٤)، ومسلم برقم (٢٦٤).']),
+  PS('أما إن كان في بنيان، أو كان بينه وبين القبلة شيء يستره، فلا بأس بذلك؛ لحديث ابن عمر ﵄: (أنه رأى رسول الله ﷺ يبول في بيته مستقبل الشام مستدبر الكعبة) (١)، ولحديث مروان الأصغر قال: (أناخ ابن عمر بعيره مستقبل القبلة، ثم جلس يبول إليه، فقلت: أبا عبد الرحمن، أليس قد نُهي عن هذا؟ قال: بلى إنما نهي عن هذا في الفضاء، أما إذا كان بينك وبين القبلة شيء يسترك فلا بأس) (٢). والأفضل ترك ذلك حتى في البنيان، والله أعلم.',
+     'Binada olursa veya kıble ile arasında onu örten bir şey bulunursa sakıncası yoktur. İbn Ömer’in (radıyallâhu anhümâ) hadisi buna delildir: «Rasûlullah’ı (sallallâhu aleyhi ve sellem) evinde, yüzü Şam’a, sırtı Kâbe’ye dönük olarak küçük abdestini yaparken gördü.» (1) Mervân’ın hadisi de öyledir: «İbn Ömer devesini kıbleye doğru çöktürdü, sonra ona doğru oturup küçük abdestini yaptı. “Ey Ebû Abdirrahman, bundan nehyedilmedi mi?” dedim. Dedi ki: “Evet; ama bundan yalnızca açık arazide nehyedildi. Seninle kıble arasında seni örten bir şey varsa sakıncası yoktur.”» (2) Binada bile bunu terk etmek daha faziletlidir. Allah en iyisini bilir.',
+     '١/ ١٠',
+     'هذه الحالة الثانية: **في البنيان، أو خلف حائل**، فلا بأس. والدليل فعل النبي ﷺ في بيته، وفهم ابن عمر رضي الله عنهما للنهي: إنما هو في الفضاء.\n\n'
+     '**كيف نجمع بين الحديثين؟** حديث أبي أيوب في الفضاء بلا حائل، وحديث ابن عمر في البنيان؛ فلا تعارض.\n\n'
+     'ثم قال الكتاب: **والأفضل ترك ذلك حتى في البنيان**؛ احتياطًا وتعظيمًا للقبلة. فإن شقّ عليه ذلك، كحمّام بُني إلى جهة القبلة، فلا حرج.\n\n'
+     '**شرح الحواشي:** (١) حديث ابن عمر متفق عليه. (٢) أثر ابن عمر رواه أبو داود والدارقطني والحاكم، وصحّحه جماعة من الأئمة، وحسّنه ابن حجر والألباني.',
+     'Bu ikinci durumdur: **binada veya bir engelin arkasında** sakınca yoktur. Delili, Nebî’nin (sallallâhu aleyhi ve sellem) evindeki fiili ve İbn Ömer’in (radıyallâhu anhümâ) yasağı anlayışıdır: Yasak yalnızca açık araziyle ilgilidir.\n\n'
+     '**İki hadisi nasıl bağdaştırırız?** Ebû Eyyûb hadisi engelsiz açık arazi, İbn Ömer hadisi bina hakkındadır; çelişki yoktur.\n\n'
+     'Sonra kitap şöyle der: **Binada bile bunu terk etmek daha faziletlidir**; ihtiyat ve kıbleye saygı için. Kıbleye doğru yapılmış bir tuvalet gibi zorluk varsa günah yoktur.\n\n'
+     '**Dipnotların şerhi:** (1) İbn Ömer hadisi Buhârî ve Müslim’dedir. (2) İbn Ömer’in bu sözünü Ebû Dâvûd, Dârekutnî ve Hâkim rivayet etmiş; bir grup imam sahih, İbn Hacer ve Elbânî hasen saymıştır.',
+     fn=['(١) رواه البخاري برقم (١٤٨)، ومسلم برقم (٢٦٦).', '(٢) رواه أبو داود برقم (١١)، والدارقطني برقم (١٥٨)، والحاكم (١/ ١٥٤). وصححه الدارقطني، والحاكم ووافقه الذهبي، وحَسنه الحافظ ابن حجر، والحازمي، والألباني (انظر: الإرواء برقم ٦١).'],
+     note=dict(ar='تنبيه: الراوي في المصادر «مروان الأصفر»، بالفاء.', tr='Not: Kaynaklarda râvinin adı «Mervân el-Asfar»dır.')),
+ ]),
+ dict(ar='المسألة الثالثة: ما يسن فعله لداخل الخلاء', tr='Üçüncü mesele: Tuvalete giren kimse için sünnet olanlar', paras=[
+  PS('يسن لداخل الخلاء قول: "بسم الله اللهم إني أعوذ بك من [[الخبث والخبائث|khubth]]". وعند الانتهاء والخروج: "غفرانك". وتقديم رجله اليسرى عند الدخول واليمنى عند الخروج، وأن لا يكشف عورته حتى يدنو من الأرض. وإذا كان في الفضاء يستحب له الإبعاد والاستتار حتى لا يُرى.',
+     'Tuvalete giren kimsenin şöyle demesi sünnettir: «Allah’ın adıyla. Allah’ım! Erkek ve dişi şeytanlardan sana sığınırım.» İşini bitirip çıkarken: «Bağışlamanı dilerim.» Girerken sol ayağını, çıkarken sağ ayağını öne alması ve yere yaklaşmadan avret yerini açmaması da sünnettir. Açık arazide ise görünmeyecek şekilde uzaklaşması ve örtünmesi müstehaptır.',
+     '١/ ١٠',
+     'هذه **خمس سنن** يحفظها الطالب: البسملة والاستعاذة عند الدخول، و«غفرانك» عند الخروج، واليسرى دخولًا واليمنى خروجًا، وألا يكشف عورته حتى يدنو من الأرض، والإبعاد والاستتار في الفضاء.\n\n'
+     '**لاحظ الترتيب:** هنا يبدأ بالبسملة ثم الاستعاذة، بخلاف القراءة التي يبدأ فيها بالاستعاذة ثم البسملة.\n\n'
+     '**ولماذا اليسرى عند الدخول؟** لأن اليمنى تُقدَّم لما هو شريف كالمسجد، واليسرى لما سواه.',
+     'Öğrencinin ezberleyeceği **beş sünnet** budur: girerken besmele ve istiâze, çıkarken «gufrâneke», girerken sol ve çıkarken sağ ayak, yere yaklaşmadan avret yerini açmamak, açık arazide uzaklaşmak ve örtünmek.\n\n'
+     '**Sıraya dikkat edin:** Burada önce besmele, sonra istiâze gelir; Kur’ân okurken ise önce istiâze, sonra besmele gelir.\n\n'
+     '**Girerken neden sol ayak?** Çünkü mescit gibi şerefli yerlere sağ, diğerlerine sol ayakla girilir.'),
+  PS('وأدلة ذلك كله: حديث جابر ﵁ قال: (خرجنا مع رسول الله ﷺ في سفر وكان رسول الله ﷺ لا يأتي [[البراز|baraz]] حتى يتغيب فلا يُرى) (٣). وحديث علي ﵁ قال: قال رسول الله ﷺ: (ستر ما بين الجن وعورات بني آدم إذا دخل الخلاء، أن يقول: بسم الله) (٤). وحديث أنس ﵁: كان النبي ﷺ إذا دخل الخلاء قال: (اللهم إني أعوذ بك من الخبث والخبائث) (٥).',
+     'Bunların hepsinin delilleri şunlardır: Câbir’in (radıyallâhu anh) hadisi: «Rasûlullah (sallallâhu aleyhi ve sellem) ile bir yolculuğa çıktık; Rasûlullah ihtiyacını gidermeye, gözden kaybolup görünmeyecek bir yere gitmeden gitmezdi.» (3) Ali’nin (radıyallâhu anh) hadisi: Rasûlullah (sallallâhu aleyhi ve sellem) şöyle buyurdu: «Âdemoğlu tuvalete girdiğinde cinlerle onun avret yerleri arasındaki perde, “Bismillah” demesidir.» (4) Enes’in (radıyallâhu anh) hadisi: Nebî (sallallâhu aleyhi ve sellem) tuvalete girince «Allah’ım! Erkek ve dişi şeytanlardan sana sığınırım» derdi. (5)',
+     '١/ ١٠',
+     'في حديث علي أن **البسملة ستر** يحجب عورات بني آدم عن أعين الجن؛ وفي حديث أنس أن الخلاء موضع الشياطين، فيستعيذ المسلم بالله منهم. وفي حديث جابر **الحياء والستر**: كان ﷺ يبتعد حتى لا يُرى.\n\n'
+     '**شرح الحواشي:** (٣) حديث جابر رواه أبو داود وابن ماجه بإسناد صحيح. (٤) حديث علي رواه الترمذي وابن ماجه، وصحّحه الألباني. (٥) حديث أنس متفق عليه.',
+     'Ali hadisinde **besmelenin bir perde olduğu** bildirilir: Âdemoğlunun avret yerlerini cinlerin gözlerinden örter. Enes hadisinde tuvaletin şeytanların bulunduğu yer olduğu, Müslümanın onlardan Allah’a sığındığı anlaşılır. Câbir hadisinde **hayâ ve örtünme** vardır: Nebî (sallallâhu aleyhi ve sellem) görünmemek için uzaklaşırdı.\n\n'
+     '**Dipnotların şerhi:** (3) Câbir hadisini Ebû Dâvûd ve İbn Mâce sahih isnadla rivayet etmiştir. (4) Ali hadisini Tirmizî ve İbn Mâce rivayet etmiş, Elbânî sahih saymıştır. (5) Enes hadisi Buhârî ve Müslim’dedir.',
+     fn=['(٣) رواه أبو داود برقم (٢)، وابن ماجه برقم (٣٣٥)، واللفظ له، وإسناده صحيح. انظر صحيح ابن ماجه (١/ ٦٠).', '(٤) رواه ابن ماجه برقم (٢٩٧)، والترمذي برقم (٦٠٦) وحسنه أحمد شاكر في حاشية الترمذي، وصححه الألباني. صحيح الجامع الصغير برقم (٣٦١١).', '(٥) رواه البخاري برقم (١٤٢)، ومسلم برقم (٣٧٥).']),
+  PS('وحديث عائشة ﵂: (كان ﷺ إذا خرج من الخلاء قال: غفرانك) (١). وحديث ابن عمر ﵄: (أن النبي ﷺ كان إذا أراد الحاجة لا يرفع ثوبه حتى يدنو من الأرض) (٢).',
+     'Âişe’nin (radıyallâhu anhâ) hadisi: «Nebî (sallallâhu aleyhi ve sellem) tuvaletten çıkınca “Bağışlamanı dilerim” derdi.» (1) İbn Ömer’in (radıyallâhu anhümâ) hadisi: «Nebî (sallallâhu aleyhi ve sellem) ihtiyacını gidermek istediğinde yere yaklaşmadan elbisesini kaldırmazdı.» (2)',
+     '١/ ١١',
+     '**«غفرانك»** أي: أسألك غفرانك. وفيه أن المسلم يذكر ربه ويستغفره عند خروجه. وفي إخراج الأذى من البدن **نعمة عظيمة**، من حُرمها عرف قدرها.\n\n'
+     'وفي حديث ابن عمر **أدب الستر**: لا يرفع ثوبه إلا عند الحاجة، حين يقرب من الأرض.\n\n'
+     '**شرح الحواشي:** (١) حديث عائشة رواه أبو داود والترمذي، وحسّنه الألباني. (٢) حديث ابن عمر رواه أبو داود والترمذي، وصحّحه الألباني.',
+     '**«Gufrâneke»**, «bağışlamanı dilerim» demektir. Müslüman tuvaletten çıkarken Rabbini anar ve O’ndan bağışlanma diler. Eziyet veren şeyin bedenden çıkması **büyük bir nimettir**; ondan mahrum kalan onun değerini bilir.\n\n'
+     'İbn Ömer hadisinde **örtünme edebi** vardır: Elbisesini ancak ihtiyaç anında, yere yaklaşınca kaldırır.\n\n'
+     '**Dipnotların şerhi:** (1) Âişe hadisini Ebû Dâvûd ve Tirmizî rivayet etmiş, Elbânî hasen saymıştır. (2) İbn Ömer hadisini Ebû Dâvûd ve Tirmizî rivayet etmiş, Elbânî sahih saymıştır.',
+     fn=['(١) رواه أبو داود برقم (١٧)، والترمذي برقم (٧)، وقال: حسن غريب. وحسنه الألباني (صحيح الجامع الصغير ٤٧٠٧).', '(٢) رواه أبو داود برقم (١٤)، والترمذي برقم (١٤) وصححه الألباني، انظر صحيح الجامع الصغير برقم (٤٦٥٢).'],
+     note=dict(ar='تنبيه على الحاشية (١): حديث «غفرانك» في «سنن أبي داود» برقم (٣٠)؛ أما (١٧) فرقم الباب في بعض الطبعات.', tr='(1) numaralı dipnot hakkında: «Gufrâneke» hadisi Ebû Dâvûd’un Sünen’inde 30 numaradadır; 17, bazı baskılarda babın numarasıdır.')),
+ ]),
+ dict(ar='المسألة الرابعة: ما يحرم فعله على من أراد قضاء الحاجة', tr='Dördüncü mesele: İhtiyacını gidermek isteyene haram olanlar', paras=[
+  PS('يحرم البول في الماء [[الراكد|rakid]]؛ لحديث جابر عن النبي ﷺ: (أنه نهى عن البول في الماء الراكد) (٣). ولا يمسك ذكره بيمينه وهو يبول، ولا يستنجي بها. لقوله ﷺ: (إذا بال أحدكم فلا يأخذن ذكره بيمينه، ولا يستنجي بيمينه) (٤).',
+     'Durgun suya küçük abdest yapmak haramdır. Câbir’in Nebî’den (sallallâhu aleyhi ve sellem) rivayeti buna delildir: «Durgun suya küçük abdest yapmayı nehyetti.» (3) Küçük abdest yaparken tenasül organını sağ eliyle tutmaz ve sağ eliyle istincâ yapmaz. Çünkü Nebî (sallallâhu aleyhi ve sellem) şöyle buyurmuştur: «Biriniz küçük abdest yaptığında tenasül organını sağ eliyle tutmasın, sağ eliyle istincâ da yapmasın.» (4)',
+     '١/ ١١',
+     '**الماء الراكد** هو الذي لا يجري، كالبركة؛ والبول فيه يُفسده على من يحتاج إليه. وفي هذا حفظ لموارد الناس، وهو ما يسمّيه الناس اليوم «حماية البيئة»، وقد سبقت إليه الشريعة.\n\n'
+     '**واليمين** في الإسلام مكرَّمة، تُستعمل فيما يشرف: الأكل، والمصافحة، والأخذ والعطاء؛ فلا تُستعمل في إزالة الأذى.\n\n'
+     '**شرح الحواشي:** (٣) حديث جابر في صحيح مسلم، وعند البخاري نحوه من حديث أبي هريرة. (٤) الحديث متفق عليه.',
+     '**Durgun su**, havuz gibi akmayan sudur; ona küçük abdest yapmak, ona ihtiyacı olanlar için onu bozar. Bunda insanların su kaynaklarını korumak vardır; bugün insanların «çevreyi korumak» dediği şey budur ve şeriat buna önceden dikkat çekmiştir.\n\n'
+     '**Sağ el** İslam’da saygındır; yemek, tokalaşmak, alıp vermek gibi şerefli işlerde kullanılır; pislik gidermede kullanılmaz.\n\n'
+     '**Dipnotların şerhi:** (3) Câbir hadisi Müslim’in Sahîh’indedir; Buhârî’de de Ebû Hureyre’den benzeri vardır. (4) Hadis Buhârî ve Müslim’dedir.',
+     fn=['(٣) رواه مسلم برقم (٢٨١)، ونحوه عند البخاري برقم (٢٣٩). والراكد: هو الساكن الذي لا يجري.', '(٤) رواه البخاري برقم (١٥٤) واللفظ له، ومسلم برقم (٢٦٧).']),
+  PS('ويحرم عليه البول أو الغائط في الطريق أو في الظل أو في الحدائق العامة أو تحت شجرة مثمرة أو موارد المياه؛ لما روى معاذ قال: قال رسول الله ﷺ: (اتقوا [[الملاعن|malaain]] الثلاث: البراز في الموارد، وقارعة الطريق، والظل) (٥)، ولحديث أبي هريرة ﵁ أن النبي ﷺ قال: (اتقوا اللاعنين)، قالوا: وما اللاعنان يا رسول الله؟ قال: (الذي يَتَخَلى في طريق الناس أو في ظلهم) (٦).',
+     'Yolda, gölgede, umumi parklarda, meyve veren ağacın altında veya su kaynaklarında küçük ya da büyük abdest yapmak ona haramdır. Muâz’ın rivayeti buna delildir: Rasûlullah (sallallâhu aleyhi ve sellem) şöyle buyurdu: «Lanete sebep olan üç şeyden sakının: su kaynaklarına, yolun ortasına ve gölgeye ihtiyaç gidermek.» (5) Ebû Hureyre’nin (radıyallâhu anh) hadisi de öyledir: Nebî (sallallâhu aleyhi ve sellem) «Lanete sebep olan iki şeyden sakının» buyurdu. «Ey Allah’ın Rasûlü, onlar nedir?» dediler. «İnsanların yoluna veya gölgesine ihtiyacını gideren kimse» buyurdu. (6)',
+     '١/ ١١',
+     '**لماذا سُمّيت «ملاعن»؟** لأن من وجد الأذى في طريقه، أو في الظل الذي يستريح فيه، أو عند الماء الذي يشرب منه، لعن فاعله غالبًا؛ فهي أسباب لِلَّعن. فالنبي ﷺ يحمي أمته من أن تُلعن، ويحذّرها من إيذاء الناس.\n\n'
+     'وكل مكان يرتفق به الناس داخل في هذا: **الطريق** لأنه ممرّهم، و**الظل** لأنهم يستريحون فيه، و**الحدائق العامة**، و**الشجرة المثمرة** لأن ثمرها قد يسقط فيتنجس، و**موارد المياه**.\n\n'
+     'وفي هذا أدب عام: أن يتّقي المسلم كل ما قد يجلب عليه دعاء الناس عليه.\n\n'
+     '**شرح الحواشي:** (٥) حديث معاذ رواه أبو داود وابن ماجه، وإسناده حسن. (٦) حديث أبي هريرة في صحيح مسلم.',
+     '**Bunlara neden «lanete sebep olanlar» denildi?** Çünkü yolunda, dinlendiği gölgede veya içtiği suyun başında pislik bulan kimse çoğu zaman bunu yapana lanet eder; bunlar lanetin sebepleridir. Nebî (sallallâhu aleyhi ve sellem) ümmetini lanetlenmekten korur ve insanlara eziyet etmekten sakındırır.\n\n'
+     'İnsanların yararlandığı her yer buna girer: **yol** (geçtikleri yer), **gölge** (dinlendikleri yer), **umumi parklar**, **meyve veren ağaç** (meyvesi düşüp necis olabilir) ve **su kaynakları**.\n\n'
+     'Burada genel bir edep vardır: Müslüman, insanların aleyhine dua etmesine yol açabilecek her şeyden sakınır.\n\n'
+     '**Dipnotların şerhi:** (5) Muâz hadisini Ebû Dâvûd ve İbn Mâce rivayet etmiştir; isnadı hasendir. (6) Ebû Hureyre hadisi Müslim’in Sahîh’indedir.',
+     fn=['(٥) رواه أبو داود برقم (٢٦)، وابن ماجه برقم (٣٢٨). وإسناده حسن انظر إرواء الغليل (١/ ١٠٠).', '(٦) رواه مسلم برقم (٢٦٩).']),
+  PS('كما يحرم عليه قراءة القرآن، ويحرم عليه الاستجمار بالروث أو العظم أو بالطعام المحترم؛ لحديث جابر ﵁: (نهى النبي ﷺ أن يتمسح بعظم أو ببعر) (٧). ويحرم قضاء الحاجة بين قبور المسلمين، قال النبي ﷺ: (لا أبالي أوسط القبور قضيت حاجتي، أو وسط السوق؟) (٨).',
+     'Ayrıca ona Kur’ân okumak haramdır; tezek, kemik veya saygın bir yiyecekle isticmâr yapmak da haramdır. Câbir’in (radıyallâhu anh) hadisi buna delildir: «Nebî (sallallâhu aleyhi ve sellem) kemikle veya tezekle silinmeyi nehyetti.» (7) Müslümanların kabirleri arasında ihtiyaç gidermek de haramdır. Nebî (sallallâhu aleyhi ve sellem) şöyle buyurmuştur: «Kabirlerin ortasında mı ihtiyacımı gidermişim, çarşının ortasında mı, umursamam.» (8)',
+     '١/ ١١',
+     '**قراءة القرآن** حال قضاء الحاجة تحرم، تعظيمًا لكلام الله.\n\n'
+     '**والعظم والروث** لا يُستجمر بهما؛ فالروث نجس لا يُطهِّر، والعظم لا يُنقي، وقد جاء في الحديث أنهما طعام الجن ودوابّهم. **والطعام المحترم** أولى بالمنع.\n\n'
+     'وفي حديث القبور تقبيح شديد: قضاء الحاجة بين القبور مثل قضائها وسط السوق أمام الناس، فكلاهما قبيح. **وللموتى حرمة** كحرمة الأحياء.\n\n'
+     '**شرح الحواشي:** (٧) حديث جابر في صحيح مسلم. (٨) حديث القبور رواه ابن ماجه، وصحّحه الألباني.',
+     '**Kur’ân okumak** ihtiyaç giderirken haramdır; Allah’ın kelâmına saygı içindir.\n\n'
+     '**Kemik ve tezekle** isticmâr yapılmaz: Tezek necistir, temizlemez; kemik temizlemez; hadiste bunların cinlerin ve hayvanlarının yiyeceği olduğu gelmiştir. **Saygın yiyecek** ise yasağa öncelikle girer.\n\n'
+     'Kabir hadisinde ağır bir kınama vardır: Kabirlerin arasında ihtiyaç gidermek, çarşının ortasında insanların önünde gidermek gibidir; ikisi de çirkindir. **Ölülerin de dirilerin saygınlığı gibi bir saygınlığı vardır.**\n\n'
+     '**Dipnotların şerhi:** (7) Câbir hadisi Müslim’in Sahîh’indedir. (8) Kabir hadisini İbn Mâce rivayet etmiş, Elbânî sahih saymıştır.',
+     fn=['(٧) رواه مسلم برقم (٢٦٣).', '(٨) رواه ابن ماجه برقم (١٥٦٧) وصححه الألباني في إرواء الغليل (١/ ١٠٢).']),
+ ]),
+ dict(ar='المسألة الخامسة: ما يكره فعله للمُتَخَلِّي', tr='Beşinci mesele: Tuvaletteki kimse için mekruh olanlar', paras=[
+  PS('يكره حال قضاء الحاجة استقبال مهب الريح بلا حائل؛ لئلا يرتد البول إليه، ويكره الكلام؛ فقد مرّ رجل والنبي ﷺ يبول، فسلَّم عليه، فلم يردّ عليه (١).',
+     'İhtiyaç giderirken engel olmadan rüzgârın estiği yöne dönmek mekruhtur; idrar üzerine geri sıçramasın diye. Konuşmak da mekruhtur. Nebî (sallallâhu aleyhi ve sellem) küçük abdestini yaparken bir adam geçip selam verdi; selamını almadı. (1)',
+     '١/ ١٢',
+     'انتقل الكتاب من المحرّم إلى **المكروه**: وهو ما يُثاب تاركه ولا يأثم فاعله.\n\n'
+     '**استقبال الريح:** علّته ظاهرة في الكتاب: لئلا يرتدّ رشاش البول إليه فيتنجّس.\n\n'
+     '**الكلام:** النبي ﷺ لم يردّ السلام وهو على حاجته، مع أن ردّ السلام واجب؛ فدلّ على أن الكلام في هذه الحال لا ينبغي.\n\n'
+     '**شرح الحواشي:** (١) الحديث في صحيح مسلم من حديث ابن عمر رضي الله عنهما.',
+     'Kitap haramdan **mekruha** geçmiştir: Mekruh, terk edene sevap verilen, yapan günaha girmeyen şeydir.\n\n'
+     '**Rüzgâra dönmek:** Gerekçesi kitapta açıktır: İdrar sıçrayıp üzerine gelmesin ve onu necis kılmasın.\n\n'
+     '**Konuşmak:** Selama karşılık vermek vacip olduğu hâlde Nebî (sallallâhu aleyhi ve sellem) ihtiyacını giderirken selamı almamıştır; bu, o hâlde konuşmanın uygun olmadığını gösterir.\n\n'
+     '**Dipnotların şerhi:** (1) Hadis, İbn Ömer’in (radıyallâhu anhümâ) rivayetiyle Müslim’in Sahîh’indedir.',
+     fn=['(١) رواه مسلم برقم (٣٧٠).']),
+  PS('ويكره أن يبول في شَق ونحوه؛ لحديث قتادة عن عبد الله بن سرجس: (أن النبي ﷺ نهى أن يبال في الجُحْر، قيل لقتادة: فما بال الجحر؟ قال: يقال: إنها مساكن الجن) (٢). ولأنه لا يأمن أن يكون فيه حيوان فيؤذيه، أو يكون مسكناً للجن فيؤذيهم.',
+     'Yarık ve benzeri bir yere küçük abdest yapmak mekruhtur. Katâde’nin Abdullah b. Sercis’ten rivayet ettiği hadis buna delildir: «Nebî (sallallâhu aleyhi ve sellem) deliğe küçük abdest yapılmasını nehyetti.» Katâde’ye: «Deliğin nesi var?» denildi. «Onların cinlerin barınakları olduğu söylenir» dedi. (2) Ayrıca içinde kendisine eziyet verecek bir hayvan bulunmasından ya da cinlerin barınağı olup onlara eziyet vermekten emin olamaz.',
+     '١/ ١٢',
+     'علّتان في النهي: **أن يؤذيه** ما في الجحر من حيّة أو عقرب أو غيرهما، **أو يؤذي** من يسكنه من الجن. فالشريعة تمنع الأذى من الجهتين.\n\n'
+     '**شرح الحواشي:** (٢) الحديث رواه أبو داود والنسائي، ونقل ابن حجر تصحيحه عن ابن خزيمة وابن السكن.',
+     'Yasakta iki gerekçe vardır: Delikteki yılan, akrep veya başka bir hayvanın **ona eziyet vermesi** ya da orada yaşayan cinlere **eziyet vermesi**. Şeriat eziyeti iki taraftan da önler.\n\n'
+     '**Dipnotların şerhi:** (2) Hadisi Ebû Dâvûd ve Nesâî rivayet etmiş; İbn Hacer, İbn Huzeyme ve İbnü’s-Seken’in sahih saydığını nakletmiştir.',
+     fn=['(٢) رواه أبو داود برقم (٢٩)، والنسائي برقم (٣٤). ونقل الحافظ ابن حجر في التلخيص (١/ ١٠٦) تصحيحه عن ابن خزيمة وابن السكن. وقال الشيخ ابن عثيمين: أقل أحواله أن يكون حسناً (الشرح الممتع ١/ ٩٥ - ٩٦).']),
+  PS('ويكره أن يدخل الخلاء بشيء فيه ذكْرُ الله إلا لحاجة؛ لأن النبي ﷺ (كان إذا دخل الخلاء وضع خاتمه) (٣). أما عند الحاجة والضرورة فلا بأس، كالحاجة إلى الدخول بالأوراق النقدية التي فيها اسم الله؛ فإنه إن تركها خارجاً كانت عرضة للسرقة أو النسيان.',
+     'İçinde Allah’ın zikri bulunan bir şeyle tuvalete girmek, ihtiyaç olmadıkça mekruhtur. Çünkü Nebî (sallallâhu aleyhi ve sellem) «tuvalete girince yüzüğünü çıkarırdı.» (3) İhtiyaç ve zaruret hâlinde ise sakıncası yoktur; üzerinde Allah’ın adı bulunan kâğıt paralarla girme ihtiyacı gibi; çünkü onları dışarıda bıraksa çalınabilir veya unutulabilir.',
+     '١/ ١٢',
+     'كان خاتم النبي ﷺ منقوشًا عليه «محمد رسول الله»، فكان يضعه عند دخول الخلاء. ومثله اليوم: **قلادة أو حُليّ فيه لفظ الجلالة**، يُنزع قبل الدخول إن أمكن.\n\n'
+     '**والحاجة تُبيح ذلك:** كالنقود التي فيها اسم الله، يخاف عليها السرقة أو النسيان.\n\n'
+     '**شرح الحواشي:** (٣) الحديث رواه أصحاب السنن، وضعّفه أبو داود والألباني. ومع ضعفه فالأولى ألا يدخل الخلاء بما فيه اسم الله بلا حاجة، **إكرامًا لاسمه تعالى**، كما قالت الحاشية.',
+     'Nebî’nin (sallallâhu aleyhi ve sellem) yüzüğünde «Muhammed Rasûlullah» yazılıydı; tuvalete girerken onu çıkarırdı. Bugün bunun benzeri, **üzerinde Allah lafzı bulunan bir kolye veya takıdır**; mümkünse girmeden önce çıkarılır.\n\n'
+     '**İhtiyaç bunu mubah kılar:** Çalınmasından veya unutulmasından korkulan, üzerinde Allah’ın adı bulunan paralar gibi.\n\n'
+     '**Dipnotların şerhi:** (3) Hadisi Sünen sahipleri rivayet etmiş; Ebû Dâvûd ve Elbânî zayıf saymıştır. Zayıf olsa da, dipnotta denildiği gibi, **Allah’ın adına saygı için** ihtiyaç olmadan içinde Allah’ın adı bulunan bir şeyle tuvalete girmemek daha uygundur.',
+     fn=['(٣) رواه أبو داود برقم (١٩)، والترمذي برقم (١٧٤٦)، والنسائي برقم (٥٢٢٨)، وابن ماجه برقم (٣٠٣)، وقال أبو داود بعد إخراجه: هذا حديث منكر. وقال الترمذي: هذا حديث حسن غريب. وضعفه الألباني؛ وعلى القول بضعف هذا الحديث وعدم صلاحيته للاحتجاج في هذه المسألة، فإن الأولى والأفضل ألا يدخل الخلاء بشيء فيه اسم الله بلا ضرورة؛ إكراماً لاسمه تعالى وإجلالاً.']),
+  PS('أما المصحف فإنه يحرم الدخول به سواء كان ظاهراً أو خفياً؛ لأنه كلام الله وهو أشرف الكلام، ودخول الخلاء به فيه نوع من الإهانة.',
+     'Mushafla girmek ise, açıkta olsun gizli olsun, haramdır; çünkü o, sözlerin en şereflisi olan Allah’ın kelâmıdır ve onunla tuvalete girmekte bir tür saygısızlık vardır.',
+     '١/ ١٢',
+     'فرّق الكتاب بين أمرين: **ما فيه ذكر الله** يُكره الدخول به إلا لحاجة، و**المصحف** يحرم الدخول به مطلقًا، ولو كان في جيبه أو حقيبته. والفرق أن المصحف كلام الله، أشرف الكلام، فحرمته أعظم.\n\n'
+     '**القاعدة في الباب كله:** الشريعة حفظت الطهارة، والستر، وتعظيم شعائر الله، ودفع الأذى عن الناس.',
+     'Kitap iki şeyi ayırmıştır: **İçinde Allah’ın zikri bulunan şeyle** ihtiyaç olmadıkça girmek mekruhtur; **Mushafla** girmek ise cebinde veya çantasında olsa bile mutlak olarak haramdır. Fark şudur: Mushaf, sözlerin en şereflisi olan Allah’ın kelâmıdır; saygınlığı daha büyüktür.\n\n'
+     '**Bölümün tamamındaki kaide:** Şeriat temizliği, örtünmeyi, Allah’ın şiarlarına saygıyı ve insanlardan eziyeti uzaklaştırmayı korumuştur.'),
+ ]),
+]

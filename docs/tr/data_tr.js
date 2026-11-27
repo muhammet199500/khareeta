@@ -1975,4 +1975,408 @@ window.FIQH2.quiz = [
     "x": "Eti yenen ölü hayvanın kılı ve yünü temizdir; eti ise necis ve haramdır."
   }
 ];
-window.LESSONS = [window.LESSON, window.LESSON2, window.LESSON3, window.FIQH1, window.FIQH2];
+window.FIQH3 = {
+  "title": "Def-i Hacet ve Âdâbı",
+  "root": {
+    "id": "root",
+    "label": "Def-i Hacet\nve Âdâbı"
+  },
+  "branches": [
+    {
+      "id": "b1",
+      "label": "İstincâ ve isticmâr",
+      "children": [
+        {
+          "id": "b1a",
+          "label": "İstincâ: su ile",
+          "card": {
+            "tag": "Tanım",
+            "title": "İstincâ",
+            "body": "İki yoldan çıkanı su ile gidermek."
+          }
+        },
+        {
+          "id": "b1b",
+          "label": "İsticmâr: taş vb. ile",
+          "card": {
+            "tag": "Tanım",
+            "title": "İsticmâr",
+            "body": "Çıkanı taş ve peçete gibi temiz, mubah ve temizleyici bir şeyle silmek."
+          }
+        },
+        {
+          "id": "b1c",
+          "label": "Her biri yeter; ikisi birlikte daha faziletli",
+          "hot": true,
+          "v": true,
+          "card": {
+            "tag": "Hüküm",
+            "title": "Biri diğerinin yerini tutar",
+            "verse": "«فَلْيَسْتَطِبْ بِثَلَاثَةِ أَحْجَارٍ، فَإِنَّهَا تُجْزِئُ عَنْهُ»",
+            "ref": "Âişe’den · Ahmed ve Dârekutnî",
+            "body": "«Üç taşla temizlensin; bu ona yeter.» Nebî (s.a.v.) su ile de istincâ yapmıştır (Müslim 271)."
+          }
+        },
+        {
+          "id": "b1d",
+          "label": "Şartlar ve sayı",
+          "children": [
+            {
+              "id": "b1d1",
+              "label": "Temiz, temizleyici, mubah",
+              "card": {
+                "tag": "İsticmâr malzemesi",
+                "title": "Üç şart",
+                "body": "Necis olmayan, pisliği gideren, gasp edilmemiş ve gazete kâğıdı gibi saygın olmayan bir şey."
+              }
+            },
+            {
+              "id": "b1d2",
+              "label": "En az üç silme",
+              "v": true,
+              "card": {
+                "tag": "Sayı",
+                "verse": "«نَهَانَا… أَنْ نَسْتَنْجِيَ بِأَقَلَّ مِنْ ثَلَاثَةِ أَحْجَارٍ، وَأَنْ نَسْتَنْجِيَ بِرَجِيعٍ أَوْ عَظْمٍ»",
+                "ref": "Selmân’dan · Müslim (262)",
+                "body": "«Üç taştan azıyla, tezek veya kemikle istincâ yapmaktan nehyetti.»"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b2",
+      "label": "Kıbleye yönelmek",
+      "children": [
+        {
+          "id": "b2a",
+          "label": "Açık arazi, engelsiz → caiz değil",
+          "hot": true,
+          "v": true,
+          "card": {
+            "tag": "Birinci durum",
+            "title": "Caiz değildir",
+            "verse": "«فَلَا تَسْتَقْبِلُوا الْقِبْلَةَ وَلَا تَسْتَدْبِرُوهَا، وَلَكِنْ شَرِّقُوا أَوْ غَرِّبُوا»",
+            "ref": "Ebû Eyyûb’dan · Buhârî (144) ve Müslim (264)",
+            "body": "«Kıbleye yönelmeyin, sırtınızı da dönmeyin; doğuya veya batıya dönün.»"
+          }
+        },
+        {
+          "id": "b2b",
+          "label": "Bina veya engel → sakıncası yok",
+          "card": {
+            "tag": "İkinci durum",
+            "title": "Sakıncası yok; terki daha faziletli",
+            "body": "İbn Ömer, Nebî’yi (s.a.v.) evinde yüzü Şam’a, sırtı Kâbe’ye dönük gördü (Buhârî, Müslim). «Yalnızca açık arazide nehyedildi» dedi (Ebû Dâvûd 11)."
+          }
+        }
+      ]
+    },
+    {
+      "id": "b3",
+      "label": "Tuvalete girene sünnetler",
+      "children": [
+        {
+          "id": "b3a",
+          "label": "Besmele ve istiâze",
+          "v": true,
+          "card": {
+            "tag": "Girerken",
+            "verse": "«بِسْمِ اللَّهِ، اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنَ الْخُبُثِ وَالْخَبَائِثِ»",
+            "ref": "Buhârî (142), Müslim (375); besmele: Tirmizî (606)",
+            "body": "«Bismillah. Allah’ım! Erkek ve dişi şeytanlardan sana sığınırım.»"
+          }
+        },
+        {
+          "id": "b3b",
+          "label": "Çıkarken «gufrâneke»",
+          "card": {
+            "tag": "Çıkarken",
+            "title": "«Gufrâneke»",
+            "body": "«Bağışlamanı dilerim.» Ebû Dâvûd (30) ve Tirmizî (7)."
+          }
+        },
+        {
+          "id": "b3c",
+          "label": "Girerken sol, çıkarken sağ",
+          "card": {
+            "tag": "Ayak",
+            "title": "Önce sol, sonra sağ",
+            "body": "Sağ şerefli işler için, sol diğerleri için kullanılır."
+          }
+        },
+        {
+          "id": "b3d",
+          "label": "Örtünmek ve uzaklaşmak",
+          "card": {
+            "tag": "Hayâ",
+            "title": "Görünmemek",
+            "body": "Yere yaklaşmadan avret yerini açmaz; açık arazide görünmeyecek kadar uzaklaşır (Ebû Dâvûd 2, İbn Mâce 335)."
+          }
+        }
+      ]
+    },
+    {
+      "id": "b4",
+      "label": "Haramlar",
+      "children": [
+        {
+          "id": "b4a",
+          "label": "Durgun suya küçük abdest",
+          "card": {
+            "tag": "Suyu korumak",
+            "title": "Durgun: akmayan",
+            "body": "«Durgun suya küçük abdest yapmayı nehyetti.» Müslim (281)."
+          }
+        },
+        {
+          "id": "b4b",
+          "label": "Sağ elle tutmak",
+          "card": {
+            "tag": "Sağ ele saygı",
+            "body": "«Tenasül organını sağ eliyle tutmasın, sağ eliyle istincâ yapmasın.» Buhârî ve Müslim."
+          }
+        },
+        {
+          "id": "b4c",
+          "label": "İnsanların yolu ve gölgesi",
+          "hot": true,
+          "v": true,
+          "card": {
+            "tag": "İnsanların hakkı",
+            "title": "Lanete sebep olan iki şey",
+            "verse": "«اتَّقُوا اللَّاعِنَيْنِ… الَّذِي يَتَخَلَّى فِي طَرِيقِ النَّاسِ أَوْ فِي ظِلِّهِمْ»",
+            "ref": "Müslim (269)",
+            "body": "«İnsanların yoluna veya gölgesine ihtiyacını gideren.» Su kaynakları, parklar ve meyve ağacının altı da böyledir."
+          }
+        },
+        {
+          "id": "b4d",
+          "label": "Kemik, tezek, yiyecek",
+          "card": {
+            "tag": "İsticmâr yapılmayanlar",
+            "body": "«Kemikle veya tezekle silinmeyi nehyetti.» Müslim (263)."
+          }
+        },
+        {
+          "id": "b4e",
+          "label": "Kur’ân okumak ve kabirler",
+          "card": {
+            "tag": "Saygı",
+            "body": "İhtiyaç giderirken Kur’ân okumak ve kabirler arasında ihtiyaç gidermek haramdır: «Kabirlerin ortasında mı, çarşının ortasında mı, umursamam» (İbn Mâce 1567)."
+          }
+        }
+      ]
+    },
+    {
+      "id": "b5",
+      "label": "Mekruhlar",
+      "children": [
+        {
+          "id": "b5a",
+          "label": "Rüzgâra dönmek, konuşmak",
+          "card": {
+            "tag": "İki mekruh",
+            "body": "Rüzgâr: idrar geri sıçramasın diye. Konuşmak: Nebî (s.a.v.) küçük abdestini yaparken selamı almamıştır (Müslim 370)."
+          }
+        },
+        {
+          "id": "b5b",
+          "label": "Deliğe küçük abdest",
+          "card": {
+            "tag": "Delik",
+            "body": "Deliğe küçük abdest yapmayı nehyetti (Ebû Dâvûd 29); içindeki hayvan eziyet verebilir veya cinlerin barınağı olabilir."
+          }
+        },
+        {
+          "id": "b5c",
+          "label": "Allah’ın adı geçen şey",
+          "hot": true,
+          "card": {
+            "tag": "İhtiyaç hariç",
+            "body": "Çalınmasından korkulan para gibi. Mushafla girmek ise haramdır."
+          }
+        }
+      ]
+    }
+  ],
+  "jamia": "Su ile istincâ ya da temiz, temizleyici ve mubah bir şeyle üç silmeyle isticmâr yeterlidir; ikisi birlikte daha faziletlidir. Açık arazide engel yoksa kıbleye yönelinmez ve sırt dönülmez. Girerken besmele çekip Allah’a sığınılır, çıkarken «gufrâneke» denir. İnsanlara yollarında ve gölgelerinde eziyet verilmez.",
+  "closing": "Allah Teâlâ’dan bizi dinde fakih kılmasını, tövbe edenlerden ve temizlenenlerden eylemesini dileriz.",
+  "short": "3 · Def-i Hacet",
+  "eb": "el-Fıkhu’l-Müyesser · Taharet Kitabı · Üçüncü bölüm",
+  "h1": "Def-i Hacet ve Âdâbı",
+  "lead": "Dersin etkileşimli haritası: istincâ ve isticmârdan kıbleye, sünnetlere, haramlara ve mekruhlara, delilleriyle.",
+  "series": "fiqh",
+  "home": "fiqh-muyassar.html",
+  "n": 103
+};
+window.FIQH3.ui = window.LESSON.ui;
+window.FIQH3.quiz = [
+  {
+    "q": "İstincâ nedir?",
+    "o": [
+      "Çıkanı taşla silmek",
+      "Küçük abdestten sonra abdest almak",
+      "İki yoldan çıkanı su ile gidermek",
+      "Elleri yıkamak"
+    ],
+    "a": 2,
+    "x": "İstincâ su ile, isticmâr taş ve benzeriyle olur."
+  },
+  {
+    "q": "Su varken peçeteyle isticmâr caiz mi?",
+    "o": [
+      "Evet, yeterlidir; ikisi birlikte daha faziletlidir",
+      "Hayır, ancak su yoksa",
+      "Yalnız yolculukta",
+      "Asla caiz değil"
+    ],
+    "a": 0,
+    "x": "İstincâ ve isticmârdan her biri diğerinin yerini tutar."
+  },
+  {
+    "q": "Hangisi daha faziletlidir?",
+    "o": [
+      "Yalnız taş",
+      "Fark yok",
+      "Yalnız peçete",
+      "İsticmâr ile suyu birlikte kullanmak"
+    ],
+    "a": 3,
+    "x": "İkisi birlikte daha faziletlidir; sonra yalnız su, çünkü hem pisliği hem izini giderir."
+  },
+  {
+    "q": "İsticmârda en az ne yeter?",
+    "o": [
+      "Yer temizse tek silme",
+      "Üç silme",
+      "İki silme",
+      "Yedi silme"
+    ],
+    "a": 1,
+    "x": "«Üç taştan azıyla istincâ yapmaktan nehyetti.»"
+  },
+  {
+    "q": "Gazete kâğıdıyla neden isticmâr yapılmaz?",
+    "o": [
+      "Necistir",
+      "Temizlemez",
+      "İçinde âyetler ve saygın isimler bulunabilir",
+      "Pahalıdır"
+    ],
+    "a": 2,
+    "x": "İsticmâr malzemesinin şartlarından biri saygın olmamasıdır."
+  },
+  {
+    "q": "Açık arazide engelsiz ihtiyaç giderirken kıbleye yönelmenin hükmü nedir?",
+    "o": [
+      "Mekruh",
+      "Caiz",
+      "Müstehap",
+      "Caiz değildir"
+    ],
+    "a": 3,
+    "x": "«Kıbleye yönelmeyin, sırtınızı da dönmeyin.»"
+  },
+  {
+    "q": "Ev tuvaletinde kıbleye yönelmenin hükmü nedir?",
+    "o": [
+      "Sakıncası yok; terki daha faziletli",
+      "Haram",
+      "Vacip",
+      "Taharetı bozar"
+    ],
+    "a": 0,
+    "x": "İbn Ömer, Nebî’yi (s.a.v.) evinde sırtı Kâbe’ye dönük gördü."
+  },
+  {
+    "q": "Tuvalete giren ne der?",
+    "o": [
+      "Gufrâneke",
+      "Bismillah, Allah’ım erkek ve dişi şeytanlardan sana sığınırım",
+      "Elhamdülillah",
+      "Hiçbir şey demez"
+    ],
+    "a": 1,
+    "x": "Önce besmele, sonra istiâze."
+  },
+  {
+    "q": "Tuvaletten çıkan ne der?",
+    "o": [
+      "Bismillah",
+      "Eûzü billah",
+      "Sübhânallah",
+      "Gufrâneke"
+    ],
+    "a": 3,
+    "x": "Nebî (s.a.v.) tuvaletten çıkınca «gufrâneke» derdi."
+  },
+  {
+    "q": "Tuvalete hangi ayakla girilir?",
+    "o": [
+      "Sağ",
+      "Fark etmez",
+      "Sol",
+      "İki ayakla birlikte"
+    ],
+    "a": 2,
+    "x": "Girerken sol, çıkarken sağ."
+  },
+  {
+    "q": "Durgun suya küçük abdest yapmanın hükmü nedir?",
+    "o": [
+      "Sadece mekruh",
+      "Haram",
+      "Su çoksa caiz",
+      "Müstehap"
+    ],
+    "a": 1,
+    "x": "«Durgun suya küçük abdest yapmayı nehyetti.»"
+  },
+  {
+    "q": "Hadisteki «lanete sebep olan iki şey» nedir?",
+    "o": [
+      "İnsanların yoluna ve gölgesine ihtiyaç gidermek",
+      "Yalan ve gıybet",
+      "Ayakta küçük abdest ve konuşmak",
+      "Besmele ve istiâzeyi terk"
+    ],
+    "a": 0,
+    "x": "«İnsanların yoluna veya gölgesine ihtiyacını gideren.»"
+  },
+  {
+    "q": "Kemikle isticmâr yapmanın hükmü nedir?",
+    "o": [
+      "Temizlerse caiz",
+      "Mekruh",
+      "Müstehap",
+      "Haram"
+    ],
+    "a": 3,
+    "x": "«Kemikle veya tezekle silinmeyi nehyetti.»"
+  },
+  {
+    "q": "İhtiyaç giderirken konuşmanın hükmü nedir?",
+    "o": [
+      "Mekruh",
+      "Haram",
+      "Vacip",
+      "Müstehap"
+    ],
+    "a": 0,
+    "x": "Nebî’ye (s.a.v.) küçük abdestini yaparken selam verildi, almadı."
+  },
+  {
+    "q": "Mushafla tuvalete girmenin hükmü nedir?",
+    "o": [
+      "Mekruh",
+      "Cepteyse caiz",
+      "Haram",
+      "İhtiyaç varsa her zaman caiz"
+    ],
+    "a": 2,
+    "x": "Mushaf Allah’ın kelâmıdır; onunla tuvalete girmek saygısızlıktır."
+  }
+];
+window.LESSONS = [window.LESSON, window.LESSON2, window.LESSON3, window.FIQH1, window.FIQH2, window.FIQH3];

@@ -43,6 +43,11 @@ TR = [
     dict(k='vasif', re=r'[Vv]as(?:ıf|f)\w*', w='Vasıf', m='Özellik. Suyun üç vasfı: kokusu, tadı ve rengi.'),
     dict(k='nekre', re=r'[Nn]ekre\w*', w='Nekre', m='Arapça dil bilgisinde belirsiz isim. Olumsuz bir cümlede geçerse, o türün hepsini kapsar.'),
     dict(k='hasen', re=r'(?<=«)hasen\b', w='Hasen', m='Hadis ilminde: delil olarak kabul edilen, derecesi sahihe yakın hadis.'),
+    dict(k='istinca', re=r'[İi]stincâ\w*', w='İstincâ', m='İki yoldan çıkan idrar ve dışkıyı su ile gidermek.', src=DERS),
+    dict(k='isticmar', re=r'[İi]sticmâr\w*', w='İsticmâr', m='İki yoldan çıkanı taş, peçete gibi temiz, temizleyici ve mubah bir şeyle silmek.', src=DERS),
+    dict(k='istiaze', re=r'[İi]stiâze\w*', w='İstiâze', m='«Eûzü billah» diyerek Allah’a sığınmak.'),
+    dict(k='mekruh', re=r'[Mm]ekruh\w*', w='Mekruh', m='Terk edene sevap verilen, yapan günaha girmeyen şey.'),
+    dict(k='muste', re=r'[Mm]üstehap\w*', w='Müstehap', m='Yapılması sevaplı olan, yapılmaması günah olmayan şey.'),
     dict(k='mubah', re=r'[Mm]ubah\w*', w='Mubah', m='Yapılması da yapılmaması da serbest olan; dinin yasaklamadığı şey.'),
     dict(k='tazbib', re=r'[Tt]azbîb\w*', w='Tazbîb', m='Kırılan kabı demir ve benzeri bir şeyle birleştirmek (yamamak).', src='Kitabın dipnotu (1/ 6)'),
     dict(k='dabbe', re=r'\bdabbe\b', w='Dabbe', m='Kırık kabı birleştirmek için kullanılan parça; yama.'),
@@ -94,7 +99,7 @@ TR = [
 # Arabic lesson pages: word forms (bare letters) → sharh.GLOSS key
 AR = [
     ('الحدث', 'hadath'),
-    ('الخبث', 'khabath'),
+    ('الخبث', 'khabath', ('fiqh1',)),
     ('قلتين', 'qulla'), ('القلتين', 'qulla'), ('القلتان', 'qulla'), ('قلتان', 'qulla'), ('القلة', 'qulla'),
     ('الأشنان', 'ushnan'), ('أشنان', 'ushnan'),
     ('السدر', 'sidr'), ('سدر', 'sidr'),
@@ -109,6 +114,12 @@ AR = [
     ('الذكاة', 'dhakat'),
     ('القرظ', 'qaraz'),
     ('الصحاف', 'sihaf'),
+    ('الإداوة', 'idawa'), ('إداوة', 'idawa'),
+    ('الرجيع', 'rajee'), ('برجيع', 'rajee'),
+    ('الخبث', 'khubth', ('fiqh3',)),
+    ('البراز', 'baraz'),
+    ('الراكد', 'rakid'),
+    ('الملاعن', 'malaain'),
 ]
 
 # Arabic lesson pages: terms with a plain meaning written here (no source line unless one is real).
@@ -133,6 +144,11 @@ AR_TERMS = [
     dict(k='a_takfir', forms=['التكفير'], w='التكفير', m='الحكم على الشخص بأنه كافر.'),
     dict(k='a_inaba', forms=['الإنابة'], w='الإنابة', m='الرجوع إلى الله والإقبال عليه.'),
     dict(k='a_munkar', forms=['منكرا', 'المنكر'], w='المنكر', m='كل ما نهى عنه الشرع وقبّحه.'),
+    dict(k='a_istinja', forms=['الاستنجاء'], w='الاستنجاء', m='إزالة ما يخرج من السبيلين (البول والغائط) بالماء.'),
+    dict(k='a_istijmar', forms=['الاستجمار'], w='الاستجمار', m='مسح ما يخرج من السبيلين بحجر أو منديل ونحوهما، بشرط أن يكون طاهرًا منقيًا مباحًا.'),
+    dict(k='a_sabilayn', forms=['السبيلين'], w='السبيلان', m='مخرج البول ومخرج الغائط.'),
+    dict(k='a_khala', forms=['الخلاء'], w='الخلاء', m='المكان الذي تُقضى فيه الحاجة (الحمّام).'),
+    dict(k='a_makruh', forms=['مكروه', 'يكره', 'يُكره'], w='المكروه', m='ما يُثاب تاركه امتثالًا، ولا يأثم فاعله.'),
     dict(k='a_ibaha', forms=['الإباحة'], w='الإباحة', m='أن يكون الشيء مأذونًا فيه: لا إثم في فعله ولا في تركه.'),
     dict(k='a_mayta', forms=['الميتة'], w='الميتة', m='ما مات من الحيوان دون ذكاة شرعية.'),
     dict(k='a_dibagh', forms=['الدباغ', 'بالدباغ'], w='الدِّباغ', m='معالجة الجلد بالملح أو النبات حتى يزول ما فيه من الأذى والقذر، فلا يتعفّن ويُنتفع به.'),

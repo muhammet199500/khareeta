@@ -726,7 +726,9 @@ body:focus { outline: none; }
 .prose .flow .q{font-weight:700;color:var(--ink);line-height:1.7;position:relative;padding-inline-start:38px;min-height:30px}
 .prose .flow .q::before{content:counter(q);position:absolute;inset-inline-start:0;top:2px;width:28px;height:28px;border-radius:50%;background:var(--band);color:var(--goldl);display:grid;place-items:center;font:700 .9em var(--uf)}
 .prose .flow .a{display:flex;gap:10px;align-items:flex-start;margin-top:10px;padding:10px 12px;border-radius:10px;background:var(--parch2);line-height:1.7}
-.prose .flow .a b.k{flex:none;font-family:var(--uf);min-width:3.4em}
+.prose .flow .a{flex-wrap:wrap}
+.prose .flow .a b.k{flex:0 1 auto;max-width:100%;font-family:var(--uf);min-width:3.4em}
+.prose .flow .a>span{flex:1 1 12em;min-width:0}
 .prose .flow .r.no{color:var(--badt)} .prose .flow .r.yes{color:var(--okt)} .prose .flow .r strong{color:inherit}
 .prose .flow .go{color:var(--muted)}
 .prose ul.vl{list-style:none;margin:18px 0 22px;padding:0;border:1px solid var(--line);border-radius:14px;background:var(--card);overflow:hidden}

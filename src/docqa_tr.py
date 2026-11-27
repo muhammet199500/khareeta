@@ -62,4 +62,17 @@ DOCQA_TR = {
   ('Her deri tabaklanınca temizlenir.', 'Yanlış; tabaklanmakla ancak kesilince eti yenen hayvanın derisi temizlenir. Kedi hayattayken temiz olsa da derisi tabaklanmakla temizlenmez.', True),
   ('Bir kâfire ait her kabı kullanmadan önce yıkamak gerekir.', 'Yanlış; kâfirlerin kaplarında asıl olan helâlliktir, ancak necaset bilinirse yıkamak gerekir. Nebî (sallallâhu aleyhi ve sellem) müşrik bir kadının mezâdesinden abdest almıştır.', True),
  ],
+ 103: [
+  ('İstincâ ve isticmârı tanımlayın. Hangisi daha faziletlidir?', 'İstincâ: iki yoldan çıkanı su ile gidermek. İsticmâr: onu taş gibi temiz, mubah ve temizleyici bir şeyle silmek. Her biri diğerinin yerini tutar; ikisi birlikte daha faziletlidir, sonra yalnız su; çünkü hem pisliği hem izini giderir.', False),
+  ('İsticmârda kullanılacak şeyin şartları nelerdir? En az kaç silme gerekir?', 'Temiz, temizleyici ve saygınlığı olmayan mubah bir şey olması. En az üç silme gerekir; Selmân hadisi: «Üç taştan azıyla istincâ yapmaktan nehyetti» (Müslim).', False),
+  ('İhtiyaç giderirken kıbleye yönelmek ve sırt dönmek ne zaman haramdır?', 'Açık arazide engel yokken; Ebû Eyyûb hadisi: «Kıbleye yönelmeyin, sırtınızı da dönmeyin.» Binada veya bir engelin arkasında sakıncası yoktur; terki daha faziletlidir.', False),
+  ('Tuvalete giren ne der? Çıkınca ne der?', 'Girerken: «Bismillah. Allah’ım! Erkek ve dişi şeytanlardan sana sığınırım.» Çıkarken: «Gufrâneke» (bağışlamanı dilerim).', False),
+  ('İhtiyaç gidermenin haram olduğu üç yer sayın.', 'İnsanların yolu, gölgesi ve su kaynakları; ayrıca umumi parklar, meyve veren ağacın altı, Müslümanların kabirleri arası ve küçük abdest için durgun su.', False),
+  ('Kıbleye yönelme konusunda Ebû Eyyûb hadisi ile İbn Ömer hadisini nasıl bağdaştırdık?', 'Ebû Eyyûb hadisi engelsiz açık arazi hakkındadır, orada haramdır; İbn Ömer hadisi bina hakkındadır, orada sakınca yoktur. İbn Ömer: «Bundan yalnızca açık arazide nehyedildi» demiştir.', False),
+  ('Nebî (sallallâhu aleyhi ve sellem) insanların yoluna ve gölgesine ihtiyaç gidermeyi neden «lanete sebep olan iki şey» diye adlandırdı?', 'Çünkü yolunda veya gölgesinde pislik gören kimse çoğu zaman bunu yapana lanet eder; bu ikisi lanetin sebebidir. Burada insanların haklarını ve umumi yerlerini korumak vardır.', False),
+  ('Temiz ve temizleyici olsa da gazete kâğıdıyla isticmâr neden caiz değildir?', 'Çünkü isticmâr malzemesinin şartlarından biri saygınlığının olmamasıdır; gazete kâğıdında âyetler, hadisler veya saygın isimler bulunabilir.', False),
+  ('Su bulunmadıkça peçeteyle isticmâr caiz değildir.', 'Yanlış; su bulunsa bile istincâ ve isticmârdan her biri diğerinin yerini tutar; ikisi birlikte daha faziletlidir.', True),
+  ('Çalınmasından korkuyorsa üzerinde Allah’ın adı yazılı paralarla tuvalete girmek caizdir.', 'Doğru; içinde Allah’ın zikri bulunan şeyle girmek ihtiyaç olmadıkça mekruhtur; bu bir ihtiyaçtır. Mushafla girmek ise haramdır.', True),
+  ('Yer temizlendiyse isticmârda tek silme yeterlidir.', 'Yanlış; Selmân’ın (radıyallâhu anh) hadisi gereği üç silmeden azı yetmez.', True),
+ ],
 }
