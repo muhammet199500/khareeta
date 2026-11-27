@@ -216,6 +216,7 @@ html[lang=ar] body { word-spacing: .14em; }
   #brand img { width: 40px; height: 40px; }
 }
 </style>
+<style>.ov .acts a.hifz{display:inline-flex;align-items:center;min-height:48px;border-radius:30px;padding:0 24px;border:2px solid var(--goldl);color:var(--onband);font-family:'Reem Kufi',sans-serif;font-weight:700;font-size:17px;text-decoration:none}.ov .acts a.hifz[hidden],#top a.hifz[hidden],#moreMenu a[hidden]{display:none}@media (max-width: 760px) and (not ((pointer: fine) and (min-width: 761px))){#top a.hifz{display:none}}</style>
 
 <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "dda53286faab4be6aca43215f29dc4b7"}'></script>
 </head>
@@ -228,7 +229,7 @@ html[lang=ar] body { word-spacing: .14em; }
   </div>
 </div>
 
-<div id="top"><div class="tl"><div class="lsw" id="lsw" role="group" aria-label="اختر الدرس"></div><a class="lang" data-base="tr/map.html" href="tr/map.html" lang="tr" hreflang="tr" aria-label="Türkçe sürüm">Türkçe</a><a class="tasksl" href="tasks.html" aria-label="الواجبات" title="الواجبات"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="3"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg><span>الواجبات</span></a><div id="crumb"></div></div><a id="brand" href="la-ilaha.html" title="صفحة السلسلة"><img src="media/logo.webp" alt="وتواصوا بالحق"><span id="brandT">اعتقاد بطلان عبادة الطاغوت</span></a></div>
+<div id="top"><div class="tl"><div class="lsw" id="lsw" role="group" aria-label="اختر الدرس"></div><a class="lang" data-base="tr/map.html" href="tr/map.html" lang="tr" hreflang="tr" aria-label="Türkçe sürüm">Türkçe</a><a id="hifzT" class="lang hifz" hidden download>خريطة الحفظ PDF</a><a class="tasksl" href="tasks.html" aria-label="الواجبات" title="الواجبات"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="3"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg><span>الواجبات</span></a><div id="crumb"></div></div><a id="brand" href="la-ilaha.html" title="صفحة السلسلة"><img src="media/logo.webp" alt="وتواصوا بالحق"><span id="brandT">اعتقاد بطلان عبادة الطاغوت</span></a></div>
 
 <div id="card" aria-live="polite"><div class="in"><button class="x" id="cardX" aria-label="إغلاق البطاقة">×</button><div id="cardBody"></div></div></div>
 
@@ -248,7 +249,7 @@ html[lang=ar] body { word-spacing: .14em; }
   <button id="reset" class="opt">من البداية</button>
 </div>
 <div id="prog"></div>
-<div id="moreMenu" hidden><button data-m="quizb">اختبر فهمك</button><button data-m="all">الخريطة كاملة</button><button data-m="reset">من البداية</button><a href="la-ilaha.html">صفحة السلسلة</a></div>
+<div id="moreMenu" hidden><button data-m="quizb">اختبر فهمك</button><button data-m="all">الخريطة كاملة</button><button data-m="reset">من البداية</button><a href="la-ilaha.html">صفحة السلسلة</a><a id="hifzM" hidden download>خريطة الحفظ PDF</a></div>
 <div id="toast" hidden>كبّر بإصبعين لقراءة الفروع</div>
 
 <div id="intro" class="ov show"><div class="box">
@@ -263,7 +264,7 @@ html[lang=ar] body { word-spacing: .14em; }
     <li><b>اضغط على أي فرع</b><br>لتفتح تفريعاته، أو تعرض بطاقة شرحه إن كانت عليه نقطة ذهبية.</li>
     <li><b>اسحب وكبّر</b><br>اسحب الخريطة للتنقل، واستعمل عجلة الفأرة أو أزرار + و − للتكبير.</li>
   </ul>
-  <div class="acts"><button id="start">ابدأ الدرس</button><button id="explore" class="ghost">استكشف الخريطة كاملة</button><a class="home" href="la-ilaha.html">صفحة السلسلة</a></div>
+  <div class="acts"><button id="start">ابدأ الدرس</button><button id="explore" class="ghost">استكشف الخريطة كاملة</button><a class="home" href="la-ilaha.html">صفحة السلسلة</a><a id="hifzI" class="hifz" hidden download>تنزيل خريطة الحفظ (PDF)</a></div>
 </div></div>
 
 <div id="jamia" class="ov"><div class="box">
@@ -660,6 +661,7 @@ html[lang=ar] body { word-spacing: .14em; }
   });
 }
 </script>
+<script>(()=>{const H={"105": "media/hifz-f5-ar.pdf"};const A=window.LESSONS||[window.LESSON];const m=/^#l(\d+)/.exec(location.hash);const n=m?+m[1]:(A[0]&&A[0].n)||1;const f=H[n];if(!f)return;["hifzI","hifzT","hifzM"].forEach(i=>{const a=document.getElementById(i);if(a){a.href=f;a.hidden=false;}});})();</script>
 <script id="langSwap">document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a.lang[hreflang]');if(!a||e.defaultPrevented||e.button||e.ctrlKey||e.metaKey||e.shiftKey||e.altKey)return;e.preventDefault();location.replace(a.href)});</script>
 </body>
 </html>

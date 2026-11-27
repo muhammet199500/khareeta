@@ -1409,6 +1409,16 @@ def page_map(lang):
     t = re.sub(r'<link rel="stylesheet" href="https://fonts.googleapis.com/[^"]*">', f'{preload(lang, fu)}\n<link rel="stylesheet" href="{fu}assets/fonts.css">', t)
     assert 'googleapis' not in t
     t = t.replace('<script src="logo.js"></script>\n', '').replace('<script src="../logo.js"></script>\n', '')
+    # زرّ «خريطة الحفظ» في الخريطة التفاعلية: في شاشة البداية وفي الشريط العلوي، للدروس التي وُلّد لها ملف (انظر guide/hifz-maps.md)
+    mdir = 'media/' if lang == 'ar' else '../media/'
+    hz = {L['n']: f'{mdir}hifz-{L["slug"]}-{lang}.pdf' for L in ALL_LIVE if os.path.exists(os.path.join(ROOT, 'media', f'hifz-{L["slug"]}-{lang}.pdf'))}
+    hzI, hzT = ('تنزيل خريطة الحفظ (PDF)', 'خريطة الحفظ PDF') if lang == 'ar' else ('Ezber haritasını indir (PDF)', 'Ezber haritası PDF')
+    t = re.sub(r'(<button id="explore" class="ghost">[^<]*</button>)', lambda m: m.group(1) + f'<a id="hifzI" class="hifz" hidden download>{hzI}</a>', t, count=1)
+    t = re.sub(r'(<div id="top"><div class="tl">.*?<a class="lang"[^>]*>[^<]*</a>)', lambda m: m.group(1) + f'<a id="hifzT" class="lang hifz" hidden download>{hzT}</a>', t, count=1, flags=re.S)
+    assert 'id="hifzI"' in t and 'id="hifzT"' in t
+    t = t.replace('</head>', '<style>.ov .acts a.hifz{display:inline-flex;align-items:center;min-height:48px;border-radius:30px;padding:0 24px;border:2px solid var(--goldl);color:var(--onband);font-family:inherit;font-weight:700;font-size:17px;text-decoration:none}.ov .acts a.hifz[hidden],#top a.hifz[hidden],#moreMenu a[hidden]{display:none}@media (max-width: 760px) and (not ((pointer: fine) and (min-width: 761px))){#top a.hifz{display:none}}</style>\n</head>', 1)
+    t = t.replace('a.hifz{display:inline-flex;align-items:center;min-height:48px;border-radius:30px;padding:0 24px;border:2px solid var(--goldl);color:var(--onband);font-family:inherit', 'a.hifz{display:inline-flex;align-items:center;min-height:48px;border-radius:30px;padding:0 24px;border:2px solid var(--goldl);color:var(--onband);font-family:' + ("'Reem Kufi',sans-serif" if lang == 'ar' else "'EB Garamond',Georgia,serif"), 1)
+    t = t.replace('</body>', '<script>(()=>{const H=' + json.dumps(hz) + ';const A=window.LESSONS||[window.LESSON];const m=/^#l(\\d+)/.exec(location.hash);const n=m?+m[1]:(A[0]&&A[0].n)||1;const f=H[n];if(!f)return;["hifzI","hifzT","hifzM"].forEach(i=>{const a=document.getElementById(i);if(a){a.href=f;a.hidden=false;}});})();</script>\n</body>', 1)
     s_ = S[lang]
     mb = f'<button class="mapdone" type="button" data-off="{E(s_["doneOff"])}" data-on="{E(s_["doneOn"])}" data-x="{E(s_["doneWhat"]["map"])}" title="{E(s_["doneUndo"])}"></button>'
     t = re.sub(r'(<div id="close" class="ov">.*?<div class="acts">)', lambda m: m.group(1) + mb, t, count=1, flags=re.S)
@@ -1450,7 +1460,7 @@ html[lang=ar] body {{ word-spacing: .14em; }}
     t = t.replace('</style>', css, 1)
     t = t.replace('<button id="reset" class="opt">', f'<button id="more" class="m-only" aria-haspopup="true" aria-expanded="false" aria-label="{more}">⋯</button>\n  <button id="reset" class="opt">', 1)
     t = t.replace('<div id="prog"></div>', f'''<div id="prog"></div>
-<div id="moreMenu" hidden><button data-m="quizb">{quizL}</button><button data-m="all">{allL}</button><button data-m="reset">{resetL}</button><a href="{home}">{homeL}</a></div>
+<div id="moreMenu" hidden><button data-m="quizb">{quizL}</button><button data-m="all">{allL}</button><button data-m="reset">{resetL}</button><a href="{home}">{homeL}</a><a id="hifzM" hidden download>{'خريطة الحفظ PDF' if lang == 'ar' else 'Ezber haritası PDF'}</a></div>
 <div id="toast" hidden>{pinch}</div>''', 1)
     # home link on the intro overlay
     t = re.sub(r'(<div class="acts"><button id="start">.*?</button><button id="explore" class="ghost">.*?</button>)', lambda m: m.group(1) + f'<a class="home" href="{home}">{homeL}</a>', t, count=1)
