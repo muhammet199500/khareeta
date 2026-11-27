@@ -1,6 +1,6 @@
 ## Dersin hedefleri
 
-Bu dersin sonunda öğrenci şunları yapabilmelidir:
+Bu dersin sonunda şunları yapabilmelisiniz:
 
 1. Terk ve ictinabı sözlük ve ıstılah anlamlarıyla tanımlamak.
 2. «Tâğuta ibadeti terk etmek» ifadesinin anlamını açıklamak ve terkin dört şeklini saymak.
@@ -72,7 +72,7 @@ Bir adam «Allah’tan başkası için kurban kesmenin bâtıl olduğunu biliyor
 
 Bu, muvahhidin hâlidir: Kalbi Allah’tan başkasına ibadetin bâtıl olduğuna kesin inanır; Allah’a ibadet niyetiyle onu terk eder ve ondan kaçınır; İbrahim (aleyhisselâm) ve Ashâb-ı Kehf’in yaptığı gibi kavmine muhalefet etse de bunda sebat eder.
 
-**Yaklaştırıcı bir örnek:** Bir doktor, bir yemeğin zehirli olduğunu kesin olarak biliyor, sonra kendi isteğiyle onu yiyor. Zararına inandığını söylese kimse ona inanmaz. Doğru itikadın eseri davranışta görünür.
+**Örnek:** Bir doktor, bir yemeğin zehirli olduğunu kesin olarak biliyor, sonra kendi isteğiyle onu yiyor. Zararına inandığını söylese kimse ona inanmaz. Doğru itikadın eseri davranışta görünür.
 
 ## Dördüncü bölüm: Şer’î deliller
 
@@ -133,7 +133,7 @@ Sâbit b. Dahhâk (radıyallâhu anh) şöyle dedi: Rasûlullah (sallallâhu ale
 
 **Kural:** Samimi terk, yer ve insanlar değiştikçe değişmez; çünkü âdete ve topluma değil, Allah’ın emrine dayanır.
 
-## Yedinci bölüm: Tâğuta ibadeti terkin meyveleri
+## Yedinci bölüm: Tâğuta ibadeti terkin faydaları
 
 1. **Allah’tan müjde:** Zümer ayetinde geçtiği gibi: ﴿لَهُمُ الْبُشْرَىٰ﴾ «Onlara müjde vardır.»
 2. **Hayırlı karşılık:** Allah için bir şeyi terk edene Allah ondan daha hayırlısını verir; tıpkı İbrahim’e İshak’ı ve Yakub’u bağışlaması gibi.
@@ -141,7 +141,7 @@ Sâbit b. Dahhâk (radıyallâhu anh) şöyle dedi: Rasûlullah (sallallâhu ale
 4. **Tevhidin sadakati:** Amel itikadı doğrular, Müslüman çelişkiden kurtulur.
 5. **Kalbin özgürlüğü:** Mahlûklara bağlılıktan kurtulup yalnız Allah’a yönelmekle.
 
-## Öğrencinin ezberleyeceği özet
+## Ezberlemeniz gereken özet
 
 > **Tâğuta ibadeti terk etmek; Müslümanın Allah’tan başkasına hiçbir ibadeti kalbiyle, diliyle ve azalarıyla yöneltmemesi, buna götüren şeylerden kaçınması, bunu Allah’ın emrine uymak için yapması ve insanlar muhalefet etse de bunda sebat etmesidir.**
 

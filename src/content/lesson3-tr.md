@@ -1,6 +1,6 @@
 ## Dersin hedefleri
 
-Bu dersin sonunda öğrenci şunları yapabilmelidir:
+Bu dersin sonunda şunları yapabilmelisiniz:
 
 1. Buğzu sözlük ve ıstılah anlamlarıyla tanımlamak.
 2. Bu husustaki buğzun ilgili olduğu şeyleri saymak: Allah’tan başkasına ibadet, tâğut ve ona ibadet edenler.
@@ -163,7 +163,7 @@ Bunun zıddı müşriklerin hâlidir; Allah onları şöyle nitelemiştir: ﴿و
 3. **Buğz adaleti düşürmez:** Allah Teâlâ şöyle buyurur: ﴿وَلَا يَجْرِمَنَّكُمْ شَنَآنُ قَوْمٍ عَلَى أَلَّا تَعْدِلُوا اعْدِلُوا هُوَ أَقْرَبُ لِلتَّقْوَى﴾ «Bir topluluğa olan buğzunuz sizi adaletsizliğe sürüklemesin. Adaletli olun; bu, takvaya daha yakındır.» [Mâide, 8]
 4. **Tekfir ve düşmanlık ayrı iki husustur:** Gelecek iki derste açıklanacaktır.
 
-## Sekizinci bölüm: Allah için buğzun meyveleri
+## Sekizinci bölüm: Allah için buğzun faydaları
 
 1. **İmanın tadı:** Enes (radıyallâhu anh) hadisinde geçtiği gibi.
 2. **İmanı kemale erdirmek:** «Kim Allah için sever, Allah için buğz eder… imanını kemale erdirmiş olur.»
@@ -171,7 +171,7 @@ Bunun zıddı müşriklerin hâlidir; Allah onları şöyle nitelemiştir: ﴿و
 4. **İbrahim (aleyhisselâm) ve onunla birlikte olanlara uymak:** Onlar, Allah’ın örnek alınmasını emrettiği güzel örnektir.
 5. **İmanın kalbe yazılması ve Allah’ın desteği:** Mücâdele ayetinin devamında geçtiği gibi: ﴿أُولَئِكَ كَتَبَ فِي قُلُوبِهِمُ الْإِيمَانَ وَأَيَّدَهُمْ بِرُوحٍ مِنْهُ﴾ «İşte Allah onların kalplerine imanı yazmış ve onları kendi katından bir ruhla desteklemiştir.»
 
-## Öğrencinin ezberleyeceği özet
+## Ezberlemeniz gereken özet
 
 > **Bu husustaki buğz; Müslümanın kalbiyle Allah’tan başkasına ibadete, Allah’ı bırakıp kendisine ibadet edilen ve buna razı olan tâğuta ve ona ibadet edenlere Allah yolunda buğz etmesidir. Şirke razı olmaz ve onu sevmez; en yakın akrabası olsalar bile ehliyle sevgi bağı kurmaz. Bunun etkisi dilinde ve azalarında görünür.**
 
