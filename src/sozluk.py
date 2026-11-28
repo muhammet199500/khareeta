@@ -110,6 +110,10 @@ TR = [
     dict(k='mezi', re=r'\b[Mm]ezi\b', w='Mezi', m='Şehvet anında, şehvet doruğa ulaşmadan gelen ince, yapışkan sıvı.'),
     dict(k='istihaza', re=r'[İi]stihâza\w*', w='İstihâza', m='Kadında âdet ve lohusalık dışında, hastalık sebebiyle gelen kan.'),
     dict(k='luma', re=r'\b[Ll]um’a\w*', w='Lum’a', m='Abdestte veya gusülde su değmeyen yer.', src='Kitabın kendisi (1/ 19)'),
+    # ── gusül (fiqh7) ──
+    dict(k='hasye', re=r'\b[Hh]asye\w*', w='Hasye', m='İki avuç dolusu su.', src=DERS),
+    dict(k='taabbud', re=r'\b[Tt]aabbüd\w*', w='Taabbüd', m='Gerekçesi bilinmese de bir şeyi sırf Allah’ın emri olduğu için yapmak.'),
+    dict(k='sidir', re=r'\b[Ss]idir\w*', w='Sidir', m='Arabistan kirazı ağacının yaprağı; ezilip temizlik için suya konur.'),
     # ── mesh (fiqh6) ──
     dict(k='ruhsat', re=r'\b[Rr]uhsat\w*', w='Ruhsat', m='Allah’ın bir sebep bulunduğunda kullarına tanıdığı kolaylık.'),
     dict(k='mukim', re=r'\b[Mm]ukim\w*', w='Mukim', m='Yolcu olmayan; yaşadığı yerde kalan kimse.'),

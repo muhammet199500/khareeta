@@ -115,4 +115,18 @@ DOCQA_TR = {
   ('Çoraplar deriden olmadığı için üzerlerine meshetmek caiz değildir.', 'Yanlış; ayağı örtüyorsa üzerlerine meshetmek caizdir; çünkü ihtiyaç mest gibidir ve sebep aynıdır.', True),
   ('Yolcu, süre içinde cünüp olursa mestleri üzerine meshetmeye devam eder.', 'Yanlış; cünüplük meshi bozar: «…cünüplük dışında»; mestleri çıkarıp gusleder.', True),
  ],
+ 107: [
+  ('Gusül şer’an nedir? Hükmü nedir?', 'Bütün bedene su ulaştırmak; ya da tahûr suyu bütün bedende belirli bir şekilde, Allah’a ibadet maksadıyla kullanmak. Gerektiren sebeplerden biri bulunduğunda farzdır: «Eğer cünüp iseniz temizlenin.»', False),
+  ('Guslü gerektiren şeyler nelerdir?', 'Meninin atılarak ve lezzetle çıkması, meni gelmese de birleşme, dinden dönmüş olsa da kâfirin Müslüman olması, hayız ve lohusalık kanının kesilmesi ve ölüm.', False),
+  ('Guslün yeterli şekli nedir?', 'Niyetle birlikte bütün bedene su ulaştırmak.', False),
+  ('Guslün kâmil şekli nedir?', 'Ellerini, sonra avret yerini ve bulaşan pisliği yıkar; namaz abdesti gibi abdest alır; derisini ıslatıncaya kadar saçını hilâller; başına üç avuç su döker; sonra bedeninin geri kalanına su akıtır. Âişe’nin hadisi gereği.', False),
+  ('Kadın gusülde saçını çözmeli mi?', 'Cünüplük guslünde gerekmez, hayız guslünde gerekir. Ümmü Seleme hadisi: «Hayır; başına üç avuç su dökmen sana yeter.»', False),
+  ('Müstehap gusülleri sayınız.', 'Her birleşmede, cuma için (en kuvvetlisi), iki bayram için, umre ve hac ihramında ve ölü yıkayanın guslü.', False),
+  ('Gusül gereken kimseye ne haramdır?', 'Yoldan geçmek veya abdestli olmak dışında mescitte kalmak, Mushafa dokunmak, Kur’ân okumak, namaz ve Kâbe’yi tavaf.', False),
+  ('Ölünün yıkanması neden hadesten dolayı değil de ibadet olarak yapılır?', 'Çünkü hadesten dolayı olsaydı, sebebi olan ölüm devam ettikçe kalkmazdı.', False),
+  ('Cünübün Kur’ân okumaktan alıkonulmasının hikmeti nedir?', 'Bu, onu bir an önce gusletmeye ve okumasına engel olan şeyi gidermeye teşvik eder.', False),
+  ('Birleşmeden dolayı gusül ancak meni gelirse farz olur.', 'Yanlış; «…sünnet yerleri birbirine değerse gusül farz olur», meni gelmese de.', True),
+  ('Cünüp kimse abdest alırsa mescitte kalabilir.', 'Doğru; ashaptan bir topluluktan sabittir ve abdest hadesi hafifletir.', True),
+  ('Uyandıktan sonra meni görüp lezzet hissetmeyene gusül gerekmez.', 'Yanlış; uyuyan için lezzet şart değildir: «Evet, suyu (meniyi) görürse.»', True),
+ ],
 }

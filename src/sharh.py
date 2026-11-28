@@ -1239,3 +1239,128 @@ SHARH[106] = [
      '**Bölümün sonundaki kaide:** Başın temizliği yıkamaya değil **meshe** dayanır ve onda kolaylık vardır; bu yüzden sarık ve sıvanmış baş üzerine mesh caiz olmuştur.'),
  ]),
 ]
+
+# ------------------------------------------------------------------ 107: الغسل
+GLOSS.update({
+ 'fadakh': dict(w='فَضَخْتَ', ar='فَضْخُ الماء: دَفْقُه، والمراد المنيّ.', tr='Suyu atarak çıkarmak; kastedilen menidir.', src='حاشية الكتاب (١/ ٢٨)'),
+ 'ijza': dict(w='كيفية إجزاء', ar='كيفية الإجزاء: هي التي تشتمل على ما يجب فقط، وكيفية الاستحباب والكمال: هي التي تشتمل على الواجب والمسنون.', tr='Yeterli şekil: yalnızca farz olanı içerir; müstehap ve kâmil şekil: farzı ve sünneti içerir.', src='حاشية الكتاب (١/ ٢٩)'),
+})
+GLOSS_TR_SRC.update({
+ 'حاشية الكتاب (١/ ٢٨)': 'Kitabın dipnotu (1/ 28)',
+ 'حاشية الكتاب (١/ ٢٩)': 'Kitabın dipnotu (1/ 29)',
+})
+
+SHARH[107] = [
+ dict(ar='المسألة الأولى: معنى الغسل، وحكمه، ودليله', tr='Birinci mesele: Guslün anlamı, hükmü ve delili', paras=[
+  PS('١ - معناه: الغُسل لغة: مصدر من غسل الشيء يَغسله غَسْلاً وغُسْلاً، وهو تمام غسل الجسد كله. ومعناه شرعاً: تعميم البدن بالماء. أو: استعمال ماء طهور في جميع البدن، على صفة مخصوصة، على وجه التعبد لله سبحانه.',
+     '1. Anlamı: Gusül sözlükte «gasele» fiilinin mastarıdır; bütün bedeni tamamen yıkamaktır. Şer’î anlamı: Bütün bedene su ulaştırmak; ya da tahûr suyu bütün bedende, belirli bir şekilde, Allah Sübhânehû’ya ibadet maksadıyla kullanmaktır.',
+     '١/ ٢٨',
+     'تعلّمنا الوضوء للحدث الأصغر، وهذا الباب **للحدث الأكبر**.\n\n'
+     'وفي التعريف الثاني قيود كالوضوء: **ماء طهور**، و**جميع البدن**، و**صفة مخصوصة**، و**التعبّد**؛ فمن اغتسل للتبرّد وحده دون نية رفع الحدث لم يرتفع حدثه.',
+     'Abdesti küçük hades için öğrendik; bu bölüm **büyük hades** içindir.\n\n'
+     'İkinci tanımda abdestteki gibi kayıtlar vardır: **tahûr su**, **bütün beden**, **belirli şekil** ve **ibadet**. Hadesi kaldırma niyeti olmadan yalnızca serinlemek için yıkanan kimsenin hadesi kalkmaz.'),
+  PS('٢ - حكمه: والغسل واجب إذا وجد سبب لوجوبه. لقوله تعالى: (وَإِنْ كُنْتُمْ جُنُبًا فَاطَّهَّرُوا) [المائدة: ٦]، والأحاديث التي ورد فيها كيفية الغسل عن عدد من الصحابة نقلاً عن رسول الله ﷺ دالة على وجوبه. وسيأتي طرف منها قريباً إن شاء الله.',
+     '2. Hükmü: Gusül, farz olmasının bir sebebi bulunduğunda farzdır. Allah Teâlâ’nın «Eğer cünüp iseniz temizlenin» [Mâide, 6] sözü gereği. Birçok sahâbînin Rasûlullah’tan (sallallâhu aleyhi ve sellem) naklettiği, guslün şeklini anlatan hadisler de farz olduğunu gösterir; bunlardan bir kısmı inşallah birazdan gelecek.',
+     '١/ ٢٨',
+     'الغسل **يجب لغيره**، كالوضوء: إذا وُجد سببه، وأراد ما لا يصح إلا بالطهارة. و**«فاطّهّروا»** في الآية بعد ذكر الوضوء معناها: عمّموا أبدانكم بالماء.',
+     'Gusül, abdest gibi **başka bir şey için farzdır**: Sebebi bulunduğunda ve ancak temizlikle sahih olan bir şeyi istediğinde. Âyette abdestten sonra gelen **«temizlenin»** sözü, bedenlerinize su ulaştırın demektir.'),
+ ]),
+ dict(ar='موجبات الغسل', tr='Guslü gerektirenler', paras=[
+  PS('٣ - موجباته: ويجب الغسل للأسباب الآتية: ١ - خروج المنيّ من مخرجه: ويشترط أن يكون دفقاً بلذة من ذكر أو أنثى، لقوله تعالى: (وَإِنْ كُنْتُمْ جُنُبًا فَاطَّهَّرُوا) [المائدة: ٦]، ولقوله ﷺ لعلي: (إذا [[فَضَخْتَ|fadakh]] (١) الماء فاغتسل) (٢). ما لم يكن نائماً ونحوه فلا تشترط اللذة؛ لأن النائم قد لا يحس به، ولقوله ﷺ لما سئل: هل على المرأة غسل إذا احتلمت؟ قال: (نعم إذا رأت الماء) (٣). وهذا كله مجمع عليه.',
+     '3. Gerektirenler: Gusül şu sebeplerle farz olur: 1. Meninin çıkış yerinden çıkması: Erkekten veya kadından, atılarak ve lezzetle çıkması şarttır. Allah Teâlâ’nın «Eğer cünüp iseniz temizlenin» [Mâide, 6] sözü ve Nebî’nin (sallallâhu aleyhi ve sellem) Ali’ye: «Suyu atarak çıkardığında gusül abdesti al» (1)(2) sözü gereği. Uyuyan ve benzeri ise bundan hariçtir; onda lezzet şart değildir, çünkü uyuyan bunu hissetmeyebilir. Ayrıca Nebî’ye (s.a.v.) «Kadın ihtilam olursa ona gusül gerekir mi?» diye sorulunca «Evet, suyu (meniyi) görürse» (3) buyurmuştur. Bunların hepsinde icmâ vardır.',
+     '١/ ٢٨',
+     'في المستيقظ **شرطان**: الدفق واللذة. فإن خرج منه شيء بلا لذة، لمرض أو برد، لم يجب الغسل. أما **النائم** فالعبرة عنده بوجود الماء بعد الاستيقاظ، شعر بلذة أو لم يشعر.\n\n'
+     '**شرح الحواشي:** (١) الفضخ: الدفق. (٢) حديث علي رواه أبو داود، وصحّحه الألباني. (٣) حديث أم سليم في صحيح مسلم.',
+     'Uyanık olanda **iki şart** vardır: atılarak çıkması ve lezzet. Hastalık veya soğuk sebebiyle lezzetsiz bir şey çıkarsa gusül farz olmaz. **Uyuyanda** ise ölçü, uyandıktan sonra meniyi görmesidir; lezzet hissetsin veya hissetmesin.\n\n'
+     '**Dipnotların şerhi:** (1) Fadh: atarak çıkarmak. (2) Ali hadisini Ebû Dâvûd rivayet etmiş, Elbânî sahih saymıştır. (3) Ümmü Süleym hadisi Müslim’in Sahîh’indedir.',
+     fn=['(١) فَضْخُ الماء: أي دَفْقُهُ، والمراد المَنِيّ.', '(٢) رواه أبو داود برقم (٢٠٦)، وصححه الألباني (الإرواء برقم ١٢٥).', '(٣) رواه مسلم برقم (٣١٣).']),
+  PS('٢ - تغييب حشفة الذكر كلها أو قدرها في الفرج، وإن لم يحصل إنزال بلا حائل: لقوله ﷺ: (إذا جلس بين شعبها الأربع، ومس الختانُ الختانَ، وجب الغسل) (٤). لكن لا يجب الغسل في هذه الحالة إلا على ابن عشر أو بنت تسع فما فوق.',
+     '2. Birleşme, meni gelmese bile, engel olmaksızın: Nebî’nin (sallallâhu aleyhi ve sellem) şu sözü gereği: «Erkek, kadının dört uzvu arasına oturur ve sünnet yerleri birbirine değerse gusül farz olur.» (4) Ancak bu durumda gusül, on yaşındaki erkek çocuk ve dokuz yaşındaki kız çocuğu ile daha büyükleri için farzdır.',
+     '١/ ٢٨',
+     '**«مسّ الختانُ الختانَ»:** كناية عن الجماع، أي تحاذي موضعَي الختان؛ وهو أدب نبوي في التعبير عمّا يُستحيا منه. والحكم: **الجماع وحده يوجب الغسل، ولو لم يُنزل**.\n\n'
+     '**شرح الحواشي:** (٤) الحديث في صحيح مسلم.',
+     '**«Sünnet yerleri birbirine değerse»:** Birleşmeden kinayedir; utanılan şeyi ifade etmede nebevî bir edeptir. Hüküm: **Birleşme tek başına guslü gerektirir, meni gelmese de**.\n\n'
+     '**Dipnotların şerhi:** (4) Hadis Müslim’in Sahîh’indedir.',
+     fn=['(٤) رواه مسلم برقم (٣٤٩).']),
+  PS('٣ - إسلام الكافر ولو مرتداً: (لأن النبي ﷺ أمر قيس بن عاصم حين أسلم أن يغتسل) (١). ٤ - انقطاع دم الحيض والنفاس: لحديث عائشة أن النبي ﷺ قال لفاطمة بنت أبي حبيش: (إذا أقبلت الحيضة فدعي الصلاة، وإذا أدبرت فاغتسلي وصَلِّي) (٢). والنفاس كالحيض بالإجماع.',
+     '3. Kâfirin Müslüman olması, dinden dönmüş olsa bile: «Çünkü Nebî (sallallâhu aleyhi ve sellem), Kays b. Âsım Müslüman olduğunda ona gusletmesini emretmiştir.» (1) 4. Hayız ve lohusalık kanının kesilmesi: Âişe’nin hadisi gereği; Nebî (s.a.v.) Fâtıma bint Ebî Hubeyş’e şöyle buyurdu: «Hayız geldiğinde namazı bırak; gittiğinde gusledip namaz kıl.» (2) Lohusalık icmâ ile hayız gibidir.',
+     '١/ ٢٩',
+     '**إسلام الكافر:** يغتسل عند دخوله في الإسلام، ولو كان مرتدًّا ثم رجع.\n\n'
+     '**«إذا أدبرت»:** أي انقطع الدم وانتهت أيام الحيض؛ فالغسل يجب **بانقطاع** الدم، لا بخروجه.\n\n'
+     '**شرح الحواشي:** (١) حديث قيس بن عاصم رواه أبو داود والنسائي والترمذي وحسّنه، وصحّحه الألباني. (٢) حديث عائشة متفق عليه.',
+     '**Kâfirin Müslüman olması:** İslam’a girerken gusleder; dinden dönüp sonra geri gelmiş olsa bile.\n\n'
+     '**«Gittiğinde»:** yani kan kesilip hayız günleri bitince; gusül kanın çıkmasıyla değil, **kesilmesiyle** farz olur.\n\n'
+     '**Dipnotların şerhi:** (1) Kays b. Âsım hadisini Ebû Dâvûd, Nesâî ve Tirmizî rivayet etmiş, Tirmizî hasen demiş, Elbânî sahih saymıştır. (2) Âişe hadisi Buhârî ve Müslim’dedir.',
+     fn=['(١) رواه أبو داود برقم (٣٥٥)، والنسائي (١/ ١٠٩)، والترمذي برقم (٦٠٥) وحسنه، وصححه الألباني في الإرواء (١/ ١٦٣ - ١٦٤).', '(٢) رواه البخاري برقم (٣٢٠)، ومسلم برقم (٣٣٣).']),
+  PS('٥ - الموت: لقوله ﷺ في حديث غسل ابنته زينب حين توفيت: (اغسلنها) (٣). وقال في المحرم: (اغسلوه بماء وسدر) (٤). وذلك تعبداً؛ لأنه لو كان عن حدث لم يرتفع مع بقاء سببه.',
+     '5. Ölüm: Nebî’nin (sallallâhu aleyhi ve sellem) kızı Zeyneb vefat ettiğinde onun yıkanmasıyla ilgili hadiste «Onu yıkayın» (3) sözü ve ihramlı ölen hakkında «Onu su ve sidirle yıkayın» (4) sözü gereği. Bu, ibadet (taabbüd) olarak yapılır; çünkü hadesten dolayı olsaydı, sebebi devam ettiği sürece kalkmazdı.',
+     '١/ ٢٩',
+     '**«تعبّدًا»:** أي نفعله امتثالًا لأمر الله، وإن لم نعلم علّته. ووجه ذلك: أن **الموت** سبب باقٍ لا يزول، فلو كان الغسل لرفع حدث الموت لم يرتفع ما دام سببه قائمًا. و**السِّدْر:** ورق شجر النبق، يُدقّ ويُجعل في الماء للتنظيف، كما تقدّم في باب المياه.\n\n'
+     '**شرح الحواشي:** (٣) و(٤) الحديثان متفق عليهما.',
+     '**«Taabbüd»:** Gerekçesini bilmesek de Allah’ın emrine uyarak yaparız. Delil yönü: **Ölüm** sürüp giden bir sebeptir; gusül ölüm hadesini kaldırmak için olsaydı, sebebi devam ettikçe kalkmazdı. **Sidir:** Arabistan kirazı ağacının yaprağıdır; ezilip temizlik için suya konur; Sular bölümünde geçtiği gibi.\n\n'
+     '**Dipnotların şerhi:** (3) ve (4) İki hadis de Buhârî ve Müslim’dedir.',
+     fn=['(٣) متفق عليه، رواه البخاري برقم (١٢٥٣)، ومسلم برقم (٩٣٩).', '(٤) متفق عليه: رواه البخاري برقم (١٢٦٦) كتاب الجنائز، ومسلم برقم (١٢٠٦).']),
+ ]),
+ dict(ar='المسألة الثانية: في صفة الغسل وكيفيته', tr='İkinci mesele: Guslün şekli ve keyfiyeti', paras=[
+  PS('للغسل من الجنابة كيفيتان، كيفية استحباب، و[[كيفية إجزاء|ijza]] (٥). أما كيفية الاستحباب: فهي أن يغسل يديه، ثم يغسل فرجه، وما أصابه من الأذى، ثم يتوضأ وضوءه للصلاة، ثم يأخذ بيده ماءً فيخلل به شعر رأسه، مدخلاً أصابعه في أصول الشعر حتى يروي بشرته، ثم يحثو على رأسه ثلاث حثيات، ثم يفيض الماء على سائر بدنه؛ لحديث عائشة المتفق عليه.',
+     'Cünüplük guslünün iki şekli vardır: müstehap şekil ve yeterli şekil. (5) Müstehap şekil şudur: Ellerini yıkar, sonra avret yerini ve ona bulaşan pisliği yıkar, sonra namaz abdesti gibi abdest alır, sonra eliyle su alıp parmaklarını saç diplerine sokarak derisini ıslatıncaya kadar saçını hilâller, sonra başına üç avuç su döker, sonra bedeninin geri kalanına su akıtır. Âişe’nin Buhârî ve Müslim’deki hadisi gereği.',
+     '١/ ٢٩',
+     'رتّب الكتاب الصفة الكاملة **ست خطوات**: اليدان، ثم الفرج، ثم الوضوء، ثم تخليل الشعر، ثم ثلاث حثيات، ثم سائر البدن.\n\n'
+     '**الحثية:** ملء الكفين من الماء. و**«يروي بشرته»:** يُوصل الماء إلى جلد الرأس حتى يبتلّ.\n\n'
+     '**شرح الحواشي:** (٥) الحاشية تفسّر المصطلحين: الإجزاء ما اشتمل على الواجب فقط، والكمال ما اشتمل على الواجب والمسنون.',
+     'Kitap kâmil şekli **altı adımda** sıralamıştır: eller, avret yeri, abdest, saçı hilâllemek, üç avuç ve bedenin geri kalanı.\n\n'
+     '**Hasye:** iki avuç dolusu su. **«Derisini ıslatmak»:** suyu baş derisine ulaştırıp ıslatmak.\n\n'
+     '**Dipnotların şerhi:** (5) Dipnot iki terimi açıklar: Yeterli olan yalnızca farzı içerir; kâmil olan farzı ve sünneti içerir.',
+     fn=['(٥) وكيفية الإجزاء: هي التي تشتمل على ما يجب فقط، وكيفية الاستحباب والكمال: هي التي تشتمل على الواجب والمسنون.']),
+  PS('وأما كيفية الإجزاء: أن يعم بدنه بالماء ابتداءً مع النية لحديث ميمونة: (وضع رسول الله ﷺ وَضُوءَ الجنابة، فأفرغ على يديه فغسلهما مرتين أو ثلاثاً، ثم تمضمض، واستنشق، وغسل وجهه وذراعيه، ثم أفاض الماء على رأسه، ثم غسل جسده، فأتيته بالمنديل فلم يُرِدْها، وجعل ينفض الماء بيديه) (٦). ومثله حديث عائشة وفيه: (ثم يخلل شعره بيده. حتى إذا ظن أنه قد روى بشرته، أفاض عليه الماء ثلاث مرات، ثم غسل سائر جسده) (١).',
+     'Yeterli şekil ise: Niyetle birlikte doğrudan bütün bedene su ulaştırmaktır. Meymûne’nin hadisi gereği: «Rasûlullah’a (sallallâhu aleyhi ve sellem) cünüplük guslü için su koydum. Ellerine döküp onları iki veya üç kez yıkadı; sonra ağzına ve burnuna su verdi, yüzünü ve kollarını yıkadı; sonra başına su döktü, sonra bedenini yıkadı. Ona bir havlu getirdim, almak istemedi; suyu elleriyle silkelemeye başladı.» (6) Âişe’nin hadisi de böyledir; orada: «Sonra eliyle saçını hilâllerdi; derisini ıslattığını düşündüğünde üzerine üç kez su döker, sonra bedeninin geri kalanını yıkardı.» (1)',
+     '١/ ٢٩–٣٠',
+     '**«ابتداءً»:** أي ولو لم يتوضأ قبله، ولم يرتّب؛ فالواجب **التعميم مع النية**. وحديث ميمونة فيه صفة كاملة أيضًا؛ وفيه أنه ﷺ لم يأخذ المنديل، فدلّ على أن تنشيف الأعضاء ليس من السنة اللازمة.\n\n'
+     '**شرح الحواشي:** (٦) حديث ميمونة متفق عليه. (١) وحديث عائشة متفق عليه.',
+     '**«Doğrudan»:** yani önce abdest almasa ve sıraya uymasa da; farz olan **niyetle bütün bedene su ulaştırmaktır**. Meymûne hadisinde de kâmil şekil vardır; ayrıca Nebî’nin (s.a.v.) havluyu almadığı geçer; bu, kurulanmanın lâzım bir sünnet olmadığını gösterir.\n\n'
+     '**Dipnotların şerhi:** (6) Meymûne hadisi Buhârî ve Müslim’dedir. (1) Âişe hadisi de Buhârî ve Müslim’dedir.',
+     fn=['(٦) متفق عليه: رواه البخاري برقم (٢٤٩)، ومسلم برقم (٣١٧).', '(١) متفق عليه: رواه البخاري برقم (٢٤٨)، ومسلم برقم (٣١٦).']),
+  PS('ولا يجب على المرأة نقض شعرها في الغسل من الجنابة، ويلزمها ذلك في الغسل من الحيض؛ لحديث أم سلمة قالت: قلت: يا رسول الله إني امرأة أشدُّ ضفر رأسي، أفأنقضه لغسل الجنابة؟ قال: (لا. إنما يكفيك أن تحثي على رأسك ثلاث حثيات، ثم تفيضين عليك الماء، فتطهرين) (٢).',
+     'Kadının cünüplük guslünde saçını çözmesi farz değildir; hayız guslünde ise gerekir. Ümmü Seleme’nin hadisi gereği: «Ey Allah’ın Rasûlü! Ben saçımı sıkıca ören bir kadınım; cünüplük guslü için onu çözeyim mi?» dedim. Buyurdu ki: «Hayır; başına üç avuç su dökmen, sonra üzerine su akıtman sana yeter; böylece temizlenirsin.» (2)',
+     '١/ ٣٠',
+     '**الضَّفْر:** فتل الشعر وجدله. ففي غسل الجنابة يكفيها أن تصبّ الماء على رأسها ثلاث حثيات حتى يصل إلى أصول الشعر، دون نقض الضفائر؛ وفي غسل الحيض تنقضه، كما قرّره الكتاب.\n\n'
+     '**شرح الحواشي:** (٢) حديث أم سلمة في صحيح مسلم.',
+     '**Dafr:** saçı örmek. Cünüplük guslünde örgüleri çözmeden başına üç avuç su dökmesi ve suyun saç diplerine ulaşması yeterlidir; hayız guslünde ise kitabın belirttiği gibi saçını çözer.\n\n'
+     '**Dipnotların şerhi:** (2) Ümmü Seleme hadisi Müslim’in Sahîh’indedir.',
+     fn=['(٢) رواه مسلم برقم (٣٣٠).']),
+ ]),
+ dict(ar='المسألة الثالثة: الأغسال المستحبة', tr='Üçüncü mesele: Müstehap gusüller', paras=[
+  PS('تقدم بيان الأغسال الواجبة، وأما الأغسال المسنونة والمستحبة، فهي: ١ - الاغتسال عند كل جماع: لحديث أبي رافع أن النبي ﷺ كان ذات ليلة يغتسل عند هذه وعند هذه قال: فقلت يا رسول الله ألا تجعله واحداً؟ قال: (هذا أزكى وأطيب وأطهر) (٣). ٢ - الغسل للجمعة: لقوله ﷺ: (إذا جاء أحدكم الجمعة فليغتسل) (٤). وهو آكد الأغسال المستحبة.',
+     'Farz gusüller açıklandı. Sünnet ve müstehap gusüller ise şunlardır: 1. Her birleşmede gusletmek: Ebû Râfi’nin hadisi gereği; Nebî (sallallâhu aleyhi ve sellem) bir gece hanımlarının her birinin yanında gusletti. «Ey Allah’ın Rasûlü! Bunu tek bir gusül yapsan olmaz mı?» dedim. Buyurdu ki: «Bu daha temiz, daha güzel ve daha arıdır.» (3) 2. Cuma için gusül: «Biriniz cumaya geldiğinde gusletsin» (4) sözü gereği. Bu, müstehap gusüllerin en kuvvetlisidir.',
+     '١/ ٣٠',
+     '**«آكد الأغسال المستحبة»:** أي أشدّها تأكيدًا، فلا ينبغي للمسلم أن يتركه.\n\n'
+     '**شرح الحواشي:** (٣) حديث أبي رافع رواه أبو داود وابن ماجه، وحسّنه الألباني. (٤) حديث الجمعة في صحيح البخاري.',
+     '**«En kuvvetlisi»:** yani en çok vurgulananı; Müslüman onu terk etmemelidir.\n\n'
+     '**Dipnotların şerhi:** (3) Ebû Râfi’ hadisini Ebû Dâvûd ve İbn Mâce rivayet etmiş, Elbânî hasen saymıştır. (4) Cuma hadisi Buhârî’nin Sahîh’indedir.',
+     fn=['(٣) رواه أبو داود برقم (٢١٦)، وابن ماجه برقم (٥٩٠)، وحسَّنه الألباني (صحيح ابن ماجه برقم ٤٨٦).', '(٤) أخرجه البخاري برقم (٨٧٧).'],
+     note=dict(ar='تنبيه على الحاشية (٣): الحديث في «سنن أبي داود» برقم (٢١٩) في الترقيم المشهور، لا (٢١٦).', tr='(3) numaralı dipnot hakkında: Hadis, meşhur numaralandırmada Ebû Dâvûd’da 216 değil 219 numaradadır.')),
+  PS('٣ - الاغتسال للعيدين. ٤ - الاغتسال عند الإحرام بالعمرة والحج: فإنه ﷺ اغتسل لإحرامه. ٥ - الغسل من غسل الميت: لقوله ﷺ: (من غَسَّلَ ميتاً فليغتسل) (٥).',
+     '3. İki bayram için gusül. 4. Umre ve hac için ihrama girerken gusül: Çünkü Nebî (sallallâhu aleyhi ve sellem) ihramı için gusletmiştir. 5. Ölü yıkayanın gusletmesi: «Ölü yıkayan gusletsin» (5) sözü gereği.',
+     '١/ ٣٠',
+     'هذه الأغسال **مستحبة لا واجبة**؛ فمن تركها لم يأثم، ومن فعلها أُجر.\n\n'
+     '**شرح الحواشي:** (٥) الحديث رواه ابن ماجه، وصحّحه الألباني.',
+     'Bu gusüller **farz değil, müstehaptır**: Terk eden günaha girmez, yapan sevap kazanır.\n\n'
+     '**Dipnotların şerhi:** (5) Hadisi İbn Mâce rivayet etmiş, Elbânî sahih saymıştır.',
+     fn=['(٥) رواه ابن ماجه برقم (١٤٦٣)، وصححه الألباني (الإرواء برقم ١٤٤).']),
+ ]),
+ dict(ar='المسألة الرابعة: الأحكام المترتبة على من وجب عليه الغسل', tr='Dördüncü mesele: Gusül gereken kimseyle ilgili hükümler', paras=[
+  PS('١ - لا يجوز له المكث في المسجد إلا عابر سبيل لقوله تعالى: (وَلَا جُنُبًا إِلَّا عَابِرِي سَبِيلٍ حَتَّى تَغْتَسِلُوا) [النساء: ٤٣]، فإذا توضأ جاز له المكث في المسجد، لثبوت ذلك عن جماعة من الصحابة على عهد النبي ﷺ، ولأن الوضوء يخفف الحدث، والوضوء أحد الطهورين.',
+     '1. Yoldan geçen hariç mescitte kalması caiz değildir. Allah Teâlâ’nın «Cünüpken de —yoldan geçenler hariç— gusledinceye kadar (namaza yaklaşmayın)» [Nisâ, 43] sözü gereği. Abdest alırsa mescitte kalması caizdir; çünkü bu, Nebî (s.a.v.) zamanında ashaptan bir topluluktan sabittir; abdest hadesi hafifletir ve abdest iki temizlikten biridir.',
+     '١/ ٣٠–٣١',
+     '**«عابر سبيل»:** المارّ في المسجد دون جلوس. **و«الوضوء يخفّف الحدث»:** أي يرفع الحدث الأصغر، فيبقى الأكبر مخفّفًا.',
+     '**«Yoldan geçen»:** mescitte oturmadan geçen. **«Abdest hadesi hafifletir»:** küçük hadesi kaldırır; büyük hades hafiflemiş olarak kalır.'),
+  PS('٢ - لا يجوز له مس المصحف. لقوله تعالى: (لَا يَمَسُّهُ إِلَّا الْمُطَهَّرُونَ) [الواقعة: ٧٩]. وقوله ﷺ: (لا يمس المصحف إلا طاهر) (١). ٣ - لا يجوز له قراءة القرآن. فلا يقرأ الجنب شيئاً من القرآن حتى يغتسل. لحديث علي قال: (كان ﵊ لا يمنعه من قراءة القرآن شيء إلا الجنابة) (٢)، ولأن في منعه من القراءة حثَّاً له على المبادرة إلى الاغتسال، وإزالة المانع له من القراءة. ويحرم عليه أيضاً: ٤ - الصلاة. ٥ - والطواف بالبيت. كما سبق بيان ذلك عند الكلام على مسألة: (ما يجب له الوضوء). من الباب الخامس.',
+     '2. Mushafa dokunması caiz değildir: Allah Teâlâ’nın «Ona tertemiz olanlardan başkası dokunamaz» [Vâkıa, 79] sözü ve Nebî’nin (s.a.v.) «Mushafa ancak temiz olan dokunur» (1) sözü gereği. 3. Kur’ân okuması caiz değildir: Cünüp, gusledinceye kadar Kur’ân’dan hiçbir şey okumaz. Ali’nin hadisi gereği: «Onu (aleyhissalâtü vesselâm) Kur’ân okumaktan cünüplükten başka hiçbir şey alıkoymazdı.» (2) Ayrıca okumaktan alıkonulması, onu gusletmeye ve okumasına engel olan şeyi gidermeye acele etmeye teşvik eder. Ona şunlar da haramdır: 4. Namaz. 5. Kâbe’yi tavaf; beşinci bölümde «Abdestin farz olduğu durumlar» meselesinde açıklandığı gibi.',
+     '١/ ٣١',
+     'فرّق بين **المحدث حدثًا أصغر**، فيجوز له أن يقرأ من حفظه ولا يمسّ المصحف، وبين **الجنب**، فلا يقرأ ولا يمسّ حتى يغتسل.\n\n'
+     '**شرح الحواشي:** (١) الحديث أخرجه مالك والحاكم، وصحّحه الألباني. (٢) حديث علي رواه أحمد وابن ماجه والترمذي وقال: حسن صحيح.',
+     '**Küçük hadesli** ile **cünübü** ayırın: Küçük hadesli ezberden okuyabilir ama Mushafa dokunamaz; cünüp ise gusledinceye kadar ne okur ne dokunur.\n\n'
+     '**Dipnotların şerhi:** (1) Hadisi Mâlik ve Hâkim rivayet etmiş, Elbânî sahih saymıştır. (2) Ali hadisini Ahmed, İbn Mâce ve Tirmizî rivayet etmiş; Tirmizî «hasen sahih» demiştir.',
+     fn=['(١) أخرجه مالك في الموطأ (٤٦٨)، والحاكم في المستدرك (٣/ ٤٨٥)، وصححه الألباني (الإرواء برقم ١٢٢).', '(٢) رواه الإمام أحمد برقم (١٠١٤)، وابن ماجه برقم (٥٩٤)، والترمذي برقم (١٤٦)، قال الترمذي: حسن صحيح. وصححه الحاكم (المستدرك ٤/ ١٠٧). ونقل الحافظ ابن حجر تصحيحه عن: ابن السكن، وعبد الحق، والبغوي، وأن شعبة حسَّنه. (التلخيص الحبير ١/ ١٣٩).']),
+ ]),
+]

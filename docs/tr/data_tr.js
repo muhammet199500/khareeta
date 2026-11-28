@@ -3640,4 +3640,390 @@ window.FIQH6.quiz = [
     "x": "Kitabın belirttiği gibi."
   }
 ];
-window.LESSONS = [window.LESSON, window.LESSON2, window.LESSON3, window.FIQH1, window.FIQH2, window.FIQH3, window.FIQH4, window.FIQH5, window.FIQH6];
+window.FIQH7 = {
+  "title": "Gusül",
+  "root": {
+    "id": "root",
+    "label": "Gusül"
+  },
+  "branches": [
+    {
+      "id": "b1",
+      "label": "Anlam ve hüküm",
+      "children": [
+        {
+          "id": "b1a",
+          "label": "Tanım",
+          "card": {
+            "tag": "İbadet maksadıyla",
+            "title": "Bütün bedene su",
+            "body": "Tahûr suyu belirli bir şekilde bütün bedene ulaştırmak. Sözlükte: bütün bedeni tamamen yıkamak."
+          }
+        },
+        {
+          "id": "b1b",
+          "label": "Hüküm",
+          "v": true,
+          "card": {
+            "tag": "Sebebi bulununca farz",
+            "verse": "﴿وَإِنْ كُنْتُمْ جُنُبًا فَاطَّهَّرُوا﴾",
+            "ref": "Mâide, 6",
+            "body": "Sebebi bulununca farz"
+          }
+        }
+      ]
+    },
+    {
+      "id": "b2",
+      "label": "Beş gerektiren",
+      "children": [
+        {
+          "id": "b2a",
+          "label": "Meninin çıkması",
+          "hot": true,
+          "card": {
+            "tag": "Atılarak ve lezzetle",
+            "body": "«Suyu atarak çıkardığında gusül abdesti al.» Ebû Dâvûd (206). Uyuyana lezzet şart değil: «Evet, suyu görürse.» Müslim (313)."
+          }
+        },
+        {
+          "id": "b2b",
+          "label": "Birleşme",
+          "hot": true,
+          "card": {
+            "tag": "Meni gelmese de",
+            "body": "«…sünnet yerleri birbirine değerse gusül farz olur.» Müslim (349). On yaşındaki erkek ve dokuz yaşındaki kız ve büyükleri için."
+          }
+        },
+        {
+          "id": "b2c",
+          "label": "Müslüman olmak",
+          "card": {
+            "tag": "Dinden dönmüş olsa da",
+            "body": "Nebî (s.a.v.), Kays b. Âsım Müslüman olunca ona gusletmesini emretti. Ebû Dâvûd (355)."
+          }
+        },
+        {
+          "id": "b2d",
+          "label": "Hayız ve lohusalığın bitmesi",
+          "card": {
+            "tag": "«Gittiğinde gusledip namaz kıl»",
+            "body": "Buhârî (320) ve Müslim (333). Lohusalık icmâ ile hayız gibidir."
+          }
+        },
+        {
+          "id": "b2e",
+          "label": "Ölüm",
+          "card": {
+            "tag": "Taabbüd",
+            "body": "«Onu yıkayın.» Hadesten olsaydı sebebi sürerken kalkmazdı."
+          }
+        }
+      ]
+    },
+    {
+      "id": "b3",
+      "label": "Guslün şekli",
+      "children": [
+        {
+          "id": "b3a",
+          "label": "Yeterli",
+          "hot": true,
+          "card": {
+            "tag": "Yalnızca farz",
+            "body": "Niyetle bütün bedene su ulaştırmak."
+          }
+        },
+        {
+          "id": "b3b",
+          "label": "Kâmil",
+          "card": {
+            "tag": "Farz ve sünnet",
+            "body": "Ellerini, sonra avret yerini yıkar; abdest alır; derisini ıslatıncaya kadar saçını hilâller; başına üç avuç döker; sonra bedeninin geri kalanına su akıtır."
+          }
+        },
+        {
+          "id": "b3c",
+          "label": "Delil",
+          "card": {
+            "tag": "Âişe ve Meymûne hadisleri",
+            "body": "Buhârî ve Müslim; Meymûne hadisinde: havlu getirildi, almak istemedi."
+          }
+        }
+      ]
+    },
+    {
+      "id": "b4",
+      "label": "Kadının saçı",
+      "children": [
+        {
+          "id": "b4a",
+          "label": "Cünüplük",
+          "v": true,
+          "card": {
+            "tag": "✗ Çözmesi gerekmez",
+            "verse": "«إِنَّمَا يَكْفِيكِ أَنْ تَحْثِي عَلَى رَأْسِكِ ثَلَاثَ حَثَيَاتٍ»",
+            "ref": "Müslim (330)",
+            "body": "✗ Çözmesi gerekmez"
+          }
+        },
+        {
+          "id": "b4b",
+          "label": "Hayız",
+          "card": {
+            "tag": "✓ Çözmesi gerekir",
+            "body": "Kitabın belirttiği gibi."
+          }
+        }
+      ]
+    },
+    {
+      "id": "b5",
+      "label": "Müstehap gusüller",
+      "children": [
+        {
+          "id": "b5a",
+          "label": "Cuma",
+          "hot": true,
+          "card": {
+            "tag": "En kuvvetlisi",
+            "body": "«Biriniz cumaya geldiğinde gusletsin.» Buhârî (877)."
+          }
+        },
+        {
+          "id": "b5b",
+          "label": "Her birleşmede",
+          "card": {
+            "tag": "«Bu daha temiz, daha güzel ve daha arıdır»",
+            "body": "Ebû Dâvûd (219)."
+          }
+        },
+        {
+          "id": "b5c",
+          "label": "Bayramlar ve ihram",
+          "card": {
+            "tag": "Bayramlar ve ihram",
+            "body": "Nebî (s.a.v.) ihramı için gusletti."
+          }
+        },
+        {
+          "id": "b5d",
+          "label": "Ölü yıkayan",
+          "card": {
+            "tag": "Ölü yıkayan",
+            "body": "«Ölü yıkayan gusletsin.» İbn Mâce (1463)."
+          }
+        }
+      ]
+    },
+    {
+      "id": "b6",
+      "label": "Cünübe haram olanlar",
+      "children": [
+        {
+          "id": "b6a",
+          "label": "Mescitte kalmak",
+          "card": {
+            "tag": "Yoldan geçen veya abdestli hariç",
+            "body": "«…yoldan geçenler hariç»; abdest hadesi hafifletir."
+          }
+        },
+        {
+          "id": "b6b",
+          "label": "Mushafa dokunmak ve Kur’ân okumak",
+          "hot": true,
+          "card": {
+            "tag": "Gusledinceye kadar",
+            "body": "«Onu Kur’ân okumaktan cünüplükten başka bir şey alıkoymazdı.»"
+          }
+        },
+        {
+          "id": "b6c",
+          "label": "Namaz ve tavaf",
+          "card": {
+            "tag": "Abdest bölümündeki gibi",
+            "body": "Ancak temizlikle sahih olur."
+          }
+        }
+      ]
+    }
+  ],
+  "jamia": "Gusül; meninin çıkması, birleşme, kâfirin Müslüman olması, hayız ve lohusalığın bitmesi ve ölümle farz olur. Niyetle bütün bedene su ulaştırmak yeterlidir; kâmil olanı Nebî’nin (s.a.v.) guslü gibidir. Gusül gerekene abdestsiz mescitte kalmak, Mushafa dokunmak, Kur’ân okumak, namaz ve tavaf haramdır.",
+  "closing": "«Şüphesiz Allah, çokça tövbe edenleri sever, temizlenenleri de sever.» (Bakara, 222)",
+  "short": "7 · Gusül",
+  "eb": "el-Fıkhu’l-Müyesser · Taharet Kitabı · Yedinci bölüm",
+  "h1": "Gusül",
+  "lead": "Dersin etkileşimli haritası: guslün anlamı ve gerektirenlerinden şekline, müstehap gusüllere ve cünübe haram olanlara.",
+  "series": "fiqh",
+  "home": "fiqh-muyassar.html",
+  "n": 107
+};
+window.FIQH7.ui = window.LESSON.ui;
+window.FIQH7.quiz = [
+  {
+    "q": "Gusül şer’an nedir?",
+    "o": [
+      "Dört organı yıkamak",
+      "İbadet maksadıyla bütün bedene su ulaştırmak",
+      "Yalnız başı yıkamak",
+      "Bedeni meshetmek"
+    ],
+    "a": 1,
+    "x": "Tahûr suyu belirli bir şekilde bütün bedene ulaştırmak."
+  },
+  {
+    "q": "Hangisi guslü gerektirenlerden değildir?",
+    "o": [
+      "Birleşme",
+      "Ölüm",
+      "Uyku",
+      "Müslüman olmak"
+    ],
+    "a": 2,
+    "x": "Uyku abdesti bozar, guslü gerektirmez."
+  },
+  {
+    "q": "Uyanık kimseden çıkan meninin guslü gerektirmesinin şartı nedir?",
+    "o": [
+      "Çok olması",
+      "Atılarak ve lezzetle çıkması",
+      "Gece olması",
+      "Şart yoktur"
+    ],
+    "a": 1,
+    "x": "«Suyu atarak çıkardığında gusül abdesti al.»"
+  },
+  {
+    "q": "Uyanınca meni gördü ama lezzet hissetmedi:",
+    "o": [
+      "Gusül gerekmez",
+      "Gusül farzdır",
+      "Yalnız abdest alır",
+      "Gusül müstehaptır"
+    ],
+    "a": 1,
+    "x": "«Evet, suyu görürse.»"
+  },
+  {
+    "q": "Meni gelmeden birleşme:",
+    "o": [
+      "Hiçbir şey gerektirmez",
+      "Yalnız abdesti gerektirir",
+      "Guslü gerektirir",
+      "Yalnız kadına gusül gerekir"
+    ],
+    "a": 2,
+    "x": "«…sünnet yerleri birbirine değerse gusül farz olur.»"
+  },
+  {
+    "q": "Hayızdan gusül ne zaman farz olur?",
+    "o": [
+      "Kan başlayınca",
+      "Kan kesilince",
+      "Bir hafta sonra",
+      "Farz değildir"
+    ],
+    "a": 1,
+    "x": "«…gittiğinde gusledip namaz kıl.»"
+  },
+  {
+    "q": "Ölünün yıkanması neden taabbüdîdir?",
+    "o": [
+      "Müstehap olduğu için",
+      "Hadesten olsaydı sebebi sürerken kalkmazdı",
+      "Yıkanmadığı için",
+      "Temizlik için"
+    ],
+    "a": 1,
+    "x": "Ölüm sebebi devam eder."
+  },
+  {
+    "q": "Guslün yeterli şekli nedir?",
+    "o": [
+      "Sadece abdest",
+      "Niyetle bütün bedene su ulaştırmak",
+      "Başı üç kez yıkamak",
+      "Niyetsiz yıkanmak"
+    ],
+    "a": 1,
+    "x": "Farz olan budur."
+  },
+  {
+    "q": "Kâmil şeklin ilk adımı nedir?",
+    "o": [
+      "Abdest",
+      "Elleri yıkamak",
+      "Avuçla su dökmek",
+      "Ayakları yıkamak"
+    ],
+    "a": 1,
+    "x": "Ellerini, sonra avret yerini yıkar, sonra abdest alır."
+  },
+  {
+    "q": "Başa kaç avuç su dökülür?",
+    "o": [
+      "Bir",
+      "İki",
+      "Üç",
+      "Yedi"
+    ],
+    "a": 2,
+    "x": "«…üç avuç.»"
+  },
+  {
+    "q": "Kadın cünüplük guslü için örgülerini çözer mi?",
+    "o": [
+      "Evet, farzdır",
+      "Farz değildir",
+      "Haramdır",
+      "Keser"
+    ],
+    "a": 1,
+    "x": "Ümmü Seleme hadisi, Müslim."
+  },
+  {
+    "q": "Müstehap gusüllerin en kuvvetlisi hangisidir?",
+    "o": [
+      "Bayram guslü",
+      "Cuma guslü",
+      "İhram guslü",
+      "Ölü yıkayanın guslü"
+    ],
+    "a": 1,
+    "x": "«Biriniz cumaya geldiğinde gusletsin.»"
+  },
+  {
+    "q": "Cünüp, ders için mescitte oturmak istiyor:",
+    "o": [
+      "Her hâlde caiz",
+      "Ancak abdest alırsa caiz",
+      "Hiçbir şekilde caiz değil",
+      "Ancak gusledince değil"
+    ],
+    "a": 1,
+    "x": "Abdest alırsa kalabilir; geçmek ise caizdir."
+  },
+  {
+    "q": "Cünüp ezberden Kur’ân okur mu?",
+    "o": [
+      "Evet",
+      "Hayır, gusledinceye kadar",
+      "Abdest alırsa evet",
+      "Tek âyet okur"
+    ],
+    "a": 1,
+    "x": "«Onu Kur’ân okumaktan cünüplükten başka bir şey alıkoymazdı.»"
+  },
+  {
+    "q": "Hangisi cünübe caizdir?",
+    "o": [
+      "Mushafa dokunmak",
+      "Tavaf",
+      "Mescitten geçmek",
+      "Namaz"
+    ],
+    "a": 2,
+    "x": "«…yoldan geçenler hariç.»"
+  }
+];
+window.LESSONS = [window.LESSON, window.LESSON2, window.LESSON3, window.FIQH1, window.FIQH2, window.FIQH3, window.FIQH4, window.FIQH5, window.FIQH6, window.FIQH7];
