@@ -101,4 +101,18 @@ DOCQA_TR = {
   ('Yel çıkıp çıkmadığından şüphe edene abdest farzdır.', 'Yanlış; kesin bilinceye kadar temizliği üzeredir: «Bir ses işitmedikçe veya bir koku almadıkça ayrılmasın.»', True),
   ('Mushafa cildiyle engelsiz dokunmak için abdest farzdır.', 'Doğru; Nebî (s.a.v.) «Kur’ân’a ancak temiz olan dokunur» buyurmuştur.', True),
  ],
+ 106: [
+  ('Mest nedir? Üzerine meshin hükmü nedir?', 'Mest: Ayağa giyilen deri ve benzeri şeydir; yünden ve benzerinden ayağa giyilen her şey de onun hükmündedir. Üzerine mesh, Ehl-i Sünnet’in ittifakıyla caizdir; Allah’ın kullarına kolaylık olsun diye verdiği bir ruhsattır, yolculukta da yolculuk dışında da.', False),
+  ('Mestler üzerine meshin caiz olduğunun delili nedir?', 'Nebî’nin (s.a.v.) fiili, emri ve izniyle gelen mütevâtir sünnet; bunlardan biri Cerîr’in hadisidir: «Rasûlullah’ı küçük abdestini yapıp sonra abdest alırken ve mestleri üzerine meshederken gördüm.» Bir de icmâ.', False),
+  ('Mestler üzerine meshin şartlarını sayınız.', 'Abdestli olarak giymek, farz yerini örtmesi, mubah olması, kendisinin temiz olması ve meshin şer’î süre içinde olması.', False),
+  ('Mestler üzerine mesh nasıl yapılır?', 'Mestin üstünün çoğu meshedilir; altını ve topuğunu meshetmek yetmez, sünnet de değildir; üstüyle altını birlikte meshederse sahih olur ama mekruhtur.', False),
+  ('Mesh süresi ne kadardır? Ne zaman başlar?', 'Mukime bir gün bir gece; namazı kısaltmayı mubah kılan yolculuktaki yolcuya üç gün üç gece. Süre, giyme anından değil, giydikten sonraki ilk abdestsizlikten başlar.', False),
+  ('Meshi bozan şeyler nelerdir?', 'Cünüplük gibi guslü gerektiren şey, farz yerinin bir kısmının görünmesi, mestleri veya birini çıkarmak ve sürenin bitmesi.', False),
+  ('Cebîre (sargı) nedir? Üzerine mesh nasıldır?', 'Kırığın kaynaması için bağlanan tahta ve alçı gibi şeylerdir; yaraya konan bant ve sargılar da böyledir. İhtiyaç kadar olması şartıyla, küçük ve büyük hadeste, belirli bir süre olmadan, çıkarılıncaya veya iyileşinceye kadar üzerine meshedilir; çünkü zarurettir, zaruret de kendi ölçüsünce takdir edilir.', False),
+  ('Cerîr’in (radıyallâhu anh) hadisi âlimlerin neden hoşuna giderdi?', 'Çünkü Cerîr, Mâide’deki abdest âyeti indikten sonra Müslüman olmuştu; Nebî’yi (s.a.v.) bundan sonra meshederken görmesi, meshin neshedilmediğine delildir.', False),
+  ('Ali’nin (radıyallâhu anh) «Din akılla olsaydı…» sözünden delil yönü nedir?', 'Akıl, mestin altını yere değdiği için meshe daha lâyık görebilir; ama din Nebî’den (s.a.v.) alınır, o da mestin üstüne meshetmiştir. Yani nass, akıl yürütmeden önce gelir.', False),
+  ('Mesh süresi mestleri giyme anından başlar.', 'Yanlış; giydikten sonraki ilk abdestsizlikten başlar.', True),
+  ('Çoraplar deriden olmadığı için üzerlerine meshetmek caiz değildir.', 'Yanlış; ayağı örtüyorsa üzerlerine meshetmek caizdir; çünkü ihtiyaç mest gibidir ve sebep aynıdır.', True),
+  ('Yolcu, süre içinde cünüp olursa mestleri üzerine meshetmeye devam eder.', 'Yanlış; cünüplük meshi bozar: «…cünüplük dışında»; mestleri çıkarıp gusleder.', True),
+ ],
 }

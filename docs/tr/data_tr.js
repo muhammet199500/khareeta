@@ -3223,4 +3223,421 @@ window.FIQH5.quiz = [
     "x": "«Kur’ân’a ancak temiz olan dokunur.»"
   }
 ];
-window.LESSONS = [window.LESSON, window.LESSON2, window.LESSON3, window.FIQH1, window.FIQH2, window.FIQH3, window.FIQH4, window.FIQH5];
+window.FIQH6 = {
+  "title": "Mestler, Sarık ve Sargı Üzerine Mesh",
+  "root": {
+    "id": "root",
+    "label": "Mest üzerine mesh"
+  },
+  "branches": [
+    {
+      "id": "b1",
+      "label": "Hüküm ve delil",
+      "children": [
+        {
+          "id": "b1a",
+          "label": "Tanım",
+          "card": {
+            "tag": "Mest ve çorap",
+            "title": "Ayağa giyilen",
+            "body": "Mest: Ayağa giyilen deri ve benzeri; yünden olanı da onun hükmündedir. Çorap: deriden olmayanı."
+          }
+        },
+        {
+          "id": "b1b",
+          "label": "Hüküm",
+          "card": {
+            "tag": "Ruhsat",
+            "body": "Ehl-i Sünnet’in ittifakıyla caiz; kullara kolaylık için; yolculukta ve dışında, ihtiyaç olsun olmasın."
+          }
+        },
+        {
+          "id": "b1c",
+          "label": "Delil",
+          "v": true,
+          "card": {
+            "tag": "Mütevâtir sünnet ve icmâ",
+            "verse": "«رَأَيْتُ رَسُولَ اللَّهِ ﷺ بَالَ، ثُمَّ تَوَضَّأَ وَمَسَحَ عَلَى خُفَّيْهِ»",
+            "ref": "Müslim (272)",
+            "body": "Cerîr abdest âyetinden sonra Müslüman oldu; demek ki mesh neshedilmemiştir."
+          }
+        },
+        {
+          "id": "b1d",
+          "label": "Çoraplar",
+          "card": {
+            "tag": "Ayağı örtüyorsa meshedilir",
+            "body": "Çünkü ihtiyaç mest gibidir, sebep aynıdır."
+          }
+        }
+      ]
+    },
+    {
+      "id": "b2",
+      "label": "Beş şart",
+      "children": [
+        {
+          "id": "b2a",
+          "label": "Abdestli giymek",
+          "v": true,
+          "hot": true,
+          "card": {
+            "tag": "Birinci şart",
+            "verse": "«دَعْهُمَا، فَإِنِّي أَدْخَلْتُهُمَا طَاهِرَتَيْنِ»",
+            "ref": "Buhârî (206) ve Müslim (274)",
+            "body": "Abdestsizken giyen meshedemez."
+          }
+        },
+        {
+          "id": "b2b",
+          "label": "Farz yerini örtmek",
+          "card": {
+            "tag": "İkinci şart",
+            "body": "Topuklara kadar ayak; bir yeri açık kalırsa mesh sahih olmaz."
+          }
+        },
+        {
+          "id": "b2c",
+          "label": "Mubah olmak",
+          "card": {
+            "tag": "Üçüncü şart",
+            "body": "Gasp edilmiş, çalınmış veya erkek için ipek mest üzerine meshedilmez; günahla ruhsattan faydalanılmaz."
+          }
+        },
+        {
+          "id": "b2d",
+          "label": "Kendisinin temizliği",
+          "card": {
+            "tag": "Dördüncü şart",
+            "body": "Necis olan, eşek derisinden mest gibi, üzerine meshedilmez."
+          }
+        },
+        {
+          "id": "b2e",
+          "label": "Süre içinde meshetmek",
+          "card": {
+            "tag": "Beşinci şart",
+            "body": "Mukime bir gün bir gece, yolcuya üç gün üç gece."
+          }
+        }
+      ]
+    },
+    {
+      "id": "b3",
+      "label": "Meshin şekli",
+      "children": [
+        {
+          "id": "b3a",
+          "label": "Mestin üstü",
+          "v": true,
+          "card": {
+            "tag": "✓ Meshin yeri",
+            "verse": "«رَأَيْتُ النَّبِيَّ ﷺ يَمْسَحُ عَلَى الْخُفَّيْنِ: عَلَى ظَاهِرِهِمَا»",
+            "ref": "Tirmizî (98)",
+            "body": "Üstünün çoğu meshedilir."
+          }
+        },
+        {
+          "id": "b3b",
+          "label": "Altı ve topuğu",
+          "hot": true,
+          "card": {
+            "tag": "✗ Yetmez, sünnet de değil",
+            "body": "Üstüyle altını birlikte meshederse sahih ama mekruhtur."
+          }
+        },
+        {
+          "id": "b3c",
+          "label": "Ali’nin sözü",
+          "card": {
+            "tag": "Nass akıldan önce gelir",
+            "body": "Din akılla olsaydı mestin altı meshe üstünden daha lâyık olurdu. Ebû Dâvûd (162)."
+          }
+        }
+      ]
+    },
+    {
+      "id": "b4",
+      "label": "Süre ve başlangıcı",
+      "children": [
+        {
+          "id": "b4a",
+          "label": "Mukim",
+          "card": {
+            "tag": "Bir gün bir gece",
+            "body": "Yolculuğu namazı kısaltmayı mubah kılmayan da."
+          }
+        },
+        {
+          "id": "b4b",
+          "label": "Yolcu",
+          "v": true,
+          "card": {
+            "tag": "Üç gün üç gece",
+            "verse": "«جَعَلَ رَسُولُ اللَّهِ ﷺ ثَلَاثَةَ أَيَّامٍ وَلَيَالِيَهُنَّ لِلْمُسَافِرِ، وَيَوْمًا وَلَيْلَةً لِلْمُقِيمِ»",
+            "ref": "Müslim (276)",
+            "body": "Namazı kısaltmayı mubah kılan yolculukta."
+          }
+        },
+        {
+          "id": "b4c",
+          "label": "Ne zaman başlar?",
+          "hot": true,
+          "card": {
+            "tag": "Giydikten sonraki ilk hadesten",
+            "body": "Sabah abdest alıp giydi, güneş doğunca abdesti bozuldu, öğleden önce abdest aldı: süre güneşin doğuşundan başlar."
+          }
+        }
+      ]
+    },
+    {
+      "id": "b5",
+      "label": "Dört bozan",
+      "children": [
+        {
+          "id": "b5a",
+          "label": "Guslü gerektiren",
+          "hot": true,
+          "card": {
+            "tag": "Cünüplük gibi",
+            "body": "«…cünüplük dışında.» Tirmizî (96). Mest üzerine mesh yalnızca küçük hades içindir."
+          }
+        },
+        {
+          "id": "b5b",
+          "label": "Ayağın görünmesi",
+          "card": {
+            "tag": "Örtünün kalkması",
+            "body": "Farz yerinin bir kısmı görünürse mesh bozulur."
+          }
+        },
+        {
+          "id": "b5c",
+          "label": "Mesti çıkarmak",
+          "card": {
+            "tag": "Birini çıkarmak ikisi gibidir",
+            "body": "Âlimlerin çoğuna göre."
+          }
+        },
+        {
+          "id": "b5d",
+          "label": "Sürenin bitmesi",
+          "card": {
+            "tag": "Süre aşılamaz",
+            "body": "Mesh, Şâri’ tarafından belirli bir zamanla sınırlanmıştır."
+          }
+        }
+      ]
+    },
+    {
+      "id": "b6",
+      "label": "Sargı, sarık, başörtüsü",
+      "children": [
+        {
+          "id": "b6a",
+          "label": "Sargı (cebîre)",
+          "hot": true,
+          "card": {
+            "tag": "Zaruret",
+            "title": "Zaruret kendi ölçüsünce",
+            "body": "Kırığa bağlanan tahta ve alçı gibi; yara bantları ve sargılar da böyle. İhtiyaç kadar, iki hadeste, çıkarılıncaya veya iyileşinceye kadar."
+          }
+        },
+        {
+          "id": "b6b",
+          "label": "Sarık",
+          "card": {
+            "tag": "Üzerine meshedilir",
+            "body": "Nebî (s.a.v.) nâsiyesine, sarığına ve mestlerine meshetti. Müslim (274). Abdestli giyip mest süresi içinde meshetmek ihtiyattır, güzeldir."
+          }
+        },
+        {
+          "id": "b6c",
+          "label": "Kadın başörtüsü",
+          "card": {
+            "tag": "Meshetmemesi daha uygundur",
+            "body": "Ancak çıkarmak zorsa veya başta hastalık varsa; kınalı baş üzerine meshedilir."
+          }
+        }
+      ]
+    }
+  ],
+  "jamia": "Mestler üzerine mesh yolculukta ve dışında bir ruhsattır. Şartları: abdestli giymek, farz yerini örtmek, mubah ve temiz olmak ve süre içinde meshetmek. Süre mukime bir gün bir gece, yolcuya üç gün üç gecedir; giydikten sonraki ilk abdestsizlikten başlar. Mestin üstü meshedilir. Mesh cünüplük, ayağın görünmesi, çıkarmak ve sürenin bitmesiyle bozulur.",
+  "closing": "«Allah size bir zorluk çıkarmak istemez; fakat sizi tertemiz kılmak ister.» (Mâide, 6)",
+  "short": "6 · Mest üzerine mesh",
+  "eb": "el-Fıkhu’l-Müyesser · Taharet Kitabı · Altıncı bölüm",
+  "h1": "Mestler, Sarık ve Sargı Üzerine Mesh",
+  "lead": "Dersin etkileşimli haritası: meshin hükmü, delili, şartları ve şeklinden süresine, onu bozanlara ve sargı ile sarık üzerine meshe.",
+  "series": "fiqh",
+  "home": "fiqh-muyassar.html",
+  "n": 106
+};
+window.FIQH6.ui = window.LESSON.ui;
+window.FIQH6.quiz = [
+  {
+    "q": "Mestler üzerine meshin hükmü nedir?",
+    "o": [
+      "Farz",
+      "Caiz, bir ruhsat",
+      "Mekruh",
+      "Yolculuk dışında caiz değil"
+    ],
+    "a": 1,
+    "x": "Ehl-i Sünnet’in ittifakıyla caizdir; yolculukta ve dışında bir ruhsattır."
+  },
+  {
+    "q": "Cerîr’in hadisi âlimlerin neden hoşuna giderdi?",
+    "o": [
+      "Bölümdeki en uzun hadis olduğu için",
+      "Cerîr abdest âyetinden sonra Müslüman olduğu için",
+      "Yalnız Buhârî’de olduğu için",
+      "Sarık üzerine mesh hakkında olduğu için"
+    ],
+    "a": 1,
+    "x": "Bu, meshin neshedilmediğini gösterir."
+  },
+  {
+    "q": "Çoraplar üzerine meshin hükmü nedir?",
+    "o": [
+      "Deriden olmadığı için caiz değil",
+      "Ayağı örtüyorsa caiz",
+      "Yalnız yolcuya caiz",
+      "Örtmese de caiz"
+    ],
+    "a": 1,
+    "x": "İhtiyaç mest gibidir ve sebep aynıdır."
+  },
+  {
+    "q": "Mestleri abdestli giymenin şart olduğunun delili nedir?",
+    "o": [
+      "Cerîr hadisi",
+      "«Bırak onları; ben onları temizken giydim»",
+      "Ali’nin sözü",
+      "Safvân hadisi"
+    ],
+    "a": 1,
+    "x": "Muğîre hadisi, Buhârî ve Müslim."
+  },
+  {
+    "q": "Topuğu açıkta bırakan kısa mest üzerine mesh:",
+    "o": [
+      "Sahihtir",
+      "Sahih değildir; farz yerini örtmüyor",
+      "Mekruh olarak sahihtir",
+      "Yolcu için sahihtir"
+    ],
+    "a": 1,
+    "x": "Şartlardan biri farz yerini örtmektir."
+  },
+  {
+    "q": "Gasp edilmiş mest üzerine neden meshedilmez?",
+    "o": [
+      "Necis olduğu için",
+      "Günahla ruhsattan faydalanılmadığı için",
+      "Örtmediği için",
+      "Deriden olmadığı için"
+    ],
+    "a": 1,
+    "x": "Onu giymek günahtır; ruhsat günahla elde edilmez."
+  },
+  {
+    "q": "Mestin neresi meshedilir?",
+    "o": [
+      "Altı",
+      "Topuğu",
+      "Üstünün çoğu",
+      "Tamamı yıkanarak"
+    ],
+    "a": 2,
+    "x": "«…mestlerin üzerine, üst taraflarına.»"
+  },
+  {
+    "q": "Mestin üstünü ve altını birlikte mesheden:",
+    "o": [
+      "Meshi bozulur",
+      "Sahih olur, ama mekruhtur",
+      "Sünneti yapmıştır",
+      "Gusletmesi gerekir"
+    ],
+    "a": 1,
+    "x": "Kitabın belirttiği gibi."
+  },
+  {
+    "q": "Mukim için mesh süresi nedir?",
+    "o": [
+      "Üç gün",
+      "Bir gün bir gece",
+      "İki gün",
+      "Süresiz"
+    ],
+    "a": 1,
+    "x": "«…mukim için bir gün bir gece.»"
+  },
+  {
+    "q": "Namazı kısaltmayı mubah kılan yolculuktaki yolcunun süresi?",
+    "o": [
+      "Bir gün bir gece",
+      "Üç gün üç gece",
+      "Bir hafta",
+      "Süresiz"
+    ],
+    "a": 1,
+    "x": "«Yolcu için üç gün üç gece.»"
+  },
+  {
+    "q": "Mesh süresi ne zaman başlar?",
+    "o": [
+      "Giyme anından",
+      "Giydikten sonraki ilk hadesten",
+      "Namaz vakti girince",
+      "Günün başından"
+    ],
+    "a": 1,
+    "x": "Kitabın örneğinde olduğu gibi: abdestin bozulduğu güneşin doğuşundan."
+  },
+  {
+    "q": "Mesh süresi içinde cünüp olan yolcu ne yapar?",
+    "o": [
+      "Mesheder ve gusleder",
+      "Mestleri çıkarıp gusleder",
+      "Teyemmüm eder",
+      "Yalnız mesheder"
+    ],
+    "a": 1,
+    "x": "«…cünüplük dışında.»"
+  },
+  {
+    "q": "Hangisi meshi bozanlardan değildir?",
+    "o": [
+      "Mestlerden birini çıkarmak",
+      "Sürenin bitmesi",
+      "Uyumak",
+      "Ayağın bir kısmının görünmesi"
+    ],
+    "a": 2,
+    "x": "Uyku abdesti bozar; abdest alıp yine mesheder. Mestteki meshi bozmaz."
+  },
+  {
+    "q": "Sargı üzerine meshin süresi nedir?",
+    "o": [
+      "Bir gün bir gece",
+      "Üç gün",
+      "Çıkarılıncaya veya iyileşinceye kadar",
+      "Üzerine meshedilmez"
+    ],
+    "a": 2,
+    "x": "Zarurettir; zaruret kendi ölçüsünce takdir edilir."
+  },
+  {
+    "q": "Kadının başörtüsü üzerine meshetmesinin hükmü?",
+    "o": [
+      "Farzdır",
+      "Zorluk veya hastalık olmadıkça meshetmemesi daha uygundur",
+      "Kesinlikle haramdır",
+      "Sarık gibidir, fark yoktur"
+    ],
+    "a": 1,
+    "x": "Kitabın belirttiği gibi."
+  }
+];
+window.LESSONS = [window.LESSON, window.LESSON2, window.LESSON3, window.FIQH1, window.FIQH2, window.FIQH3, window.FIQH4, window.FIQH5, window.FIQH6];

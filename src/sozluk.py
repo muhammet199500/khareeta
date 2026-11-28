@@ -110,6 +110,12 @@ TR = [
     dict(k='mezi', re=r'\b[Mm]ezi\b', w='Mezi', m='Şehvet anında, şehvet doruğa ulaşmadan gelen ince, yapışkan sıvı.'),
     dict(k='istihaza', re=r'[İi]stihâza\w*', w='İstihâza', m='Kadında âdet ve lohusalık dışında, hastalık sebebiyle gelen kan.'),
     dict(k='luma', re=r'\b[Ll]um’a\w*', w='Lum’a', m='Abdestte veya gusülde su değmeyen yer.', src='Kitabın kendisi (1/ 19)'),
+    # ── mesh (fiqh6) ──
+    dict(k='ruhsat', re=r'\b[Rr]uhsat\w*', w='Ruhsat', m='Allah’ın bir sebep bulunduğunda kullarına tanıdığı kolaylık.'),
+    dict(k='mukim', re=r'\b[Mm]ukim\w*', w='Mukim', m='Yolcu olmayan; yaşadığı yerde kalan kimse.'),
+    dict(k='cebire', re=r'\b[Cc]ebîre\w*', w='Cebîre', m='Kırığın kaynaması için bağlanan tahta, alçı ve benzeri; yaraya konan sargı da böyledir.', src=DERS),
+    dict(k='nesh', re=r'\b[Nn]eshed\w*', w='Nesh', m='Bir hükmün, sonradan gelen bir hükümle kaldırılması.'),
+    dict(k='tevatur', re=r'\b[Tt]evâtür\w*|\b[Mm]ütevâtir\w*', w='Tevâtür', m='Yalan üzerinde birleşmeleri âdeten imkânsız olan büyük bir topluluğun rivayet etmesi.'),
 ]
 
 # Arabic lesson pages: word forms (bare letters) → sharh.GLOSS key
@@ -146,6 +152,8 @@ AR = [
     ('لمعة', 'lumaa'), ('اللمعة', 'lumaa'),
     ('وكاء', 'wika'),
     ('السه', 'sah'),
+    ('الخف', 'khuff'), ('الخفين', 'khuff'), ('خفيه', 'khuff'),
+    ('الجوارب', 'jawrab'), ('الجبيرة', 'jabira'), ('العمامة', 'imama'), ('خمار', 'khimar'),
 ]
 
 # Arabic lesson pages: terms with a plain meaning written here (no source line unless one is real).
@@ -185,4 +193,7 @@ AR_TERMS = [
     dict(k='a_madhy', forms=['مذيا', 'المذي'], w='المذي', m='ماء رقيق لزج يخرج عند الشهوة، من غير دفق ولا لذة كاملة.'),
     dict(k='a_istihada', forms=['استحاضة', 'الاستحاضة'], w='الاستحاضة', m='دم يخرج من المرأة في غير أيام حيضها ونفاسها، لمرض ونحوه.'),
     dict(k='a_muhdith', forms=['المحدث'], w='المُحْدِث', m='من عليه حدث أصغر، كمن بال أو نام.'),
+    dict(k='a_rukhsa', forms=['رخصة', 'الرخصة'], w='الرخصة', m='ما شرعه الله تخفيفًا على عباده عند وجود سببه.'),
+    dict(k='a_muqim', forms=['المقيم', 'للمقيم'], w='المقيم', m='غير المسافر، الباقي في بلده.'),
+    dict(k='a_mutawatir', forms=['تواترت', 'المتواترة'], w='التواتر', m='أن يروي الخبرَ جمعٌ كثير يستحيل في العادة اتفاقهم على الكذب.'),
 ]

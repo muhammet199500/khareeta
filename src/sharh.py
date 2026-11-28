@@ -1058,3 +1058,184 @@ SHARH[105] = [
      fn=['(٦) أخرجه مسلم برقم (٣١٦).', '(٧) أخرجه البخاري برقم (٢٤٧).']),
  ]),
 ]
+
+# ------------------------------------------------------------------ 106: المسح على الخفين والعمامة والجبيرة
+GLOSS.update({
+ 'khuff': dict(w='الخُفّ', ar='ما يُلبس على الرِّجل من جلد ونحوه، وجمعه: خِفاف. ويلحق به كل ما يُلبس على الرجلين من صوف ونحوه.', tr='Ayağa giyilen deri ve benzeri şey; çoğulu «hıfâf». Yünden ve benzerinden ayağa giyilen her şey de onun hükmündedir.', src='الكتاب نفسه (١/ ٢٤)'),
+ 'jawrab': dict(w='الجوارب', ar='ما يُلبس على الرِّجل من غير الجلد، كالخِرَق ونحوها، وهو ما يُسمّى الآن بالشُّرّاب.', tr='Ayağa giyilen, deriden olmayan bez ve benzeri şeyler; bugün çorap dediğimiz şey.', src='الكتاب نفسه (١/ ٢٤)'),
+ 'jabira': dict(w='الجبيرة', ar='أعواد ونحوها كالجبس، مما يُربط على الكسر ليُجبر ويلتئم.', tr='Kırık kaynayıp iyileşsin diye üzerine bağlanan tahta parçaları ve alçı gibi şeyler.', src='الكتاب نفسه (١/ ٢٧)'),
+ 'imama': dict(w='العمامة', ar='ما يُعمَّم به الرأس، ويُكوَّر عليه.', tr='Başa sarılan ve üzerine dolanan şey (sarık).', src='الكتاب نفسه (١/ ٢٧)'),
+ 'khimar': dict(w='الخمار', ar='خمار المرأة: ما تغطي به رأسها.', tr='Kadının başını örttüğü şey (başörtüsü).', src='الكتاب نفسه (١/ ٢٧)'),
+})
+GLOSS_TR_SRC.update({
+ 'الكتاب نفسه (١/ ٢٤)': 'Kitabın kendisi (1/ 24)',
+ 'الكتاب نفسه (١/ ٢٧)': 'Kitabın kendisi (1/ 27)',
+})
+
+SHARH[106] = [
+ dict(ar='الباب السادس: في المسح على الخفين والعمامة والجبيرة', tr='Altıncı bölüm: Mestler, sarık ve sargı üzerine mesh', paras=[
+  PS('[[الخُفُّ|khuff]]: هو ما يلبس على الرِّجْلِ من جلد ونحوه، وجمعه: خِفاف. ويلحق بالخفين كل ما يلبس على الرجلين من صوف ونحوه.',
+     'Mest (huff): Ayağa giyilen deri ve benzeri şeydir; çoğulu «hıfâf»tır. Yünden ve benzerinden ayağa giyilen her şey de mestlere katılır.',
+     '١/ ٢٤',
+     'تعلّمنا في الباب السابق أن غسل الرجلين إلى الكعبين من فروض الوضوء. وهذا الباب **رخصة** في هذا الفرض: من لبس خفّين بشروطه مسح عليهما بدل الغسل.\n\n'
+     'والتعريف يبيّن أن العبرة **بما يُلبس على الرجل** ويسترها، لا بنوع المادة؛ فالجلد أصل الخف، ويلحق به الصوف ونحوه.',
+     'Önceki bölümde ayakları topuklara kadar yıkamanın abdestin farzlarından olduğunu öğrendik. Bu bölüm o farzda bir **ruhsattır**: Şartlarına uygun mest giyen, yıkamak yerine onların üzerine mesheder.\n\n'
+     'Tanım gösteriyor ki önemli olan malzemenin türü değil, **ayağa giyilip onu örtmesidir**; mestin aslı deridir, yün ve benzeri de ona katılır.'),
+ ]),
+ dict(ar='المسألة الأولى: حكم المسح على الخفين ودليله', tr='Birinci mesele: Mestler üzerine meshin hükmü ve delili', paras=[
+  PS('المسح على الخفين جائز باتفاق أهل السنة والجماعة. وهو رخصة من الله ﷿ تخفيفاً منه على عباده ودفعاً للحرج والمشقة عنهم. وقد دل على جوازه السنة والإجماع.',
+     'Mestler üzerine mesh Ehl-i Sünnet vel-Cemâat’in ittifakıyla caizdir. Allah Azze ve Celle’den kullarına bir kolaylık ve onlardan sıkıntı ile meşakkati kaldırmak için bir ruhsattır. Caiz olduğuna Sünnet ve icmâ delildir.',
+     '١/ ٢٤',
+     '**الرخصة:** ما شرعه الله تخفيفًا على عباده عند وجود سببها. وفي ذكر «أهل السنة والجماعة» إشارة إلى أن إنكار المسح صار من علامات أهل البدع، فذكره العلماء في كتب العقيدة.',
+     '**Ruhsat:** Allah’ın, sebebi bulunduğunda kullarına kolaylık olarak meşru kıldığı şeydir. «Ehl-i Sünnet vel-Cemâat» denmesi, meshi inkâr etmenin bidat ehlinin alametlerinden olduğuna işarettir; bu yüzden âlimler onu akide kitaplarında da zikretmiştir.'),
+  PS('أما السنة: فقد تواترت الأحاديث الصحيحة على ثبوته عن النبي ﷺ من فعله وأمره بذلك وترخيصه فيه. قال الإمام أحمد ﵀: ليس في قلبي من المسح شيء، فيه أربعون حديثاً عن النبي ﷺ. والمراد بقوله: ليس في قلبي أدنى شك في جوازه. وقال الحسن البصري: حدثني سبعون من أصحاب رسول الله ﷺ أنه مسح على الخفين.',
+     'Sünnete gelince: Nebî’den (sallallâhu aleyhi ve sellem) meshin sabit olduğuna dair sahih hadisler tevâtür derecesindedir: kendisinin yapması, bunu emretmesi ve buna izin vermesiyle. İmam Ahmed (rahimehullah) şöyle der: «Mesh konusunda kalbimde hiçbir şey yok; bu konuda Nebî’den kırk hadis vardır.» Yani: Caiz olduğunda kalbimde en küçük bir şüphe yok. Hasan el-Basrî de: «Rasûlullah’ın ashabından yetmiş kişi bana onun mestler üzerine meshettiğini anlattı» demiştir.',
+     '١/ ٢٤',
+     '**المتواتر:** ما رواه جمع كثير يستحيل في العادة اتفاقهم على الكذب. وفي النص ثلاثة طرق للسنة: **فعله** ﷺ، و**أمره**، و**ترخيصه**.\n\n'
+     'وقول الإمام أحمد وقول الحسن البصري يبيّنان كثرة الأحاديث والرواة، فلا مجال للشك في هذه الرخصة.',
+     '**Mütevâtir:** Yalan üzerinde birleşmeleri âdeten imkânsız olan büyük bir topluluğun rivayet ettiği haberdir. Metinde sünnetin üç yolu vardır: Nebî’nin (s.a.v.) **fiili**, **emri** ve **izni**.\n\n'
+     'İmam Ahmed’in ve Hasan el-Basrî’nin sözleri hadislerin ve râvilerin çokluğunu gösterir; bu ruhsatta şüpheye yer yoktur.'),
+  PS('ومن هذه الأحاديث: حديث جرير بن عبد الله قال: (رأيت رسول الله ﷺ بال ثم توضأ ومسح على خفيه) (١). قال الأعمش عن إبراهيم: كان يعجبهم هذا الحديث؛ لأن إسلام جرير كان بعد نزول المائدة -يعني آية الوضوء-.',
+     'Bu hadislerden biri Cerîr b. Abdullah’ın hadisidir: «Rasûlullah’ı (sallallâhu aleyhi ve sellem) küçük abdestini yapıp sonra abdest alırken ve mestleri üzerine meshederken gördüm.» (1) A’meş, İbrâhîm’den şöyle nakleder: Bu hadis onların hoşuna giderdi; çünkü Cerîr, Mâide sûresi, yani abdest âyeti indikten sonra Müslüman olmuştu.',
+     '١/ ٢٤',
+     'قد يقول قائل: آية الوضوء أمرت بغسل الرجلين، فلعل المسح كان قبلها ثم نُسخ. فجاء حديث جرير جوابًا: جرير **أسلم بعد نزول الآية**، ورأى النبي ﷺ يمسح؛ فالمسح **باقٍ غير منسوخ**، والآية في من لم يلبس الخفين.\n\n'
+     '**شرح الحواشي:** (١) حديث جرير في صحيح مسلم، وفي البخاري نحوه من حديث المغيرة رضي الله عنه.',
+     'Biri şöyle diyebilir: Abdest âyeti ayakları yıkamayı emretti; belki mesh ondan önceydi ve neshedildi. Cerîr’in hadisi buna cevaptır: Cerîr **âyet indikten sonra Müslüman olmuş** ve Nebî’yi (s.a.v.) meshederken görmüştür. Demek ki mesh **neshedilmemiştir**; âyet mest giymeyen içindir.\n\n'
+     '**Dipnotların şerhi:** (1) Cerîr hadisi Müslim’in Sahîh’indedir; Buhârî’de de Muğîre’den (radıyallâhu anh) benzeri vardır.',
+     fn=['(١) رواه مسلم برقم (٢٧٢)، وروى نحوه البخاري عن المغيرة في باب المسح على الخفين برقم (٢٠٣).']),
+  PS('وقد أجمع العلماء من أهل السنة والجماعة على مشروعيته في السفر والحضر لحاجة أو غيرها.',
+     'Ehl-i Sünnet vel-Cemâat âlimleri, meshin yolculukta da yolculuk dışında da, ihtiyaç olsun olmasın meşru olduğunda icmâ etmişlerdir.',
+     '١/ ٢٤',
+     'فلا يُشترط للمسح أن يكون الإنسان مسافرًا، ولا أن يكون في برد أو مشقة؛ بل يجوز للمقيم في بيته إذا لبس الخفين بشروطه.',
+     'Dolayısıyla mesh için kişinin yolcu olması, soğukta veya zorlukta bulunması şart değildir; şartlarına uygun mest giyen, evinde mukim olan kimse de meshedebilir.'),
+  PS('وكذلك يجوز المسح على [[الجوارب|jawrab]]، وهي ما يلبس على الرجْل من غير الجلد كالخِرَق ونحوها، وهو ما يسمى الآن بالشُّرَّاب؛ لأنهما كالخف في حاجة الرجل إليهما، والعلة فيهما واحدة، وقد انتشر لبسها أكثر من الخف، فيجوز المسح عليها إذا كانت ساترة.',
+     'Aynı şekilde çoraplar üzerine mesh de caizdir. Çorap, ayağa giyilen ve deriden olmayan, bez ve benzerinden yapılan şeydir; bugün «çorap» denilen şeydir. Çünkü ayağın onlara ihtiyacı mest gibidir, sebep ikisinde de aynıdır ve çorap giymek mestten daha yaygın olmuştur. Bu yüzden ayağı örtüyorsa üzerine meshetmek caizdir.',
+     '١/ ٢٤',
+     'هذا من **القياس**: الجورب يأخذ حكم الخف، لأن **العلة واحدة**، وهي حاجة الرجل إلى ما يُلبس عليها ويشقّ نزعه عند كل وضوء.\n\n'
+     'وقيّد الكتاب الجواز بقوله: **«إذا كانت ساترة»**؛ وهو الشرط الثاني الآتي: ستر محل الفرض.',
+     'Bu bir **kıyastır**: Çorap mestin hükmünü alır; çünkü **sebep aynıdır**: Ayağın, üzerine giyilen ve her abdestte çıkarılması zor olan şeye ihtiyacı.\n\n'
+     'Kitap caizliği **«ayağı örtüyorsa»** kaydıyla sınırlamıştır; bu, birazdan gelecek ikinci şarttır: farz yerini örtmek.'),
+ ]),
+ dict(ar='المسألة الثانية: شروط المسح على الخفين، وما يقوم مقامهما', tr='İkinci mesele: Mestler ve onların yerini tutanlar üzerine meshin şartları', paras=[
+  PS('وهذه الشروط هي: ١ - لبسهما على طهارة: لما روى المغيرة قال: كنت مع النبي ﷺ في سفر فأهويت لأنزع خفيه فقال: (دعهما فإني أدخلتهما طاهرتين، فمسح عليهما) (١).',
+     'Bu şartlar şunlardır: 1. Onları abdestli olarak giymek: Muğîre’nin rivayeti gereği: Bir yolculukta Nebî (sallallâhu aleyhi ve sellem) ile birlikteydim; mestlerini çıkarmak için elimi uzattım. «Bırak onları; çünkü ben onları temizken giydim» buyurdu ve üzerlerine meshetti. (1)',
+     '١/ ٢٥',
+     '**«أهويت»:** مددت يدي. **«أدخلتهما طاهرتين»:** أي أدخلت رجليّ فيهما وهما طاهرتان، بعد وضوء كامل.\n\n'
+     'وجه الدلالة: أن النبي ﷺ علّل جواز المسح بأنه لبسهما على طهارة؛ فمن لبسهما محدثًا لم يمسح.\n\n'
+     '**شرح الحواشي:** (١) الحديث متفق عليه.',
+     '**«Elimi uzattım»:** Arapçası «ehveytü». **«Onları temizken giydim»:** yani ayaklarım temizken, tam bir abdestten sonra onlara soktum.\n\n'
+     'Delil yönü: Nebî (s.a.v.) meshin caizliğini mestleri abdestli giymesine bağlamıştır; abdestsizken giyen meshedemez.\n\n'
+     '**Dipnotların şerhi:** (1) Hadis Buhârî ve Müslim’dedir.',
+     fn=['(١) متفق عليه: أخرجه البخاري برقم (٢٠٦)، ومسلم برقم (٢٧٤).']),
+  PS('٢ - سترهما لمحل الفرض: أي: المفروض غسله من الرجل، فلو ظهر من محل الفرض شيء، لم يصح المسح. ٣ - إباحتهما: فلا يجوز المسح على المغصوب، والمسروق، ولا الحرير لرجل؛ لأن لبسه معصية، فلا تستباح به الرخصة. ٤ - طهارة عينهما: فلا يصح المسح على النجس، كالمتخذ من جلد حمار.',
+     '2. Farz yerini örtmeleri: Yani ayağın yıkanması farz olan kısmını; farz yerinden bir şey açıkta kalırsa mesh sahih olmaz. 3. Mubah olmaları: Gasp edilmiş ve çalınmış mest üzerine, erkek için ipek üzerine mesh caiz değildir; çünkü onu giymek günahtır, günahla ruhsattan faydalanılmaz. 4. Kendilerinin temiz olması: Necis olan, eşek derisinden yapılmış mest gibi, üzerine mesh sahih olmaz.',
+     '١/ ٢٥',
+     '**محل الفرض:** القدم إلى الكعبين، كما في آية الوضوء. فالخف القصير الذي لا يغطي الكعبين لا يُمسح عليه.\n\n'
+     '**«لا تُستباح الرخصة بالمعصية»:** الرخصة نعمة وتخفيف، فلا تُنال بشيء حرّمه الله.\n\n'
+     '**طهارة العين:** جلد الحمار نجس لأنه لا تحلّه الذكاة، كما تقدّم في باب الآنية.',
+     '**Farz yeri:** Abdest âyetinde olduğu gibi topuklara kadar ayak. Topukları örtmeyen kısa mest üzerine meshedilmez.\n\n'
+     '**«Günahla ruhsattan faydalanılmaz»:** Ruhsat bir nimet ve kolaylıktır; Allah’ın haram kıldığı bir şeyle elde edilmez.\n\n'
+     '**Kendisinin temiz olması:** Eşek derisi necistir, çünkü kesmek onu helâl kılmaz; Kaplar bölümünde geçtiği gibi.'),
+  PS('٥ - أن يكون المسح في المدة المحددة شرعاً: وهي للمقيم يوم وليلة، وللمسافر ثلاثة أيام بلياليهن. هذه شروط خمسة استنبطها أهل العلم لصحة المسح على الخفين من النصوص النبوية والقواعد العامة، لابد من مراعاتها عند إرادة المسح.',
+     '5. Meshin şer’an belirlenen süre içinde olması: Bu süre mukim için bir gün bir gece, yolcu için üç gün üç gecedir. Bunlar, âlimlerin mestler üzerine meshin sahih olması için Nebî’nin sözlerinden ve genel kaidelerden çıkardıkları beş şarttır; meshetmek isteyen bunlara mutlaka dikkat etmelidir.',
+     '١/ ٢٥',
+     'الشروط الخمسة يحفظها الطالب: **طهارة اللبس، والستر، والإباحة، وطهارة العين، والمدة**. وسيأتي تفصيل المدة في المسألة الرابعة.',
+     'Öğrencinin ezberleyeceği beş şart: **abdestli giymek, örtmek, mubah olmak, kendisinin temiz olması ve süre**. Sürenin ayrıntısı dördüncü meselede gelecek.'),
+ ]),
+ dict(ar='المسألة الثالثة: كيفية المسح وصفته', tr='Üçüncü mesele: Meshin keyfiyeti ve şekli', paras=[
+  PS('المحل المشروع مسحه ظاهر الخف، والواجب في ذلك ما يطلق عليه اسم المسح. وكيفية المسح: أن يمسح أكثر أعلى الخف؛ لحديث المغيرة بن شعبة الذي بيَّن فيه وصف مسح رسول الله ﷺ على خفه في الوضوء، فقال: (رأيت النبي ﷺ يمسح على الخفين: على ظاهرهما) (٢).',
+     'Meshedilmesi meşru olan yer mestin üstüdür; farz olan, «mesh» adının verilebileceği kadarıdır. Meshin şekli: Mestin üstünün çoğunu meshetmektir. Muğîre b. Şu’be’nin, Rasûlullah’ın (sallallâhu aleyhi ve sellem) abdestte mesti üzerine meshini anlattığı hadisi gereği: «Nebî’yi (sallallâhu aleyhi ve sellem) mestlerin üzerine, üst taraflarına meshederken gördüm.» (2)',
+     '١/ ٢٥',
+     '**المسح** غير الغسل: هو إمرار اليد المبلولة بالماء على ظاهر الخف. فلا يُغسل الخف، ولا يُتتبّع بالماء.\n\n'
+     '**شرح الحواشي:** (٢) الحديث رواه الترمذي، وحسّنه، وقال الألباني: حسن صحيح.',
+     '**Mesh** yıkamak değildir: Suyla ıslatılmış eli mestin üstünden geçirmektir. Mest yıkanmaz, her yerine su ulaştırılmaya çalışılmaz.\n\n'
+     '**Dipnotların şerhi:** (2) Hadisi Tirmizî rivayet etmiş ve hasen demiştir; Elbânî «hasen sahih» demiştir.',
+     fn=['(٢) أخرجه الترمذي برقم (٩٨)، وقال: حسن. وقال الألباني: حسن صحيح (صحيح الترمذي برقم ٨٥).']),
+  PS('ولا يجزئ مسح أسفله وعقبه ولا يسن. لقول عليٍّ ﵁: (لو كان الدين بالرأي لكان أسفل الخف أولى بالمسح من أعلاه، وقد رأيت النبي ﷺ يمسح على ظاهر خفه) (٣). ولو جمع بين الأعلى والأسفل صَحَّ مع الكراهة.',
+     'Altını ve topuğunu meshetmek yeterli değildir, sünnet de değildir. Ali’nin (radıyallâhu anh) şu sözü gereği: «Din akılla olsaydı mestin altı meshedilmeye üstünden daha lâyık olurdu. Ben Nebî’yi (sallallâhu aleyhi ve sellem) mestinin üstüne meshederken gördüm.» (3) Üstüyle altını birlikte meshederse sahih olur, fakat mekruhtur.',
+     '١/ ٢٥',
+     'في قول علي رضي الله عنه **قاعدة عظيمة**: العبادات تُتلقّى من النص، لا من الرأي. فالعقل قد يرى أن أسفل الخف أولى بالمسح لأنه يلاقي الأرض والأذى، لكن السنة جاءت بمسح أعلاه، فنتّبعها.\n\n'
+     '**شرح الحواشي:** (٣) الأثر رواه أبو داود والبيهقي، وصحّح الحافظ ابن حجر إسناده.',
+     'Ali’nin (radıyallâhu anh) sözünde **büyük bir kaide** vardır: İbadetler akıl yürütmeden değil, nastan alınır. Akıl, yere ve pisliğe değdiği için mestin altını meshe daha lâyık görebilir; ama Sünnet üstünün meshedilmesiyle gelmiştir, biz de ona uyarız.\n\n'
+     '**Dipnotların şerhi:** (3) Bu sözü Ebû Dâvûd ve Beyhakî rivayet etmiş, Hâfız İbn Hacer sahih saymıştır.',
+     fn=['(٣) رواه أبو داود برقم (١٦٢)، والبيهقي (١/ ٢٩٢)، وصححه الحافظ ابن حجر (التلخيص الحبير ١/ ١٦٠).']),
+ ]),
+ dict(ar='المسألة الرابعة: مدته', tr='Dördüncü mesele: Süresi', paras=[
+  PS('ومدة المسح على الخفين بالنسبة للمقيم ومن سفره لا يبيح له القصر: يوم وليلة، وبالنسبة للمسافر سفراً يبيح له القصر: ثلاثة أيام بلياليها، لحديث علي ﵁ قال: (جعل رسول الله ﷺ ثلاثة أيام ولياليهن للمسافر، ويوماً وليلة للمقيم) (١).',
+     'Mestler üzerine mesh süresi, mukim ve yolculuğu namazı kısaltmayı mubah kılmayan kimse için bir gün bir gece; namazı kısaltmayı mubah kılan yolculuktaki yolcu için üç gün üç gecedir. Ali’nin (radıyallâhu anh) hadisi gereği: «Rasûlullah (sallallâhu aleyhi ve sellem) yolcu için üç gün üç gece, mukim için bir gün bir gece belirledi.» (1)',
+     '١/ ٢٦',
+     '**يوم وليلة** = أربع وعشرون ساعة، و**ثلاثة أيام بلياليها** = اثنتان وسبعون ساعة، تُحسب من ابتداء المدة الآتي في المسألة السادسة.\n\n'
+     'و**السفر الذي يبيح القصر** يأتي تفصيله في كتاب الصلاة إن شاء الله؛ ومن سافر سفرًا لا يبيح القصر فحكمه حكم المقيم.\n\n'
+     '**شرح الحواشي:** (١) الحديث في صحيح مسلم.',
+     '**Bir gün bir gece** = yirmi dört saat; **üç gün üç gece** = yetmiş iki saat. Altıncı meselede gelecek başlangıç anından itibaren sayılır.\n\n'
+     '**Namazı kısaltmayı mubah kılan yolculuk** inşallah Namaz Kitabı’nda ayrıntılı olarak gelecek; bu nitelikte olmayan bir yolculuğa çıkan, mukim hükmündedir.\n\n'
+     '**Dipnotların şerhi:** (1) Hadis Müslim’in Sahîh’indedir.',
+     fn=['(١) رواه مسلم برقم (٨٥).'],
+     note=dict(ar='تنبيه على الحاشية (١): الرقم (٨٥) هو رقمه في كتاب الطهارة من «صحيح مسلم»؛ ورقمه في الترقيم المشهور (٢٧٦).', tr='(1) numaralı dipnot hakkında: 85, hadisin Müslim’in Sahîh’indeki Taharet Kitabı içindeki numarasıdır; meşhur numaralandırmada 276’dır.')),
+ ]),
+ dict(ar='المسألة الخامسة: مبطلاته', tr='Beşinci mesele: Meshi bozanlar', paras=[
+  PS('ويبطل المسح بما يأتي: ١ - إذا حصل ما يوجب الغسل بطل المسح، لحديث صفوان بن عسال قال: (كان النبي ﷺ يأمرنا إذا كنا سفراً ألا ننزع خفافنا ثلاثة أيام ولياليهن إلا من جنابة) (٢).',
+     'Mesh şunlarla bozulur: 1. Guslü gerektiren bir şey olursa mesh bozulur. Safvân b. Assâl’ın hadisi gereği: «Nebî (sallallâhu aleyhi ve sellem), yolcu olduğumuzda cünüplük dışında mestlerimizi üç gün üç gece çıkarmamamızı bize emrederdi.» (2)',
+     '١/ ٢٦',
+     '**«سَفْرًا»:** مسافرين. ووجه الدلالة في قوله **«إلا من جنابة»**: أن الجنابة استُثنيت، فمن أجنب وجب عليه أن ينزع الخفين ويغسل جميع بدنه. فالمسح على الخفين للحدث الأصغر فقط.\n\n'
+     '**شرح الحواشي:** (٢) الحديث رواه أحمد والنسائي والترمذي وصحّحه، وحسّنه الألباني.',
+     '**«Sefran»:** yolcular. Delil yönü **«cünüplük dışında»** sözündedir: Cünüplük istisna edilmiştir; cünüp olan mestleri çıkarıp bütün bedenini yıkamalıdır. Yani mest üzerine mesh yalnızca küçük hades içindir.\n\n'
+     '**Dipnotların şerhi:** (2) Hadisi Ahmed, Nesâî ve Tirmizî rivayet etmiş, Tirmizî sahih saymış; Elbânî hasen demiştir.',
+     fn=['(٢) رواه أحمد (٤/ ٢٣٩)، والنسائي (١/ ٨٤)، والترمذي برقم (٩٦) وصححه، وحسنه الألباني في (الإرواء برقم ١٠٤).']),
+  PS('٢ - إذا ظهر بعض محل الفرض، أي: ظهور بعض القدم، بطل المسح. ٣ - نرع الخفين يبطل المسح، ونزع أحد الخفين كنزعهما في قول أكثر أهل العلم. ٤ - انقضاء مدة المسح مبطل له؛ لأن المسح مؤقت بزمن معين من قبل الشارع، فلا تجوز الزيادة على المدة المقررة لمفهوم أحاديث التوقيت.',
+     '2. Farz yerinin bir kısmı, yani ayağın bir kısmı görünürse mesh bozulur. 3. Mestleri çıkarmak meshi bozar; âlimlerin çoğuna göre birini çıkarmak ikisini çıkarmak gibidir. 4. Mesh süresinin bitmesi onu bozar; çünkü mesh Şâri’ tarafından belirli bir zamanla sınırlanmıştır; süreyi belirleyen hadislerin mefhumu gereği belirlenen sürenin aşılması caiz değildir.',
+     '١/ ٢٦',
+     '**ظهور القدم ونزع الخف** يرجعان إلى الشرط الثاني: الستر؛ فإذا زال الستر زال المسح.\n\n'
+     '**انقضاء المدة:** يرجع إلى الشرط الخامس. و«مفهوم أحاديث التوقيت»: أن تحديد المدة يدل على أن ما بعدها ممنوع.\n\n'
+     '**ملاحظة لغوية:** «نرع» في المتن خطأ طباعي صوابه «نزع».',
+     '**Ayağın görünmesi ve mesti çıkarmak** ikinci şarta, örtmeye döner: Örtü kalkınca mesh de kalkar.\n\n'
+     '**Sürenin bitmesi** beşinci şarta döner. «Süre hadislerinin mefhumu»: Sürenin belirlenmesi, sonrasının yasak olduğunu gösterir.'),
+ ]),
+ dict(ar='المسألة السادسة: ابتداء مدة المسح', tr='Altıncı mesele: Mesh süresinin başlangıcı', paras=[
+  PS('وتبتدئ مدة المسح من الحدث بعد اللبس، كمن توضأ لصلاة الفجر، ولبس الخفين، وبعد طلوع الشمس أحدث، ولم يتوضأ، ثم توضأ قبل صلاة الظهر، فابتداء المدة من طلوع الشمس وقت الحدث. وقال بعض العلماء: ابتداؤها من حيث توضأ قبل صلاة الظهر، أي: من المسح بعد الحدث.',
+     'Mesh süresi, giydikten sonraki hadesten başlar. Mesela sabah namazı için abdest alıp mestleri giyen, güneş doğduktan sonra abdesti bozulan ve abdest almayan, sonra öğle namazından önce abdest alan kimse için sürenin başlangıcı, abdestin bozulduğu vakit olan güneşin doğuşudur. Bazı âlimler ise başlangıcın, öğleden önce abdest aldığı andan, yani hadesten sonraki ilk meshten olduğunu söylemiştir.',
+     '١/ ٢٦',
+     'قدّم الكتاب القول الأول: **المدة من الحدث بعد اللبس**، ومثّل له. ثم ذكر قولًا ثانيًا لبعض العلماء: أنها من **أول مسح بعد الحدث**.\n\n'
+     'والفرق بين القولين في المثال: على الأول تُحسب المدة من طلوع الشمس، وعلى الثاني من وقت الوضوء قبل الظهر. وهذا الدرس يعتمد ما قدّمه الكتاب.',
+     'Kitap birinci görüşü öne almış ve örnek vermiştir: **Süre, giydikten sonraki hadesten** başlar. Sonra bazı âlimlerin ikinci görüşünü zikretmiştir: **hadesten sonraki ilk meshten** başlar.\n\n'
+     'Örnekte iki görüş arasındaki fark: Birinciye göre süre güneşin doğuşundan, ikinciye göre öğleden önceki abdest vaktinden sayılır. Bu ders, kitabın öne aldığı görüşü esas alır.'),
+ ]),
+ dict(ar='المسألة السابعة: المسح على الجبيرة والعمامة وخمر النساء', tr='Yedinci mesele: Sargı, sarık ve kadınların başörtüsü üzerine mesh', paras=[
+  PS('[[الجبيرة|jabira]]: هي أعواد ونحوها كالجبس مما يربط على الكسر ليجبر ويلتئم، ويمسح عليها. وكذلك يمسح على اللصوق واللفائف التي توضع على الجروح، فكل هذه الأشياء يمسح عليها بشرط أن تكون على قدر الحاجة، فإن تجاوزت قدر الحاجة لزمه نَزْعُ ما زاد على الحاجة.',
+     'Cebîre (sargı): Kırığın üzerine, kaynayıp iyileşsin diye bağlanan tahta parçaları ve alçı gibi şeylerdir; üzerine meshedilir. Aynı şekilde yaraların üzerine konan yara bantları ve sargılar üzerine de meshedilir. Bütün bunlar üzerine, ihtiyaç kadar olmaları şartıyla meshedilir; ihtiyacı aşarsa, ihtiyaçtan fazlasını çıkarması gerekir.',
+     '١/ ٢٧',
+     '**قدر الحاجة:** موضع الكسر أو الجرح، وما لا بد منه حوله لتثبيت الجبيرة. فإن وضع لفافة كبيرة على جرح صغير، وأمكنه نزع الزائد، لزمه نزعه.',
+     '**İhtiyaç kadar:** Kırığın veya yaranın yeri ile sargıyı sabitlemek için etrafında mutlaka gereken kısım. Küçük bir yaraya büyük bir sargı koyan, fazlasını çıkarabiliyorsa çıkarması gerekir.'),
+  PS('ويجوز المسح عليها في الحدث الأكبر والأصغر، وليس للمسح عليها وقت محدد بل يمسح عليها إلى نزعها أو شفاء ما تحتها. والدليل على ذلك: أن المسح على الجبيرة ضرورة والضرورة تقدر بقدرها ولا فرق فيها بين الحدثين.',
+     'Büyük ve küçük hadeste üzerine meshetmek caizdir. Üzerine meshin belirli bir süresi yoktur; çıkarılıncaya veya altındaki yer iyileşinceye kadar meshedilir. Delili: Sargı üzerine mesh bir zarurettir; zaruret kendi ölçüsünce takdir edilir ve zarurette iki hades arasında fark yoktur.',
+     '١/ ٢٧',
+     'هنا يظهر الفرق بين **الخف** و**الجبيرة**: الخف رخصة للحدث الأصغر بمدة محددة، والجبيرة **ضرورة** تُمسح في الحدثين بلا مدة؛ لأن صاحبها لا يستطيع نزعها متى شاء.\n\n'
+     '**«الضرورة تُقدّر بقدرها»:** يُباح منها ما تندفع به الحاجة فقط، لا أكثر.',
+     'Burada **mest** ile **sargı** arasındaki fark ortaya çıkar: Mest, küçük hades için belirli süreli bir ruhsattır; sargı ise iki hadeste de süresiz meshedilen bir **zarurettir**; çünkü sahibi onu istediği zaman çıkaramaz.\n\n'
+     '**«Zaruret kendi ölçüsünce takdir edilir»:** Ondan yalnızca ihtiyacı giderecek kadarı mubah olur, fazlası değil.'),
+  PS('وكذلك يجوز المسح على [[العمامة|imama]]، وهي ما يعمم به الرأس، ويكور عليه، والدليل على ذلك: حديث المغيرة بن شعبة ﵁ (أن النبي ﷺ مسح على عمامته وعلى الناصية والخفين) (١). وحديث: (أنه ﷺ مسح على الخفين والخمار) (٢). يعني العمامة.',
+     'Aynı şekilde sarık üzerine meshetmek de caizdir. Sarık, başa sarılan ve üzerine dolanan şeydir. Delili Muğîre b. Şu’be’nin (radıyallâhu anh) hadisidir: «Nebî (sallallâhu aleyhi ve sellem) sarığının, alnının üstündeki saçlarının (nâsiye) ve mestlerinin üzerine meshetti.» (1) Bir de şu hadis: «O (sallallâhu aleyhi ve sellem) mestlerin ve hımârın üzerine meshetti.» (2) Yani sarığın.',
+     '١/ ٢٧',
+     '**الناصية:** مقدّم شعر الرأس. وفي الحديث أنه ﷺ مسح على الناصية ثم أتمّ على العمامة.\n\n'
+     '**«الخمار» في الحديث الثاني:** المراد به العمامة، لأنها تُخمّر الرأس أي تغطيه.\n\n'
+     '**شرح الحواشي:** (١) حديث المغيرة في صحيح مسلم. (٢) والثاني في صحيح مسلم أيضًا، من حديث بلال رضي الله عنه.',
+     '**Nâsiye:** Başın ön kısmındaki saçlar. Hadiste Nebî’nin (s.a.v.) nâsiyeye meshedip sarığın üzerinde tamamladığı vardır.\n\n'
+     '**İkinci hadisteki «hımâr»:** Sarık kastedilmiştir; çünkü başı örter.\n\n'
+     '**Dipnotların şerhi:** (1) Muğîre hadisi Müslim’in Sahîh’indedir. (2) İkincisi de Bilâl’den (radıyallâhu anh) Müslim’in Sahîh’indedir.',
+     fn=['(١) رواه مسلم برقم (٢٧٤).', '(٢) رواه مسلم برقم (٢٧٥).']),
+  PS('والمسح عليها ليس له وقت محدد، ولكن لو سلك سبيل الاحتياط فلم يمسحها إلا إذا لبسها على طهارة وفي المدة المحددة للمسح على الخفين، لكان حسناً.',
+     'Sarık üzerine meshin belirli bir süresi yoktur. Ama ihtiyat yolunu tutup onu ancak abdestli giydiğinde ve mestler üzerine mesh için belirlenen süre içinde meshederse güzel olur.',
+     '١/ ٢٧',
+     'الأصل في العمامة أنه لا وقت لها؛ والاحتياط **مستحسن لا واجب**: أن يعاملها معاملة الخف في الطهارة والمدة.',
+     'Sarıkta asıl olan süresinin olmamasıdır; ihtiyat ise **farz değil, güzel olandır**: Taharet ve süre bakımından ona mest gibi davranmak.'),
+  PS('أما [[خمار|khimar]] المرأة وهو ما تغطي به رأسها، فالأولى ألا تمسح عليه، إلا إذا كان هناك مشقة في نزعه، أو لمرض في الرأس أو نحو ذلك. ولو كان الرأس ملبداً بحناء أو غيره فيجوز المسح عليه؛ لفعل النبي ﷺ. وعموماً طهارة الرأس فيها شيء من التسهيل والتيسير على هذه الأمة.',
+     'Kadının başörtüsüne gelince, o kadının başını örttüğü şeydir. Daha uygun olanı onun üzerine meshetmemesidir; ancak çıkarmakta zorluk olursa veya başta hastalık ya da benzeri bir durum varsa meshedebilir. Baş kına veya başka bir şeyle sıvanmış (yapıştırılmış) ise üzerine meshetmek caizdir; Nebî (sallallâhu aleyhi ve sellem) böyle yapmıştır. Genel olarak başın temizliğinde bu ümmete bir kolaylık ve genişlik vardır.',
+     '١/ ٢٧',
+     '**«ملبّدًا»:** أي جُعل على الشعر شيء يلصقه ويجمعه، كالحناء؛ وقد لبّد النبي ﷺ رأسه في الإحرام.\n\n'
+     '**«الأولى»:** أي الأفضل؛ فالمرأة تنزع خمارها وتمسح رأسها، إلا عند المشقة أو المرض فتمسح عليه.\n\n'
+     '**والقاعدة في آخر الباب:** طهارة الرأس مبنية على **المسح** لا الغسل، وفيها تيسير؛ ولذلك جاز المسح على العمامة والرأس الملبّد.',
+     '**«Sıvanmış»:** Saçın üzerine, kına gibi onu yapıştırıp toplayan bir şey konmuş olması; Nebî (s.a.v.) ihramda başını böyle yapmıştır.\n\n'
+     '**«Daha uygun olan»:** yani daha faziletlisi; kadın başörtüsünü çıkarıp başını mesheder; zorluk veya hastalık hâlinde ise üzerine mesheder.\n\n'
+     '**Bölümün sonundaki kaide:** Başın temizliği yıkamaya değil **meshe** dayanır ve onda kolaylık vardır; bu yüzden sarık ve sıvanmış baş üzerine mesh caiz olmuştur.'),
+ ]),
+]
